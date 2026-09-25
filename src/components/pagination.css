@@ -1,0 +1,75 @@
+/* Paginación completa (nav, botones, elipsis)
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sw-pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--r);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: var(--brd);
+    background: var(--b1);
+    color: var(--bc);
+    text-decoration: none;
+}
+
+.sw-pg-btn.active {
+    background: var(--p);
+    color: var(--btn-text);
+    border-color: var(--p);
+}
+
+.sw-pg-btn:hover:not(.active) {
+    background: var(--b2);
+}
+
+.sw-pg-btn[aria-disabled="true"] {
+    color: var(--bc2);
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.sw-pg-btn:focus-visible {
+    outline: 2px solid var(--p);
+    outline-offset: 2px;
+}
+
+.sw-pg-ellipsis {
+    align-items: center;
+    color: var(--bc2);
+    display: inline-flex;
+    height: 38px;
+    padding: 0 2px;
+}
+
+@media (max-width: 575.98px) {
+    .sw-list-pagination nav.sw-pagination-nav {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sw-pagination {
+        gap: 4px;
+        justify-content: flex-end;
+    }
+
+    .sw-pg-btn {
+        height: 34px;
+        width: 34px;
+    }
+
+    .sw-pg-ellipsis {
+        height: 34px;
+    }
+}

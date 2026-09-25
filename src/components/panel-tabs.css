@@ -1,0 +1,112 @@
+/* Panel con tabs integradas
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+/* ── Panel con tabs integradas (dos o mas secciones del mismo contexto) ── */
+.sw-panel-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background: transparent;
+    border-radius: 1rem 1rem 0 0;
+    gap: .35rem;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+}
+
+.sw-panel-tabs .nav-item {
+    flex: 0 0 auto;
+}
+
+.sw-panel-tabs .nav-link {
+    align-items: center;
+    background: var(--b2);
+    border: 1px solid rgba(67, 97, 238, 0.35);
+    border: 1px solid color-mix(in srgb, var(--s) 35%, transparent);
+    border-bottom: 0;
+    border-radius: .75rem .75rem 0 0;
+    color: var(--bc2);
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
+    gap: .45rem;
+    justify-content: center;
+    line-height: 1.15;
+    margin-bottom: 0;
+    min-height: 44px;
+    padding: .7rem 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.sw-panel-tabs .nav-link i {
+    flex: 0 0 auto;
+    line-height: 1;
+    text-align: center;
+    width: 1rem;
+}
+
+.sw-panel-tabs .nav-link span {
+    display: inline-flex;
+    min-width: 0;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+
+.tab-content > .active {
+    display: block;
+}
+
+.sw-panel-tabs .nav-link.active {
+    background: var(--p);
+    border-color: var(--p);
+    color: var(--btn-text);
+}
+
+.sw-panel-tabs .nav-link:hover:not(.active) {
+    color: var(--p);
+}
+
+.sw-panel-tabs .nav-link.active:hover {
+    color: var(--btn-text);
+}
+
+.sw-panel-tab-pane:focus {
+    outline: none;
+}
+
+.sw-card.sw-panel-card {
+    border-top-left-radius: 0;
+}
+
+@media (max-width: 767.98px) {
+    .sw-panel-tabs {
+        gap: .5rem;
+    }
+
+    .sw-panel-tabs .nav-link {
+        min-height: auto;
+        padding: .65rem .85rem;
+    }
+
+    .sw-card.sw-panel-card {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sw-form-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .sw-form-actions .sw-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}

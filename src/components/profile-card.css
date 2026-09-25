@@ -1,0 +1,164 @@
+/* Profile card — avatar + acciones divididas. Componente nuevo (0.5.0).
+   Firma propia de Soffiweb: anillo de avatar en degradé --p→--a (no un
+   ícono decorativo suelto) y punto de estado real (online/activo) en vez de
+   un sparkle sin función. El menú "..." y sus acciones reusan .sw-bico y
+   .sw-row-menu-dropdown ya existentes — cero CSS nuevo para eso.
+
+   <article class="sw-profile-card">
+       <div class="sw-profile-card-head">
+           <div class="sw-profile-card-avatar-wrap">
+               <span class="sw-user-avatar sw-avatar-lg sw-profile-card-avatar">
+                   <img src="..." class="sw-user-avatar-img" alt="">
+               </span>
+               <span class="sw-profile-card-status" title="Activo"></span>
+           </div>
+           <div class="sw-row-menu">
+               <button type="button" class="sw-bico sw-row-menu-trigger" aria-haspopup="true"
+                       aria-expanded="false" onclick="swToggleRowMenu(this)">
+                   <i class="fa-solid fa-ellipsis"></i>
+               </button>
+               <div class="sw-row-menu-dropdown">
+                   <a href="..." class="sw-row-menu-item"><i class="fa-solid fa-pen"></i> Editar</a>
+               </div>
+           </div>
+       </div>
+       <h3 class="sw-profile-card-name">Ana Torres</h3>
+       <p class="sw-profile-card-role"><i class="fa-solid fa-location-dot"></i> Panamá, PA</p>
+       <p class="sw-profile-card-desc">Contadora senior, 6 años en nómina.</p>
+       <div class="sw-profile-card-actions">
+           <a href="mailto:..." class="sw-profile-card-action"><i class="fa-regular fa-envelope"></i> Enviar correo</a>
+           <a href="..." class="sw-profile-card-action"><i class="fa-solid fa-pen"></i> Editar perfil</a>
+       </div>
+   </article> */
+
+.sw-profile-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.sw-profile-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.3rem 1.3rem 0;
+    background: var(--b1);
+    border: var(--brd);
+    border-radius: var(--rl);
+    overflow: hidden;
+    box-shadow: var(--sh-sm);
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.sw-profile-card:hover {
+    box-shadow: var(--sh-md);
+    border-color: rgba(40, 68, 154, 0.32);
+    border-color: color-mix(in srgb, var(--p) 32%, transparent);
+    transform: translateY(-3px);
+}
+
+.sw-profile-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 0.9rem;
+}
+
+.sw-profile-card-avatar-wrap {
+    position: relative;
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--p), var(--a));
+    flex-shrink: 0;
+}
+
+.sw-profile-card-avatar {
+    border: 3px solid var(--b1);
+}
+
+.sw-profile-card-status {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--su);
+    border: 2px solid var(--b1);
+}
+
+.sw-profile-card-status-away {
+    background: var(--wa);
+}
+
+.sw-profile-card-status-offline {
+    background: var(--bc2);
+}
+
+.sw-profile-card-name {
+    margin: 0;
+    color: var(--bc);
+    font-size: var(--sw-text-lg);
+    font-weight: var(--sw-font-bold);
+    line-height: var(--sw-leading-tight);
+}
+
+.sw-profile-card-role {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 3px 0 0;
+    color: var(--bc2);
+    font-size: var(--sw-text-xs);
+    font-weight: 500;
+}
+
+.sw-profile-card-role i {
+    color: var(--p);
+    font-size: 11px;
+}
+
+.sw-profile-card-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0.6rem 0 0;
+    color: var(--bc2);
+    font-size: var(--sw-text-sm);
+    line-height: var(--sw-leading-base);
+}
+
+.sw-profile-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.1rem;
+    margin-left: -1.3rem;
+    margin-right: -1.3rem;
+    border-top: var(--brd);
+}
+
+.sw-profile-card-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0.85rem 0.5rem;
+    color: var(--p);
+    font-size: var(--sw-text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.sw-profile-card-action:hover {
+    background: var(--b2);
+    text-decoration: none;
+    color: var(--p);
+}
+
+.sw-profile-card-action + .sw-profile-card-action {
+    border-left: var(--brd);
+}

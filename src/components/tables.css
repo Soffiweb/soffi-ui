@@ -1,0 +1,572 @@
+/* Tablas, cabecera/columna fija, toolbar de listado, menú de fila, paginación de listado
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    border: var(--brd);
+    border-radius: var(--rl);
+    overflow: hidden;
+    background: var(--b1);
+    box-shadow: var(--sh-sm);
+}
+
+.sw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+.sw-table thead th {
+    background: var(--th-bg);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--th-color);
+    padding: 0.62rem 1rem;
+    border-bottom: 2px solid rgba(40, 68, 154, 0.2);
+    border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
+    text-align: left;
+}
+
+.sw-table tbody td {
+    padding: 0.5rem 1rem;
+    border-bottom: var(--brd);
+    color: var(--bc);
+    vertical-align: middle;
+    background: var(--b1);
+    line-height: 1.35;
+}
+
+.sw-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.sw-table-head th {
+    background: var(--th-bg);
+    color: var(--th-color);
+}
+
+.sw-table-striped tbody tr:nth-child(even) td {
+    background: #f4f6fd;
+    background: color-mix(in srgb, var(--b2) 55%, var(--b1));
+}
+
+.sw-row-error td {
+    background: #fbebf0;
+    background: color-mix(in srgb, var(--er) 8%, var(--b1));
+}
+
+.sw-row-warning td {
+    background: #fdf3e6;
+    background: color-mix(in srgb, var(--wa) 10%, var(--b1));
+}
+
+/* Tabla con inputs dentro de celdas (ej. detalle de deposito) — necesita
+   mas aire que una tabla de solo lectura para que los controles no se
+   vean apretados. */
+.sw-detail-table td {
+    padding: 0.65rem 0.85rem;
+}
+
+.sw-detail-table .sw-input {
+    height: 38px;
+}
+
+.sw-detail-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--p);
+    cursor: pointer;
+}
+
+.sw-detail-table input[type="number"]::-webkit-inner-spin-button,
+.sw-detail-table input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.sw-detail-table input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.sw-detail-table tfoot th {
+    padding: 0.65rem 0.85rem;
+    background: var(--b2);
+    color: var(--bc);
+    font-size: 13px;
+}
+
+.sw-detail-table tfoot .sw-input {
+    font-weight: 700;
+    background: var(--b2);
+}
+
+.sw-table tbody tr:hover td {
+    background: var(--b2);
+}
+
+.sw-empty-icon {
+    color: var(--bc2);
+    font-size: 2rem;
+}
+
+.sw-empty-title {
+    color: var(--bc);
+    font-weight: 700;
+}
+
+.sw-empty-copy {
+    color: var(--bc2);
+}
+
+.sw-crud-container {
+    padding-top: 30px;
+    padding-bottom: 22px;
+}
+
+.sw-crud-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.sw-crud-title {
+    min-width: 0;
+}
+
+.sw-crud-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.sw-crud-actions .sw-btn,
+.sw-list-search-row .sw-btn,
+.sw-list-filter-actions .sw-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.sw-card.sw-list-card {
+    overflow: visible;
+    padding: 22px;
+    box-shadow: 0 8px 24px rgba(40, 68, 154, 0.08);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--p) 8%, transparent);
+}
+
+.sw-card.sw-card-compact,
+.sw-card.sw-list-card.sw-card-compact {
+    padding: 16px;
+}
+
+.sw-card-compact .sw-list-toolbar {
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+.sw-card-compact .sw-card-title {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.sw-list-toolbar {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 13px;
+    padding: 0 0 16px;
+    border-bottom: 0;
+    background: transparent;
+}
+
+.sw-list-search {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    width: 100%;
+}
+
+.sw-list-search-label {
+    color: var(--bc2);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.sw-list-search-row,
+.sw-list-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.sw-list-search-row .sw-input-icon-wrap,
+.sw-list-filter-main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sw-list-filter-control {
+    flex: 0 1 340px;
+    min-width: 220px;
+}
+
+.sw-list-filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+
+@media (min-width: 576px) {
+    .sw-list-filter-row > .sw-list-filter-actions,
+    .sw-list-search-row > .sw-list-filter-actions {
+        transform: translateY(12px);
+    }
+
+    .sw-list-search > .sw-row .sw-list-filter-actions {
+        transform: translateY(4px);
+    }
+}
+
+.sw-list-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 22px;
+}
+
+.sw-list-count,
+.sw-list-context {
+    color: #636c83;
+    color: color-mix(in srgb, var(--bc2) 88%, var(--p));
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.sw-list-table-wrap {
+    border: var(--brd-s);
+    border-radius: 1rem;
+    box-shadow: none;
+    overflow: auto;
+    max-height: 70vh;
+}
+
+/* Cabecera fija mientras se scrollea vertical dentro del wrap acotado */
+.sw-list-table-wrap thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* Primera columna fija mientras se scrollea horizontal, para no perder
+   contexto de fila. Opt-in: agregar .sw-table-sticky-col solo en tablas
+   que realmente se desbordan horizontalmente (ver soffiweb-ui-core SKILL.md). */
+.sw-list-table-wrap.sw-table-sticky-col tbody tr > :first-child,
+.sw-list-table-wrap.sw-table-sticky-col thead tr > :first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    border-right: var(--brd-s);
+}
+
+.sw-list-table-wrap.sw-table-sticky-col thead tr > :first-child {
+    z-index: 3;
+}
+
+.sw-table-min-md {
+    min-width: 760px;
+}
+
+.sw-table-min-lg {
+    min-width: 920px;
+}
+
+.sw-table-min-xl {
+    min-width: 1080px;
+}
+
+.sw-table-compact thead th {
+    padding: 0.55rem 0.65rem;
+    font-size: 11px;
+}
+
+.sw-table-compact tbody td {
+    padding: 0.45rem 0.65rem;
+    font-size: 13px;
+}
+
+.sw-table th.text-center,
+.sw-table td.text-center {
+    text-align: center;
+}
+
+.sw-table-main-cell,
+.sw-text-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.sw-table-thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--r);
+    border: var(--brd);
+    background: var(--b2);
+    overflow: hidden;
+    color: var(--bc2);
+    font-size: 15px;
+}
+
+.sw-table-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sw-table-thumb-lg {
+    width: 64px;
+    height: 64px;
+    font-size: 22px;
+}
+
+.sw-table-title {
+    display: block;
+    max-width: 360px;
+    overflow: hidden;
+    color: var(--bc);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sw-table-subtitle,
+.sw-text-stack small {
+    display: block;
+    max-width: 300px;
+    overflow: hidden;
+    color: #5f6a85;
+    color: color-mix(in srgb, var(--bc2) 82%, var(--p));
+    font-size: 12px;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sw-text-stack a {
+    display: block;
+    max-width: 300px;
+    overflow: hidden;
+    color: var(--p);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sw-text-stack a:hover {
+    color: var(--s);
+    text-decoration: none;
+}
+
+.sw-text-ellipsis {
+    display: block;
+    max-width: 340px;
+    overflow: hidden;
+    color: var(--bc);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sw-table-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+/* Menu de acciones secundarias por fila (icono "..." + panel flotante) */
+.sw-row-menu {
+    position: relative;
+    display: inline-flex;
+}
+
+.sw-row-menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    z-index: 80;
+    min-width: 190px;
+    padding: 6px;
+    background: var(--b1);
+    border: var(--brd);
+    border-radius: var(--r);
+    box-shadow: var(--sh-md);
+    text-align: left;
+}
+
+.sw-row-menu-dropdown.open {
+    display: block;
+}
+
+.sw-row-menu-dropdown.is-portal {
+    position: fixed;
+    top: 0;
+    right: auto;
+    left: 0;
+    z-index: 3000;
+}
+
+.sw-row-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    padding: 8px 10px;
+    background: transparent;
+    border: 0;
+    border-radius: var(--r);
+    color: var(--bc);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sw-row-menu-item:hover {
+    background: var(--b2);
+    color: var(--bc);
+    text-decoration: none;
+}
+
+.sw-row-menu-item i {
+    width: 16px;
+    text-align: center;
+    color: var(--bc2);
+}
+
+.sw-table .sw-badge {
+    justify-content: center;
+    min-width: 82px;
+}
+
+.sw-table .sw-badge i {
+    font-size: 6px;
+}
+
+.sw-list-pagination {
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px 0 4px;
+    border-top: 0;
+}
+
+.sw-list-pagination nav.sw-pagination-nav {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sw-pagination-summary {
+    color: var(--bc2);
+    font-size: 12px;
+    margin: 0;
+}
+
+.sw-pagination-summary span {
+    color: var(--bc);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.sw-list-pagination .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.sw-list-pagination .page-link,
+.sw-list-pagination .pagination li a,
+.sw-list-pagination .pagination li span {
+    border: var(--brd);
+    border-radius: var(--r);
+    color: var(--p);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 0.75rem;
+}
+
+.sw-list-pagination .page-item.active .page-link,
+.sw-list-pagination .pagination li.active a,
+.sw-list-pagination .pagination li.active span {
+    background: var(--p);
+    border-color: var(--p);
+    color: var(--btn-text);
+}
+
+/* --- Totales anclados al pie — de gesnom (rama `dev`), único aporte de
+   gesnom junto con .sw-rol-summary. Opt-in: la tabla normal no lleva la
+   clase y su tfoot (si lo tiene) queda sin tratamiento. Dentro de un wrap
+   scrolleable los totales además quedan anclados al pie (ver
+   .sw-list-table-wrap más arriba).
+
+   Fix de compatibilidad aplicado al portar: color-mix() sin fallback en la
+   fuente (gesnom `dev`). */
+.sw-table-totals tfoot th,
+.sw-table-totals tfoot td {
+    background: var(--th-bg);
+    color: var(--th-color);
+    padding: 0.62rem 1rem;
+    font-size: var(--sw-text-sm);
+    font-weight: 700;
+    text-align: right;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    border-top: 2px solid rgba(40, 68, 154, 0.2);
+    border-top: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
+}
+
+/* Etiqueta de la fila ("Totales del rol"), alineada al texto y no a la cifra. */
+.sw-table-totals tfoot .sw-table-total-label {
+    font-size: var(--sw-text-xs);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}

@@ -1,0 +1,155 @@
+/* Action card — icono arriba, título, descripción, botón de ancho completo.
+   Componente nuevo: ninguna de las 4 apps lo tenía (el más cercano era
+   .sw-quicklink, horizontal y sin botón — ver dashboard.css). Pensado para
+   pantallas de selección de acción: "Importar datos", accesos a módulos,
+   selección de tipo de operación.
+
+   <div class="sw-action-card-grid">
+       <div class="sw-action-card">
+           <div class="sw-action-card-icon sw-action-card-icon-primary">
+               <i class="fa-solid fa-building"></i>
+           </div>
+           <h3 class="sw-action-card-title">Departamentos</h3>
+           <p class="sw-action-card-desc">Importa o actualiza la lista de
+               departamentos desde un archivo Excel/CSV.</p>
+           <a href="..." class="sw-btn sw-btn-primary sw-action-card-action">
+               <i class="fa-solid fa-file-import"></i> Ir a importación
+           </a>
+       </div>
+   </div>
+
+   Variante deshabilitada (ej. "Próximamente"): agregar
+   .sw-action-card-disabled a .sw-action-card y omitir el <a>, o usar un
+   <span> en su lugar — no hay JS que lo requiera. */
+
+.sw-action-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.1rem;
+}
+
+.sw-action-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.4rem;
+    background: var(--b1);
+    border: var(--brd);
+    border-radius: var(--rl);
+    text-align: center;
+    transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.sw-action-card:hover {
+    box-shadow: var(--sh-md);
+}
+
+.sw-action-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 0.9rem;
+    border-radius: var(--r);
+    font-size: var(--sw-text-xl);
+}
+
+.sw-action-card-title {
+    margin: 0 0 0.4rem;
+    font-size: var(--sw-text-md);
+    font-weight: var(--sw-font-semibold);
+    color: var(--p);
+    line-height: var(--sw-leading-tight);
+}
+
+.sw-action-card-desc {
+    flex: 1 1 auto;
+    margin: 0 0 1.1rem;
+    font-size: var(--sw-text-sm);
+    color: var(--bc2);
+    line-height: var(--sw-leading-base);
+}
+
+.sw-action-card-action {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Variante deshabilitada — para acciones "Próximamente". El contenido baja
+   de opacidad y el botón se reemplaza por un input/span deshabilitado
+   (ver ejemplo de uso arriba); no lleva pointer-events:none en la card
+   entera para no bloquear un tooltip que la explique. */
+.sw-action-card-disabled {
+    opacity: 0.6;
+}
+
+.sw-action-card-disabled .sw-action-card-icon {
+    background: var(--b2);
+    color: var(--bc2);
+}
+
+/* Colores del icono — mismo criterio que .sw-metric-icon-* (dashboard.css):
+   fondo al 14-16% del color, icono oscurecido en claro y vuelto al token
+   puro en oscuro. Import.md pedía variedad de color por tipo de dato
+   (institución, personas, categorías, activos, transporte, inventario). */
+.sw-action-card-icon-primary {
+    background: rgba(40, 68, 154, 0.14);
+    background: color-mix(in srgb, var(--p) 14%, transparent);
+    color: var(--p);
+}
+
+.sw-action-card-icon-secondary {
+    background: rgba(67, 97, 238, 0.16);
+    background: color-mix(in srgb, var(--s) 16%, transparent);
+    color: #2f44a7;
+    color: color-mix(in srgb, var(--s) 70%, #000);
+}
+
+.sw-action-card-icon-accent {
+    background: rgba(250, 117, 173, 0.16);
+    background: color-mix(in srgb, var(--a) 16%, transparent);
+    color: #bc5882;
+    color: color-mix(in srgb, var(--a) 75%, #000);
+}
+
+.sw-action-card-icon-success {
+    background: rgba(0, 186, 123, 0.16);
+    background: color-mix(in srgb, var(--su) 16%, transparent);
+    color: #00734c;
+    color: color-mix(in srgb, var(--su) 62%, #000);
+}
+
+.sw-action-card-icon-warning {
+    background: rgba(250, 151, 0, 0.16);
+    background: color-mix(in srgb, var(--wa) 16%, transparent);
+    color: #7d4c00;
+    color: color-mix(in srgb, var(--wa) 50%, #000);
+}
+
+.sw-action-card-icon-info {
+    background: rgba(0, 164, 242, 0.14);
+    background: color-mix(in srgb, var(--in) 14%, transparent);
+    color: #0073a9;
+    color: color-mix(in srgb, var(--in) 70%, #000);
+}
+
+[data-theme="dark"] .sw-action-card-icon-secondary {
+    color: var(--s);
+}
+
+[data-theme="dark"] .sw-action-card-icon-accent {
+    color: var(--a);
+}
+
+[data-theme="dark"] .sw-action-card-icon-success {
+    color: var(--su);
+}
+
+[data-theme="dark"] .sw-action-card-icon-warning {
+    color: var(--wa);
+}
+
+[data-theme="dark"] .sw-action-card-icon-info {
+    color: var(--in);
+}

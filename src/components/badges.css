@@ -1,0 +1,80 @@
+/* Badges de estado
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.28rem 0.8rem;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.sw-badge-primary {
+    background: rgba(40, 68, 154, 0.12);
+    background: color-mix(in srgb, var(--p) 12%, transparent);
+    color: var(--p);
+}
+
+.sw-badge-secondary {
+    background: rgba(67, 97, 238, 0.18);
+    background: color-mix(in srgb, var(--s) 18%, transparent);
+    color: #3249b2;
+    color: color-mix(in srgb, var(--s) 75%, #000);
+}
+
+.sw-badge-accent {
+    background: rgba(250, 117, 173, 0.15);
+    background: color-mix(in srgb, var(--a) 15%, transparent);
+    color: #c35b87;
+    color: color-mix(in srgb, var(--a) 78%, #000);
+}
+
+.sw-badge-success {
+    background: rgba(0, 186, 123, 0.14);
+    background: color-mix(in srgb, var(--su) 14%, transparent);
+    color: #00734c;
+    color: color-mix(in srgb, var(--su) 62%, #000);
+}
+
+.sw-badge-warning {
+    background: rgba(250, 151, 0, 0.16);
+    background: color-mix(in srgb, var(--wa) 16%, transparent);
+    color: #824f00;
+    color: color-mix(in srgb, var(--wa) 52%, #000);
+}
+
+.sw-badge-error {
+    background: rgba(225, 29, 72, 0.11);
+    background: color-mix(in srgb, var(--er) 11%, transparent);
+    color: var(--er);
+}
+
+.sw-badge-info {
+    background: rgba(0, 164, 242, 0.11);
+    background: color-mix(in srgb, var(--in) 11%, transparent);
+    color: #0070a5;
+    color: color-mix(in srgb, var(--in) 68%, #000);
+}
+
+[data-theme="dark"] .sw-badge-success {
+    color: var(--su);
+}
+
+[data-theme="dark"] .sw-badge-warning {
+    color: var(--wa);
+}
+
+[data-theme="dark"] .sw-badge-accent {
+    color: var(--a);
+}
+
+[data-theme="dark"] .sw-badge-secondary {
+    color: var(--s);
+}
+
+[data-theme="dark"] .sw-badge-info {
+    color: var(--in);
+}

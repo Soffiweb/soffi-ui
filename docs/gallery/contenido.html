@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contenido — Soffi UI</title>
+<meta name="description" content="Cards y action card de soffiweb/soffi-ui.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-swatchbook"></i></span>
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">Soffi UI</span>
+            <span class="sw-topbar-period">Galería de componentes · v1.0.0</span>
+        </div>
+    </div>
+    <div class="sw-topbar-actions">
+        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> dist/soffi-ui.css</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Índice</div>
+            <div class="sw-sb-brand-sub"><a href="index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-arrow-left"></i> Volver a Tokens</a></div>
+        </div>
+
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="index.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Acciones</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones</a>
+        <a href="acciones.html#badges" class="sw-sb-link"><i class="fa-solid fa-tag"></i> Badges</a>
+
+        <div class="sw-sb-group">Feedback</div>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+        <a href="feedback.html#toast" class="sw-sb-link"><i class="fa-solid fa-bell"></i> Toast</a>
+        <a href="feedback.html#impersonation" class="sw-sb-link"><i class="fa-solid fa-user-secret"></i> Banner impersonación</a>
+        <a href="feedback.html#empty-state" class="sw-sb-link"><i class="fa-solid fa-inbox"></i> Estado vacío</a>
+
+        <div class="sw-sb-group">Contenido</div>
+        <a href="contenido.html#cards" class="sw-sb-link active"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="contenido.html#action-card" class="sw-sb-link active"><i class="fa-solid fa-grip"></i> Action card</a>
+        <a href="contenido.html#product-card" class="sw-sb-link active"><i class="fa-solid fa-cart-shopping"></i> Product card</a>
+        <a href="contenido.html#profile-card" class="sw-sb-link active"><i class="fa-solid fa-id-badge"></i> Profile card</a>
+
+        <div class="sw-sb-group">Formularios</div>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Inputs &amp; select</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tabla</a>
+        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
+
+        <div class="sw-sb-group">Dashboard</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Métricas, quicklinks, dona</a>
+
+        <div class="sw-sb-group">Acceso</div>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+    </nav>
+
+    <main class="sw-main">
+
+        <!-- ══════════════════ CARDS ══════════════════ -->
+        <section id="cards" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-regular fa-rectangle-list"></i> Cards</h2>
+                <p><code>.sw-card</code> genérica — contenedor base para bloques de contenido, listados y resúmenes.</p>
+            </div>
+            <div class="gal-preview">
+                <div class="sw-card" style="max-width:340px">
+                    <h3 class="sw-card-title">Resumen del período</h3>
+                    <p class="sw-card-body">15 empleados activos, 2 con ausencias sin justificar esta semana.</p>
+                    <div class="sw-card-footer">
+                        <span class="sw-badge sw-badge-success">Al día</span>
+                        <button class="sw-btn sw-btn-sm sw-btn-ghost">Ver detalle</button>
+                    </div>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-card"&gt;
+    &lt;h3 class="sw-card-title"&gt;Resumen del período&lt;/h3&gt;
+    &lt;p class="sw-card-body"&gt;15 empleados activos, 2 con ausencias sin justificar.&lt;/p&gt;
+    &lt;div class="sw-card-footer"&gt;
+        &lt;span class="sw-badge sw-badge-success"&gt;Al día&lt;/span&gt;
+        &lt;button class="sw-btn sw-btn-sm sw-btn-ghost"&gt;Ver detalle&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <!-- ══════════════════ ACTION CARD ══════════════════ -->
+        <section id="action-card" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-grip"></i> Action card</h2>
+                <p><code>.sw-action-card</code> — icono arriba, título, descripción, botón de ancho completo. Nuevo en v0.4.0, para pantallas de selección de acción (importar datos, accesos a módulos).</p>
+            </div>
+            <div class="gal-preview gal-preview-block">
+                <div class="sw-action-card-grid">
+                    <div class="sw-action-card">
+                        <div class="sw-action-card-icon sw-action-card-icon-primary"><i class="fa-solid fa-building"></i></div>
+                        <h3 class="sw-action-card-title">Departamentos</h3>
+                        <p class="sw-action-card-desc">Importa o actualiza la lista de departamentos desde Excel/CSV.</p>
+                        <a href="#" class="sw-btn sw-btn-primary sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                    </div>
+                    <div class="sw-action-card">
+                        <div class="sw-action-card-icon sw-action-card-icon-success"><i class="fa-solid fa-users"></i></div>
+                        <h3 class="sw-action-card-title">Empleados</h3>
+                        <p class="sw-action-card-desc">Carga masiva de personal con validación de duplicados.</p>
+                        <a href="#" class="sw-btn sw-btn-primary sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                    </div>
+                    <div class="sw-action-card sw-action-card-disabled">
+                        <div class="sw-action-card-icon sw-action-card-icon-warning"><i class="fa-solid fa-car"></i></div>
+                        <h3 class="sw-action-card-title">Transporte</h3>
+                        <p class="sw-action-card-desc">Asignación de rutas y vehículos por empleado.</p>
+                        <span class="sw-btn sw-btn-light sw-action-card-action" style="pointer-events:none">Próximamente</span>
+                    </div>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-action-card-grid"&gt;
+    &lt;div class="sw-action-card"&gt;
+        &lt;div class="sw-action-card-icon sw-action-card-icon-primary"&gt;
+            &lt;i class="fa-solid fa-building"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;h3 class="sw-action-card-title"&gt;Departamentos&lt;/h3&gt;
+        &lt;p class="sw-action-card-desc"&gt;Importa o actualiza la lista de
+            departamentos desde un archivo Excel/CSV.&lt;/p&gt;
+        &lt;a href="..." class="sw-btn sw-btn-primary sw-action-card-action"&gt;
+            &lt;i class="fa-solid fa-file-import"&gt;&lt;/i&gt; Ir a importación
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- variante deshabilitada ("Próximamente"): agregar .sw-action-card-disabled
+     y cambiar el &lt;a&gt; por un &lt;span&gt;, sin JS --&gt;
+&lt;div class="sw-action-card sw-action-card-disabled"&gt;...&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <!-- ══════════════════ PRODUCT CARD ══════════════════ -->
+        <section id="product-card" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-cart-shopping"></i> Product card</h2>
+                <p><code>.sw-product-card</code> — imagen, chip vidrio-esmerilado, favorito, rating, precio tipográfico y CTA. Nuevo en v1.0.0. Pensado para catálogos de producto (SoffCaja) o cursos/recursos — precio en tipografía (no píldora) y CTA en <code>--p</code>, no en negro genérico.</p>
+            </div>
+            <div class="gal-preview gal-preview-block">
+                <div class="sw-product-card-grid">
+                    <article class="sw-product-card">
+                        <div class="sw-product-card-media">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="">
+                            <span class="sw-product-card-tag sw-product-card-tag-accent"><i class="fa-solid fa-bolt"></i> Oferta</span>
+                            <button type="button" class="sw-product-card-fav" aria-label="Guardar" aria-pressed="true" onclick="galToggleFav(this)"><i class="fa-solid fa-heart"></i></button>
+                        </div>
+                        <div class="sw-product-card-body">
+                            <h3 class="sw-product-card-title">Auriculares inalámbricos Pro</h3>
+                            <p class="sw-product-card-desc">Cancelación de ruido activa, 30h de batería.</p>
+                            <ul class="sw-product-card-meta">
+                                <li><i class="fa-solid fa-truck-fast"></i> Envío en 24h</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> Garantía 12 meses</li>
+                            </ul>
+                            <div class="sw-product-card-foot">
+                                <span class="sw-rating" aria-label="4.7 de 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="sw-rating-value">4.7</span></span>
+                                <span class="sw-product-card-price">$89<small>.00</small></span>
+                            </div>
+                            <button class="sw-btn sw-btn-primary sw-product-card-cta"><i class="fa-solid fa-cart-plus"></i> Comprar ahora</button>
+                        </div>
+                    </article>
+                    <article class="sw-product-card">
+                        <div class="sw-product-card-media">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=500&q=80" alt="">
+                            <span class="sw-product-card-tag sw-product-card-tag-success"><i class="fa-solid fa-circle-play"></i> Curso</span>
+                            <button type="button" class="sw-product-card-fav" aria-label="Guardar" aria-pressed="false" onclick="galToggleFav(this)"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="sw-product-card-body">
+                            <h3 class="sw-product-card-title">HTML, CSS y JavaScript desde cero</h3>
+                            <p class="sw-product-card-desc">23 horas de video, 6 proyectos prácticos.</p>
+                            <ul class="sw-product-card-meta">
+                                <li><i class="fa-solid fa-clock"></i> 23 horas on-demand</li>
+                                <li><i class="fa-solid fa-file-lines"></i> 37 artículos</li>
+                            </ul>
+                            <div class="sw-product-card-foot">
+                                <span class="sw-rating" aria-label="4.2 de 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="sw-rating-value">4.2</span></span>
+                                <span class="sw-product-card-price">$49<small>.00</small></span>
+                            </div>
+                            <button class="sw-btn sw-btn-primary sw-product-card-cta"><i class="fa-solid fa-cart-plus"></i> Comprar ahora</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-product-card-grid"&gt;
+    &lt;article class="sw-product-card"&gt;
+        &lt;div class="sw-product-card-media"&gt;
+            &lt;img src="..." alt="..."&gt;
+            &lt;span class="sw-product-card-tag sw-product-card-tag-accent"&gt;
+                &lt;i class="fa-solid fa-bolt"&gt;&lt;/i&gt; Oferta
+            &lt;/span&gt;
+            &lt;button type="button" class="sw-product-card-fav" aria-pressed="false"&gt;
+                &lt;i class="fa-regular fa-heart"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="sw-product-card-body"&gt;
+            &lt;h3 class="sw-product-card-title"&gt;Nombre del producto&lt;/h3&gt;
+            &lt;p class="sw-product-card-desc"&gt;Descripción corta.&lt;/p&gt;
+            &lt;ul class="sw-product-card-meta"&gt;
+                &lt;li&gt;&lt;i class="fa-solid fa-truck-fast"&gt;&lt;/i&gt; Envío en 24h&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="sw-product-card-foot"&gt;
+                &lt;span class="sw-rating" aria-label="4.7 de 5"&gt;
+                    &lt;i class="fa-solid fa-star"&gt;&lt;/i&gt;&lt;i class="fa-solid fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fa-solid fa-star"&gt;&lt;/i&gt;&lt;i class="fa-solid fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fa-solid fa-star-half-stroke"&gt;&lt;/i&gt;
+                    &lt;span class="sw-rating-value"&gt;4.7&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class="sw-product-card-price"&gt;$89&lt;small&gt;.00&lt;/small&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button class="sw-btn sw-btn-primary sw-product-card-cta"&gt;Comprar ahora&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+
+&lt;!-- variantes del chip: sw-product-card-tag-accent / -success / -warning --&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <!-- ══════════════════ PROFILE CARD ══════════════════ -->
+        <section id="profile-card" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-id-badge"></i> Profile card</h2>
+                <p><code>.sw-profile-card</code> — avatar con anillo degradé <code>--p→--a</code>, punto de estado real (no decorativo), menú "..." y acciones divididas. Nuevo en v1.0.0. El menú reusa <code>.sw-bico</code> + <code>.sw-row-menu-dropdown</code> ya existentes — cero CSS nuevo para eso.</p>
+            </div>
+            <div class="gal-preview gal-preview-block">
+                <div class="sw-profile-card-grid">
+                    <article class="sw-profile-card">
+                        <div class="sw-profile-card-head">
+                            <div class="sw-profile-card-avatar-wrap">
+                                <span class="sw-user-avatar sw-avatar-lg sw-profile-card-avatar"><i class="fa-solid fa-user"></i></span>
+                                <span class="sw-profile-card-status" title="Activo"></span>
+                            </div>
+                            <div class="sw-row-menu">
+                                <button type="button" class="sw-bico sw-row-menu-trigger" aria-haspopup="true" aria-expanded="false" title="Más acciones" aria-label="Más acciones" onclick="galToggleRowMenu(this)"><i class="fa-solid fa-ellipsis"></i></button>
+                                <div class="sw-row-menu-dropdown">
+                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-pen"></i> Editar</a>
+                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="sw-profile-card-name">Ana Torres</h3>
+                        <p class="sw-profile-card-role"><i class="fa-solid fa-location-dot"></i> Ciudad de Panamá, PA</p>
+                        <p class="sw-profile-card-desc">Contadora senior, 6 años liderando el equipo de nómina.</p>
+                        <div class="sw-profile-card-actions">
+                            <a href="mailto:ana@empresa.com" class="sw-profile-card-action"><i class="fa-regular fa-envelope"></i> Enviar correo</a>
+                            <a href="#" class="sw-profile-card-action"><i class="fa-solid fa-pen"></i> Editar perfil</a>
+                        </div>
+                    </article>
+                    <article class="sw-profile-card">
+                        <div class="sw-profile-card-head">
+                            <div class="sw-profile-card-avatar-wrap">
+                                <span class="sw-user-avatar sw-avatar-lg sw-profile-card-avatar"><i class="fa-solid fa-user"></i></span>
+                                <span class="sw-profile-card-status sw-profile-card-status-away" title="Ausente"></span>
+                            </div>
+                            <div class="sw-row-menu">
+                                <button type="button" class="sw-bico sw-row-menu-trigger" aria-haspopup="true" aria-expanded="false" title="Más acciones" aria-label="Más acciones" onclick="galToggleRowMenu(this)"><i class="fa-solid fa-ellipsis"></i></button>
+                                <div class="sw-row-menu-dropdown">
+                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-pen"></i> Editar</a>
+                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="sw-profile-card-name">Juan Pérez</h3>
+                        <p class="sw-profile-card-role"><i class="fa-solid fa-location-dot"></i> David, PA</p>
+                        <p class="sw-profile-card-desc">Analista de recursos humanos, foco en reclutamiento.</p>
+                        <div class="sw-profile-card-actions">
+                            <a href="mailto:juan@empresa.com" class="sw-profile-card-action"><i class="fa-regular fa-envelope"></i> Enviar correo</a>
+                            <a href="#" class="sw-profile-card-action"><i class="fa-solid fa-pen"></i> Editar perfil</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;article class="sw-profile-card"&gt;
+    &lt;div class="sw-profile-card-head"&gt;
+        &lt;div class="sw-profile-card-avatar-wrap"&gt;
+            &lt;span class="sw-user-avatar sw-avatar-lg sw-profile-card-avatar"&gt;
+                &lt;img src="..." class="sw-user-avatar-img" alt=""&gt;
+            &lt;/span&gt;
+            &lt;span class="sw-profile-card-status" title="Activo"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="sw-row-menu"&gt;
+            &lt;button type="button" class="sw-bico sw-row-menu-trigger" aria-haspopup="true"
+                    aria-expanded="false" onclick="swToggleRowMenu(this)"&gt;
+                &lt;i class="fa-solid fa-ellipsis"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;div class="sw-row-menu-dropdown"&gt;
+                &lt;a href="..." class="sw-row-menu-item"&gt;&lt;i class="fa-solid fa-pen"&gt;&lt;/i&gt; Editar&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h3 class="sw-profile-card-name"&gt;Ana Torres&lt;/h3&gt;
+    &lt;p class="sw-profile-card-role"&gt;&lt;i class="fa-solid fa-location-dot"&gt;&lt;/i&gt; Panamá, PA&lt;/p&gt;
+    &lt;p class="sw-profile-card-desc"&gt;Contadora senior, 6 años en nómina.&lt;/p&gt;
+    &lt;div class="sw-profile-card-actions"&gt;
+        &lt;a href="mailto:..." class="sw-profile-card-action"&gt;
+            &lt;i class="fa-regular fa-envelope"&gt;&lt;/i&gt; Enviar correo
+        &lt;/a&gt;
+        &lt;a href="..." class="sw-profile-card-action"&gt;
+            &lt;i class="fa-solid fa-pen"&gt;&lt;/i&gt; Editar perfil
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;!-- variantes de estado: sw-profile-card-status-away / -offline --&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+    <span class="sw-footer-links"><a href="index.html">Índice</a></span>
+</footer>
+
+<script src="assets/gallery.js"></script>
+</body>
+</html>

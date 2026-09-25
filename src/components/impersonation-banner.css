@@ -1,0 +1,48 @@
+/* Banner de impersonación — de SoffiFac (Familia A). Cualquier app con
+   soporte que entra "como" un usuario lo necesita.
+
+   Distinto de .sw-alert a propósito: .sw-alert es solo para mensajes de una
+   sola vez (auto-dismiss vía swInitAlerts) — este banner debe quedarse
+   visible mientras dure la sesión impersonada, así que no lleva la clase
+   .sw-alert ni entra en swInitAlerts().
+
+   Fix de compatibilidad aplicado al portar: la fuente en SoffiFac usaba
+   color-mix() sin fallback estático. Aquí va con el mixin, como el resto
+   del paquete. */
+
+.sw-impersonation-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    padding: 0.65rem 1.25rem;
+    font-size: var(--sw-text-base);
+    font-weight: var(--sw-font-medium);
+
+    background: rgba(250, 151, 0, 0.16);
+    background: color-mix(in srgb, var(--wa) 16%, transparent);
+    border-bottom: 1px solid rgba(250, 151, 0, 0.3);
+    border-bottom: 1px solid color-mix(in srgb, var(--wa) 30%, transparent);
+    color: #7d4c00;
+    color: color-mix(in srgb, var(--wa) 50%, #000);
+}
+
+.sw-impersonation-banner-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sw-impersonation-banner-exit {
+    /* .sw-btn fija color: var(--btn-text) pero no un background propio (eso
+       lo da siempre la variante, sw-btn-primary/error/etc.) — sin esto el
+       botón quedaba con texto sin fondo visible sobre el banner. */
+    background: var(--wa);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .sw-impersonation-banner {
+    color: var(--wa);
+}

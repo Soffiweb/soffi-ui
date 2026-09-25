@@ -1,0 +1,76 @@
+/* Toast — de SoffiFac (Familia A), único patrón de notificación efímera del
+   sistema. Distinto de .sw-alert (_alerts.scss): el toast flota sobre el
+   contenido y se auto-cierra; .sw-alert es un bloque fijo que se queda en el
+   flujo de la página.
+
+   Sofficon resuelve hoy lo mismo con sweetalert2 sin tematizar. Pendiente:
+   overrides de tema para swal2 o migrar sus usos a este toast. */
+
+.sw-alert.sw-alert-hide {
+    animation: sw-alert-out 0.2s ease-in forwards;
+}
+
+/* Variante toast: notificaciones cortas de una sola acción puntual
+   ("Producto creado correctamente"). Flota sobre el contenido en vez de
+   ocupar espacio en el layout — para mensajes largos o específicos (los de
+   facturas, listas de errores de validación, etc.) usar el .sw-alert
+   normal, que se queda en el flujo de la página. */
+.sw-alert-toast {
+    position: fixed;
+    top: 88px;
+    right: 20px;
+    z-index: 1080;
+    max-width: min(360px, calc(100vw - 40px));
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: var(--sh-lg);
+}
+
+.sw-alert-close {
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    opacity: 0.6;
+    cursor: pointer;
+    line-height: 1;
+    font-size: var(--sw-text-sm);
+}
+
+.sw-alert-close:hover {
+    opacity: 1;
+}
+
+@keyframes sw-alert-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sw-alert-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sw-alert-toast {
+        left: 16px;
+        right: 16px;
+        top: 80px;
+        max-width: none;
+    }
+}

@@ -1,0 +1,83 @@
+/* Modal propio (backdrop + .is-open)
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1060;
+    background: rgba(0, 0, 0, 0.55);
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.sw-modal-backdrop.is-open {
+    display: flex;
+}
+
+body.sw-modal-open {
+    overflow: hidden;
+}
+
+.sw-modal {
+    background: var(--b1);
+    border-radius: var(--rl);
+    box-shadow: var(--sh-md);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 460px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    border: var(--brd);
+}
+
+.sw-modal-lg {
+    max-width: 760px;
+}
+
+.sw-modal-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--p);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.sw-modal-close {
+    background: transparent;
+    border: none;
+    color: var(--bc);
+    cursor: pointer;
+    font-size: 23px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.sw-modal-close:hover {
+    color: var(--p);
+}
+
+.sw-modal-body {
+    font-size: 15px;
+    color: var(--bc2);
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.sw-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}

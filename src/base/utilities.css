@@ -1,0 +1,157 @@
+/* Utilidades — de Sofficon base.css (superset estricto de SoffCaja/SoffiFac).
+   Reemplazan las de Bootstrap (text-*, d-*, spacing, border) para no
+   depender de una hoja de estilos ajena. */
+
+/* .text-center/.text-right/.text-left (sin prefijo sw-) se alían aquí: son
+   nombres de utilidad Bootstrap que muchas vistas heredadas ya usan; sin
+   este alias quedan sin CSS y el contenido se ve siempre alineado a la
+   izquierda. */
+.sw-text-center,
+.text-center {
+    text-align: center;
+}
+
+.sw-text-right,
+.text-right {
+    text-align: right;
+}
+
+.sw-text-left,
+.text-left {
+    text-align: left;
+}
+
+.sw-font-bold { font-weight: var(--sw-font-bold); }
+.sw-font-semibold { font-weight: var(--sw-font-semibold); }
+.sw-small { font-size: var(--sw-text-sm); }
+.sw-nowrap { white-space: nowrap; }
+
+.sw-d-flex { display: flex; }
+.sw-d-grid { display: grid; }
+.sw-d-block { display: block; }
+.sw-d-none { display: none; }
+.sw-flex-wrap { flex-wrap: wrap; }
+.sw-flex-grow-1 { flex-grow: 1; }
+.sw-gap-2 { gap: 0.5rem; }
+.sw-gap-3 { gap: 1rem; }
+
+.sw-border-0 { border: 0; }
+.sw-border-bottom { border-bottom: var(--brd); }
+
+.sw-border-primary {
+    border-color: rgba(40, 68, 154, 0.35);
+    border-color: color-mix(in srgb, var(--p) 35%, transparent);
+}
+
+.sw-border-success {
+    border-color: rgba(0, 186, 123, 0.4);
+    border-color: color-mix(in srgb, var(--su) 40%, transparent);
+}
+
+.sw-bg-success { background: var(--su); }
+
+.sw-text-muted { color: var(--bc2); }
+.sw-text-success { color: var(--su); }
+.sw-text-primary { color: var(--p); }
+.sw-text-info { color: var(--in); }
+.sw-text-warning { color: var(--wa); }
+.sw-text-error { color: var(--er); }
+.sw-text-inverse { color: var(--pc); }
+.sw-text-uppercase { text-transform: uppercase; }
+
+.sw-p-0 { padding: 0; }
+.sw-p-3 { padding: 1rem; }
+.sw-my-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.sw-my-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+/* Escala de espaciado: 0=0, 1=.25rem, 2=.5rem, 3=1rem, 4=1.5rem, 5=3rem */
+.sw-mt-0 { margin-top: 0; }
+.sw-mt-1 { margin-top: 0.25rem; }
+.sw-mt-2 { margin-top: 0.5rem; }
+.sw-mt-3 { margin-top: 1rem; }
+.sw-mt-4 { margin-top: 1.5rem; }
+.sw-mt-5 { margin-top: 3rem; }
+.sw-mt-auto { margin-top: auto; }
+
+.sw-mb-0 { margin-bottom: 0; }
+.sw-mb-1 { margin-bottom: 0.25rem; }
+.sw-mb-2 { margin-bottom: 0.5rem; }
+.sw-mb-3 { margin-bottom: 1rem; }
+.sw-mb-4 { margin-bottom: 1.5rem; }
+.sw-mb-5 { margin-bottom: 3rem; }
+
+.sw-mr-0 { margin-right: 0; }
+.sw-mr-2 { margin-right: 0.5rem; }
+.sw-mr-3 { margin-right: 1rem; }
+
+.sw-ml-0 { margin-left: 0; }
+.sw-ml-2 { margin-left: 0.5rem; }
+
+.sw-pt-3 { padding-top: 1rem; }
+.sw-pt-4 { padding-top: 1.5rem; }
+
+.sw-pb-0 { padding-bottom: 0; }
+.sw-pb-3 { padding-bottom: 1rem; }
+.sw-pb-4 { padding-bottom: 1.5rem; }
+
+.sw-px-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+.sw-py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.sw-py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.sw-py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+/* Alineación flex — para .sw-row, .sw-d-flex o cualquier contenedor flex */
+.sw-justify-content-start { justify-content: flex-start; }
+.sw-justify-content-end { justify-content: flex-end; }
+.sw-justify-content-center { justify-content: center; }
+.sw-justify-content-between { justify-content: space-between; }
+.sw-justify-content-around { justify-content: space-around; }
+
+.sw-align-items-start { align-items: flex-start; }
+.sw-align-items-end { align-items: flex-end; }
+.sw-align-items-center { align-items: center; }
+.sw-align-items-stretch { align-items: stretch; }
+
+.sw-align-self-start { align-self: flex-start; }
+.sw-align-self-end { align-self: flex-end; }
+.sw-align-self-center { align-self: center; }
+
+.sw-flex-column { flex-direction: column; }
+.sw-flex-row { flex-direction: row; }
+
+.sw-h-100 { height: 100%; }
+
+/* Variantes responsive de dirección/alineación flex. Se usan sobre todo en
+   cabeceras de card (título a la izquierda, badge o acciones a la derecha)
+   que en móvil deben apilarse. Breakpoints alineados a los de sw-col-*. */
+@media (min-width: 576px) {
+    .sw-flex-sm-row { flex-direction: row; }
+    .sw-align-items-sm-center { align-items: center; }
+    .sw-mb-sm-0 { margin-bottom: 0; }
+    .sw-mt-sm-0 { margin-top: 0; }
+    .sw-ml-sm-2 { margin-left: 0.5rem; }
+    .sw-mr-sm-2 { margin-right: 0.5rem; }
+}
+
+@media (min-width: 768px) {
+    .sw-flex-md-row { flex-direction: row; }
+    .sw-align-items-md-center { align-items: center; }
+    .sw-align-items-md-start { align-items: flex-start; }
+    .sw-mb-md-0 { margin-bottom: 0; }
+    .sw-mt-md-0 { margin-top: 0; }
+}
+
+@media (min-width: 992px) {
+    .sw-flex-lg-row { flex-direction: row; }
+    .sw-align-items-lg-center { align-items: center; }
+    .sw-align-items-lg-start { align-items: flex-start; }
+    .sw-justify-content-lg-end { justify-content: flex-end; }
+    .sw-mb-lg-0 { margin-bottom: 0; }
+    .sw-mt-lg-0 { margin-top: 0; }
+    .sw-mr-lg-3 { margin-right: 1rem; }
+}
+
+@media (min-width: 1200px) {
+    .sw-mb-xl-0 { margin-bottom: 0; }
+    .sw-mt-xl-0 { margin-top: 0; }
+}

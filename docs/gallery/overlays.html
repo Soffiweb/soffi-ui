@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overlays — Soffi UI</title>
+<meta name="description" content="Modal de soffiweb/soffi-ui.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-swatchbook"></i></span>
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">Soffi UI</span>
+            <span class="sw-topbar-period">Galería de componentes · v1.0.0</span>
+        </div>
+    </div>
+    <div class="sw-topbar-actions">
+        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> dist/soffi-ui.css</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Índice</div>
+            <div class="sw-sb-brand-sub"><a href="index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-arrow-left"></i> Volver a Tokens</a></div>
+        </div>
+
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="index.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Acciones</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones</a>
+        <a href="acciones.html#badges" class="sw-sb-link"><i class="fa-solid fa-tag"></i> Badges</a>
+
+        <div class="sw-sb-group">Feedback</div>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+        <a href="feedback.html#toast" class="sw-sb-link"><i class="fa-solid fa-bell"></i> Toast</a>
+        <a href="feedback.html#impersonation" class="sw-sb-link"><i class="fa-solid fa-user-secret"></i> Banner impersonación</a>
+        <a href="feedback.html#empty-state" class="sw-sb-link"><i class="fa-solid fa-inbox"></i> Estado vacío</a>
+
+        <div class="sw-sb-group">Contenido</div>
+        <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="contenido.html#action-card" class="sw-sb-link"><i class="fa-solid fa-grip"></i> Action card</a>
+        <a href="contenido.html#product-card" class="sw-sb-link"><i class="fa-solid fa-cart-shopping"></i> Product card</a>
+        <a href="contenido.html#profile-card" class="sw-sb-link"><i class="fa-solid fa-id-badge"></i> Profile card</a>
+
+        <div class="sw-sb-group">Formularios</div>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Inputs &amp; select</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tabla</a>
+        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link active"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
+
+        <div class="sw-sb-group">Dashboard</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Métricas, quicklinks, dona</a>
+
+        <div class="sw-sb-group">Acceso</div>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+    </nav>
+
+    <main class="sw-main">
+
+        <!-- ══════════════════ MODAL ══════════════════ -->
+        <section id="modal" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-regular fa-window-restore"></i> Modal</h2>
+                <p><code>.sw-modal-backdrop</code> + <code>.sw-modal</code>. Contrato: <code>swOpenModal(id)</code> reubica el modal como hijo directo de <code>&lt;body&gt;</code> (necesario porque <code>.sw-main</code> crea su propio stacking context). Nunca <code>data-toggle="modal"</code>: no hay Bootstrap.</p>
+            </div>
+            <div class="gal-preview">
+                <button class="sw-btn sw-btn-primary" onclick="galOpenModal('gal-demo-modal')"><i class="fa-regular fa-window-restore"></i> Abrir modal</button>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;button onclick="swOpenModal('miModal')"&gt;Abrir&lt;/button&gt;
+
+&lt;div class="sw-modal-backdrop" id="miModal"&gt;
+    &lt;div class="sw-modal" role="dialog" aria-modal="true"&gt;
+        &lt;div class="sw-modal-title"&gt;
+            Título
+            &lt;button class="sw-modal-close" onclick="swCloseModal('miModal')"&gt;&amp;times;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="sw-modal-body"&gt;Contenido...&lt;/div&gt;
+        &lt;div class="sw-modal-actions"&gt;
+            &lt;button class="sw-btn sw-btn-ghost" onclick="swCloseModal('miModal')"&gt;Cancelar&lt;/button&gt;
+            &lt;button class="sw-btn sw-btn-primary"&gt;Guardar&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+
+            <div class="sw-modal-backdrop" id="gal-demo-modal" onclick="if(event.target===this) galCloseModal('gal-demo-modal')">
+                <div class="sw-modal" role="dialog" aria-modal="true" aria-labelledby="gal-demo-modal-title">
+                    <div class="sw-modal-title" id="gal-demo-modal-title">
+                        Nuevo departamento
+                        <button type="button" class="sw-modal-close" onclick="galCloseModal('gal-demo-modal')" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="sw-modal-body">
+                        <div class="sw-field">
+                            <label class="sw-label">Nombre</label>
+                            <input type="text" class="sw-input" placeholder="Ej. Logística">
+                        </div>
+                    </div>
+                    <div class="sw-modal-actions">
+                        <button type="button" class="sw-btn sw-btn-ghost" onclick="galCloseModal('gal-demo-modal')">Cancelar</button>
+                        <button type="button" class="sw-btn sw-btn-primary" onclick="galCloseModal('gal-demo-modal')">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+    <span class="sw-footer-links"><a href="index.html">Índice</a></span>
+</footer>
+
+<script src="assets/gallery.js"></script>
+</body>
+</html>

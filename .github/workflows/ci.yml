@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+
+jobs:
+  compat:
+    name: Compatibilidad de navegador
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      # La regla que no se negocia: ningun color-mix() sin fallback estatico,
+      # ningun oklch(). Ver skills/soffiweb-ui-core/compat.md.
+      - name: check-compat
+        run: php scripts/check-compat.php
+
+  build:
+    name: Build reproducible
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Sintaxis PHP
+        run: |
+          php -l scripts/build.php
+          php -l scripts/check-compat.php
+          php -l src-php/SoffiUiServiceProvider.php
+
+      - name: Sintaxis JS
+        run: node --check js/soffi-ui.js
+
+      - name: composer validate
+        run: composer validate --no-check-all --no-check-publish
+
+      # dist/ esta committeado para que las apps lo consuman por Composer sin
+      # build. Si el build genera algo distinto a lo committeado, alguien
+      # edito dist/ a mano o se olvido de reconstruir.
+      - name: dist/ coincide con el fuente
+        run: |
+          php scripts/build.php
+          if ! git diff --exit-code -- dist/; then
+            echo "::error::dist/ no coincide con src/. Correr 'php scripts/build.php' y commitear."
+            exit 1
+          fi

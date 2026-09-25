@@ -1,0 +1,85 @@
+/* Overrides de tema sobre select2 (librería de terceros)
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.select2-hidden-accessible {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+    display: flex;
+    align-items: center;
+    min-height: 43px;
+    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
+    border-radius: var(--r);
+    background: var(--b1);
+    color: var(--bc);
+    outline: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 2.25rem;
+    color: var(--bc);
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: var(--bc2);
+}
+
+.sw-select:has(> option:checked[value=""]) + .select2-container .select2-selection__rendered {
+    color: var(--bc2);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 6px;
+    right: 8px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--open .select2-selection--single {
+    border-color: var(--p);
+    box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
+}
+
+.select2-dropdown {
+    border: var(--brd);
+    border-radius: var(--r);
+    background: var(--b1);
+    color: var(--bc);
+}
+
+.select2-search--dropdown .select2-search__field {
+    height: 40px;
+    padding: 0.5rem 0.85rem;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
+    border-radius: var(--r);
+    color: var(--bc);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: var(--p);
+    color: var(--btn-text);
+}

@@ -1,0 +1,44 @@
+/* Reset — de Sofficon base.css. font-family/font-size/line-height de html
+   viven en tokens/_typography.scss; aquí solo el reset de caja y la
+   aplicación de los tokens de color a html/body. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: var(--b1);
+    color: var(--bc);
+    transition:
+        background 0.25s,
+        color 0.25s;
+}
+
+body {
+    font-family: var(--sw-font-sans) !important;
+}
+
+/* Collapse propio (ver swToggleCollapse en soffi-ui.js). Se conservan los
+   nombres .collapse/.show porque las vistas ya los usan; sin estas reglas el
+   contenido queda siempre visible, que es como estaba antes de tener JS
+   propio. */
+.collapse:not(.show) {
+    display: none;
+}
+
+/* Reset de los contenedores .main / .container-fluid que las vistas
+   heredaron del template viejo (Bootstrap/CoreUI). Vivían en
+   adapters/bootstrap-4.css, eliminado al sacar Bootstrap del proyecto. */
+.sw-main > .main {
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    background: transparent;
+}
+
+.sw-main > .main > .container-fluid {
+    padding: 0;
+}

@@ -1,0 +1,26 @@
+/* Espaciado, radios y sombras — consenso de las 4 apps, con un solo cambio:
+   --sw-radius-pill pasa de 25px a 9999px (era el único radio en px de una
+   escala en rem; con textos más grandes 25px deja de verse como píldora). */
+:root {
+    --sw-radius-sm: 0.25rem;
+    --sw-radius-md: 0.65rem;
+    --sw-radius-lg: 1.1rem;
+    --sw-radius-pill: 9999px;
+
+    --sw-spacing-xs: 0.25rem;
+    --sw-spacing-sm: 0.5rem;
+    --sw-spacing-md: 1rem;
+    --sw-spacing-lg: 1.5rem;
+    --sw-spacing-xl: 2rem;
+
+    --sw-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --sw-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --sw-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.14);
+
+    /* Alias cortos — ver nota en _color.scss, misma regla: no renombrar. */
+    --r: var(--sw-radius-md);
+    --rl: var(--sw-radius-lg);
+    --sh-sm: var(--sw-shadow-sm);
+    --sh-md: var(--sw-shadow-md);
+    --sh-lg: var(--sw-shadow-lg);
+}

@@ -1,0 +1,38 @@
+/* Card genérica
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-card {
+    min-width: 0;
+    background: var(--b1);
+    border: var(--brd);
+    border-radius: var(--rl);
+    padding: 1.2rem 1.4rem;
+    transition: box-shadow 0.18s;
+}
+
+.sw-card:hover {
+    box-shadow: var(--sh-md);
+}
+
+.sw-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--p);
+    line-height: 1.25;
+    margin-bottom: 7px;
+}
+
+.sw-card-body {
+    font-size: 15px;
+    color: var(--bc2);
+    line-height: 1.55;
+}
+
+.sw-card-footer {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: var(--brd);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

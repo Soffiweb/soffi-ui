@@ -1,0 +1,411 @@
+/* Pantallas de autenticación (login, selección de empresa, recuperar clave)
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+/* ── Pantallas de acceso (login, seleccion de empresa, recuperar clave...) ── */
+.sw-auth-page {
+    background: var(--b2);
+    min-height: 100vh;
+}
+
+.sw-auth-page-brand {
+    background: var(--p);
+}
+
+.sw-auth-page-soft {
+    background: var(--b2);
+}
+
+.sw-auth-shell {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    width: 100%;
+}
+
+.sw-auth-card {
+    background: var(--b2);
+    max-width: 420px;
+    width: 100%;
+}
+
+.sw-auth-card-product {
+    background: var(--b1);
+    border-color: rgba(40, 68, 154, 0.18);
+    border-color: color-mix(in srgb, var(--p) 18%, transparent);
+    padding: 2rem;
+    box-shadow: var(--sh-lg);
+}
+
+.sw-auth-card-framed {
+    padding: 0;
+    overflow: hidden;
+}
+
+.sw-auth-card-plain {
+    background: var(--b1);
+}
+
+.sw-auth-card-wide {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+    max-width: 980px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sw-auth-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-width: 0;
+    padding: 2rem;
+    background: var(--b2);
+    border-right: var(--brd);
+}
+
+.sw-auth-system {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
+}
+
+.sw-auth-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--r);
+    background: #e3e7f3;
+    background: color-mix(in srgb, var(--p) 12%, var(--b1));
+    color: var(--p);
+    font-size: 20px;
+}
+
+.sw-auth-system-text {
+    min-width: 0;
+}
+
+.sw-auth-system-name {
+    display: block;
+    overflow: hidden;
+    color: var(--bc);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sw-auth-system-subtitle {
+    display: block;
+    color: var(--bc2);
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.sw-auth-copy-block {
+    max-width: 520px;
+}
+
+.sw-auth-heading {
+    color: var(--bc);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.sw-auth-copy {
+    color: var(--bc2);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.sw-auth-feature-list {
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1.35rem 0 0;
+    padding: 0;
+}
+
+.sw-auth-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    color: var(--bc);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sw-auth-feature-list i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--r);
+    background: rgba(40, 68, 154, 0.1);
+    background: color-mix(in srgb, var(--p) 10%, transparent);
+    color: var(--p);
+    font-size: 13px;
+}
+
+.sw-auth-illustration {
+    align-self: center;
+    max-width: min(360px, 100%);
+    width: 100%;
+}
+
+.sw-auth-illustration img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.sw-auth-form-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 2rem;
+    background: var(--b1);
+}
+
+.sw-auth-form-head {
+    margin-bottom: 1.5rem;
+}
+
+.sw-auth-form-title {
+    color: var(--bc);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+
+.sw-auth-form-copy {
+    color: var(--bc2);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.sw-auth-card-header {
+    background: var(--p);
+    color: var(--btn-text);
+    padding: 1.65rem 1.75rem;
+    text-align: center;
+}
+
+.sw-auth-card-eyebrow {
+    color: rgba(253, 253, 255, 0.76);
+    color: color-mix(in srgb, var(--btn-text) 76%, transparent);
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 0.45rem;
+    text-transform: uppercase;
+}
+
+.sw-auth-card-header-title {
+    color: var(--btn-text);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.sw-auth-card-header-subtitle {
+    color: rgba(253, 253, 255, 0.82);
+    color: color-mix(in srgb, var(--btn-text) 82%, transparent);
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 0.55rem 0 0;
+}
+
+.sw-auth-card-body {
+    padding: 1.75rem;
+}
+
+.sw-auth-brand {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.sw-auth-logo {
+    height: 56px;
+    width: auto;
+}
+
+.sw-auth-logo-lg {
+    height: 68px;
+}
+
+.sw-auth-title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.sw-auth-subtitle {
+    font-size: 14px;
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+.sw-auth-submit {
+    justify-content: center;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.sw-auth-remember {
+    align-items: center;
+    color: var(--bc2);
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    gap: 8px;
+    margin: 0.9rem 0 1.1rem;
+}
+
+.sw-auth-remember input[type="checkbox"] {
+    accent-color: var(--p);
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+}
+
+.sw-auth-input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.sw-auth-input-addon {
+    align-items: center;
+    background: var(--b2);
+    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
+    border-right: 0;
+    border-radius: var(--r) 0 0 var(--r);
+    color: var(--bc2);
+    display: inline-flex;
+    flex: 0 0 44px;
+    justify-content: center;
+    transition:
+        border-color 0.15s,
+        box-shadow 0.15s,
+        color 0.15s;
+}
+
+.sw-auth-input-group .sw-input,
+.sw-auth-input-group .sw-select {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.sw-auth-input-group:focus-within .sw-auth-input-addon {
+    border-color: var(--p);
+    box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
+    color: var(--p);
+}
+
+.sw-auth-input-group.sw-error .sw-auth-input-addon,
+.sw-auth-input-group:has(.sw-error) .sw-auth-input-addon {
+    border-color: var(--er);
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--er) 10%, transparent);
+    color: var(--er);
+}
+
+.sw-auth-note {
+    background: #dde3f3;
+    background: color-mix(in srgb, var(--p) 8%, var(--b2));
+    border: var(--brd);
+    border-left: 3px solid var(--p);
+    border-radius: var(--r);
+    color: var(--bc2);
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+}
+
+.sw-auth-actions {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.sw-auth-footnote {
+    color: var(--bc2);
+    font-size: 12px;
+    line-height: 1.45;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .sw-auth-shell {
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .sw-auth-card-wide {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 460px;
+    }
+
+    .sw-auth-visual {
+        border-right: 0;
+        border-bottom: var(--brd);
+        padding: 1.25rem;
+    }
+
+    .sw-auth-heading {
+        font-size: 22px;
+    }
+
+    .sw-auth-copy,
+    .sw-auth-illustration {
+        display: none;
+    }
+
+    .sw-auth-feature-list {
+        margin-top: 1rem;
+    }
+
+    .sw-auth-form-panel {
+        padding: 1.25rem;
+    }
+
+    .sw-auth-card-product {
+        padding: 1.5rem;
+    }
+
+    .sw-auth-card-framed {
+        padding: 0;
+    }
+
+    .sw-auth-card-header,
+    .sw-auth-card-body {
+        padding: 1.35rem;
+    }
+
+    .sw-auth-card-header-title {
+        font-size: 20px;
+    }
+}

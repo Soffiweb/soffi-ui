@@ -1,0 +1,24 @@
+/* Tabs simples
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-tabs {
+    display: flex;
+    border-bottom: var(--brd);
+    margin-bottom: 18px;
+}
+
+.sw-tab {
+    padding: 0.65rem 1.2rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--bc2);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s;
+}
+
+.sw-tab.active {
+    color: var(--p);
+    border-bottom-color: var(--p);
+}

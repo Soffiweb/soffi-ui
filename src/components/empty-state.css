@@ -1,0 +1,16 @@
+/* Estado vacío genérico
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-empty-state {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--bc2);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sw-empty-state i {
+    color: var(--p);
+    font-size: 18px;
+}

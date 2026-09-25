@@ -1,0 +1,59 @@
+/* Alertas embebidas (bloque fijo dentro de la página)
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--r);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.sw-alert-info {
+    background: rgba(0, 164, 242, 0.1);
+    background: color-mix(in srgb, var(--in) 10%, transparent);
+    border: 1px solid rgba(0, 164, 242, 0.22);
+    border: 1px solid color-mix(in srgb, var(--in) 22%, transparent);
+    color: #0070a5;
+    color: color-mix(in srgb, var(--in) 68%, #000);
+}
+
+.sw-alert-success {
+    background: rgba(0, 186, 123, 0.1);
+    background: color-mix(in srgb, var(--su) 10%, transparent);
+    border: 1px solid rgba(0, 186, 123, 0.22);
+    border: 1px solid color-mix(in srgb, var(--su) 22%, transparent);
+    color: #00734c;
+    color: color-mix(in srgb, var(--su) 62%, #000);
+}
+
+.sw-alert-warning {
+    background: rgba(250, 151, 0, 0.12);
+    background: color-mix(in srgb, var(--wa) 12%, transparent);
+    border: 1px solid rgba(250, 151, 0, 0.26);
+    border: 1px solid color-mix(in srgb, var(--wa) 26%, transparent);
+    color: #7d4c00;
+    color: color-mix(in srgb, var(--wa) 50%, #000);
+}
+
+.sw-alert-error {
+    background: rgba(225, 29, 72, 0.08);
+    background: color-mix(in srgb, var(--er) 8%, transparent);
+    border: 1px solid rgba(225, 29, 72, 0.18);
+    border: 1px solid color-mix(in srgb, var(--er) 18%, transparent);
+    color: var(--er);
+}
+
+[data-theme="dark"] .sw-alert-info {
+    color: var(--in);
+}
+
+[data-theme="dark"] .sw-alert-success {
+    color: var(--su);
+}
+
+[data-theme="dark"] .sw-alert-warning {
+    color: var(--wa);
+}

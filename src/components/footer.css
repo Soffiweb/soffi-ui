@@ -1,0 +1,90 @@
+/* Footer de la app
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+/* ── Footer — tercer hijo flex de .sw-app, siempre pegado abajo ── */
+.sw-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 24px;
+    padding: 3px 18px;
+    border-top: var(--brd);
+    background: var(--b1);
+    color: var(--bc2);
+    font-size: 11px;
+}
+
+.sw-footer a {
+    color: var(--p);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.sw-footer a:hover {
+    text-decoration: underline;
+}
+
+.sw-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.sw-footer-brand {
+    align-items: center;
+    display: flex;
+    gap: 7px;
+    min-width: 0;
+}
+
+.sw-footer-logo {
+    height: 12px;
+    object-fit: contain;
+    width: auto;
+}
+
+.sw-footer-copy {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-width: 0;
+}
+
+.sw-footer-copy span {
+    color: var(--bc2);
+}
+
+.sw-footer-contact {
+    align-items: center;
+    color: var(--p);
+    display: inline-flex;
+    gap: 4px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.sw-footer-contact:hover {
+    text-decoration: underline;
+}
+
+.sw-footer-contact i {
+    font-size: 11px;
+}
+
+.sw-footer-social {
+    align-items: center;
+    color: var(--p);
+    display: inline-flex;
+    font-size: 11px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.sw-footer-social:hover {
+    text-decoration: underline;
+}

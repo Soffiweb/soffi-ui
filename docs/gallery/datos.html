@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datos — Soffi UI</title>
+<meta name="description" content="Tabla, resumen de rol y paginación de soffiweb/soffi-ui.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-swatchbook"></i></span>
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">Soffi UI</span>
+            <span class="sw-topbar-period">Galería de componentes · v1.0.0</span>
+        </div>
+    </div>
+    <div class="sw-topbar-actions">
+        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> dist/soffi-ui.css</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Índice</div>
+            <div class="sw-sb-brand-sub"><a href="index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-arrow-left"></i> Volver a Tokens</a></div>
+        </div>
+
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="index.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Acciones</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones</a>
+        <a href="acciones.html#badges" class="sw-sb-link"><i class="fa-solid fa-tag"></i> Badges</a>
+
+        <div class="sw-sb-group">Feedback</div>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+        <a href="feedback.html#toast" class="sw-sb-link"><i class="fa-solid fa-bell"></i> Toast</a>
+        <a href="feedback.html#impersonation" class="sw-sb-link"><i class="fa-solid fa-user-secret"></i> Banner impersonación</a>
+        <a href="feedback.html#empty-state" class="sw-sb-link"><i class="fa-solid fa-inbox"></i> Estado vacío</a>
+
+        <div class="sw-sb-group">Contenido</div>
+        <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="contenido.html#action-card" class="sw-sb-link"><i class="fa-solid fa-grip"></i> Action card</a>
+        <a href="contenido.html#product-card" class="sw-sb-link"><i class="fa-solid fa-cart-shopping"></i> Product card</a>
+        <a href="contenido.html#profile-card" class="sw-sb-link"><i class="fa-solid fa-id-badge"></i> Profile card</a>
+
+        <div class="sw-sb-group">Formularios</div>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Inputs &amp; select</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos.html#tables" class="sw-sb-link active"><i class="fa-solid fa-table"></i> Tabla</a>
+        <a href="datos.html#rol-summary" class="sw-sb-link active"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos.html#pagination" class="sw-sb-link active"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
+
+        <div class="sw-sb-group">Dashboard</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Métricas, quicklinks, dona</a>
+
+        <div class="sw-sb-group">Acceso</div>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+    </nav>
+
+    <main class="sw-main">
+
+        <!-- ══════════════════ TABLES ══════════════════ -->
+        <section id="tables" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-table"></i> Tabla</h2>
+                <p><code>.sw-table-wrap</code> + <code>.sw-table</code>. Incluye filas de estado, menú de fila y totales anclados (<code>.sw-table-totals</code>).</p>
+            </div>
+            <div class="gal-preview gal-preview-tight">
+                <div class="sw-table-wrap">
+                    <table class="sw-table sw-table-totals">
+                        <thead>
+                            <tr><th>Empleado</th><th>Departamento</th><th>Estado</th><th class="text-center">Acciones</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="sw-table-title">Ana Torres</span><span class="sw-table-subtitle">ana@empresa.com</span></td>
+                                <td>Contabilidad</td>
+                                <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                            </tr>
+                            <tr class="sw-row-warning">
+                                <td><span class="sw-table-title">Juan Pérez</span><span class="sw-table-subtitle">juan@empresa.com</span></td>
+                                <td>Recursos Humanos</td>
+                                <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                <td class="text-center"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                            </tr>
+                            <tr class="sw-row-error">
+                                <td><span class="sw-table-title">Marta Ruiz</span><span class="sw-table-subtitle">marta@empresa.com</span></td>
+                                <td>Transporte</td>
+                                <td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                <td class="text-center"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="3" class="sw-table-total-label">Total nómina del mes</td><td class="text-center sw-money">$4,820.00</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-table-wrap"&gt;
+    &lt;table class="sw-table sw-table-totals"&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Empleado&lt;/th&gt;&lt;th&gt;Estado&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr class="sw-row-warning"&gt;
+                &lt;td&gt;Juan Pérez&lt;/td&gt;
+                &lt;td&gt;&lt;span class="sw-badge sw-badge-warning"&gt;Pendiente&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;&lt;td class="sw-table-total-label"&gt;Total&lt;/td&gt;&lt;td class="sw-money"&gt;$4,820.00&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <!-- ══════════════════ ROL SUMMARY ══════════════════ -->
+        <section id="rol-summary" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-id-card"></i> Resumen de rol</h2>
+                <p><code>.sw-rol-summary</code> — banda compacta con el rol/periodo vigente sobre listados de nómina (aporte de gesnom al estándar).</p>
+            </div>
+            <div class="gal-preview gal-preview-tight">
+                <div class="sw-rol-summary">
+                    <div class="sw-rol-summary-main">
+                        <span class="sw-rol-summary-tag"><i class="fa-solid fa-calendar"></i> Período vigente</span>
+                        <h3 class="sw-rol-summary-title">Rol quincenal — 01 al 15 de septiembre 2026</h3>
+                    </div>
+                    <div class="sw-rol-summary-stats">
+                        <div class="sw-rol-summary-stat">
+                            <span class="sw-rol-summary-label">Empleados</span>
+                            <span class="sw-rol-summary-value">42</span>
+                        </div>
+                        <div class="sw-rol-summary-stat">
+                            <span class="sw-rol-summary-label">Total bruto</span>
+                            <span class="sw-rol-summary-value">$18,240.00</span>
+                        </div>
+                        <div class="sw-rol-summary-stat">
+                            <span class="sw-rol-summary-label">Estado</span>
+                            <span class="sw-rol-summary-value">Abierto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-rol-summary"&gt;
+    &lt;div class="sw-rol-summary-main"&gt;
+        &lt;span class="sw-rol-summary-tag"&gt;Período vigente&lt;/span&gt;
+        &lt;h3 class="sw-rol-summary-title"&gt;Rol quincenal — 01 al 15 sept.&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-rol-summary-stats"&gt;
+        &lt;div class="sw-rol-summary-stat"&gt;
+            &lt;span class="sw-rol-summary-label"&gt;Empleados&lt;/span&gt;
+            &lt;span class="sw-rol-summary-value"&gt;42&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <!-- ══════════════════ PAGINATION ══════════════════ -->
+        <section id="pagination" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-ellipsis"></i> Paginación</h2>
+                <p><code>.sw-pagination</code> + <code>.sw-pg-btn</code>.</p>
+            </div>
+            <div class="gal-preview">
+                <nav class="sw-pagination" aria-label="Paginación">
+                    <a class="sw-pg-btn" aria-disabled="true"><i class="fa-solid fa-angle-left"></i></a>
+                    <a class="sw-pg-btn active">1</a>
+                    <a class="sw-pg-btn">2</a>
+                    <a class="sw-pg-btn">3</a>
+                    <span class="sw-pg-ellipsis">…</span>
+                    <a class="sw-pg-btn">12</a>
+                    <a class="sw-pg-btn"><i class="fa-solid fa-angle-right"></i></a>
+                </nav>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;nav class="sw-pagination"&gt;
+    &lt;a class="sw-pg-btn active"&gt;1&lt;/a&gt;
+    &lt;a class="sw-pg-btn"&gt;2&lt;/a&gt;
+    &lt;span class="sw-pg-ellipsis"&gt;…&lt;/span&gt;
+    &lt;a class="sw-pg-btn"&gt;12&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+    <span class="sw-footer-links"><a href="index.html">Índice</a></span>
+</footer>
+
+<script src="assets/gallery.js"></script>
+</body>
+</html>

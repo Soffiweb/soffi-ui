@@ -1,0 +1,54 @@
+/* Breadcrumb
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-breadcrumb-nav {
+    width: 100%;
+}
+
+.sw-breadcrumb {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    color: var(--bc2);
+    font-size: 0.9rem;
+}
+
+.sw-breadcrumb-item {
+    align-items: center;
+    display: inline-flex;
+    line-height: 1.4;
+}
+
+.sw-breadcrumb-item + .sw-breadcrumb-item::before {
+    content: "›";
+    margin: 0 0.55rem;
+    color: var(--bc2);
+    font-size: 1rem;
+}
+
+.sw-breadcrumb a {
+    align-items: center;
+    color: var(--p);
+    display: inline-flex;
+    gap: 0.35rem;
+    text-decoration: none;
+}
+
+.sw-breadcrumb a:hover,
+.sw-breadcrumb a:focus-visible {
+    text-decoration: underline;
+}
+
+.sw-breadcrumb-item.active {
+    color: var(--bc);
+    font-weight: 600;
+}
+
+.sw-breadcrumb-context {
+    color: var(--bc2);
+    white-space: nowrap;
+}

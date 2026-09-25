@@ -1,0 +1,16 @@
+/* Barra de progreso
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-progress-track {
+    height: 9px;
+    background: rgba(67, 97, 238, 0.18);
+    background: color-mix(in srgb, var(--s) 18%, transparent);
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.sw-progress-bar {
+    height: 100%;
+    border-radius: 25px;
+}

@@ -1,0 +1,244 @@
+/* Botones (.sw-btn) y botones-icono (.sw-bico)
+   Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
+
+.sw-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.6rem 1.25rem;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--rl);
+    cursor: pointer;
+    transition:
+        opacity 0.15s,
+        box-shadow 0.15s;
+    color: var(--btn-text);
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.sw-btn:hover {
+    opacity: 0.9;
+    box-shadow: var(--sh-md);
+}
+
+.sw-btn:focus {
+    outline: 2px solid var(--a);
+    outline-offset: 2px;
+}
+
+.sw-btn:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.sw-btn-primary {
+    background: var(--p);
+}
+
+.sw-btn-accent {
+    background: var(--a);
+}
+
+.sw-btn-error {
+    background: var(--er);
+}
+
+.sw-btn-success {
+    background: var(--su);
+}
+
+.sw-btn-ghost {
+    background: transparent;
+    color: var(--bc);
+    border: var(--brd);
+}
+
+.sw-btn-ghost:hover {
+    background: var(--b2);
+    opacity: 1;
+    box-shadow: none;
+}
+
+.sw-btn-outline {
+    background: transparent;
+    color: var(--p);
+    border: 1.5px solid var(--p);
+}
+
+.sw-btn-outline:hover {
+    background: rgba(40, 68, 154, 0.06);
+    background: color-mix(in srgb, var(--p) 6%, transparent);
+    opacity: 1;
+}
+
+.sw-btn-light {
+    background: var(--b1);
+    color: var(--p);
+    border: 1.5px solid var(--p);
+}
+
+.sw-btn-light:hover {
+    background: #f0f2f9;
+    background: color-mix(in srgb, var(--p) 6%, var(--b1));
+    opacity: 1;
+}
+
+.sw-btn-sm {
+    padding: 0.45rem 1rem;
+    font-size: 14px;
+    border-radius: var(--r);
+}
+
+.sw-btn-icon {
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: var(--r);
+}
+
+.sw-btn-lg {
+    padding: 0.75rem 1.6rem;
+    font-size: 17px;
+}
+
+.sw-bico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 31px;
+    border: var(--brd-s);
+    border-radius: var(--r);
+    background: var(--b1);
+    cursor: pointer;
+    font-size: 13px;
+    transition:
+        background 0.15s,
+        border-color 0.15s,
+        color 0.15s,
+        opacity 0.15s;
+    color: var(--bc);
+    text-decoration: none;
+}
+
+.sw-bico:hover {
+    background: #eef0f8;
+    background: color-mix(in srgb, var(--p) 7%, var(--b1));
+    border-color: rgba(40, 68, 154, 0.34);
+    border-color: color-mix(in srgb, var(--p) 34%, transparent);
+    color: var(--p);
+    opacity: 1;
+}
+
+.sw-bico:disabled {
+    background: var(--b1);
+    color: var(--bc2);
+    opacity: 0.38;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.sw-bico:disabled:hover {
+    background: var(--b1);
+    color: var(--bc2);
+}
+
+.sw-bico-edit {
+    background: var(--b1);
+    border-color: rgba(40, 68, 154, 0.3);
+    border-color: color-mix(in srgb, var(--p) 30%, transparent);
+    color: var(--bc);
+}
+
+.sw-bico-copy {
+    background: var(--p);
+    border-color: var(--p);
+    color: var(--btn-text);
+}
+
+.sw-bico-delete {
+    background: var(--er);
+    border-color: var(--er);
+    color: var(--erc);
+}
+
+.sw-bico-success {
+    background: #daf4ed;
+    background: color-mix(in srgb, var(--su) 14%, var(--b1));
+    border-color: rgba(0, 186, 123, 0.4);
+    border-color: color-mix(in srgb, var(--su) 40%, transparent);
+    color: #00734c;
+    color: color-mix(in srgb, var(--su) 62%, #000);
+}
+
+.sw-bico-info {
+    background: #dff2fd;
+    background: color-mix(in srgb, var(--in) 12%, var(--b1));
+    border-color: rgba(0, 164, 242, 0.38);
+    border-color: color-mix(in srgb, var(--in) 38%, transparent);
+    color: #006696;
+    color: color-mix(in srgb, var(--in) 62%, #000);
+}
+
+.sw-bico-warning {
+    background: #fdefdb;
+    background: color-mix(in srgb, var(--wa) 14%, var(--b1));
+    border-color: rgba(250, 151, 0, 0.42);
+    border-color: color-mix(in srgb, var(--wa) 42%, transparent);
+    color: #875200;
+    color: color-mix(in srgb, var(--wa) 54%, #000);
+}
+
+.sw-bico-transfer {
+    background: #fdefdb;
+    background: color-mix(in srgb, var(--wa) 14%, var(--b1));
+    border-color: rgba(250, 151, 0, 0.42);
+    border-color: color-mix(in srgb, var(--wa) 42%, transparent);
+    color: #875200;
+    color: color-mix(in srgb, var(--wa) 54%, #000);
+}
+
+[data-theme="dark"] .sw-bico,
+[data-theme="dark"] .sw-bico-edit {
+    background: var(--b1);
+    border-color: rgba(157, 189, 232, 0.32);
+    border-color: color-mix(in srgb, var(--s) 32%, transparent);
+    color: var(--bc);
+}
+
+[data-theme="dark"] .sw-bico:hover {
+    background: #363e51;
+    background: color-mix(in srgb, var(--s) 10%, var(--b1));
+    color: var(--p);
+}
+
+[data-theme="dark"] .sw-bico-delete {
+    background: var(--er);
+    border-color: var(--er);
+    color: var(--erc);
+}
+
+[data-theme="dark"] .sw-bico-success {
+    background: rgba(0, 211, 144, 0.16);
+    background: color-mix(in srgb, var(--su) 16%, transparent);
+    color: var(--su);
+}
+
+[data-theme="dark"] .sw-bico-info {
+    background: rgba(0, 186, 254, 0.16);
+    background: color-mix(in srgb, var(--in) 16%, transparent);
+    color: var(--in);
+}
+
+[data-theme="dark"] .sw-bico-warning,
+[data-theme="dark"] .sw-bico-transfer {
+    background: rgba(252, 183, 0, 0.16);
+    background: color-mix(in srgb, var(--wa) 16%, transparent);
+    color: var(--wa);
+}

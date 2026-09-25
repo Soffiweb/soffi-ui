@@ -1,0 +1,312 @@
+/* Chrome propio de la galería — prefijo gal- para no chocar con las clases
+   sw- reales que está documentando. Compartido por todas las páginas de
+   docs/gallery/*.html. El layout (topbar+sidebar+main+footer) de cada
+   página usa los componentes reales del paquete a propósito: la galería es
+   también un ejemplo vivo del app shell. */
+
+.gal-section {
+    scroll-margin-top: 78px;
+    padding-bottom: 3rem;
+    border-bottom: var(--brd);
+    margin-bottom: 3rem;
+}
+
+.gal-section:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.gal-section-head {
+    margin-bottom: 1.5rem;
+}
+
+.gal-section-head h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--sw-text-2xl);
+    font-weight: var(--sw-font-bold);
+    color: var(--bc);
+    margin-bottom: 0.35rem;
+}
+
+.gal-section-head p {
+    color: var(--bc2);
+    font-size: var(--sw-text-md);
+    max-width: 62ch;
+}
+
+.gal-block {
+    margin-bottom: 2.25rem;
+}
+
+.gal-block:last-child {
+    margin-bottom: 0;
+}
+
+.gal-block-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.gal-block-title h3 {
+    font-size: var(--sw-text-md);
+    font-weight: var(--sw-font-semibold);
+    color: var(--p);
+}
+
+.gal-block-title span {
+    font-size: var(--sw-text-sm);
+    color: var(--bc2);
+}
+
+.gal-preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding: 1.75rem;
+    background: var(--b2);
+    border: var(--brd);
+    border-radius: var(--rl);
+}
+
+.gal-preview-block {
+    display: block;
+}
+
+.gal-preview-tight {
+    padding: 0;
+    overflow: hidden;
+}
+
+details.gal-code {
+    margin-top: 0;
+    border: var(--brd);
+    border-top: 0;
+    border-radius: 0 0 var(--r) var(--r);
+    background: var(--b1);
+}
+
+details.gal-code summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.6rem 1rem;
+    font-size: var(--sw-text-xs);
+    font-weight: var(--sw-font-semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--bc2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+}
+
+details.gal-code summary::-webkit-details-marker { display: none; }
+
+details.gal-code summary i { transition: transform 0.15s; font-size: 10px; }
+details.gal-code[open] summary i { transform: rotate(90deg); }
+
+details.gal-code summary:hover { color: var(--p); }
+
+.gal-code-body {
+    position: relative;
+    border-top: var(--brd);
+}
+
+.gal-code-body pre {
+    margin: 0;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--bc);
+    background: var(--b2);
+    border-radius: 0 0 var(--r) var(--r);
+}
+
+.gal-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--bc2);
+    background: var(--b1);
+    border: var(--brd);
+    border-radius: var(--r);
+    cursor: pointer;
+}
+
+.gal-copy-btn:hover { color: var(--p); }
+
+.gal-swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.gal-swatch {
+    border: var(--brd);
+    border-radius: var(--r);
+    overflow: hidden;
+}
+
+.gal-swatch-color {
+    height: 56px;
+}
+
+.gal-swatch-label {
+    padding: 8px 10px;
+    background: var(--b1);
+}
+
+.gal-swatch-name {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--bc);
+}
+
+.gal-swatch-hex {
+    display: block;
+    font-size: 11px;
+    color: var(--bc2);
+    font-family: monospace;
+}
+
+.gal-type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: var(--brd);
+}
+
+.gal-type-row:last-child { border-bottom: 0; }
+
+.gal-type-tag {
+    flex: 0 0 150px;
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--bc2);
+}
+
+.gal-space-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 7px 0;
+}
+
+.gal-space-box {
+    background: var(--p);
+    border-radius: 2px;
+    height: 18px;
+}
+
+.gal-space-tag {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--bc2);
+    width: 170px;
+    flex-shrink: 0;
+}
+
+.gal-shadow-row { display: flex; flex-wrap: wrap; gap: 20px; }
+
+.gal-shadow-card {
+    width: 130px;
+    height: 80px;
+    background: var(--b1);
+    border-radius: var(--r);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--bc2);
+}
+
+.gal-hero {
+    padding: 2.5rem 0 2rem;
+    border-bottom: var(--brd);
+    margin-bottom: 2.5rem;
+}
+
+.gal-hero h1 {
+    font-size: var(--sw-text-3xl);
+    font-weight: var(--sw-font-bold);
+    color: var(--bc);
+    margin-bottom: 0.5rem;
+}
+
+.gal-hero p {
+    color: var(--bc2);
+    font-size: var(--sw-text-md);
+    max-width: 60ch;
+    line-height: var(--sw-leading-base);
+}
+
+.gal-hero-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Grid de tarjetas de categoría, solo en index.html */
+.gal-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.gal-category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 1.2rem 1.4rem;
+    background: var(--b1);
+    border: var(--brd);
+    border-radius: var(--rl);
+    color: var(--bc);
+    text-decoration: none;
+    transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.gal-category-card:hover {
+    box-shadow: var(--sh-md);
+    border-color: color-mix(in srgb, var(--p) 45%, transparent);
+    color: var(--bc);
+    text-decoration: none;
+}
+
+.gal-category-card i {
+    font-size: 20px;
+    color: var(--p);
+    margin-bottom: 4px;
+}
+
+.gal-category-card strong {
+    font-size: var(--sw-text-md);
+}
+
+.gal-category-card span {
+    font-size: var(--sw-text-sm);
+    color: var(--bc2);
+}
+
+@media (max-width: 767.98px) {
+    .gal-swatch-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+}

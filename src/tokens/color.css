@@ -1,0 +1,128 @@
+/* Paleta — base Sofficon (11 de 13 colores del nucleo ya eran consenso entre
+   las 4 apps; success/warning/info resueltos en hex, no oklch()).
+
+   + --sw-auth-bg / --sw-auth-card-bg: de SoffCaja (unica que los tenia). */
+
+:root {
+    /* Hace que el navegador pinte su propio chrome (calendario nativo,
+       scrollbars, autofill) acorde al tema activo. */
+    color-scheme: light;
+
+    --sw-primary: #28449a;
+    --sw-primary-contrast: #ffffff;
+    --sw-secondary: #4361ee;
+    --sw-secondary-contrast: #ffffff;
+    --sw-accent: #fa75ad;
+    --sw-accent-contrast: #2b2230;
+    --sw-neutral: #303237;
+    --sw-neutral-contrast: #fdfdff;
+    --sw-bg: #fdfdff;
+    --sw-surface: #edf1fb;
+    --sw-text: #151b1e;
+    --sw-text-muted: #6b7280;
+    --sw-success: #00ba7b;
+    --sw-success-contrast: #fdfdff;
+    --sw-warning: #fa9700;
+    --sw-warning-contrast: #fdfdff;
+    --sw-error: #e11d48;
+    --sw-error-contrast: #fdfdff;
+    --sw-info: #00a4f2;
+    --sw-info-contrast: #fdfdff;
+
+    --sw-sidebar-bg: #1e2330;
+    --sw-table-header-bg: #e8eef8;
+    --sw-table-header-text: #28449a;
+    --sw-button-text: #fdfdff;
+
+    /* Unico par de tokens que hoy solo tenia SoffCaja. */
+    --sw-auth-bg: #edf0fb;
+    --sw-auth-card-bg: #ffffff;
+
+    /* Estatico primero (Chrome/Edge <=110, Safari <=16.1): el navegador viejo
+       se queda con esto. La redeclaracion moderna va en @supports, abajo.
+       Dentro de :root la doble declaracion NO sirve: una custom property con
+       valor invalido no se descarta, se hereda como `unset`. */
+    --sw-border: 1px solid rgba(67, 97, 238, 0.28);
+    --sw-border-strong: 1px solid rgba(67, 97, 238, 0.5);
+
+    /* Alias cortos — el 90% del CSS de componentes los usa a ellos, no a los
+       --sw-*. NO renombrar: invalida ~550 var(--) por archivo de componentes.
+       Es ademas lo unico que gesnom (legacy, `main`) entiende hoy — son el
+       puente de migracion. */
+    --p: var(--sw-primary);
+    --pc: var(--sw-primary-contrast);
+    --s: var(--sw-secondary);
+    --sc: var(--sw-secondary-contrast);
+    --a: var(--sw-accent);
+    --ac: var(--sw-accent-contrast);
+    --n: var(--sw-neutral);
+    --nc: var(--sw-neutral-contrast);
+    --b1: var(--sw-bg);
+    --b2: var(--sw-surface);
+    --bc: var(--sw-text);
+    --bc2: var(--sw-text-muted);
+    --su: var(--sw-success);
+    --suc: var(--sw-success-contrast);
+    --wa: var(--sw-warning);
+    --wac: var(--sw-warning-contrast);
+    --er: var(--sw-error);
+    --erc: var(--sw-error-contrast);
+    --in: var(--sw-info);
+    --inc: var(--sw-info-contrast);
+    --brd: var(--sw-border);
+    --brd-s: var(--sw-border-strong);
+    --sb: var(--sw-sidebar-bg);
+    --th-bg: var(--sw-table-header-bg);
+    --th-color: var(--sw-table-header-text);
+    --btn-text: var(--sw-button-text);
+    --auth-bg: var(--sw-auth-bg);
+    --auth-card: var(--sw-auth-card-bg);
+}
+
+@supports (background: color-mix(in srgb, red 1%, blue)) {
+    :root {
+        --sw-border: 1px solid color-mix(in srgb, var(--sw-secondary) 28%, transparent);
+        --sw-border-strong: 1px solid color-mix(in srgb, var(--sw-secondary) 50%, transparent);
+    }
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    --sw-bg: #2a3040;
+    --sw-surface: #222736;
+    --sw-text: #e8ecf4;
+    --sw-text-muted: #9ca3af;
+    --sw-primary: #7da4e0;
+    --sw-secondary: #9dbde8;
+    --sw-accent: #fb8dc0;
+    --sw-success: #00d390;
+    --sw-warning: #fcb700;
+    --sw-error: #ff627d;
+    --sw-info: #00bafe;
+    --sw-border: 1px solid rgba(255, 255, 255, 0.09);
+    --sw-sidebar-bg: #111520;
+    --sw-table-header-bg: #1a2340;
+    --sw-table-header-text: #7da4e0;
+    --sw-button-text: #1a1f2e;
+    --sw-auth-bg: #1b2030;
+    --sw-auth-card-bg: #222736;
+
+    --b1: var(--sw-bg);
+    --b2: var(--sw-surface);
+    --bc: var(--sw-text);
+    --bc2: var(--sw-text-muted);
+    --p: var(--sw-primary);
+    --s: var(--sw-secondary);
+    --a: var(--sw-accent);
+    --su: var(--sw-success);
+    --wa: var(--sw-warning);
+    --er: var(--sw-error);
+    --in: var(--sw-info);
+    --brd: var(--sw-border);
+    --sb: var(--sw-sidebar-bg);
+    --th-bg: var(--sw-table-header-bg);
+    --th-color: var(--sw-table-header-text);
+    --btn-text: var(--sw-button-text);
+    --auth-bg: var(--sw-auth-bg);
+    --auth-card: var(--sw-auth-card-bg);
+}

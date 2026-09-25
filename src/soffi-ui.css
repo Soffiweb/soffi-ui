@@ -1,0 +1,12 @@
+/* Soffi UI — entrypoint documental.
+
+   Este archivo NO se carga en produccion: describe el orden de concatenacion
+   que aplica scripts/build.php para producir dist/soffi-ui.css.
+
+   El orden importa:
+     1. tokens/   definen las custom properties que todo lo demas consume
+     2. base/     reset + utilidades (deben poder ser pisadas por componentes)
+     3. components/  el cuerpo del sistema
+
+   @import NO se usa a proposito: agrega un request por archivo y en
+   navegadores viejos serializa la descarga. El build concatena. */
