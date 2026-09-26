@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.4.0 — 2026-09-26
+
+### Agregado
+
+- **`.sw-btn-xs`** / **`.sw-btn-xl`** — completan la escala de tamaño del
+  botón (antes solo había `-sm`/`-lg`, sin variante base).
+- **`.sw-badge-sm`** / **`.sw-badge-lg`** — el badge no tenía ninguna
+  variante de tamaño.
+- **`.sw-card-lg`** — par grande de `.sw-card-compact` (ya existía en
+  `tables.css`, mismo criterio de nombre que `.sw-form-compact`; no se
+  agregó un `.sw-card-sm` que hubiera quedado duplicado).
+
+### Corregido
+
+- **`.sw-badge`** tenía `border-radius: 25px` suelto — mismo valor viejo
+  de antes de que `--sw-radius-pill` migrara a `9999px` (ver 0.1.x). Ahora
+  usa el token; sin cambio visual (25px en un badge de esa altura ya se
+  veía full-round, igual que 9999px).
+
 ## 0.3.0 — 2026-09-26
 
 ### Cambiado

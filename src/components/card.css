@@ -23,9 +23,16 @@
 }
 
 .sw-card-body {
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc2);
     line-height: 1.55;
+}
+
+/* .sw-card-compact (variante chica) ya existe en tables.css junto a
+   .sw-list-card — mismo criterio de nombre que .sw-form-compact. Acá solo
+   falta el par grande. */
+.sw-card-lg {
+    padding: 1.6rem 1.8rem;
 }
 
 .sw-card-footer {

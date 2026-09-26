@@ -1,4 +1,4 @@
-/*! Soffi UI 0.3.0 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.4.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -1264,10 +1264,22 @@ body {
     align-items: center;
     gap: 5px;
     padding: 0.28rem 0.8rem;
-    border-radius: 25px;
-    font-size: 13px;
+    border-radius: var(--sw-radius-pill);
+    font-size: var(--sw-text-sm);
     font-weight: 600;
     line-height: 1;
+}
+
+.sw-badge-sm {
+    gap: 4px;
+    padding: 0.15rem 0.55rem;
+    font-size: var(--sw-text-2xs);
+}
+
+.sw-badge-lg {
+    gap: 6px;
+    padding: 0.4rem var(--sw-spacing-md);
+    font-size: var(--sw-text-base);
 }
 
 .sw-badge-primary {
@@ -1403,7 +1415,7 @@ body {
     gap: 7px;
     padding: 0.6rem 1.25rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     font-weight: 500;
     border: none;
     border-radius: var(--rl);
@@ -1484,9 +1496,16 @@ body {
     opacity: 1;
 }
 
+.sw-btn-xs {
+    gap: 5px;
+    padding: 0.3rem 0.75rem;
+    font-size: var(--sw-text-xs);
+    border-radius: var(--sw-radius-sm);
+}
+
 .sw-btn-sm {
-    padding: 0.45rem 1rem;
-    font-size: 14px;
+    padding: 0.45rem var(--sw-spacing-md);
+    font-size: var(--sw-text-base);
     border-radius: var(--r);
 }
 
@@ -1503,6 +1522,11 @@ body {
     font-size: 17px;
 }
 
+.sw-btn-xl {
+    padding: 0.9rem var(--sw-spacing-xl);
+    font-size: var(--sw-text-xl);
+}
+
 .sw-bico {
     display: inline-flex;
     align-items: center;
@@ -1513,7 +1537,7 @@ body {
     border-radius: var(--r);
     background: var(--b1);
     cursor: pointer;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     transition:
         background 0.15s,
         border-color 0.15s,
@@ -1665,9 +1689,16 @@ body {
 }
 
 .sw-card-body {
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc2);
     line-height: 1.55;
+}
+
+/* .sw-card-compact (variante chica) ya existe en tables.css junto a
+   .sw-list-card — mismo criterio de nombre que .sw-form-compact. Acá solo
+   falta el par grande. */
+.sw-card-lg {
+    padding: 1.6rem 1.8rem;
 }
 
 .sw-card-footer {

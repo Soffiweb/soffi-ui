@@ -6,10 +6,22 @@
     align-items: center;
     gap: 5px;
     padding: 0.28rem 0.8rem;
-    border-radius: 25px;
-    font-size: 13px;
+    border-radius: var(--sw-radius-pill);
+    font-size: var(--sw-text-sm);
     font-weight: 600;
     line-height: 1;
+}
+
+.sw-badge-sm {
+    gap: 4px;
+    padding: 0.15rem 0.55rem;
+    font-size: var(--sw-text-2xs);
+}
+
+.sw-badge-lg {
+    gap: 6px;
+    padding: 0.4rem var(--sw-spacing-md);
+    font-size: var(--sw-text-base);
 }
 
 .sw-badge-primary {
