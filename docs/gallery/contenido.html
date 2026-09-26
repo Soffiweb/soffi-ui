@@ -123,6 +123,48 @@
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-grip"></i> Action card</h2>
                 <p><code>.sw-action-card</code> — icono arriba, título, descripción, botón outline (color heredado del icono). Nuevo en v0.4.0, boton rediseñado en v0.1.1 (era sólido). Modificadores de tamaño: <code>-sm</code> (chico, centrado) y <code>-xs</code> (muy chico, alineado a la derecha con <code>align-self: flex-end</code>) — sin modificador, ancho completo.</p>
+                <p><code>.sw-action-card-grid</code> es <code>repeat(auto-fit, minmax(...))</code>: agrega columnas solas según el ancho disponible. Dos custom properties para no depender de eso — <code>--sw-grid-min</code> (ancho mínimo por card; también hay <code>-sm</code>/<code>-lg</code> en la clase del grid) y <code>--sw-grid-cols</code> (fija la cantidad exacta de columnas, ignorando el ancho). Mismo mecanismo en <code>.sw-metrics-grid</code>/<code>.sw-quicklink-grid</code>/<code>.sw-product-card-grid</code>/<code>.sw-profile-card-grid</code>.</p>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Columnas fijas</h3></div>
+                <div class="gal-preview gal-preview-block">
+                    <div class="sw-action-card-grid" style="--sw-grid-cols: 2">
+                        <div class="sw-action-card">
+                            <div class="sw-action-card-icon sw-action-card-icon-primary"><i class="fa-solid fa-building"></i></div>
+                            <h3 class="sw-action-card-title">Departamentos</h3>
+                            <p class="sw-action-card-desc">Importa o actualiza la lista de departamentos desde Excel/CSV.</p>
+                            <a href="#" class="sw-btn sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                        </div>
+                        <div class="sw-action-card">
+                            <div class="sw-action-card-icon sw-action-card-icon-success"><i class="fa-solid fa-users"></i></div>
+                            <h3 class="sw-action-card-title">Empleados</h3>
+                            <p class="sw-action-card-desc">Carga masiva de personal con validación de duplicados.</p>
+                            <a href="#" class="sw-btn sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                        </div>
+                        <div class="sw-action-card">
+                            <div class="sw-action-card-icon sw-action-card-icon-warning"><i class="fa-solid fa-car"></i></div>
+                            <h3 class="sw-action-card-title">Transporte</h3>
+                            <p class="sw-action-card-desc">Asignación de rutas y vehículos por empleado.</p>
+                            <a href="#" class="sw-btn sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                        </div>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;!-- fuerza 2 columnas siempre, no importa el ancho --&gt;
+&lt;div class="sw-action-card-grid" style="--sw-grid-cols: 2"&gt;
+    ...
+&lt;/div&gt;
+
+&lt;!-- o mas ancho minimo por card, sin fijar columnas --&gt;
+&lt;div class="sw-action-card-grid sw-action-card-grid-lg"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+                    </div>
+                </details>
             </div>
             <div class="gal-preview gal-preview-block">
                 <div class="sw-action-card-grid">

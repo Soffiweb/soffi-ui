@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.5.0 — 2026-09-26
+
+### Agregado
+
+- **`--sw-grid-min`** / **`--sw-grid-cols`** en los 5 grids `auto-fit`
+  (`.sw-action-card-grid`, `.sw-metrics-grid`, `.sw-quicklink-grid`,
+  `.sw-product-card-grid`, `.sw-profile-card-grid`): antes cada uno traía
+  su `minmax()` fijo sin forma de ajustarlo ni de fijar una cantidad
+  exacta de columnas. Ahora `--sw-grid-min` controla el ancho mínimo por
+  card (pisable, con modificadores `-sm`/`-lg` por grid) y `--sw-grid-cols`
+  fuerza N columnas ignorando el ancho disponible
+  (`style="--sw-grid-cols: 2"`). Mismos valores por defecto que antes, sin
+  cambio visual.
+
 ## 0.4.0 — 2026-09-26
 
 ### Agregado

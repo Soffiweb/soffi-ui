@@ -34,10 +34,21 @@
        </article>
    </div> */
 
+/* --sw-grid-min / --sw-grid-cols pisables — ver la nota completa en
+   .sw-action-card-grid (action-card.css). */
 .sw-product-card-grid {
+    --sw-grid-min: 250px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(var(--sw-grid-cols, auto-fit), minmax(var(--sw-grid-min), 1fr));
     gap: 1.25rem;
+}
+
+.sw-product-card-grid-sm {
+    --sw-grid-min: 200px;
+}
+
+.sw-product-card-grid-lg {
+    --sw-grid-min: 300px;
 }
 
 .sw-product-card {

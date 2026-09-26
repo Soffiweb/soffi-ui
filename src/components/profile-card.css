@@ -31,10 +31,21 @@
        </div>
    </article> */
 
+/* --sw-grid-min / --sw-grid-cols pisables — ver la nota completa en
+   .sw-action-card-grid (action-card.css). */
 .sw-profile-card-grid {
+    --sw-grid-min: 260px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(var(--sw-grid-cols, auto-fit), minmax(var(--sw-grid-min), 1fr));
     gap: 1.25rem;
+}
+
+.sw-profile-card-grid-sm {
+    --sw-grid-min: 210px;
+}
+
+.sw-profile-card-grid-lg {
+    --sw-grid-min: 310px;
 }
 
 .sw-profile-card {

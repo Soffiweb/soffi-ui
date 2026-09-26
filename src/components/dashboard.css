@@ -34,11 +34,22 @@
     text-transform: uppercase;
 }
 
+/* --sw-grid-min / --sw-grid-cols pisables — ver la nota completa en
+   .sw-action-card-grid (action-card.css). */
 .sw-metrics-grid {
+    --sw-grid-min: 190px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(var(--sw-grid-cols, auto-fit), minmax(var(--sw-grid-min), 1fr));
     gap: var(--sw-spacing-md);
     margin-bottom: 28px;
+}
+
+.sw-metrics-grid-sm {
+    --sw-grid-min: 150px;
+}
+
+.sw-metrics-grid-lg {
+    --sw-grid-min: 230px;
 }
 
 .sw-content-stack {
@@ -181,11 +192,22 @@
     font-weight: 500;
 }
 
-/* ── Accesos rápidos (dashboard) ── */
+/* ── Accesos rápidos (dashboard) ──
+   --sw-grid-min / --sw-grid-cols pisables — ver la nota completa en
+   .sw-action-card-grid (action-card.css). */
 .sw-quicklink-grid {
+    --sw-grid-min: 220px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(var(--sw-grid-cols, auto-fit), minmax(var(--sw-grid-min), 1fr));
     gap: var(--sw-spacing-md);
+}
+
+.sw-quicklink-grid-sm {
+    --sw-grid-min: 180px;
+}
+
+.sw-quicklink-grid-lg {
+    --sw-grid-min: 260px;
 }
 
 .sw-quicklink {

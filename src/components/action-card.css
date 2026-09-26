@@ -35,10 +35,34 @@
    .sw-action-card-disabled a .sw-action-card y omitir el <a>, o usar un
    <span> en su lugar — no hay JS que lo requiera. */
 
+/* Tamaño de columna y cantidad de columnas, personalizables sin editar este
+   archivo — dos custom properties con fallback, pisables desde el HTML
+   (style="--sw-grid-min: 300px") o desde el CSS de la app consumidora:
+
+   --sw-grid-min  ancho minimo de cada card antes de que el grid meta otra
+                  columna (lo que hace repeat(auto-fit, minmax(...))). Los
+                  modificadores -sm/-lg de abajo solo cambian este valor.
+   --sw-grid-cols cantidad fija de columnas, ignorando el ancho disponible.
+                  Vacio por defecto (auto-fit decide). Ej.:
+                  <div class="sw-action-card-grid" style="--sw-grid-cols: 3">
+
+   Mismo mecanismo en .sw-metrics-grid/.sw-quicklink-grid (dashboard.css),
+   .sw-product-card-grid (product-card.css) y .sw-profile-card-grid
+   (profile-card.css) — cada uno con su propio --sw-grid-min base, porque el
+   contenido de cada card ocupa distinto espacio minimo. */
 .sw-action-card-grid {
+    --sw-grid-min: 230px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(var(--sw-grid-cols, auto-fit), minmax(var(--sw-grid-min), 1fr));
     gap: 1.1rem;
+}
+
+.sw-action-card-grid-sm {
+    --sw-grid-min: 180px;
+}
+
+.sw-action-card-grid-lg {
+    --sw-grid-min: 280px;
 }
 
 .sw-action-card {
