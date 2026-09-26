@@ -1,0 +1,6 @@
+graphify-out/
+node_modules/
+vendor/
+dist/
+.claude/
+.codex/
