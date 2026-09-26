@@ -1,4 +1,4 @@
-/*! Soffi UI 0.2.0 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.3.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -865,7 +865,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    padding: 24px;
+    padding: var(--sw-spacing-lg);
     width: 100%;
 }
 
@@ -879,7 +879,7 @@ body {
     background: var(--b1);
     border-color: rgba(40, 68, 154, 0.18);
     border-color: color-mix(in srgb, var(--p) 18%, transparent);
-    padding: 2rem;
+    padding: var(--sw-spacing-xl);
     box-shadow: var(--sh-lg);
 }
 
@@ -904,9 +904,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
     min-width: 0;
-    padding: 2rem;
+    padding: var(--sw-spacing-xl);
     background: var(--b2);
     border-right: var(--brd);
 }
@@ -1022,12 +1022,12 @@ body {
     flex-direction: column;
     justify-content: center;
     min-width: 0;
-    padding: 2rem;
+    padding: var(--sw-spacing-xl);
     background: var(--b1);
 }
 
 .sw-auth-form-head {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--sw-spacing-lg);
 }
 
 .sw-auth-form-title {
@@ -1086,7 +1086,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--sw-spacing-md);
 }
 
 .sw-auth-logo {
@@ -1111,7 +1111,7 @@ body {
 
 .sw-auth-submit {
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: var(--sw-spacing-sm);
     width: 100%;
 }
 
@@ -1121,7 +1121,7 @@ body {
     cursor: pointer;
     display: flex;
     font-size: var(--sw-text-base);
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     margin: 0.9rem 0 1.1rem;
 }
 
@@ -1185,28 +1185,28 @@ body {
     color: var(--bc2);
     font-size: var(--sw-text-sm);
     line-height: 1.45;
-    margin: 1rem 0;
-    padding: 0.85rem 1rem;
+    margin: var(--sw-spacing-md) 0;
+    padding: 0.85rem var(--sw-spacing-md);
 }
 
 .sw-auth-actions {
     display: grid;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: var(--sw-spacing-md);
 }
 
 .sw-auth-footnote {
     color: var(--bc2);
     font-size: var(--sw-text-xs);
     line-height: 1.45;
-    margin-top: 1rem;
+    margin-top: var(--sw-spacing-md);
     text-align: center;
 }
 
 @media (max-width: 767.98px) {
     .sw-auth-shell {
         align-items: flex-start;
-        padding: 16px;
+        padding: var(--sw-spacing-md);
     }
 
     .sw-auth-card-wide {
@@ -1230,7 +1230,7 @@ body {
     }
 
     .sw-auth-feature-list {
-        margin-top: 1rem;
+        margin-top: var(--sw-spacing-md);
     }
 
     .sw-auth-form-panel {
@@ -1238,7 +1238,7 @@ body {
     }
 
     .sw-auth-card-product {
-        padding: 1.5rem;
+        padding: var(--sw-spacing-lg);
     }
 
     .sw-auth-card-framed {
@@ -1704,7 +1704,7 @@ body {
 }
 
 .sw-report-block + .sw-report-block {
-    margin-top: 1.5rem;
+    margin-top: var(--sw-spacing-lg);
 }
 
 .sw-report-heading {
@@ -1719,13 +1719,13 @@ body {
 .sw-metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 16px;
+    gap: var(--sw-spacing-md);
     margin-bottom: 28px;
 }
 
 .sw-content-stack {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
 }
 
 .sw-content-stack > .sw-metrics-grid {
@@ -1735,7 +1735,7 @@ body {
 .sw-dashboard-grid {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(300px, 0.92fr);
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
     align-items: start;
     min-width: 0;
 }
@@ -1743,7 +1743,7 @@ body {
 .sw-dashboard-main,
 .sw-dashboard-aside {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
     min-width: 0;
 }
 
@@ -1753,7 +1753,7 @@ body {
 }
 
 .sw-row-gap {
-    row-gap: 1.5rem;
+    row-gap: var(--sw-spacing-lg);
 }
 
 .sw-metric {
@@ -1867,7 +1867,7 @@ body {
 .sw-quicklink-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    gap: var(--sw-spacing-md);
 }
 
 .sw-quicklink {
@@ -1876,7 +1876,7 @@ body {
     justify-content: space-between;
     gap: 0.75rem;
     min-width: 0;
-    padding: 1rem;
+    padding: var(--sw-spacing-md);
     border: var(--brd);
     border-radius: var(--r);
     color: var(--bc);
@@ -2037,7 +2037,7 @@ body {
 .sw-donut-legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     font-size: var(--sw-text-sm);
     color: var(--bc);
 }
@@ -2067,7 +2067,7 @@ body {
 .sw-activity-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--sw-spacing-xs);
 }
 
 .sw-activity-item {
@@ -2292,12 +2292,12 @@ body {
 .sw-field {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: var(--sw-spacing-md);
 }
 
 .sw-label {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--sw-spacing-sm);
     font-size: var(--sw-text-base);
     font-weight: 500;
     color: var(--bc2);
@@ -2307,7 +2307,7 @@ body {
 .sw-select {
     width: 100%;
     height: 43px;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem var(--sw-spacing-md);
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     line-height: 1.2;
@@ -2415,7 +2415,7 @@ body {
 .sw-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     width: 18px;
     height: 18px;
-    margin-left: 0.5rem;
+    margin-left: var(--sw-spacing-sm);
     padding: 0;
     background-repeat: no-repeat;
     background-position: center;
@@ -2469,7 +2469,7 @@ body {
     align-items: center;
     width: 100%;
     height: 43px;
-    padding: 0 0.5rem;
+    padding: 0 var(--sw-spacing-sm);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
     border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
@@ -2550,7 +2550,7 @@ body {
 
 .sw-textarea {
     width: 100%;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem var(--sw-spacing-md);
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
@@ -2587,8 +2587,8 @@ body {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 1.5rem;
+    gap: var(--sw-spacing-sm);
+    margin-top: var(--sw-spacing-lg);
 }
 
 .sw-form-compact .sw-field {
@@ -2603,7 +2603,7 @@ body {
 .sw-form-compact .sw-input,
 .sw-form-compact .sw-select {
     height: 38px;
-    padding: 0.5rem 0.78rem;
+    padding: var(--sw-spacing-sm) 0.78rem;
     font-size: var(--sw-text-base);
 }
 
@@ -2614,7 +2614,7 @@ body {
 
 .sw-form-compact .sw-textarea {
     min-height: 68px;
-    padding: 0.5rem 0.78rem;
+    padding: var(--sw-spacing-sm) 0.78rem;
     font-size: var(--sw-text-base);
 }
 
@@ -2655,7 +2655,7 @@ body {
 
 .sw-ss-trigger {
     width: 100%;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem var(--sw-spacing-md);
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
@@ -2667,7 +2667,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     transition: border-color 0.15s;
 }
 
@@ -2700,7 +2700,7 @@ body {
 
 .sw-ss-search {
     width: 100%;
-    padding: 0.55rem 1rem 0.55rem 2.2rem;
+    padding: 0.55rem var(--sw-spacing-md) 0.55rem 2.2rem;
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
@@ -3458,7 +3458,7 @@ body.sw-modal-open {
 .sw-topbar-meta {
     align-items: center;
     display: flex;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     min-width: 0;
 }
 
@@ -3466,7 +3466,7 @@ body.sw-modal-open {
     align-items: center;
     color: var(--bc2);
     display: inline-flex;
-    gap: 4px;
+    gap: var(--sw-spacing-xs);
     min-width: 0;
 }
 
@@ -3494,7 +3494,7 @@ body.sw-modal-open {
     font-weight: 700;
     gap: 5px;
     line-height: 1;
-    padding: 4px 10px;
+    padding: var(--sw-spacing-xs) 10px;
     white-space: nowrap;
 }
 
@@ -3516,10 +3516,10 @@ body.sw-modal-open {
 .sw-user-trigger {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     height: 38px;
     max-width: 290px;
-    padding: 3px 8px 3px 4px;
+    padding: 3px var(--sw-spacing-sm) 3px var(--sw-spacing-xs);
     background: transparent;
     border: 1px solid transparent;
     border-radius: var(--r);
@@ -3608,7 +3608,7 @@ body.sw-modal-open {
     top: calc(100% + 8px);
     z-index: var(--sw-z-dropdown);
     min-width: 220px;
-    padding: 8px;
+    padding: var(--sw-spacing-sm);
     background: var(--b1);
     border: var(--brd);
     border-radius: var(--r);
@@ -3624,7 +3624,7 @@ body.sw-modal-open {
     flex-direction: column;
     gap: 2px;
     margin-bottom: 6px;
-    padding: 6px 8px 10px;
+    padding: 6px var(--sw-spacing-sm) 10px;
     border-bottom: var(--brd);
 }
 
@@ -3651,7 +3651,7 @@ body.sw-modal-open {
     align-items: center;
     gap: 9px;
     width: 100%;
-    padding: 10px 8px;
+    padding: 10px var(--sw-spacing-sm);
     background: transparent;
     border: 0;
     border-radius: var(--r);
@@ -3686,16 +3686,16 @@ body.sw-modal-open {
     background: var(--sb);
     display: flex;
     flex-direction: column;
-    padding: 16px 12px;
+    padding: var(--sw-spacing-md) 12px;
     flex-shrink: 0;
     overflow-y: auto;
     transition: background 0.25s;
 }
 
 .sw-sb-brand {
-    padding: 4px 0.75rem 14px;
+    padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    margin-bottom: 8px;
+    margin-bottom: var(--sw-spacing-sm);
 }
 
 .sw-sb-brand-name {
@@ -3722,7 +3722,7 @@ body.sw-modal-open {
     margin: 18px 0 6px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
 }
 
 .sw-sb-group::after {
@@ -3813,7 +3813,7 @@ body.sw-modal-open {
     overflow: hidden;
     max-height: 0;
     margin: 0;
-    padding: 0 0.5rem 0 0.7rem;
+    padding: 0 var(--sw-spacing-sm) 0 0.7rem;
     border-left: 3px solid transparent;
     border-radius: 0 0 0.75rem 0.75rem;
     background: transparent;
@@ -3823,7 +3823,7 @@ body.sw-modal-open {
 .sw-sb-sub.open {
     max-height: 480px;
     margin: 0 0 0.55rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    padding: var(--sw-spacing-sm) var(--sw-spacing-sm) var(--sw-spacing-sm) 0.7rem;
     border-left-color: var(--s);
     background: rgba(0, 0, 0, 0.14);
 }
@@ -3896,7 +3896,7 @@ body.sw-modal-open {
     }
 
     .sw-topbar-title-row {
-        gap: 8px;
+        gap: var(--sw-spacing-sm);
     }
 
     .sw-topbar-meta {
@@ -3958,7 +3958,7 @@ body.sw-modal-open {
     }
 
     .sw-main {
-        padding: 16px 14px;
+        padding: var(--sw-spacing-md) 14px;
     }
 }
 
@@ -4740,14 +4740,14 @@ body.sw-modal-open {
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--th-color);
-    padding: 0.62rem 1rem;
+    padding: 0.62rem var(--sw-spacing-md);
     border-bottom: 2px solid rgba(40, 68, 154, 0.2);
     border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
     text-align: left;
 }
 
 .sw-table tbody td {
-    padding: 0.5rem 1rem;
+    padding: var(--sw-spacing-sm) var(--sw-spacing-md);
     border-bottom: var(--brd);
     color: var(--bc);
     vertical-align: middle;
@@ -4846,7 +4846,7 @@ body.sw-modal-open {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 16px;
+    gap: var(--sw-spacing-md);
 }
 
 .sw-crud-title {
@@ -4857,7 +4857,7 @@ body.sw-modal-open {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
 }
 
 .sw-crud-actions .sw-btn,
@@ -4876,11 +4876,11 @@ body.sw-modal-open {
 
 .sw-card.sw-card-compact,
 .sw-card.sw-list-card.sw-card-compact {
-    padding: 16px;
+    padding: var(--sw-spacing-md);
 }
 
 .sw-card-compact .sw-list-toolbar {
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     padding-bottom: 10px;
 }
 
@@ -4895,7 +4895,7 @@ body.sw-modal-open {
     align-items: stretch;
     flex-direction: column;
     gap: 13px;
-    padding: 0 0 16px;
+    padding: 0 0 var(--sw-spacing-md);
     border-bottom: 0;
     background: transparent;
 }
@@ -4904,7 +4904,7 @@ body.sw-modal-open {
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     min-width: 0;
     width: 100%;
 }
@@ -4939,7 +4939,7 @@ body.sw-modal-open {
 .sw-list-filter-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     flex: 0 0 auto;
 }
 
@@ -5166,7 +5166,7 @@ body.sw-modal-open {
     align-items: center;
     gap: 9px;
     width: 100%;
-    padding: 8px 10px;
+    padding: var(--sw-spacing-sm) 10px;
     background: transparent;
     border: 0;
     border-radius: var(--r);
@@ -5203,14 +5203,14 @@ body.sw-modal-open {
 .sw-list-pagination {
     display: flex;
     justify-content: flex-start;
-    padding: 16px 0 4px;
+    padding: var(--sw-spacing-md) 0 var(--sw-spacing-xs);
     border-top: 0;
 }
 
 .sw-list-pagination nav.sw-pagination-nav {
     align-items: center;
     display: flex;
-    gap: 16px;
+    gap: var(--sw-spacing-md);
     justify-content: space-between;
     width: 100%;
 }
@@ -5232,7 +5232,7 @@ body.sw-modal-open {
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
-    gap: 4px;
+    gap: var(--sw-spacing-xs);
     margin: 0;
     padding: 0;
 }
@@ -5273,7 +5273,7 @@ body.sw-modal-open {
 .sw-table-totals tfoot td {
     background: var(--th-bg);
     color: var(--th-color);
-    padding: 0.62rem 1rem;
+    padding: 0.62rem var(--sw-spacing-md);
     font-size: var(--sw-text-sm);
     font-weight: 700;
     text-align: right;

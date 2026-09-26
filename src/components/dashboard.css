@@ -22,7 +22,7 @@
 }
 
 .sw-report-block + .sw-report-block {
-    margin-top: 1.5rem;
+    margin-top: var(--sw-spacing-lg);
 }
 
 .sw-report-heading {
@@ -37,13 +37,13 @@
 .sw-metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 16px;
+    gap: var(--sw-spacing-md);
     margin-bottom: 28px;
 }
 
 .sw-content-stack {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
 }
 
 .sw-content-stack > .sw-metrics-grid {
@@ -53,7 +53,7 @@
 .sw-dashboard-grid {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(300px, 0.92fr);
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
     align-items: start;
     min-width: 0;
 }
@@ -61,7 +61,7 @@
 .sw-dashboard-main,
 .sw-dashboard-aside {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
     min-width: 0;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .sw-row-gap {
-    row-gap: 1.5rem;
+    row-gap: var(--sw-spacing-lg);
 }
 
 .sw-metric {
@@ -185,7 +185,7 @@
 .sw-quicklink-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    gap: var(--sw-spacing-md);
 }
 
 .sw-quicklink {
@@ -194,7 +194,7 @@
     justify-content: space-between;
     gap: 0.75rem;
     min-width: 0;
-    padding: 1rem;
+    padding: var(--sw-spacing-md);
     border: var(--brd);
     border-radius: var(--r);
     color: var(--bc);
@@ -355,7 +355,7 @@
 .sw-donut-legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     font-size: var(--sw-text-sm);
     color: var(--bc);
 }
@@ -385,7 +385,7 @@
 .sw-activity-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--sw-spacing-xs);
 }
 
 .sw-activity-item {

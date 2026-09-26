@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    padding: 24px;
+    padding: var(--sw-spacing-lg);
     width: 100%;
 }
 
@@ -34,7 +34,7 @@
     background: var(--b1);
     border-color: rgba(40, 68, 154, 0.18);
     border-color: color-mix(in srgb, var(--p) 18%, transparent);
-    padding: 2rem;
+    padding: var(--sw-spacing-xl);
     box-shadow: var(--sh-lg);
 }
 
@@ -59,9 +59,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: var(--sw-spacing-lg);
     min-width: 0;
-    padding: 2rem;
+    padding: var(--sw-spacing-xl);
     background: var(--b2);
     border-right: var(--brd);
 }
@@ -177,12 +177,12 @@
     flex-direction: column;
     justify-content: center;
     min-width: 0;
-    padding: 2rem;
+    padding: var(--sw-spacing-xl);
     background: var(--b1);
 }
 
 .sw-auth-form-head {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--sw-spacing-lg);
 }
 
 .sw-auth-form-title {
@@ -241,7 +241,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--sw-spacing-md);
 }
 
 .sw-auth-logo {
@@ -266,7 +266,7 @@
 
 .sw-auth-submit {
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: var(--sw-spacing-sm);
     width: 100%;
 }
 
@@ -276,7 +276,7 @@
     cursor: pointer;
     display: flex;
     font-size: var(--sw-text-base);
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     margin: 0.9rem 0 1.1rem;
 }
 
@@ -340,28 +340,28 @@
     color: var(--bc2);
     font-size: var(--sw-text-sm);
     line-height: 1.45;
-    margin: 1rem 0;
-    padding: 0.85rem 1rem;
+    margin: var(--sw-spacing-md) 0;
+    padding: 0.85rem var(--sw-spacing-md);
 }
 
 .sw-auth-actions {
     display: grid;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: var(--sw-spacing-md);
 }
 
 .sw-auth-footnote {
     color: var(--bc2);
     font-size: var(--sw-text-xs);
     line-height: 1.45;
-    margin-top: 1rem;
+    margin-top: var(--sw-spacing-md);
     text-align: center;
 }
 
 @media (max-width: 767.98px) {
     .sw-auth-shell {
         align-items: flex-start;
-        padding: 16px;
+        padding: var(--sw-spacing-md);
     }
 
     .sw-auth-card-wide {
@@ -385,7 +385,7 @@
     }
 
     .sw-auth-feature-list {
-        margin-top: 1rem;
+        margin-top: var(--sw-spacing-md);
     }
 
     .sw-auth-form-panel {
@@ -393,7 +393,7 @@
     }
 
     .sw-auth-card-product {
-        padding: 1.5rem;
+        padding: var(--sw-spacing-lg);
     }
 
     .sw-auth-card-framed {

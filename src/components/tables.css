@@ -25,14 +25,14 @@
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--th-color);
-    padding: 0.62rem 1rem;
+    padding: 0.62rem var(--sw-spacing-md);
     border-bottom: 2px solid rgba(40, 68, 154, 0.2);
     border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
     text-align: left;
 }
 
 .sw-table tbody td {
-    padding: 0.5rem 1rem;
+    padding: var(--sw-spacing-sm) var(--sw-spacing-md);
     border-bottom: var(--brd);
     color: var(--bc);
     vertical-align: middle;
@@ -131,7 +131,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 16px;
+    gap: var(--sw-spacing-md);
 }
 
 .sw-crud-title {
@@ -142,7 +142,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
 }
 
 .sw-crud-actions .sw-btn,
@@ -161,11 +161,11 @@
 
 .sw-card.sw-card-compact,
 .sw-card.sw-list-card.sw-card-compact {
-    padding: 16px;
+    padding: var(--sw-spacing-md);
 }
 
 .sw-card-compact .sw-list-toolbar {
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     padding-bottom: 10px;
 }
 
@@ -180,7 +180,7 @@
     align-items: stretch;
     flex-direction: column;
     gap: 13px;
-    padding: 0 0 16px;
+    padding: 0 0 var(--sw-spacing-md);
     border-bottom: 0;
     background: transparent;
 }
@@ -189,7 +189,7 @@
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     min-width: 0;
     width: 100%;
 }
@@ -224,7 +224,7 @@
 .sw-list-filter-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     flex: 0 0 auto;
 }
 
@@ -451,7 +451,7 @@
     align-items: center;
     gap: 9px;
     width: 100%;
-    padding: 8px 10px;
+    padding: var(--sw-spacing-sm) 10px;
     background: transparent;
     border: 0;
     border-radius: var(--r);
@@ -488,14 +488,14 @@
 .sw-list-pagination {
     display: flex;
     justify-content: flex-start;
-    padding: 16px 0 4px;
+    padding: var(--sw-spacing-md) 0 var(--sw-spacing-xs);
     border-top: 0;
 }
 
 .sw-list-pagination nav.sw-pagination-nav {
     align-items: center;
     display: flex;
-    gap: 16px;
+    gap: var(--sw-spacing-md);
     justify-content: space-between;
     width: 100%;
 }
@@ -517,7 +517,7 @@
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
-    gap: 4px;
+    gap: var(--sw-spacing-xs);
     margin: 0;
     padding: 0;
 }
@@ -558,7 +558,7 @@
 .sw-table-totals tfoot td {
     background: var(--th-bg);
     color: var(--th-color);
-    padding: 0.62rem 1rem;
+    padding: 0.62rem var(--sw-spacing-md);
     font-size: var(--sw-text-sm);
     font-weight: 700;
     text-align: right;

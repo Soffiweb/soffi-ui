@@ -89,7 +89,7 @@
 .sw-topbar-meta {
     align-items: center;
     display: flex;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     min-width: 0;
 }
 
@@ -97,7 +97,7 @@
     align-items: center;
     color: var(--bc2);
     display: inline-flex;
-    gap: 4px;
+    gap: var(--sw-spacing-xs);
     min-width: 0;
 }
 
@@ -125,7 +125,7 @@
     font-weight: 700;
     gap: 5px;
     line-height: 1;
-    padding: 4px 10px;
+    padding: var(--sw-spacing-xs) 10px;
     white-space: nowrap;
 }
 
@@ -147,10 +147,10 @@
 .sw-user-trigger {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     height: 38px;
     max-width: 290px;
-    padding: 3px 8px 3px 4px;
+    padding: 3px var(--sw-spacing-sm) 3px var(--sw-spacing-xs);
     background: transparent;
     border: 1px solid transparent;
     border-radius: var(--r);
@@ -239,7 +239,7 @@
     top: calc(100% + 8px);
     z-index: var(--sw-z-dropdown);
     min-width: 220px;
-    padding: 8px;
+    padding: var(--sw-spacing-sm);
     background: var(--b1);
     border: var(--brd);
     border-radius: var(--r);
@@ -255,7 +255,7 @@
     flex-direction: column;
     gap: 2px;
     margin-bottom: 6px;
-    padding: 6px 8px 10px;
+    padding: 6px var(--sw-spacing-sm) 10px;
     border-bottom: var(--brd);
 }
 
@@ -282,7 +282,7 @@
     align-items: center;
     gap: 9px;
     width: 100%;
-    padding: 10px 8px;
+    padding: 10px var(--sw-spacing-sm);
     background: transparent;
     border: 0;
     border-radius: var(--r);
@@ -317,16 +317,16 @@
     background: var(--sb);
     display: flex;
     flex-direction: column;
-    padding: 16px 12px;
+    padding: var(--sw-spacing-md) 12px;
     flex-shrink: 0;
     overflow-y: auto;
     transition: background 0.25s;
 }
 
 .sw-sb-brand {
-    padding: 4px 0.75rem 14px;
+    padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    margin-bottom: 8px;
+    margin-bottom: var(--sw-spacing-sm);
 }
 
 .sw-sb-brand-name {
@@ -353,7 +353,7 @@
     margin: 18px 0 6px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
 }
 
 .sw-sb-group::after {
@@ -444,7 +444,7 @@
     overflow: hidden;
     max-height: 0;
     margin: 0;
-    padding: 0 0.5rem 0 0.7rem;
+    padding: 0 var(--sw-spacing-sm) 0 0.7rem;
     border-left: 3px solid transparent;
     border-radius: 0 0 0.75rem 0.75rem;
     background: transparent;
@@ -454,7 +454,7 @@
 .sw-sb-sub.open {
     max-height: 480px;
     margin: 0 0 0.55rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    padding: var(--sw-spacing-sm) var(--sw-spacing-sm) var(--sw-spacing-sm) 0.7rem;
     border-left-color: var(--s);
     background: rgba(0, 0, 0, 0.14);
 }
@@ -527,7 +527,7 @@
     }
 
     .sw-topbar-title-row {
-        gap: 8px;
+        gap: var(--sw-spacing-sm);
     }
 
     .sw-topbar-meta {
@@ -589,6 +589,6 @@
     }
 
     .sw-main {
-        padding: 16px 14px;
+        padding: var(--sw-spacing-md) 14px;
     }
 }

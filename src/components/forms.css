@@ -4,12 +4,12 @@
 .sw-field {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: var(--sw-spacing-md);
 }
 
 .sw-label {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--sw-spacing-sm);
     font-size: var(--sw-text-base);
     font-weight: 500;
     color: var(--bc2);
@@ -19,7 +19,7 @@
 .sw-select {
     width: 100%;
     height: 43px;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem var(--sw-spacing-md);
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     line-height: 1.2;
@@ -127,7 +127,7 @@
 .sw-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     width: 18px;
     height: 18px;
-    margin-left: 0.5rem;
+    margin-left: var(--sw-spacing-sm);
     padding: 0;
     background-repeat: no-repeat;
     background-position: center;
@@ -181,7 +181,7 @@
     align-items: center;
     width: 100%;
     height: 43px;
-    padding: 0 0.5rem;
+    padding: 0 var(--sw-spacing-sm);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
     border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
@@ -262,7 +262,7 @@
 
 .sw-textarea {
     width: 100%;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem var(--sw-spacing-md);
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
@@ -299,8 +299,8 @@
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 1.5rem;
+    gap: var(--sw-spacing-sm);
+    margin-top: var(--sw-spacing-lg);
 }
 
 .sw-form-compact .sw-field {
@@ -315,7 +315,7 @@
 .sw-form-compact .sw-input,
 .sw-form-compact .sw-select {
     height: 38px;
-    padding: 0.5rem 0.78rem;
+    padding: var(--sw-spacing-sm) 0.78rem;
     font-size: var(--sw-text-base);
 }
 
@@ -326,7 +326,7 @@
 
 .sw-form-compact .sw-textarea {
     min-height: 68px;
-    padding: 0.5rem 0.78rem;
+    padding: var(--sw-spacing-sm) 0.78rem;
     font-size: var(--sw-text-base);
 }
 
@@ -367,7 +367,7 @@
 
 .sw-ss-trigger {
     width: 100%;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem var(--sw-spacing-md);
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
@@ -379,7 +379,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: var(--sw-spacing-sm);
     transition: border-color 0.15s;
 }
 
@@ -412,7 +412,7 @@
 
 .sw-ss-search {
     width: 100%;
-    padding: 0.55rem 1rem 0.55rem 2.2rem;
+    padding: 0.55rem var(--sw-spacing-md) 0.55rem 2.2rem;
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);

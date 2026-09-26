@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.0 — 2026-09-26
+
+### Cambiado
+
+- **Escala de espaciado aplicada**: `--sw-spacing-xs/sm/md/lg/xl`
+  (`src/tokens/spacing.css`) existía desde antes pero no se usaba en
+  ningún componente. Ahora 69 `padding`/`margin`/`gap` en `dashboard.css`,
+  `navigation.css`, `forms.css`, `tables.css` y `auth.css` la usan — mismo
+  valor que antes (reemplazo dentro del shorthand, ej. `padding: 3px 8px
+  3px 4px` → `padding: 3px var(--sw-spacing-sm) 3px var(--sw-spacing-xs)`),
+  sin cambio visual. Los valores que no calzan exacto con la escala (ej.
+  `0.78rem`, `2.2rem`) quedan igual, no se fuerza ningún numero nuevo.
+
 ## 0.2.0 — 2026-09-26
 
 Primer paso de la auditoría de customización rumbo a 1.0.0: tokens que
