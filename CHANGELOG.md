@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.1 — 2026-09-26
+
+### Corregido
+
+- **`forms.css`**: 4 `border-radius` sueltos que había quedado sin
+  tokenizar en 0.2.0 (indicador de fecha/hora, `.sw-toggle`, `.sw-checkbox`
+  y `.sw-checkbox-input`) — 3 a `--sw-radius-sm` (4px, calzaba exacto) y
+  `.sw-toggle` a `--sw-radius-pill` (era `25px`, el valor viejo del pill
+  antes de migrar a `9999px`; mismo resultado visual en un switch de 26px
+  de alto). Sin cambio visual.
+
 ## 0.6.0 — 2026-09-26
 
 Cierra la auditoría de customización rumbo a 1.0.0 (ver 0.2.0 a 0.6.0).

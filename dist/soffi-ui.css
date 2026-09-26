@@ -1,4 +1,4 @@
-/*! Soffi UI 0.6.0 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.6.1 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -2551,7 +2551,7 @@ body {
 .sw-input::-webkit-datetime-edit-second-field:focus,
 .sw-input::-webkit-datetime-edit-ampm-field:focus {
     padding: 0 2px;
-    border-radius: 4px;
+    border-radius: var(--sw-radius-sm);
     background: rgba(40, 68, 154, 0.16);
     background: color-mix(in srgb, var(--p) 16%, transparent);
     color: var(--bc);
@@ -2843,7 +2843,7 @@ body {
     height: 26px;
     background: rgba(67, 97, 238, 0.32);
     background: color-mix(in srgb, var(--s) 32%, transparent);
-    border-radius: 25px;
+    border-radius: var(--sw-radius-pill);
     position: relative;
     cursor: pointer;
     border: none;
@@ -2882,7 +2882,7 @@ body {
     height: 19px;
     border: 2px solid rgba(67, 97, 238, 0.55);
     border: 2px solid color-mix(in srgb, var(--s) 55%, transparent);
-    border-radius: 4px;
+    border-radius: var(--sw-radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2896,7 +2896,7 @@ body {
     height: 19px;
     border: 2px solid rgba(67, 97, 238, 0.55);
     border: 2px solid color-mix(in srgb, var(--s) 55%, transparent);
-    border-radius: 4px;
+    border-radius: var(--sw-radius-sm);
     background: var(--b1);
     cursor: pointer;
     flex-shrink: 0;
