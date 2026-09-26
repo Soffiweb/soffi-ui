@@ -81,12 +81,19 @@
     box-shadow: var(--sh-md);
 }
 
+/* --sw-action-card-icon-size pisable (style="--sw-action-card-icon-size: 64px")
+   sin editar este archivo — mismo criterio que --sw-grid-min/--sw-grid-cols
+   de arriba, aplicado ahora al tamaño del icono en vez del grid. Mismo
+   patron en .sw-metric-icon/.sw-quicklink-icon/.sw-activity-icon
+   (dashboard.css), .sw-table-thumb (tables.css), .sw-auth-mark (auth.css)
+   y .sw-user-avatar (navigation.css). */
 .sw-action-card-icon {
+    --sw-action-card-icon-size: 56px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: var(--sw-action-card-icon-size);
+    height: var(--sw-action-card-icon-size);
     margin: 0 auto 0.9rem;
     border-radius: var(--r);
     font-size: var(--sw-text-xl);

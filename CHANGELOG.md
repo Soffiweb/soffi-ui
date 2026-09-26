@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.6.0 — 2026-09-26
+
+Cierra la auditoría de customización rumbo a 1.0.0 (ver 0.2.0 a 0.6.0).
+
+### Agregado
+
+- Hooks de tamaño pisables en la familia "caja de ícono" — mismo criterio
+  que `--sw-grid-min` (0.5.0), aplicado a `width`/`height`:
+  - `--sw-action-card-icon-size` (56px) — `.sw-action-card-icon`
+  - `--sw-metric-icon-size` (40px) — `.sw-metric-icon`
+  - `--sw-quicklink-icon-size` (42px) — `.sw-quicklink-icon`
+  - `--sw-activity-icon-size` (36px) — `.sw-activity-icon`
+  - `--sw-table-thumb-size` (40px) — `.sw-table-thumb`
+  - `--sw-auth-mark-size` (48px) — `.sw-auth-mark`
+  - `--sw-user-avatar-size` (32px) — `.sw-user-avatar`
+
+  Alcance acotado a esta familia (la más repetida del set); se dejó afuera
+  checkbox/radio/toggle (tamaños de reemplazo de input nativo) y los
+  modificadores `-lg` ya existentes, que ya son la variante. Mismos
+  valores por defecto que antes, sin cambio visual.
+
 ## 0.5.0 — 2026-09-26
 
 ### Agregado

@@ -321,13 +321,16 @@
     min-width: 0;
 }
 
+/* --sw-table-thumb-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-table-thumb {
+    --sw-table-thumb-size: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: var(--sw-table-thumb-size);
+    height: var(--sw-table-thumb-size);
     border-radius: var(--r);
     border: var(--brd);
     background: var(--b2);

@@ -1,4 +1,4 @@
-/*! Soffi UI 0.5.0 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.6.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -518,12 +518,19 @@ body {
     box-shadow: var(--sh-md);
 }
 
+/* --sw-action-card-icon-size pisable (style="--sw-action-card-icon-size: 64px")
+   sin editar este archivo — mismo criterio que --sw-grid-min/--sw-grid-cols
+   de arriba, aplicado ahora al tamaño del icono en vez del grid. Mismo
+   patron en .sw-metric-icon/.sw-quicklink-icon/.sw-activity-icon
+   (dashboard.css), .sw-table-thumb (tables.css), .sw-auth-mark (auth.css)
+   y .sw-user-avatar (navigation.css). */
 .sw-action-card-icon {
+    --sw-action-card-icon-size: 56px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: var(--sw-action-card-icon-size);
+    height: var(--sw-action-card-icon-size);
     margin: 0 auto 0.9rem;
     border-radius: var(--r);
     font-size: var(--sw-text-xl);
@@ -942,13 +949,16 @@ body {
     min-width: 0;
 }
 
+/* --sw-auth-mark-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-auth-mark {
+    --sw-auth-mark-size: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
+    width: var(--sw-auth-mark-size);
+    height: var(--sw-auth-mark-size);
     border-radius: var(--r);
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));
@@ -1833,12 +1843,15 @@ body {
     border: var(--brd);
 }
 
+/* --sw-metric-icon-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-metric-icon {
+    --sw-metric-icon-size: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: var(--sw-metric-icon-size);
+    height: var(--sw-metric-icon-size);
     border-radius: var(--r);
     font-size: var(--sw-text-lg);
     flex-shrink: 0;
@@ -1973,12 +1986,15 @@ body {
     min-width: 0;
 }
 
+/* --sw-quicklink-icon-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-quicklink-icon {
+    --sw-quicklink-icon-size: 42px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: var(--sw-quicklink-icon-size);
+    height: var(--sw-quicklink-icon-size);
     margin-right: 0.85rem;
     border-radius: var(--r);
     background: rgba(40, 68, 154, 0.12);
@@ -2160,12 +2176,15 @@ body {
     padding-bottom: 0;
 }
 
+/* --sw-activity-icon-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-activity-icon {
+    --sw-activity-icon-size: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: var(--sw-activity-icon-size);
+    height: var(--sw-activity-icon-size);
     border-radius: 50%;
     font-size: var(--sw-text-base);
     flex-shrink: 0;
@@ -3620,13 +3639,17 @@ body.sw-modal-open {
     outline-offset: 1px;
 }
 
+/* --sw-user-avatar-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). .sw-avatar-lg sigue pisando
+   width/height directo, no depende de esta var. */
 .sw-user-avatar {
+    --sw-user-avatar-size: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 32px;
-    height: 32px;
+    width: var(--sw-user-avatar-size);
+    height: var(--sw-user-avatar-size);
     border-radius: 50%;
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));
@@ -5135,13 +5158,16 @@ body.sw-modal-open {
     min-width: 0;
 }
 
+/* --sw-table-thumb-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-table-thumb {
+    --sw-table-thumb-size: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: var(--sw-table-thumb-size);
+    height: var(--sw-table-thumb-size);
     border-radius: var(--r);
     border: var(--brd);
     background: var(--b2);

@@ -174,13 +174,17 @@
     outline-offset: 1px;
 }
 
+/* --sw-user-avatar-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). .sw-avatar-lg sigue pisando
+   width/height directo, no depende de esta var. */
 .sw-user-avatar {
+    --sw-user-avatar-size: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 32px;
-    height: 32px;
+    width: var(--sw-user-avatar-size);
+    height: var(--sw-user-avatar-size);
     border-radius: 50%;
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));

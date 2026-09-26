@@ -96,12 +96,15 @@
     border: var(--brd);
 }
 
+/* --sw-metric-icon-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-metric-icon {
+    --sw-metric-icon-size: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: var(--sw-metric-icon-size);
+    height: var(--sw-metric-icon-size);
     border-radius: var(--r);
     font-size: var(--sw-text-lg);
     flex-shrink: 0;
@@ -236,12 +239,15 @@
     min-width: 0;
 }
 
+/* --sw-quicklink-icon-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-quicklink-icon {
+    --sw-quicklink-icon-size: 42px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: var(--sw-quicklink-icon-size);
+    height: var(--sw-quicklink-icon-size);
     margin-right: 0.85rem;
     border-radius: var(--r);
     background: rgba(40, 68, 154, 0.12);
@@ -423,12 +429,15 @@
     padding-bottom: 0;
 }
 
+/* --sw-activity-icon-size pisable — mismo criterio que --sw-action-card-icon-size
+   (ver la nota completa en action-card.css). */
 .sw-activity-icon {
+    --sw-activity-icon-size: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: var(--sw-activity-icon-size);
+    height: var(--sw-activity-icon-size);
     border-radius: 50%;
     font-size: var(--sw-text-base);
     flex-shrink: 0;
