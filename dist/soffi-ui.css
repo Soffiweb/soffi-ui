@@ -1,4 +1,4 @@
-/*! Soffi UI 0.1.1 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.2.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -172,6 +172,7 @@
 :root {
     --sw-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
+    --sw-text-3xs:  10px;   /*  1 uso hoy  — etiqueta bajo dona (dashboard) */
     --sw-text-2xs:  11px;   /*  7 usos hoy — badges, notas al pie      */
     --sw-text-xs:   12px;   /* 15 usos     — labels, hints             */
     --sw-text-sm:   13px;   /* 22 usos     — tablas, texto secundario  */
@@ -199,6 +200,33 @@ html {
     font-family: var(--sw-font-sans);
     font-size: 16px;
     line-height: var(--sw-leading-base);
+}
+
+/* ===== src/tokens/z-index.css ===== */
+/* Escala de z-index — NUEVA. Ninguna de las 4 apps la tenía: cada
+   componente ponía su número suelto sin relación con los demás (visto en
+   forms.css, navigation.css, modal.css, toast.css, tables.css).
+
+   Encontrado al auditar: .sw-row-menu-dropdown.is-portal (tables.css) tenía
+   z-index: 3000 — por encima del backdrop de modal (1060) y del toast
+   (1080). Es el mismo menú que .sw-row-menu-dropdown normal (sin portal,
+   capa dropdown), solo que se posiciona fixed para escapar de un
+   contenedor con overflow. No hay razón de producto para que supere a un
+   modal o a un toast; si un modal se abre con ese menú todavía abierto, el
+   menú se dibujaba encima. Se corrige alineándolo a la misma capa
+   dropdown que su variante no-portal.
+
+   Los z-index de tables.css (1/2/3) para thead/columna sticky NO están acá:
+   son orden relativo dentro de la propia tabla (quién tapa a quién entre
+   celdas), no una capa global de la página. Tocarlos no es un problema de
+   customización, es implementación interna. */
+:root {
+    --sw-z-sidebar-backdrop: 50;  /* 1 uso — fondo oscuro detrás del sidebar movil */
+    --sw-z-sidebar: 60;           /* 1 uso — panel del sidebar movil (sobre su backdrop) */
+    --sw-z-sticky: 40;            /* 1 uso — navbar superior con position: sticky */
+    --sw-z-dropdown: 100;         /* 4 usos — select, menu de usuario, menu de fila (con y sin portal) */
+    --sw-z-modal-backdrop: 1060;  /* 1 uso */
+    --sw-z-toast: 1080;           /* 1 uso */
 }
 
 /* ===== src/base/reset.css ===== */
@@ -901,7 +929,7 @@ body {
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));
     color: var(--p);
-    font-size: 20px;
+    font-size: var(--sw-text-xl);
 }
 
 .sw-auth-system-text {
@@ -922,7 +950,7 @@ body {
 .sw-auth-system-subtitle {
     display: block;
     color: var(--bc2);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     line-height: 1.35;
 }
 
@@ -932,7 +960,7 @@ body {
 
 .sw-auth-heading {
     color: var(--bc);
-    font-size: 28px;
+    font-size: var(--sw-text-3xl);
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 0.75rem;
@@ -940,7 +968,7 @@ body {
 
 .sw-auth-copy {
     color: var(--bc2);
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     line-height: 1.55;
 }
 
@@ -958,7 +986,7 @@ body {
     gap: 0.65rem;
     min-width: 0;
     color: var(--bc);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
 }
 
@@ -973,7 +1001,7 @@ body {
     background: rgba(40, 68, 154, 0.1);
     background: color-mix(in srgb, var(--p) 10%, transparent);
     color: var(--p);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
 }
 
 .sw-auth-illustration {
@@ -1004,7 +1032,7 @@ body {
 
 .sw-auth-form-title {
     color: var(--bc);
-    font-size: 22px;
+    font-size: var(--sw-text-2xl);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.4rem;
@@ -1012,7 +1040,7 @@ body {
 
 .sw-auth-form-copy {
     color: var(--bc2);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     line-height: 1.45;
 }
 
@@ -1027,7 +1055,7 @@ body {
     color: rgba(253, 253, 255, 0.76);
     color: color-mix(in srgb, var(--btn-text) 76%, transparent);
     display: block;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     letter-spacing: 0;
     margin-bottom: 0.45rem;
@@ -1036,7 +1064,7 @@ body {
 
 .sw-auth-card-header-title {
     color: var(--btn-text);
-    font-size: 22px;
+    font-size: var(--sw-text-2xl);
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
@@ -1045,7 +1073,7 @@ body {
 .sw-auth-card-header-subtitle {
     color: rgba(253, 253, 255, 0.82);
     color: color-mix(in srgb, var(--btn-text) 82%, transparent);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     line-height: 1.45;
     margin: 0.55rem 0 0;
 }
@@ -1071,12 +1099,12 @@ body {
 }
 
 .sw-auth-title {
-    font-size: 20px;
+    font-size: var(--sw-text-xl);
     text-align: center;
 }
 
 .sw-auth-subtitle {
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     margin-bottom: 1.4rem;
     text-align: center;
 }
@@ -1092,7 +1120,7 @@ body {
     color: var(--bc2);
     cursor: pointer;
     display: flex;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     gap: 8px;
     margin: 0.9rem 0 1.1rem;
 }
@@ -1155,7 +1183,7 @@ body {
     border-left: 3px solid var(--p);
     border-radius: var(--r);
     color: var(--bc2);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     line-height: 1.45;
     margin: 1rem 0;
     padding: 0.85rem 1rem;
@@ -1169,7 +1197,7 @@ body {
 
 .sw-auth-footnote {
     color: var(--bc2);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     line-height: 1.45;
     margin-top: 1rem;
     text-align: center;
@@ -1193,7 +1221,7 @@ body {
     }
 
     .sw-auth-heading {
-        font-size: 22px;
+        font-size: var(--sw-text-2xl);
     }
 
     .sw-auth-copy,
@@ -1223,7 +1251,7 @@ body {
     }
 
     .sw-auth-card-header-title {
-        font-size: 20px;
+        font-size: var(--sw-text-xl);
     }
 }
 
@@ -1681,7 +1709,7 @@ body {
 
 .sw-report-heading {
     color: var(--p);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 700;
     letter-spacing: .04em;
     margin-bottom: .75rem;
@@ -1746,7 +1774,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: var(--r);
-    font-size: 16px;
+    font-size: var(--sw-text-lg);
     flex-shrink: 0;
 }
 
@@ -1790,7 +1818,7 @@ body {
 }
 
 .sw-metric-label {
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -1801,7 +1829,7 @@ body {
 }
 
 .sw-metric-value {
-    font-size: 28px;
+    font-size: var(--sw-text-3xl);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     line-height: 1.12;
@@ -1809,7 +1837,7 @@ body {
 }
 
 .sw-metric-sub {
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     color: var(--bc2);
     margin-top: 3px;
 }
@@ -1818,7 +1846,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 600;
 }
 
@@ -1897,7 +1925,7 @@ body {
     max-width: 100%;
     margin-top: 0.15rem;
     overflow: hidden;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     color: var(--bc2);
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1985,14 +2013,14 @@ body {
 }
 
 .sw-donut-total-value {
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     font-weight: 700;
     color: var(--bc);
     line-height: 1.15;
 }
 
 .sw-donut-total-label {
-    font-size: 10px;
+    font-size: var(--sw-text-3xs);
     color: var(--bc2);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -2010,7 +2038,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     color: var(--bc);
 }
 
@@ -2062,7 +2090,7 @@ body {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     flex-shrink: 0;
 }
 
@@ -2091,7 +2119,7 @@ body {
 .sw-activity-title {
     display: block;
     overflow: hidden;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 600;
     color: var(--bc);
     text-overflow: ellipsis;
@@ -2101,7 +2129,7 @@ body {
 .sw-activity-subtitle {
     display: block;
     overflow: hidden;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     color: var(--bc2);
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2109,7 +2137,7 @@ body {
 
 .sw-activity-amount {
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
@@ -2270,7 +2298,7 @@ body {
 .sw-label {
     display: inline-block;
     margin-bottom: 0.5rem;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     color: var(--bc2);
 }
@@ -2281,7 +2309,7 @@ body {
     height: 43px;
     padding: 0.65rem 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     line-height: 1.2;
     color: var(--bc);
     background-color: var(--b1);
@@ -2469,7 +2497,7 @@ body {
     margin-right: 0.75rem;
     padding: 0 0.9rem;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 600;
     color: var(--bc);
     background: var(--b2);
@@ -2486,7 +2514,7 @@ body {
     overflow: hidden;
     color: var(--bc2);
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -2524,7 +2552,7 @@ body {
     width: 100%;
     padding: 0.65rem 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
@@ -2541,12 +2569,12 @@ body {
 }
 
 .sw-hint {
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     color: var(--bc2);
 }
 
 .sw-hint-error {
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     color: var(--er);
 }
 
@@ -2569,14 +2597,14 @@ body {
 
 .sw-form-compact .sw-label {
     margin-bottom: 0.32rem;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
 }
 
 .sw-form-compact .sw-input,
 .sw-form-compact .sw-select {
     height: 38px;
     padding: 0.5rem 0.78rem;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-form-compact .sw-select {
@@ -2587,7 +2615,7 @@ body {
 .sw-form-compact .sw-textarea {
     min-height: 68px;
     padding: 0.5rem 0.78rem;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-form-compact .select2-container--default .select2-selection--single {
@@ -2595,7 +2623,7 @@ body {
 }
 
 .sw-form-compact .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-form-compact .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -2612,7 +2640,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: var(--bc2);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     pointer-events: none;
 }
 
@@ -2629,7 +2657,7 @@ body {
     width: 100%;
     padding: 0.65rem 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc);
     background: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
@@ -2661,7 +2689,7 @@ body {
     border-top: none;
     border-bottom-left-radius: var(--r);
     border-bottom-right-radius: var(--r);
-    z-index: 100;
+    z-index: var(--sw-z-dropdown);
     box-shadow: var(--sh-md);
     display: none;
 }
@@ -2674,7 +2702,7 @@ body {
     width: 100%;
     padding: 0.55rem 1rem 0.55rem 2.2rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc);
     background: var(--b2);
     border: var(--brd);
@@ -2686,7 +2714,7 @@ body {
 
 .sw-ss-opt {
     padding: 0.6rem 1.1rem;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     cursor: pointer;
     color: var(--bc);
     display: flex;
@@ -2709,7 +2737,7 @@ body {
 
 .sw-ss-empty {
     padding: 0.8rem 1.1rem;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc2);
     text-align: center;
 }
@@ -3261,7 +3289,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 1060;
+    z-index: var(--sw-z-modal-backdrop);
     background: rgba(0, 0, 0, 0.55);
     align-items: flex-start;
     justify-content: center;
@@ -3352,7 +3380,7 @@ body.sw-modal-open {
     border-bottom: var(--brd);
     position: sticky;
     top: 0;
-    z-index: 40;
+    z-index: var(--sw-z-sticky);
     transition: background 0.25s;
     box-shadow: var(--sh-sm);
 }
@@ -3411,7 +3439,7 @@ body.sw-modal-open {
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--bc);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -3422,7 +3450,7 @@ body.sw-modal-open {
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--bc2);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 500;
     line-height: 1.25;
 }
@@ -3462,7 +3490,7 @@ body.sw-modal-open {
     color: #513b16;
     color: color-mix(in srgb, var(--bc) 74%, var(--wa));
     display: inline-flex;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     gap: 5px;
     line-height: 1;
@@ -3472,13 +3500,13 @@ body.sw-modal-open {
 
 .sw-topbar-environment-pill i {
     color: currentColor;
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
 }
 
 .sw-topbar-period i,
 .sw-topbar-context-item i {
     color: var(--p);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
 }
 
 .sw-user-menu {
@@ -3526,7 +3554,7 @@ body.sw-modal-open {
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));
     color: var(--p);
-    font-size: 15px;
+    font-size: var(--sw-text-md);
 }
 
 .sw-user-avatar-img {
@@ -3559,13 +3587,13 @@ body.sw-modal-open {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
 }
 
 .sw-user-arrow {
     color: var(--bc2);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     transition: transform 0.15s;
 }
 
@@ -3578,7 +3606,7 @@ body.sw-modal-open {
     position: absolute;
     right: 0;
     top: calc(100% + 8px);
-    z-index: 80;
+    z-index: var(--sw-z-dropdown);
     min-width: 220px;
     padding: 8px;
     background: var(--b1);
@@ -3602,7 +3630,7 @@ body.sw-modal-open {
 
 .sw-user-role-label {
     color: var(--bc2);
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -3610,7 +3638,7 @@ body.sw-modal-open {
 
 .sw-user-role-value {
     color: var(--bc);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 600;
 }
 
@@ -3629,7 +3657,7 @@ body.sw-modal-open {
     border-radius: var(--r);
     color: var(--er);
     font-family: inherit;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     text-align: left;
     cursor: pointer;
@@ -3671,7 +3699,7 @@ body.sw-modal-open {
 }
 
 .sw-sb-brand-name {
-    font-size: 16px;
+    font-size: var(--sw-text-lg);
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
@@ -3679,13 +3707,13 @@ body.sw-modal-open {
 }
 
 .sw-sb-brand-sub {
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     color: rgba(255, 255, 255, 0.42);
     margin-top: 2px;
 }
 
 .sw-sb-group {
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -3711,7 +3739,7 @@ body.sw-modal-open {
     padding: 0.65rem 0.85rem;
     border-radius: var(--r);
     color: rgba(255, 255, 255, 0.82);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -3745,12 +3773,12 @@ body.sw-modal-open {
 .sw-sb-link i {
     width: 18px;
     text-align: center;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-sb-link .sw-arrow {
     margin-left: auto;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     transition: transform 0.2s;
 }
 
@@ -3807,7 +3835,7 @@ body.sw-modal-open {
     padding: 0.62rem 0.7rem;
     border-radius: 0.45rem;
     color: rgba(255, 255, 255, 0.78);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 600;
     text-decoration: none;
     transition:
@@ -3818,7 +3846,7 @@ body.sw-modal-open {
 .sw-sb-sub-link i {
     width: 15px;
     text-align: center;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     opacity: 0.75;
 }
 
@@ -3858,12 +3886,12 @@ body.sw-modal-open {
     }
 
     .sw-topbar-company {
-        font-size: 14px;
+        font-size: var(--sw-text-base);
         max-width: 120px;
     }
 
     .sw-topbar-period {
-        font-size: 12px;
+        font-size: var(--sw-text-xs);
         max-width: 120px;
     }
 
@@ -3898,7 +3926,7 @@ body.sw-modal-open {
         top: 58px;
         bottom: 0;
         left: 0;
-        z-index: 60;
+        z-index: var(--sw-z-sidebar);
         visibility: hidden;
         transform: translateX(-100%);
         transition:
@@ -3915,7 +3943,7 @@ body.sw-modal-open {
     .sw-sidebar-backdrop {
         position: fixed;
         inset: 58px 0 0;
-        z-index: 50;
+        z-index: var(--sw-z-sidebar-backdrop);
         display: block;
         border: 0;
         background: rgba(0, 0, 0, 0.38);
@@ -4701,13 +4729,13 @@ body.sw-modal-open {
 .sw-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-variant-numeric: tabular-nums;
 }
 
 .sw-table thead th {
     background: var(--th-bg);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -4783,7 +4811,7 @@ body.sw-modal-open {
     padding: 0.65rem 0.85rem;
     background: var(--b2);
     color: var(--bc);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
 }
 
 .sw-detail-table tfoot .sw-input {
@@ -4858,7 +4886,7 @@ body.sw-modal-open {
 
 .sw-card-compact .sw-card-title {
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: var(--sw-text-lg);
     line-height: 1.25;
 }
 
@@ -4883,7 +4911,7 @@ body.sw-modal-open {
 
 .sw-list-search-label {
     color: var(--bc2);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
@@ -4938,7 +4966,7 @@ body.sw-modal-open {
 .sw-list-context {
     color: #636c83;
     color: color-mix(in srgb, var(--bc2) 88%, var(--p));
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     white-space: nowrap;
 }
@@ -4987,12 +5015,12 @@ body.sw-modal-open {
 
 .sw-table-compact thead th {
     padding: 0.55rem 0.65rem;
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
 }
 
 .sw-table-compact tbody td {
     padding: 0.45rem 0.65rem;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
 }
 
 .sw-table th.text-center,
@@ -5020,7 +5048,7 @@ body.sw-modal-open {
     background: var(--b2);
     overflow: hidden;
     color: var(--bc2);
-    font-size: 15px;
+    font-size: var(--sw-text-md);
 }
 
 .sw-table-thumb img {
@@ -5032,7 +5060,7 @@ body.sw-modal-open {
 .sw-table-thumb-lg {
     width: 64px;
     height: 64px;
-    font-size: 22px;
+    font-size: var(--sw-text-2xl);
 }
 
 .sw-table-title {
@@ -5040,7 +5068,7 @@ body.sw-modal-open {
     max-width: 360px;
     overflow: hidden;
     color: var(--bc);
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     font-weight: 700;
     line-height: 1.25;
     text-overflow: ellipsis;
@@ -5054,7 +5082,7 @@ body.sw-modal-open {
     overflow: hidden;
     color: #5f6a85;
     color: color-mix(in srgb, var(--bc2) 82%, var(--p));
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     line-height: 1.35;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -5065,7 +5093,7 @@ body.sw-modal-open {
     max-width: 300px;
     overflow: hidden;
     color: var(--p);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     line-height: 1.35;
     text-decoration: none;
@@ -5106,7 +5134,7 @@ body.sw-modal-open {
     position: absolute;
     right: 0;
     top: calc(100% + 6px);
-    z-index: 80;
+    z-index: var(--sw-z-dropdown);
     min-width: 190px;
     padding: 6px;
     background: var(--b1);
@@ -5120,12 +5148,17 @@ body.sw-modal-open {
     display: block;
 }
 
+/* Misma capa dropdown que .sw-row-menu-dropdown normal (arriba): es el mismo
+   menu, solo que se posiciona fixed para escapar de un contenedor con
+   overflow. Antes tenia z-index: 3000 fijo — por encima de modal (1060) y
+   toast (1080) sin motivo; si el menu quedaba abierto y se abria un modal,
+   el menu tapaba al modal. Ver src/tokens/z-index.css. */
 .sw-row-menu-dropdown.is-portal {
     position: fixed;
     top: 0;
     right: auto;
     left: 0;
-    z-index: 3000;
+    z-index: var(--sw-z-dropdown);
 }
 
 .sw-row-menu-item {
@@ -5139,7 +5172,7 @@ body.sw-modal-open {
     border-radius: var(--r);
     color: var(--bc);
     font-family: inherit;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     text-align: left;
     text-decoration: none;
@@ -5184,7 +5217,7 @@ body.sw-modal-open {
 
 .sw-pagination-summary {
     color: var(--bc2);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     margin: 0;
 }
 
@@ -5215,7 +5248,7 @@ body.sw-modal-open {
     justify-content: center;
     min-width: 38px;
     height: 38px;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     padding: 0 0.75rem;
 }
@@ -5306,7 +5339,7 @@ body.sw-modal-open {
     position: fixed;
     top: 88px;
     right: 20px;
-    z-index: 1080;
+    z-index: var(--sw-z-toast);
     max-width: min(360px, calc(100vw - 40px));
     max-height: 70vh;
     overflow-y: auto;

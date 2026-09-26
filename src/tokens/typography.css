@@ -8,6 +8,7 @@
 :root {
     --sw-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
+    --sw-text-3xs:  10px;   /*  1 uso hoy  — etiqueta bajo dona (dashboard) */
     --sw-text-2xs:  11px;   /*  7 usos hoy — badges, notas al pie      */
     --sw-text-xs:   12px;   /* 15 usos     — labels, hints             */
     --sw-text-sm:   13px;   /* 22 usos     — tablas, texto secundario  */

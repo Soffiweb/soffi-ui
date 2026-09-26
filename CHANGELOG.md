@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.2.0 — 2026-09-26
+
+Primer paso de la auditoría de customización rumbo a 1.0.0: tokens que
+faltaban y un bug de stacking real.
+
+### Agregado
+
+- **Escala de z-index** (`src/tokens/z-index.css`): `--sw-z-sidebar-backdrop`,
+  `--sw-z-sidebar`, `--sw-z-sticky`, `--sw-z-dropdown`, `--sw-z-modal-backdrop`,
+  `--sw-z-toast`. Ninguna de las 4 apps la tenía — cada componente traía su
+  número suelto sin relación con los demás.
+- **`--sw-text-3xs`** (10px) en la escala tipográfica — completa el piso,
+  usado hoy por la etiqueta bajo la dona del dashboard.
+- Sección **Capas (z-index)** y **Ejemplos de uso** en el gallery de tokens
+  (`docs/gallery/index.html`).
+
+### Corregido
+
+- **`.sw-row-menu-dropdown.is-portal`** (tables.css) tenía `z-index: 3000`
+  fijo — por encima del backdrop de modal (1060) y del toast (1080) sin
+  motivo. Es el mismo menú que `.sw-row-menu-dropdown` normal, solo que se
+  posiciona `fixed` para escapar de un contenedor con overflow; si quedaba
+  abierto y se abría un modal, el menú lo tapaba. Ahora comparte capa
+  (`--sw-z-dropdown`) con su variante no-portal.
+
+### Cambiado
+
+- 86 `font-size` sueltos en `dashboard.css`, `navigation.css`, `forms.css`,
+  `tables.css` y `auth.css` ahora usan la escala `--sw-text-*` en vez de un
+  px suelto — mismo tamaño, ahora personalizable desde un solo lugar. Sin
+  cambio visual.
+
 ## 0.1.1 — 2026-09-25
 
 ### Cambiado

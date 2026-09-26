@@ -84,7 +84,7 @@
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));
     color: var(--p);
-    font-size: 20px;
+    font-size: var(--sw-text-xl);
 }
 
 .sw-auth-system-text {
@@ -105,7 +105,7 @@
 .sw-auth-system-subtitle {
     display: block;
     color: var(--bc2);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     line-height: 1.35;
 }
 
@@ -115,7 +115,7 @@
 
 .sw-auth-heading {
     color: var(--bc);
-    font-size: 28px;
+    font-size: var(--sw-text-3xl);
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 0.75rem;
@@ -123,7 +123,7 @@
 
 .sw-auth-copy {
     color: var(--bc2);
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     line-height: 1.55;
 }
 
@@ -141,7 +141,7 @@
     gap: 0.65rem;
     min-width: 0;
     color: var(--bc);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
 }
 
@@ -156,7 +156,7 @@
     background: rgba(40, 68, 154, 0.1);
     background: color-mix(in srgb, var(--p) 10%, transparent);
     color: var(--p);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
 }
 
 .sw-auth-illustration {
@@ -187,7 +187,7 @@
 
 .sw-auth-form-title {
     color: var(--bc);
-    font-size: 22px;
+    font-size: var(--sw-text-2xl);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.4rem;
@@ -195,7 +195,7 @@
 
 .sw-auth-form-copy {
     color: var(--bc2);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     line-height: 1.45;
 }
 
@@ -210,7 +210,7 @@
     color: rgba(253, 253, 255, 0.76);
     color: color-mix(in srgb, var(--btn-text) 76%, transparent);
     display: block;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     letter-spacing: 0;
     margin-bottom: 0.45rem;
@@ -219,7 +219,7 @@
 
 .sw-auth-card-header-title {
     color: var(--btn-text);
-    font-size: 22px;
+    font-size: var(--sw-text-2xl);
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
@@ -228,7 +228,7 @@
 .sw-auth-card-header-subtitle {
     color: rgba(253, 253, 255, 0.82);
     color: color-mix(in srgb, var(--btn-text) 82%, transparent);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     line-height: 1.45;
     margin: 0.55rem 0 0;
 }
@@ -254,12 +254,12 @@
 }
 
 .sw-auth-title {
-    font-size: 20px;
+    font-size: var(--sw-text-xl);
     text-align: center;
 }
 
 .sw-auth-subtitle {
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     margin-bottom: 1.4rem;
     text-align: center;
 }
@@ -275,7 +275,7 @@
     color: var(--bc2);
     cursor: pointer;
     display: flex;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     gap: 8px;
     margin: 0.9rem 0 1.1rem;
 }
@@ -338,7 +338,7 @@
     border-left: 3px solid var(--p);
     border-radius: var(--r);
     color: var(--bc2);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     line-height: 1.45;
     margin: 1rem 0;
     padding: 0.85rem 1rem;
@@ -352,7 +352,7 @@
 
 .sw-auth-footnote {
     color: var(--bc2);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     line-height: 1.45;
     margin-top: 1rem;
     text-align: center;
@@ -376,7 +376,7 @@
     }
 
     .sw-auth-heading {
-        font-size: 22px;
+        font-size: var(--sw-text-2xl);
     }
 
     .sw-auth-copy,
@@ -406,6 +406,6 @@
     }
 
     .sw-auth-card-header-title {
-        font-size: 20px;
+        font-size: var(--sw-text-xl);
     }
 }

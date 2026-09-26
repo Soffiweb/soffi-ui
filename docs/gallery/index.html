@@ -156,6 +156,7 @@
             <div class="gal-block">
                 <div class="gal-block-title"><h3>Tipografía</h3><span>--sw-font-sans: "Inter"</span></div>
                 <div class="gal-preview gal-preview-block">
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-3xs / 10px</span><span style="font-size:10px">Etiqueta bajo dona (dashboard)</span></div>
                     <div class="gal-type-row"><span class="gal-type-tag">--sw-text-2xs / 11px</span><span style="font-size:11px">Notas al pie, badges</span></div>
                     <div class="gal-type-row"><span class="gal-type-tag">--sw-text-xs / 12px</span><span style="font-size:12px">Labels, hints</span></div>
                     <div class="gal-type-row"><span class="gal-type-tag">--sw-text-sm / 13px</span><span style="font-size:13px">Tablas, texto secundario</span></div>
@@ -194,6 +195,61 @@
                         <div class="gal-shadow-card" style="box-shadow:var(--sh-lg)">--sh-lg</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Capas (z-index)</h3><span>src/tokens/z-index.css</span></div>
+                <p>Escala compartida para que un overlay propio (un dropdown, un panel flotante) sepa dónde ubicarse frente a los del sistema, en vez de adivinar un número.</p>
+                <div class="gal-preview gal-preview-block">
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sticky / 40</span><span>Navbar superior (position: sticky)</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sidebar-backdrop / 50</span><span>Fondo oscuro detrás del sidebar móvil</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sidebar / 60</span><span>Panel del sidebar móvil</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-dropdown / 100</span><span>Select, menú de usuario, menú de fila de tabla</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-modal-backdrop / 1060</span><span>Fondo del modal</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-toast / 1080</span><span>Notificación flotante</span></div>
+                </div>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Ejemplos de uso</h3></div>
+                <p>Los tokens son custom properties normales: se leen con <code>var(--sw-*)</code> y se pisan declarando el mismo nombre después de cargar <code>soffi-ui.css</code>, sin tocar el paquete.</p>
+
+                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r)">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Personalizar la marca</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>/* en el CSS de tu app, cargado DESPUÉS de soffi-ui.css */
+:root {
+    --sw-primary: #6d28d9;
+    --sw-radius-lg: 0.5rem;
+}</code></pre>
+                    </div>
+                </details>
+
+                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r);margin-top:10px">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Espaciado consistente en un componente propio</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>/* en vez de inventar un rem suelto */
+.mi-card {
+    padding: var(--sw-spacing-md);
+    gap: var(--sw-spacing-sm);
+}</code></pre>
+                    </div>
+                </details>
+
+                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r);margin-top:10px">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Apilar un overlay propio en la capa correcta</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>/* un panel flotante propio, mismo nivel que los dropdowns
+   del sistema — nunca por encima de un modal o un toast */
+.mi-panel-flotante {
+    position: fixed;
+    z-index: var(--sw-z-dropdown);
+}</code></pre>
+                    </div>
+                </details>
             </div>
         </section>
 

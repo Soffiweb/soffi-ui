@@ -11,7 +11,7 @@
     border-bottom: var(--brd);
     position: sticky;
     top: 0;
-    z-index: 40;
+    z-index: var(--sw-z-sticky);
     transition: background 0.25s;
     box-shadow: var(--sh-sm);
 }
@@ -70,7 +70,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--bc);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -81,7 +81,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--bc2);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 500;
     line-height: 1.25;
 }
@@ -121,7 +121,7 @@
     color: #513b16;
     color: color-mix(in srgb, var(--bc) 74%, var(--wa));
     display: inline-flex;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     gap: 5px;
     line-height: 1;
@@ -131,13 +131,13 @@
 
 .sw-topbar-environment-pill i {
     color: currentColor;
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
 }
 
 .sw-topbar-period i,
 .sw-topbar-context-item i {
     color: var(--p);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
 }
 
 .sw-user-menu {
@@ -185,7 +185,7 @@
     background: #e3e7f3;
     background: color-mix(in srgb, var(--p) 12%, var(--b1));
     color: var(--p);
-    font-size: 15px;
+    font-size: var(--sw-text-md);
 }
 
 .sw-user-avatar-img {
@@ -218,13 +218,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
 }
 
 .sw-user-arrow {
     color: var(--bc2);
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     transition: transform 0.15s;
 }
 
@@ -237,7 +237,7 @@
     position: absolute;
     right: 0;
     top: calc(100% + 8px);
-    z-index: 80;
+    z-index: var(--sw-z-dropdown);
     min-width: 220px;
     padding: 8px;
     background: var(--b1);
@@ -261,7 +261,7 @@
 
 .sw-user-role-label {
     color: var(--bc2);
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -269,7 +269,7 @@
 
 .sw-user-role-value {
     color: var(--bc);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 600;
 }
 
@@ -288,7 +288,7 @@
     border-radius: var(--r);
     color: var(--er);
     font-family: inherit;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     text-align: left;
     cursor: pointer;
@@ -330,7 +330,7 @@
 }
 
 .sw-sb-brand-name {
-    font-size: 16px;
+    font-size: var(--sw-text-lg);
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
@@ -338,13 +338,13 @@
 }
 
 .sw-sb-brand-sub {
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     color: rgba(255, 255, 255, 0.42);
     margin-top: 2px;
 }
 
 .sw-sb-group {
-    font-size: 11px;
+    font-size: var(--sw-text-2xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -370,7 +370,7 @@
     padding: 0.65rem 0.85rem;
     border-radius: var(--r);
     color: rgba(255, 255, 255, 0.82);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -404,12 +404,12 @@
 .sw-sb-link i {
     width: 18px;
     text-align: center;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-sb-link .sw-arrow {
     margin-left: auto;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     transition: transform 0.2s;
 }
 
@@ -466,7 +466,7 @@
     padding: 0.62rem 0.7rem;
     border-radius: 0.45rem;
     color: rgba(255, 255, 255, 0.78);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 600;
     text-decoration: none;
     transition:
@@ -477,7 +477,7 @@
 .sw-sb-sub-link i {
     width: 15px;
     text-align: center;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     opacity: 0.75;
 }
 
@@ -517,12 +517,12 @@
     }
 
     .sw-topbar-company {
-        font-size: 14px;
+        font-size: var(--sw-text-base);
         max-width: 120px;
     }
 
     .sw-topbar-period {
-        font-size: 12px;
+        font-size: var(--sw-text-xs);
         max-width: 120px;
     }
 
@@ -557,7 +557,7 @@
         top: 58px;
         bottom: 0;
         left: 0;
-        z-index: 60;
+        z-index: var(--sw-z-sidebar);
         visibility: hidden;
         transform: translateX(-100%);
         transition:
@@ -574,7 +574,7 @@
     .sw-sidebar-backdrop {
         position: fixed;
         inset: 58px 0 0;
-        z-index: 50;
+        z-index: var(--sw-z-sidebar-backdrop);
         display: block;
         border: 0;
         background: rgba(0, 0, 0, 0.38);

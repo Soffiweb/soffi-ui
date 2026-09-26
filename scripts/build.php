@@ -22,6 +22,7 @@ $order = [
     'src/tokens/color.css',
     'src/tokens/spacing.css',
     'src/tokens/typography.css',
+    'src/tokens/z-index.css',
     'src/base/reset.css',
     'src/base/utilities.css',
 ];

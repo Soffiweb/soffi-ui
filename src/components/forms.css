@@ -10,7 +10,7 @@
 .sw-label {
     display: inline-block;
     margin-bottom: 0.5rem;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 500;
     color: var(--bc2);
 }
@@ -21,7 +21,7 @@
     height: 43px;
     padding: 0.65rem 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     line-height: 1.2;
     color: var(--bc);
     background-color: var(--b1);
@@ -209,7 +209,7 @@
     margin-right: 0.75rem;
     padding: 0 0.9rem;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 600;
     color: var(--bc);
     background: var(--b2);
@@ -226,7 +226,7 @@
     overflow: hidden;
     color: var(--bc2);
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -264,7 +264,7 @@
     width: 100%;
     padding: 0.65rem 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
@@ -281,12 +281,12 @@
 }
 
 .sw-hint {
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     color: var(--bc2);
 }
 
 .sw-hint-error {
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     color: var(--er);
 }
 
@@ -309,14 +309,14 @@
 
 .sw-form-compact .sw-label {
     margin-bottom: 0.32rem;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
 }
 
 .sw-form-compact .sw-input,
 .sw-form-compact .sw-select {
     height: 38px;
     padding: 0.5rem 0.78rem;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-form-compact .sw-select {
@@ -327,7 +327,7 @@
 .sw-form-compact .sw-textarea {
     min-height: 68px;
     padding: 0.5rem 0.78rem;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-form-compact .select2-container--default .select2-selection--single {
@@ -335,7 +335,7 @@
 }
 
 .sw-form-compact .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 14px;
+    font-size: var(--sw-text-base);
 }
 
 .sw-form-compact .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -352,7 +352,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: var(--bc2);
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     pointer-events: none;
 }
 
@@ -369,7 +369,7 @@
     width: 100%;
     padding: 0.65rem 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc);
     background: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
@@ -401,7 +401,7 @@
     border-top: none;
     border-bottom-left-radius: var(--r);
     border-bottom-right-radius: var(--r);
-    z-index: 100;
+    z-index: var(--sw-z-dropdown);
     box-shadow: var(--sh-md);
     display: none;
 }
@@ -414,7 +414,7 @@
     width: 100%;
     padding: 0.55rem 1rem 0.55rem 2.2rem;
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc);
     background: var(--b2);
     border: var(--brd);
@@ -426,7 +426,7 @@
 
 .sw-ss-opt {
     padding: 0.6rem 1.1rem;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     cursor: pointer;
     color: var(--bc);
     display: flex;
@@ -449,7 +449,7 @@
 
 .sw-ss-empty {
     padding: 0.8rem 1.1rem;
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     color: var(--bc2);
     text-align: center;
 }

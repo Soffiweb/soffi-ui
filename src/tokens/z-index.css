@@ -1,0 +1,25 @@
+/* Escala de z-index — NUEVA. Ninguna de las 4 apps la tenía: cada
+   componente ponía su número suelto sin relación con los demás (visto en
+   forms.css, navigation.css, modal.css, toast.css, tables.css).
+
+   Encontrado al auditar: .sw-row-menu-dropdown.is-portal (tables.css) tenía
+   z-index: 3000 — por encima del backdrop de modal (1060) y del toast
+   (1080). Es el mismo menú que .sw-row-menu-dropdown normal (sin portal,
+   capa dropdown), solo que se posiciona fixed para escapar de un
+   contenedor con overflow. No hay razón de producto para que supere a un
+   modal o a un toast; si un modal se abre con ese menú todavía abierto, el
+   menú se dibujaba encima. Se corrige alineándolo a la misma capa
+   dropdown que su variante no-portal.
+
+   Los z-index de tables.css (1/2/3) para thead/columna sticky NO están acá:
+   son orden relativo dentro de la propia tabla (quién tapa a quién entre
+   celdas), no una capa global de la página. Tocarlos no es un problema de
+   customización, es implementación interna. */
+:root {
+    --sw-z-sidebar-backdrop: 50;  /* 1 uso — fondo oscuro detrás del sidebar movil */
+    --sw-z-sidebar: 60;           /* 1 uso — panel del sidebar movil (sobre su backdrop) */
+    --sw-z-sticky: 40;            /* 1 uso — navbar superior con position: sticky */
+    --sw-z-dropdown: 100;         /* 4 usos — select, menu de usuario, menu de fila (con y sin portal) */
+    --sw-z-modal-backdrop: 1060;  /* 1 uso */
+    --sw-z-toast: 1080;           /* 1 uso */
+}

@@ -27,7 +27,7 @@
 
 .sw-report-heading {
     color: var(--p);
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 700;
     letter-spacing: .04em;
     margin-bottom: .75rem;
@@ -92,7 +92,7 @@
     width: 40px;
     height: 40px;
     border-radius: var(--r);
-    font-size: 16px;
+    font-size: var(--sw-text-lg);
     flex-shrink: 0;
 }
 
@@ -136,7 +136,7 @@
 }
 
 .sw-metric-label {
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -147,7 +147,7 @@
 }
 
 .sw-metric-value {
-    font-size: 28px;
+    font-size: var(--sw-text-3xl);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     line-height: 1.12;
@@ -155,7 +155,7 @@
 }
 
 .sw-metric-sub {
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     color: var(--bc2);
     margin-top: 3px;
 }
@@ -164,7 +164,7 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     font-weight: 600;
 }
 
@@ -243,7 +243,7 @@
     max-width: 100%;
     margin-top: 0.15rem;
     overflow: hidden;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     color: var(--bc2);
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -331,14 +331,14 @@
 }
 
 .sw-donut-total-value {
-    font-size: 15px;
+    font-size: var(--sw-text-md);
     font-weight: 700;
     color: var(--bc);
     line-height: 1.15;
 }
 
 .sw-donut-total-label {
-    font-size: 10px;
+    font-size: var(--sw-text-3xs);
     color: var(--bc2);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -356,7 +356,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
+    font-size: var(--sw-text-sm);
     color: var(--bc);
 }
 
@@ -408,7 +408,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     flex-shrink: 0;
 }
 
@@ -437,7 +437,7 @@
 .sw-activity-title {
     display: block;
     overflow: hidden;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 600;
     color: var(--bc);
     text-overflow: ellipsis;
@@ -447,7 +447,7 @@
 .sw-activity-subtitle {
     display: block;
     overflow: hidden;
-    font-size: 12px;
+    font-size: var(--sw-text-xs);
     color: var(--bc2);
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -455,7 +455,7 @@
 
 .sw-activity-amount {
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: var(--sw-text-base);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
