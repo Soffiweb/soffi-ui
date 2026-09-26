@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0 — 2026-09-25
+## 0.1.0 — 2026-09-25
 
 Primera versión pública del paquete, publicada en
 [github.com/Soffiweb/soffi-ui](https://github.com/Soffiweb/soffi-ui).
