@@ -122,7 +122,7 @@
         <section id="action-card" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-grip"></i> Action card</h2>
-                <p><code>.sw-action-card</code> — icono arriba, título, descripción, botón de ancho completo. Nuevo en v0.4.0, para pantallas de selección de acción (importar datos, accesos a módulos).</p>
+                <p><code>.sw-action-card</code> — icono arriba, título, descripción, botón outline (color heredado del icono). Nuevo en v0.4.0, boton rediseñado en v0.1.1 (era sólido). Modificadores de tamaño: <code>-sm</code> (chico, centrado) y <code>-xs</code> (muy chico, alineado a la derecha con <code>align-self: flex-end</code>) — sin modificador, ancho completo.</p>
             </div>
             <div class="gal-preview gal-preview-block">
                 <div class="sw-action-card-grid">
@@ -130,19 +130,19 @@
                         <div class="sw-action-card-icon sw-action-card-icon-primary"><i class="fa-solid fa-building"></i></div>
                         <h3 class="sw-action-card-title">Departamentos</h3>
                         <p class="sw-action-card-desc">Importa o actualiza la lista de departamentos desde Excel/CSV.</p>
-                        <a href="#" class="sw-btn sw-btn-primary sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                        <a href="#" class="sw-btn sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
                     </div>
                     <div class="sw-action-card">
                         <div class="sw-action-card-icon sw-action-card-icon-success"><i class="fa-solid fa-users"></i></div>
                         <h3 class="sw-action-card-title">Empleados</h3>
                         <p class="sw-action-card-desc">Carga masiva de personal con validación de duplicados.</p>
-                        <a href="#" class="sw-btn sw-btn-primary sw-action-card-action"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
+                        <a href="#" class="sw-btn sw-action-card-action sw-action-card-action-sm"><i class="fa-solid fa-file-import"></i> Ir a importación</a>
                     </div>
                     <div class="sw-action-card sw-action-card-disabled">
                         <div class="sw-action-card-icon sw-action-card-icon-warning"><i class="fa-solid fa-car"></i></div>
                         <h3 class="sw-action-card-title">Transporte</h3>
                         <p class="sw-action-card-desc">Asignación de rutas y vehículos por empleado.</p>
-                        <span class="sw-btn sw-btn-light sw-action-card-action" style="pointer-events:none">Próximamente</span>
+                        <span class="sw-btn sw-action-card-action sw-action-card-action-xs" style="pointer-events:none">Próximamente</span>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
         &lt;h3 class="sw-action-card-title"&gt;Departamentos&lt;/h3&gt;
         &lt;p class="sw-action-card-desc"&gt;Importa o actualiza la lista de
             departamentos desde un archivo Excel/CSV.&lt;/p&gt;
-        &lt;a href="..." class="sw-btn sw-btn-primary sw-action-card-action"&gt;
+        &lt;a href="..." class="sw-btn sw-action-card-action"&gt;
             &lt;i class="fa-solid fa-file-import"&gt;&lt;/i&gt; Ir a importación
         &lt;/a&gt;
     &lt;/div&gt;

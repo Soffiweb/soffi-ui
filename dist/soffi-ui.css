@@ -1,4 +1,4 @@
-/*! Soffi UI 1.0.0 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.1.1 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -413,6 +413,19 @@ body {
    pantallas de selección de acción: "Importar datos", accesos a módulos,
    selección de tipo de operación.
 
+   El botón (.sw-action-card-action) es outline/ghost, no sólido: toma el
+   color del icono de su misma card (icon-primary/secondary/accent/success/
+   warning/info) via combinador de hermanos, así que no hace falta
+   sw-btn-primary en el markup — si igual queda de código viejo no molesta,
+   el selector scoped le gana en especificidad. Antes de v0.1.1 era
+   sw-btn-primary sólido: una barra azul repetida en cada card del grid.
+
+   Modificadores de tamaño (agregar junto a .sw-action-card-action):
+   - .sw-action-card-action-sm  → chico, centrado (align-self: center)
+   - .sw-action-card-action-xs  → muy chico, pegado a la derecha
+                                   (align-self: flex-end)
+   Sin modificador: ancho completo (comportamiento original).
+
    <div class="sw-action-card-grid">
        <div class="sw-action-card">
            <div class="sw-action-card-icon sw-action-card-icon-primary">
@@ -421,7 +434,7 @@ body {
            <h3 class="sw-action-card-title">Departamentos</h3>
            <p class="sw-action-card-desc">Importa o actualiza la lista de
                departamentos desde un archivo Excel/CSV.</p>
-           <a href="..." class="sw-btn sw-btn-primary sw-action-card-action">
+           <a href="..." class="sw-btn sw-action-card-action">
                <i class="fa-solid fa-file-import"></i> Ir a importación
            </a>
        </div>
@@ -480,9 +493,57 @@ body {
     line-height: var(--sw-leading-base);
 }
 
-.sw-action-card-action {
+/* Ghost/outline en vez de solido: una card con boton solido de ancho
+   completo se lee como formulario, no como tile, y repetido en grid se
+   vuelve una fila de barras de color. El selector va scoped
+   (.sw-action-card .sw-action-card-action, especificidad 0,2,0) para
+   ganarle a .sw-btn-primary (0,1,0) sin tocar el markup existente que aun
+   traiga esa clase. */
+.sw-action-card .sw-action-card-action {
     width: 100%;
     justify-content: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    font-size: var(--sw-text-sm);
+    background: transparent;
+    color: var(--bc2);
+    border: var(--brd);
+    box-shadow: none;
+}
+
+.sw-action-card .sw-action-card-action:hover {
+    background: var(--b2);
+    opacity: 1;
+    box-shadow: none;
+}
+
+/* Modificadores de tamaño — el boton por defecto es ancho completo; estos
+   lo encogen y lo sacan del stretch (el padre es flex-column sin
+   align-items, o sea stretch por defecto). Compuestos con la clase base
+   (.sw-action-card-action.sw-action-card-action-sm) para empatar su
+   especificidad y poder pisar width/padding/font-size. */
+.sw-action-card-action.sw-action-card-action-sm {
+    width: auto;
+    align-self: center;
+    padding: 0.4rem 0.85rem;
+    font-size: var(--sw-text-xs);
+}
+
+.sw-action-card-action.sw-action-card-action-xs {
+    width: auto;
+    align-self: flex-end;
+    gap: 4px;
+    padding: 0.3rem 0.65rem;
+    font-size: var(--sw-text-2xs);
+}
+
+.sw-action-card .sw-action-card-action::after {
+    content: "\2192";
+    transition: transform 0.15s;
+}
+
+.sw-action-card .sw-action-card-action:hover::after {
+    transform: translateX(3px);
 }
 
 /* Variante deshabilitada — para acciones "Próximamente". El contenido baja
@@ -543,6 +604,87 @@ body {
     color: color-mix(in srgb, var(--in) 70%, #000);
 }
 
+/* Boton .sw-action-card-action toma el color del icono de su misma card
+   via combinador de hermanos (icono va siempre antes en el markup). Mismos
+   tonos oscurecidos que usa el icono en claro, para legibilidad de texto
+   sobre fondo blanco. */
+.sw-action-card-icon-primary ~ .sw-action-card-action {
+    color: var(--p);
+    border-color: rgba(40, 68, 154, 0.45);
+    border-color: color-mix(in srgb, var(--p) 45%, transparent);
+}
+
+.sw-action-card-icon-primary ~ .sw-action-card-action:hover {
+    background: rgba(40, 68, 154, 0.08);
+    background: color-mix(in srgb, var(--p) 8%, transparent);
+    border-color: var(--p);
+}
+
+.sw-action-card-icon-secondary ~ .sw-action-card-action {
+    color: #2f44a7;
+    color: color-mix(in srgb, var(--s) 70%, #000);
+    border-color: rgba(67, 97, 238, 0.45);
+    border-color: color-mix(in srgb, var(--s) 45%, transparent);
+}
+
+.sw-action-card-icon-secondary ~ .sw-action-card-action:hover {
+    background: rgba(67, 97, 238, 0.08);
+    background: color-mix(in srgb, var(--s) 8%, transparent);
+    border-color: var(--s);
+}
+
+.sw-action-card-icon-accent ~ .sw-action-card-action {
+    color: #bc5882;
+    color: color-mix(in srgb, var(--a) 75%, #000);
+    border-color: rgba(250, 117, 173, 0.45);
+    border-color: color-mix(in srgb, var(--a) 45%, transparent);
+}
+
+.sw-action-card-icon-accent ~ .sw-action-card-action:hover {
+    background: rgba(250, 117, 173, 0.1);
+    background: color-mix(in srgb, var(--a) 10%, transparent);
+    border-color: var(--a);
+}
+
+.sw-action-card-icon-success ~ .sw-action-card-action {
+    color: #00734c;
+    color: color-mix(in srgb, var(--su) 62%, #000);
+    border-color: rgba(0, 186, 123, 0.45);
+    border-color: color-mix(in srgb, var(--su) 45%, transparent);
+}
+
+.sw-action-card-icon-success ~ .sw-action-card-action:hover {
+    background: rgba(0, 186, 123, 0.08);
+    background: color-mix(in srgb, var(--su) 8%, transparent);
+    border-color: var(--su);
+}
+
+.sw-action-card-icon-warning ~ .sw-action-card-action {
+    color: #7d4c00;
+    color: color-mix(in srgb, var(--wa) 50%, #000);
+    border-color: rgba(250, 151, 0, 0.45);
+    border-color: color-mix(in srgb, var(--wa) 45%, transparent);
+}
+
+.sw-action-card-icon-warning ~ .sw-action-card-action:hover {
+    background: rgba(250, 151, 0, 0.1);
+    background: color-mix(in srgb, var(--wa) 10%, transparent);
+    border-color: var(--wa);
+}
+
+.sw-action-card-icon-info ~ .sw-action-card-action {
+    color: #0073a9;
+    color: color-mix(in srgb, var(--in) 70%, #000);
+    border-color: rgba(0, 164, 242, 0.45);
+    border-color: color-mix(in srgb, var(--in) 45%, transparent);
+}
+
+.sw-action-card-icon-info ~ .sw-action-card-action:hover {
+    background: rgba(0, 164, 242, 0.08);
+    background: color-mix(in srgb, var(--in) 8%, transparent);
+    border-color: var(--in);
+}
+
 [data-theme="dark"] .sw-action-card-icon-secondary {
     color: var(--s);
 }
@@ -561,6 +703,36 @@ body {
 
 [data-theme="dark"] .sw-action-card-icon-info {
     color: var(--in);
+}
+
+[data-theme="dark"] .sw-action-card-icon-secondary ~ .sw-action-card-action {
+    color: var(--s);
+    border-color: rgba(67, 97, 238, 0.55);
+    border-color: color-mix(in srgb, var(--s) 55%, transparent);
+}
+
+[data-theme="dark"] .sw-action-card-icon-accent ~ .sw-action-card-action {
+    color: var(--a);
+    border-color: rgba(250, 117, 173, 0.55);
+    border-color: color-mix(in srgb, var(--a) 55%, transparent);
+}
+
+[data-theme="dark"] .sw-action-card-icon-success ~ .sw-action-card-action {
+    color: var(--su);
+    border-color: rgba(0, 186, 123, 0.55);
+    border-color: color-mix(in srgb, var(--su) 55%, transparent);
+}
+
+[data-theme="dark"] .sw-action-card-icon-warning ~ .sw-action-card-action {
+    color: var(--wa);
+    border-color: rgba(250, 151, 0, 0.55);
+    border-color: color-mix(in srgb, var(--wa) 55%, transparent);
+}
+
+[data-theme="dark"] .sw-action-card-icon-info ~ .sw-action-card-action {
+    color: var(--in);
+    border-color: rgba(0, 164, 242, 0.55);
+    border-color: color-mix(in srgb, var(--in) 55%, transparent);
 }
 
 /* ===== src/components/alerts.css ===== */

@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.1 — 2026-09-25
+
+### Cambiado
+
+- **Action card** (`.sw-action-card-action`): el botón dejó de ser
+  `.sw-btn-primary` sólido de ancho completo — en un grid se leía como una
+  fila de barras azules repetidas y el card entero parecía formulario, no
+  tile. Ahora es outline/ghost y toma el color del icono de su propia card
+  (`primary/secondary/accent/success/warning/info`) vía combinador de
+  hermanos, más una flecha que se anima en hover. No rompe markup viejo con
+  `sw-btn-primary` todavía puesto (el selector nuevo gana por especificidad).
+- **Action card**: modificadores de tamaño `.sw-action-card-action-sm`
+  (chico, centrado) y `.sw-action-card-action-xs` (muy chico, alineado a la
+  derecha) para cards donde el botón de ancho completo pesa demasiado.
+
 ## 0.1.0 — 2026-09-25
 
 Primera versión pública del paquete, publicada en
