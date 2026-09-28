@@ -66,7 +66,7 @@ Variantes responsive para resetear al subir de breakpoint:
 equivalentes `sw-` por compatibilidad con vistas heredadas. Es la **única**
 excepción; en código nuevo usar el prefijo.
 
-Si falta una utilidad, agregarla a `soffi-ui/src/core/base.css` y reconstruir.
+Si falta una utilidad, agregarla a `src/base/utilities.css` y reconstruir.
 No inventar clases sueltas por vista.
 
 ```css
@@ -1265,28 +1265,21 @@ No inventar clases sueltas por vista.
     left: 23px;
 }
 
-.sw-checkbox {
+.sw-checkbox-input {
+    appearance: none;
     width: 19px;
     height: 19px;
     border: 2px solid color-mix(in srgb, var(--s) 55%, transparent);
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: var(--b1);
+    cursor: pointer;
     flex-shrink: 0;
 }
 
-.sw-checkbox.on {
+.sw-checkbox-input:checked {
     background: var(--p);
     border-color: var(--p);
-    color: #fff;
-}
-
-.sw-checkbox.on-accent {
-    background: var(--a);
-    border-color: var(--a);
-    color: var(--ac);
+    box-shadow: inset 0 0 0 3px var(--b1);
 }
 
 .sw-radio {
@@ -1491,18 +1484,31 @@ No inventar clases sueltas por vista.
     z-index: 2;
 }
 
-/* Primera columna fija mientras se scrollea horizontal. Opt-in: agregar
-   .sw-table-sticky-col solo en tablas que realmente se desbordan
-   horizontalmente (ej. sw-table-min-xl). */
-.sw-list-table-wrap.sw-table-sticky-col tbody tr > :first-child,
-.sw-list-table-wrap.sw-table-sticky-col thead tr > :first-child {
+/* Columna marcada fija a la derecha mientras se scrollea horizontal.
+   Agregar .sw-table-sticky-col al th y td de la columna elegida. */
+.sw-list-table-wrap tr > .sw-table-sticky-col {
     position: sticky;
-    left: 0;
+    right: 0;
     z-index: 1;
-    border-right: var(--brd-s);
+    border-left: 0;
 }
 
-.sw-list-table-wrap.sw-table-sticky-col thead tr > :first-child {
+.sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col {
+    border-left: 0;
+}
+
+.sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: var(--sw-table-sticky-border);
+    pointer-events: none;
+}
+
+.sw-list-table-wrap thead tr > .sw-table-sticky-col {
     z-index: 3;
 }
 
@@ -1530,6 +1536,14 @@ No inventar clases sueltas por vista.
     gap: 2px;
     min-width: 0;
 }
+
+.sw-table-expand-wrap { display: flex; align-items: center; gap: calc(var(--sw-spacing-sm) + 0.3rem); }
+.sw-table-select-all-wrap { display: inline-flex; align-items: center; gap: calc(var(--sw-spacing-sm) + 0.3rem); }
+.sw-table-expand { width: 28px; height: 28px; padding: 0; border: 0; border-radius: var(--sw-radius-sm); background: transparent; color: var(--p); cursor: pointer; }
+.sw-table-expand[aria-expanded="true"] i { transform: rotate(90deg); }
+.sw-table-detail-row[hidden] { display: none; }
+.sw-table-detail-row > td { padding: 0; background: var(--b2) !important; }
+.sw-table-detail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sw-spacing-md); padding: var(--sw-spacing-md); }
 
 .sw-table-title {
     display: block;

@@ -52,7 +52,7 @@ cada app — que es exactamente lo que faltaba antes.
 |---|---|---|
 | `soffi-ui` | `dist/soffi-ui.{css,js}` → `public/vendor/soffi-ui/` | sí |
 | `soffi-ui-blade` | layout y componentes → `resources/views/vendor/soffi-ui/` | no |
-| `soffi-ui-skills` | skills de IA → `.agents/skills/` | no |
+| `soffi-ui-skills` | skill de IA → `.claude/skills/` y `.agents/skills/` | no |
 
 La capa Blade también funciona sin publicarla, vía el namespace `soffi-ui::`.
 
@@ -71,10 +71,10 @@ porque `.sw-main` crea un stacking context). Desde React usar solo el CSS
 src/
 ├── tokens/        color.css · spacing.css · typography.css
 ├── base/          reset.css · utilities.css
-└── components/    25 archivos, uno por componente o familia
+└── components/    28 archivos, uno por componente o familia
 js/soffi-ui.js     26 funciones vanilla
 blade/             layout panel + componentes sw-* (opcional)
-skills/            skills de IA — este repo es su origen
+skills/soffi-ui/   skill de IA — este repo es su origen
 dist/              salida del build. NO EDITAR
 scripts/
 ├── build.php          concatena src/ → dist/ (corre el check antes)
@@ -95,7 +95,7 @@ php scripts/check-compat.php                       # solo el check
    build; el próximo `build.php` los sobrescribe. Todo cambio va a `src/`.
 2. **Ningún `color-mix()` sin su valor estático en la línea anterior. Ningún
    `oklch()`.** El check falla el build. Ver
-   [skills/soffiweb-ui-core/compat.md](skills/soffiweb-ui-core/compat.md).
+   [skills/soffi-ui/compat.md](skills/soffi-ui/compat.md).
 3. **`font-size` solo vía token** (`--sw-text-*`).
 4. **Nada de `style=""` ni `<style>` en las vistas.** Valor repetido ≥3 veces →
    clase o token en el paquete.

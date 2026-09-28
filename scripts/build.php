@@ -71,12 +71,14 @@ if ($missing !== []) {
     exit(1);
 }
 
+$version = trim((string) file_get_contents($root . '/VERSION'));
+
 $banner = sprintf(
     "/*! Soffi UI %s — fuente unica de estilos Soffiweb.\n"
     . " * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.\n"
     . " * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6\n"
     . " */\n",
-    trim((string) file_get_contents($root . '/VERSION'))
+    $version
 );
 
 $dist = $root . '/dist';
@@ -92,7 +94,22 @@ $js = rtrim((string) file_get_contents($root . '/js/soffi-ui.js'));
 file_put_contents($dist . '/soffi-ui.js', $js . "\n");
 printf("dist/soffi-ui.js    %d lineas, %s\n", substr_count($js, "\n") + 1, formatBytes(strlen($js)));
 
-// 3. Publicar a una app Laravel, si se pidio.
+// 3. Sellar la version en el frontmatter de la skill. La skill viaja dentro del
+// paquete, asi que su `version:` tiene que ser la del paquete: si no, una app no
+// puede saber si la copia que tiene publicada esta al dia.
+$skillPath = $root . '/skills/soffi-ui/SKILL.md';
+$skill = (string) file_get_contents($skillPath);
+$stamped = preg_replace('/^(  version: ")[^"]*(")$/m', '${1}' . $version . '${2}', $skill, 1);
+
+if ($stamped === null || $stamped === $skill && ! str_contains($skill, '  version: "' . $version . '"')) {
+    fwrite(STDERR, "\nNo se pudo sellar la version en skills/soffi-ui/SKILL.md.\n");
+    exit(1);
+}
+
+file_put_contents($skillPath, $stamped);
+printf("skills/soffi-ui     version %s\n", $version);
+
+// 4. Publicar a una app Laravel, si se pidio.
 $target = null;
 foreach ($argv as $arg) {
     if (str_starts_with($arg, '--publish-laravel=')) {

@@ -42,7 +42,7 @@ No hay toggle de tema en estas pantallas (el usuario aún no tiene sesión) — 
 - `.sw-auth-title` — combinar con `.sw-card-title` para el heading centrado. El heading es el **nombre del sistema** (`config('app.name')` o equivalente), no una etiqueta genérica de acción como "Iniciar sesión" — el usuario ya sabe que está entrando a algo, necesita saber a qué.
 - `.sw-auth-subtitle` — combinar con `.sw-hint` para el texto de apoyo centrado.
 - `.sw-auth-submit` — combinar con `.sw-btn.sw-btn-primary` para el botón principal a todo el ancho.
-- `.sw-auth-remember` — envuelve un `<input type="checkbox">` nativo (label completo, click en cualquier parte marca el check). Checkbox nativo a propósito: funciona sin JS y es crítico en el camino de login. Usa `accent-color: var(--p)`, no reemplaza el `.sw-checkbox` custom del sistema (ese existe en `components.css` pero no tiene wiring JS ni se usa en ningún lado del proyecto — no usarlo hasta que se implemente su toggle).
+- `.sw-auth-remember` — envuelve un `<input type="checkbox" class="sw-checkbox-input">` (label completo, click en cualquier parte marca el check). Sigue siendo un `<input>` nativo a propósito: funciona sin JS y es crítico en el camino de login. `.sw-checkbox-input` es el checkbox estándar del sistema (`appearance: none` + estilo propio en `forms.css`) — usarlo en cualquier checkbox de la app, no queda ningún checkbox sin la clase.
 
 Formulario: mismos componentes que cualquier form (`layout.md`/`components.md`) — `.sw-field`, `.sw-label`, `.sw-input`, `.sw-select`, `.sw-hint-error`, `.sw-input-icon-wrap` + `.sw-input-icon` + `.sw-input-has-icon` para inputs con ícono. Errores generales de formulario (no de un campo puntual): `.sw-alert.sw-alert-error`.
 
@@ -83,7 +83,7 @@ Formulario: mismos componentes que cualquier form (`layout.md`/`components.md`) 
             </div>
 
             <label class="sw-auth-remember">
-                <input type="checkbox" name="remember" value="1" {{ old('remember') ? 'checked' : '' }}>
+                <input type="checkbox" class="sw-checkbox-input" name="remember" value="1" {{ old('remember') ? 'checked' : '' }}>
                 Recordarme
             </label>
 
@@ -104,6 +104,6 @@ Referencia real: `resources/views/auth/login.blade.php` y `resources/views/auth/
 |---|---|
 | Gradiente de fondo o de header del card | Fondo plano `var(--b2)` vía `.sw-auth-card` |
 | Hex hardcodeado (`#0f2c4c`, `#21384d`...) | Tokens `var(--p)`, `var(--bc)`, `var(--bc2)` |
-| `<style>` local con clases nuevas por vista | Componente en `soffi-ui/src/core/components.css`, luego consumido en la vista |
+| `<style>` local con clases nuevas por vista | Componente en `src/components/` del paquete, luego consumido en la vista |
 | `btn btn-success`, `form-control`, `alert alert-danger` (Bootstrap puro) | `sw-btn sw-btn-primary`, `sw-input`/`sw-select`, `sw-alert sw-alert-error` |
 | Meta/title genéricos heredados de plantilla (`<title>Proyecto</title>`) | `{{ config('app.name') }}` real |

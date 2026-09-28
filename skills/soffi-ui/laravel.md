@@ -1,22 +1,8 @@
----
-name: soffiweb-ui-laravel
-description: "Use for Laravel projects with Blade templates (no Livewire). ALWAYS combine with soffiweb-ui-core. Covers the Laravel/Blade integration of Soffi UI: layout, sidebar, container/grid, modals, tabs, collapse, form validation, pagination, CRUD/list views, grouped summaries, and operational financial screens. Soffi UI is standalone: the project does NOT load Bootstrap, Popper or any CSS framework."
-license: MIT
-metadata:
-    author: soffiweb
-    version: "2.0"
-    laravel: "5.8 — 8.x"
-    css: "Soffi UI (sin framework externo)"
----
+# Soffi UI — Laravel + Blade
 
-# Soffiweb UI — Laravel + Blade
-
-> ⚠️ **Siempre combinar con soffiweb-ui-core.** Este skill solo contiene lo
-> específico de Laravel + Blade.
-
-> **Este skill se llamaba `soffiweb-ui-bootstrap`.** Bootstrap y Popper se
-> eliminaron del proyecto: modales, tabs, collapse y validación son propios de
-> `soffi-ui.js`. Si otro proyecto todavía referencia el nombre viejo, actualizarlo.
+Integración de Soffi UI en Laravel + Blade (sin Livewire). Los tokens,
+componentes y reglas de compatibilidad están en [SKILL.md](SKILL.md) y sus
+capítulos de CSS.
 
 ---
 
@@ -24,7 +10,7 @@ metadata:
 
 | Capa           | Tecnología                                       |
 | -------------- | ------------------------------------------------ |
-| Framework      | Laravel 5.8 / 6.x / 7.x / 8.x                    |
+| Framework      | Laravel 13.x                                     |
 | CSS            | Soffi UI (`soffi-ui.css`) — sin framework externo |
 | Vistas         | Blade templates                                   |
 | Interactividad | `soffi-ui.js` (JS nativo, sin jQuery)            |
@@ -39,24 +25,27 @@ metadata:
 
 ## Contrato de consistencia visual
 
-- Fuente única: `soffi-ui/src/core/*`. `public/vendor/soffi-ui/` es **salida de
-  build**; editarla a mano se pierde en el siguiente
-  `php soffi-ui/scripts/build.php --publish-laravel`.
+- Fuente única: el paquete `soffiweb/soffi-ui` (`src/tokens/`, `src/base/`,
+  `src/components/`). `public/vendor/soffi-ui/` es **salida de build**; editarla
+  a mano se pierde en el siguiente `vendor:publish --tag=soffi-ui --force`.
 - No crear CSS de componente dentro de cada vista. Las vistas solo componen
   clases `sw-*` existentes.
-- Si falta un componente o utilidad reusable, agregarlo primero a
-  `soffi-ui/src/core/` (`base.css` para utilidades, `components.css` para
-  componentes), reconstruir y recién ahí usarlo.
+- Si falta un componente o utilidad reusable, agregarlo primero al paquete
+  (`src/base/utilities.css` para utilidades, `src/components/<familia>.css` para
+  componentes), reconstruir con `php scripts/build.php`, publicar una versión
+  nueva y recién ahí usarlo en la app.
 - Un `<style>` dentro de una vista se justifica solo para algo genuinamente
   específico de esa pantalla, con clase prefijada por vista
   (ej. `.cierre-ahorros-grid`).
 
 ## Instalación en un proyecto nuevo
 
-1. Copiar `soffi-ui/` a la raíz y ejecutar
-   `php soffi-ui/scripts/build.php --publish-laravel`.
+1. Instalar el paquete y publicar los assets — ver "Instalación y actualización"
+   en [SKILL.md](SKILL.md). Nunca copiar `soffi-ui/` a la raíz de la app.
 2. Font Awesome 6 en `public/vendor/fontawesome/`.
-3. Copiar el layout y el sidebar (abajo).
+3. Layout: usar `@extends('soffi-ui::layouts.panel')` con `<x-sw-sidebar>`
+   (capa Blade del paquete). El layout manual de más abajo es el contrato de
+   markup para las apps que ya tienen el suyo propio.
 4. Entregar desde backend `$headerCompanyName`, `$headerPeriodLabel`,
    `$displayName`, `$roleLabel` (controller, middleware o `View::composer`;
    nunca consultar DB desde Blade).
@@ -66,7 +55,7 @@ metadata:
 ## Patrones Blade estándar
 
 Para crear o refactorizar vistas principales, leer y aplicar
-[references/view-patterns.md](references/view-patterns.md).
+[view-patterns.md](view-patterns.md).
 
 ## Regla de utilidades
 
@@ -77,7 +66,7 @@ nada y el layout queda roto de forma silenciosa (columnas apiladas a ancho
 completo, cabeceras sin alinear, márgenes ausentes).
 
 Usar siempre el equivalente `sw-*`. La lista completa está en la sección
-"Utilidades" de `soffiweb-ui-core/components.md`.
+"Utilidades" de [components.md](components.md).
 
 Única excepción: `text-left`, `text-center` y `text-right` están aliasados por
 compatibilidad con vistas heredadas.
@@ -90,7 +79,7 @@ compatibilidad con vistas heredadas.
   stacking context propio y atraparía un `position: fixed` bajo el topbar.
 - Un formulario incluido en dos modales (crear/editar) **debe** usar
   `$formIdPrefix`; si no, `getElementById` siempre golpea el de crear y el modal
-  de editar abre vacío. Patrón completo en `soffiweb-ui-core/js.md`.
+  de editar abre vacío. Patrón completo en [js.md](js.md).
 
 ## Regla de validación
 
@@ -159,7 +148,11 @@ contexto, usar tabs compactas integradas al panel; no apilar bloques.
 
 ---
 
-## Setup en `layouts/app.blade.php`
+## Contrato de markup del layout (`layouts/app.blade.php`)
+
+Referencia del chrome para las apps que mantienen su layout propio. En un
+proyecto nuevo usar la capa Blade del paquete (`soffi-ui::layouts.panel`) en vez
+de copiar esto.
 
 ```html
 <!DOCTYPE html>
@@ -340,6 +333,7 @@ contexto, usar tabs compactas integradas al panel; no apilar bloques.
 | Clases `alert alert-*` de BS4                   | `sw-alert sw-alert-*`                       |
 | Clase `card` de BS4                             | `sw-card`                                   |
 | Cargar `bootstrap.js` / `popper.js`             | `soffi-ui.js`                               |
-| Editar `public/vendor/soffi-ui/*`               | Editar `soffi-ui/src/core/*` y reconstruir  |
+| Editar `public/vendor/soffi-ui/*`               | Editar `src/` del paquete y reconstruir     |
+| Copiar `soffi-ui/` dentro de la app             | `composer require soffiweb/soffi-ui`        |
 | Form incluido 2 veces con ids fijos             | `$formIdPrefix`                             |
 | jQuery para lógica de negocio                   | JS nativo; jQuery solo para select2         |

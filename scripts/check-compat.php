@@ -214,7 +214,7 @@ if ($errors !== []) {
     foreach ($errors as $error) {
         echo '  ' . $error . "\n\n";
     }
-    echo "Corregir antes de publicar. Ver skills/soffiweb-ui-core/compat.md.\n";
+    echo "Corregir antes de publicar. Ver skills/soffi-ui/compat.md.\n";
     exit(1);
 }
 

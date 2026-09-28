@@ -12,7 +12,7 @@ use Illuminate\Support\ServiceProvider;
  * Tags:
  *   soffi-ui         CSS/JS compilado -> public/vendor/soffi-ui/   (obligatorio)
  *   soffi-ui-blade   layout + componentes Blade                   (opcional)
- *   soffi-ui-skills  skills de IA -> .agents/skills/               (opcional)
+ *   soffi-ui-skills  skill de IA -> .claude/skills/ + .agents/skills/ (opcional)
  *
  * Instalacion en una app:
  *   composer require soffiweb/soffi-ui
@@ -47,11 +47,21 @@ class SoffiUiServiceProvider extends ServiceProvider
             $root . '/blade' => resource_path('views/vendor/soffi-ui'),
         ], 'soffi-ui-blade');
 
-        // Skills de IA — este repo es la verdad absoluta sobre el sistema
-        // visual, asi que las skills viajan con el paquete en vez de
-        // copiarse a mano a cada app (que es como se desincronizaron).
+        // Skill de IA — este repo es la verdad absoluta sobre el sistema
+        // visual, asi que la skill viaja con el paquete en vez de copiarse a
+        // mano a cada app (que es como se desincronizaron).
+        //
+        // Se publica a las dos rutas: Claude Code solo autodescubre skills en
+        // .claude/skills/, y Codex las lee de .agents/skills/. Publicar solo en
+        // una obliga a que el CLAUDE.md de cada app apunte a los archivos a
+        // mano, que es la configuracion por app que este paquete elimina.
+        //
+        // Las dos entradas usan claves de origen distintas a proposito:
+        // publishes() hace array_merge por clave, asi que mapear el mismo
+        // origen dos veces deja solo el ultimo destino.
         $this->publishes([
-            $root . '/skills' => base_path('.agents/skills'),
+            $root . '/skills' => base_path('.claude/skills'),
+            $root . '/skills/soffi-ui' => base_path('.agents/skills/soffi-ui'),
         ], 'soffi-ui-skills');
 
         // Componentes anonimos. Sin prefijo: el nombre sale del archivo, asi

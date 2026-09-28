@@ -18,7 +18,7 @@ jobs:
           coverage: none
 
       # La regla que no se negocia: ningun color-mix() sin fallback estatico,
-      # ningun oklch(). Ver skills/soffiweb-ui-core/compat.md.
+      # ningun oklch(). Ver skills/soffi-ui/compat.md.
       - name: check-compat
         run: php scripts/check-compat.php
 

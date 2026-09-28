@@ -9,7 +9,7 @@ Bootstrap ni ningún otro framework CSS.
 - Usar los patrones autosuficientes de este archivo y adaptar nombres de rutas, variables, campos y textos al proyecto actual.
 - Si el proyecto ya tiene vistas migradas a Soffi UI, se pueden usar como contexto visual adicional, pero la skill no depende de rutas concretas.
 - La vista no debe incluir `<style>`, `style=""` ni clases locales para componentes visuales.
-- Si falta una pieza reusable, crearla en `soffi-ui/src/core/components.css`, publicar assets y luego usarla como `sw-*`.
+- Si falta una pieza reusable, crearla en `src/components/<familia>.css` del paquete, publicar assets y luego usarla como `sw-*`.
 - El controller prepara filtros, paginación, resúmenes, totales y datos auxiliares. No consultar DB, modelos ni utilidades desde Blade.
 - Usar paginación en listados que puedan crecer. Mantener filtros con `appends(request()->query())`.
 - Validar antes de terminar: `php artisan view:cache`, `php artisan view:clear`, `git diff --check`.
@@ -324,5 +324,5 @@ Además:
 
 - No usar `.btn`, `.card`, `.table`, `.form-control`, `.badge` como estilo principal.
 - No crear CSS local para arreglar componentes: si falta algo, agregarlo a
-  `soffi-ui/src/core/` y reconstruir.
+  `src/components/` del paquete y reconstruir.
 - No poner cards dentro de cards; usar `sw-data-grid`, `sw-total-panel` o `sw-report-block`.

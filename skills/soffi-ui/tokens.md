@@ -1,6 +1,6 @@
 # Soffiweb UI — Tokens
 
-Fuente única: estos tokens viven en `soffi-ui/src/core/tokens.css`. En aplicaciones Laravel se consumen desde `public/vendor/soffi-ui/soffi-ui.css`; no copiarlos ni redefinirlos dentro de vistas.
+Fuente única: estos tokens viven en `src/tokens/*.css` del paquete. En aplicaciones Laravel se consumen desde `public/vendor/soffi-ui/soffi-ui.css`; no copiarlos ni redefinirlos dentro de vistas.
 
 ## Tipografía e iconos
 
@@ -58,6 +58,7 @@ Fuente única: estos tokens viven en `soffi-ui/src/core/tokens.css`. En aplicaci
     --sb: #1e2330;
     --th-bg: #e8eef8;
     --th-color: #28449a;
+    --sw-table-sticky-border: #c4cee3;
     --btn-text: #fdfdff;
 }
 [data-theme="dark"] {
@@ -76,6 +77,7 @@ Fuente única: estos tokens viven en `soffi-ui/src/core/tokens.css`. En aplicaci
     --sb: #111520;
     --th-bg: #1a2340;
     --th-color: #7da4e0;
+    --sw-table-sticky-border: #8194b8;
     --btn-text: #1a1f2e;
 }
 ```
@@ -107,6 +109,7 @@ Fuente única: estos tokens viven en `soffi-ui/src/core/tokens.css`. En aplicaci
 | `--sb`          | `#1e2330`         | `#111520`         | Sidebar background (siempre oscuro) |
 | `--th-bg`       | `#e8eef8`         | `#1a2340`         | Table header background             |
 | `--th-color`    | `#28449a`         | `#7da4e0`         | Table header text                   |
+| `--sw-table-sticky-border` | `#c4cee3` | `#8194b8` | Sticky table column separator |
 | `--btn-text`    | `#fdfdff`         | `#1a1f2e`         | Button text color                   |
 | `--r`           | `.65rem`          | —                 | Border radius (más redondeado)      |
 | `--rl`          | `1.1rem`          | —                 | Border radius large                 |

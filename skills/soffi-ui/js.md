@@ -4,9 +4,9 @@
 completo a Bootstrap JS: modales, tabs, collapse y validación de formularios
 son propios.
 
-> **Fuente única:** `soffi-ui/src/core/soffi-ui.js`.
+> **Fuente única:** `js/soffi-ui.js` en el paquete `soffiweb/soffi-ui`.
 > Nunca editar `public/vendor/soffi-ui/soffi-ui.js` a mano: es la salida de
-> `php soffi-ui/scripts/build.php --publish-laravel` y un rebuild la sobrescribe.
+> `php scripts/build.php` y el próximo `vendor:publish --force` la sobrescribe.
 > Este documento describe el contrato de uso, no duplica el código.
 
 ---
