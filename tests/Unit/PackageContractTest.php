@@ -45,6 +45,24 @@ final class PackageContractTest extends TestCase
         self::assertStringContainsString('OK — sin violaciones de compatibilidad.', implode(PHP_EOL, $output));
     }
 
+    public function testReleaseContractPassesForCurrentVersion(): void
+    {
+        $output = [];
+        $status = 0;
+        $script = $this->root . '/scripts/check-release.php';
+        $version = trim((string) file_get_contents($this->root . '/VERSION'));
+
+        exec(
+            escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg($script)
+            . ' --version=' . escapeshellarg($version) . ' 2>&1',
+            $output,
+            $status,
+        );
+
+        self::assertSame(0, $status, implode(PHP_EOL, $output));
+        self::assertStringContainsString('OK — contrato de release valido.', implode(PHP_EOL, $output));
+    }
+
     public function testPublishedArtifactsMatchCompatibilityContract(): void
     {
         $version = trim((string) file_get_contents($this->root . '/VERSION'));
