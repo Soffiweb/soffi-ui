@@ -10,11 +10,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "SoffiUiServiceProvider",
+      "community_name": "PackageContractTest",
       "file_type": "code",
       "norm_label": "soffiuiserviceprovider",
       "source_file": "src-php/SoffiUiServiceProvider.php",
       "source_location": "L24"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest",
+      "label": "PackageContractTest",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": "packagecontracttest",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L10"
     },
     {
       "id": "docs_gallery_assets_gallery_galactivatetab",
@@ -266,7 +279,7 @@
       "file_type": "code",
       "norm_label": "swactivatetab()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L296"
+      "source_location": "L306"
     },
     {
       "id": "js_soffi_ui_swcloseallmodals",
@@ -278,7 +291,7 @@
       "file_type": "code",
       "norm_label": "swcloseallmodals()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L290"
+      "source_location": "L300"
     },
     {
       "id": "js_soffi_ui_swcloseallrowmenus",
@@ -302,7 +315,7 @@
       "file_type": "code",
       "norm_label": "swclosemodal()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L281"
+      "source_location": "L291"
     },
     {
       "id": "js_soffi_ui_swclosesidebar",
@@ -338,7 +351,7 @@
       "file_type": "code",
       "norm_label": "swdismissalert()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L419"
+      "source_location": "L429"
     },
     {
       "id": "js_soffi_ui_swfileinputname",
@@ -350,7 +363,7 @@
       "file_type": "code",
       "norm_label": "swfileinputname()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L362"
+      "source_location": "L372"
     },
     {
       "id": "js_soffi_ui_swfilterss",
@@ -362,7 +375,7 @@
       "file_type": "code",
       "norm_label": "swfilterss()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L242"
+      "source_location": "L252"
     },
     {
       "id": "js_soffi_ui_swinitalerts",
@@ -374,7 +387,7 @@
       "file_type": "code",
       "norm_label": "swinitalerts()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L428"
+      "source_location": "L438"
     },
     {
       "id": "js_soffi_ui_swinittablestickycolumns",
@@ -398,7 +411,7 @@
       "file_type": "code",
       "norm_label": "swopenmodal()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L265"
+      "source_location": "L275"
     },
     {
       "id": "js_soffi_ui_swpositionrowmenu",
@@ -446,7 +459,7 @@
       "file_type": "code",
       "norm_label": "swselectopt()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L231"
+      "source_location": "L241"
     },
     {
       "id": "js_soffi_ui_swstackalerts",
@@ -458,7 +471,19 @@
       "file_type": "code",
       "norm_label": "swstackalerts()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L411"
+      "source_location": "L421"
+    },
+    {
+      "id": "js_soffi_ui_swsyncauthinputgroup",
+      "label": "swSyncAuthInputGroup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "soffi-ui.js",
+      "file_type": "code",
+      "norm_label": "swsyncauthinputgroup()",
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L209"
     },
     {
       "id": "js_soffi_ui_swsyncdateinputcolor",
@@ -470,7 +495,19 @@
       "file_type": "code",
       "norm_label": "swsyncdateinputcolor()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L373"
+      "source_location": "L383"
+    },
+    {
+      "id": "js_soffi_ui_swsyncselectcolor",
+      "label": "swSyncSelectColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "soffi-ui.js",
+      "file_type": "code",
+      "norm_label": "swsyncselectcolor()",
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L205"
     },
     {
       "id": "js_soffi_ui_swsynctableselection",
@@ -506,7 +543,7 @@
       "file_type": "code",
       "norm_label": "swtogglecollapse()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L323"
+      "source_location": "L333"
     },
     {
       "id": "js_soffi_ui_swtogglerowmenu",
@@ -542,7 +579,7 @@
       "file_type": "code",
       "norm_label": "swtoggless()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L219"
+      "source_location": "L229"
     },
     {
       "id": "js_soffi_ui_swtogglesub",
@@ -614,7 +651,7 @@
       "file_type": "code",
       "norm_label": "swvalidatefield()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L525"
+      "source_location": "L537"
     },
     {
       "id": "js_soffi_ui_swvalidationmessage",
@@ -626,7 +663,7 @@
       "file_type": "code",
       "norm_label": "swvalidationmessage()",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L511"
+      "source_location": "L523"
     },
     {
       "id": "src_php_soffiuiserviceprovider_soffiuiserviceprovider_boot",
@@ -634,7 +671,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "SoffiUiServiceProvider",
+      "community_name": "PackageContractTest",
       "file_type": "code",
       "norm_label": ".boot()",
       "source_file": "src-php/SoffiUiServiceProvider.php",
@@ -646,11 +683,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "SoffiUiServiceProvider",
+      "community_name": "PackageContractTest",
       "file_type": "code",
       "norm_label": ".register()",
       "source_file": "src-php/SoffiUiServiceProvider.php",
       "source_location": "L26"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_package",
+      "label": ".package()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".package()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L60"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_setup",
+      "label": ".setUp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".setup()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L14"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_testcompatibilitycheckerpasses",
+      "label": ".testCompatibilityCheckerPasses()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".testcompatibilitycheckerpasses()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L36"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_testlaravelproviderisregistered",
+      "label": ".testLaravelProviderIsRegistered()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".testlaravelproviderisregistered()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L27"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_testlaravelsupportdependencyisdeclared",
+      "label": ".testLaravelSupportDependencyIsDeclared()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".testlaravelsupportdependencyisdeclared()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L19"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_testpublishedartifactsmatchcompatibilitycontract",
+      "label": ".testPublishedArtifactsMatchCompatibilityContract()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".testpublishedartifactsmatchcompatibilitycontract()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L48"
     },
     {
       "id": "scripts_check_compat_commentlines",
@@ -662,7 +771,7 @@
       "file_type": "code",
       "norm_label": "commentlines()",
       "source_file": "scripts/check-compat.php",
-      "source_location": "L86"
+      "source_location": "L87"
     },
     {
       "id": "scripts_check_compat_cssfiles",
@@ -674,7 +783,7 @@
       "file_type": "code",
       "norm_label": "cssfiles()",
       "source_file": "scripts/check-compat.php",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "scripts_check_compat_propertyname",
@@ -686,7 +795,7 @@
       "file_type": "code",
       "norm_label": "propertyname()",
       "source_file": "scripts/check-compat.php",
-      "source_location": "L123"
+      "source_location": "L124"
     },
     {
       "id": "scripts_check_compat_supportsguardedlines",
@@ -698,7 +807,7 @@
       "file_type": "code",
       "norm_label": "supportsguardedlines()",
       "source_file": "scripts/check-compat.php",
-      "source_location": "L55"
+      "source_location": "L56"
     },
     {
       "id": "composer",
@@ -720,7 +829,29 @@
       "file_type": "code",
       "norm_label": "autoload",
       "source_file": "composer.json",
-      "source_location": "L10"
+      "source_location": "L11"
+    },
+    {
+      "id": "composer_autoload_dev",
+      "label": "autoload-dev",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "autoload-dev",
+      "source_file": "composer.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "composer_autoload_dev_psr_4",
+      "label": "psr-4",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "psr-4",
+      "source_file": "composer.json",
+      "source_location": "L17"
     },
     {
       "id": "composer_autoload_psr_4",
@@ -731,7 +862,7 @@
       "file_type": "code",
       "norm_label": "psr-4",
       "source_file": "composer.json",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "composer_config",
@@ -742,7 +873,7 @@
       "file_type": "code",
       "norm_label": "config",
       "source_file": "composer.json",
-      "source_location": "L26"
+      "source_location": "L36"
     },
     {
       "id": "composer_config_sort_packages",
@@ -753,7 +884,7 @@
       "file_type": "code",
       "norm_label": "sort-packages",
       "source_file": "composer.json",
-      "source_location": "L27"
+      "source_location": "L37"
     },
     {
       "id": "composer_description",
@@ -775,7 +906,7 @@
       "file_type": "code",
       "norm_label": "extra",
       "source_file": "composer.json",
-      "source_location": "L15"
+      "source_location": "L21"
     },
     {
       "id": "composer_extra_laravel",
@@ -786,7 +917,7 @@
       "file_type": "code",
       "norm_label": "laravel",
       "source_file": "composer.json",
-      "source_location": "L16"
+      "source_location": "L22"
     },
     {
       "id": "composer_keywords",
@@ -808,7 +939,7 @@
       "file_type": "code",
       "norm_label": "providers",
       "source_file": "composer.json",
-      "source_location": "L17"
+      "source_location": "L23"
     },
     {
       "id": "composer_license",
@@ -830,7 +961,7 @@
       "file_type": "code",
       "norm_label": "minimum-stability",
       "source_file": "composer.json",
-      "source_location": "L29"
+      "source_location": "L39"
     },
     {
       "id": "composer_name",
@@ -852,7 +983,7 @@
       "file_type": "code",
       "norm_label": "prefer-stable",
       "source_file": "composer.json",
-      "source_location": "L30"
+      "source_location": "L40"
     },
     {
       "id": "composer_psr_4_soffiweb_soffiui",
@@ -863,7 +994,18 @@
       "file_type": "code",
       "norm_label": "soffiweb\\\\soffiui\\\\",
       "source_file": "composer.json",
-      "source_location": "L12"
+      "source_location": "L13"
+    },
+    {
+      "id": "composer_psr_4_tests",
+      "label": "Tests\\\\",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "tests\\\\",
+      "source_file": "composer.json",
+      "source_location": "L18"
     },
     {
       "id": "composer_require",
@@ -877,6 +1019,39 @@
       "source_location": "L7"
     },
     {
+      "id": "composer_require_dev",
+      "label": "require-dev",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "require-dev",
+      "source_file": "composer.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "composer_require_dev_phpunit_phpunit",
+      "label": "phpunit/phpunit",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "phpunit/phpunit",
+      "source_file": "composer.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "composer_require_illuminate_support",
+      "label": "illuminate/support",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "illuminate/support",
+      "source_file": "composer.json",
+      "source_location": "L8"
+    },
+    {
       "id": "composer_require_php",
       "label": "php",
       "_origin": "ast",
@@ -885,7 +1060,7 @@
       "file_type": "code",
       "norm_label": "php",
       "source_file": "composer.json",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "composer_scripts",
@@ -896,7 +1071,7 @@
       "file_type": "code",
       "norm_label": "scripts",
       "source_file": "composer.json",
-      "source_location": "L22"
+      "source_location": "L28"
     },
     {
       "id": "composer_scripts_build",
@@ -907,7 +1082,7 @@
       "file_type": "code",
       "norm_label": "build",
       "source_file": "composer.json",
-      "source_location": "L23"
+      "source_location": "L29"
     },
     {
       "id": "composer_scripts_check_compat",
@@ -918,7 +1093,18 @@
       "file_type": "code",
       "norm_label": "check-compat",
       "source_file": "composer.json",
-      "source_location": "L24"
+      "source_location": "L30"
+    },
+    {
+      "id": "composer_scripts_test",
+      "label": "test",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "composer.json",
+      "file_type": "code",
+      "norm_label": "test",
+      "source_file": "composer.json",
+      "source_location": "L31"
     },
     {
       "id": "composer_type",
@@ -1323,88 +1509,76 @@
       "source_location": "L11"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_formularios_parciales_en_modal",
-      "label": "Formularios Parciales En Modal",
+      "id": "skills_soffi_ui_components_banner_de_impersonaci\u00f3n_sw_impersonation_banner_ven\u00eda_de_soffifac",
+      "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "formularios parciales en modal",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L241"
+      "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2414"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_1_crud_listado",
-      "label": "Patr\u00f3n 1: CRUD/Listado",
+      "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
+      "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "patron 1: crud/listado",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L17"
+      "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2382"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_2_tabs_con_resumen",
-      "label": "Patr\u00f3n 2: Tabs Con Resumen",
+      "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
+      "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "patron 2: tabs con resumen",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L131"
+      "norm_label": "regla anti doble-espaciado (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2478"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_3_vista_operativa_financiera",
-      "label": "Patr\u00f3n 3: Vista Operativa Financiera",
+      "id": "skills_soffi_ui_components_resumen_de_rol_sw_rol_summary_ven\u00eda_de_gesnom_dev",
+      "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "patron 3: vista operativa financiera",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L197"
+      "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2455"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_reglas_base",
-      "label": "Reglas base",
+      "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
+      "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "reglas base",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L7"
+      "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2386"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_sin_framework_css",
-      "label": "Sin Framework CSS",
+      "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
+      "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "sin framework css",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L306"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_soffiweb_ui_patrones_blade",
-      "label": "Soffiweb UI - Patrones Blade",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "soffiweb ui - patrones blade",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L1"
+      "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2433"
     },
     {
       "id": "agents",
@@ -1602,9 +1776,20 @@
       "label": "Illuminate\\Support\\ServiceProvider",
       "_origin": "ast",
       "community": 3,
-      "community_name": "SoffiUiServiceProvider",
+      "community_name": "PackageContractTest",
       "file_type": "code",
       "norm_label": "illuminate\\support\\serviceprovider",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "phpunit_framework_testcase",
+      "label": "PHPUnit\\Framework\\TestCase",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": "phpunit\\framework\\testcase",
       "source_file": "",
       "source_location": ""
     },
@@ -1613,10 +1798,21 @@
       "label": "SoffiUiServiceProvider.php",
       "_origin": "ast",
       "community": 3,
-      "community_name": "SoffiUiServiceProvider",
+      "community_name": "PackageContractTest",
       "file_type": "code",
       "norm_label": "soffiuiserviceprovider.php",
       "source_file": "src-php/SoffiUiServiceProvider.php",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_packagecontracttest",
+      "label": "PackageContractTest.php",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": "packagecontracttest.php",
+      "source_file": "tests/Unit/PackageContractTest.php",
       "source_location": "L1"
     },
     {
@@ -1984,30 +2180,6 @@
       "source_location": "L2510"
     },
     {
-      "id": "skills_soffi_ui_components_banner_de_impersonaci\u00f3n_sw_impersonation_banner_ven\u00eda_de_soffifac",
-      "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2414"
-    },
-    {
-      "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
-      "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2382"
-    },
-    {
       "id": "skills_soffi_ui_components_componentes_que_no_existen_todav\u00eda",
       "label": "Componentes que NO existen todav\u00eda",
       "_origin": "ast",
@@ -2018,54 +2190,6 @@
       "norm_label": "componentes que no existen todavia",
       "source_file": "skills/soffi-ui/components.md",
       "source_location": "L2490"
-    },
-    {
-      "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
-      "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "regla anti doble-espaciado (venia de soffifac)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2478"
-    },
-    {
-      "id": "skills_soffi_ui_components_resumen_de_rol_sw_rol_summary_ven\u00eda_de_gesnom_dev",
-      "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2455"
-    },
-    {
-      "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
-      "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2386"
-    },
-    {
-      "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
-      "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2433"
     },
     {
       "id": "skills_soffi_ui_js",
@@ -2100,6 +2224,90 @@
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "view-patterns.md",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_formularios_parciales_en_modal",
+      "label": "Formularios Parciales En Modal",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "formularios parciales en modal",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L241"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_1_crud_listado",
+      "label": "Patr\u00f3n 1: CRUD/Listado",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 1: crud/listado",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_2_tabs_con_resumen",
+      "label": "Patr\u00f3n 2: Tabs Con Resumen",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 2: tabs con resumen",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L131"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_3_vista_operativa_financiera",
+      "label": "Patr\u00f3n 3: Vista Operativa Financiera",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 3: vista operativa financiera",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L197"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_reglas_base",
+      "label": "Reglas base",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reglas base",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_sin_framework_css",
+      "label": "Sin Framework CSS",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sin framework css",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L306"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_soffiweb_ui_patrones_blade",
+      "label": "Soffiweb UI - Patrones Blade",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "soffiweb ui - patrones blade",
       "source_file": "skills/soffi-ui/view-patterns.md",
       "source_location": "L1"
     },
@@ -2413,7 +2621,7 @@
       "node_kind": "heading",
       "norm_label": "0.1.0 \u2014 2026-09-25",
       "source_file": "CHANGELOG.md",
-      "source_location": "L136"
+      "source_location": "L150"
     },
     {
       "id": "changelog_0_1_1_2026_09_25",
@@ -2425,7 +2633,7 @@
       "node_kind": "heading",
       "norm_label": "0.1.1 \u2014 2026-09-25",
       "source_file": "CHANGELOG.md",
-      "source_location": "L121"
+      "source_location": "L135"
     },
     {
       "id": "changelog_0_2_0_2026_09_26",
@@ -2437,7 +2645,7 @@
       "node_kind": "heading",
       "norm_label": "0.2.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L89"
+      "source_location": "L103"
     },
     {
       "id": "changelog_0_3_0_2026_09_24",
@@ -2449,7 +2657,7 @@
       "node_kind": "heading",
       "norm_label": "0.3.0 \u2014 2026-09-24",
       "source_file": "CHANGELOG.md",
-      "source_location": "L164"
+      "source_location": "L178"
     },
     {
       "id": "changelog_0_3_0_2026_09_26",
@@ -2461,7 +2669,7 @@
       "node_kind": "heading",
       "norm_label": "0.3.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L76"
+      "source_location": "L90"
     },
     {
       "id": "changelog_0_4_0_2026_09_25",
@@ -2473,7 +2681,7 @@
       "node_kind": "heading",
       "norm_label": "0.4.0 \u2014 2026-09-25",
       "source_file": "CHANGELOG.md",
-      "source_location": "L150"
+      "source_location": "L164"
     },
     {
       "id": "changelog_0_4_0_2026_09_26",
@@ -2485,7 +2693,7 @@
       "node_kind": "heading",
       "norm_label": "0.4.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L57"
+      "source_location": "L71"
     },
     {
       "id": "changelog_0_5_0_2026_09_26",
@@ -2497,7 +2705,7 @@
       "node_kind": "heading",
       "norm_label": "0.5.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L43"
+      "source_location": "L57"
     },
     {
       "id": "changelog_0_6_0_2026_09_26",
@@ -2509,7 +2717,7 @@
       "node_kind": "heading",
       "norm_label": "0.6.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L22"
+      "source_location": "L36"
     },
     {
       "id": "changelog_0_6_1_2026_09_26",
@@ -2521,7 +2729,7 @@
       "node_kind": "heading",
       "norm_label": "0.6.1 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L11"
+      "source_location": "L25"
     },
     {
       "id": "changelog_0_7_0_2026_09_28",
@@ -2532,6 +2740,18 @@
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "0.7.0 \u2014 2026-09-28",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "changelog_0_8_0_2026_09_28",
+      "label": "0.8.0 \u2014 2026-09-28",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.8.0 \u2014 2026-09-28",
       "source_file": "CHANGELOG.md",
       "source_location": "L3"
     },
@@ -2548,7 +2768,7 @@
       "source_location": "L5"
     },
     {
-      "id": "changelog_agregado_141",
+      "id": "changelog_agregado_108",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -2557,10 +2777,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L141"
+      "source_location": "L108"
     },
     {
-      "id": "changelog_agregado_152",
+      "id": "changelog_agregado_155",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -2569,10 +2789,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L152"
+      "source_location": "L155"
     },
     {
-      "id": "changelog_agregado_202",
+      "id": "changelog_agregado_166",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -2581,10 +2801,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L202"
+      "source_location": "L166"
     },
     {
-      "id": "changelog_agregado_26",
+      "id": "changelog_agregado_19",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -2593,10 +2813,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L26"
+      "source_location": "L19"
     },
     {
-      "id": "changelog_agregado_45",
+      "id": "changelog_agregado_216",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -2605,7 +2825,19 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L45"
+      "source_location": "L216"
+    },
+    {
+      "id": "changelog_agregado_40",
+      "label": "Agregado",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agregado",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L40"
     },
     {
       "id": "changelog_agregado_59",
@@ -2620,7 +2852,7 @@
       "source_location": "L59"
     },
     {
-      "id": "changelog_agregado_94",
+      "id": "changelog_agregado_73",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -2629,7 +2861,7 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L94"
+      "source_location": "L73"
     },
     {
       "id": "changelog_cambiado",
@@ -2641,10 +2873,10 @@
       "node_kind": "heading",
       "norm_label": "cambiado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L78"
+      "source_location": "L92"
     },
     {
-      "id": "changelog_cambiado_114",
+      "id": "changelog_cambiado_128",
       "label": "Cambiado",
       "_origin": "ast",
       "community": 9,
@@ -2653,10 +2885,10 @@
       "node_kind": "heading",
       "norm_label": "cambiado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L114"
+      "source_location": "L128"
     },
     {
-      "id": "changelog_cambiado_123",
+      "id": "changelog_cambiado_137",
       "label": "Cambiado",
       "_origin": "ast",
       "community": 9,
@@ -2665,7 +2897,7 @@
       "node_kind": "heading",
       "norm_label": "cambiado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L123"
+      "source_location": "L137"
     },
     {
       "id": "changelog_cambios_incompatibles",
@@ -2677,7 +2909,7 @@
       "node_kind": "heading",
       "norm_label": "cambios incompatibles",
       "source_file": "CHANGELOG.md",
-      "source_location": "L218"
+      "source_location": "L232"
     },
     {
       "id": "changelog_changelog",
@@ -2701,7 +2933,7 @@
       "node_kind": "heading",
       "norm_label": "compatibilidad",
       "source_file": "CHANGELOG.md",
-      "source_location": "L184"
+      "source_location": "L198"
     },
     {
       "id": "changelog_corregido",
@@ -2713,10 +2945,10 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L13"
+      "source_location": "L11"
     },
     {
-      "id": "changelog_corregido_105",
+      "id": "changelog_corregido_119",
       "label": "Corregido",
       "_origin": "ast",
       "community": 9,
@@ -2725,10 +2957,10 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L105"
+      "source_location": "L119"
     },
     {
-      "id": "changelog_corregido_69",
+      "id": "changelog_corregido_27",
       "label": "Corregido",
       "_origin": "ast",
       "community": 9,
@@ -2737,7 +2969,19 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L69"
+      "source_location": "L27"
+    },
+    {
+      "id": "changelog_corregido_83",
+      "label": "Corregido",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "corregido",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L83"
     },
     {
       "id": "changelog_estructura",
@@ -2749,7 +2993,7 @@
       "node_kind": "heading",
       "norm_label": "estructura",
       "source_file": "CHANGELOG.md",
-      "source_location": "L225"
+      "source_location": "L239"
     },
     {
       "id": "changelog_unificaci\u00f3n",
@@ -2761,7 +3005,7 @@
       "node_kind": "heading",
       "norm_label": "unificacion",
       "source_file": "CHANGELOG.md",
-      "source_location": "L169"
+      "source_location": "L183"
     }
   ],
   "links": [
@@ -2798,7 +3042,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L424",
+      "source_location": "L434",
       "weight": 1.0
     },
     {
@@ -2810,7 +3054,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L436",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -2822,7 +3066,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L441",
+      "source_location": "L451",
       "weight": 1.0
     },
     {
@@ -2846,7 +3090,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L238",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -2899,6 +3143,18 @@
     },
     {
       "source": "js_soffi_ui_swvalidatefield",
+      "target": "js_soffi_ui_swsyncauthinputgroup",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
+      "source": "js_soffi_ui_swvalidatefield",
       "target": "js_soffi_ui_swvalidationmessage",
       "relation": "calls",
       "_origin": "ast",
@@ -2906,7 +3162,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L535",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest_testlaravelproviderisregistered",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_package",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest_testlaravelsupportdependencyisdeclared",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_package",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -2919,6 +3199,30 @@
       "context": "import",
       "source_file": "src-php/SoffiUiServiceProvider.php",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest",
+      "target": "phpunit_framework_testcase",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest",
+      "target": "src_php_soffiuiserviceprovider_soffiuiserviceprovider",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -2967,57 +3271,57 @@
     },
     {
       "source": "changelog_0_1_0_2026_09_25",
-      "target": "changelog_agregado_141",
+      "target": "changelog_agregado_155",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L141",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
       "source": "changelog_0_1_1_2026_09_25",
-      "target": "changelog_cambiado_123",
+      "target": "changelog_cambiado_137",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L123",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
       "source": "changelog_0_2_0_2026_09_26",
-      "target": "changelog_corregido_105",
+      "target": "changelog_agregado_108",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L105",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
       "source": "changelog_0_2_0_2026_09_26",
-      "target": "changelog_cambiado_114",
+      "target": "changelog_corregido_119",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L114",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
       "source": "changelog_0_2_0_2026_09_26",
-      "target": "changelog_agregado_94",
+      "target": "changelog_cambiado_128",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L94",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -3028,7 +3332,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L169",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -3039,18 +3343,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L184",
+      "source_location": "L198",
       "weight": 1.0
     },
     {
       "source": "changelog_0_3_0_2026_09_24",
-      "target": "changelog_agregado_202",
+      "target": "changelog_agregado_216",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L202",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -3061,7 +3365,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L218",
+      "source_location": "L232",
       "weight": 1.0
     },
     {
@@ -3072,7 +3376,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L225",
+      "source_location": "L239",
       "weight": 1.0
     },
     {
@@ -3083,22 +3387,44 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L78",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
       "source": "changelog_0_4_0_2026_09_25",
-      "target": "changelog_agregado_152",
+      "target": "changelog_agregado_166",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L152",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
       "source": "changelog_0_4_0_2026_09_26",
+      "target": "changelog_agregado_73",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_0_4_0_2026_09_26",
+      "target": "changelog_corregido_83",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_0_5_0_2026_09_26",
       "target": "changelog_agregado_59",
       "relation": "contains",
       "_origin": "ast",
@@ -3109,51 +3435,51 @@
       "weight": 1.0
     },
     {
-      "source": "changelog_0_4_0_2026_09_26",
-      "target": "changelog_corregido_69",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.md",
-      "source_location": "L69",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_0_5_0_2026_09_26",
-      "target": "changelog_agregado_45",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.md",
-      "source_location": "L45",
-      "weight": 1.0
-    },
-    {
       "source": "changelog_0_6_0_2026_09_26",
-      "target": "changelog_agregado_26",
+      "target": "changelog_agregado_40",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L26",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
       "source": "changelog_0_6_1_2026_09_26",
+      "target": "changelog_corregido_27",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_0_7_0_2026_09_28",
+      "target": "changelog_agregado_19",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_0_8_0_2026_09_28",
       "target": "changelog_corregido",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L13",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
-      "source": "changelog_0_7_0_2026_09_28",
+      "source": "changelog_0_8_0_2026_09_28",
       "target": "changelog_agregado",
       "relation": "contains",
       "_origin": "ast",
@@ -3165,13 +3491,13 @@
     },
     {
       "source": "changelog_changelog",
-      "target": "changelog_0_6_1_2026_09_26",
+      "target": "changelog_0_2_0_2026_09_26",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L11",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -3182,7 +3508,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L121",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -3193,7 +3519,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L136",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -3204,29 +3530,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L150",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_changelog",
-      "target": "changelog_0_3_0_2026_09_24",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.md",
       "source_location": "L164",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_changelog",
-      "target": "changelog_0_6_0_2026_09_26",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.md",
-      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -3237,7 +3541,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_0_3_0_2026_09_24",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_0_6_1_2026_09_26",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_0_8_0_2026_09_28",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_0_6_0_2026_09_26",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -3248,7 +3596,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L43",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -3259,7 +3607,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L57",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -3270,18 +3618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L76",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_changelog",
-      "target": "changelog_0_2_0_2026_09_26",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.md",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -3314,18 +3651,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
       "source": "composer",
-      "target": "composer_extra",
+      "target": "composer_autoload_dev",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -3341,35 +3678,24 @@
     },
     {
       "source": "composer",
+      "target": "composer_extra",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "composer",
       "target": "composer_scripts",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "composer",
-      "target": "composer_config",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "composer.json",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "composer",
-      "target": "composer_minimum_stability",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "composer.json",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -3385,13 +3711,35 @@
     },
     {
       "source": "composer",
-      "target": "composer_prefer_stable",
+      "target": "composer_require_dev",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L30",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "composer",
+      "target": "composer_config",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "composer",
+      "target": "composer_minimum_stability",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -3403,6 +3751,17 @@
       "confidence_score": 1.0,
       "source_file": "composer.json",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "composer",
+      "target": "composer_prefer_stable",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -3446,7 +3805,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L11",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "composer_autoload_dev",
+      "target": "composer_autoload_dev_psr_4",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "composer_autoload_dev_psr_4",
+      "target": "composer_psr_4_tests",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -3457,7 +3838,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -3468,7 +3849,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L27",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -3479,7 +3860,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L16",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -3490,7 +3871,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L17",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "composer_require",
+      "target": "composer_require_illuminate_support",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3501,7 +3893,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L8",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "composer_require_dev",
+      "target": "composer_require_dev_phpunit_phpunit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -3512,7 +3915,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L23",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -3523,7 +3926,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "composer.json",
-      "source_location": "L24",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "composer_scripts",
+      "target": "composer_scripts_test",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "composer.json",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -3814,13 +4228,35 @@
     },
     {
       "source": "js_soffi_ui",
+      "target": "js_soffi_ui_swsyncselectcolor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "js_soffi_ui",
+      "target": "js_soffi_ui_swsyncauthinputgroup",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "js_soffi_ui",
       "target": "js_soffi_ui_swtoggless",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L219",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -3831,7 +4267,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L231",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -3842,7 +4278,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L242",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -3853,7 +4289,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L265",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -3864,29 +4300,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L281",
-      "weight": 1.0
-    },
-    {
-      "source": "js_soffi_ui",
-      "target": "js_soffi_ui_swcloseallmodals",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "js/soffi-ui.js",
-      "source_location": "L290",
-      "weight": 1.0
-    },
-    {
-      "source": "js_soffi_ui",
-      "target": "js_soffi_ui_swactivatetab",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "js/soffi-ui.js",
-      "source_location": "L296",
+      "source_location": "L291",
       "weight": 1.0
     },
     {
@@ -3902,13 +4316,35 @@
     },
     {
       "source": "js_soffi_ui",
+      "target": "js_soffi_ui_swcloseallmodals",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "js_soffi_ui",
+      "target": "js_soffi_ui_swactivatetab",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "js/soffi-ui.js",
+      "source_location": "L306",
+      "weight": 1.0
+    },
+    {
+      "source": "js_soffi_ui",
       "target": "js_soffi_ui_swtogglecollapse",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L323",
+      "source_location": "L333",
       "weight": 1.0
     },
     {
@@ -3930,7 +4366,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L362",
+      "source_location": "L372",
       "weight": 1.0
     },
     {
@@ -3941,7 +4377,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L373",
+      "source_location": "L383",
       "weight": 1.0
     },
     {
@@ -3952,7 +4388,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L411",
+      "source_location": "L421",
       "weight": 1.0
     },
     {
@@ -3963,7 +4399,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L419",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -3974,7 +4410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L428",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -3996,7 +4432,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L511",
+      "source_location": "L523",
       "weight": 1.0
     },
     {
@@ -4007,7 +4443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "js/soffi-ui.js",
-      "source_location": "L525",
+      "source_location": "L537",
       "weight": 1.0
     },
     {
@@ -4172,7 +4608,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/check-compat.php",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -4183,7 +4619,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/check-compat.php",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -4194,7 +4630,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/check-compat.php",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -4205,7 +4641,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/check-compat.php",
-      "source_location": "L86",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -5155,6 +5591,17 @@
       "weight": 1.0
     },
     {
+      "source": "tests_unit_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
       "source": "third_party_notices",
       "target": "third_party_notices_third_party_ai_tooling",
       "relation": "contains",
@@ -5177,6 +5624,17 @@
       "weight": 1.0
     },
     {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "phpunit_framework_testcase",
+      "relation": "inherits",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
       "source": "src_php_soffiuiserviceprovider_soffiuiserviceprovider",
       "target": "src_php_soffiuiserviceprovider_soffiuiserviceprovider_register",
       "relation": "method",
@@ -5196,6 +5654,72 @@
       "confidence_score": 1.0,
       "source_file": "src-php/SoffiUiServiceProvider.php",
       "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_setup",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_testlaravelsupportdependencyisdeclared",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_testlaravelproviderisregistered",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_testcompatibilitycheckerpasses",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_testpublishedartifactsmatchcompatibilitycontract",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_package",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -5363,7 +5887,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L501",
+      "source_location": "L513",
       "weight": 1.0
     },
     {
@@ -5387,10 +5911,10 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "js/soffi-ui.js",
-      "source_location": "L278",
+      "source_location": "L288",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1373b18f79ca417a93debae952a1dbe69d30a6c3"
+  "built_at_commit": "8871d1a3cc67f385dcef371dbecb8b290206dd68"
 }
