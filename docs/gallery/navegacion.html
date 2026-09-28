@@ -66,6 +66,7 @@
 
         <div class="sw-sb-group">Datos</div>
         <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tabla</a>
+        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Vista real: Empleados</a>
         <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
         <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
 
@@ -74,6 +75,7 @@
 
         <div class="sw-sb-group">Navegación</div>
         <a href="navegacion.html#tabs" class="sw-sb-link active"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#collapse" class="sw-sb-link active"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
         <a href="navegacion.html#breadcrumb" class="sw-sb-link active"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
         <a href="navegacion.html#sidebar-topbar" class="sw-sb-link active"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
 
@@ -141,6 +143,103 @@
                         <pre><code>&lt;div class="sw-tabs"&gt;
     &lt;div class="sw-tab active"&gt;Resumen&lt;/div&gt;
     &lt;div class="sw-tab"&gt;Historial&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ══════════════════ COLLAPSE / ACORDEÓN ══════════════════ -->
+        <section id="collapse" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</h2>
+                <p><code>data-toggle="collapse"</code> + <code>.collapse</code>/<code>.show</code> — reemplazo propio del collapse de Bootstrap (<code>swToggleCollapse()</code> en <code>soffi-ui.js</code>, listener global, no hace falta <code>onclick</code>). Sin animación: aparece/desaparece directo. Nombres sin prefijo <code>sw-</code> a propósito, son los que ya usaban las vistas.</p>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Simple</h3></div>
+                <div class="gal-preview gal-preview-block">
+                    <button type="button" class="sw-btn sw-btn-ghost sw-btn-sm" data-toggle="collapse" data-target="#gal-collapse-1" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down"></i> Ver detalle
+                    </button>
+                    <div id="gal-collapse-1" class="collapse">
+                        <div class="sw-card" style="margin-top:10px">
+                            <p class="sw-card-body">Contenido que se muestra u oculta al hacer click en el botón. El panel arranca oculto salvo que tenga <code>.show</code> desde el HTML.</p>
+                        </div>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;button type="button" class="sw-btn sw-btn-ghost sw-btn-sm"
+        data-toggle="collapse" data-target="#detalle-1" aria-expanded="false"&gt;
+    &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt; Ver detalle
+&lt;/button&gt;
+&lt;div id="detalle-1" class="collapse"&gt;
+    ...
+&lt;/div&gt;
+
+/* opcional: rotar el chevron según aria-expanded */
+[data-toggle="collapse"][aria-expanded="true"] .fa-chevron-down {
+    transform: rotate(180deg);
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Acordeón (<code>data-parent</code>)</h3><span>al abrir uno se cierran sus hermanos dentro del mismo contenedor</span></div>
+                <div class="gal-preview gal-preview-block">
+                    <div id="gal-acordeon-1">
+                        <div class="sw-card" style="margin-bottom:8px">
+                            <button type="button" class="sw-btn sw-btn-ghost sw-btn-sm" data-toggle="collapse" data-target="#gal-acc-1" aria-expanded="true" style="width:100%;justify-content:space-between">
+                                <span><i class="fa-solid fa-file-invoice-dollar"></i> Rol quincenal — septiembre 2026</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div id="gal-acc-1" class="collapse show" data-parent="#gal-acordeon-1">
+                                <p class="sw-card-body" style="padding-top:10px">42 empleados, total bruto $18,240.00.</p>
+                            </div>
+                        </div>
+                        <div class="sw-card" style="margin-bottom:8px">
+                            <button type="button" class="sw-btn sw-btn-ghost sw-btn-sm" data-toggle="collapse" data-target="#gal-acc-2" aria-expanded="false" style="width:100%;justify-content:space-between">
+                                <span><i class="fa-solid fa-file-invoice-dollar"></i> Rol quincenal — agosto 2026</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div id="gal-acc-2" class="collapse" data-parent="#gal-acordeon-1">
+                                <p class="sw-card-body" style="padding-top:10px">41 empleados, total bruto $17,980.00.</p>
+                            </div>
+                        </div>
+                        <div class="sw-card">
+                            <button type="button" class="sw-btn sw-btn-ghost sw-btn-sm" data-toggle="collapse" data-target="#gal-acc-3" aria-expanded="false" style="width:100%;justify-content:space-between">
+                                <span><i class="fa-solid fa-file-invoice-dollar"></i> Rol quincenal — julio 2026</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div id="gal-acc-3" class="collapse" data-parent="#gal-acordeon-1">
+                                <p class="sw-card-body" style="padding-top:10px">40 empleados, total bruto $17,500.00.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;!-- data-parent en el PANEL (no en el trigger) vuelve esto acordeón --&gt;
+&lt;div id="acordeon-roles"&gt;
+    &lt;div class="sw-card"&gt;
+        &lt;button type="button" class="sw-btn sw-btn-ghost sw-btn-sm"
+                data-toggle="collapse" data-target="#acc-1" aria-expanded="true"&gt;
+            Rol quincenal — septiembre
+        &lt;/button&gt;
+        &lt;div id="acc-1" class="collapse show" data-parent="#acordeon-roles"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-card"&gt;
+        &lt;button data-toggle="collapse" data-target="#acc-2" aria-expanded="false"&gt;
+            Rol quincenal — agosto
+        &lt;/button&gt;
+        &lt;div id="acc-2" class="collapse" data-parent="#acordeon-roles"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </div>
                 </details>

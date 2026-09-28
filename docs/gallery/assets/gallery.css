@@ -4,6 +4,17 @@
    página usa los componentes reales del paquete a propósito: la galería es
    también un ejemplo vivo del app shell. */
 
+/* Rotación de chevron para el demo de Collapse/acordeón — sugerida en
+   skills/soffiweb-ui-core/js.md, no viene en dist/soffi-ui.css (cada
+   proyecto la agrega si quiere el efecto). */
+[data-toggle="collapse"] .fa-chevron-down {
+    transition: transform 0.2s ease;
+}
+
+[data-toggle="collapse"][aria-expanded="true"] .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
 .gal-section {
     scroll-margin-top: 78px;
     padding-bottom: 3rem;
@@ -39,10 +50,21 @@
 
 .gal-block {
     margin-bottom: 2.25rem;
+    counter-increment: gal-block;
 }
 
 .gal-block:last-child {
     margin-bottom: 0;
+}
+
+.gal-block:not(:first-child) {
+    padding-top: 2rem;
+    border-top: 1px dashed #c7cbd8;
+    border-top: 1px dashed color-mix(in srgb, var(--bc2) 35%, transparent);
+}
+
+.gal-section {
+    counter-reset: gal-block;
 }
 
 .gal-block-title {
@@ -54,9 +76,28 @@
 }
 
 .gal-block-title h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: var(--sw-text-md);
     font-weight: var(--sw-font-semibold);
     color: var(--p);
+}
+
+.gal-block-title h3::before {
+    content: counter(gal-block);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: #e8ecfc;
+    background: color-mix(in srgb, var(--p) 14%, transparent);
+    color: var(--p);
+    font-size: var(--sw-text-xs);
+    font-weight: var(--sw-font-bold);
 }
 
 .gal-block-title span {
