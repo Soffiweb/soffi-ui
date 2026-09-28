@@ -86,7 +86,7 @@
     color: var(--bc2);
 }
 
-.sw-select:has(> option:checked[value=""]) {
+.sw-select.sw-select-empty {
     color: var(--bc2);
 }
 

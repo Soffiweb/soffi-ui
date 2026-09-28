@@ -43,7 +43,7 @@
     color: var(--bc2);
 }
 
-.sw-select:has(> option:checked[value=""]) + .select2-container .select2-selection__rendered {
+.sw-select.sw-select-empty + .select2-container .select2-selection__rendered {
     color: var(--bc2);
 }
 

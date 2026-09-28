@@ -1197,8 +1197,7 @@ body {
     color: var(--p);
 }
 
-.sw-auth-input-group.sw-error .sw-auth-input-addon,
-.sw-auth-input-group:has(.sw-error) .sw-auth-input-addon {
+.sw-auth-input-group.sw-error .sw-auth-input-addon {
     border-color: var(--er);
     box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--er) 10%, transparent);
@@ -2465,7 +2464,7 @@ body {
     color: var(--bc2);
 }
 
-.sw-select:has(> option:checked[value=""]) {
+.sw-select.sw-select-empty {
     color: var(--bc2);
 }
 
@@ -5613,7 +5612,7 @@ body.sw-modal-open {
     color: var(--bc2);
 }
 
-.sw-select:has(> option:checked[value=""]) + .select2-container .select2-selection__rendered {
+.sw-select.sw-select-empty + .select2-container .select2-selection__rendered {
     color: var(--bc2);
 }
 

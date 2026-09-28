@@ -319,8 +319,7 @@
     color: var(--p);
 }
 
-.sw-auth-input-group.sw-error .sw-auth-input-addon,
-.sw-auth-input-group:has(.sw-error) .sw-auth-input-addon {
+.sw-auth-input-group.sw-error .sw-auth-input-addon {
     border-color: var(--er);
     box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--er) 10%, transparent);

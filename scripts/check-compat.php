@@ -35,6 +35,7 @@ const FORBIDDEN_FEATURES = [
     'light-dark(' => 'Chrome 123 / Safari 17.5',
     '@container'  => 'Chrome 105 / Safari 16',
     'text-wrap:'  => 'Chrome 114 / Safari 17.4',
+    ':has('       => 'Firefox 121 (el piso del paquete es Firefox 115 ESR)',
 ];
 
 function cssFiles(string $dir): array

@@ -202,6 +202,14 @@ function swToggleTableSelection(master) {
   swSyncTableSelection(table);
 }
 
+function swSyncSelectColor(select) {
+  select.classList.toggle('sw-select-empty', select.value === '');
+}
+
+function swSyncAuthInputGroup(group) {
+  group.classList.toggle('sw-error', Boolean(group.querySelector('.sw-error')));
+}
+
 document.addEventListener('click', e => {
   const trigger = e.target.closest && e.target.closest('.sw-table-expand');
   if (trigger) swToggleTableRow(trigger);
@@ -212,6 +220,8 @@ document.addEventListener('change', e => {
     swToggleTableSelection(e.target);
   } else if (e.target.matches && e.target.matches('.sw-list-table-wrap tbody .sw-checkbox-input')) {
     swSyncTableSelection(e.target.closest('table'));
+  } else if (e.target.matches && e.target.matches('.sw-select')) {
+    swSyncSelectColor(e.target);
   }
 });
 
@@ -460,6 +470,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelectorAll(SW_DATE_INPUT_SELECTOR).forEach(swSyncDateInputColor);
+  document.querySelectorAll('.sw-select').forEach(swSyncSelectColor);
+  document.querySelectorAll('.sw-auth-input-group').forEach(swSyncAuthInputGroup);
 
   swInitAlerts();
   swInitTableStickyColumns();
@@ -525,6 +537,9 @@ function swValidationMessage(field) {
 function swValidateField(field) {
   const valid = field.checkValidity();
   field.classList.toggle('sw-error', !valid);
+
+  const authGroup = field.closest('.sw-auth-input-group');
+  if (authGroup) swSyncAuthInputGroup(authGroup);
 
   let hint = field.nextElementSibling;
   if (!hint || !hint.classList.contains('sw-hint-error')) {
