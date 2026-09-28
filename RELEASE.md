@@ -35,7 +35,7 @@ composer install --no-interaction --prefer-dist --no-progress
 composer check-compat
 composer test
 composer build
-php scripts/check-release.php --version=0.9.0
+php scripts/check-release.php --version="$(cat VERSION)"
 git diff --exit-code -- dist/ skills/soffi-ui/SKILL.md
 ```
 
