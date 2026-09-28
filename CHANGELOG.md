@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.8.0 — 2026-09-28
+
+### Agregado
+
+- Dependencia explícita de `illuminate/support` para el `SoffiUiServiceProvider`.
+- Tests de contrato del paquete con PHPUnit.
+- CI con PHP 8.1, 8.2 y 8.3.
+
+### Corregido
+
+- Eliminadas dependencias CSS de `:has()`, no soportado por Firefox 115 ESR.
+- El checker de compatibilidad ahora bloquea nuevos usos de `:has()`.
+- Select nativo, Select2 y grupos de auth conservan sus estados mediante fallback JS.
+
 ## 0.7.0 — 2026-09-28
 
 ### Agregado
