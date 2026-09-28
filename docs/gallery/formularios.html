@@ -66,6 +66,7 @@
 
         <div class="sw-sb-group">Datos</div>
         <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tabla</a>
+        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Vista real: Empleados</a>
         <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
         <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
 
@@ -74,6 +75,7 @@
 
         <div class="sw-sb-group">Navegación</div>
         <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
         <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
         <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
 
@@ -177,8 +179,8 @@
                 <div class="gal-block-title"><h3>Toggle, checkbox, radio</h3></div>
                 <div class="gal-preview">
                     <button type="button" class="sw-toggle on" onclick="this.classList.toggle('on')" aria-label="Activar"></button>
-                    <button type="button" class="sw-checkbox on" onclick="this.classList.toggle('on')"><i class="fa-solid fa-check" style="font-size:11px"></i></button>
-                    <button type="button" class="sw-checkbox"></button>
+                    <input type="checkbox" class="sw-checkbox-input" checked>
+                    <input type="checkbox" class="sw-checkbox-input">
                     <button type="button" class="sw-radio on"></button>
                     <button type="button" class="sw-radio"></button>
                 </div>
@@ -187,8 +189,23 @@
                     <div class="gal-code-body">
                         <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
                         <pre><code>&lt;button type="button" class="sw-toggle on"&gt;&lt;/button&gt;
-&lt;button type="button" class="sw-checkbox on"&gt;&lt;i class="fa-solid fa-check"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;input type="checkbox" class="sw-checkbox-input" checked&gt;
 &lt;button type="button" class="sw-radio on"&gt;&lt;/button&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Checkbox circular experimental</h3><span>prueba visual</span></div>
+                <div class="gal-preview">
+                    <input type="checkbox" class="sw-checkbox-input sw-checkbox-circle" checked aria-label="Checkbox circular seleccionado">
+                    <input type="checkbox" class="sw-checkbox-input sw-checkbox-circle" aria-label="Checkbox circular no seleccionado">
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;input type="checkbox" class="sw-checkbox-input sw-checkbox-circle"&gt;</code></pre>
                     </div>
                 </details>
             </div>

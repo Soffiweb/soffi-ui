@@ -283,13 +283,6 @@
     margin: 0.9rem 0 1.1rem;
 }
 
-.sw-auth-remember input[type="checkbox"] {
-    accent-color: var(--p);
-    cursor: pointer;
-    height: 16px;
-    width: 16px;
-}
-
 .sw-auth-input-group {
     display: flex;
     align-items: stretch;
