@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 — 2026-09-28
+
+### Agregado
+
+- Columna sticky configurable por clase, con indicador de desplazamiento.
+- Selección masiva, acordeón de fila y totales para tablas.
+- Vista de empleados como referencia integrada en la galería.
+
 ## 0.6.1 — 2026-09-26
 
 ### Corregido

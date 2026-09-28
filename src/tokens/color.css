@@ -32,6 +32,7 @@
     --sw-sidebar-bg: #1e2330;
     --sw-table-header-bg: #e8eef8;
     --sw-table-header-text: #28449a;
+    --sw-table-sticky-border: #c4cee3;
     --sw-button-text: #fdfdff;
 
     /* Unico par de tokens que hoy solo tenia SoffCaja. */
@@ -103,6 +104,7 @@
     --sw-sidebar-bg: #111520;
     --sw-table-header-bg: #1a2340;
     --sw-table-header-text: #7da4e0;
+    --sw-table-sticky-border: #8194b8;
     --sw-button-text: #1a1f2e;
     --sw-auth-bg: #1b2030;
     --sw-auth-card-bg: #222736;

@@ -141,6 +141,80 @@ function swRepositionRowMenus() {
   });
 }
 
+function swSyncTableStickyColumns() {
+  document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
+    if (!wrap.querySelector('thead tr > .sw-table-sticky-col')) return;
+
+    const maxScroll = wrap.scrollWidth - wrap.clientWidth;
+    wrap.classList.toggle(
+      'is-table-sticky-displaced',
+      maxScroll > 0 && wrap.scrollLeft < maxScroll - 1,
+    );
+  });
+}
+
+function swInitTableStickyColumns() {
+  document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
+    if (wrap.querySelector('thead tr > .sw-table-sticky-col')) {
+      wrap.addEventListener('scroll', swSyncTableStickyColumns, { passive: true });
+    }
+  });
+
+  swSyncTableStickyColumns();
+}
+
+function swToggleTableRow(trigger) {
+  const target = document.querySelector(trigger.dataset.target);
+  if (!target) return;
+
+  const willOpen = trigger.getAttribute('aria-expanded') !== 'true';
+  const table = trigger.closest('table');
+
+  table?.querySelectorAll('.sw-table-expand[aria-expanded="true"]').forEach(other => {
+    if (other === trigger) return;
+    other.setAttribute('aria-expanded', 'false');
+    const otherTarget = document.querySelector(other.dataset.target);
+    if (otherTarget) otherTarget.hidden = true;
+  });
+
+  trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  target.hidden = !willOpen;
+}
+
+function swSyncTableSelection(table) {
+  const master = table.querySelector('.sw-table-select-all');
+  const rows = [...table.querySelectorAll('tbody .sw-checkbox-input')];
+  if (!master || !rows.length) return;
+
+  const selected = rows.filter(checkbox => checkbox.checked).length;
+  master.checked = selected === rows.length;
+  master.indeterminate = selected > 0 && selected < rows.length;
+  master.setAttribute('aria-checked', master.indeterminate ? 'mixed' : String(master.checked));
+}
+
+function swToggleTableSelection(master) {
+  const table = master.closest('table');
+  if (!table) return;
+
+  table.querySelectorAll('tbody .sw-checkbox-input').forEach(checkbox => {
+    checkbox.checked = master.checked;
+  });
+  swSyncTableSelection(table);
+}
+
+document.addEventListener('click', e => {
+  const trigger = e.target.closest && e.target.closest('.sw-table-expand');
+  if (trigger) swToggleTableRow(trigger);
+});
+
+document.addEventListener('change', e => {
+  if (e.target.matches && e.target.matches('.sw-table-select-all')) {
+    swToggleTableSelection(e.target);
+  } else if (e.target.matches && e.target.matches('.sw-list-table-wrap tbody .sw-checkbox-input')) {
+    swSyncTableSelection(e.target.closest('table'));
+  }
+});
+
 // Select buscador — abrir/cerrar dropdown
 function swToggleSS(id) {
   const w = document.getElementById(id);
@@ -388,6 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll(SW_DATE_INPUT_SELECTOR).forEach(swSyncDateInputColor);
 
   swInitAlerts();
+  swInitTableStickyColumns();
 
   document.querySelectorAll('.sw-sidebar a').forEach(link => {
     link.addEventListener('click', () => {
@@ -417,6 +492,7 @@ document.addEventListener('keydown', e => {
 
 window.addEventListener('resize', () => {
   swRepositionRowMenus();
+  swSyncTableStickyColumns();
   if (window.innerWidth >= 768) {
     swCloseSidebar();
   }

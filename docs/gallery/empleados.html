@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es" id="root" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empleados — Vista real — Soffi UI</title>
+<meta name="description" content="Vista real de listado de empleados con filtros, tabla horizontal y paginación.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-building-columns"></i></span>
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">Empresa Demo S.A.</span>
+            <span class="sw-topbar-period"><i class="fa-regular fa-calendar"></i> Enero — Diciembre 2026</span>
+        </div>
+    </div>
+    <div class="sw-topbar-actions">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <span class="sw-user-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+        <span class="sw-user-name">María López</span>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Navegación principal">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Gestión</div>
+            <div class="sw-sb-brand-sub"><a href="index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-swatchbook"></i> Soffi UI</a></div>
+        </div>
+
+        <div class="sw-sb-group">Principal</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-house"></i> Dashboard</a>
+
+        <div class="sw-sb-group">Gestión</div>
+        <a href="empleados.html" class="sw-sb-link active" aria-current="page"><i class="fa-solid fa-users"></i> Empleados</a>
+        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Datos y tablas</a>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-file-invoice"></i> Formularios</a>
+
+        <div class="sw-sb-group">Reportes</div>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-file-export"></i> Exportaciones</a>
+
+        <div class="sw-sb-group">Configuración</div>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-user-gear"></i> Usuarios y permisos</a>
+    </nav>
+
+    <main class="sw-main sw-fade-in">
+        <div class="sw-crud-container">
+            <nav class="sw-breadcrumb-nav" aria-label="Migas de pan">
+                <ol class="sw-breadcrumb">
+                    <li class="sw-breadcrumb-item"><a href="dashboard.html#dashboard"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                    <li class="sw-breadcrumb-item active" aria-current="page">Empleados</li>
+                </ol>
+            </nav>
+
+            <div class="sw-crud-head" style="margin-bottom:24px">
+                <div class="sw-crud-title">
+                    <h1 class="sw-page-title">Empleados</h1>
+                    <p class="sw-page-subtitle">Administra personal, contratos, cuentas bancarias y estado laboral.</p>
+                </div>
+                <div class="sw-crud-actions">
+                    <button type="button" class="sw-btn sw-btn-primary"><i class="fa-solid fa-plus"></i> Nuevo empleado</button>
+                    <button type="button" class="sw-btn sw-btn-ghost"><i class="fa-solid fa-file-export"></i> Exportar</button>
+                </div>
+            </div>
+
+            <div class="sw-card sw-list-card">
+                <div class="sw-list-toolbar">
+                    <div class="sw-list-search">
+                        <div class="sw-list-filter-row">
+                            <div class="sw-list-filter-main">
+                                <label class="sw-list-search-label" for="empleadosBuscar">Buscar empleado</label>
+                                <div class="sw-input-icon-wrap">
+                                    <i class="fa-solid fa-search sw-input-icon"></i>
+                                    <input type="search" id="empleadosBuscar" class="sw-input sw-input-has-icon" placeholder="Nombre, cédula o código">
+                                </div>
+                            </div>
+                            <div class="sw-list-filter-control">
+                                <label class="sw-list-search-label" for="empleadosEstado">Estado</label>
+                                <select id="empleadosEstado" class="sw-select">
+                                    <option>Todos</option>
+                                    <option>Activo</option>
+                                    <option>Pendiente</option>
+                                    <option>Inactivo</option>
+                                </select>
+                            </div>
+                            <div class="sw-list-filter-control">
+                                <label class="sw-list-search-label" for="empleadosDepartamento">Departamento</label>
+                                <select id="empleadosDepartamento" class="sw-select">
+                                    <option>Todos</option>
+                                    <option>Contabilidad</option>
+                                    <option>Sistemas</option>
+                                    <option>Ventas</option>
+                                    <option>Operaciones</option>
+                                </select>
+                            </div>
+                            <div class="sw-list-filter-actions">
+                                <button type="button" class="sw-btn sw-btn-primary sw-btn-sm"><i class="fa-solid fa-filter"></i> Filtrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sw-list-meta">
+                        <span class="sw-list-count">42 empleados encontrados</span>
+                        <span class="sw-list-context"><i class="fa-solid fa-circle" style="font-size:6px"></i> Datos actualizados hoy, 09:42</span>
+                    </div>
+                </div>
+
+                <div class="sw-table-wrap sw-list-table-wrap is-table-sticky-displaced">
+                    <table class="sw-table sw-table-min-xl sw-table-totals">
+                        <thead>
+                            <tr>
+                                <th><span class="sw-table-select-all-wrap"><input type="checkbox" class="sw-checkbox-input sw-table-select-all" aria-label="Seleccionar todos los empleados" aria-checked="false"> Empleado</span></th>
+                                <th>Cédula</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Departamento</th>
+                                <th>Cargo</th>
+                                <th>Tipo contrato</th>
+                                <th>Turno</th>
+                                <th>Ciudad</th>
+                                <th>Banco</th>
+                                <th>Cuenta</th>
+                                <th>Salario</th>
+                                <th>Fecha ingreso</th>
+                                <th>Estado</th>
+                                <th class="text-center sw-table-sticky-col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Ana Torres"><button type="button" class="sw-table-expand" aria-expanded="false" aria-controls="empleado-detail-ana" data-target="#empleado-detail-ana" title="Mostrar detalle"><i class="fa-solid fa-chevron-right"></i></button><div class="sw-text-stack"><span class="sw-table-title">Ana Torres</span><span class="sw-table-subtitle">EMP-0231</span></div></div></td>
+                                <td>0102030405</td><td>ana@empresa.com</td><td>0991122334</td><td>Contabilidad</td><td>Analista Sr.</td><td>Indefinido</td><td>Diurno</td><td>Quito</td><td>Pichincha</td><td>****4521</td><td class="sw-money">$850.00</td><td>12/03/2021</td><td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Ana Torres" aria-label="Editar Ana Torres"><i class="fa-solid fa-pen"></i></button><div class="sw-row-menu"><button type="button" class="sw-bico sw-row-menu-trigger" title="Más acciones" aria-label="Más acciones" aria-expanded="false" onclick="galToggleRowMenu(this)"><i class="fa-solid fa-ellipsis"></i></button><div class="sw-row-menu-dropdown"><a href="#" class="sw-row-menu-item"><i class="fa-solid fa-eye"></i> Ver ficha</a><a href="#" class="sw-row-menu-item"><i class="fa-solid fa-file-lines"></i> Ver documentos</a><a href="#" class="sw-row-menu-item"><i class="fa-solid fa-ban"></i> Desactivar</a></div></div></div></td>
+                            </tr>
+                            <tr id="empleado-detail-ana" class="sw-table-detail-row" hidden>
+                                <td colspan="15">
+                                    <div class="sw-table-detail">
+                                        <div class="sw-table-detail-item"><span class="sw-table-detail-label">Contrato</span><span class="sw-table-detail-value">Indefinido · jornada completa</span></div>
+                                        <div class="sw-table-detail-item"><span class="sw-table-detail-label">Última actualización</span><span class="sw-table-detail-value">28/09/2026 · María López</span></div>
+                                        <div class="sw-table-detail-item"><span class="sw-table-detail-label">Observación</span><span class="sw-table-detail-value">Documentación completa</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Juan Pérez"><div class="sw-text-stack"><span class="sw-table-title">Juan Pérez</span><span class="sw-table-subtitle">EMP-0198</span></div></div></td>
+                                <td>0203040506</td><td>juan@empresa.com</td><td>0987654321</td><td>Recursos Humanos</td><td>Coordinador</td><td>Plazo fijo</td><td>Diurno</td><td>Guayaquil</td><td>Guayaquil</td><td>****7788</td><td class="sw-money">$620.00</td><td>04/07/2019</td><td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Juan Pérez" aria-label="Editar Juan Pérez"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Juan Pérez" aria-label="Desactivar Juan Pérez"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Marta Ruiz"><div class="sw-text-stack"><span class="sw-table-title">Marta Ruiz</span><span class="sw-table-subtitle">EMP-0345</span></div></div></td>
+                                <td>0304050607</td><td>marta@empresa.com</td><td>0976543210</td><td>Transporte</td><td>Conductor</td><td>Indefinido</td><td>Nocturno</td><td>Cuenca</td><td>Produbanco</td><td>****1290</td><td class="sw-money">$700.00</td><td>21/11/2022</td><td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Marta Ruiz" aria-label="Editar Marta Ruiz"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Marta Ruiz" aria-label="Desactivar Marta Ruiz"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Luis Vargas"><div class="sw-text-stack"><span class="sw-table-title">Luis Vargas</span><span class="sw-table-subtitle">EMP-0412</span></div></div></td>
+                                <td>0405060708</td><td>luis@empresa.com</td><td>0965432109</td><td>Ventas</td><td>Ejecutivo</td><td>Plazo fijo</td><td>Diurno</td><td>Ambato</td><td>Pacífico</td><td>****3345</td><td class="sw-money">$980.00</td><td>02/02/2020</td><td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Luis Vargas" aria-label="Editar Luis Vargas"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Luis Vargas" aria-label="Desactivar Luis Vargas"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Diego Salas"><div class="sw-text-stack"><span class="sw-table-title">Diego Salas</span><span class="sw-table-subtitle">EMP-0087</span></div></div></td>
+                                <td>0506070809</td><td>diego@empresa.com</td><td>0954321098</td><td>Logística</td><td>Supervisor</td><td>Indefinido</td><td>Rotativo</td><td>Manta</td><td>Pichincha</td><td>****9081</td><td class="sw-money">$1,100.00</td><td>15/09/2018</td><td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Diego Salas" aria-label="Editar Diego Salas"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Diego Salas" aria-label="Desactivar Diego Salas"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Carla Núñez"><div class="sw-text-stack"><span class="sw-table-title">Carla Núñez</span><span class="sw-table-subtitle">EMP-0256</span></div></div></td>
+                                <td>0607080910</td><td>carla@empresa.com</td><td>0943210987</td><td>Sistemas</td><td>Desarrollador</td><td>Indefinido</td><td>Diurno</td><td>Quito</td><td>Bolivariano</td><td>****2264</td><td class="sw-money">$1,450.00</td><td>30/01/2023</td><td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Carla Núñez" aria-label="Editar Carla Núñez"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Carla Núñez" aria-label="Desactivar Carla Núñez"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Sofía Mendoza"><div class="sw-text-stack"><span class="sw-table-title">Sofía Mendoza</span><span class="sw-table-subtitle">EMP-0301</span></div></div></td>
+                                <td>0708091011</td><td>sofia@empresa.com</td><td>0932109876</td><td>Marketing</td><td>Especialista</td><td>Plazo fijo</td><td>Diurno</td><td>Loja</td><td>Pichincha</td><td>****5567</td><td class="sw-money">$890.00</td><td>08/06/2021</td><td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Sofía Mendoza" aria-label="Editar Sofía Mendoza"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Sofía Mendoza" aria-label="Desactivar Sofía Mendoza"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Pedro Castillo"><div class="sw-text-stack"><span class="sw-table-title">Pedro Castillo</span><span class="sw-table-subtitle">EMP-0129</span></div></div></td>
+                                <td>0809101112</td><td>pedro@empresa.com</td><td>0921098765</td><td>Producción</td><td>Operario</td><td>Indefinido</td><td>Nocturno</td><td>Riobamba</td><td>Guayaquil</td><td>****8899</td><td class="sw-money">$560.00</td><td>19/04/2017</td><td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Pedro Castillo" aria-label="Editar Pedro Castillo"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Pedro Castillo" aria-label="Desactivar Pedro Castillo"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Lucía Herrera"><div class="sw-text-stack"><span class="sw-table-title">Lucía Herrera</span><span class="sw-table-subtitle">EMP-0378</span></div></div></td>
+                                <td>0910111213</td><td>lucia@empresa.com</td><td>0910987654</td><td>Legal</td><td>Abogada</td><td>Plazo fijo</td><td>Diurno</td><td>Guayaquil</td><td>Produbanco</td><td>****4432</td><td class="sw-money">$1,320.00</td><td>11/12/2020</td><td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Lucía Herrera" aria-label="Editar Lucía Herrera"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Lucía Herrera" aria-label="Desactivar Lucía Herrera"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="sw-table-expand-wrap"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Andrés Morales"><div class="sw-text-stack"><span class="sw-table-title">Andrés Morales</span><span class="sw-table-subtitle">EMP-0455</span></div></div></td>
+                                <td>1011121314</td><td>andres@empresa.com</td><td>0909876543</td><td>Compras</td><td>Comprador</td><td>Indefinido</td><td>Diurno</td><td>Ibarra</td><td>Pacífico</td><td>****6610</td><td class="sw-money">$760.00</td><td>25/08/2022</td><td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button type="button" class="sw-bico sw-bico-edit" title="Editar Andrés Morales" aria-label="Editar Andrés Morales"><i class="fa-solid fa-pen"></i></button><button type="button" class="sw-bico sw-bico-delete" title="Desactivar Andrés Morales" aria-label="Desactivar Andrés Morales"><i class="fa-solid fa-ban"></i></button></div></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="11" class="sw-table-total-label">Total salarios</th>
+                                <td class="sw-money">$9,230.00</td>
+                                <td colspan="3" class="sw-table-sticky-col"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="sw-list-pagination">
+                    <nav class="sw-pagination-nav" aria-label="Paginación de empleados">
+                        <p class="sw-pagination-summary">Mostrando <span>1–10</span> de <span>42</span> empleados</p>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Página anterior"><i class="fa-solid fa-angle-left"></i></a></li>
+                            <li class="page-item active"><a class="page-link" href="#" aria-current="page">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Página siguiente"><i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — vista real de listado</span>
+    <span class="sw-footer-links"><a href="datos.html#tables">Volver a Datos</a></span>
+</footer>
+
+<script src="assets/gallery.js"></script>
+</body>
+</html>
