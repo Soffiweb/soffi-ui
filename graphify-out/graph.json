@@ -699,7 +699,7 @@
       "file_type": "code",
       "norm_label": ".package()",
       "source_file": "tests/Unit/PackageContractTest.php",
-      "source_location": "L60"
+      "source_location": "L78"
     },
     {
       "id": "tests_unit_packagecontracttest_packagecontracttest_setup",
@@ -758,6 +758,18 @@
       "community_name": "PackageContractTest",
       "file_type": "code",
       "norm_label": ".testpublishedartifactsmatchcompatibilitycontract()",
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L66"
+    },
+    {
+      "id": "tests_unit_packagecontracttest_packagecontracttest_testreleasecontractpassesforcurrentversion",
+      "label": ".testReleaseContractPassesForCurrentVersion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "PackageContractTest",
+      "file_type": "code",
+      "norm_label": ".testreleasecontractpassesforcurrentversion()",
       "source_file": "tests/Unit/PackageContractTest.php",
       "source_location": "L48"
     },
@@ -1772,6 +1784,173 @@
       "source_location": "L2357"
     },
     {
+      "id": "release",
+      "label": "RELEASE.md",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "release.md",
+      "source_file": "RELEASE.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "release_ci",
+      "label": "CI",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ci",
+      "source_file": "RELEASE.md",
+      "source_location": "L56"
+    },
+    {
+      "id": "release_commits",
+      "label": "Commits",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "commits",
+      "source_file": "RELEASE.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "release_contrato_de_releases",
+      "label": "Contrato de releases",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "contrato de releases",
+      "source_file": "RELEASE.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "release_fuente_de_verdad",
+      "label": "Fuente de verdad",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fuente de verdad",
+      "source_file": "RELEASE.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "release_puerta_local",
+      "label": "Puerta local",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "puerta local",
+      "source_file": "RELEASE.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "release_tag_estable",
+      "label": "Tag estable",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Contrato de releases",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tag estable",
+      "source_file": "RELEASE.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "changelog_0_3_0_2026_09_24",
+      "label": "0.3.0 \u2014 2026-09-24",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "0.3.0 \u2014 2026-09-24",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.3.0 \u2014 2026-09-24",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L178"
+    },
+    {
+      "id": "changelog_agregado_216",
+      "label": "Agregado",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "0.3.0 \u2014 2026-09-24",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agregado",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L216"
+    },
+    {
+      "id": "changelog_cambios_incompatibles",
+      "label": "Cambios incompatibles",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "0.3.0 \u2014 2026-09-24",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cambios incompatibles",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L232"
+    },
+    {
+      "id": "changelog_compatibilidad",
+      "label": "Compatibilidad",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "0.3.0 \u2014 2026-09-24",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "compatibilidad",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L198"
+    },
+    {
+      "id": "changelog_estructura",
+      "label": "Estructura",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "0.3.0 \u2014 2026-09-24",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "estructura",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L239"
+    },
+    {
+      "id": "changelog_unificaci\u00f3n",
+      "label": "Unificaci\u00f3n",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "0.3.0 \u2014 2026-09-24",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "unificacion",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L183"
+    },
+    {
+      "id": "scripts_check_release",
+      "label": "check-release.php",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "check-release.php",
+      "file_type": "code",
+      "norm_label": "check-release.php",
+      "source_file": "scripts/check-release.php",
+      "source_location": "L1"
+    },
+    {
       "id": "illuminate_support_serviceprovider",
       "label": "Illuminate\\Support\\ServiceProvider",
       "_origin": "ast",
@@ -2648,18 +2827,6 @@
       "source_location": "L103"
     },
     {
-      "id": "changelog_0_3_0_2026_09_24",
-      "label": "0.3.0 \u2014 2026-09-24",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.3.0 \u2014 2026-09-24",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L178"
-    },
-    {
       "id": "changelog_0_3_0_2026_09_26",
       "label": "0.3.0 \u2014 2026-09-26",
       "_origin": "ast",
@@ -2816,18 +2983,6 @@
       "source_location": "L19"
     },
     {
-      "id": "changelog_agregado_216",
-      "label": "Agregado",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "agregado",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L216"
-    },
-    {
       "id": "changelog_agregado_40",
       "label": "Agregado",
       "_origin": "ast",
@@ -2900,18 +3055,6 @@
       "source_location": "L137"
     },
     {
-      "id": "changelog_cambios_incompatibles",
-      "label": "Cambios incompatibles",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "cambios incompatibles",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L232"
-    },
-    {
       "id": "changelog_changelog",
       "label": "Changelog",
       "_origin": "ast",
@@ -2922,18 +3065,6 @@
       "norm_label": "changelog",
       "source_file": "CHANGELOG.md",
       "source_location": "L1"
-    },
-    {
-      "id": "changelog_compatibilidad",
-      "label": "Compatibilidad",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "compatibilidad",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L198"
     },
     {
       "id": "changelog_corregido",
@@ -2982,30 +3113,6 @@
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
       "source_location": "L83"
-    },
-    {
-      "id": "changelog_estructura",
-      "label": "Estructura",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "estructura",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L239"
-    },
-    {
-      "id": "changelog_unificaci\u00f3n",
-      "label": "Unificaci\u00f3n",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "unificacion",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L183"
     }
   ],
   "links": [
@@ -4590,6 +4697,72 @@
       "weight": 1.0
     },
     {
+      "source": "release",
+      "target": "release_contrato_de_releases",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "release_contrato_de_releases",
+      "target": "release_commits",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "release_contrato_de_releases",
+      "target": "release_puerta_local",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "release_contrato_de_releases",
+      "target": "release_fuente_de_verdad",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "release_contrato_de_releases",
+      "target": "release_tag_estable",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE.md",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "release_contrato_de_releases",
+      "target": "release_ci",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE.md",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_build",
       "target": "scripts_build_formatbytes",
       "relation": "contains",
@@ -5702,7 +5875,7 @@
     },
     {
       "source": "tests_unit_packagecontracttest_packagecontracttest",
-      "target": "tests_unit_packagecontracttest_packagecontracttest_testpublishedartifactsmatchcompatibilitycontract",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_testreleasecontractpassesforcurrentversion",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5713,13 +5886,24 @@
     },
     {
       "source": "tests_unit_packagecontracttest_packagecontracttest",
+      "target": "tests_unit_packagecontracttest_packagecontracttest_testpublishedartifactsmatchcompatibilitycontract",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/Unit/PackageContractTest.php",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_packagecontracttest_packagecontracttest",
       "target": "tests_unit_packagecontracttest_packagecontracttest_package",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/Unit/PackageContractTest.php",
-      "source_location": "L60",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -5916,5 +6100,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8871d1a3cc67f385dcef371dbecb8b290206dd68"
+  "built_at_commit": "3fac8f5ef979aa8acbcb86346310d5947d7fa086"
 }
