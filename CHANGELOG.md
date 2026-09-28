@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.0 — 2026-09-28
+
+Release estable promovida desde `0.9.0-rc.1` después de validar contrato,
+artefactos y CI.
+
 ## 0.9.0-rc.1 — 2026-09-28
 
 ### Agregado
