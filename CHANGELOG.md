@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0-rc.1 — 2026-09-28
+
+### Agregado
+
+- Contrato automatizado de releases con validación de SemVer, changelog, tag y artefactos.
+- CI para pull requests, ramas `main`/`dev` y tags de release.
+- Verificación de artefactos generados durante releases.
+
 ## 0.8.0 — 2026-09-28
 
 ### Agregado
