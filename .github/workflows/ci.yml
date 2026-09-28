@@ -3,7 +3,15 @@ name: CI
 on:
   push:
     branches: [main, dev]
+    tags: ['v*']
   pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   compat:
@@ -23,7 +31,7 @@ jobs:
         run: php scripts/check-compat.php
 
   build:
-    name: Build reproducible
+    name: Build reproducible (PHP ${{ matrix.php-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -40,6 +48,7 @@ jobs:
         run: |
           php -l scripts/build.php
           php -l scripts/check-compat.php
+          php -l scripts/check-release.php
           php -l src-php/SoffiUiServiceProvider.php
 
       - name: Sintaxis JS
@@ -62,5 +71,35 @@ jobs:
           php scripts/build.php
           if ! git diff --exit-code -- dist/; then
             echo "::error::dist/ no coincide con src/. Correr 'php scripts/build.php' y commitear."
+            exit 1
+          fi
+
+  release:
+    name: Release contract
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [compat, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: composer validate
+        run: composer validate --no-check-all --no-check-publish
+
+      - name: composer install
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: release contract
+        run: php scripts/check-release.php --tag="${GITHUB_REF_NAME}"
+
+      - name: generated artifacts are current
+        run: |
+          php scripts/build.php
+          if ! git diff --exit-code -- dist/ skills/soffi-ui/SKILL.md; then
+            echo "::error::Los artefactos generados no coinciden con VERSION."
             exit 1
           fi
