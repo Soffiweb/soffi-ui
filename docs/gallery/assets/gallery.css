@@ -353,22 +353,16 @@ details.gal-code summary:hover { color: var(--p); }
     padding: 1.75rem 2rem;
     background: var(--b1);
     border: var(--brd);
-    border-left: 4px solid var(--p);
     border-radius: var(--rl);
 }
 
-.gal-guide-page .gal-section {
-    padding: 1.5rem;
-    background: var(--b1);
-    border: var(--brd);
-    border-left: 4px solid var(--p);
-    border-radius: var(--rl);
-    box-shadow: var(--sh-sm);
+.gal-guide-page .gal-section.sw-card {
+    padding: 1.2rem 1.4rem;
     margin-bottom: 1.25rem;
 }
 
-.gal-guide-page .gal-section:last-child {
-    padding-bottom: 1.5rem;
+.gal-guide-page .gal-section.sw-card:last-child {
+    padding-bottom: 1.2rem;
     border-bottom: var(--brd);
     margin-bottom: 0;
 }
@@ -400,7 +394,7 @@ details.gal-code summary:hover { color: var(--p); }
     .gal-swatch-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 
     .gal-guide-hero,
-    .gal-guide-page .gal-section {
+    .gal-guide-page .gal-section.sw-card {
         padding: 1.25rem;
     }
 }
