@@ -1,0 +1,41 @@
+/* Indicador de carga */
+
+@keyframes sw-spinner-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sw-spinner {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 3px solid var(--bc2);
+    border-top-color: var(--p);
+    border-radius: 50%;
+    animation: sw-spinner-rotate 0.7s linear infinite;
+    vertical-align: middle;
+}
+
+.sw-spinner-sm {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-width: 2px;
+}
+
+.sw-spinner-lg {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-width: 4px;
+}
+
+.sw-spinner-light {
+    border-color: rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sw-spinner {
+        animation-duration: 1.8s;
+    }
+}

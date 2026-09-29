@@ -1,0 +1,65 @@
+/* Utilidades y reset mínimo para impresión */
+
+.sw-print-only {
+    display: none !important;
+}
+
+@media print {
+    @page {
+        margin: 1.25cm;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .sw-topbar,
+    .sw-sidebar,
+    .sw-sidebar-backdrop,
+    .sw-footer,
+    .sw-print-hide {
+        display: none !important;
+    }
+
+    .sw-body,
+    .sw-main {
+        display: block !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    .sw-print-only {
+        display: block !important;
+    }
+
+    .sw-card,
+    .sw-list-card,
+    .sw-modal,
+    .sw-chart-card {
+        border: 1px solid #999 !important;
+        box-shadow: none !important;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    .sw-print-break-before {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .sw-print-break-after {
+        page-break-after: always;
+        break-after: page;
+    }
+
+    .sw-print-avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

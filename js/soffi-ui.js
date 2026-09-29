@@ -68,6 +68,31 @@ function swCloseUserMenu(restoreFocus = false) {
   }
 }
 
+// Dropdown genérico
+function swToggleDropdown(trigger) {
+  const menu = document.getElementById(trigger.getAttribute('aria-controls'));
+  if (!menu) return;
+
+  const open = !menu.classList.contains('open');
+  swCloseDropdowns();
+
+  if (open) {
+    menu.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+}
+
+function swCloseDropdowns(restoreFocus = false) {
+  document.querySelectorAll('.sw-dropdown-menu.open').forEach(menu => {
+    menu.classList.remove('open');
+    const trigger = document.querySelector(`[aria-controls="${menu.id}"]`);
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false');
+      if (restoreFocus) trigger.focus();
+    }
+  });
+}
+
 // Menu de acciones secundarias por fila de tabla ("...")
 function swPositionRowMenu(menu, trigger) {
   if (!menu || !trigger) return;
@@ -392,12 +417,6 @@ function swCloseAllModals() {
   }
 }
 
-document.addEventListener('click', event => {
-  const backdrop = event.target.closest && event.target.closest('.sw-modal-backdrop');
-  if (!backdrop || event.target !== backdrop || !backdrop.classList.contains('is-open')) return;
-  if (swModalAllowsBackdrop(backdrop)) swCloseModal(backdrop.id);
-});
-
 // Tabs propias (reemplazan data-toggle="tab" de Bootstrap, que ya no cargamos)
 function swActivateTab(event, link) {
   event.preventDefault();
@@ -499,11 +518,15 @@ document.addEventListener('click', e => {
     swCloseUserMenu();
   }
 
+  if (!e.target.closest('.sw-dropdown')) {
+    swCloseDropdowns();
+  }
+
   if (!e.target.closest('.sw-row-menu') && !e.target.closest('.sw-row-menu-dropdown')) {
     swCloseAllRowMenus();
   }
 
-  if (e.target.classList.contains('sw-modal-backdrop')) {
+  if (e.target.classList.contains('sw-modal-backdrop') && swModalAllowsBackdrop(e.target)) {
     swCloseModal(e.target.id);
   }
 });
@@ -593,6 +616,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     swCloseSidebar();
     swCloseUserMenu(true);
+    swCloseDropdowns(true);
     swCloseAllRowMenus();
     const modal = swGetOpenModal();
     if (modal && swModalAllowsEscape(modal)) {

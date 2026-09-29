@@ -1,0 +1,58 @@
+/* Switch de formulario */
+
+.sw-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--bc);
+    cursor: pointer;
+}
+
+.sw-switch-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.sw-switch-track {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 42px;
+    align-items: center;
+    width: 42px;
+    height: 24px;
+    padding: 3px;
+    border-radius: var(--sw-radius-pill);
+    background: var(--bc2);
+    transition: background 0.15s;
+}
+
+.sw-switch-thumb {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--b1);
+    box-shadow: var(--sh-sm);
+    transition: transform 0.15s;
+}
+
+.sw-switch-input:checked + .sw-switch-track {
+    background: var(--p);
+}
+
+.sw-switch-input:checked + .sw-switch-track .sw-switch-thumb {
+    transform: translateX(18px);
+}
+
+.sw-switch-input:focus-visible + .sw-switch-track {
+    outline: 2px solid var(--a);
+    outline-offset: 2px;
+}
+
+.sw-switch-input:disabled + .sw-switch-track,
+.sw-switch-input:disabled ~ .sw-switch-label {
+    cursor: not-allowed;
+    opacity: 0.55;
+}

@@ -1,0 +1,59 @@
+/* Dropdown genérico */
+
+.sw-dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.sw-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: var(--sw-z-dropdown);
+    display: none;
+    min-width: 190px;
+    padding: 0.35rem;
+    border: var(--brd);
+    border-radius: var(--r);
+    background: var(--b1);
+    box-shadow: var(--sh-md);
+}
+
+.sw-dropdown-menu.sw-dropdown-menu-start {
+    right: auto;
+    left: 0;
+}
+
+.sw-dropdown-menu.open {
+    display: grid;
+    gap: 2px;
+}
+
+.sw-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: 0;
+    border-radius: var(--r);
+    background: transparent;
+    color: var(--bc);
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sw-dropdown-item:hover,
+.sw-dropdown-item:focus-visible {
+    background: var(--b2);
+    color: var(--p);
+    outline: none;
+}
+
+.sw-dropdown-divider {
+    height: 1px;
+    margin: 0.3rem 0;
+    background: var(--sw-border);
+}

@@ -1,0 +1,45 @@
+/* Tooltip CSS-only */
+
+.sw-tooltip {
+    position: relative;
+    display: inline-flex;
+}
+
+.sw-tooltip::after {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    z-index: var(--sw-z-dropdown);
+    width: max-content;
+    max-width: 240px;
+    padding: 0.45rem 0.65rem;
+    border-radius: var(--r);
+    background: var(--bc);
+    color: var(--b1);
+    content: attr(data-tooltip);
+    font-size: var(--sw-text-xs);
+    line-height: 1.35;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 4px);
+    transition: opacity 0.15s, transform 0.15s;
+}
+
+.sw-tooltip:hover::after,
+.sw-tooltip:focus-visible::after,
+.sw-tooltip.is-open::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.sw-tooltip-bottom::after {
+    top: calc(100% + 8px);
+    bottom: auto;
+    transform: translate(-50%, -4px);
+}
+
+.sw-tooltip-bottom:hover::after,
+.sw-tooltip-bottom:focus-visible::after,
+.sw-tooltip-bottom.is-open::after {
+    transform: translate(-50%, 0);
+}

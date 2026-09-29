@@ -1,0 +1,47 @@
+/* Skeleton / carga de contenido */
+
+@keyframes sw-skeleton-pulse {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.sw-skeleton {
+    display: block;
+    min-height: 1rem;
+    border-radius: var(--r);
+    background: var(--b2);
+    animation: sw-skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.sw-skeleton-text {
+    width: 100%;
+    height: 0.85rem;
+}
+
+.sw-skeleton-title {
+    width: min(70%, 320px);
+    height: 1.35rem;
+}
+
+.sw-skeleton-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.sw-skeleton-media {
+    width: 100%;
+    min-height: 150px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sw-skeleton {
+        animation: none;
+    }
+}
