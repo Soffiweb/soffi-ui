@@ -237,47 +237,6 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
-                <div class="gal-block-title"><h3>Ejemplos de uso</h3></div>
-                <p>Los tokens son custom properties normales: se leen con <code>var(--sw-*)</code> y se pisan declarando el mismo nombre después de cargar <code>soffi-ui.css</code>, sin tocar el paquete.</p>
-
-                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r)">
-                    <summary><i class="fa-solid fa-chevron-right"></i> Personalizar la marca</summary>
-                    <div class="gal-code-body">
-                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                        <pre><code>/* en el CSS de tu app, cargado DESPUÉS de soffi-ui.css */
-:root {
-    --sw-primary: #6d28d9;
-    --sw-radius-lg: 0.5rem;
-}</code></pre>
-                    </div>
-                </details>
-
-                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r);margin-top:10px">
-                    <summary><i class="fa-solid fa-chevron-right"></i> Espaciado consistente en un componente propio</summary>
-                    <div class="gal-code-body">
-                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                        <pre><code>/* en vez de inventar un rem suelto */
-.mi-card {
-    padding: var(--sw-spacing-md);
-    gap: var(--sw-spacing-sm);
-}</code></pre>
-                    </div>
-                </details>
-
-                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r);margin-top:10px">
-                    <summary><i class="fa-solid fa-chevron-right"></i> Apilar un overlay propio en la capa correcta</summary>
-                    <div class="gal-code-body">
-                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                        <pre><code>/* un panel flotante propio, mismo nivel que los dropdowns
-   del sistema — nunca por encima de un modal o un toast */
-.mi-panel-flotante {
-    position: fixed;
-    z-index: var(--sw-z-dropdown);
-}</code></pre>
-                    </div>
-                </details>
-            </div>
         </section>
 
     </main>
