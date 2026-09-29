@@ -66,6 +66,10 @@ Usar cuando una fila de tabla necesita más de ~4 acciones: mantener las
 principales como `sw-bico` sueltos y mover el resto a este menú, en vez de
 apilar iconos hasta que la columna quede confusa.
 
+Al abrirse, el menú se porta temporalmente a `<body>` y usa posición fija.
+Así queda por encima de columnas sticky y no se recorta por el `overflow` de
+`.sw-list-table-wrap`.
+
 ### Dropdown genérico
 
 | Función | Uso |
