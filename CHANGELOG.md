@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.3 — 2026-09-29
+
+### Corregido
+
+- Menús de acciones de filas ahora se muestran por encima de columnas sticky y contenedores con overflow.
+- La galería reposiciona los menús al hacer scroll y resize.
+
 ## 0.11.2 — 2026-09-29
 
 ### Corregido
