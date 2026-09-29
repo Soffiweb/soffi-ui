@@ -28,6 +28,16 @@
     padding-bottom: 0;
 }
 
+.gal-section.sw-card {
+    padding: 1.5rem 1.6rem;
+    border-bottom: 0;
+    margin-bottom: 1.25rem;
+}
+
+.gal-section.sw-card:last-of-type {
+    margin-bottom: 0;
+}
+
 .gal-section-head {
     margin-bottom: 1.5rem;
 }
@@ -299,14 +309,14 @@ details.gal-code summary:hover { color: var(--p); }
     line-height: var(--sw-leading-base);
 }
 
-.gal-hero.sw-card {
+.gal-hero {
     padding: 1.75rem 2rem;
     border: var(--brd);
     border-radius: var(--rl);
     margin-bottom: 2rem;
 }
 
-.gal-hero.sw-card p {
+.gal-hero p {
     color: var(--bc);
 }
 
@@ -359,6 +369,19 @@ details.gal-code summary:hover { color: var(--p); }
     color: var(--bc2);
 }
 
+.sw-main > .gal-block.sw-card {
+    margin-bottom: 1.25rem;
+}
+
+.sw-main > .gal-block.sw-card:not(:first-child) {
+    padding-top: 1.2rem;
+    border-top: var(--brd);
+}
+
+.sw-main > .gal-block.sw-card:last-of-type {
+    margin-bottom: 0;
+}
+
 .gal-token-intro {
     margin-bottom: 2rem;
 }
@@ -393,9 +416,9 @@ details.gal-code summary:hover { color: var(--p); }
     margin-bottom: 1.25rem;
 }
 
-.gal-section#tokens > .gal-token-card:not(:first-child) {
+.gal-section#tokens > .gal-token-card:not(.gal-token-card-first) {
     padding-top: 1.2rem;
-    border-top: 0;
+    border-top: var(--brd);
 }
 
 .gal-token-card > p {
@@ -405,6 +428,33 @@ details.gal-code summary:hover { color: var(--p); }
 
 .gal-token-card:last-child {
     margin-bottom: 0;
+}
+
+.gal-tokens-page {
+    background: var(--b1);
+}
+
+.gal-tokens-page .gal-token-intro,
+.gal-tokens-page .gal-token-card {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.gal-tokens-page .gal-token-intro {
+    padding: 0 0 1.5rem;
+    border-bottom: var(--brd);
+}
+
+.gal-tokens-page .gal-token-card {
+    padding: 1.5rem 0 0;
+    border-top: var(--brd);
+}
+
+.gal-tokens-page .gal-token-card-first {
+    padding-top: 0;
+    border-top: 0;
 }
 
 .gal-page-nav {
@@ -425,12 +475,12 @@ details.gal-code summary:hover { color: var(--p); }
     border-radius: var(--rl);
 }
 
-.gal-guide-page .gal-section.sw-card {
+.gal-guide-page .gal-section {
     padding: 1.2rem 1.4rem;
     margin-bottom: 1.25rem;
 }
 
-.gal-guide-page .gal-section.sw-card:last-child {
+.gal-guide-page .gal-section:last-child {
     padding-bottom: 1.2rem;
     border-bottom: var(--brd);
     margin-bottom: 0;
@@ -463,7 +513,7 @@ details.gal-code summary:hover { color: var(--p); }
     .gal-swatch-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 
     .gal-guide-hero,
-    .gal-guide-page .gal-section.sw-card {
+    .gal-guide-page .gal-section {
         padding: 1.25rem;
     }
 
@@ -474,5 +524,420 @@ details.gal-code summary:hover { color: var(--p); }
 
     .gal-page-nav .sw-btn {
         justify-content: center;
+    }
+}
+
+/* Shell exclusivo de documentación: navegación superior clara y sidebar de referencia. */
+.sw-topbar {
+    height: 72px;
+    padding: 0 28px;
+    background: var(--b1);
+    border-bottom: var(--brd);
+    box-shadow: none;
+}
+
+.sw-topbar-brand {
+    flex: 0 0 245px;
+    gap: 10px;
+}
+
+.sw-topbar-logo-fallback {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.sw-topbar-tenant {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.sw-topbar-company {
+    font-size: 19px;
+}
+
+.sw-topbar-period {
+    font-size: var(--sw-text-xs);
+}
+
+.gal-topnav {
+    display: flex;
+    align-items: stretch;
+    align-self: stretch;
+    gap: 4px;
+    margin: 0 auto;
+}
+
+.gal-topnav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 15px;
+    border-bottom: 2px solid transparent;
+    color: var(--bc2);
+    font-size: var(--sw-text-base);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.gal-topnav-link:hover,
+.gal-topnav-link.active {
+    color: var(--bc);
+    border-bottom-color: var(--bc);
+    text-decoration: none;
+}
+
+.gal-topnav-link i {
+    color: var(--bc2);
+    font-size: var(--sw-text-sm);
+}
+
+.sw-topbar-actions {
+    flex: 0 0 245px;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.gal-topbar-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--bc2);
+    font-size: var(--sw-text-sm);
+    white-space: nowrap;
+}
+
+.gal-topbar-search kbd {
+    padding: 3px 6px;
+    border: var(--brd);
+    border-radius: var(--r);
+    color: var(--bc2);
+    background: var(--b1);
+    font: inherit;
+    font-size: var(--sw-text-2xs);
+}
+
+.gal-topbar-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--bc2);
+    font-size: var(--sw-text-2xs);
+    white-space: nowrap;
+}
+
+.gal-topbar-status i {
+    color: var(--su);
+    font-size: 6px;
+}
+
+.sw-body {
+    overflow: visible;
+    background: var(--b1);
+}
+
+.sw-sidebar {
+    width: 245px;
+    padding: 30px 16px;
+    background: var(--b1);
+    border-right: var(--brd);
+    box-shadow: none;
+}
+
+.sw-sb-brand {
+    padding: 0 12px 18px;
+    border-bottom: var(--brd);
+    margin-bottom: 16px;
+}
+
+.sw-sb-brand-name {
+    color: var(--bc);
+    font-size: var(--sw-text-md);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.sw-sb-brand-sub {
+    color: var(--bc2);
+}
+
+.sw-sb-group {
+    padding: 0 12px;
+    margin: 20px 0 7px;
+    color: var(--bc2);
+    font-size: var(--sw-text-xs);
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.sw-sb-group::after {
+    background: var(--sw-border);
+}
+
+.sw-sb-link {
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: var(--r);
+    color: var(--bc);
+    font-size: var(--sw-text-base);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.sw-sb-link i {
+    color: var(--bc2);
+}
+
+.sw-sb-link:hover {
+    background: var(--b2);
+    color: var(--bc);
+}
+
+.sw-sb-link.active {
+    padding-left: 9px;
+    border-left: 3px solid var(--p);
+    background: color-mix(in srgb, var(--p) 8%, var(--b1));
+    color: var(--p);
+}
+
+.sw-sb-link.active i {
+    color: var(--p);
+}
+
+.sw-main {
+    min-height: calc(100vh - 72px);
+    padding: 42px clamp(28px, 5vw, 76px) 64px;
+    background: var(--b1);
+}
+
+.sw-main > * {
+    width: 100%;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gal-hero {
+    padding: 8px 0 28px;
+    border: 0;
+    border-bottom: var(--brd);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 30px;
+}
+
+.gal-hero h1 {
+    font-size: clamp(30px, 3vw, 42px);
+    letter-spacing: -0.035em;
+}
+
+.gal-hero p {
+    max-width: 70ch;
+    color: var(--bc2);
+}
+
+.gal-block.sw-card,
+.gal-section.sw-card {
+    box-shadow: none;
+}
+
+.gal-category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gal-category-card {
+    min-height: 130px;
+    padding: 18px;
+    border-radius: var(--r);
+    transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+}
+
+.gal-category-card:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+    .sw-topbar-brand,
+    .sw-topbar-actions {
+        flex-basis: auto;
+    }
+
+    .gal-topnav-link {
+        padding: 0 9px;
+    }
+
+    .gal-topbar-search {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sw-topbar {
+        height: 58px;
+        padding: 0 14px;
+    }
+
+    .sw-topbar-brand {
+        flex: 1 1 auto;
+    }
+
+    .sw-topbar-tenant {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .sw-topbar-company {
+        font-size: var(--sw-text-base);
+    }
+
+    .sw-topbar > .sw-topbar-brand .sw-topbar-period,
+    .gal-topbar-status {
+        display: none;
+    }
+
+    .gal-topnav {
+        display: none;
+    }
+
+    .sw-topbar-actions {
+        flex: 0 0 auto;
+    }
+
+    .sw-sidebar {
+        top: 58px;
+        width: min(86vw, 290px);
+        border-right: var(--brd);
+    }
+
+    .sw-main {
+        min-height: calc(100vh - 58px);
+        padding: 28px 16px 42px;
+    }
+
+    .gal-hero {
+        padding-top: 0;
+    }
+
+    .gal-category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Header exclusivo de documentación. */
+.sw-topbar {
+    justify-content: space-between;
+}
+
+.sw-topbar-brand {
+    flex: 0 0 auto;
+}
+
+.gal-topbar-logo {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.sw-topbar-tenant {
+    display: block;
+}
+
+.sw-topbar-company {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.sw-topbar > .sw-topbar-brand .sw-topbar-period,
+.gal-topnav,
+.gal-topbar-search,
+.gal-topbar-status,
+.sw-topbar-actions > .sw-user-avatar,
+.sw-topbar-actions > .sw-user-name {
+    display: none !important;
+}
+
+.sw-topbar-actions {
+    flex: 0 0 auto;
+    gap: 0;
+}
+
+.gal-employee-page .sw-main {
+    min-height: calc(100vh - 72px);
+    padding: 16px 20px 24px;
+    background: var(--b2);
+}
+
+.gal-employee-page .sw-main > * {
+    max-width: none;
+}
+
+.gal-employee-page .sw-crud-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.gal-employee-page .sw-breadcrumb {
+    margin-bottom: 0.65rem;
+    font-size: var(--sw-text-sm);
+}
+
+.gal-employee-page .sw-crud-head {
+    margin-bottom: 16px !important;
+}
+
+.gal-employee-page .sw-card.sw-list-card {
+    padding: 16px;
+    border-radius: var(--r);
+    box-shadow: none;
+}
+
+.gal-single-page .gal-page-nav {
+    display: flex;
+}
+
+.gal-datos-tablas-page #rol-summary,
+.gal-datos-tablas-page #pagination,
+.gal-datos-rol-summary-page #tables,
+.gal-datos-rol-summary-page #pagination,
+.gal-datos-pagination-page #tables,
+.gal-datos-pagination-page #rol-summary,
+.gal-navegacion-tabs-page #collapse,
+.gal-navegacion-tabs-page #breadcrumb,
+.gal-navegacion-tabs-page #sidebar-topbar,
+.gal-navegacion-collapse-page #tabs,
+.gal-navegacion-collapse-page #breadcrumb,
+.gal-navegacion-collapse-page #sidebar-topbar,
+.gal-navegacion-breadcrumb-page #tabs,
+.gal-navegacion-breadcrumb-page #collapse,
+.gal-navegacion-breadcrumb-page #sidebar-topbar,
+.gal-navegacion-sidebar-page #tabs,
+.gal-navegacion-sidebar-page #collapse,
+.gal-navegacion-sidebar-page #breadcrumb {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .sw-topbar-brand {
+        flex: 1 1 auto;
+    }
+
+    .gal-topbar-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gal-employee-page .sw-main {
+        padding: 12px 10px 20px;
+    }
+
+    .gal-employee-page .sw-card.sw-list-card {
+        padding: 12px;
     }
 }

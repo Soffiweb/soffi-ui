@@ -19,14 +19,20 @@
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-rocket"></i></span>
+        <img src="assets/Soffiweb-Logo.png" alt="Soffiweb" class="gal-topbar-logo">
         <div class="sw-topbar-tenant">
-            <span class="sw-topbar-company">Soffi UI</span>
-            <span class="sw-topbar-period">Primeros pasos · v1.0.0</span>
+            <span class="sw-topbar-company">SoffiUI - Soffiweb</span>
         </div>
     </div>
+    <nav class="gal-topnav" aria-label="Navegación principal">
+        <a class="gal-topnav-link" href="index.html"><i class="fa-solid fa-book-open"></i><span>Docs</span></a>
+        <a class="gal-topnav-link" href="contenido.html#cards"><i class="fa-solid fa-shapes"></i><span>Components</span></a>
+        <a class="gal-topnav-link active" href="primeros-pasos.html" aria-current="page"><i class="fa-solid fa-layer-group"></i><span>Patterns</span></a>
+        <a class="gal-topnav-link" href="navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><span>Layout</span></a>
+    </nav>
     <div class="sw-topbar-actions">
-        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> Guía de inicio</span>
+        <div class="gal-topbar-search" aria-label="Buscar documentación"><i class="fa-solid fa-magnifying-glass"></i><span>Search...</span><kbd>⌘ K</kbd></div>
+        <span class="gal-topbar-status"><i class="fa-solid fa-circle"></i> Guía de inicio</span>
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
             <i class="fa-solid fa-circle-half-stroke"></i>
         </button>
@@ -57,15 +63,15 @@
         <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
 
         <div class="sw-sb-group">Datos</div>
-        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
-        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
-        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+        <a href="datos/tablas.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="datos/rol.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos/paginacion.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
 
         <div class="sw-sb-group">Navegación</div>
-        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
-        <a href="navegacion.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
-        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
-        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
+        <a href="navegacion/tabs.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion/collapse.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion/breadcrumb.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion/sidebar.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
 
         <div class="sw-sb-group">Overlays</div>
         <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
@@ -89,7 +95,7 @@
             </div>
         </div>
 
-        <section id="instalacion" class="gal-section sw-card">
+        <section id="instalacion" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-download"></i> 1. Instala el paquete</h2>
                 <p>Soffi UI requiere PHP 8.1 o superior y funciona con Laravel 10, 11, 12 y 13. La aplicación consumidora no necesita Node, Bootstrap, jQuery ni Tailwind.</p>
@@ -115,7 +121,7 @@ php artisan vendor:publish --tag=soffi-ui --force</code></pre>
             </div>
         </section>
 
-        <section id="assets" class="gal-section sw-card">
+        <section id="assets" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-link"></i> 2. Carga los assets</h2>
                 <p>El tag <code>soffi-ui</code> publica CSS y JS en <code>public/vendor/soffi-ui</code>. Inclúyelos en tu layout base.</p>
@@ -134,7 +140,7 @@ php artisan vendor:publish --tag=soffi-ui --force</code></pre>
             </div>
         </section>
 
-        <section id="layout" class="gal-section sw-card">
+        <section id="layout" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-table-columns"></i> 3. Usa el layout de panel</h2>
                 <p>El layout incluye shell, topbar, sidebar, main, footer y soporte de tema claro/oscuro.</p>
@@ -164,7 +170,7 @@ php artisan vendor:publish --tag=soffi-ui --force</code></pre>
             </div>
         </section>
 
-        <section id="componente" class="gal-section sw-card">
+        <section id="componente" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-puzzle-piece"></i> 4. Crea tu primer componente</h2>
                 <p>Usa las clases <code>sw-*</code> existentes. Los colores, radios, espaciados y tipografía vienen de tokens.</p>
@@ -188,7 +194,7 @@ php artisan vendor:publish --tag=soffi-ui --force</code></pre>
             </div>
         </section>
 
-        <section id="tema" class="gal-section sw-card">
+        <section id="tema" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-circle-half-stroke"></i> 5. Cambia el tema</h2>
                 <p>El botón superior alterna entre claro y oscuro. En una aplicación real puedes usar <code>swToggleTheme()</code> desde tu control de usuario.</p>
@@ -210,7 +216,7 @@ php artisan vendor:publish --tag=soffi-ui --force</code></pre>
             </div>
         </section>
 
-        <section id="siguiente" class="gal-section sw-card">
+        <section id="siguiente" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-solid fa-arrow-right"></i> Siguiente paso</h2>
                 <p>Explora tokens y componentes antes de crear variantes propias.</p>
@@ -218,7 +224,7 @@ php artisan vendor:publish --tag=soffi-ui --force</code></pre>
             <div class="gal-category-grid">
                 <a class="gal-category-card" href="tokens.html#tokens"><i class="fa-solid fa-palette"></i><strong>Tokens</strong><span>Colores, tipografía, espaciado y capas</span></a>
                 <a class="gal-category-card" href="contenido.html#cards"><i class="fa-regular fa-rectangle-list"></i><strong>Componentes</strong><span>Cards, estados, formularios y datos</span></a>
-                <a class="gal-category-card" href="navegacion.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><strong>Layout</strong><span>Sidebar, topbar, tabs y navegación</span></a>
+                <a class="gal-category-card" href="navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><strong>Layout</strong><span>Sidebar, topbar, tabs y navegación</span></a>
             </div>
         </section>
 

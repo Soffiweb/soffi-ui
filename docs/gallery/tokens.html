@@ -19,14 +19,20 @@
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-swatchbook"></i></span>
+        <img src="assets/Soffiweb-Logo.png" alt="Soffiweb" class="gal-topbar-logo">
         <div class="sw-topbar-tenant">
-            <span class="sw-topbar-company">Soffi UI</span>
-            <span class="sw-topbar-period">Fundamentos · v1.0.0</span>
+            <span class="sw-topbar-company">SoffiUI - Soffiweb</span>
         </div>
     </div>
+    <nav class="gal-topnav" aria-label="Navegación principal">
+        <a class="gal-topnav-link" href="index.html"><i class="fa-solid fa-book-open"></i><span>Docs</span></a>
+        <a class="gal-topnav-link active" href="contenido.html#cards" aria-current="page"><i class="fa-solid fa-shapes"></i><span>Components</span></a>
+        <a class="gal-topnav-link" href="primeros-pasos.html"><i class="fa-solid fa-layer-group"></i><span>Patterns</span></a>
+        <a class="gal-topnav-link" href="navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><span>Layout</span></a>
+    </nav>
     <div class="sw-topbar-actions">
-        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> dist/soffi-ui.css</span>
+        <div class="gal-topbar-search" aria-label="Buscar documentación"><i class="fa-solid fa-magnifying-glass"></i><span>Search...</span><kbd>⌘ K</kbd></div>
+        <span class="gal-topbar-status"><i class="fa-solid fa-circle"></i> dist/soffi-ui.css</span>
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
             <i class="fa-solid fa-circle-half-stroke"></i>
         </button>
@@ -55,15 +61,15 @@
         <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
 
         <div class="sw-sb-group">Datos</div>
-        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
-        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
-        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+        <a href="datos/tablas.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="datos/rol.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos/paginacion.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
 
         <div class="sw-sb-group">Navegación</div>
-        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
-        <a href="navegacion.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
-        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
-        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
+        <a href="navegacion/tabs.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion/collapse.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion/breadcrumb.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion/sidebar.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
 
         <div class="sw-sb-group">Overlays</div>
         <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
@@ -76,9 +82,9 @@
         <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Empleados</a>
     </nav>
 
-    <main class="sw-main">
+    <main class="sw-main gal-tokens-page">
 
-        <div class="gal-hero sw-card">
+        <div class="gal-hero">
             <h1>Soffi UI — Tokens</h1>
             <p>Referencia de los valores visuales compartidos por Soffi UI: colores, tipografía, espaciado, radios, sombras y capas. Consulta esta página antes de crear o personalizar componentes propios.</p>
             <div class="gal-hero-meta">
@@ -95,7 +101,7 @@
                 <p>Los tokens son la base visual compartida de Soffi UI: definen color, texto, ritmo, profundidad y capas para que una aplicación mantenga coherencia sin repetir valores sueltos.</p>
             </div>
 
-            <div class="sw-card gal-token-intro">
+            <div class="gal-token-intro">
                 <h3 class="sw-card-title"><i class="fa-solid fa-compass"></i> Cómo usar esta sección</h3>
                 <p class="sw-card-body">Los nombres públicos usan el prefijo <code>--sw-*</code>. Personaliza esos tokens en el CSS de tu aplicación, después de cargar <code>soffi-ui.css</code>; los componentes resolverán automáticamente los alias internos y conservarán su comportamiento.</p>
                 <div class="gal-token-rules">
@@ -114,7 +120,7 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
+            <div class="gal-block gal-token-card gal-token-card-first">
                 <div class="gal-block-title"><h3>Color — modo claro</h3></div>
                 <p>La paleta separa intención de implementación: usa <code>--sw-primary</code> para acciones principales y los tokens semánticos para estados como éxito, advertencia, error e información.</p>
                 <div class="gal-swatch-grid">
@@ -133,7 +139,7 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
+            <div class="gal-block gal-token-card">
                 <div class="gal-block-title"><h3>Color — modo oscuro</h3></div>
                 <p>El tema oscuro reemplaza los valores de color automáticamente mediante <code>[data-theme="dark"]</code>. Define overrides de marca en ambos modos solo cuando necesites una identidad visual específica.</p>
                 <div class="gal-swatch-grid">
@@ -151,7 +157,7 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
+            <div class="gal-block gal-token-card">
                 <div class="gal-block-title"><h3>Tipografía</h3><span>--sw-font-sans: "Inter"</span></div>
                 <p>La escala evita que cada pantalla invente tamaños. Elige el token por función: texto de trabajo, label, título de card o cifra destacada.</p>
                 <div class="gal-preview gal-preview-block">
@@ -168,7 +174,7 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
+            <div class="gal-block gal-token-card">
                 <div class="gal-block-title"><h3>Espaciado &amp; radios</h3></div>
                 <p>Combina espaciado y radios de la misma escala para conservar el ritmo visual. En componentes nuevos, prioriza <code>--sw-spacing-*</code> frente a valores arbitrarios en píxeles.</p>
                 <div class="gal-preview gal-preview-block">
@@ -186,7 +192,7 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
+            <div class="gal-block gal-token-card">
                 <div class="gal-block-title"><h3>Sombras</h3></div>
                 <p>Las sombras comunican elevación: usa la pequeña para separación sutil, la media para cards interactivas y la grande para elementos flotantes.</p>
                 <div class="gal-preview">
@@ -198,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="gal-block sw-card gal-token-card">
+            <div class="gal-block gal-token-card">
                 <div class="gal-block-title"><h3>Capas (z-index)</h3><span>src/tokens/z-index.css</span></div>
                 <p>Usa esta escala para que un overlay propio (dropdown, panel flotante o notificación) se ubique frente a los elementos del sistema. No adivines un número ni compitas con modales y toasts.</p>
                 <div class="gal-preview gal-preview-block">
