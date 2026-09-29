@@ -1,16 +1,16 @@
 # Graph Report - soffi-ui  (2026-09-29)
 
 ## Corpus Check
-- 28 files · ~48,863 words
+- 34 files · ~49,839 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 342 nodes · 372 edges · 27 communities (19 shown, 2 thin omitted)
+- 369 nodes · 393 edges · 33 communities (22 shown, 4 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0c8c5336`
+- Built from commit: `0bf609d6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -26,8 +26,7 @@
 - Changelog
 - Soffiweb UI — Base Layout
 - Soffi UI
-- Utilidades nuevas en 0.11.0
-- Soffiweb UI — Components (CSS)
+- Soffi UI — distribución para agentes
 - AI agent instructions
 - CLAUDE.md
 - THIRD_PARTY_NOTICES.md
@@ -36,6 +35,12 @@
 - Soffiweb UI - Patrones Blade
 - Primeros pasos
 - galInitSidebarSpy
+- Componentes nuevos en 0.3.0 (unificación de las 4 apps)
+- docs/getting-started.md
+- docs/agents.md
+- docs/laravel.md
+- docs/components.md
+- index.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `Changelog` - 20 edges
@@ -43,8 +48,8 @@
 3. `API` - 12 edges
 4. `Soffi UI — sistema de diseño Soffiweb` - 11 edges
 5. `PackageContractTest` - 9 edges
-6. `Utilidades nuevas en 0.11.0` - 9 edges
-7. `Soffi UI` - 8 edges
+6. `Soffi UI` - 9 edges
+7. `Utilidades nuevas en 0.11.0` - 9 edges
 8. `Compatibilidad — la regla que no se negocia` - 8 edges
 9. `Soffiweb UI — Components (CSS)` - 8 edges
 10. `Soffiweb UI - Patrones Blade` - 8 edges
@@ -55,7 +60,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (27 total, 2 thin omitted)
+## Communities (33 total, 4 thin omitted)
 
 ### Community 0 - "composer.json"
 Cohesion: 0.07
@@ -78,8 +83,8 @@ Cohesion: 0.10
 Nodes (21): API, Collapse / acordeón, Dependencias, Dropdown genérico, En React, Funciones de alerta (nuevas en 0.3.0, venían de SoffiFac), Inputs, Menu de acciones secundarias por fila (+13 more)
 
 ### Community 6 - "SKILL.md"
-Cohesion: 0.08
-Nodes (19): Activación, Bundle, Flujo mínimo, Rutas, Soffi UI — distribución para agentes, Validación de instalación, Componentes, Ejemplo — login (+11 more)
+Cohesion: 0.07
+Nodes (24): Componentes, Ejemplo — login, Layout base, Prohibido en estas pantallas, Soffiweb UI — Auth / Entry Screens, Accordion visual, Action card — `.sw-action-card` (nuevo), Actualizaciones 0.11.1–0.11.3 (+16 more)
 
 ### Community 7 - "Soffi UI — Laravel + Blade"
 Cohesion: 0.12
@@ -98,16 +103,12 @@ Cohesion: 0.22
 Nodes (8): Contenido del footer (reglas), Cómo agregar secciones al sidebar, Datos del header — vienen del backend, nunca desde Blade, Enlace simple, Estructura HTML, Responsabilidades por zona, Soffiweb UI — Base Layout, Submenú expandible
 
 ### Community 15 - "Soffi UI"
-Cohesion: 0.18
-Nodes (10): Desarrollo, Estado de migración, Estructura, Instalación en una app Laravel, Pendientes conocidos, Por qué existe, Reglas, Soffi UI (+2 more)
+Cohesion: 0.17
+Nodes (11): Desarrollo, Documentación pública, Estado de migración, Estructura, Instalación en una app Laravel, Pendientes conocidos, Por qué existe, Reglas (+3 more)
 
-### Community 16 - "Utilidades nuevas en 0.11.0"
-Cohesion: 0.22
-Nodes (9): Actualizaciones 0.11.1–0.11.3, Dropdown — `.sw-dropdown*`, Impresión — `.sw-print-*`, Skeleton — `.sw-skeleton*`, Spinner — `.sw-spinner*`, Stepper — `.sw-stepper*`, Switch — `.sw-switch*`, Tooltip — `.sw-tooltip` (+1 more)
-
-### Community 17 - "Soffiweb UI — Components (CSS)"
-Cohesion: 0.25
-Nodes (8): Accordion visual, Collapse / acordeón — HTML, Familias canónicas, Modal con botón cerrar — HTML, Soffiweb UI — Components (CSS), SweetAlert2, Utilidades, Validación de formularios
+### Community 17 - "Soffi UI — distribución para agentes"
+Cohesion: 0.33
+Nodes (6): Activación, Bundle, Flujo mínimo, Rutas, Soffi UI — distribución para agentes, Validación de instalación
 
 ### Community 18 - "AI agent instructions"
 Cohesion: 0.50
@@ -133,20 +134,36 @@ Nodes (6): 1. Preparar el agente, 2. Usar el agente, 3. Crear un componente, 4. 
 Cohesion: 1.00
 Nodes (3): galInitSidebarSpy(), setActive(), updateActive()
 
+### Community 27 - "Componentes nuevos en 0.3.0 (unificación de las 4 apps)"
+Cohesion: 0.33
+Nodes (6): Banner de impersonación — `.sw-impersonation-banner` (venía de SoffiFac), Componentes nuevos en 0.3.0 (unificación de las 4 apps), Regla anti doble-espaciado (venía de SoffiFac), Resumen de rol — `.sw-rol-summary` (venía de gesnom `dev`), Toast — `.sw-alert-toast` (venía de SoffiFac), Totales anclados — `.sw-table-totals` (venía de gesnom `dev`)
+
+### Community 28 - "docs/getting-started.md"
+Cohesion: 0.40
+Nodes (4): Desarrollo del paquete, Instalación, Layout, Siguiente paso
+
+### Community 29 - "docs/agents.md"
+Cohesion: 0.50
+Nodes (3): Activación, Instalación, Validación
+
+### Community 30 - "docs/laravel.md"
+Cohesion: 0.50
+Nodes (3): Contrato de vistas, Instalación, Layout recomendado
+
 ## Knowledge Gaps
-- **163 isolated node(s):** `name`, `description`, `type`, `license`, `keywords` (+158 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 215 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **178 isolated node(s):** `name`, `description`, `type`, `license`, `keywords` (+173 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 236 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Soffiweb UI - Shared JS` connect `API` to `SKILL.md`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **Why does `Soffi UI — Laravel + Blade` connect `Soffi UI — Laravel + Blade` to `SKILL.md`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **What connects `name`, `description`, `type` to the rest of the system?**
-  _163 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _178 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `composer.json` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `gallery.js` be split into smaller, more focused modules?**

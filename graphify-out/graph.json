@@ -510,6 +510,78 @@
       "source_location": "L139"
     },
     {
+      "id": "scripts_build_docs_copytree",
+      "label": "copyTree()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "copytree()",
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L30"
+    },
+    {
+      "id": "scripts_build_docs_firstheading",
+      "label": "firstHeading()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "firstheading()",
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L47"
+    },
+    {
+      "id": "scripts_build_docs_rewritemarkdownlinks",
+      "label": "rewriteMarkdownLinks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "rewritemarkdownlinks()",
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L62"
+    },
+    {
+      "id": "scripts_build_docs_stripfrontmatter",
+      "label": "stripFrontMatter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "stripfrontmatter()",
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L52"
+    },
+    {
+      "id": "scripts_build_docs_writefile",
+      "label": "writeFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "writefile()",
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L74"
+    },
+    {
+      "id": "scripts_build_docs_yaml",
+      "label": "yaml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "yaml()",
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L69"
+    },
+    {
       "id": "js_soffi_ui_swactivatetab",
       "label": "swActivateTab()",
       "_callable": true,
@@ -1719,7 +1791,19 @@
       "node_kind": "heading",
       "norm_label": "desarrollo",
       "source_file": "README.md",
-      "source_location": "L84"
+      "source_location": "L95"
+    },
+    {
+      "id": "readme_documentaci\u00f3n_p\u00fablica",
+      "label": "Documentaci\u00f3n p\u00fablica",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Soffi UI",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "documentacion publica",
+      "source_file": "README.md",
+      "source_location": "L49"
     },
     {
       "id": "readme_estado_de_migraci\u00f3n",
@@ -1731,7 +1815,7 @@
       "node_kind": "heading",
       "norm_label": "estado de migracion",
       "source_file": "README.md",
-      "source_location": "L106"
+      "source_location": "L117"
     },
     {
       "id": "readme_estructura",
@@ -1743,7 +1827,7 @@
       "node_kind": "heading",
       "norm_label": "estructura",
       "source_file": "README.md",
-      "source_location": "L68"
+      "source_location": "L79"
     },
     {
       "id": "readme_instalaci\u00f3n_en_una_app_laravel",
@@ -1767,7 +1851,7 @@
       "node_kind": "heading",
       "norm_label": "pendientes conocidos",
       "source_file": "README.md",
-      "source_location": "L115"
+      "source_location": "L126"
     },
     {
       "id": "readme_por_qu\u00e9_existe",
@@ -1791,7 +1875,7 @@
       "node_kind": "heading",
       "norm_label": "reglas",
       "source_file": "README.md",
-      "source_location": "L92"
+      "source_location": "L103"
     },
     {
       "id": "readme_soffi_ui",
@@ -1815,7 +1899,7 @@
       "node_kind": "heading",
       "norm_label": "tags de publish",
       "source_file": "README.md",
-      "source_location": "L49"
+      "source_location": "L60"
     },
     {
       "id": "readme_uso_en_react",
@@ -1827,211 +1911,90 @@
       "node_kind": "heading",
       "norm_label": "uso en react",
       "source_file": "README.md",
-      "source_location": "L59"
+      "source_location": "L70"
     },
     {
-      "id": "skills_soffi_ui_components_actualizaciones_0_11_1_0_11_3",
-      "label": "Actualizaciones 0.11.1\u20130.11.3",
+      "id": "scripts_build_docs",
+      "label": "build-docs.php",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "actualizaciones 0.11.1\u20130.11.3",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2633"
-    },
-    {
-      "id": "skills_soffi_ui_components_dropdown_sw_dropdown",
-      "label": "Dropdown \u2014 `.sw-dropdown*`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "dropdown \u2014 `.sw-dropdown*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2531"
-    },
-    {
-      "id": "skills_soffi_ui_components_impresi\u00f3n_sw_print",
-      "label": "Impresi\u00f3n \u2014 `.sw-print-*`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "impresion \u2014 `.sw-print-*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2620"
-    },
-    {
-      "id": "skills_soffi_ui_components_skeleton_sw_skeleton",
-      "label": "Skeleton \u2014 `.sw-skeleton*`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "skeleton \u2014 `.sw-skeleton*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2583"
-    },
-    {
-      "id": "skills_soffi_ui_components_spinner_sw_spinner",
-      "label": "Spinner \u2014 `.sw-spinner*`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "spinner \u2014 `.sw-spinner*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2550"
-    },
-    {
-      "id": "skills_soffi_ui_components_stepper_sw_stepper",
-      "label": "Stepper \u2014 `.sw-stepper*`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "stepper \u2014 `.sw-stepper*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2608"
-    },
-    {
-      "id": "skills_soffi_ui_components_switch_sw_switch",
-      "label": "Switch \u2014 `.sw-switch*`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "switch \u2014 `.sw-switch*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2570"
-    },
-    {
-      "id": "skills_soffi_ui_components_tooltip_sw_tooltip",
-      "label": "Tooltip \u2014 `.sw-tooltip`",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "tooltip \u2014 `.sw-tooltip`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2559"
-    },
-    {
-      "id": "skills_soffi_ui_components_utilidades_nuevas_en_0_11_0",
-      "label": "Utilidades nuevas en 0.11.0",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "utilidades nuevas en 0.11.0",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2527"
-    },
-    {
-      "id": "skills_soffi_ui_components_accordion_visual",
-      "label": "Accordion visual",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "accordion visual",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "skills_soffi_ui_components_collapse_acorde\u00f3n_html",
-      "label": "Collapse / acorde\u00f3n \u2014 HTML",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "collapse / acordeon \u2014 html",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2373"
-    },
-    {
-      "id": "skills_soffi_ui_components_familias_can\u00f3nicas",
-      "label": "Familias can\u00f3nicas",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "familias canonicas",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L36"
-    },
-    {
-      "id": "skills_soffi_ui_components_modal_con_bot\u00f3n_cerrar_html",
-      "label": "Modal con bot\u00f3n cerrar \u2014 HTML",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "modal con boton cerrar \u2014 html",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2312"
-    },
-    {
-      "id": "skills_soffi_ui_components_soffiweb_ui_components_css",
-      "label": "Soffiweb UI \u2014 Components (CSS)",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "soffiweb ui \u2014 components (css)",
-      "source_file": "skills/soffi-ui/components.md",
+      "community_name": "build-docs.php",
+      "file_type": "code",
+      "norm_label": "build-docs.php",
+      "source_file": "scripts/build-docs.php",
       "source_location": "L1"
     },
     {
-      "id": "skills_soffi_ui_components_sweetalert2",
-      "label": "SweetAlert2",
+      "id": "skills_soffi_ui_agents_activaci\u00f3n",
+      "label": "Activaci\u00f3n",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
+      "community_name": "Soffi UI \u2014 distribuci\u00f3n para agentes",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "sweetalert2",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L29"
+      "norm_label": "activacion",
+      "source_file": "skills/soffi-ui/agents.md",
+      "source_location": "L35"
     },
     {
-      "id": "skills_soffi_ui_components_utilidades",
-      "label": "Utilidades",
+      "id": "skills_soffi_ui_agents_bundle",
+      "label": "Bundle",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
+      "community_name": "Soffi UI \u2014 distribuci\u00f3n para agentes",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "utilidades",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L48"
+      "norm_label": "bundle",
+      "source_file": "skills/soffi-ui/agents.md",
+      "source_location": "L3"
     },
     {
-      "id": "skills_soffi_ui_components_validaci\u00f3n_de_formularios",
-      "label": "Validaci\u00f3n de formularios",
+      "id": "skills_soffi_ui_agents_flujo_m\u00ednimo",
+      "label": "Flujo m\u00ednimo",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffiweb UI \u2014 Components (CSS)",
+      "community_name": "Soffi UI \u2014 distribuci\u00f3n para agentes",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "validacion de formularios",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2395"
+      "norm_label": "flujo minimo",
+      "source_file": "skills/soffi-ui/agents.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "skills_soffi_ui_agents_rutas",
+      "label": "Rutas",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "Soffi UI \u2014 distribuci\u00f3n para agentes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "rutas",
+      "source_file": "skills/soffi-ui/agents.md",
+      "source_location": "L25"
+    },
+    {
+      "id": "skills_soffi_ui_agents_soffi_ui_distribuci\u00f3n_para_agentes",
+      "label": "Soffi UI \u2014 distribuci\u00f3n para agentes",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "Soffi UI \u2014 distribuci\u00f3n para agentes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "soffi ui \u2014 distribucion para agentes",
+      "source_file": "skills/soffi-ui/agents.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_soffi_ui_agents_validaci\u00f3n_de_instalaci\u00f3n",
+      "label": "Validaci\u00f3n de instalaci\u00f3n",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "Soffi UI \u2014 distribuci\u00f3n para agentes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "validacion de instalacion",
+      "source_file": "skills/soffi-ui/agents.md",
+      "source_location": "L58"
     },
     {
       "id": "agents",
@@ -2559,6 +2522,194 @@
       "source_location": "L1"
     },
     {
+      "id": "skills_soffi_ui_components_banner_de_impersonaci\u00f3n_sw_impersonation_banner_ven\u00eda_de_soffifac",
+      "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2451"
+    },
+    {
+      "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
+      "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2420"
+    },
+    {
+      "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
+      "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "regla anti doble-espaciado (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2515"
+    },
+    {
+      "id": "skills_soffi_ui_components_resumen_de_rol_sw_rol_summary_ven\u00eda_de_gesnom_dev",
+      "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2492"
+    },
+    {
+      "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
+      "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2424"
+    },
+    {
+      "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
+      "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2470"
+    },
+    {
+      "id": "docs_getting_started",
+      "label": "docs/getting-started.md",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "docs/getting-started.md",
+      "file_type": "document",
+      "frontmatter": {
+        "layout": "default",
+        "title": "Primeros pasos"
+      },
+      "node_kind": "page",
+      "norm_label": "docs/getting-started.md",
+      "source_file": "docs/getting-started.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_getting_started_desarrollo_del_paquete",
+      "label": "Desarrollo del paquete",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "docs/getting-started.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "desarrollo del paquete",
+      "source_file": "docs/getting-started.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "docs_getting_started_instalaci\u00f3n",
+      "label": "Instalaci\u00f3n",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "docs/getting-started.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "instalacion",
+      "source_file": "docs/getting-started.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "docs_getting_started_layout",
+      "label": "Layout",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "docs/getting-started.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "layout",
+      "source_file": "docs/getting-started.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "docs_getting_started_siguiente_paso",
+      "label": "Siguiente paso",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "docs/getting-started.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "siguiente paso",
+      "source_file": "docs/getting-started.md",
+      "source_location": "L39"
+    },
+    {
+      "id": "docs_agents",
+      "label": "docs/agents.md",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "docs/agents.md",
+      "file_type": "document",
+      "frontmatter": {
+        "layout": "default",
+        "title": "Agentes"
+      },
+      "node_kind": "page",
+      "norm_label": "docs/agents.md",
+      "source_file": "docs/agents.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_agents_activaci\u00f3n",
+      "label": "Activaci\u00f3n",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "docs/agents.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "activacion",
+      "source_file": "docs/agents.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "docs_agents_instalaci\u00f3n",
+      "label": "Instalaci\u00f3n",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "docs/agents.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "instalacion",
+      "source_file": "docs/agents.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "docs_agents_validaci\u00f3n",
+      "label": "Validaci\u00f3n",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "docs/agents.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "validacion",
+      "source_file": "docs/agents.md",
+      "source_location": "L25"
+    },
+    {
       "id": "illuminate_support_serviceprovider",
       "label": "Illuminate\\Support\\ServiceProvider",
       "_origin": "ast",
@@ -2601,6 +2752,138 @@
       "norm_label": "packagecontracttest.php",
       "source_file": "tests/Unit/PackageContractTest.php",
       "source_location": "L1"
+    },
+    {
+      "id": "docs_laravel",
+      "label": "docs/laravel.md",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "docs/laravel.md",
+      "file_type": "document",
+      "frontmatter": {
+        "layout": "default",
+        "title": "Laravel + Blade"
+      },
+      "node_kind": "page",
+      "norm_label": "docs/laravel.md",
+      "source_file": "docs/laravel.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_laravel_contrato_de_vistas",
+      "label": "Contrato de vistas",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "docs/laravel.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "contrato de vistas",
+      "source_file": "docs/laravel.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "docs_laravel_instalaci\u00f3n",
+      "label": "Instalaci\u00f3n",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "docs/laravel.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "instalacion",
+      "source_file": "docs/laravel.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "docs_laravel_layout_recomendado",
+      "label": "Layout recomendado",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "docs/laravel.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "layout recomendado",
+      "source_file": "docs/laravel.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "docs_components",
+      "label": "docs/components.md",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "docs/components.md",
+      "file_type": "document",
+      "frontmatter": {
+        "layout": "default",
+        "title": "Componentes"
+      },
+      "node_kind": "page",
+      "norm_label": "docs/components.md",
+      "source_file": "docs/components.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_components_ejemplo",
+      "label": "Ejemplo",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "docs/components.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ejemplo",
+      "source_file": "docs/components.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "docs_components_familias_principales",
+      "label": "Familias principales",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "docs/components.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "familias principales",
+      "source_file": "docs/components.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "docs_index",
+      "label": "index.md",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "index.md",
+      "file_type": "document",
+      "frontmatter": {
+        "layout": "home",
+        "title": "Soffi UI"
+      },
+      "node_kind": "page",
+      "norm_label": "index.md",
+      "source_file": "docs/index.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_index_documentaci\u00f3n",
+      "label": "Documentaci\u00f3n",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "index.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "documentacion",
+      "source_file": "docs/index.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "docs_index_recursos",
+      "label": "Recursos",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "index.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "recursos",
+      "source_file": "docs/index.md",
+      "source_location": "L19"
     },
     {
       "id": "skills_soffi_ui_js_api",
@@ -2884,87 +3167,15 @@
     },
     {
       "id": "skills_soffi_ui_agents",
-      "label": "agents.md",
+      "label": "soffi-ui/agents.md",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "agents.md",
+      "norm_label": "soffi-ui/agents.md",
       "source_file": "skills/soffi-ui/agents.md",
       "source_location": "L1"
-    },
-    {
-      "id": "skills_soffi_ui_agents_activaci\u00f3n",
-      "label": "Activaci\u00f3n",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "activacion",
-      "source_file": "skills/soffi-ui/agents.md",
-      "source_location": "L35"
-    },
-    {
-      "id": "skills_soffi_ui_agents_bundle",
-      "label": "Bundle",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "bundle",
-      "source_file": "skills/soffi-ui/agents.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "skills_soffi_ui_agents_flujo_m\u00ednimo",
-      "label": "Flujo m\u00ednimo",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "flujo minimo",
-      "source_file": "skills/soffi-ui/agents.md",
-      "source_location": "L44"
-    },
-    {
-      "id": "skills_soffi_ui_agents_rutas",
-      "label": "Rutas",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "rutas",
-      "source_file": "skills/soffi-ui/agents.md",
-      "source_location": "L25"
-    },
-    {
-      "id": "skills_soffi_ui_agents_soffi_ui_distribuci\u00f3n_para_agentes",
-      "label": "Soffi UI \u2014 distribuci\u00f3n para agentes",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "soffi ui \u2014 distribucion para agentes",
-      "source_file": "skills/soffi-ui/agents.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_soffi_ui_agents_validaci\u00f3n_de_instalaci\u00f3n",
-      "label": "Validaci\u00f3n de instalaci\u00f3n",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "validacion de instalacion",
-      "source_file": "skills/soffi-ui/agents.md",
-      "source_location": "L58"
     },
     {
       "id": "skills_soffi_ui_auth",
@@ -3052,15 +3263,27 @@
     },
     {
       "id": "skills_soffi_ui_components",
-      "label": "components.md",
+      "label": "soffi-ui/components.md",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "components.md",
+      "norm_label": "soffi-ui/components.md",
       "source_file": "skills/soffi-ui/components.md",
       "source_location": "L1"
+    },
+    {
+      "id": "skills_soffi_ui_components_accordion_visual",
+      "label": "Accordion visual",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "accordion visual",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L7"
     },
     {
       "id": "skills_soffi_ui_components_action_card_sw_action_card_nuevo",
@@ -3075,28 +3298,28 @@
       "source_location": "L2665"
     },
     {
-      "id": "skills_soffi_ui_components_banner_de_impersonaci\u00f3n_sw_impersonation_banner_ven\u00eda_de_soffifac",
-      "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
+      "id": "skills_soffi_ui_components_actualizaciones_0_11_1_0_11_3",
+      "label": "Actualizaciones 0.11.1\u20130.11.3",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
+      "norm_label": "actualizaciones 0.11.1\u20130.11.3",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2451"
+      "source_location": "L2633"
     },
     {
-      "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
-      "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "id": "skills_soffi_ui_components_collapse_acorde\u00f3n_html",
+      "label": "Collapse / acorde\u00f3n \u2014 HTML",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
+      "norm_label": "collapse / acordeon \u2014 html",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2420"
+      "source_location": "L2373"
     },
     {
       "id": "skills_soffi_ui_components_componentes_pendientes",
@@ -3111,62 +3334,182 @@
       "source_location": "L2651"
     },
     {
-      "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
-      "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
+      "id": "skills_soffi_ui_components_dropdown_sw_dropdown",
+      "label": "Dropdown \u2014 `.sw-dropdown*`",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "regla anti doble-espaciado (venia de soffifac)",
+      "norm_label": "dropdown \u2014 `.sw-dropdown*`",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2515"
+      "source_location": "L2531"
     },
     {
-      "id": "skills_soffi_ui_components_resumen_de_rol_sw_rol_summary_ven\u00eda_de_gesnom_dev",
-      "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
+      "id": "skills_soffi_ui_components_familias_can\u00f3nicas",
+      "label": "Familias can\u00f3nicas",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
+      "norm_label": "familias canonicas",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2492"
+      "source_location": "L36"
     },
     {
-      "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
-      "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
+      "id": "skills_soffi_ui_components_impresi\u00f3n_sw_print",
+      "label": "Impresi\u00f3n \u2014 `.sw-print-*`",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
+      "norm_label": "impresion \u2014 `.sw-print-*`",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2424"
+      "source_location": "L2620"
     },
     {
-      "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
-      "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
+      "id": "skills_soffi_ui_components_modal_con_bot\u00f3n_cerrar_html",
+      "label": "Modal con bot\u00f3n cerrar \u2014 HTML",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
+      "norm_label": "modal con boton cerrar \u2014 html",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2470"
+      "source_location": "L2312"
+    },
+    {
+      "id": "skills_soffi_ui_components_skeleton_sw_skeleton",
+      "label": "Skeleton \u2014 `.sw-skeleton*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "skeleton \u2014 `.sw-skeleton*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2583"
+    },
+    {
+      "id": "skills_soffi_ui_components_soffiweb_ui_components_css",
+      "label": "Soffiweb UI \u2014 Components (CSS)",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "soffiweb ui \u2014 components (css)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_soffi_ui_components_spinner_sw_spinner",
+      "label": "Spinner \u2014 `.sw-spinner*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "spinner \u2014 `.sw-spinner*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2550"
+    },
+    {
+      "id": "skills_soffi_ui_components_stepper_sw_stepper",
+      "label": "Stepper \u2014 `.sw-stepper*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stepper \u2014 `.sw-stepper*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2608"
+    },
+    {
+      "id": "skills_soffi_ui_components_sweetalert2",
+      "label": "SweetAlert2",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sweetalert2",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "skills_soffi_ui_components_switch_sw_switch",
+      "label": "Switch \u2014 `.sw-switch*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "switch \u2014 `.sw-switch*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2570"
+    },
+    {
+      "id": "skills_soffi_ui_components_tooltip_sw_tooltip",
+      "label": "Tooltip \u2014 `.sw-tooltip`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tooltip \u2014 `.sw-tooltip`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2559"
+    },
+    {
+      "id": "skills_soffi_ui_components_utilidades",
+      "label": "Utilidades",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "utilidades",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "skills_soffi_ui_components_utilidades_nuevas_en_0_11_0",
+      "label": "Utilidades nuevas en 0.11.0",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "utilidades nuevas en 0.11.0",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2527"
+    },
+    {
+      "id": "skills_soffi_ui_components_validaci\u00f3n_de_formularios",
+      "label": "Validaci\u00f3n de formularios",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "validacion de formularios",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2395"
     },
     {
       "id": "skills_soffi_ui_getting_started",
-      "label": "getting-started.md",
+      "label": "soffi-ui/getting-started.md",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "getting-started.md",
+      "norm_label": "soffi-ui/getting-started.md",
       "source_file": "skills/soffi-ui/getting-started.md",
       "source_location": "L1"
     },
@@ -3184,13 +3527,13 @@
     },
     {
       "id": "skills_soffi_ui_laravel",
-      "label": "laravel.md",
+      "label": "soffi-ui/laravel.md",
       "_origin": "ast",
       "community": 6,
       "community_name": "SKILL.md",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "laravel.md",
+      "norm_label": "soffi-ui/laravel.md",
       "source_file": "skills/soffi-ui/laravel.md",
       "source_location": "L1"
     },
@@ -5411,6 +5754,61 @@
       "weight": 1.0
     },
     {
+      "source": "docs_agents",
+      "target": "docs_agents_activaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_agents",
+      "target": "docs_agents_validaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents.md",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_agents",
+      "target": "docs_agents_instalaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_components",
+      "target": "docs_components_ejemplo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/components.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_components",
+      "target": "docs_components_familias_principales",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/components.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_galrendersidebar",
       "relation": "contains",
@@ -5859,6 +6257,105 @@
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_getting_started",
+      "target": "docs_getting_started_layout",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/getting-started.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_getting_started",
+      "target": "docs_getting_started_desarrollo_del_paquete",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/getting-started.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_getting_started",
+      "target": "docs_getting_started_siguiente_paso",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/getting-started.md",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_getting_started",
+      "target": "docs_getting_started_instalaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/getting-started.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_index",
+      "target": "docs_index_documentaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/index.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_index",
+      "target": "docs_index_recursos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/index.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_laravel",
+      "target": "docs_laravel_contrato_de_vistas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/laravel.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_laravel",
+      "target": "docs_laravel_layout_recomendado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/laravel.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_laravel",
+      "target": "docs_laravel_instalaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/laravel.md",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -6331,18 +6828,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L92",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
-      "source": "readme_instalaci\u00f3n_en_una_app_laravel",
+      "source": "readme_documentaci\u00f3n_p\u00fablica",
       "target": "readme_tags_de_publish",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L49",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -6353,7 +6850,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L106",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -6364,7 +6861,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L115",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -6391,13 +6888,24 @@
     },
     {
       "source": "readme_soffi_ui",
+      "target": "readme_documentaci\u00f3n_p\u00fablica",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_soffi_ui",
       "target": "readme_uso_en_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L59",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -6408,7 +6916,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L68",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -6419,7 +6927,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L84",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -6497,6 +7005,72 @@
       "confidence_score": 1.0,
       "source_file": "scripts/build.php",
       "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_docs",
+      "target": "scripts_build_docs_copytree",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_docs",
+      "target": "scripts_build_docs_firstheading",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_docs",
+      "target": "scripts_build_docs_stripfrontmatter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_docs",
+      "target": "scripts_build_docs_rewritemarkdownlinks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_docs",
+      "target": "scripts_build_docs_yaml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_docs",
+      "target": "scripts_build_docs_writefile",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-docs.php",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -7970,7 +8544,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L98",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -8213,5 +8787,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0c8c533654d4bf7c169e6a9e29820b7cf20e522c"
+  "built_at_commit": "0bf609d60a8db1a016e903b9a19885cf2b320a15"
 }

@@ -1,0 +1,13 @@
+title: Soffi UI
+description: Sistema de diseño Soffiweb para Laravel, Blade y agentes de código.
+url: https://soffiweb.github.io
+baseurl: /soffi-ui
+lang: es
+theme: minima
+header_pages:
+  - getting-started.md
+  - components.md
+  - tokens.md
+  - laravel.md
+  - agents.md
+markdown: kramdown
