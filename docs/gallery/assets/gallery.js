@@ -63,6 +63,62 @@ function galCloseSidebar() {
     document.body.classList.remove('sw-sidebar-open');
 }
 
+const GAL_SIDEBAR_GROUPS = [
+    ['Inicio', [['primeros-pasos.html', 'fa-rocket', 'Primeros pasos']]],
+    ['Fundamentos', [['tokens.html#tokens', 'fa-palette', 'Tokens']]],
+    ['Componentes', [
+        ['acciones.html#botones', 'fa-hand-pointer', 'Botones y badges'],
+        ['feedback.html#alerts', 'fa-triangle-exclamation', 'Alertas'],
+        ['contenido.html#cards', 'fa-rectangle-list', 'Cards'],
+        ['formularios.html#forms', 'fa-pen-to-square', 'Formularios'],
+    ]],
+    ['Utilidades', [
+        ['utilidades/dropdown.html#dropdown', 'fa-caret-down', 'Dropdown'],
+        ['utilidades/spinner.html#spinner', 'fa-spinner', 'Spinner'],
+        ['utilidades/tooltip.html#tooltip', 'fa-comment', 'Tooltip'],
+        ['utilidades/switch.html#switch', 'fa-toggle-on', 'Switch'],
+        ['utilidades/skeleton.html#skeleton', 'fa-align-left', 'Skeleton'],
+        ['utilidades/stepper.html#stepper', 'fa-list-ol', 'Stepper'],
+        ['utilidades/print.html#print', 'fa-print', 'Impresión'],
+    ]],
+    ['Datos', [
+        ['datos/tablas.html#tables', 'fa-table', 'Tablas'],
+        ['datos/rol.html#rol-summary', 'fa-id-card', 'Resumen de rol'],
+        ['datos/paginacion.html#pagination', 'fa-ellipsis', 'Paginación'],
+    ]],
+    ['Navegación', [
+        ['navegacion/tabs.html#tabs', 'fa-folder', 'Tabs'],
+        ['navegacion/collapse.html#collapse', 'fa-caret-down', 'Collapse / acordeón'],
+        ['navegacion/breadcrumb.html#breadcrumb', 'fa-angles-right', 'Breadcrumb'],
+        ['navegacion/sidebar.html#sidebar-topbar', 'fa-table-columns', 'Sidebar y topbar'],
+    ]],
+    ['Overlays', [['overlays.html#modal', 'fa-window-restore', 'Modal']]],
+    ['Patrones', [
+        ['dashboard.html#dashboard', 'fa-chart-pie', 'Dashboard'],
+        ['auth.html#auth', 'fa-right-to-bracket', 'Auth'],
+    ]],
+    ['Ejemplos reales', [['empleados.html', 'fa-users', 'Empleados']]],
+];
+
+function galRenderSidebar() {
+    const sidebar = document.querySelector('.sw-sidebar');
+    if (!sidebar) return;
+
+    const home = galGetGalleryUrl('index.html').href;
+    const groups = GAL_SIDEBAR_GROUPS.map(function (group) {
+        const links = group[1].map(function (item) {
+            return '<a href="' + galGetGalleryUrl(item[0]).href + '" class="sw-sb-link">'
+                + '<i class="fa-solid ' + item[1] + '"></i> ' + item[2] + '</a>';
+        }).join('');
+        return '<div class="sw-sb-group">' + group[0] + '</div>' + links;
+    }).join('');
+
+    sidebar.innerHTML = '<div class="sw-sb-brand">'
+        + '<div class="sw-sb-brand-name">Documentación Soffi UI</div>'
+        + '<div class="sw-sb-brand-sub"><a href="' + home + '" style="color:inherit;text-decoration:none"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a></div>'
+        + '</div>' + groups;
+}
+
 function galToggleDropdown(trigger) {
     const menu = document.getElementById(trigger.getAttribute('aria-controls'));
     if (!menu) return;
@@ -87,6 +143,7 @@ function galCloseDropdowns(restoreFocus) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    galRenderSidebar();
     galRouteDocumentationLinks();
     galInitPageNavigation();
 

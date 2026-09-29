@@ -39,7 +39,7 @@
       "file_type": "code",
       "norm_label": "galactivatetab()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L468"
+      "source_location": "L525"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosedropdowns",
@@ -51,7 +51,7 @@
       "file_type": "code",
       "norm_label": "galclosedropdowns()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L78"
+      "source_location": "L134"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosemodal",
@@ -63,7 +63,7 @@
       "file_type": "code",
       "norm_label": "galclosemodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L437"
+      "source_location": "L494"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosesidebar",
@@ -87,7 +87,7 @@
       "file_type": "code",
       "norm_label": "galcopy()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L560"
+      "source_location": "L617"
     },
     {
       "id": "docs_gallery_assets_gallery_galcreatepagelink",
@@ -99,7 +99,7 @@
       "file_type": "code",
       "norm_label": "galcreatepagelink()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L157"
+      "source_location": "L214"
     },
     {
       "id": "docs_gallery_assets_gallery_galfilterss",
@@ -111,7 +111,7 @@
       "file_type": "code",
       "norm_label": "galfilterss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L500"
+      "source_location": "L557"
     },
     {
       "id": "docs_gallery_assets_gallery_galfocusmodal",
@@ -123,7 +123,7 @@
       "file_type": "code",
       "norm_label": "galfocusmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L386"
+      "source_location": "L443"
     },
     {
       "id": "docs_gallery_assets_gallery_galgetgalleryurl",
@@ -135,7 +135,7 @@
       "file_type": "code",
       "norm_label": "galgetgalleryurl()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L208"
+      "source_location": "L265"
     },
     {
       "id": "docs_gallery_assets_gallery_galgetopenmodal",
@@ -147,7 +147,7 @@
       "file_type": "code",
       "norm_label": "galgetopenmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L367"
+      "source_location": "L424"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitpagenavigation",
@@ -159,7 +159,7 @@
       "file_type": "code",
       "norm_label": "galinitpagenavigation()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L135"
+      "source_location": "L192"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitsidebarspy",
@@ -171,7 +171,7 @@
       "file_type": "code",
       "norm_label": "galinitsidebarspy()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L238"
+      "source_location": "L295"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitsidebarspy_setactive",
@@ -183,7 +183,7 @@
       "file_type": "code",
       "norm_label": "setactive()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L253"
+      "source_location": "L310"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitsidebarspy_updateactive",
@@ -195,7 +195,7 @@
       "file_type": "code",
       "norm_label": "updateactive()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L262"
+      "source_location": "L319"
     },
     {
       "id": "docs_gallery_assets_gallery_galmodalallowsbackdrop",
@@ -207,7 +207,7 @@
       "file_type": "code",
       "norm_label": "galmodalallowsbackdrop()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L372"
+      "source_location": "L429"
     },
     {
       "id": "docs_gallery_assets_gallery_galmodalallowsescape",
@@ -219,7 +219,7 @@
       "file_type": "code",
       "norm_label": "galmodalallowsescape()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L377"
+      "source_location": "L434"
     },
     {
       "id": "docs_gallery_assets_gallery_galmodalfocusable",
@@ -231,7 +231,7 @@
       "file_type": "code",
       "norm_label": "galmodalfocusable()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L381"
+      "source_location": "L438"
     },
     {
       "id": "docs_gallery_assets_gallery_galopenmodal",
@@ -243,7 +243,19 @@
       "file_type": "code",
       "norm_label": "galopenmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L422"
+      "source_location": "L479"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galrendersidebar",
+      "label": "galRenderSidebar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galrendersidebar()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L103"
     },
     {
       "id": "docs_gallery_assets_gallery_galroutedocumentationlinks",
@@ -255,7 +267,7 @@
       "file_type": "code",
       "norm_label": "galroutedocumentationlinks()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L177"
+      "source_location": "L234"
     },
     {
       "id": "docs_gallery_assets_gallery_galselectss",
@@ -267,7 +279,7 @@
       "file_type": "code",
       "norm_label": "galselectss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L491"
+      "source_location": "L548"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast",
@@ -279,7 +291,7 @@
       "file_type": "code",
       "norm_label": "galshowtoast()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L538"
+      "source_location": "L595"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast_dismiss",
@@ -291,7 +303,7 @@
       "file_type": "code",
       "norm_label": "dismiss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L547"
+      "source_location": "L604"
     },
     {
       "id": "docs_gallery_assets_gallery_galsyncsidebaractive",
@@ -303,7 +315,7 @@
       "file_type": "code",
       "norm_label": "galsyncsidebaractive()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L216"
+      "source_location": "L273"
     },
     {
       "id": "docs_gallery_assets_gallery_galsynctableselection",
@@ -315,7 +327,7 @@
       "file_type": "code",
       "norm_label": "galsynctableselection()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L312"
+      "source_location": "L369"
     },
     {
       "id": "docs_gallery_assets_gallery_galsynctablestickycolumns",
@@ -327,7 +339,7 @@
       "file_type": "code",
       "norm_label": "galsynctablestickycolumns()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L282"
+      "source_location": "L339"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggledropdown",
@@ -339,7 +351,7 @@
       "file_type": "code",
       "norm_label": "galtoggledropdown()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L66"
+      "source_location": "L122"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglefav",
@@ -351,7 +363,7 @@
       "file_type": "code",
       "norm_label": "galtogglefav()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L508"
+      "source_location": "L565"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglerowmenu",
@@ -363,7 +375,7 @@
       "file_type": "code",
       "norm_label": "galtogglerowmenu()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L516"
+      "source_location": "L573"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglesidebar",
@@ -387,7 +399,7 @@
       "file_type": "code",
       "norm_label": "galtoggless()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L485"
+      "source_location": "L542"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletablerow",
@@ -399,7 +411,7 @@
       "file_type": "code",
       "norm_label": "galtoggletablerow()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L294"
+      "source_location": "L351"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletableselection",
@@ -411,7 +423,7 @@
       "file_type": "code",
       "norm_label": "galtoggletableselection()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L323"
+      "source_location": "L380"
     },
     {
       "id": "docs_gallery_assets_gallery_galtrapmodalfocus",
@@ -423,7 +435,7 @@
       "file_type": "code",
       "norm_label": "galtrapmodalfocus()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L393"
+      "source_location": "L450"
     },
     {
       "id": "docs_gallery_assets_gallery_swtogglecollapse",
@@ -1437,7 +1449,18 @@
       "file_type": "code",
       "norm_label": "gal_modal_focusable_selector",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L358"
+      "source_location": "L415"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_gal_sidebar_groups",
+      "label": "GAL_SIDEBAR_GROUPS",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "gal_sidebar_groups",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L66"
     },
     {
       "id": "docs_gallery_assets_gallery_galpagesequence",
@@ -1448,7 +1471,7 @@
       "file_type": "code",
       "norm_label": "galpagesequence",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L107"
+      "source_location": "L164"
     },
     {
       "id": "skills_soffi_ui_layout",
@@ -2045,100 +2068,76 @@
       "source_location": "L1"
     },
     {
-      "id": "skills_soffi_ui_components_dropdown_sw_dropdown",
-      "label": "Dropdown \u2014 `.sw-dropdown*`",
+      "id": "skills_soffi_ui_components_collapse_acorde\u00f3n_html",
+      "label": "Collapse / acorde\u00f3n \u2014 HTML",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffiweb UI \u2014 Components (CSS)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "dropdown \u2014 `.sw-dropdown*`",
+      "norm_label": "collapse / acordeon \u2014 html",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2502"
+      "source_location": "L2343"
     },
     {
-      "id": "skills_soffi_ui_components_impresi\u00f3n_sw_print",
-      "label": "Impresi\u00f3n \u2014 `.sw-print-*`",
+      "id": "skills_soffi_ui_components_familias_can\u00f3nicas",
+      "label": "Familias can\u00f3nicas",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffiweb UI \u2014 Components (CSS)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "impresion \u2014 `.sw-print-*`",
+      "norm_label": "familias canonicas",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2575"
+      "source_location": "L7"
     },
     {
-      "id": "skills_soffi_ui_components_skeleton_sw_skeleton",
-      "label": "Skeleton \u2014 `.sw-skeleton*`",
+      "id": "skills_soffi_ui_components_modal_con_bot\u00f3n_cerrar_html",
+      "label": "Modal con bot\u00f3n cerrar \u2014 HTML",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffiweb UI \u2014 Components (CSS)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "skeleton \u2014 `.sw-skeleton*`",
+      "norm_label": "modal con boton cerrar \u2014 html",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2553"
+      "source_location": "L2282"
     },
     {
-      "id": "skills_soffi_ui_components_spinner_sw_spinner",
-      "label": "Spinner \u2014 `.sw-spinner*`",
+      "id": "skills_soffi_ui_components_soffiweb_ui_components_css",
+      "label": "Soffiweb UI \u2014 Components (CSS)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffiweb UI \u2014 Components (CSS)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "spinner \u2014 `.sw-spinner*`",
+      "norm_label": "soffiweb ui \u2014 components (css)",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2520"
+      "source_location": "L1"
     },
     {
-      "id": "skills_soffi_ui_components_stepper_sw_stepper",
-      "label": "Stepper \u2014 `.sw-stepper*`",
+      "id": "skills_soffi_ui_components_utilidades",
+      "label": "Utilidades",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffiweb UI \u2014 Components (CSS)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "stepper \u2014 `.sw-stepper*`",
+      "norm_label": "utilidades",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2563"
+      "source_location": "L19"
     },
     {
-      "id": "skills_soffi_ui_components_switch_sw_switch",
-      "label": "Switch \u2014 `.sw-switch*`",
+      "id": "skills_soffi_ui_components_validaci\u00f3n_de_formularios",
+      "label": "Validaci\u00f3n de formularios",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffiweb UI \u2014 Components (CSS)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "switch \u2014 `.sw-switch*`",
+      "norm_label": "validacion de formularios",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2540"
-    },
-    {
-      "id": "skills_soffi_ui_components_tooltip_sw_tooltip",
-      "label": "Tooltip \u2014 `.sw-tooltip`",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "tooltip \u2014 `.sw-tooltip`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2529"
-    },
-    {
-      "id": "skills_soffi_ui_components_utilidades_nuevas_en_0_11_0",
-      "label": "Utilidades nuevas en 0.11.0",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "utilidades nuevas en 0.11.0",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2498"
+      "source_location": "L2365"
     },
     {
       "id": "release",
@@ -2607,7 +2606,7 @@
       "label": "SKILL.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "frontmatter": {
         "name": "soffi-ui",
@@ -2624,7 +2623,7 @@
       "label": "auth.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "auth.md",
@@ -2636,7 +2635,7 @@
       "label": "Componentes",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "componentes",
@@ -2648,7 +2647,7 @@
       "label": "Ejemplo \u2014 login",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "ejemplo \u2014 login",
@@ -2660,7 +2659,7 @@
       "label": "Layout base",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "layout base",
@@ -2672,7 +2671,7 @@
       "label": "Prohibido en estas pantallas",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "prohibido en estas pantallas",
@@ -2684,7 +2683,7 @@
       "label": "Soffiweb UI \u2014 Auth / Entry Screens",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "soffiweb ui \u2014 auth / entry screens",
@@ -2696,7 +2695,7 @@
       "label": "compat.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "compat.md",
@@ -2708,7 +2707,7 @@
       "label": "components.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "components.md",
@@ -2720,7 +2719,7 @@
       "label": "Action card \u2014 `.sw-action-card` (nuevo)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "action card \u2014 `.sw-action-card` (nuevo)",
@@ -2732,7 +2731,7 @@
       "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
@@ -2740,23 +2739,11 @@
       "source_location": "L2422"
     },
     {
-      "id": "skills_soffi_ui_components_collapse_acorde\u00f3n_html",
-      "label": "Collapse / acorde\u00f3n \u2014 HTML",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "collapse / acordeon \u2014 html",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2343"
-    },
-    {
       "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
       "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
@@ -2768,7 +2755,7 @@
       "label": "Componentes pendientes",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "componentes pendientes",
@@ -2776,35 +2763,35 @@
       "source_location": "L2590"
     },
     {
-      "id": "skills_soffi_ui_components_familias_can\u00f3nicas",
-      "label": "Familias can\u00f3nicas",
+      "id": "skills_soffi_ui_components_dropdown_sw_dropdown",
+      "label": "Dropdown \u2014 `.sw-dropdown*`",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "familias canonicas",
+      "norm_label": "dropdown \u2014 `.sw-dropdown*`",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L7"
+      "source_location": "L2502"
     },
     {
-      "id": "skills_soffi_ui_components_modal_con_bot\u00f3n_cerrar_html",
-      "label": "Modal con bot\u00f3n cerrar \u2014 HTML",
+      "id": "skills_soffi_ui_components_impresi\u00f3n_sw_print",
+      "label": "Impresi\u00f3n \u2014 `.sw-print-*`",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "modal con boton cerrar \u2014 html",
+      "norm_label": "impresion \u2014 `.sw-print-*`",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2282"
+      "source_location": "L2575"
     },
     {
       "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
       "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "regla anti doble-espaciado (venia de soffifac)",
@@ -2816,7 +2803,7 @@
       "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
@@ -2824,23 +2811,59 @@
       "source_location": "L2463"
     },
     {
-      "id": "skills_soffi_ui_components_soffiweb_ui_components_css",
-      "label": "Soffiweb UI \u2014 Components (CSS)",
+      "id": "skills_soffi_ui_components_skeleton_sw_skeleton",
+      "label": "Skeleton \u2014 `.sw-skeleton*`",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "soffiweb ui \u2014 components (css)",
+      "norm_label": "skeleton \u2014 `.sw-skeleton*`",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L1"
+      "source_location": "L2553"
+    },
+    {
+      "id": "skills_soffi_ui_components_spinner_sw_spinner",
+      "label": "Spinner \u2014 `.sw-spinner*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Utilidades nuevas en 0.11.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "spinner \u2014 `.sw-spinner*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2520"
+    },
+    {
+      "id": "skills_soffi_ui_components_stepper_sw_stepper",
+      "label": "Stepper \u2014 `.sw-stepper*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Utilidades nuevas en 0.11.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stepper \u2014 `.sw-stepper*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2563"
+    },
+    {
+      "id": "skills_soffi_ui_components_switch_sw_switch",
+      "label": "Switch \u2014 `.sw-switch*`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Utilidades nuevas en 0.11.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "switch \u2014 `.sw-switch*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2540"
     },
     {
       "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
       "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
@@ -2848,11 +2871,23 @@
       "source_location": "L2394"
     },
     {
+      "id": "skills_soffi_ui_components_tooltip_sw_tooltip",
+      "label": "Tooltip \u2014 `.sw-tooltip`",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Utilidades nuevas en 0.11.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tooltip \u2014 `.sw-tooltip`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2529"
+    },
+    {
       "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
       "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
@@ -2860,35 +2895,23 @@
       "source_location": "L2441"
     },
     {
-      "id": "skills_soffi_ui_components_utilidades",
-      "label": "Utilidades",
+      "id": "skills_soffi_ui_components_utilidades_nuevas_en_0_11_0",
+      "label": "Utilidades nuevas en 0.11.0",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "utilidades",
+      "norm_label": "utilidades nuevas en 0.11.0",
       "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L19"
-    },
-    {
-      "id": "skills_soffi_ui_components_validaci\u00f3n_de_formularios",
-      "label": "Validaci\u00f3n de formularios",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "validacion de formularios",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2365"
+      "source_location": "L2498"
     },
     {
       "id": "skills_soffi_ui_js",
       "label": "js.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "js.md",
@@ -2900,7 +2923,7 @@
       "label": "laravel.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "laravel.md",
@@ -2912,7 +2935,7 @@
       "label": "view-patterns.md",
       "_origin": "ast",
       "community": 6,
-      "community_name": "SKILL.md",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "view-patterns.md",
@@ -3662,7 +3685,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L166",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -3674,7 +3697,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L389",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -3686,7 +3709,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L139",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -3698,7 +3721,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L153",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -3710,7 +3733,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L274",
+      "source_location": "L331",
       "weight": 1.0
     },
     {
@@ -3722,7 +3745,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L433",
+      "source_location": "L490",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galrendersidebar",
+      "target": "docs_gallery_assets_gallery_galgetgalleryurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -3734,7 +3769,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L71",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -3746,7 +3781,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L330",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -3758,7 +3793,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L394",
+      "source_location": "L451",
       "weight": 1.0
     },
     {
@@ -3770,7 +3805,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L398",
+      "source_location": "L455",
       "weight": 1.0
     },
     {
@@ -4853,13 +4888,46 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galrendersidebar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtoggledropdown",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galclosedropdowns",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_galpagesequence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L107",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -4870,29 +4938,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L135",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galcreatepagelink",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L157",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galroutedocumentationlinks",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L177",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -4908,13 +4954,35 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galcreatepagelink",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galroutedocumentationlinks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_galgetgalleryurl",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L208",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -4925,7 +4993,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L216",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -4936,7 +5004,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L238",
+      "source_location": "L295",
       "weight": 1.0
     },
     {
@@ -4947,7 +5015,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L294",
+      "source_location": "L351",
       "weight": 1.0
     },
     {
@@ -4958,7 +5026,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L312",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -4969,7 +5037,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L323",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -4980,7 +5048,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L358",
+      "source_location": "L415",
       "weight": 1.0
     },
     {
@@ -4991,7 +5059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L367",
+      "source_location": "L424",
       "weight": 1.0
     },
     {
@@ -5002,7 +5070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L372",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -5013,7 +5081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L377",
+      "source_location": "L434",
       "weight": 1.0
     },
     {
@@ -5024,7 +5092,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L381",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -5035,7 +5103,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L386",
+      "source_location": "L443",
       "weight": 1.0
     },
     {
@@ -5046,7 +5114,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L393",
+      "source_location": "L450",
       "weight": 1.0
     },
     {
@@ -5057,7 +5125,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L422",
+      "source_location": "L479",
       "weight": 1.0
     },
     {
@@ -5068,7 +5136,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L437",
+      "source_location": "L494",
       "weight": 1.0
     },
     {
@@ -5079,7 +5147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L468",
+      "source_location": "L525",
       "weight": 1.0
     },
     {
@@ -5090,7 +5158,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L485",
+      "source_location": "L542",
       "weight": 1.0
     },
     {
@@ -5101,7 +5169,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L491",
+      "source_location": "L548",
       "weight": 1.0
     },
     {
@@ -5112,7 +5180,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L500",
+      "source_location": "L557",
       "weight": 1.0
     },
     {
@@ -5123,7 +5191,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L508",
+      "source_location": "L565",
       "weight": 1.0
     },
     {
@@ -5134,29 +5202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L516",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galshowtoast",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L538",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galcopy",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L560",
+      "source_location": "L573",
       "weight": 1.0
     },
     {
@@ -5172,6 +5218,17 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galshowtoast",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L595",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_swtoggletheme",
       "relation": "contains",
       "_origin": "ast",
@@ -5179,6 +5236,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galcopy",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L617",
       "weight": 1.0
     },
     {
@@ -5194,24 +5262,13 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtoggledropdown",
+      "target": "docs_gallery_assets_gallery_gal_sidebar_groups",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galclosedropdowns",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -5222,7 +5279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L253",
+      "source_location": "L310",
       "weight": 1.0
     },
     {
@@ -7236,7 +7293,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L356",
+      "source_location": "L413",
       "weight": 1.0
     },
     {
@@ -7248,7 +7305,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L277",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -7260,7 +7317,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L556",
+      "source_location": "L613",
       "weight": 1.0
     },
     {
@@ -7301,5 +7358,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3a5ad37ccdb3e5a51b491a23d88dbed04092fec3"
+  "built_at_commit": "fa9371a7b8c461306ffffc98af38d13cc295399b"
 }
