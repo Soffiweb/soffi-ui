@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.11.0 — 2026-09-29
+
+### Agregado
+
+- Dropdown genérico con cierre por clic externo y `Escape`.
+- Spinner, tooltip, switch, skeleton y stepper.
+- Utilidades de impresión con contenido exclusivo y saltos de página.
+- Documentación y ejemplos de las nuevas utilidades en la galería.
+
 ## 0.10.0 — 2026-09-29
 
 ### Agregado
