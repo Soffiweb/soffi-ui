@@ -378,6 +378,24 @@ details.gal-code summary:hover { color: var(--p); }
     line-height: 1.5;
 }
 
+.gal-section#tokens > .gal-token-card {
+    margin-bottom: 1.25rem;
+}
+
+.gal-section#tokens > .gal-token-card:not(:first-child) {
+    padding-top: 1.2rem;
+    border-top: 0;
+}
+
+.gal-token-card > p {
+    color: var(--bc);
+    line-height: 1.55;
+}
+
+.gal-token-card:last-child {
+    margin-bottom: 0;
+}
+
 /* Guía de inicio: cards de contenido y contraste claro entre fondo y texto. */
 .gal-guide-hero {
     padding: 1.75rem 2rem;
