@@ -348,6 +348,36 @@ details.gal-code summary:hover { color: var(--p); }
     color: var(--bc2);
 }
 
+.gal-token-intro {
+    margin-bottom: 2rem;
+}
+
+.gal-token-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gal-token-rules > div {
+    padding: 1rem;
+    background: var(--b2);
+    border-radius: var(--r);
+}
+
+.gal-token-rules strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--bc);
+}
+
+.gal-token-rules p {
+    margin: 0;
+    color: var(--bc2);
+    font-size: var(--sw-text-sm);
+    line-height: 1.5;
+}
+
 /* Guía de inicio: cards de contenido y contraste claro entre fondo y texto. */
 .gal-guide-hero {
     padding: 1.75rem 2rem;
