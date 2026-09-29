@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     galSyncSidebarActive(sidebarLinks);
     galInitSidebarSpy(sidebarLinks);
+    if (document.getElementById('empleadosSkeleton')) galLoadEmployees(false);
 });
 
 const galPageSequence = [
@@ -500,6 +501,47 @@ function galCloseModal(id) {
     if (!document.querySelector('.sw-modal-backdrop.is-open')) document.body.classList.remove('sw-modal-open');
     el._galModalReturnFocus = null;
     if (returnFocus && returnFocus.isConnected && typeof returnFocus.focus === 'function') returnFocus.focus();
+}
+
+let galEmployeeLoadTimer = null;
+
+function galLoadEmployees(showToast) {
+    const skeleton = document.getElementById('empleadosSkeleton');
+    const content = document.getElementById('empleadosContent');
+    if (!skeleton || !content) return;
+
+    if (typeof showToast !== 'boolean') showToast = true;
+    galCloseDropdowns();
+    if (galEmployeeLoadTimer) window.clearTimeout(galEmployeeLoadTimer);
+
+    skeleton.hidden = false;
+    content.hidden = true;
+    galEmployeeLoadTimer = window.setTimeout(function () {
+        skeleton.hidden = true;
+        content.hidden = false;
+        galEmployeeLoadTimer = null;
+        galSyncTableStickyColumns();
+        if (showToast) galShowToast('success', 'fa-check', 'Listado de empleados actualizado.');
+    }, 900);
+}
+
+function galCreateEmployee(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const submit = document.getElementById('empleado-crear-submit');
+    const label = document.getElementById('empleado-crear-label');
+    const spinner = document.getElementById('empleado-crear-spinner');
+    if (!form || !submit || !label || !spinner || submit.disabled) return;
+
+    submit.disabled = true;
+    submit.setAttribute('aria-busy', 'true');
+    label.textContent = 'Creando...';
+    spinner.hidden = false;
+
+    window.setTimeout(function () {
+        window.location.reload();
+    }, 900);
 }
 
 document.addEventListener('click', function (event) {

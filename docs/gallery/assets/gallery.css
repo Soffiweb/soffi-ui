@@ -898,6 +898,27 @@ details.gal-code summary:hover { color: var(--p); }
     box-shadow: none;
 }
 
+.gal-employee-skeleton {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 16px;
+    padding: 20px;
+    border-radius: var(--r);
+    box-shadow: none;
+}
+
+.gal-employee-skeleton .sw-skeleton-row {
+    gap: 14px;
+}
+
+.gal-employee-skeleton .sw-skeleton {
+    flex: 0 1 auto;
+}
+
+.gal-employee-skeleton .sw-skeleton-title {
+    flex-basis: 18%;
+}
+
 .gal-single-page .gal-page-nav {
     display: flex;
 }
@@ -918,5 +939,13 @@ details.gal-code summary:hover { color: var(--p); }
 
     .gal-employee-page .sw-card.sw-list-card {
         padding: 12px;
+    }
+
+    .gal-employee-skeleton {
+        padding: 14px;
+    }
+
+    .gal-employee-skeleton .sw-skeleton-row {
+        gap: 8px;
     }
 }

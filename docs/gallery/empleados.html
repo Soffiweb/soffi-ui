@@ -107,8 +107,19 @@
                     <p class="sw-page-subtitle">Administra personal, contratos, cuentas bancarias y estado laboral.</p>
                 </div>
                 <div class="sw-crud-actions">
-                    <button type="button" class="sw-btn sw-btn-primary"><i class="fa-solid fa-plus"></i> Nuevo empleado</button>
-                    <button type="button" class="sw-btn sw-btn-ghost"><i class="fa-solid fa-file-export"></i> Exportar</button>
+                    <button type="button" class="sw-btn sw-btn-primary" onclick="galOpenModal('empleado-nuevo-modal')"><i class="fa-solid fa-plus"></i> Nuevo empleado</button>
+                    <button type="button" class="sw-btn sw-btn-ghost" onclick="galShowToast('info', 'fa-file-export', 'Exportación preparada para descargar.')"><i class="fa-solid fa-file-export"></i> Exportar</button>
+                    <div class="sw-dropdown">
+                        <button type="button" class="sw-btn sw-btn-ghost" aria-haspopup="menu" aria-expanded="false" aria-controls="empleados-acciones-menu" onclick="galToggleDropdown(this)">
+                            Más acciones <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="sw-dropdown-menu sw-dropdown-menu-start" id="empleados-acciones-menu" role="menu">
+                            <button type="button" class="sw-dropdown-item" role="menuitem" onclick="galLoadEmployees()"><i class="fa-solid fa-rotate"></i> Actualizar listado</button>
+                            <button type="button" class="sw-dropdown-item" role="menuitem" onclick="document.getElementById('empleadosBuscar').focus(); galCloseDropdowns()"><i class="fa-solid fa-magnifying-glass"></i> Enfocar búsqueda</button>
+                            <div class="sw-dropdown-divider" role="separator"></div>
+                            <button type="button" class="sw-dropdown-item" role="menuitem" onclick="galShowToast('info', 'fa-table-columns', 'La configuración de columnas estará disponible próximamente.'); galCloseDropdowns()"><i class="fa-solid fa-table-columns"></i> Configurar columnas</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -153,6 +164,40 @@
                     </div>
                 </div>
 
+                <div id="empleadosSkeleton" class="sw-card sw-skeleton-card gal-employee-skeleton" aria-busy="true" aria-label="Cargando empleados">
+                    <div class="sw-skeleton-layout">
+                        <div class="sw-skeleton-row" aria-hidden="true">
+                            <span class="sw-skeleton sw-skeleton-title" style="--sw-skeleton-width:18%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:7%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:16%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:12%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:10%"></span>
+                        </div>
+                        <div class="sw-skeleton-row" aria-hidden="true">
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:24%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:12%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:19%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:15%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:9%"></span>
+                        </div>
+                        <div class="sw-skeleton-row" aria-hidden="true">
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:21%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:14%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:22%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:11%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:8%"></span>
+                        </div>
+                        <div class="sw-skeleton-row" aria-hidden="true">
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:16%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:10%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:17%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:14%"></span>
+                            <span class="sw-skeleton sw-skeleton-text" style="--sw-skeleton-width:12%"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="empleadosContent" hidden>
                 <div class="sw-table-wrap sw-list-table-wrap is-table-sticky-displaced">
                     <table class="sw-table sw-table-min-xl sw-table-totals">
                         <thead>
@@ -257,6 +302,7 @@
                         </ul>
                     </nav>
                 </div>
+                </div>
             </div>
         </div>
 
@@ -265,6 +311,94 @@
             <a class="sw-btn sw-btn-primary" href="index.html">Volver al inicio <i class="fa-solid fa-house"></i></a>
         </nav>
     </main>
+</div>
+
+<div class="sw-modal-backdrop" id="empleado-nuevo-modal" data-modal-escape="true" aria-hidden="true">
+    <div class="sw-modal sw-modal-lg" role="dialog" aria-modal="true" aria-labelledby="empleado-nuevo-modal-title" tabindex="-1">
+        <div class="sw-modal-title" id="empleado-nuevo-modal-title">
+            <span>Nuevo empleado</span>
+            <button type="button" class="sw-modal-close" onclick="galCloseModal('empleado-nuevo-modal')" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="sw-modal-body">
+            <p>Registra los datos principales del nuevo empleado.</p>
+            <form id="empleado-nuevo-form" onsubmit="galCreateEmployee(event)">
+                <div class="sw-row">
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-nombre">Nombre completo <span class="sw-required">*</span></label>
+                            <input id="nuevo-empleado-nombre" name="nombre" type="text" class="sw-input" placeholder="Ej. Ana Torres" required>
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-cedula">Cédula <span class="sw-required">*</span></label>
+                            <input id="nuevo-empleado-cedula" name="cedula" type="text" class="sw-input" placeholder="0102030405" required>
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-email">Correo <span class="sw-required">*</span></label>
+                            <input id="nuevo-empleado-email" name="email" type="email" class="sw-input" placeholder="nombre@empresa.com" required>
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-telefono">Teléfono</label>
+                            <input id="nuevo-empleado-telefono" name="telefono" type="tel" class="sw-input" placeholder="0991122334">
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-departamento">Departamento <span class="sw-required">*</span></label>
+                            <select id="nuevo-empleado-departamento" name="departamento" class="sw-select" required>
+                                <option value="">Seleccionar...</option>
+                                <option>Contabilidad</option>
+                                <option>Recursos Humanos</option>
+                                <option>Sistemas</option>
+                                <option>Ventas</option>
+                                <option>Operaciones</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-cargo">Cargo <span class="sw-required">*</span></label>
+                            <input id="nuevo-empleado-cargo" name="cargo" type="text" class="sw-input" placeholder="Ej. Analista" required>
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-contrato">Tipo de contrato</label>
+                            <select id="nuevo-empleado-contrato" name="contrato" class="sw-select">
+                                <option>Indefinido</option>
+                                <option>Plazo fijo</option>
+                                <option>Por servicios</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sw-col-6">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-ingreso">Fecha de ingreso</label>
+                            <input id="nuevo-empleado-ingreso" name="fecha_ingreso" type="date" class="sw-input">
+                        </div>
+                    </div>
+                    <div class="sw-col-12">
+                        <div class="sw-field">
+                            <label class="sw-label" for="nuevo-empleado-notas">Observaciones</label>
+                            <textarea id="nuevo-empleado-notas" name="observaciones" class="sw-textarea" rows="3" placeholder="Notas adicionales..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sw-form-actions">
+                    <button type="button" class="sw-btn sw-btn-ghost" onclick="galCloseModal('empleado-nuevo-modal')">Cancelar</button>
+                    <button type="submit" class="sw-btn sw-btn-primary" id="empleado-crear-submit">
+                        <span id="empleado-crear-label">Crear empleado</span>
+                        <span id="empleado-crear-spinner" class="sw-spinner sw-spinner-sm sw-spinner-light" role="status" aria-label="Creando empleado" hidden></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <footer class="sw-footer">
