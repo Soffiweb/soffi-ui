@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paginación — Soffi UI</title>
+<meta name="description" content="Tabla, resumen de rol y paginación de soffiweb/soffi-ui.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../dist/soffi-ui.css">
+<link rel="stylesheet" href="../assets/gallery.css">
+</head>
+<body class="sw-app gal-single-page gal-datos-pagination-page">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="../assets/Soffiweb-Logo.png" alt="Soffiweb" class="gal-topbar-logo">
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">SoffiUI - Soffiweb</span>
+        </div>
+    </div>
+    <nav class="gal-topnav" aria-label="Navegación principal">
+        <a class="gal-topnav-link" href="../index.html"><i class="fa-solid fa-book-open"></i><span>Docs</span></a>
+        <a class="gal-topnav-link active" href="../contenido.html#cards" aria-current="page"><i class="fa-solid fa-shapes"></i><span>Components</span></a>
+        <a class="gal-topnav-link" href="../primeros-pasos.html"><i class="fa-solid fa-layer-group"></i><span>Patterns</span></a>
+        <a class="gal-topnav-link" href="../navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><span>Layout</span></a>
+    </nav>
+    <div class="sw-topbar-actions">
+        <div class="gal-topbar-search" aria-label="Buscar documentación"><i class="fa-solid fa-magnifying-glass"></i><span>Search...</span><kbd>⌘ K</kbd></div>
+        <span class="gal-topbar-status"><i class="fa-solid fa-circle"></i> dist/soffi-ui.css</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Documentación Soffi UI</div>
+            <div class="sw-sb-brand-sub"><a href="../index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a></div>
+        </div>
+
+        <div class="sw-sb-group">Inicio</div>
+        <a href="../primeros-pasos.html" class="sw-sb-link"><i class="fa-solid fa-rocket"></i> Primeros pasos</a>
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="../tokens.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Componentes</div>
+        <a href="../acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones y badges</a>
+
+        <a href="../feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</a>
+
+        <a href="../contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+
+        <a href="../formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="tablas.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="rol.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="paginacion.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="../navegacion/tabs.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="../navegacion/collapse.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="../navegacion/breadcrumb.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="../navegacion/sidebar.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="../overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Patrones</div>
+        <a href="../dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="../auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+
+        <div class="sw-sb-group">Ejemplos reales</div>
+        <a href="../empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Empleados</a>
+    </nav>
+
+    <main class="sw-main">
+
+        <!-- ══════════════════ TABLES ══════════════════ -->
+        <section id="tables" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-table"></i> Tablas</h2>
+                <p><code>.sw-table-wrap</code> + <code>.sw-table</code>. Incluye filas de estado, menú de fila y totales anclados (<code>.sw-table-totals</code>).</p>
+            </div>
+            <div class="gal-preview gal-preview-tight">
+                <div class="sw-table-wrap">
+                    <table class="sw-table sw-table-totals">
+                        <thead>
+                            <tr><th>Empleado</th><th>Departamento</th><th>Estado</th><th class="text-center">Acciones</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="sw-table-title">Ana Torres</span><span class="sw-table-subtitle">ana@empresa.com</span></td>
+                                <td>Contabilidad</td>
+                                <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                <td class="text-center"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                            </tr>
+                            <tr class="sw-row-warning">
+                                <td><span class="sw-table-title">Juan Pérez</span><span class="sw-table-subtitle">juan@empresa.com</span></td>
+                                <td>Recursos Humanos</td>
+                                <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                <td class="text-center"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                            </tr>
+                            <tr class="sw-row-error">
+                                <td><span class="sw-table-title">Marta Ruiz</span><span class="sw-table-subtitle">marta@empresa.com</span></td>
+                                <td>Transporte</td>
+                                <td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                <td class="text-center"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="3" class="sw-table-total-label">Total nómina del mes</td><td class="text-center sw-money">$4,820.00</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-table-wrap"&gt;
+    &lt;table class="sw-table sw-table-totals"&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Empleado&lt;/th&gt;&lt;th&gt;Estado&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr class="sw-row-warning"&gt;
+                &lt;td&gt;Juan Pérez&lt;/td&gt;
+                &lt;td&gt;&lt;span class="sw-badge sw-badge-warning"&gt;Pendiente&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;&lt;td class="sw-table-total-label"&gt;Total&lt;/td&gt;&lt;td class="sw-money"&gt;$4,820.00&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Rayada</h3><span>.sw-table-striped — zebra en filas pares</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table sw-table-striped">
+                            <thead><tr><th>Producto</th><th>SKU</th><th class="text-center">Stock</th></tr></thead>
+                            <tbody>
+                                <tr><td>Papel A4</td><td>PAP-001</td><td class="text-center">120</td></tr>
+                                <tr><td>Tóner negro</td><td>TON-014</td><td class="text-center">8</td></tr>
+                                <tr><td>Grapadora</td><td>GRA-022</td><td class="text-center">35</td></tr>
+                                <tr><td>Carpeta oficio</td><td>CAR-003</td><td class="text-center">210</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;table class="sw-table sw-table-striped"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Producto&lt;/th&gt;&lt;th&gt;SKU&lt;/th&gt;&lt;th&gt;Stock&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;Papel A4&lt;/td&gt;&lt;td&gt;PAP-001&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Compacta</h3><span>.sw-table-compact — menos padding y texto más chico, para listados densos</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table sw-table-compact">
+                            <thead><tr><th>Código</th><th>Movimiento</th><th class="text-center">Monto</th></tr></thead>
+                            <tbody>
+                                <tr><td>MV-1001</td><td>Depósito</td><td class="text-center sw-money">$120.00</td></tr>
+                                <tr><td>MV-1002</td><td>Retiro</td><td class="text-center sw-money">$45.50</td></tr>
+                                <tr><td>MV-1003</td><td>Transferencia</td><td class="text-center sw-money">$300.00</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;table class="sw-table sw-table-compact"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Código&lt;/th&gt;&lt;th&gt;Movimiento&lt;/th&gt;&lt;th&gt;Monto&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;MV-1001&lt;/td&gt;&lt;td&gt;Depósito&lt;/td&gt;&lt;td class="sw-money"&gt;$120.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Con miniatura</h3><span>.sw-table-thumb / .sw-table-thumb-lg — ícono o imagen de 40px (64px en -lg) por fila</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table">
+                            <thead><tr><th>Producto</th><th class="text-center">Precio</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="sw-d-flex sw-align-items-center" style="gap:10px">
+                                            <span class="sw-table-thumb"><i class="fa-solid fa-box"></i></span>
+                                            <div class="sw-text-stack">
+                                                <span class="sw-table-title">Auriculares Pro</span>
+                                                <span class="sw-table-subtitle">SKU AUR-220</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center sw-money">$59.90</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="sw-d-flex sw-align-items-center" style="gap:10px">
+                                            <span class="sw-table-thumb sw-table-thumb-lg"><i class="fa-solid fa-mug-hot"></i></span>
+                                            <div class="sw-text-stack">
+                                                <span class="sw-table-title">Taza cerámica</span>
+                                                <span class="sw-table-subtitle">SKU TAZ-014</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center sw-money">$8.50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;td&gt;
+    &lt;div class="sw-d-flex sw-align-items-center" style="gap:10px"&gt;
+        &lt;span class="sw-table-thumb"&gt;&lt;i class="fa-solid fa-box"&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;div class="sw-text-stack"&gt;
+            &lt;span class="sw-table-title"&gt;Auriculares Pro&lt;/span&gt;
+            &lt;span class="sw-table-subtitle"&gt;SKU AUR-220&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/td&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Con inputs (detalle editable)</h3><span>.sw-detail-table — celdas con .sw-input/.sw-checkbox-input, mas aire que una tabla de solo lectura (ej. detalle de depósito)</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table sw-detail-table">
+                            <thead><tr><th>Cuenta</th><th class="text-center">Incluir</th><th class="text-center">Monto</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>1010 - Caja general</td>
+                                    <td class="text-center"><input type="checkbox" class="sw-checkbox-input" checked></td>
+                                    <td class="text-center"><input type="number" class="sw-input" value="250.00" step="0.01"></td>
+                                </tr>
+                                <tr>
+                                    <td>1020 - Banco Pichincha</td>
+                                    <td class="text-center"><input type="checkbox" class="sw-checkbox-input" checked></td>
+                                    <td class="text-center"><input type="number" class="sw-input" value="1800.00" step="0.01"></td>
+                                </tr>
+                                <tr>
+                                    <td>1030 - Caja chica</td>
+                                    <td class="text-center"><input type="checkbox" class="sw-checkbox-input"></td>
+                                    <td class="text-center"><input type="number" class="sw-input" value="0.00" step="0.01"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><th colspan="2">Total depósito</th><th class="text-center"><input type="number" class="sw-input" value="2050.00" readonly></th></tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;table class="sw-table sw-detail-table"&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1010 - Caja general&lt;/td&gt;
+            &lt;td&gt;&lt;input type="checkbox" class="sw-checkbox-input" checked&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;input type="number" class="sw-input" value="250.00" step="0.01"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;&lt;th colspan="2"&gt;Total&lt;/th&gt;&lt;th&gt;&lt;input class="sw-input" value="2050.00" readonly&gt;&lt;/th&gt;&lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Menú de acciones secundarias ("...")</h3><span>.sw-row-menu + .sw-row-menu-dropdown + .sw-row-menu-item — para no amontonar mas de 2 sw-bico por fila</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table">
+                            <thead><tr><th>Empleado</th><th class="text-center">Acciones</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="sw-table-title">Carla Núñez</span><span class="sw-table-subtitle">carla@empresa.com</span></td>
+                                    <td class="text-center">
+                                        <div class="sw-table-actions">
+                                            <button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                            <div class="sw-row-menu">
+                                                <button type="button" class="sw-bico sw-row-menu-trigger" aria-haspopup="true" aria-expanded="false" title="Más acciones" aria-label="Más acciones" onclick="galToggleRowMenu(this)"><i class="fa-solid fa-ellipsis"></i></button>
+                                                <div class="sw-row-menu-dropdown">
+                                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-copy"></i> Duplicar</a>
+                                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-file-export"></i> Exportar</a>
+                                                    <a href="#" class="sw-row-menu-item"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;div class="sw-table-actions"&gt;
+    &lt;button class="sw-bico sw-bico-edit" title="Editar"&gt;&lt;i class="fa-solid fa-pen"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;div class="sw-row-menu"&gt;
+        &lt;button type="button" class="sw-bico sw-row-menu-trigger" aria-haspopup="true"
+                aria-expanded="false" onclick="galToggleRowMenu(this)"&gt;&lt;i class="fa-solid fa-ellipsis"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;div class="sw-row-menu-dropdown"&gt;
+            &lt;a href="#" class="sw-row-menu-item"&gt;&lt;i class="fa-solid fa-copy"&gt;&lt;/i&gt; Duplicar&lt;/a&gt;
+            &lt;a href="#" class="sw-row-menu-item"&gt;&lt;i class="fa-solid fa-trash"&gt;&lt;/i&gt; Eliminar&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Estado vacío (bloque completo)</h3><span>.sw-empty-icon + .sw-empty-title + .sw-empty-copy — sin resultados tras filtrar. Para el aviso corto en una sola línea usar <code>.sw-empty-state</code> (ver Feedback).</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table">
+                            <thead><tr><th>Empleado</th><th>Departamento</th><th class="text-center">Acciones</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="sw-d-flex sw-flex-column sw-align-items-center" style="gap:6px;padding:2.5rem 1rem;text-align:center">
+                                            <i class="fa-solid fa-inbox sw-empty-icon"></i>
+                                            <p class="sw-empty-title">Sin resultados</p>
+                                            <p class="sw-empty-copy">No hay empleados que coincidan con el filtro aplicado.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;td colspan="3"&gt;
+    &lt;div class="sw-d-flex sw-flex-column sw-align-items-center"&gt;
+        &lt;i class="fa-solid fa-inbox sw-empty-icon"&gt;&lt;/i&gt;
+        &lt;p class="sw-empty-title"&gt;Sin resultados&lt;/p&gt;
+        &lt;p class="sw-empty-copy"&gt;No hay empleados que coincidan con el filtro aplicado.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/td&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Wrap scrolleable — columna fija + header fijo</h3><span>.sw-list-table-wrap + .sw-table-sticky-col + .sw-table-min-xl</span></div>
+                <div class="sw-alert sw-alert-warning" style="margin-bottom:12px">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Arrastrá el scroll horizontal de abajo: la columna <strong>"Acciones" queda fija a la derecha</strong> y muestra una línea de separación mientras la tabla está desplazada.</span>
+                </div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap sw-list-table-wrap" style="max-height:340px">
+                        <table class="sw-table sw-table-min-xl">
+                            <thead>
+                                <tr>
+                                    <th>Empleado</th>
+                                    <th>Cédula</th>
+                                    <th>Departamento</th>
+                                    <th>Cargo</th>
+                                    <th>Fecha ingreso</th>
+                                    <th>Estado</th>
+                                    <th class="text-center sw-table-sticky-col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="sw-table-title">Ana Torres</span></td>
+                                    <td>0102030405</td>
+                                    <td>Contabilidad</td>
+                                    <td>Analista Sr.</td>
+                                    <td>12/03/2021</td>
+                                    <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                    <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sw-table-title">Juan Pérez</span></td>
+                                    <td>0203040506</td>
+                                    <td>Recursos Humanos</td>
+                                    <td>Coordinador</td>
+                                    <td>04/07/2019</td>
+                                    <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                    <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sw-table-title">Marta Ruiz</span></td>
+                                    <td>0304050607</td>
+                                    <td>Transporte</td>
+                                    <td>Conductor</td>
+                                    <td>21/11/2022</td>
+                                    <td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                    <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sw-table-title">Luis Vargas</span></td>
+                                    <td>0405060708</td>
+                                    <td>Ventas</td>
+                                    <td>Ejecutivo</td>
+                                    <td>02/02/2020</td>
+                                    <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                    <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sw-table-title">Diego Salas</span></td>
+                                    <td>0506070809</td>
+                                    <td>Logística</td>
+                                    <td>Supervisor</td>
+                                    <td>15/09/2018</td>
+                                    <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                    <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete"><i class="fa-solid fa-trash"></i></button></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;!-- .sw-table-min-md/-lg/-xl fuerzan ancho minimo (760/920/1080px) --&gt;
+&lt;div class="sw-table-wrap sw-list-table-wrap"&gt;
+    &lt;table class="sw-table sw-table-min-xl"&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Empleado&lt;/th&gt;...&lt;th class="sw-table-sticky-col"&gt;Acciones&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;...&lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Listado completo (CRUD real)</h3><span>.sw-crud-head + .sw-list-card + .sw-list-toolbar + tabla + .sw-list-pagination — la pantalla completa, tal como sale en producción</span></div>
+                <div class="gal-preview gal-preview-block">
+                    <div class="sw-crud-head" style="margin-bottom:16px">
+                        <div class="sw-crud-title">
+                            <h1 class="sw-page-title">Empleados</h1>
+                            <p class="sw-page-subtitle">Administración de personal activo.</p>
+                        </div>
+                        <div class="sw-crud-actions">
+                            <button type="button" class="sw-btn sw-btn-primary sw-btn-sm"><i class="fa-solid fa-plus"></i> Agregar</button>
+                            <button type="button" class="sw-btn sw-btn-ghost sw-btn-sm"><i class="fa-solid fa-print"></i> PDF</button>
+                        </div>
+                    </div>
+
+                    <div class="sw-card sw-list-card">
+                        <div class="sw-list-toolbar">
+                            <div class="sw-list-search">
+                                <div class="sw-list-filter-row">
+                                    <div class="sw-list-filter-main">
+                                        <label class="sw-list-search-label" for="galBuscarEmp">Buscar</label>
+                                        <div class="sw-input-icon-wrap">
+                                            <i class="fa-solid fa-search sw-input-icon"></i>
+                                            <input type="text" id="galBuscarEmp" class="sw-input sw-input-has-icon" placeholder="Nombre o cédula">
+                                        </div>
+                                    </div>
+                                    <div class="sw-list-filter-control">
+                                        <label class="sw-list-search-label" for="galEstadoEmp">Estado</label>
+                                        <select id="galEstadoEmp" class="sw-select">
+                                            <option>Todos</option>
+                                            <option>Activo</option>
+                                            <option>Inactivo</option>
+                                        </select>
+                                    </div>
+                                    <div class="sw-list-filter-actions">
+                                        <button type="button" class="sw-btn sw-btn-primary sw-btn-sm"><i class="fa-solid fa-search"></i> Filtrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sw-list-meta">
+                                <span class="sw-list-count">42 registros</span>
+                            </div>
+                        </div>
+
+                        <div class="sw-table-wrap sw-list-table-wrap">
+                            <table class="sw-table sw-table-min-xl">
+                                <thead>
+                                    <tr>
+                                        <th>Empleado</th>
+                                        <th>Cédula</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th>Departamento</th>
+                                        <th>Cargo</th>
+                                        <th>Tipo contrato</th>
+                                        <th>Turno</th>
+                                        <th>Ciudad</th>
+                                        <th>Banco</th>
+                                        <th>Cuenta</th>
+                                        <th>Salario</th>
+                                        <th>Fecha ingreso</th>
+                                        <th>Estado</th>
+                                        <th class="text-center sw-table-sticky-col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Ana Torres</span><span class="sw-table-subtitle">EMP-0231</span></div></td>
+                                        <td>0102030405</td>
+                                        <td>ana@empresa.com</td>
+                                        <td>0991122334</td>
+                                        <td>Contabilidad</td>
+                                        <td>Analista Sr.</td>
+                                        <td>Indefinido</td>
+                                        <td>Diurno</td>
+                                        <td>Quito</td>
+                                        <td>Pichincha</td>
+                                        <td>****4521</td>
+                                        <td class="sw-money">$850.00</td>
+                                        <td>12/03/2021</td>
+                                        <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Juan Pérez</span><span class="sw-table-subtitle">EMP-0198</span></div></td>
+                                        <td>0203040506</td>
+                                        <td>juan@empresa.com</td>
+                                        <td>0987654321</td>
+                                        <td>Recursos Humanos</td>
+                                        <td>Coordinador</td>
+                                        <td>Plazo fijo</td>
+                                        <td>Diurno</td>
+                                        <td>Guayaquil</td>
+                                        <td>Guayaquil</td>
+                                        <td>****7788</td>
+                                        <td class="sw-money">$620.00</td>
+                                        <td>04/07/2019</td>
+                                        <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Marta Ruiz</span><span class="sw-table-subtitle">EMP-0345</span></div></td>
+                                        <td>0304050607</td>
+                                        <td>marta@empresa.com</td>
+                                        <td>0976543210</td>
+                                        <td>Transporte</td>
+                                        <td>Conductor</td>
+                                        <td>Indefinido</td>
+                                        <td>Nocturno</td>
+                                        <td>Cuenca</td>
+                                        <td>Produbanco</td>
+                                        <td>****1290</td>
+                                        <td class="sw-money">$700.00</td>
+                                        <td>21/11/2022</td>
+                                        <td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Luis Vargas</span><span class="sw-table-subtitle">EMP-0412</span></div></td>
+                                        <td>0405060708</td>
+                                        <td>luis@empresa.com</td>
+                                        <td>0965432109</td>
+                                        <td>Ventas</td>
+                                        <td>Ejecutivo</td>
+                                        <td>Plazo fijo</td>
+                                        <td>Diurno</td>
+                                        <td>Ambato</td>
+                                        <td>Pacífico</td>
+                                        <td>****3345</td>
+                                        <td class="sw-money">$980.00</td>
+                                        <td>02/02/2020</td>
+                                        <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Diego Salas</span><span class="sw-table-subtitle">EMP-0087</span></div></td>
+                                        <td>0506070809</td>
+                                        <td>diego@empresa.com</td>
+                                        <td>0954321098</td>
+                                        <td>Logística</td>
+                                        <td>Supervisor</td>
+                                        <td>Indefinido</td>
+                                        <td>Rotativo</td>
+                                        <td>Manta</td>
+                                        <td>Pichincha</td>
+                                        <td>****9081</td>
+                                        <td class="sw-money">$1,100.00</td>
+                                        <td>15/09/2018</td>
+                                        <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Carla Núñez</span><span class="sw-table-subtitle">EMP-0256</span></div></td>
+                                        <td>0607080910</td>
+                                        <td>carla@empresa.com</td>
+                                        <td>0943210987</td>
+                                        <td>Sistemas</td>
+                                        <td>Desarrollador</td>
+                                        <td>Indefinido</td>
+                                        <td>Diurno</td>
+                                        <td>Quito</td>
+                                        <td>Bolivariano</td>
+                                        <td>****2264</td>
+                                        <td class="sw-money">$1,450.00</td>
+                                        <td>30/01/2023</td>
+                                        <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Sofía Mendoza</span><span class="sw-table-subtitle">EMP-0301</span></div></td>
+                                        <td>0708091011</td>
+                                        <td>sofia@empresa.com</td>
+                                        <td>0932109876</td>
+                                        <td>Marketing</td>
+                                        <td>Especialista</td>
+                                        <td>Plazo fijo</td>
+                                        <td>Diurno</td>
+                                        <td>Loja</td>
+                                        <td>Pichincha</td>
+                                        <td>****5567</td>
+                                        <td class="sw-money">$890.00</td>
+                                        <td>08/06/2021</td>
+                                        <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Pedro Castillo</span><span class="sw-table-subtitle">EMP-0129</span></div></td>
+                                        <td>0809101112</td>
+                                        <td>pedro@empresa.com</td>
+                                        <td>0921098765</td>
+                                        <td>Producción</td>
+                                        <td>Operario</td>
+                                        <td>Indefinido</td>
+                                        <td>Nocturno</td>
+                                        <td>Riobamba</td>
+                                        <td>Guayaquil</td>
+                                        <td>****8899</td>
+                                        <td class="sw-money">$560.00</td>
+                                        <td>19/04/2017</td>
+                                        <td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Lucía Herrera</span><span class="sw-table-subtitle">EMP-0378</span></div></td>
+                                        <td>0910111213</td>
+                                        <td>lucia@empresa.com</td>
+                                        <td>0910987654</td>
+                                        <td>Legal</td>
+                                        <td>Abogada</td>
+                                        <td>Plazo fijo</td>
+                                        <td>Diurno</td>
+                                        <td>Guayaquil</td>
+                                        <td>Produbanco</td>
+                                        <td>****4432</td>
+                                        <td class="sw-money">$1,320.00</td>
+                                        <td>11/12/2020</td>
+                                        <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="sw-text-stack"><span class="sw-table-title">Andrés Morales</span><span class="sw-table-subtitle">EMP-0455</span></div></td>
+                                        <td>1011121314</td>
+                                        <td>andres@empresa.com</td>
+                                        <td>0909876543</td>
+                                        <td>Compras</td>
+                                        <td>Comprador</td>
+                                        <td>Indefinido</td>
+                                        <td>Diurno</td>
+                                        <td>Ibarra</td>
+                                        <td>Pacífico</td>
+                                        <td>****6610</td>
+                                        <td class="sw-money">$760.00</td>
+                                        <td>25/08/2022</td>
+                                        <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                        <td class="text-center sw-table-sticky-col"><div class="sw-table-actions"><button class="sw-bico sw-bico-edit" title="Editar"><i class="fa-solid fa-pen"></i></button><button class="sw-bico sw-bico-delete" title="Desactivar"><i class="fa-solid fa-ban"></i></button></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="sw-list-pagination">
+                            <nav class="sw-pagination-nav" aria-label="Paginación">
+                                <p class="sw-pagination-summary">Mostrando <span>1–10</span> de <span>42</span> registros</p>
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;div class="sw-crud-head"&gt;
+    &lt;div class="sw-crud-title"&gt;
+        &lt;h1 class="sw-page-title"&gt;Empleados&lt;/h1&gt;
+        &lt;p class="sw-page-subtitle"&gt;Administración de personal activo.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-crud-actions"&gt;
+        &lt;button class="sw-btn sw-btn-primary sw-btn-sm"&gt;Agregar&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="sw-card sw-list-card"&gt;
+    &lt;div class="sw-list-toolbar"&gt;
+        &lt;div class="sw-list-search"&gt;
+            &lt;div class="sw-list-filter-row"&gt;
+                &lt;div class="sw-list-filter-main"&gt;...&lt;/div&gt;
+                &lt;div class="sw-list-filter-control"&gt;...&lt;/div&gt;
+                &lt;div class="sw-list-filter-actions"&gt;...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="sw-list-meta"&gt;&lt;span class="sw-list-count"&gt;42 registros&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="sw-table-wrap sw-list-table-wrap"&gt;
+        &lt;table class="sw-table sw-table-min-xl"&gt;...&lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;div class="sw-list-pagination"&gt;
+        &lt;nav class="sw-pagination-nav"&gt;
+            &lt;p class="sw-pagination-summary"&gt;Mostrando &lt;span&gt;1–3&lt;/span&gt; de &lt;span&gt;42&lt;/span&gt; registros&lt;/p&gt;
+            &lt;ul class="pagination"&gt;
+                &lt;li class="page-item active"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ══════════════════ ROL SUMMARY ══════════════════ -->
+        <section id="rol-summary" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-id-card"></i> Resumen de rol</h2>
+                <p><code>.sw-rol-summary</code> — banda compacta con el rol/periodo vigente sobre listados de nómina (aporte de gesnom al estándar).</p>
+            </div>
+            <div class="gal-preview gal-preview-tight">
+                <div class="sw-rol-summary">
+                    <div class="sw-rol-summary-main">
+                        <span class="sw-rol-summary-tag"><i class="fa-solid fa-calendar"></i> Período vigente</span>
+                        <h3 class="sw-rol-summary-title">Rol quincenal — 01 al 15 de septiembre 2026</h3>
+                    </div>
+                    <div class="sw-rol-summary-stats">
+                        <div class="sw-rol-summary-stat">
+                            <span class="sw-rol-summary-label">Empleados</span>
+                            <span class="sw-rol-summary-value">42</span>
+                        </div>
+                        <div class="sw-rol-summary-stat">
+                            <span class="sw-rol-summary-label">Total bruto</span>
+                            <span class="sw-rol-summary-value">$18,240.00</span>
+                        </div>
+                        <div class="sw-rol-summary-stat">
+                            <span class="sw-rol-summary-label">Estado</span>
+                            <span class="sw-rol-summary-value">Abierto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;div class="sw-rol-summary"&gt;
+    &lt;div class="sw-rol-summary-main"&gt;
+        &lt;span class="sw-rol-summary-tag"&gt;Período vigente&lt;/span&gt;
+        &lt;h3 class="sw-rol-summary-title"&gt;Rol quincenal — 01 al 15 sept.&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-rol-summary-stats"&gt;
+        &lt;div class="sw-rol-summary-stat"&gt;
+            &lt;span class="sw-rol-summary-label"&gt;Empleados&lt;/span&gt;
+            &lt;span class="sw-rol-summary-value"&gt;42&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <!-- ══════════════════ PAGINATION ══════════════════ -->
+        <section id="pagination" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-ellipsis"></i> Paginación</h2>
+                <p><code>.sw-pagination</code> + <code>.sw-pg-btn</code>.</p>
+            </div>
+            <div class="gal-preview">
+                <nav class="sw-pagination" aria-label="Paginación">
+                    <a class="sw-pg-btn" aria-disabled="true"><i class="fa-solid fa-angle-left"></i></a>
+                    <a class="sw-pg-btn active">1</a>
+                    <a class="sw-pg-btn">2</a>
+                    <a class="sw-pg-btn">3</a>
+                    <span class="sw-pg-ellipsis">…</span>
+                    <a class="sw-pg-btn">12</a>
+                    <a class="sw-pg-btn"><i class="fa-solid fa-angle-right"></i></a>
+                </nav>
+            </div>
+            <details class="gal-code">
+                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                <div class="gal-code-body">
+                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                    <pre><code>&lt;nav class="sw-pagination"&gt;
+    &lt;a class="sw-pg-btn active"&gt;1&lt;/a&gt;
+    &lt;a class="sw-pg-btn"&gt;2&lt;/a&gt;
+    &lt;span class="sw-pg-ellipsis"&gt;…&lt;/span&gt;
+    &lt;a class="sw-pg-btn"&gt;12&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+
+        <nav class="gal-page-nav" aria-label="Navegación de documentación">
+            <a class="sw-btn sw-btn-ghost" href="../formularios.html#forms"><i class="fa-solid fa-arrow-left"></i> Anterior: Formularios</a>
+            <a class="sw-btn sw-btn-primary" href="../navegacion/tabs.html#tabs">Siguiente: Navegación <i class="fa-solid fa-arrow-right"></i></a>
+        </nav>
+
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+    <span class="sw-footer-links"><a href="../index.html">Inicio</a></span>
+</footer>
+
+<script src="../assets/gallery.js"></script>
+</body>
+</html>
