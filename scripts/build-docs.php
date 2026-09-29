@@ -5,6 +5,12 @@ declare(strict_types=1);
 $root = dirname(__DIR__);
 $source = $root . '/skills/soffi-ui';
 $destination = $argv[1] ?? $root . '/build/docs';
+$mode = $argv[2] ?? 'jekyll';
+
+if ($mode === 'gallery') {
+    buildGallery($root, $destination);
+    exit(0);
+}
 
 if (!is_dir($source)) {
     fwrite(STDERR, "Missing source directory: {$source}\n");
@@ -41,6 +47,34 @@ function copyTree(string $source, string $destination): void
         }
 
         copy($item->getPathname(), $target);
+    }
+}
+
+function buildGallery(string $root, string $destination): void
+{
+    copyTree($root . '/docs/gallery', $destination);
+    copyTree($root . '/dist', $destination . '/dist');
+
+    $files = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($destination, FilesystemIterator::SKIP_DOTS)
+    );
+
+    foreach ($files as $file) {
+        if (!$file->isFile() || $file->getExtension() !== 'html') {
+            continue;
+        }
+
+        $path = $file->getPathname();
+        $content = file_get_contents($path);
+        if ($content === false) {
+            throw new RuntimeException("Cannot read: {$path}");
+        }
+
+        $relativeDirectory = trim(substr($file->getPath(), strlen($destination)), DIRECTORY_SEPARATOR);
+        $depth = $relativeDirectory === '' ? 0 : substr_count($relativeDirectory, DIRECTORY_SEPARATOR) + 1;
+        $stylesheet = str_repeat('../', $depth) . 'dist/soffi-ui.css';
+        $content = preg_replace('/(?:\.\.\/)+dist\/soffi-ui\.css/', $stylesheet, $content) ?? $content;
+        writeFile($path, $content);
     }
 }
 
