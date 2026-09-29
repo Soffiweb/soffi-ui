@@ -64,10 +64,176 @@ function galCloseSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.sw-sidebar .sw-sb-link[href]').forEach(function (a) {
+    galRouteDocumentationLinks();
+    galInitPageNavigation();
+
+    document.querySelectorAll('details.gal-code').forEach(function (details) {
+        details.open = true;
+    });
+
+    const sidebarLinks = document.querySelectorAll('.sw-sidebar .sw-sb-link[href]');
+
+    sidebarLinks.forEach(function (a) {
         a.addEventListener('click', galCloseSidebar);
     });
+
+    galSyncSidebarActive(sidebarLinks);
+    galInitSidebarSpy(sidebarLinks);
 });
+
+const galPageSequence = [
+    { file: 'index.html', label: 'Inicio' },
+    { file: 'primeros-pasos.html', label: 'Primeros pasos' },
+    { file: 'tokens.html', label: 'Tokens' },
+    { file: 'acciones.html', label: 'Botones y badges', hash: 'botones' },
+    { file: 'feedback.html', label: 'Alertas', hash: 'alerts' },
+    { file: 'contenido.html', label: 'Cards', hash: 'cards' },
+    { file: 'formularios.html', label: 'Formularios', hash: 'forms' },
+    { file: 'datos/tablas.html', label: 'Tablas', hash: 'tables' },
+    { file: 'datos/rol.html', label: 'Resumen de rol', hash: 'rol-summary' },
+    { file: 'datos/paginacion.html', label: 'Paginación', hash: 'pagination' },
+    { file: 'navegacion/tabs.html', label: 'Tabs', hash: 'tabs' },
+    { file: 'navegacion/collapse.html', label: 'Collapse', hash: 'collapse' },
+    { file: 'navegacion/breadcrumb.html', label: 'Breadcrumb', hash: 'breadcrumb' },
+    { file: 'navegacion/sidebar.html', label: 'Sidebar y topbar', hash: 'sidebar-topbar' },
+    { file: 'overlays.html', label: 'Modal', hash: 'modal' },
+    { file: 'dashboard.html', label: 'Dashboard', hash: 'dashboard' },
+    { file: 'auth.html', label: 'Auth', hash: 'auth' },
+    { file: 'empleados.html', label: 'Empleados' },
+];
+
+function galInitPageNavigation() {
+    const main = document.querySelector('.sw-main');
+    const currentPath = window.location.pathname;
+    const currentIndex = galPageSequence.findIndex(function (page) {
+        return galGetGalleryUrl(page.file).pathname === currentPath;
+    });
+
+    if (!main || currentIndex < 0) return;
+
+    let nav = main.querySelector('.gal-page-nav');
+    if (!nav) {
+        nav = document.createElement('nav');
+        nav.className = 'gal-page-nav';
+        nav.setAttribute('aria-label', 'Navegación de documentación');
+        main.appendChild(nav);
+    }
+
+    nav.innerHTML = '';
+    nav.appendChild(galCreatePageLink(galPageSequence[currentIndex - 1], 'previous'));
+    nav.appendChild(galCreatePageLink(galPageSequence[currentIndex + 1], 'next'));
+}
+
+function galCreatePageLink(page, direction) {
+    const isPrevious = direction === 'previous';
+    const link = document.createElement(page ? 'a' : 'span');
+    link.className = 'sw-btn ' + (isPrevious ? 'sw-btn-ghost' : 'sw-btn-primary');
+    link.innerHTML = isPrevious
+        ? '<i class="fa-solid fa-arrow-left"></i> ' + (page ? 'Anterior: ' + page.label : 'Anterior')
+        : (page ? 'Siguiente: ' + page.label + ' ' : 'Siguiente') + '<i class="fa-solid fa-arrow-right"></i>';
+
+    if (page) {
+        const url = galGetGalleryUrl(page.file);
+        if (page.hash) url.hash = page.hash;
+        link.href = url.href;
+    } else {
+        link.setAttribute('aria-disabled', 'true');
+        link.tabIndex = -1;
+    }
+
+    return link;
+}
+
+function galRouteDocumentationLinks() {
+    const routes = {
+        'datos.html#tables': 'datos/tablas.html#tables',
+        'datos.html#rol-summary': 'datos/rol.html#rol-summary',
+        'datos.html#pagination': 'datos/paginacion.html#pagination',
+        'navegacion.html#tabs': 'navegacion/tabs.html#tabs',
+        'navegacion.html#collapse': 'navegacion/collapse.html#collapse',
+        'navegacion.html#breadcrumb': 'navegacion/breadcrumb.html#breadcrumb',
+        'navegacion.html#sidebar-topbar': 'navegacion/sidebar.html#sidebar-topbar',
+    };
+
+    document.querySelectorAll('a[href]').forEach(function (link) {
+        const href = link.getAttribute('href');
+        if (href && routes[href]) link.setAttribute('href', routes[href]);
+    });
+}
+
+function galGetGalleryUrl(file) {
+    const script = document.querySelector('script[src*="gallery.js"]');
+    const scriptUrl = script
+        ? new URL(script.getAttribute('src'), document.baseURI)
+        : new URL('assets/gallery.js', document.baseURI);
+    return new URL(file, new URL('../', scriptUrl));
+}
+
+function galSyncSidebarActive(sidebarLinks) {
+    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
+    let fallback = null;
+    let selected = null;
+
+    sidebarLinks.forEach(function (link) {
+        const url = new URL(link.href, window.location.href);
+        if (url.pathname !== currentPath) return;
+        fallback = fallback || link;
+        if (currentHash && url.hash === currentHash) selected = link;
+    });
+
+    selected = selected || fallback;
+    sidebarLinks.forEach(function (link) {
+        const active = link === selected;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+    });
+}
+
+function galInitSidebarSpy(sidebarLinks) {
+    const main = document.querySelector('.sw-main');
+    if (!main || !sidebarLinks.length) return;
+
+    const currentPath = window.location.pathname;
+    const sectionLinks = Array.from(sidebarLinks).map(function (link) {
+        const url = new URL(link.href, window.location.href);
+        if (url.pathname !== currentPath || !url.hash) return null;
+
+        const section = document.getElementById(url.hash.slice(1));
+        return section ? { link: link, section: section } : null;
+    }).filter(Boolean);
+
+    if (!sectionLinks.length) return;
+
+    function setActive(item) {
+        sectionLinks.forEach(function (entry) {
+            const active = entry === item;
+            entry.link.classList.toggle('active', active);
+            if (active) entry.link.setAttribute('aria-current', 'page');
+            else entry.link.removeAttribute('aria-current');
+        });
+    }
+
+    function updateActive() {
+        const marker = main.getBoundingClientRect().top + 96;
+        let current = sectionLinks[0];
+
+        sectionLinks.forEach(function (entry) {
+            if (entry.section.getBoundingClientRect().top <= marker) current = entry;
+        });
+
+        if (main.scrollTop + main.clientHeight >= main.scrollHeight - 4) {
+            current = sectionLinks[sectionLinks.length - 1];
+        }
+
+        setActive(current);
+    }
+
+    main.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+    updateActive();
+}
 
 function galSyncTableStickyColumns() {
     document.querySelectorAll('.sw-list-table-wrap').forEach(function (wrap) {

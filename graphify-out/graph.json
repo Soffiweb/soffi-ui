@@ -39,7 +39,7 @@
       "file_type": "code",
       "norm_label": "galactivatetab()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L173"
+      "source_location": "L339"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosemodal",
@@ -51,7 +51,7 @@
       "file_type": "code",
       "norm_label": "galclosemodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L156"
+      "source_location": "L322"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosesidebar",
@@ -75,7 +75,19 @@
       "file_type": "code",
       "norm_label": "galcopy()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L264"
+      "source_location": "L430"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galcreatepagelink",
+      "label": "galCreatePageLink()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galcreatepagelink()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L127"
     },
     {
       "id": "docs_gallery_assets_gallery_galfilterss",
@@ -87,7 +99,67 @@
       "file_type": "code",
       "norm_label": "galfilterss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L205"
+      "source_location": "L371"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galgetgalleryurl",
+      "label": "galGetGalleryUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galgetgalleryurl()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L164"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galinitpagenavigation",
+      "label": "galInitPageNavigation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galinitpagenavigation()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L105"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galinitsidebarspy",
+      "label": "galInitSidebarSpy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galinitsidebarspy()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L194"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galinitsidebarspy_setactive",
+      "label": "setActive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "setactive()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L209"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galinitsidebarspy_updateactive",
+      "label": "updateActive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "updateactive()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L218"
     },
     {
       "id": "docs_gallery_assets_gallery_galopenmodal",
@@ -99,7 +171,19 @@
       "file_type": "code",
       "norm_label": "galopenmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L148"
+      "source_location": "L314"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galroutedocumentationlinks",
+      "label": "galRouteDocumentationLinks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galroutedocumentationlinks()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L147"
     },
     {
       "id": "docs_gallery_assets_gallery_galselectss",
@@ -111,7 +195,7 @@
       "file_type": "code",
       "norm_label": "galselectss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L196"
+      "source_location": "L362"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast",
@@ -123,7 +207,7 @@
       "file_type": "code",
       "norm_label": "galshowtoast()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L242"
+      "source_location": "L408"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast_dismiss",
@@ -135,7 +219,19 @@
       "file_type": "code",
       "norm_label": "dismiss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L251"
+      "source_location": "L417"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galsyncsidebaractive",
+      "label": "galSyncSidebarActive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galsyncsidebaractive()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L172"
     },
     {
       "id": "docs_gallery_assets_gallery_galsynctableselection",
@@ -147,7 +243,7 @@
       "file_type": "code",
       "norm_label": "galsynctableselection()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L102"
+      "source_location": "L268"
     },
     {
       "id": "docs_gallery_assets_gallery_galsynctablestickycolumns",
@@ -159,7 +255,7 @@
       "file_type": "code",
       "norm_label": "galsynctablestickycolumns()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L72"
+      "source_location": "L238"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglefav",
@@ -171,7 +267,7 @@
       "file_type": "code",
       "norm_label": "galtogglefav()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L213"
+      "source_location": "L379"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglerowmenu",
@@ -183,7 +279,7 @@
       "file_type": "code",
       "norm_label": "galtogglerowmenu()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L221"
+      "source_location": "L387"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglesidebar",
@@ -207,7 +303,7 @@
       "file_type": "code",
       "norm_label": "galtoggless()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L190"
+      "source_location": "L356"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletablerow",
@@ -219,7 +315,7 @@
       "file_type": "code",
       "norm_label": "galtoggletablerow()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L84"
+      "source_location": "L250"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletableselection",
@@ -231,7 +327,7 @@
       "file_type": "code",
       "norm_label": "galtoggletableselection()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L113"
+      "source_location": "L279"
     },
     {
       "id": "docs_gallery_assets_gallery_swtogglecollapse",
@@ -1141,6 +1237,17 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_gallery_assets_gallery_galpagesequence",
+      "label": "galPageSequence",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galpagesequence",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L84"
+    },
+    {
       "id": "skills_soffi_ui_layout",
       "label": "layout.md",
       "_origin": "ast",
@@ -1425,10 +1532,82 @@
       "source_location": "L59"
     },
     {
+      "id": "skills_soffi_ui_auth",
+      "label": "auth.md",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "auth.md",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_soffi_ui_auth_componentes",
+      "label": "Componentes",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "componentes",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "skills_soffi_ui_auth_ejemplo_login",
+      "label": "Ejemplo \u2014 login",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ejemplo \u2014 login",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "skills_soffi_ui_auth_layout_base",
+      "label": "Layout base",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "layout base",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "skills_soffi_ui_auth_prohibido_en_estas_pantallas",
+      "label": "Prohibido en estas pantallas",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "prohibido en estas pantallas",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L101"
+    },
+    {
+      "id": "skills_soffi_ui_auth_soffiweb_ui_auth_entry_screens",
+      "label": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "soffiweb ui \u2014 auth / entry screens",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L1"
+    },
+    {
       "id": "skills_soffi_ui_skill_capa_blade_del_paquete",
       "label": "Capa Blade del paquete",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1440,7 +1619,7 @@
       "id": "skills_soffi_ui_skill_cap\u00edtulos",
       "label": "Cap\u00edtulos",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1452,7 +1631,7 @@
       "id": "skills_soffi_ui_skill_familias_de_componentes_est\u00e1ndar",
       "label": "Familias de componentes est\u00e1ndar",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1464,7 +1643,7 @@
       "id": "skills_soffi_ui_skill_instalaci\u00f3n_y_actualizaci\u00f3n",
       "label": "Instalaci\u00f3n y actualizaci\u00f3n",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1476,7 +1655,7 @@
       "id": "skills_soffi_ui_skill_la_fuente_\u00fanica",
       "label": "La fuente \u00fanica",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1488,7 +1667,7 @@
       "id": "skills_soffi_ui_skill_regla_de_compatibilidad_leer_antes_de_escribir_css",
       "label": "Regla de compatibilidad \u2014 leer antes de escribir CSS",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1500,7 +1679,7 @@
       "id": "skills_soffi_ui_skill_regla_maestra",
       "label": "Regla maestra",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
@@ -1512,97 +1691,13 @@
       "id": "skills_soffi_ui_skill_soffi_ui_sistema_de_dise\u00f1o_soffiweb",
       "label": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "soffi ui \u2014 sistema de diseno soffiweb",
       "source_file": "skills/soffi-ui/SKILL.md",
       "source_location": "L11"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_formularios_parciales_en_modal",
-      "label": "Formularios Parciales En Modal",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "formularios parciales en modal",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L241"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_1_crud_listado",
-      "label": "Patr\u00f3n 1: CRUD/Listado",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "patron 1: crud/listado",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L17"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_2_tabs_con_resumen",
-      "label": "Patr\u00f3n 2: Tabs Con Resumen",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "patron 2: tabs con resumen",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L131"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_3_vista_operativa_financiera",
-      "label": "Patr\u00f3n 3: Vista Operativa Financiera",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "patron 3: vista operativa financiera",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L197"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_reglas_base",
-      "label": "Reglas base",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "reglas base",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_sin_framework_css",
-      "label": "Sin Framework CSS",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "sin framework css",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L306"
-    },
-    {
-      "id": "skills_soffi_ui_view_patterns_soffiweb_ui_patrones_blade",
-      "label": "Soffiweb UI - Patrones Blade",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffiweb UI - Patrones Blade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "soffiweb ui - patrones blade",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L1"
     },
     {
       "id": "agents",
@@ -1724,76 +1819,76 @@
       "source_location": "L1"
     },
     {
-      "id": "skills_soffi_ui_auth",
-      "label": "auth.md",
+      "id": "skills_soffi_ui_components_banner_de_impersonaci\u00f3n_sw_impersonation_banner_ven\u00eda_de_soffifac",
+      "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "auth.md",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_soffi_ui_auth_componentes",
-      "label": "Componentes",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "componentes",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L37"
+      "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2414"
     },
     {
-      "id": "skills_soffi_ui_auth_ejemplo_login",
-      "label": "Ejemplo \u2014 login",
+      "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
+      "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "ejemplo \u2014 login",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L49"
+      "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2382"
     },
     {
-      "id": "skills_soffi_ui_auth_layout_base",
-      "label": "Layout base",
+      "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
+      "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "layout base",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L5"
+      "norm_label": "regla anti doble-espaciado (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2478"
     },
     {
-      "id": "skills_soffi_ui_auth_prohibido_en_estas_pantallas",
-      "label": "Prohibido en estas pantallas",
+      "id": "skills_soffi_ui_components_resumen_de_rol_sw_rol_summary_ven\u00eda_de_gesnom_dev",
+      "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "prohibido en estas pantallas",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L101"
+      "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2455"
     },
     {
-      "id": "skills_soffi_ui_auth_soffiweb_ui_auth_entry_screens",
-      "label": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
+      "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "soffiweb ui \u2014 auth / entry screens",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L1"
+      "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2386"
+    },
+    {
+      "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
+      "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2433"
     },
     {
       "id": "release",
@@ -1878,78 +1973,6 @@
       "norm_label": "tag estable",
       "source_file": "RELEASE.md",
       "source_location": "L44"
-    },
-    {
-      "id": "changelog_0_3_0_2026_09_24",
-      "label": "0.3.0 \u2014 2026-09-24",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "0.3.0 \u2014 2026-09-24",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.3.0 \u2014 2026-09-24",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L191"
-    },
-    {
-      "id": "changelog_agregado_229",
-      "label": "Agregado",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "0.3.0 \u2014 2026-09-24",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "agregado",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L229"
-    },
-    {
-      "id": "changelog_cambios_incompatibles",
-      "label": "Cambios incompatibles",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "0.3.0 \u2014 2026-09-24",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "cambios incompatibles",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L245"
-    },
-    {
-      "id": "changelog_compatibilidad",
-      "label": "Compatibilidad",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "0.3.0 \u2014 2026-09-24",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "compatibilidad",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L211"
-    },
-    {
-      "id": "changelog_estructura",
-      "label": "Estructura",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "0.3.0 \u2014 2026-09-24",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "estructura",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L252"
-    },
-    {
-      "id": "changelog_unificaci\u00f3n",
-      "label": "Unificaci\u00f3n",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "0.3.0 \u2014 2026-09-24",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "unificacion",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L196"
     },
     {
       "id": "scripts_check_release",
@@ -2299,18 +2322,6 @@
       "source_location": "L2510"
     },
     {
-      "id": "skills_soffi_ui_components_banner_de_impersonaci\u00f3n_sw_impersonation_banner_ven\u00eda_de_soffifac",
-      "label": "Banner de impersonaci\u00f3n \u2014 `.sw-impersonation-banner` (ven\u00eda de SoffiFac)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "banner de impersonacion \u2014 `.sw-impersonation-banner` (venia de soffifac)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2414"
-    },
-    {
       "id": "skills_soffi_ui_components_collapse_acorde\u00f3n_html",
       "label": "Collapse / acorde\u00f3n \u2014 HTML",
       "_origin": "ast",
@@ -2321,18 +2332,6 @@
       "norm_label": "collapse / acordeon \u2014 html",
       "source_file": "skills/soffi-ui/components.md",
       "source_location": "L2335"
-    },
-    {
-      "id": "skills_soffi_ui_components_componentes_nuevos_en_0_3_0_unificaci\u00f3n_de_las_4_apps",
-      "label": "Componentes nuevos en 0.3.0 (unificaci\u00f3n de las 4 apps)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "componentes nuevos en 0.3.0 (unificacion de las 4 apps)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2382"
     },
     {
       "id": "skills_soffi_ui_components_componentes_que_no_existen_todav\u00eda",
@@ -2371,30 +2370,6 @@
       "source_location": "L2279"
     },
     {
-      "id": "skills_soffi_ui_components_regla_anti_doble_espaciado_ven\u00eda_de_soffifac",
-      "label": "Regla anti doble-espaciado (ven\u00eda de SoffiFac)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "regla anti doble-espaciado (venia de soffifac)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2478"
-    },
-    {
-      "id": "skills_soffi_ui_components_resumen_de_rol_sw_rol_summary_ven\u00eda_de_gesnom_dev",
-      "label": "Resumen de rol \u2014 `.sw-rol-summary` (ven\u00eda de gesnom `dev`)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "resumen de rol \u2014 `.sw-rol-summary` (venia de gesnom `dev`)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2455"
-    },
-    {
       "id": "skills_soffi_ui_components_soffiweb_ui_components_css",
       "label": "Soffiweb UI \u2014 Components (CSS)",
       "_origin": "ast",
@@ -2405,30 +2380,6 @@
       "norm_label": "soffiweb ui \u2014 components (css)",
       "source_file": "skills/soffi-ui/components.md",
       "source_location": "L1"
-    },
-    {
-      "id": "skills_soffi_ui_components_toast_sw_alert_toast_ven\u00eda_de_soffifac",
-      "label": "Toast \u2014 `.sw-alert-toast` (ven\u00eda de SoffiFac)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "toast \u2014 `.sw-alert-toast` (venia de soffifac)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2386"
-    },
-    {
-      "id": "skills_soffi_ui_components_totales_anclados_sw_table_totals_ven\u00eda_de_gesnom_dev",
-      "label": "Totales anclados \u2014 `.sw-table-totals` (ven\u00eda de gesnom `dev`)",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "totales anclados \u2014 `.sw-table-totals` (venia de gesnom `dev`)",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2433"
     },
     {
       "id": "skills_soffi_ui_components_utilidades",
@@ -2487,6 +2438,90 @@
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "view-patterns.md",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_formularios_parciales_en_modal",
+      "label": "Formularios Parciales En Modal",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "formularios parciales en modal",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L241"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_1_crud_listado",
+      "label": "Patr\u00f3n 1: CRUD/Listado",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 1: crud/listado",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_2_tabs_con_resumen",
+      "label": "Patr\u00f3n 2: Tabs Con Resumen",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 2: tabs con resumen",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L131"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_3_vista_operativa_financiera",
+      "label": "Patr\u00f3n 3: Vista Operativa Financiera",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 3: vista operativa financiera",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L197"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_reglas_base",
+      "label": "Reglas base",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reglas base",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_sin_framework_css",
+      "label": "Sin Framework CSS",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sin framework css",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L306"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_soffiweb_ui_patrones_blade",
+      "label": "Soffiweb UI - Patrones Blade",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "soffiweb ui - patrones blade",
       "source_file": "skills/soffi-ui/view-patterns.md",
       "source_location": "L1"
     },
@@ -2827,6 +2862,18 @@
       "source_location": "L116"
     },
     {
+      "id": "changelog_0_3_0_2026_09_24",
+      "label": "0.3.0 \u2014 2026-09-24",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.3.0 \u2014 2026-09-24",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L191"
+    },
+    {
       "id": "changelog_0_3_0_2026_09_26",
       "label": "0.3.0 \u2014 2026-09-26",
       "_origin": "ast",
@@ -3007,6 +3054,18 @@
       "source_location": "L18"
     },
     {
+      "id": "changelog_agregado_229",
+      "label": "Agregado",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agregado",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L229"
+    },
+    {
       "id": "changelog_agregado_32",
       "label": "Agregado",
       "_origin": "ast",
@@ -3091,6 +3150,18 @@
       "source_location": "L150"
     },
     {
+      "id": "changelog_cambios_incompatibles",
+      "label": "Cambios incompatibles",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cambios incompatibles",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L245"
+    },
+    {
       "id": "changelog_changelog",
       "label": "Changelog",
       "_origin": "ast",
@@ -3101,6 +3172,18 @@
       "norm_label": "changelog",
       "source_file": "CHANGELOG.md",
       "source_location": "L1"
+    },
+    {
+      "id": "changelog_compatibilidad",
+      "label": "Compatibilidad",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "compatibilidad",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L211"
     },
     {
       "id": "changelog_corregido",
@@ -3149,9 +3232,81 @@
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
       "source_location": "L96"
+    },
+    {
+      "id": "changelog_estructura",
+      "label": "Estructura",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "estructura",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L252"
+    },
+    {
+      "id": "changelog_unificaci\u00f3n",
+      "label": "Unificaci\u00f3n",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "unificacion",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L196"
     }
   ],
   "links": [
+    {
+      "source": "docs_gallery_assets_gallery_galcreatepagelink",
+      "target": "docs_gallery_assets_gallery_galgetgalleryurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galinitpagenavigation",
+      "target": "docs_gallery_assets_gallery_galgetgalleryurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galinitpagenavigation",
+      "target": "docs_gallery_assets_gallery_galcreatepagelink",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galinitsidebarspy_updateactive",
+      "target": "docs_gallery_assets_gallery_galinitsidebarspy_setactive",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L230",
+      "weight": 1.0
+    },
     {
       "source": "docs_gallery_assets_gallery_galtoggletableselection",
       "target": "docs_gallery_assets_gallery_galsynctableselection",
@@ -3161,7 +3316,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L120",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -4118,79 +4273,68 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galsynctableselection",
+      "target": "docs_gallery_assets_gallery_galinitpagenavigation",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L102",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtoggletableselection",
+      "target": "docs_gallery_assets_gallery_galcreatepagelink",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L113",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galopenmodal",
+      "target": "docs_gallery_assets_gallery_galroutedocumentationlinks",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L148",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galclosemodal",
+      "target": "docs_gallery_assets_gallery_galgetgalleryurl",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L156",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galactivatetab",
+      "target": "docs_gallery_assets_gallery_galsyncsidebaractive",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L173",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtoggless",
+      "target": "docs_gallery_assets_gallery_galinitsidebarspy",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L190",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galselectss",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L196",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -4206,13 +4350,101 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtoggletablerow",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L250",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galsynctableselection",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtoggletableselection",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L279",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galopenmodal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galclosemodal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galactivatetab",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L339",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtoggless",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L356",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galselectss",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_galfilterss",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L205",
+      "source_location": "L371",
       "weight": 1.0
     },
     {
@@ -4223,7 +4455,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L213",
+      "source_location": "L379",
       "weight": 1.0
     },
     {
@@ -4234,7 +4466,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L221",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -4245,7 +4477,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L242",
+      "source_location": "L408",
       "weight": 1.0
     },
     {
@@ -4256,7 +4488,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L264",
+      "source_location": "L430",
       "weight": 1.0
     },
     {
@@ -4294,13 +4526,24 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtoggletablerow",
+      "target": "docs_gallery_assets_gallery_galpagesequence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galinitsidebarspy",
+      "target": "docs_gallery_assets_gallery_galinitsidebarspy_setactive",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -6116,7 +6359,19 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L146",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galinitsidebarspy",
+      "target": "docs_gallery_assets_gallery_galinitsidebarspy_updateactive",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -6128,7 +6383,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L260",
+      "source_location": "L426",
       "weight": 1.0
     },
     {
@@ -6169,5 +6424,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8a844d6e0e40e5cf4fdab71a67cc06d1bc543149"
+  "built_at_commit": "c2391f466160f7f363b8836dc5383de9d73cab30"
 }

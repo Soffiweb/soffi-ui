@@ -12,20 +12,26 @@
 <link rel="stylesheet" href="../../dist/soffi-ui.css">
 <link rel="stylesheet" href="assets/gallery.css">
 </head>
-<body class="sw-app">
+<body class="sw-app gal-employee-page">
 
 <header class="sw-topbar">
     <div class="sw-topbar-brand">
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-building-columns"></i></span>
+        <img src="assets/Soffiweb-Logo.png" alt="Soffiweb" class="gal-topbar-logo">
         <div class="sw-topbar-tenant">
-            <span class="sw-topbar-company">Empresa Demo S.A.</span>
-            <span class="sw-topbar-period"><i class="fa-regular fa-calendar"></i> Enero — Diciembre 2026</span>
+            <span class="sw-topbar-company">SoffiUI - Soffiweb</span>
         </div>
     </div>
+    <nav class="gal-topnav" aria-label="Navegación principal">
+        <a class="gal-topnav-link" href="index.html"><i class="fa-solid fa-book-open"></i><span>Docs</span></a>
+        <a class="gal-topnav-link active" href="contenido.html#cards" aria-current="page"><i class="fa-solid fa-shapes"></i><span>Components</span></a>
+        <a class="gal-topnav-link" href="primeros-pasos.html"><i class="fa-solid fa-layer-group"></i><span>Patterns</span></a>
+        <a class="gal-topnav-link" href="navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><span>Layout</span></a>
+    </nav>
     <div class="sw-topbar-actions">
+        <div class="gal-topbar-search" aria-label="Buscar documentación"><i class="fa-solid fa-magnifying-glass"></i><span>Search...</span><kbd>⌘ K</kbd></div>
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
             <i class="fa-solid fa-circle-half-stroke"></i>
         </button>
@@ -37,29 +43,47 @@
 <div class="sw-body">
     <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
 
-    <nav class="sw-sidebar" aria-label="Navegación principal">
+    <nav class="sw-sidebar" aria-label="Secciones">
         <div class="sw-sb-brand">
-            <div class="sw-sb-brand-name">Gestión</div>
-            <div class="sw-sb-brand-sub"><a href="index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-swatchbook"></i> Soffi UI</a></div>
+            <div class="sw-sb-brand-name">Documentación Soffi UI</div>
+            <div class="sw-sb-brand-sub">23 componentes + tokens</div>
         </div>
 
-        <div class="sw-sb-group">Principal</div>
-        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <div class="sw-sb-group">Inicio</div>
+        <a href="primeros-pasos.html" class="sw-sb-link"><i class="fa-solid fa-rocket"></i> Primeros pasos</a>
 
-        <div class="sw-sb-group">Gestión</div>
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="tokens.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Componentes</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones y badges</a>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</a>
+        <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos/tablas.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="datos/rol.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos/paginacion.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion/tabs.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion/collapse.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion/breadcrumb.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion/sidebar.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Patrones</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+
+        <div class="sw-sb-group">Ejemplos reales</div>
         <a href="empleados.html" class="sw-sb-link active" aria-current="page"><i class="fa-solid fa-users"></i> Empleados</a>
-        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Datos y tablas</a>
-        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-file-invoice"></i> Formularios</a>
-
-        <div class="sw-sb-group">Reportes</div>
-        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-chart-column"></i> Reportes</a>
-        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-file-export"></i> Exportaciones</a>
-
-        <div class="sw-sb-group">Configuración</div>
-        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-user-gear"></i> Usuarios y permisos</a>
     </nav>
 
-    <main class="sw-main sw-fade-in">
+    <main class="sw-main sw-fade-in gal-employee-main">
         <div class="sw-crud-container">
             <nav class="sw-breadcrumb-nav" aria-label="Migas de pan">
                 <ol class="sw-breadcrumb">
@@ -226,12 +250,17 @@
                 </div>
             </div>
         </div>
+
+        <nav class="gal-page-nav" aria-label="Navegación de documentación">
+            <a class="sw-btn sw-btn-ghost" href="auth.html#auth"><i class="fa-solid fa-arrow-left"></i> Anterior: Auth</a>
+            <a class="sw-btn sw-btn-primary" href="index.html">Volver al inicio <i class="fa-solid fa-house"></i></a>
+        </nav>
     </main>
 </div>
 
 <footer class="sw-footer">
     <span>Soffi UI v1.0.0 — vista real de listado</span>
-    <span class="sw-footer-links"><a href="datos.html#tables">Volver a Datos</a></span>
+    <span class="sw-footer-links"><a href="datos/tablas.html#tables">Volver a Datos</a></span>
 </footer>
 
 <script src="assets/gallery.js"></script>

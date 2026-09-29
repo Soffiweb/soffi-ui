@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tokens — Soffi UI</title>
-<meta name="description" content="Referencia visual e interactiva de soffiweb/soffi-ui, corriendo sobre el CSS real del paquete.">
+<title>Documentación — Soffi UI</title>
+<meta name="description" content="Documentación y galería de componentes de Soffi UI.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +19,20 @@
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-swatchbook"></i></span>
+        <img src="assets/Soffiweb-Logo.png" alt="Soffiweb" class="gal-topbar-logo">
         <div class="sw-topbar-tenant">
-            <span class="sw-topbar-company">Soffi UI</span>
-            <span class="sw-topbar-period">Galería de componentes · v1.0.0</span>
+            <span class="sw-topbar-company">SoffiUI - Soffiweb</span>
         </div>
     </div>
+    <nav class="gal-topnav" aria-label="Navegación principal">
+        <a class="gal-topnav-link active" href="index.html" aria-current="page"><i class="fa-solid fa-book-open"></i><span>Docs</span></a>
+        <a class="gal-topnav-link" href="contenido.html#cards"><i class="fa-solid fa-shapes"></i><span>Components</span></a>
+        <a class="gal-topnav-link" href="primeros-pasos.html"><i class="fa-solid fa-layer-group"></i><span>Patterns</span></a>
+        <a class="gal-topnav-link" href="navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><span>Layout</span></a>
+    </nav>
     <div class="sw-topbar-actions">
-        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> dist/soffi-ui.css</span>
+        <div class="gal-topbar-search" aria-label="Buscar documentación"><i class="fa-solid fa-magnifying-glass"></i><span>Search...</span><kbd>⌘ K</kbd></div>
+        <span class="gal-topbar-status"><i class="fa-solid fa-circle"></i> dist/soffi-ui.css</span>
         <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
             <i class="fa-solid fa-circle-half-stroke"></i>
         </button>
@@ -38,59 +44,48 @@
 
     <nav class="sw-sidebar" aria-label="Secciones">
         <div class="sw-sb-brand">
-            <div class="sw-sb-brand-name">Índice</div>
+            <div class="sw-sb-brand-name">Documentación Soffi UI</div>
             <div class="sw-sb-brand-sub">23 componentes + tokens</div>
         </div>
 
+        <div class="sw-sb-group">Inicio</div>
+        <a href="primeros-pasos.html" class="sw-sb-link"><i class="fa-solid fa-rocket"></i> Primeros pasos</a>
+
         <div class="sw-sb-group">Fundamentos</div>
-        <a href="index.html#tokens" class="sw-sb-link active"><i class="fa-solid fa-palette"></i> Tokens</a>
+        <a href="tokens.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
 
-        <div class="sw-sb-group">Acciones</div>
-        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones</a>
-        <a href="acciones.html#badges" class="sw-sb-link"><i class="fa-solid fa-tag"></i> Badges</a>
-
-        <div class="sw-sb-group">Feedback</div>
-        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
-        <a href="feedback.html#toast" class="sw-sb-link"><i class="fa-solid fa-bell"></i> Toast</a>
-        <a href="feedback.html#impersonation" class="sw-sb-link"><i class="fa-solid fa-user-secret"></i> Banner impersonación</a>
-        <a href="feedback.html#empty-state" class="sw-sb-link"><i class="fa-solid fa-inbox"></i> Estado vacío</a>
-
-        <div class="sw-sb-group">Contenido</div>
+        <div class="sw-sb-group">Componentes</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones y badges</a>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</a>
         <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
-        <a href="contenido.html#action-card" class="sw-sb-link"><i class="fa-solid fa-grip"></i> Action card</a>
-        <a href="contenido.html#product-card" class="sw-sb-link"><i class="fa-solid fa-cart-shopping"></i> Product card</a>
-        <a href="contenido.html#profile-card" class="sw-sb-link"><i class="fa-solid fa-id-badge"></i> Profile card</a>
-
-        <div class="sw-sb-group">Formularios</div>
-        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Inputs &amp; select</a>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
 
         <div class="sw-sb-group">Datos</div>
-        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tabla</a>
-        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Vista real: Empleados</a>
-        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
-        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+        <a href="datos/tablas.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="datos/rol.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos/paginacion.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion/tabs.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion/collapse.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion/breadcrumb.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion/sidebar.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
 
         <div class="sw-sb-group">Overlays</div>
         <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
 
-        <div class="sw-sb-group">Navegación</div>
-        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
-        <a href="navegacion.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
-        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
-        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
-
-        <div class="sw-sb-group">Dashboard</div>
-        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Métricas, quicklinks, dona</a>
-
-        <div class="sw-sb-group">Acceso</div>
+        <div class="sw-sb-group">Patrones</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
         <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+
+        <div class="sw-sb-group">Ejemplos reales</div>
+        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Empleados</a>
     </nav>
 
     <main class="sw-main">
-
         <div class="gal-hero">
-            <h1>Soffi UI — Galería de componentes</h1>
-            <p>Fuente única de estilos para las apps Soffiweb. Cada página corre sobre <code>dist/soffi-ui.css</code> tal cual se publica — no son capturas ni aproximaciones. Tocá "Cambiar tema" arriba a la derecha para ver claro/oscuro (se recuerda entre páginas).</p>
+            <h1>Soffi UI — Documentación</h1>
+            <p>Fuente única de estilos para las apps Soffiweb. Aprende a instalar el paquete, consulta los tokens y explora los componentes reales publicados en <code>dist/soffi-ui.css</code>.</p>
             <div class="gal-hero-meta">
                 <span class="sw-badge sw-badge-primary"><i class="fa-solid fa-code"></i> CSS/JS plano</span>
                 <span class="sw-badge sw-badge-info"><i class="fa-solid fa-ban"></i> sin Bootstrap</span>
@@ -99,167 +94,40 @@
         </div>
 
         <div class="gal-block">
-            <div class="gal-block-title"><h3>Categorías</h3></div>
+            <div class="gal-block-title"><h3>Comienza aquí</h3></div>
             <div class="gal-category-grid">
-                <a class="gal-category-card" href="acciones.html"><i class="fa-solid fa-hand-pointer"></i><strong>Acciones</strong><span>Botones, botones-icono, badges</span></a>
-                <a class="gal-category-card" href="feedback.html"><i class="fa-solid fa-triangle-exclamation"></i><strong>Feedback</strong><span>Alerts, toast, impersonación, estado vacío</span></a>
-                <a class="gal-category-card" href="contenido.html"><i class="fa-regular fa-rectangle-list"></i><strong>Contenido</strong><span>Cards, action card</span></a>
-                <a class="gal-category-card" href="formularios.html"><i class="fa-solid fa-pen-to-square"></i><strong>Formularios</strong><span>Inputs, select buscable, toggle, file</span></a>
-                <a class="gal-category-card" href="datos.html"><i class="fa-solid fa-table"></i><strong>Datos</strong><span>Tabla, resumen de rol, paginación</span></a>
-                <a class="gal-category-card" href="overlays.html"><i class="fa-regular fa-window-restore"></i><strong>Overlays</strong><span>Modal</span></a>
-                <a class="gal-category-card" href="navegacion.html"><i class="fa-solid fa-table-columns"></i><strong>Navegación</strong><span>Tabs, breadcrumb, sidebar &amp; topbar</span></a>
-                <a class="gal-category-card" href="dashboard.html"><i class="fa-solid fa-chart-pie"></i><strong>Dashboard</strong><span>Métricas, quicklinks, dona</span></a>
-                <a class="gal-category-card" href="auth.html"><i class="fa-solid fa-right-to-bracket"></i><strong>Acceso</strong><span>Login</span></a>
+                <a class="gal-category-card" href="primeros-pasos.html"><i class="fa-solid fa-rocket"></i><strong>Primeros pasos</strong><span>Instalación, assets, layout y tema</span></a>
+                <a class="gal-category-card" href="tokens.html#tokens"><i class="fa-solid fa-palette"></i><strong>Tokens</strong><span>Color, tipografía, espaciado, radios y capas</span></a>
             </div>
         </div>
 
-        <!-- ══════════════════ TOKENS ══════════════════ -->
-        <section id="tokens" class="gal-section">
-            <div class="gal-section-head">
-                <h2><i class="fa-solid fa-palette"></i> Tokens</h2>
-                <p>Paleta, tipografía, espaciado, radios y sombras. Colores expuestos como custom properties <code>--sw-*</code> (y sus alias cortos <code>--p</code>, <code>--bc</code>, etc. — no renombrar, ~550 usos en los componentes dependen de ellos).</p>
+        <div class="gal-block">
+            <div class="gal-block-title"><h3>Explora por familia</h3></div>
+            <div class="gal-category-grid">
+                <a class="gal-category-card" href="acciones.html#botones"><i class="fa-solid fa-hand-pointer"></i><strong>Botones y badges</strong><span>Acciones, tamaños, iconos y estados</span></a>
+                <a class="gal-category-card" href="feedback.html#alerts"><i class="fa-solid fa-triangle-exclamation"></i><strong>Alertas</strong><span>Alertas, toast y estados de feedback</span></a>
+                <a class="gal-category-card" href="contenido.html#cards"><i class="fa-regular fa-rectangle-list"></i><strong>Cards</strong><span>Cards genéricas, de acción, producto y perfil</span></a>
+                <a class="gal-category-card" href="formularios.html#forms"><i class="fa-solid fa-pen-to-square"></i><strong>Formularios</strong><span>Inputs, select, toggle y file</span></a>
+                <a class="gal-category-card" href="datos/tablas.html#tables"><i class="fa-solid fa-table"></i><strong>Datos</strong><span>Tablas, resumen de rol y paginación</span></a>
+                <a class="gal-category-card" href="navegacion/tabs.html#tabs"><i class="fa-solid fa-table-columns"></i><strong>Navegación</strong><span>Tabs, collapse, breadcrumb, sidebar y topbar</span></a>
+                <a class="gal-category-card" href="overlays.html#modal"><i class="fa-regular fa-window-restore"></i><strong>Overlays</strong><span>Modal y capas de interacción</span></a>
             </div>
+        </div>
 
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Color — modo claro</h3></div>
-                <div class="gal-swatch-grid">
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#28449a"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-primary</span><span class="gal-swatch-hex">#28449a</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#4361ee"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-secondary</span><span class="gal-swatch-hex">#4361ee</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fa75ad"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-accent</span><span class="gal-swatch-hex">#fa75ad</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#303237"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-neutral</span><span class="gal-swatch-hex">#303237</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00ba7b"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-success</span><span class="gal-swatch-hex">#00ba7b</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fa9700"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-warning</span><span class="gal-swatch-hex">#fa9700</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#e11d48"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-error</span><span class="gal-swatch-hex">#e11d48</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00a4f2"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-info</span><span class="gal-swatch-hex">#00a4f2</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fdfdff;border-bottom:var(--brd)"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-bg</span><span class="gal-swatch-hex">#fdfdff</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#edf1fb"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-surface</span><span class="gal-swatch-hex">#edf1fb</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#151b1e"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-text</span><span class="gal-swatch-hex">#151b1e</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#1e2330"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-sidebar-bg</span><span class="gal-swatch-hex">#1e2330</span></div></div>
-                </div>
+        <div class="gal-block">
+            <div class="gal-block-title"><h3>Patrones y ejemplos</h3></div>
+            <div class="gal-category-grid">
+                <a class="gal-category-card" href="dashboard.html#dashboard"><i class="fa-solid fa-chart-pie"></i><strong>Dashboard</strong><span>Métricas, quicklinks y dona</span></a>
+                <a class="gal-category-card" href="auth.html#auth"><i class="fa-solid fa-right-to-bracket"></i><strong>Auth</strong><span>Login y acceso</span></a>
+                <a class="gal-category-card" href="empleados.html"><i class="fa-solid fa-users"></i><strong>Empleados</strong><span>Ejemplo real de una vista operativa</span></a>
             </div>
-
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Color — modo oscuro</h3></div>
-                <div class="gal-swatch-grid">
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#7da4e0"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-primary</span><span class="gal-swatch-hex">#7da4e0</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#9dbde8"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-secondary</span><span class="gal-swatch-hex">#9dbde8</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fb8dc0"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-accent</span><span class="gal-swatch-hex">#fb8dc0</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00d390"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-success</span><span class="gal-swatch-hex">#00d390</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fcb700"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-warning</span><span class="gal-swatch-hex">#fcb700</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#ff627d"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-error</span><span class="gal-swatch-hex">#ff627d</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00bafe"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-info</span><span class="gal-swatch-hex">#00bafe</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#2a3040"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-bg</span><span class="gal-swatch-hex">#2a3040</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#222736"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-surface</span><span class="gal-swatch-hex">#222736</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#e8ecf4"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-text</span><span class="gal-swatch-hex">#e8ecf4</span></div></div>
-                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#111520"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-sidebar-bg</span><span class="gal-swatch-hex">#111520</span></div></div>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Tipografía</h3><span>--sw-font-sans: "Inter"</span></div>
-                <div class="gal-preview gal-preview-block">
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-3xs / 10px</span><span style="font-size:10px">Etiqueta bajo dona (dashboard)</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-2xs / 11px</span><span style="font-size:11px">Notas al pie, badges</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-xs / 12px</span><span style="font-size:12px">Labels, hints</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-sm / 13px</span><span style="font-size:13px">Tablas, texto secundario</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-base / 14px</span><span style="font-size:14px">Texto de trabajo</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-md / 15px</span><span style="font-size:15px">Inputs, botones</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-lg / 16px</span><span style="font-size:16px">Títulos de card</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-xl / 20px</span><span style="font-size:20px">Título de página</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-2xl / 22px</span><span style="font-size:22px">Cifras de dashboard</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-3xl / 28px</span><span style="font-size:28px;font-weight:700">KPI grandes</span></div>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Espaciado &amp; radios</h3></div>
-                <div class="gal-preview gal-preview-block">
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-xs / 0.25rem</span><div class="gal-space-box" style="width:4px"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-sm / 0.5rem</span><div class="gal-space-box" style="width:8px"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-md / 1rem</span><div class="gal-space-box" style="width:16px"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-lg / 1.5rem</span><div class="gal-space-box" style="width:24px"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-xl / 2rem</span><div class="gal-space-box" style="width:32px"></div></div>
-                </div>
-                <div class="gal-preview gal-preview-block" style="margin-top:10px">
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-sm / 0.25rem</span><div class="gal-space-box" style="width:56px;border-radius:0.25rem"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-md (--r) / 0.65rem</span><div class="gal-space-box" style="width:56px;border-radius:0.65rem"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-lg (--rl) / 1.1rem</span><div class="gal-space-box" style="width:56px;border-radius:1.1rem"></div></div>
-                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-pill / 9999px</span><div class="gal-space-box" style="width:56px;border-radius:9999px"></div></div>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Sombras</h3></div>
-                <div class="gal-preview">
-                    <div class="gal-shadow-row">
-                        <div class="gal-shadow-card" style="box-shadow:var(--sh-sm)">--sh-sm</div>
-                        <div class="gal-shadow-card" style="box-shadow:var(--sh-md)">--sh-md</div>
-                        <div class="gal-shadow-card" style="box-shadow:var(--sh-lg)">--sh-lg</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Capas (z-index)</h3><span>src/tokens/z-index.css</span></div>
-                <p>Escala compartida para que un overlay propio (un dropdown, un panel flotante) sepa dónde ubicarse frente a los del sistema, en vez de adivinar un número.</p>
-                <div class="gal-preview gal-preview-block">
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sticky / 40</span><span>Navbar superior (position: sticky)</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sidebar-backdrop / 50</span><span>Fondo oscuro detrás del sidebar móvil</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sidebar / 60</span><span>Panel del sidebar móvil</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-dropdown / 100</span><span>Select, menú de usuario, menú de fila de tabla</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-modal-backdrop / 1060</span><span>Fondo del modal</span></div>
-                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-toast / 1080</span><span>Notificación flotante</span></div>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <div class="gal-block-title"><h3>Ejemplos de uso</h3></div>
-                <p>Los tokens son custom properties normales: se leen con <code>var(--sw-*)</code> y se pisan declarando el mismo nombre después de cargar <code>soffi-ui.css</code>, sin tocar el paquete.</p>
-
-                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r)">
-                    <summary><i class="fa-solid fa-chevron-right"></i> Personalizar la marca</summary>
-                    <div class="gal-code-body">
-                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                        <pre><code>/* en el CSS de tu app, cargado DESPUÉS de soffi-ui.css */
-:root {
-    --sw-primary: #6d28d9;
-    --sw-radius-lg: 0.5rem;
-}</code></pre>
-                    </div>
-                </details>
-
-                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r);margin-top:10px">
-                    <summary><i class="fa-solid fa-chevron-right"></i> Espaciado consistente en un componente propio</summary>
-                    <div class="gal-code-body">
-                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                        <pre><code>/* en vez de inventar un rem suelto */
-.mi-card {
-    padding: var(--sw-spacing-md);
-    gap: var(--sw-spacing-sm);
-}</code></pre>
-                    </div>
-                </details>
-
-                <details class="gal-code" style="border-top:var(--brd);border-radius:var(--r);margin-top:10px">
-                    <summary><i class="fa-solid fa-chevron-right"></i> Apilar un overlay propio en la capa correcta</summary>
-                    <div class="gal-code-body">
-                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                        <pre><code>/* un panel flotante propio, mismo nivel que los dropdowns
-   del sistema — nunca por encima de un modal o un toast */
-.mi-panel-flotante {
-    position: fixed;
-    z-index: var(--sw-z-dropdown);
-}</code></pre>
-                    </div>
-                </details>
-            </div>
-        </section>
-
+        </div>
     </main>
 </div>
 
 <footer class="sw-footer">
     <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+    <span class="sw-footer-links"><a href="primeros-pasos.html">Primeros pasos</a></span>
 </footer>
 
 <script src="assets/gallery.js"></script>
