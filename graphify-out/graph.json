@@ -39,7 +39,19 @@
       "file_type": "code",
       "norm_label": "galactivatetab()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L525"
+      "source_location": "L526"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galcloseallrowmenus",
+      "label": "galCloseAllRowMenus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galcloseallrowmenus()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L608"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosedropdowns",
@@ -87,7 +99,7 @@
       "file_type": "code",
       "norm_label": "galcopy()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L617"
+      "source_location": "L681"
     },
     {
       "id": "docs_gallery_assets_gallery_galcreatepagelink",
@@ -111,7 +123,7 @@
       "file_type": "code",
       "norm_label": "galfilterss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L557"
+      "source_location": "L558"
     },
     {
       "id": "docs_gallery_assets_gallery_galfocusmodal",
@@ -246,6 +258,18 @@
       "source_location": "L479"
     },
     {
+      "id": "docs_gallery_assets_gallery_galpositionrowmenu",
+      "label": "galPositionRowMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galpositionrowmenu()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L574"
+    },
+    {
       "id": "docs_gallery_assets_gallery_galrendersidebar",
       "label": "galRenderSidebar()",
       "_callable": true,
@@ -256,6 +280,30 @@
       "norm_label": "galrendersidebar()",
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L103"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galrepositionrowmenus",
+      "label": "galRepositionRowMenus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galrepositionrowmenus()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L636"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galrestorerowmenu",
+      "label": "galRestoreRowMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galrestorerowmenu()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L598"
     },
     {
       "id": "docs_gallery_assets_gallery_galroutedocumentationlinks",
@@ -279,7 +327,7 @@
       "file_type": "code",
       "norm_label": "galselectss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L548"
+      "source_location": "L549"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast",
@@ -291,7 +339,7 @@
       "file_type": "code",
       "norm_label": "galshowtoast()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L595"
+      "source_location": "L659"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast_dismiss",
@@ -303,7 +351,7 @@
       "file_type": "code",
       "norm_label": "dismiss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L604"
+      "source_location": "L668"
     },
     {
       "id": "docs_gallery_assets_gallery_galsyncsidebaractive",
@@ -363,7 +411,7 @@
       "file_type": "code",
       "norm_label": "galtogglefav()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L565"
+      "source_location": "L566"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglerowmenu",
@@ -375,7 +423,7 @@
       "file_type": "code",
       "norm_label": "galtogglerowmenu()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L573"
+      "source_location": "L617"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglesidebar",
@@ -399,7 +447,7 @@
       "file_type": "code",
       "norm_label": "galtoggless()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L542"
+      "source_location": "L543"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletablerow",
@@ -1758,184 +1806,172 @@
       "source_location": "L59"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_formularios_parciales_en_modal",
-      "label": "Formularios Parciales En Modal",
+      "id": "skills_soffi_ui_components_dropdown_sw_dropdown",
+      "label": "Dropdown \u2014 `.sw-dropdown*`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "formularios parciales en modal",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L241"
+      "norm_label": "dropdown \u2014 `.sw-dropdown*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2502"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_1_crud_listado",
-      "label": "Patr\u00f3n 1: CRUD/Listado",
+      "id": "skills_soffi_ui_components_impresi\u00f3n_sw_print",
+      "label": "Impresi\u00f3n \u2014 `.sw-print-*`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "patron 1: crud/listado",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L17"
+      "norm_label": "impresion \u2014 `.sw-print-*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2591"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_2_tabs_con_resumen",
-      "label": "Patr\u00f3n 2: Tabs Con Resumen",
+      "id": "skills_soffi_ui_components_skeleton_sw_skeleton",
+      "label": "Skeleton \u2014 `.sw-skeleton*`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "patron 2: tabs con resumen",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L131"
+      "norm_label": "skeleton \u2014 `.sw-skeleton*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2554"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_3_vista_operativa_financiera",
-      "label": "Patr\u00f3n 3: Vista Operativa Financiera",
+      "id": "skills_soffi_ui_components_spinner_sw_spinner",
+      "label": "Spinner \u2014 `.sw-spinner*`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "patron 3: vista operativa financiera",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L197"
+      "norm_label": "spinner \u2014 `.sw-spinner*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2521"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_reglas_base",
-      "label": "Reglas base",
+      "id": "skills_soffi_ui_components_stepper_sw_stepper",
+      "label": "Stepper \u2014 `.sw-stepper*`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "reglas base",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L7"
+      "norm_label": "stepper \u2014 `.sw-stepper*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2579"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_sin_framework_css",
-      "label": "Sin Framework CSS",
+      "id": "skills_soffi_ui_components_switch_sw_switch",
+      "label": "Switch \u2014 `.sw-switch*`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "sin framework css",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L306"
+      "norm_label": "switch \u2014 `.sw-switch*`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2541"
     },
     {
-      "id": "skills_soffi_ui_view_patterns_soffiweb_ui_patrones_blade",
-      "label": "Soffiweb UI - Patrones Blade",
+      "id": "skills_soffi_ui_components_tooltip_sw_tooltip",
+      "label": "Tooltip \u2014 `.sw-tooltip`",
       "_origin": "ast",
       "community": 16,
-      "community_name": "Soffiweb UI - Patrones Blade",
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "soffiweb ui - patrones blade",
-      "source_file": "skills/soffi-ui/view-patterns.md",
-      "source_location": "L1"
+      "norm_label": "tooltip \u2014 `.sw-tooltip`",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2530"
     },
     {
-      "id": "skills_soffi_ui_skill_capa_blade_del_paquete",
-      "label": "Capa Blade del paquete",
+      "id": "skills_soffi_ui_components_utilidades_nuevas_en_0_11_0",
+      "label": "Utilidades nuevas en 0.11.0",
       "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community": 16,
+      "community_name": "Utilidades nuevas en 0.11.0",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "capa blade del paquete",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L129"
+      "norm_label": "utilidades nuevas en 0.11.0",
+      "source_file": "skills/soffi-ui/components.md",
+      "source_location": "L2498"
     },
     {
-      "id": "skills_soffi_ui_skill_cap\u00edtulos",
-      "label": "Cap\u00edtulos",
+      "id": "changelog_0_3_0_2026_09_24",
+      "label": "0.3.0 \u2014 2026-09-24",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community_name": "0.3.0 \u2014 2026-09-24",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "capitulos",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L94"
+      "norm_label": "0.3.0 \u2014 2026-09-24",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L231"
     },
     {
-      "id": "skills_soffi_ui_skill_familias_de_componentes_est\u00e1ndar",
-      "label": "Familias de componentes est\u00e1ndar",
+      "id": "changelog_agregado_269",
+      "label": "Agregado",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community_name": "0.3.0 \u2014 2026-09-24",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "familias de componentes estandar",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L110"
+      "norm_label": "agregado",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L269"
     },
     {
-      "id": "skills_soffi_ui_skill_instalaci\u00f3n_y_actualizaci\u00f3n",
-      "label": "Instalaci\u00f3n y actualizaci\u00f3n",
+      "id": "changelog_cambios_incompatibles",
+      "label": "Cambios incompatibles",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community_name": "0.3.0 \u2014 2026-09-24",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "instalacion y actualizacion",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L37"
+      "norm_label": "cambios incompatibles",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L285"
     },
     {
-      "id": "skills_soffi_ui_skill_la_fuente_\u00fanica",
-      "label": "La fuente \u00fanica",
+      "id": "changelog_compatibilidad",
+      "label": "Compatibilidad",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community_name": "0.3.0 \u2014 2026-09-24",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "la fuente unica",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L13"
+      "norm_label": "compatibilidad",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L251"
     },
     {
-      "id": "skills_soffi_ui_skill_regla_de_compatibilidad_leer_antes_de_escribir_css",
-      "label": "Regla de compatibilidad \u2014 leer antes de escribir CSS",
+      "id": "changelog_estructura",
+      "label": "Estructura",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community_name": "0.3.0 \u2014 2026-09-24",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "regla de compatibilidad \u2014 leer antes de escribir css",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L75"
+      "norm_label": "estructura",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L292"
     },
     {
-      "id": "skills_soffi_ui_skill_regla_maestra",
-      "label": "Regla maestra",
+      "id": "changelog_unificaci\u00f3n",
+      "label": "Unificaci\u00f3n",
       "_origin": "ast",
       "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
+      "community_name": "0.3.0 \u2014 2026-09-24",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "regla maestra",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L59"
-    },
-    {
-      "id": "skills_soffi_ui_skill_soffi_ui_sistema_de_dise\u00f1o_soffiweb",
-      "label": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "soffi ui \u2014 sistema de diseno soffiweb",
-      "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L11"
+      "norm_label": "unificacion",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L236"
     },
     {
       "id": "agents",
@@ -2068,100 +2104,100 @@
       "source_location": "L1"
     },
     {
-      "id": "skills_soffi_ui_components_dropdown_sw_dropdown",
-      "label": "Dropdown \u2014 `.sw-dropdown*`",
+      "id": "skills_soffi_ui_skill_capa_blade_del_paquete",
+      "label": "Capa Blade del paquete",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "dropdown \u2014 `.sw-dropdown*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2502"
+      "norm_label": "capa blade del paquete",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L129"
     },
     {
-      "id": "skills_soffi_ui_components_impresi\u00f3n_sw_print",
-      "label": "Impresi\u00f3n \u2014 `.sw-print-*`",
+      "id": "skills_soffi_ui_skill_cap\u00edtulos",
+      "label": "Cap\u00edtulos",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "impresion \u2014 `.sw-print-*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2591"
+      "norm_label": "capitulos",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L94"
     },
     {
-      "id": "skills_soffi_ui_components_skeleton_sw_skeleton",
-      "label": "Skeleton \u2014 `.sw-skeleton*`",
+      "id": "skills_soffi_ui_skill_familias_de_componentes_est\u00e1ndar",
+      "label": "Familias de componentes est\u00e1ndar",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "skeleton \u2014 `.sw-skeleton*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2554"
+      "norm_label": "familias de componentes estandar",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L110"
     },
     {
-      "id": "skills_soffi_ui_components_spinner_sw_spinner",
-      "label": "Spinner \u2014 `.sw-spinner*`",
+      "id": "skills_soffi_ui_skill_instalaci\u00f3n_y_actualizaci\u00f3n",
+      "label": "Instalaci\u00f3n y actualizaci\u00f3n",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "spinner \u2014 `.sw-spinner*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2521"
+      "norm_label": "instalacion y actualizacion",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L37"
     },
     {
-      "id": "skills_soffi_ui_components_stepper_sw_stepper",
-      "label": "Stepper \u2014 `.sw-stepper*`",
+      "id": "skills_soffi_ui_skill_la_fuente_\u00fanica",
+      "label": "La fuente \u00fanica",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "stepper \u2014 `.sw-stepper*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2579"
+      "norm_label": "la fuente unica",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L13"
     },
     {
-      "id": "skills_soffi_ui_components_switch_sw_switch",
-      "label": "Switch \u2014 `.sw-switch*`",
+      "id": "skills_soffi_ui_skill_regla_de_compatibilidad_leer_antes_de_escribir_css",
+      "label": "Regla de compatibilidad \u2014 leer antes de escribir CSS",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "switch \u2014 `.sw-switch*`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2541"
+      "norm_label": "regla de compatibilidad \u2014 leer antes de escribir css",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L75"
     },
     {
-      "id": "skills_soffi_ui_components_tooltip_sw_tooltip",
-      "label": "Tooltip \u2014 `.sw-tooltip`",
+      "id": "skills_soffi_ui_skill_regla_maestra",
+      "label": "Regla maestra",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "tooltip \u2014 `.sw-tooltip`",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2530"
+      "norm_label": "regla maestra",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L59"
     },
     {
-      "id": "skills_soffi_ui_components_utilidades_nuevas_en_0_11_0",
-      "label": "Utilidades nuevas en 0.11.0",
+      "id": "skills_soffi_ui_skill_soffi_ui_sistema_de_dise\u00f1o_soffiweb",
+      "label": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Utilidades nuevas en 0.11.0",
+      "community_name": "Soffi UI \u2014 sistema de dise\u00f1o Soffiweb",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "utilidades nuevas en 0.11.0",
-      "source_file": "skills/soffi-ui/components.md",
-      "source_location": "L2498"
+      "norm_label": "soffi ui \u2014 sistema de diseno soffiweb",
+      "source_file": "skills/soffi-ui/SKILL.md",
+      "source_location": "L11"
     },
     {
       "id": "release",
@@ -2324,7 +2360,7 @@
       "node_kind": "heading",
       "norm_label": "collapse / acordeon",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L151"
+      "source_location": "L155"
     },
     {
       "id": "skills_soffi_ui_js_dependencias",
@@ -2348,7 +2384,7 @@
       "node_kind": "heading",
       "norm_label": "dropdown generico",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L69"
+      "source_location": "L73"
     },
     {
       "id": "skills_soffi_ui_js_en_react",
@@ -2360,7 +2396,7 @@
       "node_kind": "heading",
       "norm_label": "en react",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L332"
+      "source_location": "L336"
     },
     {
       "id": "skills_soffi_ui_js_funciones_de_alerta_nuevas_en_0_3_0_ven\u00edan_de_soffifac",
@@ -2372,7 +2408,7 @@
       "node_kind": "heading",
       "norm_label": "funciones de alerta (nuevas en 0.3.0, venian de soffifac)",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L296"
+      "source_location": "L300"
     },
     {
       "id": "skills_soffi_ui_js_inputs",
@@ -2384,7 +2420,7 @@
       "node_kind": "heading",
       "norm_label": "inputs",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L201"
+      "source_location": "L205"
     },
     {
       "id": "skills_soffi_ui_js_menu_de_acciones_secundarias_por_fila",
@@ -2408,7 +2444,7 @@
       "node_kind": "heading",
       "norm_label": "modal de edicion: el patron correcto",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L218"
+      "source_location": "L222"
     },
     {
       "id": "skills_soffi_ui_js_modales",
@@ -2420,7 +2456,7 @@
       "node_kind": "heading",
       "norm_label": "modales",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L92"
+      "source_location": "L96"
     },
     {
       "id": "skills_soffi_ui_js_reglas",
@@ -2432,7 +2468,7 @@
       "node_kind": "heading",
       "norm_label": "reglas",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L284"
+      "source_location": "L288"
     },
     {
       "id": "skills_soffi_ui_js_select_buscador_propio",
@@ -2444,7 +2480,7 @@
       "node_kind": "heading",
       "norm_label": "select buscador propio",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L208"
+      "source_location": "L212"
     },
     {
       "id": "skills_soffi_ui_js_sidebar_y_men\u00fa_de_usuario",
@@ -2480,7 +2516,7 @@
       "node_kind": "heading",
       "norm_label": "`swdismissalert(alert)`",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L312"
+      "source_location": "L316"
     },
     {
       "id": "skills_soffi_ui_js_swinitalerts",
@@ -2492,7 +2528,7 @@
       "node_kind": "heading",
       "norm_label": "`swinitalerts()`",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L301"
+      "source_location": "L305"
     },
     {
       "id": "skills_soffi_ui_js_swstackalerts",
@@ -2504,7 +2540,7 @@
       "node_kind": "heading",
       "norm_label": "`swstackalerts()`",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L318"
+      "source_location": "L322"
     },
     {
       "id": "skills_soffi_ui_js_tabs",
@@ -2516,7 +2552,7 @@
       "node_kind": "heading",
       "norm_label": "tabs",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L134"
+      "source_location": "L138"
     },
     {
       "id": "skills_soffi_ui_js_tema",
@@ -2540,7 +2576,7 @@
       "node_kind": "heading",
       "norm_label": "validacion de formularios",
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L173"
+      "source_location": "L177"
     },
     {
       "id": "scripts_check_compat",
@@ -2871,6 +2907,90 @@
       "source_location": "L1"
     },
     {
+      "id": "skills_soffi_ui_view_patterns_formularios_parciales_en_modal",
+      "label": "Formularios Parciales En Modal",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "formularios parciales en modal",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L241"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_1_crud_listado",
+      "label": "Patr\u00f3n 1: CRUD/Listado",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 1: crud/listado",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_2_tabs_con_resumen",
+      "label": "Patr\u00f3n 2: Tabs Con Resumen",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 2: tabs con resumen",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L131"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_patr\u00f3n_3_vista_operativa_financiera",
+      "label": "Patr\u00f3n 3: Vista Operativa Financiera",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "patron 3: vista operativa financiera",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L197"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_reglas_base",
+      "label": "Reglas base",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reglas base",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_sin_framework_css",
+      "label": "Sin Framework CSS",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sin framework css",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L306"
+    },
+    {
+      "id": "skills_soffi_ui_view_patterns_soffiweb_ui_patrones_blade",
+      "label": "Soffiweb UI - Patrones Blade",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "soffiweb ui - patrones blade",
+      "source_file": "skills/soffi-ui/view-patterns.md",
+      "source_location": "L1"
+    },
+    {
       "id": "skills_soffi_ui_laravel_contrato_de_consistencia_visual",
       "label": "Contrato de consistencia visual",
       "_origin": "ast",
@@ -3180,7 +3300,7 @@
       "node_kind": "heading",
       "norm_label": "0.10.0 \u2014 2026-09-29",
       "source_file": "CHANGELOG.md",
-      "source_location": "L27"
+      "source_location": "L34"
     },
     {
       "id": "changelog_0_11_0_2026_09_29",
@@ -3192,7 +3312,7 @@
       "node_kind": "heading",
       "norm_label": "0.11.0 \u2014 2026-09-29",
       "source_file": "CHANGELOG.md",
-      "source_location": "L18"
+      "source_location": "L25"
     },
     {
       "id": "changelog_0_11_1_2026_09_29",
@@ -3204,7 +3324,7 @@
       "node_kind": "heading",
       "norm_label": "0.11.1 \u2014 2026-09-29",
       "source_file": "CHANGELOG.md",
-      "source_location": "L10"
+      "source_location": "L17"
     },
     {
       "id": "changelog_0_11_2_2026_09_29",
@@ -3215,6 +3335,18 @@
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "0.11.2 \u2014 2026-09-29",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "changelog_0_11_3_2026_09_29",
+      "label": "0.11.3 \u2014 2026-09-29",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.11.3 \u2014 2026-09-29",
       "source_file": "CHANGELOG.md",
       "source_location": "L3"
     },
@@ -3228,7 +3360,7 @@
       "node_kind": "heading",
       "norm_label": "0.1.0 \u2014 2026-09-25",
       "source_file": "CHANGELOG.md",
-      "source_location": "L196"
+      "source_location": "L203"
     },
     {
       "id": "changelog_0_1_1_2026_09_25",
@@ -3240,7 +3372,7 @@
       "node_kind": "heading",
       "norm_label": "0.1.1 \u2014 2026-09-25",
       "source_file": "CHANGELOG.md",
-      "source_location": "L181"
+      "source_location": "L188"
     },
     {
       "id": "changelog_0_2_0_2026_09_26",
@@ -3252,19 +3384,7 @@
       "node_kind": "heading",
       "norm_label": "0.2.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L149"
-    },
-    {
-      "id": "changelog_0_3_0_2026_09_24",
-      "label": "0.3.0 \u2014 2026-09-24",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.3.0 \u2014 2026-09-24",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L224"
+      "source_location": "L156"
     },
     {
       "id": "changelog_0_3_0_2026_09_26",
@@ -3276,7 +3396,7 @@
       "node_kind": "heading",
       "norm_label": "0.3.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L136"
+      "source_location": "L143"
     },
     {
       "id": "changelog_0_4_0_2026_09_25",
@@ -3288,7 +3408,7 @@
       "node_kind": "heading",
       "norm_label": "0.4.0 \u2014 2026-09-25",
       "source_file": "CHANGELOG.md",
-      "source_location": "L210"
+      "source_location": "L217"
     },
     {
       "id": "changelog_0_4_0_2026_09_26",
@@ -3300,7 +3420,7 @@
       "node_kind": "heading",
       "norm_label": "0.4.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L117"
+      "source_location": "L124"
     },
     {
       "id": "changelog_0_5_0_2026_09_26",
@@ -3312,7 +3432,7 @@
       "node_kind": "heading",
       "norm_label": "0.5.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L103"
+      "source_location": "L110"
     },
     {
       "id": "changelog_0_6_0_2026_09_26",
@@ -3324,7 +3444,7 @@
       "node_kind": "heading",
       "norm_label": "0.6.0 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L82"
+      "source_location": "L89"
     },
     {
       "id": "changelog_0_6_1_2026_09_26",
@@ -3336,7 +3456,7 @@
       "node_kind": "heading",
       "norm_label": "0.6.1 \u2014 2026-09-26",
       "source_file": "CHANGELOG.md",
-      "source_location": "L71"
+      "source_location": "L78"
     },
     {
       "id": "changelog_0_7_0_2026_09_28",
@@ -3348,7 +3468,7 @@
       "node_kind": "heading",
       "norm_label": "0.7.0 \u2014 2026-09-28",
       "source_file": "CHANGELOG.md",
-      "source_location": "L63"
+      "source_location": "L70"
     },
     {
       "id": "changelog_0_8_0_2026_09_28",
@@ -3360,7 +3480,7 @@
       "node_kind": "heading",
       "norm_label": "0.8.0 \u2014 2026-09-28",
       "source_file": "CHANGELOG.md",
-      "source_location": "L49"
+      "source_location": "L56"
     },
     {
       "id": "changelog_0_9_0_2026_09_28",
@@ -3372,7 +3492,7 @@
       "node_kind": "heading",
       "norm_label": "0.9.0 \u2014 2026-09-28",
       "source_file": "CHANGELOG.md",
-      "source_location": "L36"
+      "source_location": "L43"
     },
     {
       "id": "changelog_0_9_0_rc_1_2026_09_28",
@@ -3384,7 +3504,7 @@
       "node_kind": "heading",
       "norm_label": "0.9.0-rc.1 \u2014 2026-09-28",
       "source_file": "CHANGELOG.md",
-      "source_location": "L41"
+      "source_location": "L48"
     },
     {
       "id": "changelog_agregado",
@@ -3396,10 +3516,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L20"
+      "source_location": "L27"
     },
     {
-      "id": "changelog_agregado_105",
+      "id": "changelog_agregado_112",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3408,10 +3528,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L105"
+      "source_location": "L112"
     },
     {
-      "id": "changelog_agregado_119",
+      "id": "changelog_agregado_126",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3420,10 +3540,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L119"
+      "source_location": "L126"
     },
     {
-      "id": "changelog_agregado_154",
+      "id": "changelog_agregado_161",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3432,10 +3552,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L154"
+      "source_location": "L161"
     },
     {
-      "id": "changelog_agregado_201",
+      "id": "changelog_agregado_208",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3444,10 +3564,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L201"
+      "source_location": "L208"
     },
     {
-      "id": "changelog_agregado_212",
+      "id": "changelog_agregado_219",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3456,10 +3576,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L212"
+      "source_location": "L219"
     },
     {
-      "id": "changelog_agregado_262",
+      "id": "changelog_agregado_36",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3468,10 +3588,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L262"
+      "source_location": "L36"
     },
     {
-      "id": "changelog_agregado_29",
+      "id": "changelog_agregado_50",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3480,10 +3600,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L29"
+      "source_location": "L50"
     },
     {
-      "id": "changelog_agregado_43",
+      "id": "changelog_agregado_58",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3492,10 +3612,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L43"
+      "source_location": "L58"
     },
     {
-      "id": "changelog_agregado_51",
+      "id": "changelog_agregado_72",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3504,10 +3624,10 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L51"
+      "source_location": "L72"
     },
     {
-      "id": "changelog_agregado_65",
+      "id": "changelog_agregado_93",
       "label": "Agregado",
       "_origin": "ast",
       "community": 9,
@@ -3516,19 +3636,7 @@
       "node_kind": "heading",
       "norm_label": "agregado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L65"
-    },
-    {
-      "id": "changelog_agregado_86",
-      "label": "Agregado",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "agregado",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L86"
+      "source_location": "L93"
     },
     {
       "id": "changelog_cambiado",
@@ -3540,10 +3648,10 @@
       "node_kind": "heading",
       "norm_label": "cambiado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L138"
+      "source_location": "L145"
     },
     {
-      "id": "changelog_cambiado_174",
+      "id": "changelog_cambiado_181",
       "label": "Cambiado",
       "_origin": "ast",
       "community": 9,
@@ -3552,10 +3660,10 @@
       "node_kind": "heading",
       "norm_label": "cambiado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L174"
+      "source_location": "L181"
     },
     {
-      "id": "changelog_cambiado_183",
+      "id": "changelog_cambiado_190",
       "label": "Cambiado",
       "_origin": "ast",
       "community": 9,
@@ -3564,19 +3672,7 @@
       "node_kind": "heading",
       "norm_label": "cambiado",
       "source_file": "CHANGELOG.md",
-      "source_location": "L183"
-    },
-    {
-      "id": "changelog_cambios_incompatibles",
-      "label": "Cambios incompatibles",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "cambios incompatibles",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L278"
+      "source_location": "L190"
     },
     {
       "id": "changelog_changelog",
@@ -3589,18 +3685,6 @@
       "norm_label": "changelog",
       "source_file": "CHANGELOG.md",
       "source_location": "L1"
-    },
-    {
-      "id": "changelog_compatibilidad",
-      "label": "Compatibilidad",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "compatibilidad",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L244"
     },
     {
       "id": "changelog_corregido",
@@ -3627,7 +3711,7 @@
       "source_location": "L12"
     },
     {
-      "id": "changelog_corregido_129",
+      "id": "changelog_corregido_136",
       "label": "Corregido",
       "_origin": "ast",
       "community": 9,
@@ -3636,10 +3720,10 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L129"
+      "source_location": "L136"
     },
     {
-      "id": "changelog_corregido_165",
+      "id": "changelog_corregido_172",
       "label": "Corregido",
       "_origin": "ast",
       "community": 9,
@@ -3648,10 +3732,10 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L165"
+      "source_location": "L172"
     },
     {
-      "id": "changelog_corregido_57",
+      "id": "changelog_corregido_19",
       "label": "Corregido",
       "_origin": "ast",
       "community": 9,
@@ -3660,10 +3744,10 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L57"
+      "source_location": "L19"
     },
     {
-      "id": "changelog_corregido_73",
+      "id": "changelog_corregido_64",
       "label": "Corregido",
       "_origin": "ast",
       "community": 9,
@@ -3672,34 +3756,34 @@
       "node_kind": "heading",
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L73"
+      "source_location": "L64"
     },
     {
-      "id": "changelog_estructura",
-      "label": "Estructura",
+      "id": "changelog_corregido_80",
+      "label": "Corregido",
       "_origin": "ast",
       "community": 9,
       "community_name": "Changelog",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "estructura",
+      "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
-      "source_location": "L285"
-    },
-    {
-      "id": "changelog_unificaci\u00f3n",
-      "label": "Unificaci\u00f3n",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Changelog",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "unificacion",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L229"
+      "source_location": "L80"
     }
   ],
   "links": [
+    {
+      "source": "docs_gallery_assets_gallery_galcloseallrowmenus",
+      "target": "docs_gallery_assets_gallery_galrestorerowmenu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L613",
+      "weight": 1.0
+    },
     {
       "source": "docs_gallery_assets_gallery_galcreatepagelink",
       "target": "docs_gallery_assets_gallery_galgetgalleryurl",
@@ -3785,6 +3869,18 @@
       "weight": 1.0
     },
     {
+      "source": "docs_gallery_assets_gallery_galrepositionrowmenus",
+      "target": "docs_gallery_assets_gallery_galpositionrowmenu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L638",
+      "weight": 1.0
+    },
+    {
       "source": "docs_gallery_assets_gallery_galtoggledropdown",
       "target": "docs_gallery_assets_gallery_galclosedropdowns",
       "relation": "calls",
@@ -3794,6 +3890,30 @@
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galtogglerowmenu",
+      "target": "docs_gallery_assets_gallery_galcloseallrowmenus",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L622",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galtogglerowmenu",
+      "target": "docs_gallery_assets_gallery_galpositionrowmenu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L631",
       "weight": 1.0
     },
     {
@@ -4142,13 +4262,13 @@
     },
     {
       "source": "changelog_0_10_0_2026_09_29",
-      "target": "changelog_agregado_29",
+      "target": "changelog_agregado_36",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L29",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -4159,11 +4279,22 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L20",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
       "source": "changelog_0_11_1_2026_09_29",
+      "target": "changelog_corregido_19",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_0_11_2_2026_09_29",
       "target": "changelog_corregido_12",
       "relation": "contains",
       "_origin": "ast",
@@ -4174,7 +4305,7 @@
       "weight": 1.0
     },
     {
-      "source": "changelog_0_11_2_2026_09_29",
+      "source": "changelog_0_11_3_2026_09_29",
       "target": "changelog_corregido",
       "relation": "contains",
       "_origin": "ast",
@@ -4186,57 +4317,57 @@
     },
     {
       "source": "changelog_0_1_0_2026_09_25",
-      "target": "changelog_agregado_201",
+      "target": "changelog_agregado_208",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L201",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
       "source": "changelog_0_1_1_2026_09_25",
-      "target": "changelog_cambiado_183",
+      "target": "changelog_cambiado_190",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L183",
+      "source_location": "L190",
       "weight": 1.0
     },
     {
       "source": "changelog_0_2_0_2026_09_26",
-      "target": "changelog_agregado_154",
+      "target": "changelog_agregado_161",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L154",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
       "source": "changelog_0_2_0_2026_09_26",
-      "target": "changelog_corregido_165",
+      "target": "changelog_corregido_172",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L165",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
       "source": "changelog_0_2_0_2026_09_26",
-      "target": "changelog_cambiado_174",
+      "target": "changelog_cambiado_181",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L174",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -4247,7 +4378,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L229",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -4258,18 +4389,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L244",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
       "source": "changelog_0_3_0_2026_09_24",
-      "target": "changelog_agregado_262",
+      "target": "changelog_agregado_269",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L262",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -4280,7 +4411,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L278",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -4291,7 +4422,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L285",
+      "source_location": "L292",
       "weight": 1.0
     },
     {
@@ -4302,122 +4433,122 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L138",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
       "source": "changelog_0_4_0_2026_09_25",
-      "target": "changelog_agregado_212",
+      "target": "changelog_agregado_219",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L212",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
       "source": "changelog_0_4_0_2026_09_26",
-      "target": "changelog_agregado_119",
+      "target": "changelog_agregado_126",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L119",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
       "source": "changelog_0_4_0_2026_09_26",
-      "target": "changelog_corregido_129",
+      "target": "changelog_corregido_136",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L129",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
       "source": "changelog_0_5_0_2026_09_26",
-      "target": "changelog_agregado_105",
+      "target": "changelog_agregado_112",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L105",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
       "source": "changelog_0_6_0_2026_09_26",
-      "target": "changelog_agregado_86",
+      "target": "changelog_agregado_93",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L86",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
       "source": "changelog_0_6_1_2026_09_26",
-      "target": "changelog_corregido_73",
+      "target": "changelog_corregido_80",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L73",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
       "source": "changelog_0_7_0_2026_09_28",
-      "target": "changelog_agregado_65",
+      "target": "changelog_agregado_72",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L65",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
       "source": "changelog_0_8_0_2026_09_28",
-      "target": "changelog_agregado_51",
+      "target": "changelog_agregado_58",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L51",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
       "source": "changelog_0_8_0_2026_09_28",
-      "target": "changelog_corregido_57",
+      "target": "changelog_corregido_64",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L57",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
       "source": "changelog_0_9_0_rc_1_2026_09_28",
-      "target": "changelog_agregado_43",
+      "target": "changelog_agregado_50",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L43",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
       "source": "changelog_changelog",
-      "target": "changelog_0_11_1_2026_09_29",
+      "target": "changelog_0_11_2_2026_09_29",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4434,7 +4565,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L103",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -4445,7 +4576,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L117",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -4456,7 +4587,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L136",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -4467,18 +4598,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L149",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
       "source": "changelog_changelog",
-      "target": "changelog_0_11_0_2026_09_29",
+      "target": "changelog_0_11_1_2026_09_29",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -4489,7 +4620,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L181",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -4500,7 +4631,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L196",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -4511,7 +4642,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L210",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -4522,23 +4653,23 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L224",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
       "source": "changelog_changelog",
-      "target": "changelog_0_10_0_2026_09_29",
+      "target": "changelog_0_11_0_2026_09_29",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L27",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
       "source": "changelog_changelog",
-      "target": "changelog_0_11_2_2026_09_29",
+      "target": "changelog_0_11_3_2026_09_29",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4549,13 +4680,24 @@
     },
     {
       "source": "changelog_changelog",
+      "target": "changelog_0_10_0_2026_09_29",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_changelog",
       "target": "changelog_0_9_0_2026_09_28",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L36",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -4566,7 +4708,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L41",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -4577,7 +4719,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L49",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -4588,7 +4730,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L63",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -4599,7 +4741,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L71",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -4610,7 +4752,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.md",
-      "source_location": "L82",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -5193,7 +5335,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L525",
+      "source_location": "L526",
       "weight": 1.0
     },
     {
@@ -5204,7 +5346,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L542",
+      "source_location": "L543",
       "weight": 1.0
     },
     {
@@ -5215,7 +5357,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L548",
+      "source_location": "L549",
       "weight": 1.0
     },
     {
@@ -5226,7 +5368,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L557",
+      "source_location": "L558",
       "weight": 1.0
     },
     {
@@ -5237,18 +5379,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L565",
+      "source_location": "L566",
       "weight": 1.0
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtogglerowmenu",
+      "target": "docs_gallery_assets_gallery_galpositionrowmenu",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L573",
+      "source_location": "L574",
       "weight": 1.0
     },
     {
@@ -5264,13 +5406,13 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galshowtoast",
+      "target": "docs_gallery_assets_gallery_galrestorerowmenu",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L595",
+      "source_location": "L598",
       "weight": 1.0
     },
     {
@@ -5286,7 +5428,18 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galcopy",
+      "target": "docs_gallery_assets_gallery_galcloseallrowmenus",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L608",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtogglerowmenu",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5308,6 +5461,17 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galshowtoast",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L659",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_gal_sidebar_groups",
       "relation": "contains",
       "_origin": "ast",
@@ -5315,6 +5479,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
       "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galcopy",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L681",
       "weight": 1.0
     },
     {
@@ -6425,7 +6600,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L134",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -6436,7 +6611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L151",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -6447,7 +6622,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L173",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -6458,7 +6633,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L201",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -6469,7 +6644,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L208",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -6513,7 +6688,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L69",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -6524,7 +6699,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L92",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -6535,7 +6710,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L301",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -6546,7 +6721,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L312",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -6557,7 +6732,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L318",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -6590,7 +6765,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L218",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -6601,7 +6776,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L284",
+      "source_location": "L288",
       "weight": 1.0
     },
     {
@@ -6612,7 +6787,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L296",
+      "source_location": "L300",
       "weight": 1.0
     },
     {
@@ -6623,7 +6798,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/soffi-ui/js.md",
-      "source_location": "L332",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
@@ -7343,6 +7518,18 @@
       "weight": 1.0
     },
     {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galrepositionrowmenus",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L642",
+      "weight": 1.0
+    },
+    {
       "source": "docs_gallery_assets_gallery_galinitsidebarspy",
       "target": "docs_gallery_assets_gallery_galinitsidebarspy_updateactive",
       "relation": "indirect_call",
@@ -7363,7 +7550,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L613",
+      "source_location": "L677",
       "weight": 1.0
     },
     {
@@ -7404,5 +7591,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "108de6f101faa2045e8a6bc70cb657b91db284e1"
+  "built_at_commit": "51eaf695eab5a4e0e088fc168ba5d24881333a29"
 }
