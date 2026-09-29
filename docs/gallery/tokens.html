@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokens — Soffi UI</title>
+<meta name="description" content="Referencia visual e interactiva de soffiweb/soffi-ui, corriendo sobre el CSS real del paquete.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-swatchbook"></i></span>
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">Soffi UI</span>
+            <span class="sw-topbar-period">Fundamentos · v1.0.0</span>
+        </div>
+    </div>
+    <div class="sw-topbar-actions">
+        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> dist/soffi-ui.css</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Documentación Soffi UI</div>
+            <div class="sw-sb-brand-sub">23 componentes + tokens</div>
+        </div>
+
+        <div class="sw-sb-group">Inicio</div>
+        <a href="primeros-pasos.html" class="sw-sb-link"><i class="fa-solid fa-rocket"></i> Primeros pasos</a>
+
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="tokens.html#tokens" class="sw-sb-link active"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Componentes</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones y badges</a>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</a>
+        <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Patrones</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+
+        <div class="sw-sb-group">Ejemplos reales</div>
+        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Empleados</a>
+    </nav>
+
+    <main class="sw-main">
+
+        <div class="gal-hero sw-card">
+            <h1>Soffi UI — Tokens</h1>
+            <p>Referencia de los valores visuales compartidos por Soffi UI: colores, tipografía, espaciado, radios, sombras y capas. Consulta esta página antes de crear o personalizar componentes propios.</p>
+            <div class="gal-hero-meta">
+                <span class="sw-badge sw-badge-primary"><i class="fa-solid fa-code"></i> CSS/JS plano</span>
+                <span class="sw-badge sw-badge-info"><i class="fa-solid fa-ban"></i> sin Bootstrap</span>
+                <span class="sw-badge sw-badge-accent"><i class="fa-solid fa-tag"></i> v1.0.0</span>
+            </div>
+        </div>
+
+        <!-- ══════════════════ TOKENS ══════════════════ -->
+        <section id="tokens" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-palette"></i> Tokens</h2>
+                <p>Los tokens son la base visual compartida de Soffi UI: definen color, texto, ritmo, profundidad y capas para que una aplicación mantenga coherencia sin repetir valores sueltos.</p>
+            </div>
+
+            <div class="sw-card gal-token-intro">
+                <h3 class="sw-card-title"><i class="fa-solid fa-compass"></i> Cómo usar esta sección</h3>
+                <p class="sw-card-body">Los nombres públicos usan el prefijo <code>--sw-*</code>. Personaliza esos tokens en el CSS de tu aplicación, después de cargar <code>soffi-ui.css</code>; los componentes resolverán automáticamente los alias internos y conservarán su comportamiento.</p>
+                <div class="gal-token-rules">
+                    <div>
+                        <strong>Consúmelos</strong>
+                        <p>Usa <code>var(--sw-spacing-md)</code> o <code>var(--sw-text-base)</code> en componentes propios.</p>
+                    </div>
+                    <div>
+                        <strong>Personalízalos</strong>
+                        <p>Cambia la marca desde <code>:root</code>, sin editar los archivos publicados del paquete.</p>
+                    </div>
+                    <div>
+                        <strong>Respeta el tema</strong>
+                        <p>Colores y bordes tienen valores para claro y oscuro; verifica ambos antes de publicar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gal-block sw-card gal-token-card">
+                <div class="gal-block-title"><h3>Color — modo claro</h3></div>
+                <p>La paleta separa intención de implementación: usa <code>--sw-primary</code> para acciones principales y los tokens semánticos para estados como éxito, advertencia, error e información.</p>
+                <div class="gal-swatch-grid">
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#28449a"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-primary</span><span class="gal-swatch-hex">#28449a</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#4361ee"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-secondary</span><span class="gal-swatch-hex">#4361ee</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fa75ad"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-accent</span><span class="gal-swatch-hex">#fa75ad</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#303237"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-neutral</span><span class="gal-swatch-hex">#303237</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00ba7b"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-success</span><span class="gal-swatch-hex">#00ba7b</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fa9700"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-warning</span><span class="gal-swatch-hex">#fa9700</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#e11d48"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-error</span><span class="gal-swatch-hex">#e11d48</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00a4f2"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-info</span><span class="gal-swatch-hex">#00a4f2</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fdfdff;border-bottom:var(--brd)"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-bg</span><span class="gal-swatch-hex">#fdfdff</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#edf1fb"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-surface</span><span class="gal-swatch-hex">#edf1fb</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#151b1e"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-text</span><span class="gal-swatch-hex">#151b1e</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#1e2330"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-sidebar-bg</span><span class="gal-swatch-hex">#1e2330</span></div></div>
+                </div>
+            </div>
+
+            <div class="gal-block sw-card gal-token-card">
+                <div class="gal-block-title"><h3>Color — modo oscuro</h3></div>
+                <p>El tema oscuro reemplaza los valores de color automáticamente mediante <code>[data-theme="dark"]</code>. Define overrides de marca en ambos modos solo cuando necesites una identidad visual específica.</p>
+                <div class="gal-swatch-grid">
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#7da4e0"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-primary</span><span class="gal-swatch-hex">#7da4e0</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#9dbde8"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-secondary</span><span class="gal-swatch-hex">#9dbde8</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fb8dc0"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-accent</span><span class="gal-swatch-hex">#fb8dc0</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00d390"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-success</span><span class="gal-swatch-hex">#00d390</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#fcb700"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-warning</span><span class="gal-swatch-hex">#fcb700</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#ff627d"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-error</span><span class="gal-swatch-hex">#ff627d</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#00bafe"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-info</span><span class="gal-swatch-hex">#00bafe</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#2a3040"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-bg</span><span class="gal-swatch-hex">#2a3040</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#222736"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-surface</span><span class="gal-swatch-hex">#222736</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#e8ecf4"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-text</span><span class="gal-swatch-hex">#e8ecf4</span></div></div>
+                    <div class="gal-swatch"><div class="gal-swatch-color" style="background:#111520"></div><div class="gal-swatch-label"><span class="gal-swatch-name">--sw-sidebar-bg</span><span class="gal-swatch-hex">#111520</span></div></div>
+                </div>
+            </div>
+
+            <div class="gal-block sw-card gal-token-card">
+                <div class="gal-block-title"><h3>Tipografía</h3><span>--sw-font-sans: "Inter"</span></div>
+                <p>La escala evita que cada pantalla invente tamaños. Elige el token por función: texto de trabajo, label, título de card o cifra destacada.</p>
+                <div class="gal-preview gal-preview-block">
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-3xs / 10px</span><span style="font-size:10px">Etiqueta bajo dona (dashboard)</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-2xs / 11px</span><span style="font-size:11px">Notas al pie, badges</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-xs / 12px</span><span style="font-size:12px">Labels, hints</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-sm / 13px</span><span style="font-size:13px">Tablas, texto secundario</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-base / 14px</span><span style="font-size:14px">Texto de trabajo</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-md / 15px</span><span style="font-size:15px">Inputs, botones</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-lg / 16px</span><span style="font-size:16px">Títulos de card</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-xl / 20px</span><span style="font-size:20px">Título de página</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-2xl / 22px</span><span style="font-size:22px">Cifras de dashboard</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-text-3xl / 28px</span><span style="font-size:28px;font-weight:700">KPI grandes</span></div>
+                </div>
+            </div>
+
+            <div class="gal-block sw-card gal-token-card">
+                <div class="gal-block-title"><h3>Espaciado &amp; radios</h3></div>
+                <p>Combina espaciado y radios de la misma escala para conservar el ritmo visual. En componentes nuevos, prioriza <code>--sw-spacing-*</code> frente a valores arbitrarios en píxeles.</p>
+                <div class="gal-preview gal-preview-block">
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-xs / 0.25rem</span><div class="gal-space-box" style="width:4px"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-sm / 0.5rem</span><div class="gal-space-box" style="width:8px"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-md / 1rem</span><div class="gal-space-box" style="width:16px"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-lg / 1.5rem</span><div class="gal-space-box" style="width:24px"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-spacing-xl / 2rem</span><div class="gal-space-box" style="width:32px"></div></div>
+                </div>
+                <div class="gal-preview gal-preview-block" style="margin-top:10px">
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-sm / 0.25rem</span><div class="gal-space-box" style="width:56px;border-radius:0.25rem"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-md (--r) / 0.65rem</span><div class="gal-space-box" style="width:56px;border-radius:0.65rem"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-lg (--rl) / 1.1rem</span><div class="gal-space-box" style="width:56px;border-radius:1.1rem"></div></div>
+                    <div class="gal-space-row"><span class="gal-space-tag">--sw-radius-pill / 9999px</span><div class="gal-space-box" style="width:56px;border-radius:9999px"></div></div>
+                </div>
+            </div>
+
+            <div class="gal-block sw-card gal-token-card">
+                <div class="gal-block-title"><h3>Sombras</h3></div>
+                <p>Las sombras comunican elevación: usa la pequeña para separación sutil, la media para cards interactivas y la grande para elementos flotantes.</p>
+                <div class="gal-preview">
+                    <div class="gal-shadow-row">
+                        <div class="gal-shadow-card" style="box-shadow:var(--sh-sm)">--sh-sm</div>
+                        <div class="gal-shadow-card" style="box-shadow:var(--sh-md)">--sh-md</div>
+                        <div class="gal-shadow-card" style="box-shadow:var(--sh-lg)">--sh-lg</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gal-block sw-card gal-token-card">
+                <div class="gal-block-title"><h3>Capas (z-index)</h3><span>src/tokens/z-index.css</span></div>
+                <p>Usa esta escala para que un overlay propio (dropdown, panel flotante o notificación) se ubique frente a los elementos del sistema. No adivines un número ni compitas con modales y toasts.</p>
+                <div class="gal-preview gal-preview-block">
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sticky / 40</span><span>Navbar superior (position: sticky)</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sidebar-backdrop / 50</span><span>Fondo oscuro detrás del sidebar móvil</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-sidebar / 60</span><span>Panel del sidebar móvil</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-dropdown / 100</span><span>Select, menú de usuario, menú de fila de tabla</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-modal-backdrop / 1060</span><span>Fondo del modal</span></div>
+                    <div class="gal-type-row"><span class="gal-type-tag">--sw-z-toast / 1080</span><span>Notificación flotante</span></div>
+                </div>
+            </div>
+
+        </section>
+
+        <nav class="gal-page-nav" aria-label="Navegación de documentación">
+            <a class="sw-btn sw-btn-ghost" href="primeros-pasos.html"><i class="fa-solid fa-arrow-left"></i> Anterior: Primeros pasos</a>
+            <a class="sw-btn sw-btn-primary" href="acciones.html#botones">Siguiente: Botones y badges <i class="fa-solid fa-arrow-right"></i></a>
+        </nav>
+
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+</footer>
+
+<script src="assets/gallery.js"></script>
+</body>
+</html>
