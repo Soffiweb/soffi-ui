@@ -348,7 +348,7 @@ details.gal-code summary:hover { color: var(--p); }
     color: var(--bc2);
 }
 
-/* Guía de inicio: lectura por pasos y contraste claro entre contenido y fondo. */
+/* Guía de inicio: cards de contenido y contraste claro entre fondo y texto. */
 .gal-guide-hero {
     padding: 1.75rem 2rem;
     background: var(--b1);
@@ -357,70 +357,13 @@ details.gal-code summary:hover { color: var(--p); }
     border-radius: var(--rl);
 }
 
-.gal-guide-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 1rem;
-    margin: -1rem 0 2.5rem;
-}
-
-.gal-guide-card {
-    display: grid;
-    grid-template-columns: 34px 1fr;
-    align-items: start;
-    gap: 12px;
-    padding: 1rem;
-    background: var(--b1);
-    border: var(--brd);
-    border-left: 4px solid var(--p);
-    border-radius: var(--r);
-    color: var(--bc);
-    text-decoration: none;
-    transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
-}
-
-.gal-guide-card:hover {
-    border-color: var(--p);
-    box-shadow: var(--sh-md);
-    color: var(--bc);
-    text-decoration: none;
-    transform: translateY(-1px);
-}
-
-.gal-guide-card-step {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--p);
-    color: var(--pc);
-    font-size: var(--sw-text-sm);
-    font-weight: var(--sw-font-bold);
-}
-
-.gal-guide-card strong,
-.gal-guide-card small {
-    display: block;
-}
-
-.gal-guide-card strong {
-    margin-bottom: 3px;
-    font-size: var(--sw-text-md);
-}
-
-.gal-guide-card small {
-    color: var(--bc2);
-    font-size: var(--sw-text-sm);
-    line-height: 1.4;
-}
-
 .gal-guide-page .gal-section {
     padding: 1.5rem;
     background: var(--b1);
     border: var(--brd);
+    border-left: 4px solid var(--p);
     border-radius: var(--rl);
+    box-shadow: var(--sh-sm);
     margin-bottom: 1.25rem;
 }
 
