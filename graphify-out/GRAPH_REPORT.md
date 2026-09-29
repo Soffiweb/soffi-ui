@@ -1,16 +1,16 @@
 # Graph Report - soffi-ui  (2026-09-29)
 
 ## Corpus Check
-- 26 files · ~43,735 words
+- 26 files · ~45,232 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 305 nodes · 326 edges · 25 communities (17 shown, 2 thin omitted)
+- 307 nodes · 328 edges · 25 communities (17 shown, 2 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a7f86803`
+- Built from commit: `3a5ad37c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,7 @@
 - 0.3.0 — 2026-09-24
 
 ## God Nodes (most connected - your core abstractions)
-1. `Changelog` - 17 edges
+1. `Changelog` - 18 edges
 2. `Soffi UI — Laravel + Blade` - 15 edges
 3. `API` - 11 edges
 4. `PackageContractTest` - 9 edges
@@ -88,8 +88,8 @@ Cohesion: 0.22
 Nodes (9): Compatibilidad — la regla que no se negocia, Cómo calcular el valor estático, El check, El número que explica todo, El piso, Features permitidas y prohibidas, Regla 1 — `color-mix()` siempre con fallback estático, Regla 2 — dentro de `:root` va `@supports`, no doble declaración (+1 more)
 
 ### Community 9 - "Changelog"
-Cohesion: 0.06
-Nodes (34): 0.10.0 — 2026-09-29, 0.11.0 — 2026-09-29, 0.1.0 — 2026-09-25, 0.1.1 — 2026-09-25, 0.2.0 — 2026-09-26, 0.3.0 — 2026-09-26, 0.4.0 — 2026-09-25, 0.4.0 — 2026-09-26 (+26 more)
+Cohesion: 0.05
+Nodes (36): 0.10.0 — 2026-09-29, 0.11.0 — 2026-09-29, 0.11.1 — 2026-09-29, 0.1.0 — 2026-09-25, 0.1.1 — 2026-09-25, 0.2.0 — 2026-09-26, 0.3.0 — 2026-09-26, 0.4.0 — 2026-09-25 (+28 more)
 
 ### Community 10 - "Soffiweb UI — Base Layout"
 Cohesion: 0.22
@@ -124,19 +124,19 @@ Cohesion: 0.33
 Nodes (6): 0.3.0 — 2026-09-24, Agregado, Cambios incompatibles, Compatibilidad, Estructura, Unificación
 
 ## Knowledge Gaps
-- **140 isolated node(s):** `name`, `description`, `type`, `license`, `keywords` (+135 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 193 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **141 isolated node(s):** `name`, `description`, `type`, `license`, `keywords` (+136 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 194 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Soffiweb UI - Shared JS` connect `API` to `SKILL.md`?**
-  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Why does `Soffi UI — Laravel + Blade` connect `Soffi UI — Laravel + Blade` to `SKILL.md`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **What connects `name`, `description`, `type` to the rest of the system?**
-  _140 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _141 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `composer.json` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `gallery.js` be split into smaller, more focused modules?**
