@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.10.0 — 2026-09-29
+
+### Agregado
+
+- Galería de documentación reorganizada por familias y con navegación anterior/siguiente.
+- Layout exclusivo para la documentación, header con logo Soffiweb y vista operativa de empleados.
+- Ejemplos de tablas con selección por checkbox y filas expandibles.
+- Bloques de código abiertos por defecto y navegación activa sincronizada con la página actual.
+
 ## 0.9.0 — 2026-09-28
 
 Release estable promovida desde `0.9.0-rc.1` después de validar contrato,
