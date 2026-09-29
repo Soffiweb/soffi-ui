@@ -2601,6 +2601,22 @@ contenido exclusivo con `.sw-print-only`; separar páginas con
 
 El paquete incluye los estilos `@media print`; no requiere JavaScript.
 
+## Actualizaciones 0.11.1–0.11.3
+
+- Cada utilidad tiene página propia en la galería y navegación anterior/siguiente.
+- `.sw-dropdown-divider` usa una línea real (`border-top`) y conserva separación
+  vertical entre grupos.
+- Skeleton composable: `.sw-skeleton-card`, `.sw-skeleton-layout`,
+  `.sw-skeleton-row`, `.sw-skeleton-content`, `--sw-skeleton-card-width`,
+  `--sw-skeleton-width` y `--sw-skeleton-height`.
+- `.sw-row-menu-dropdown` se portaliza a `<body>` mediante JS cuando abre. Esto
+  evita recorte por `overflow` y mantiene el menú sobre columnas sticky.
+- `.is-table-sticky-displaced` muestra el separador de la columna sticky cuando
+  todavía existe desplazamiento horizontal.
+
+La lógica `gal*` usada en la galería es demo; aplicaciones deben usar la API
+`sw*` del paquete.
+
 ---
 
 # Componentes pendientes
@@ -2608,7 +2624,10 @@ El paquete incluye los estilos `@media print`; no requiere JavaScript.
 | Componente | Prioridad | Estado |
 |---|---|---|
 | Override de sweetalert2 | alta | pendiente |
-| Accordion visual | media | pendiente; existe `swToggleCollapse` |
+| Accordion visual | media | pendiente; existe `swToggleCollapse` como comportamiento |
+
+Estos pendientes bloquean la declaración de `1.0.0`. No crear overrides locales
+para cerrarlos: deben entrar al paquete, su documentación y sus pruebas visuales.
 
 Ninguno requiere features por encima de Chrome 109 — ver [compat.md](compat.md).
 

@@ -70,6 +70,23 @@ Al abrirse, el menú se porta temporalmente a `<body>` y usa posición fija.
 Así queda por encima de columnas sticky y no se recorta por el `overflow` de
 `.sw-list-table-wrap`.
 
+### Tablas interactivas
+
+| Función | Uso |
+| --- | --- |
+| `swInitTableStickyColumns()` | Conecta el scroll horizontal de cada listado y calcula el indicador de desplazamiento. Se llama automáticamente al cargar. |
+| `swSyncTableStickyColumns()` | Actualiza `.is-table-sticky-displaced`; usar después de mostrar contenido cargado dinámicamente. |
+| `swToggleTableRow(trigger)` | Abre una fila detalle indicada por `data-target` y cierra las demás de la misma tabla. |
+| `swToggleTableSelection(master)` | Marca o desmarca todos los `.sw-checkbox-input` del `tbody`. |
+| `swSyncTableSelection(table)` | Sincroniza `checked` e `indeterminate` del checkbox maestro. |
+
+La columna fija requiere `.sw-table-sticky-col` en su `th` y sus `td`. El
+contenedor usa `.sw-list-table-wrap`; no aplicar `position: sticky` local.
+
+Helpers automáticos: `swSyncSelectColor()` para selects vacíos,
+`swSyncAuthInputGroup()` para errores de auth, `swSyncDateInputColor()` para
+inputs de fecha/hora y `swFileInputName()` para el nombre de archivos.
+
 ### Dropdown genérico
 
 | Función | Uso |
@@ -299,8 +316,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ## Funciones de alerta (nuevas en 0.3.0, venían de SoffiFac)
 
-`soffi-ui.js` del paquete tiene **26 funciones**: las 23 de Sofficon (incluido
-el reposicionamiento de row-menu) más estas 3.
+`soffi-ui.js` del paquete tiene **41 funciones** y varios selectores/constants
+internos. La API incluye tema, layout, dropdowns, menús de fila, tablas,
+modales accesibles, tabs, collapse, inputs, selects y alertas.
+
+Las funciones de alertas son parte de esa API:
 
 ### `swInitAlerts()`
 

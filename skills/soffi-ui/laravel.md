@@ -146,6 +146,22 @@ contexto, usar tabs compactas integradas al panel; no apilar bloques.
 </div>
 ```
 
+## Listados interactivos actuales
+
+- Encapsular tablas en `sw-table-wrap sw-list-table-wrap`.
+- Para columnas de acciones que deben permanecer visibles, usar
+  `.sw-table-sticky-col` en `th` y `td`; el JS agrega el indicador
+  `.is-table-sticky-displaced` automáticamente.
+- Cuando una fila supera cuatro acciones, usar `.sw-row-menu` y
+  `swToggleRowMenu(this)`. El menú se porta a `<body>` al abrirse; no agregar
+  z-index ni posicionamiento local.
+- Para acciones del encabezado usar `.sw-dropdown` y `swToggleDropdown(this)`.
+- Para cargas simuladas o respuestas asíncronas usar `.sw-skeleton-card` y
+  ocultar el contenido real hasta terminar; conservar `aria-busy` y un nombre
+  accesible.
+- Para una creación en modal, usar `sw-modal-lg`, `sw-field`, `sw-input` o
+  `sw-select`, `sw-form-actions` y `needs-validation novalidate` cuando aplique.
+
 ---
 
 ## Contrato de markup del layout (`layouts/app.blade.php`)

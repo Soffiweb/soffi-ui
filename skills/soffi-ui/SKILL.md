@@ -1,6 +1,6 @@
 ---
 name: soffi-ui
-description: "Sistema de diseño Soffiweb (Soffi UI): tokens, componentes sw-*, topbar tenant/periodo, sidebar accesible/responsive, JS compartido, reglas de compatibilidad de navegador y la integración Laravel + Blade (layout, modales, tabs, validación, vistas CRUD). El proyecto NO carga Bootstrap, Popper, Tailwind ni ningún framework CSS. Trigger: cualquier tarea de UI, estilos, CSS, vistas Blade o componentes visuales en una app Soffiweb."
+description: "Aplica Soffi UI en tareas de UI, CSS, JavaScript, React o Laravel + Blade: tokens, componentes sw-*, layout multi-tenant, tablas, formularios, modales, dropdowns, estados de carga, accesibilidad y compatibilidad. Usar cuando una app Soffiweb necesite crear, refactorizar, auditar o documentar una interfaz. No usa Bootstrap, Popper, Tailwind ni otro framework CSS."
 license: MIT
 metadata:
   author: soffiweb
@@ -34,6 +34,25 @@ Antes de crear o refactorizar vistas, leer las fuentes del paquete:
 Si una app tiene su propia copia de `soffi-ui/`, **está desactualizada por
 definición**: el paquete es el origen. No editar la copia.
 
+## Uso con Claude Code y Codex
+
+Esta carpeta es la fuente portable de la skill. Distribuirla completa: `SKILL.md`
+y todos sus capítulos. No aplanar archivos ni copiar solo el manifiesto.
+
+| Entorno | Ruta esperada | Activación |
+|---|---|---|
+| Claude Code | `.claude/skills/soffi-ui/` | `$soffi-ui` o tarea de UI que coincida con la descripción |
+| Codex en un repositorio | `.codex/skills/soffi-ui/` | `$soffi-ui` o coincidencia semántica |
+| OpenAI Agent Skills | `.agents/skills/soffi-ui/` | registro del directorio padre como capability directory |
+
+`CLAUDE.md` y `AGENTS.md` contienen reglas del repositorio. Esta skill contiene
+el procedimiento reusable de diseño. No duplicar reglas de negocio, rutas o
+nombres de apps dentro de la skill.
+
+Los enlaces relativos deben conservarse al mover la carpeta. Debe existir un
+solo `SKILL.md` dentro del bundle y el frontmatter debe conservar `name` y
+`description`.
+
 ## Instalación y actualización
 
 El paquete se consume por Composer. No se copia a mano a la app — copiarlo fue
@@ -55,6 +74,9 @@ php artisan vendor:publish --tag=soffi-ui-skills --force  # esta skill
 
 Para actualizar: `composer update soffiweb/soffi-ui` y repetir los publish con
 `--force`. La versión queda fijada en `composer.lock`.
+
+Para Codex repo-scoped, conservar además la carpeta en
+`.codex/skills/soffi-ui/`. No publicar una copia parcial.
 
 ## Regla maestra
 
@@ -95,6 +117,7 @@ fallback acumuladas entre SoffiFac y gesnom `dev`).
 
 | Archivo | Contenido |
 |---|---|
+| [agents.md](agents.md) | distribución, activación y validación en Claude Code, Codex y Agent Skills |
 | [compat.md](compat.md) | **piso de navegador y reglas de fallback — empezar acá** |
 | [tokens.md](tokens.md) | paleta, tipografía, espaciado, radios, breakpoints |
 | [layout.md](layout.md) | shell, topbar (tenant/periodo), menú de usuario, sidebar, footer |
@@ -106,6 +129,16 @@ fallback acumuladas entre SoffiFac y gesnom `dev`).
 
 Las apps Soffiweb son Laravel + Blade: para tocar una vista se leen
 `laravel.md` y `view-patterns.md` además de los capítulos de CSS.
+
+## Flujo obligatorio
+
+1. Identificar si el cambio afecta tokens, componente, JS, layout, Blade o React.
+2. Leer el capítulo correspondiente antes de escribir código.
+3. Reutilizar `sw-*` y la API compartida; no crear equivalentes locales.
+4. Validar tema claro/oscuro, teclado, foco y piso de navegador.
+5. Si cambia `src/` o `js/`, ejecutar `composer check-compat`, `composer test` y
+   `composer build`; nunca editar `dist/` manualmente.
+6. Si solo cambia documentación, validar enlaces relativos y frontmatter.
 
 ## Familias de componentes estándar
 
@@ -123,8 +156,32 @@ Usar estas familias antes de crear clases nuevas:
 - **Sesión**: `sw-impersonation-banner*`.
 - **Utilidades**: `sw-dropdown*`, `sw-spinner*`, `sw-tooltip`, `sw-switch*`, `sw-skeleton*`, `sw-stepper*`, `sw-print-*`.
 
-Catálogo completo en [components.md](components.md). Pendientes reales:
-accordion visual y override de sweetalert2. Agregarlos al paquete, no a la app.
+Catálogo completo en [components.md](components.md). El estado de pendientes
+rumbo a `1.0.0` está documentado abajo; no declarar esa versión todavía.
+
+## Estado actual y preparación para 1.0.0
+
+Versión actual del paquete: `0.11.3`. La galería ya cubre el flujo de
+empleados con modal de alta, dropdown de acciones, skeleton, spinner, refresh
+y tablas con menú de fila portalizado. `gal*` pertenece a la galería; no es API
+del paquete ni debe copiarse a una app.
+
+Cambios de la serie actual documentados en esta skill:
+
+- `0.11.0`: dropdown, spinner, tooltip, switch, skeleton, stepper e impresión.
+- `0.11.1`: páginas independientes de utilidades y navegación sincronizada.
+- `0.11.2`: skeleton composable con variables de tamaño y divider de dropdown.
+- `0.11.3`: menús de fila por encima de columnas sticky y contenedores con overflow.
+
+Bloqueadores antes de `1.0.0`:
+
+- retrofit de `font-size` inline heredado en Sofficon, con QA visual;
+- override tematizado para `sweetalert2`;
+- componente visual de accordion; hoy existe solo `swToggleCollapse()`;
+- pruebas visuales o snapshots para los dos temas y layouts principales.
+
+La skill no debe cambiar `VERSION`, `CHANGELOG.md`, tags ni `metadata.version`
+como parte de una actualización documental.
 
 ## Capa Blade del paquete
 

@@ -238,6 +238,47 @@ Resumen funcional:
 </section>
 ```
 
+## Patrón 4: Listado interactivo
+
+Usarlo cuando el listado necesite acciones de encabezado, carga visible,
+columna fija o varias acciones por fila.
+
+```html
+<div class="sw-crud-actions">
+    <button type="button" class="sw-btn sw-btn-primary" onclick="swOpenModal('nuevo-modal')">
+        Nuevo
+    </button>
+    <div class="sw-dropdown">
+        <button type="button" aria-haspopup="menu" aria-expanded="false"
+                aria-controls="acciones" onclick="swToggleDropdown(this)">
+            Más acciones
+        </button>
+        <div id="acciones" class="sw-dropdown-menu sw-dropdown-menu-start" role="menu">
+            <button type="button" class="sw-dropdown-item" role="menuitem">Actualizar</button>
+        </div>
+    </div>
+</div>
+
+<div class="sw-card sw-skeleton-card" aria-busy="true" aria-label="Cargando" id="listadoSkeleton">
+    <div class="sw-skeleton-layout">
+        <div class="sw-skeleton-row"><span class="sw-skeleton sw-skeleton-text"></span></div>
+    </div>
+</div>
+
+<div id="listadoContent" hidden>
+    <div class="sw-table-wrap sw-list-table-wrap">
+        <table class="sw-table sw-table-min-xl">
+            <thead><tr><th>Nombre</th><th class="sw-table-sticky-col">Acciones</th></tr></thead>
+            <tbody><!-- filas Blade --></tbody>
+        </table>
+    </div>
+</div>
+```
+
+Al mostrar el contenido, llamar `swSyncTableStickyColumns()`. No copiar
+`galLoadEmployees()` ni otras funciones `gal*` de la galería: son demostración,
+no API de aplicación.
+
 ## Formularios Parciales En Modal
 
 El parcial se incluye desde el modal de crear y el de editar, así que **siempre**
