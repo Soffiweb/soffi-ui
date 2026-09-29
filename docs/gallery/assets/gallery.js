@@ -119,7 +119,13 @@ const galPageSequence = [
     { file: 'navegacion/collapse.html', label: 'Collapse', hash: 'collapse' },
     { file: 'navegacion/breadcrumb.html', label: 'Breadcrumb', hash: 'breadcrumb' },
     { file: 'navegacion/sidebar.html', label: 'Sidebar y topbar', hash: 'sidebar-topbar' },
-    { file: 'utilidades.html', label: 'Utilidades', hash: 'dropdown' },
+    { file: 'utilidades/dropdown.html', label: 'Dropdown', hash: 'dropdown' },
+    { file: 'utilidades/spinner.html', label: 'Spinner', hash: 'spinner' },
+    { file: 'utilidades/tooltip.html', label: 'Tooltip', hash: 'tooltip' },
+    { file: 'utilidades/switch.html', label: 'Switch', hash: 'switch' },
+    { file: 'utilidades/skeleton.html', label: 'Skeleton', hash: 'skeleton' },
+    { file: 'utilidades/stepper.html', label: 'Stepper', hash: 'stepper' },
+    { file: 'utilidades/print.html', label: 'Impresión', hash: 'print' },
     { file: 'overlays.html', label: 'Modal', hash: 'modal' },
     { file: 'dashboard.html', label: 'Dashboard', hash: 'dashboard' },
     { file: 'auth.html', label: 'Auth', hash: 'auth' },
@@ -177,6 +183,20 @@ function galRouteDocumentationLinks() {
         'navegacion.html#collapse': 'navegacion/collapse.html#collapse',
         'navegacion.html#breadcrumb': 'navegacion/breadcrumb.html#breadcrumb',
         'navegacion.html#sidebar-topbar': 'navegacion/sidebar.html#sidebar-topbar',
+        'utilidades.html#dropdown': 'utilidades/dropdown.html#dropdown',
+        'utilidades.html#spinner': 'utilidades/spinner.html#spinner',
+        'utilidades.html#tooltip': 'utilidades/tooltip.html#tooltip',
+        'utilidades.html#switch': 'utilidades/switch.html#switch',
+        'utilidades.html#skeleton': 'utilidades/skeleton.html#skeleton',
+        'utilidades.html#stepper': 'utilidades/stepper.html#stepper',
+        'utilidades.html#print': 'utilidades/print.html#print',
+        '../utilidades.html#dropdown': '../utilidades/dropdown.html#dropdown',
+        '../utilidades.html#spinner': '../utilidades/spinner.html#spinner',
+        '../utilidades.html#tooltip': '../utilidades/tooltip.html#tooltip',
+        '../utilidades.html#switch': '../utilidades/switch.html#switch',
+        '../utilidades.html#skeleton': '../utilidades/skeleton.html#skeleton',
+        '../utilidades.html#stepper': '../utilidades/stepper.html#stepper',
+        '../utilidades.html#print': '../utilidades/print.html#print',
     };
 
     document.querySelectorAll('a[href]').forEach(function (link) {
@@ -247,7 +267,7 @@ function galInitSidebarSpy(sidebarLinks) {
             if (entry.section.getBoundingClientRect().top <= marker) current = entry;
         });
 
-        if (main.scrollTop + main.clientHeight >= main.scrollHeight - 4) {
+        if (main.scrollHeight > main.clientHeight + 4 && main.scrollTop + main.clientHeight >= main.scrollHeight - 4) {
             current = sectionLinks[sectionLinks.length - 1];
         }
 
