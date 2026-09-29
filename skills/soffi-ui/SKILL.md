@@ -25,7 +25,7 @@ Antes de crear o refactorizar vistas, leer las fuentes del paquete:
 | `src/tokens/z-index.css` | capas (topbar, sidebar, modal, toast) |
 | `src/base/reset.css` | reset + resets de markup heredado |
 | `src/base/utilities.css` | utilidades (`sw-mt-*`, `sw-d-flex`, `sw-text-*`…) |
-| `src/components/*.css` | 35 archivos, un componente o familia por archivo |
+| `src/components/*.css` | 37 archivos, un componente o familia por archivo |
 | `js/soffi-ui.js` | 41 funciones, vanilla |
 
 `dist/` y `public/vendor/soffi-ui/` son **salida de build**: el próximo
@@ -38,6 +38,9 @@ definición**: el paquete es el origen. No editar la copia.
 
 Esta carpeta es la fuente portable de la skill. Distribuirla completa: `SKILL.md`
 y todos sus capítulos. No aplanar archivos ni copiar solo el manifiesto.
+
+Primeros pasos para crear agentes, instalar la skill y usar estilos: leer
+[getting-started.md](getting-started.md).
 
 | Entorno | Ruta esperada | Activación |
 |---|---|---|
@@ -118,6 +121,7 @@ fallback acumuladas entre SoffiFac y gesnom `dev`).
 | Archivo | Contenido |
 |---|---|
 | [agents.md](agents.md) | distribución, activación y validación en Claude Code, Codex y Agent Skills |
+| [getting-started.md](getting-started.md) | creación y uso de agentes, componentes y estilos |
 | [compat.md](compat.md) | **piso de navegador y reglas de fallback — empezar acá** |
 | [tokens.md](tokens.md) | paleta, tipografía, espaciado, radios, breakpoints |
 | [layout.md](layout.md) | shell, topbar (tenant/periodo), menú de usuario, sidebar, footer |
@@ -176,9 +180,10 @@ Cambios de la serie actual documentados en esta skill:
 Bloqueadores antes de `1.0.0`:
 
 - retrofit de `font-size` inline heredado en Sofficon, con QA visual;
-- override tematizado para `sweetalert2`;
-- componente visual de accordion; hoy existe solo `swToggleCollapse()`;
 - pruebas visuales o snapshots para los dos temas y layouts principales.
+
+SweetAlert2 y accordion visual ya forman parte del paquete; queda publicar los
+artefactos actualizados en las apps y validar el retrofit de Sofficon.
 
 La skill no debe cambiar `VERSION`, `CHANGELOG.md`, tags ni `metadata.version`
 como parte de una actualización documental.

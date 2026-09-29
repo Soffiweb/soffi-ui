@@ -23,7 +23,7 @@ Windows 7/8/8.1.
 
 ```bash
 composer config repositories.soffi-ui vcs https://github.com/Soffiweb/soffi-ui
-composer require soffiweb/soffi-ui:^1.0
+composer require soffiweb/soffi-ui
 
 php artisan vendor:publish --tag=soffi-ui --force
 ```
@@ -71,7 +71,7 @@ porque `.sw-main` crea un stacking context). Desde React usar solo el CSS
 src/
 ├── tokens/        color.css · spacing.css · typography.css
 ├── base/          reset.css · utilities.css
-└── components/    35 archivos, uno por componente o familia
+└── components/    37 archivos, uno por componente o familia
 js/soffi-ui.js     41 funciones vanilla
 blade/             layout panel + componentes sw-* (opcional)
 skills/soffi-ui/   skill de IA — este repo es su origen
@@ -114,8 +114,6 @@ php scripts/check-compat.php                       # solo el check
 
 ## Pendientes conocidos
 
-- Los `font-size` heredados de Sofficon siguen en px literal. Los tokens están
-  definidos y el CSS nuevo los usa; falta el pase de retrofit con QA visual.
-- `sweetalert2` en Sofficon no está tematizado → dos lenguajes de notificación.
-- Faltan accordion visual y override de sweetalert2.
+- Retrofit de los `font-size` heredados en Sofficon, con QA visual por pantalla.
+- Publicar los artefactos actualizados en las apps consumidoras.
 - Sin tests visuales. 565 clases, dos temas, ningún snapshot.

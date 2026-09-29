@@ -1,0 +1,82 @@
+/* Accordion visual — collapse semántico con estado claro/oscuro y teclado. */
+.sw-accordion {
+    width: 100%;
+    overflow: hidden;
+    border: var(--brd);
+    border-radius: var(--rl);
+    background: var(--b1);
+}
+
+.sw-accordion-item + .sw-accordion-item {
+    border-top: var(--brd);
+}
+
+.sw-accordion-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sw-spacing-md);
+    padding: var(--sw-spacing-md) var(--sw-spacing-lg);
+    border: 0;
+    background: var(--b1);
+    color: var(--bc);
+    font: inherit;
+    font-weight: var(--sw-font-semibold);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.sw-accordion-trigger:hover,
+.sw-accordion-trigger[aria-expanded="true"] {
+    background: var(--b2);
+    color: var(--p);
+}
+
+.sw-accordion-trigger:focus-visible {
+    outline: 2px solid var(--a);
+    outline-offset: -2px;
+}
+
+.sw-accordion-trigger-icon {
+    flex: 0 0 auto;
+    transition: transform 0.15s;
+}
+
+.sw-accordion-trigger[aria-expanded="true"] .sw-accordion-trigger-icon {
+    transform: rotate(180deg);
+}
+
+.sw-accordion-panel {
+    padding: 0 var(--sw-spacing-lg) var(--sw-spacing-lg);
+    background: var(--b1);
+    color: var(--bc2);
+    line-height: var(--sw-leading-base);
+}
+
+.sw-accordion-panel-inner {
+    padding-top: var(--sw-spacing-sm);
+}
+
+.sw-accordion-panel.collapse:not(.show) {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .sw-accordion-trigger {
+        padding: var(--sw-spacing-md);
+    }
+
+    .sw-accordion-panel {
+        padding-right: var(--sw-spacing-md);
+        padding-left: var(--sw-spacing-md);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sw-accordion-trigger,
+    .sw-accordion-trigger-icon {
+        transition: none;
+    }
+}

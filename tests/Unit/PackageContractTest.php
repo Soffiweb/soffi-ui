@@ -72,6 +72,9 @@ final class PackageContractTest extends TestCase
         self::assertStringContainsString('/*! Soffi UI ' . $version, $css);
         self::assertStringNotContainsString(':has(', $css);
         self::assertStringContainsString('sw-select-empty', $css);
+        self::assertStringContainsString('.sw-text-sm', $css);
+        self::assertStringContainsString('sw-accordion', $css);
+        self::assertStringContainsString('.swal2-popup', $css);
         self::assertStringContainsString('swSyncSelectColor', $js);
     }
 

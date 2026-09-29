@@ -159,6 +159,7 @@ valores distintos. La escala sale de los px que ya se usaban, no es inventada.
 --sw-text-base: 14px;   /* texto de trabajo          */
 --sw-text-md:   15px;   /* inputs, botones           */
 --sw-text-lg:   16px;   /* títulos de card           */
+--sw-text-lg-plus: 18px; /* legado intermedio         */
 --sw-text-xl:   20px;   /* título de página          */
 --sw-text-2xl:  22px;   /* cifras de dashboard       */
 --sw-text-3xl:  28px;   /* KPI grandes               */

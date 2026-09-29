@@ -181,6 +181,7 @@
     --sw-text-base: 14px;   /* 30 usos     — texto de trabajo          */
     --sw-text-md:   15px;   /* 21 usos     — inputs, botones           */
     --sw-text-lg:   16px;   /*             — títulos de card           */
+    --sw-text-lg-plus: 18px; /*              — legado intermedio          */
     --sw-text-xl:   20px;   /*             — título de página          */
     --sw-text-2xl:  22px;   /*             — cifras de dashboard       */
     --sw-text-3xl:  28px;   /*             — KPI grandes               */
@@ -303,6 +304,17 @@ body {
 
 .sw-font-bold { font-weight: var(--sw-font-bold); }
 .sw-font-semibold { font-weight: var(--sw-font-semibold); }
+.sw-text-3xs { font-size: var(--sw-text-3xs); }
+.sw-text-2xs { font-size: var(--sw-text-2xs); }
+.sw-text-xs { font-size: var(--sw-text-xs); }
+.sw-text-sm { font-size: var(--sw-text-sm); }
+.sw-text-base { font-size: var(--sw-text-base); }
+.sw-text-md { font-size: var(--sw-text-md); }
+.sw-text-lg { font-size: var(--sw-text-lg); }
+.sw-text-lg-plus { font-size: var(--sw-text-lg-plus); }
+.sw-text-xl { font-size: var(--sw-text-xl); }
+.sw-text-2xl { font-size: var(--sw-text-2xl); }
+.sw-text-3xl { font-size: var(--sw-text-3xl); }
 .sw-small { font-size: var(--sw-text-sm); }
 .sw-nowrap { white-space: nowrap; }
 
@@ -434,6 +446,90 @@ body {
 @media (min-width: 1200px) {
     .sw-mb-xl-0 { margin-bottom: 0; }
     .sw-mt-xl-0 { margin-top: 0; }
+}
+
+/* ===== src/components/accordion.css ===== */
+/* Accordion visual — collapse semántico con estado claro/oscuro y teclado. */
+.sw-accordion {
+    width: 100%;
+    overflow: hidden;
+    border: var(--brd);
+    border-radius: var(--rl);
+    background: var(--b1);
+}
+
+.sw-accordion-item + .sw-accordion-item {
+    border-top: var(--brd);
+}
+
+.sw-accordion-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sw-spacing-md);
+    padding: var(--sw-spacing-md) var(--sw-spacing-lg);
+    border: 0;
+    background: var(--b1);
+    color: var(--bc);
+    font: inherit;
+    font-weight: var(--sw-font-semibold);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.sw-accordion-trigger:hover,
+.sw-accordion-trigger[aria-expanded="true"] {
+    background: var(--b2);
+    color: var(--p);
+}
+
+.sw-accordion-trigger:focus-visible {
+    outline: 2px solid var(--a);
+    outline-offset: -2px;
+}
+
+.sw-accordion-trigger-icon {
+    flex: 0 0 auto;
+    transition: transform 0.15s;
+}
+
+.sw-accordion-trigger[aria-expanded="true"] .sw-accordion-trigger-icon {
+    transform: rotate(180deg);
+}
+
+.sw-accordion-panel {
+    padding: 0 var(--sw-spacing-lg) var(--sw-spacing-lg);
+    background: var(--b1);
+    color: var(--bc2);
+    line-height: var(--sw-leading-base);
+}
+
+.sw-accordion-panel-inner {
+    padding-top: var(--sw-spacing-sm);
+}
+
+.sw-accordion-panel.collapse:not(.show) {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .sw-accordion-trigger {
+        padding: var(--sw-spacing-md);
+    }
+
+    .sw-accordion-panel {
+        padding-right: var(--sw-spacing-md);
+        padding-left: var(--sw-spacing-md);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sw-accordion-trigger,
+    .sw-accordion-trigger-icon {
+        transition: none;
+    }
 }
 
 /* ===== src/components/action-card.css ===== */
@@ -5915,8 +6011,8 @@ body.sw-modal-open {
    contenido y se auto-cierra; .sw-alert es un bloque fijo que se queda en el
    flujo de la página.
 
-   Sofficon resuelve hoy lo mismo con sweetalert2 sin tematizar. Pendiente:
-   overrides de tema para swal2 o migrar sus usos a este toast. */
+   Sofficon puede seguir usando sweetalert2: vendor-sweetalert2.css contiene el
+   override canónico. Para avisos nuevos, preferir .sw-alert-toast. */
 
 .sw-alert.sw-alert-hide {
     animation: sw-alert-out 0.2s ease-in forwards;
@@ -6119,4 +6215,142 @@ body.sw-modal-open {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background: var(--p);
     color: var(--btn-text);
+}
+
+/* ===== src/components/vendor-sweetalert2.css ===== */
+/* SweetAlert2 v11 — override visual canónico de Soffi UI. Cargar soffi-ui.css
+   después del CSS de SweetAlert2 para que este contrato tenga prioridad. */
+.swal2-container {
+    --swal2-background: var(--b1);
+    --swal2-color: var(--bc);
+    --swal2-confirm-button-background-color: var(--p);
+    --swal2-confirm-button-color: var(--btn-text);
+    --swal2-cancel-button-background-color: transparent;
+    --swal2-cancel-button-color: var(--bc);
+    --swal2-validation-message-background: var(--b2);
+    --swal2-validation-message-color: var(--bc);
+    --swal2-timer-progress-bar-background: var(--p);
+    z-index: var(--sw-z-toast) !important;
+}
+
+.swal2-popup {
+    width: min(32em, calc(100vw - 32px)) !important;
+    padding: var(--sw-spacing-xl) !important;
+    border: var(--brd) !important;
+    border-radius: var(--rl) !important;
+    background: var(--b1) !important;
+    color: var(--bc) !important;
+    box-shadow: var(--sh-lg) !important;
+    font-family: var(--sw-font-sans) !important;
+}
+
+.swal2-title {
+    margin: 0 0 var(--sw-spacing-sm) !important;
+    padding: 0 !important;
+    color: var(--p) !important;
+    font-size: var(--sw-text-xl) !important;
+    font-weight: var(--sw-font-semibold) !important;
+}
+
+.swal2-html-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--bc2) !important;
+    font-size: var(--sw-text-md) !important;
+    line-height: var(--sw-leading-base) !important;
+}
+
+.swal2-actions {
+    gap: var(--sw-spacing-sm) !important;
+    margin: var(--sw-spacing-lg) auto 0 !important;
+}
+
+.swal2-styled {
+    margin: 0 !important;
+    border-radius: var(--r) !important;
+    font-family: inherit !important;
+    font-size: var(--sw-text-md) !important;
+    font-weight: var(--sw-font-medium) !important;
+}
+
+.swal2-confirm {
+    background: var(--p) !important;
+    color: var(--btn-text) !important;
+}
+
+.swal2-cancel {
+    border: var(--brd) !important;
+    background: transparent !important;
+    color: var(--bc) !important;
+}
+
+.swal2-confirm:focus-visible,
+.swal2-cancel:focus-visible,
+.swal2-deny:focus-visible,
+.swal2-input:focus,
+.swal2-textarea:focus,
+.swal2-select:focus {
+    outline: 2px solid var(--a) !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+}
+
+.swal2-input,
+.swal2-textarea,
+.swal2-select {
+    width: calc(100% - 2rem) !important;
+    margin: var(--sw-spacing-md) auto 0 !important;
+    padding: var(--sw-spacing-sm) var(--sw-spacing-md) !important;
+    border: var(--brd-s) !important;
+    border-radius: var(--r) !important;
+    background: var(--b1) !important;
+    color: var(--bc) !important;
+    font-family: inherit !important;
+    font-size: var(--sw-text-md) !important;
+}
+
+.swal2-validation-message {
+    margin: var(--sw-spacing-md) 0 0 !important;
+    border: var(--brd) !important;
+    color: var(--bc) !important;
+    font-size: var(--sw-text-sm) !important;
+}
+
+.swal2-icon.swal2-success {
+    border-color: var(--su) !important;
+    color: var(--su) !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: var(--er) !important;
+    color: var(--er) !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: var(--wa) !important;
+    color: var(--wa) !important;
+}
+
+.swal2-icon.swal2-info,
+.swal2-icon.swal2-question {
+    border-color: var(--in) !important;
+    color: var(--in) !important;
+}
+
+.swal2-toast {
+    padding: var(--sw-spacing-md) !important;
+    border: var(--brd) !important;
+    box-shadow: var(--sh-lg) !important;
+}
+
+.swal2-toast .swal2-title,
+.swal2-toast .swal2-html-container {
+    font-size: var(--sw-text-sm) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .swal2-show,
+    .swal2-hide {
+        animation: none !important;
+    }
 }

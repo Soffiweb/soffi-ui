@@ -23,6 +23,17 @@
 
 .sw-font-bold { font-weight: var(--sw-font-bold); }
 .sw-font-semibold { font-weight: var(--sw-font-semibold); }
+.sw-text-3xs { font-size: var(--sw-text-3xs); }
+.sw-text-2xs { font-size: var(--sw-text-2xs); }
+.sw-text-xs { font-size: var(--sw-text-xs); }
+.sw-text-sm { font-size: var(--sw-text-sm); }
+.sw-text-base { font-size: var(--sw-text-base); }
+.sw-text-md { font-size: var(--sw-text-md); }
+.sw-text-lg { font-size: var(--sw-text-lg); }
+.sw-text-lg-plus { font-size: var(--sw-text-lg-plus); }
+.sw-text-xl { font-size: var(--sw-text-xl); }
+.sw-text-2xl { font-size: var(--sw-text-2xl); }
+.sw-text-3xl { font-size: var(--sw-text-3xl); }
 .sw-small { font-size: var(--sw-text-sm); }
 .sw-nowrap { white-space: nowrap; }
 

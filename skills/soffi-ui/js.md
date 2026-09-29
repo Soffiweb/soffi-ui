@@ -186,6 +186,9 @@ Reglas:
 - El panel arranca oculto salvo que tenga `.show`.
 - `data-parent` en el **panel** lo vuelve acordeón: al abrir uno se cierran sus
   hermanos dentro de ese contenedor.
+- Para un accordion visual, combinarlo con `.sw-accordion`,
+  `.sw-accordion-trigger` y `.sw-accordion-panel`; el CSS del componente ya
+  resuelve estados, foco, icono y tema oscuro.
 - La función actualiza `aria-expanded` en el trigger; útil para rotar el chevron:
   `[data-toggle="collapse"][aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); }`
 - Se conservan los nombres `.collapse` / `.show` (no `sw-`) porque son los que

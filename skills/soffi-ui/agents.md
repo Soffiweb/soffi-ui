@@ -8,6 +8,7 @@ Copiar siempre esta carpeta completa:
 soffi-ui/
 ├── SKILL.md
 ├── agents.md
+├── getting-started.md
 ├── auth.md
 ├── compat.md
 ├── components.md
@@ -39,6 +40,20 @@ dropdowns, skeletons, accesibilidad visual o migración desde Bootstrap.
 
 No activarla para lógica de negocio, consultas DB, endpoints o estilos que no
 formen parte del sistema visual.
+
+## Flujo mínimo
+
+1. Copiar el bundle completo en la ruta del agente (`.claude/skills/`,
+   `.codex/skills/` o `.agents/skills/`).
+2. Activar `$soffi-ui` y leer `SKILL.md`, `compat.md` y el capítulo del cambio.
+3. Crear o refactorizar usando `sw-*`; si falta un patrón, agregarlo primero a
+   `src/components/*.css` y documentarlo en `components.md`.
+4. Consumir la salida publicada (`soffi-ui.css` y `soffi-ui.js`) desde Blade o
+   React; no redefinir componentes en la app.
+5. Ejecutar build, compatibilidad y tests antes de publicar.
+
+El detalle completo, incluido cómo crear agentes y distribuir esta skill en
+Claude Code y Codex, está en [getting-started.md](getting-started.md).
 
 ## Validación de instalación
 

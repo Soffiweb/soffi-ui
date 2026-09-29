@@ -3,8 +3,8 @@
    contenido y se auto-cierra; .sw-alert es un bloque fijo que se queda en el
    flujo de la página.
 
-   Sofficon resuelve hoy lo mismo con sweetalert2 sin tematizar. Pendiente:
-   overrides de tema para swal2 o migrar sus usos a este toast. */
+   Sofficon puede seguir usando sweetalert2: vendor-sweetalert2.css contiene el
+   override canónico. Para avisos nuevos, preferir .sw-alert-toast. */
 
 .sw-alert.sw-alert-hide {
     animation: sw-alert-out 0.2s ease-in forwards;

@@ -1,0 +1,136 @@
+/* SweetAlert2 v11 — override visual canónico de Soffi UI. Cargar soffi-ui.css
+   después del CSS de SweetAlert2 para que este contrato tenga prioridad. */
+.swal2-container {
+    --swal2-background: var(--b1);
+    --swal2-color: var(--bc);
+    --swal2-confirm-button-background-color: var(--p);
+    --swal2-confirm-button-color: var(--btn-text);
+    --swal2-cancel-button-background-color: transparent;
+    --swal2-cancel-button-color: var(--bc);
+    --swal2-validation-message-background: var(--b2);
+    --swal2-validation-message-color: var(--bc);
+    --swal2-timer-progress-bar-background: var(--p);
+    z-index: var(--sw-z-toast) !important;
+}
+
+.swal2-popup {
+    width: min(32em, calc(100vw - 32px)) !important;
+    padding: var(--sw-spacing-xl) !important;
+    border: var(--brd) !important;
+    border-radius: var(--rl) !important;
+    background: var(--b1) !important;
+    color: var(--bc) !important;
+    box-shadow: var(--sh-lg) !important;
+    font-family: var(--sw-font-sans) !important;
+}
+
+.swal2-title {
+    margin: 0 0 var(--sw-spacing-sm) !important;
+    padding: 0 !important;
+    color: var(--p) !important;
+    font-size: var(--sw-text-xl) !important;
+    font-weight: var(--sw-font-semibold) !important;
+}
+
+.swal2-html-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--bc2) !important;
+    font-size: var(--sw-text-md) !important;
+    line-height: var(--sw-leading-base) !important;
+}
+
+.swal2-actions {
+    gap: var(--sw-spacing-sm) !important;
+    margin: var(--sw-spacing-lg) auto 0 !important;
+}
+
+.swal2-styled {
+    margin: 0 !important;
+    border-radius: var(--r) !important;
+    font-family: inherit !important;
+    font-size: var(--sw-text-md) !important;
+    font-weight: var(--sw-font-medium) !important;
+}
+
+.swal2-confirm {
+    background: var(--p) !important;
+    color: var(--btn-text) !important;
+}
+
+.swal2-cancel {
+    border: var(--brd) !important;
+    background: transparent !important;
+    color: var(--bc) !important;
+}
+
+.swal2-confirm:focus-visible,
+.swal2-cancel:focus-visible,
+.swal2-deny:focus-visible,
+.swal2-input:focus,
+.swal2-textarea:focus,
+.swal2-select:focus {
+    outline: 2px solid var(--a) !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+}
+
+.swal2-input,
+.swal2-textarea,
+.swal2-select {
+    width: calc(100% - 2rem) !important;
+    margin: var(--sw-spacing-md) auto 0 !important;
+    padding: var(--sw-spacing-sm) var(--sw-spacing-md) !important;
+    border: var(--brd-s) !important;
+    border-radius: var(--r) !important;
+    background: var(--b1) !important;
+    color: var(--bc) !important;
+    font-family: inherit !important;
+    font-size: var(--sw-text-md) !important;
+}
+
+.swal2-validation-message {
+    margin: var(--sw-spacing-md) 0 0 !important;
+    border: var(--brd) !important;
+    color: var(--bc) !important;
+    font-size: var(--sw-text-sm) !important;
+}
+
+.swal2-icon.swal2-success {
+    border-color: var(--su) !important;
+    color: var(--su) !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: var(--er) !important;
+    color: var(--er) !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: var(--wa) !important;
+    color: var(--wa) !important;
+}
+
+.swal2-icon.swal2-info,
+.swal2-icon.swal2-question {
+    border-color: var(--in) !important;
+    color: var(--in) !important;
+}
+
+.swal2-toast {
+    padding: var(--sw-spacing-md) !important;
+    border: var(--brd) !important;
+    box-shadow: var(--sh-lg) !important;
+}
+
+.swal2-toast .swal2-title,
+.swal2-toast .swal2-html-container {
+    font-size: var(--sw-text-sm) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .swal2-show,
+    .swal2-hide {
+        animation: none !important;
+    }
+}

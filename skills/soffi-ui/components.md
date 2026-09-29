@@ -4,6 +4,35 @@ Regla de uso: no introducir bloques `.sw-metric` o `.sw-metrics-grid` por defect
 
 `.sw-btn-secondary` fue removido de soffi-ui (color `--s` confundía con el primary). Para acciones no primarias (exportar, filtrar, cancelar) usar siempre `.sw-btn-ghost`.
 
+## Accordion visual
+
+Usar `.sw-accordion` con un botón accesible y un panel `.collapse`. El JS
+existente de `swToggleCollapse()` respeta `data-parent` y cierra los hermanos.
+
+```blade
+<div id="detalle-acordeon" class="sw-accordion">
+    <div class="sw-accordion-item">
+        <button type="button" class="sw-accordion-trigger"
+                data-toggle="collapse" data-target="#detalle-general"
+                aria-controls="detalle-general" aria-expanded="false">
+            <span>Datos generales</span>
+            <span class="sw-accordion-trigger-icon" aria-hidden="true">⌄</span>
+        </button>
+        <div id="detalle-general" class="sw-accordion-panel collapse"
+             data-parent="#detalle-acordeon">
+            <div class="sw-accordion-panel-inner">Contenido.</div>
+        </div>
+    </div>
+</div>
+```
+
+## SweetAlert2
+
+El override `vendor-sweetalert2.css` ya está incluido en `soffi-ui.css`. Cargar
+la hoja de Soffi UI después de SweetAlert2; no crear overrides por aplicación.
+La API de `Swal.fire()` se conserva y hereda tokens de tema, botones, inputs,
+iconos, toast, foco y `prefers-reduced-motion`.
+
 ## Familias canónicas
 
 - Página: `.sw-crud-page`, `.sw-crud-container`, `.sw-crud-head`, `.sw-crud-title`, `.sw-crud-actions`.
@@ -59,6 +88,7 @@ Variantes responsive para resetear al subir de breakpoint:
 `.sw-mt-xl-0`.
 
 **Texto y otros** — `.sw-text-left|center|right`, `.sw-text-muted`,
+`.sw-text-3xs|2xs|xs|sm|base|md|lg|lg-plus|xl|2xl|3xl`,
 `.sw-text-success`, `.sw-font-bold`, `.sw-nowrap`, `.sw-h-100`, `.sw-border-0`,
 `.sw-border-bottom`.
 
@@ -2415,9 +2445,8 @@ Cuándo usar cuál:
 | Lista de errores de validación | `.sw-alert` solo |
 | Mensaje largo o contextual | `.sw-alert` solo |
 
-> Sofficon resuelve hoy lo mismo con `sweetalert2` sin tematizar (0 reglas de
-> override) → hay dos lenguajes visuales de notificación en el parque.
-> Pendiente: tematizar swal2 o migrar sus usos a este toast.
+> Sofficon puede seguir usando `sweetalert2`: el override canónico vive en
+> `vendor-sweetalert2.css` y se incluye en `soffi-ui.css`.
 
 ## Banner de impersonación — `.sw-impersonation-banner` (venía de SoffiFac)
 
