@@ -1,4 +1,4 @@
-/*! Soffi UI 0.11.1 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 0.11.2 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -2321,9 +2321,9 @@ body {
 }
 
 .sw-dropdown-divider {
-    height: 1px;
+    height: 0;
     margin: 0.3rem 0;
-    background: var(--sw-border);
+    border-top: var(--brd);
 }
 
 /* ===== src/components/empty-state.css ===== */
@@ -4951,31 +4951,58 @@ body.sw-modal-open {
 
 .sw-skeleton {
     display: block;
-    min-height: 1rem;
+    width: var(--sw-skeleton-width, 100%);
+    height: var(--sw-skeleton-height, 1rem);
+    min-height: var(--sw-skeleton-height, 1rem);
     border-radius: var(--r);
     background: var(--b2);
     animation: sw-skeleton-pulse 1.4s ease-in-out infinite;
 }
 
-.sw-skeleton-text {
+.sw-skeleton-card {
+    width: min(100%, var(--sw-skeleton-card-width, 420px));
+}
+
+.sw-skeleton-layout {
+    display: grid;
+    gap: var(--sw-spacing-md);
     width: 100%;
-    height: 0.85rem;
+    min-width: 0;
+}
+
+.sw-skeleton-row {
+    display: flex;
+    align-items: center;
+    gap: var(--sw-spacing-sm);
+    width: 100%;
+    min-width: 0;
+}
+
+.sw-skeleton-content {
+    display: grid;
+    flex: 1;
+    gap: var(--sw-spacing-sm);
+    min-width: 0;
+}
+
+.sw-skeleton-text {
+    --sw-skeleton-height: 0.85rem;
 }
 
 .sw-skeleton-title {
-    width: min(70%, 320px);
-    height: 1.35rem;
+    --sw-skeleton-width: min(70%, 320px);
+    --sw-skeleton-height: 1.35rem;
 }
 
 .sw-skeleton-avatar {
-    width: 42px;
-    height: 42px;
+    --sw-skeleton-width: 42px;
+    --sw-skeleton-height: 42px;
+    flex: 0 0 42px;
     border-radius: 50%;
 }
 
 .sw-skeleton-media {
-    width: 100%;
-    min-height: 150px;
+    --sw-skeleton-height: 150px;
 }
 
 @media (prefers-reduced-motion: reduce) {

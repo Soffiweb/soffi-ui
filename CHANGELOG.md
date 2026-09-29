@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.2 — 2026-09-29
+
+### Corregido
+
+- Skeleton configurable con composición, tamaños y layout documentados.
+- Divider de dropdown visible con línea de separación real.
+
 ## 0.11.1 — 2026-09-29
 
 ### Corregido
