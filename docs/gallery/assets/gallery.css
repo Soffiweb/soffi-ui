@@ -407,6 +407,16 @@ details.gal-code summary:hover { color: var(--p); }
     margin-bottom: 0;
 }
 
+.gal-page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: var(--brd);
+}
+
 /* Guía de inicio: cards de contenido y contraste claro entre fondo y texto. */
 .gal-guide-hero {
     padding: 1.75rem 2rem;
@@ -455,5 +465,14 @@ details.gal-code summary:hover { color: var(--p); }
     .gal-guide-hero,
     .gal-guide-page .gal-section.sw-card {
         padding: 1.25rem;
+    }
+
+    .gal-page-nav {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .gal-page-nav .sw-btn {
+        justify-content: center;
     }
 }
