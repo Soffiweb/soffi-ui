@@ -46,6 +46,17 @@ php artisan vendor:publish --tag=soffi-ui --force
 La versión queda fijada en `composer.lock`, así que siempre se sabe qué tiene
 cada app — que es exactamente lo que faltaba antes.
 
+## Documentación pública
+
+La documentación se publica automáticamente desde `skills/soffi-ui/` en:
+
+<https://soffiweb.github.io/soffi-ui/>
+
+El sitio usa `docs/`, `scripts/build-docs.php` y el workflow
+`.github/workflows/docs.yml`; no hay una copia separada de la skill ni un VPS
+que mantener. En GitHub, configurar
+`Settings → Pages → Source: GitHub Actions` una sola vez.
+
 ### Tags de publish
 
 | Tag | Qué publica | ¿Obligatorio? |
