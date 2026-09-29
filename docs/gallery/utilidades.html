@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilidades — Soffi UI</title>
+<meta name="description" content="Dropdown, spinner, tooltip, switch, skeleton, stepper y estilos de impresión de Soffi UI.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app gal-utilidades-page">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+        <img src="assets/Soffiweb-Logo.png" alt="Soffiweb" class="gal-topbar-logo">
+        <div class="sw-topbar-tenant"><span class="sw-topbar-company">SoffiUI - Soffiweb</span></div>
+    </div>
+    <nav class="gal-topnav" aria-label="Navegación principal">
+        <a class="gal-topnav-link" href="index.html"><i class="fa-solid fa-book-open"></i><span>Docs</span></a>
+        <a class="gal-topnav-link active" href="utilidades.html" aria-current="page"><i class="fa-solid fa-shapes"></i><span>Components</span></a>
+        <a class="gal-topnav-link" href="primeros-pasos.html"><i class="fa-solid fa-layer-group"></i><span>Patterns</span></a>
+        <a class="gal-topnav-link" href="navegacion/sidebar.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><span>Layout</span></a>
+    </nav>
+    <div class="sw-topbar-actions">
+        <div class="gal-topbar-search" aria-label="Buscar documentación"><i class="fa-solid fa-magnifying-glass"></i><span>Search...</span><kbd>⌘ K</kbd></div>
+        <span class="gal-topbar-status"><i class="fa-solid fa-circle"></i> dist/soffi-ui.css</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Documentación Soffi UI</div>
+            <div class="sw-sb-brand-sub"><a href="index.html" style="color:inherit;text-decoration:none"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a></div>
+        </div>
+        <div class="sw-sb-group">Inicio</div>
+        <a href="primeros-pasos.html" class="sw-sb-link"><i class="fa-solid fa-rocket"></i> Primeros pasos</a>
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="tokens.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+        <div class="sw-sb-group">Componentes</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones y badges</a>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</a>
+        <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Formularios</a>
+        <div class="sw-sb-group">Utilidades</div>
+        <a href="utilidades.html#dropdown" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Dropdown</a>
+        <a href="utilidades.html#spinner" class="sw-sb-link"><i class="fa-solid fa-spinner"></i> Spinner</a>
+        <a href="utilidades.html#tooltip" class="sw-sb-link"><i class="fa-solid fa-comment"></i> Tooltip</a>
+        <a href="utilidades.html#switch" class="sw-sb-link"><i class="fa-solid fa-toggle-on"></i> Switch</a>
+        <a href="utilidades.html#skeleton" class="sw-sb-link"><i class="fa-solid fa-align-left"></i> Skeleton</a>
+        <a href="utilidades.html#stepper" class="sw-sb-link"><i class="fa-solid fa-list-ol"></i> Stepper</a>
+        <a href="utilidades.html#print" class="sw-sb-link"><i class="fa-solid fa-print"></i> Impresión</a>
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos/tablas.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tablas</a>
+        <a href="datos/rol.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos/paginacion.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion/tabs.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion/collapse.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion/breadcrumb.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion/sidebar.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar y topbar</a>
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+        <div class="sw-sb-group">Patrones</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+        <div class="sw-sb-group">Ejemplos reales</div>
+        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Empleados</a>
+    </nav>
+
+    <main class="sw-main">
+        <div class="gal-hero">
+            <h1>Utilidades</h1>
+            <p>Componentes auxiliares para acciones, estados de carga, ayuda contextual, formularios y procesos largos.</p>
+        </div>
+
+        <section id="dropdown" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-caret-down"></i> Dropdown</h2><p><code>.sw-dropdown</code> + <code>swToggleDropdown(trigger)</code>. Un menú genérico para acciones o enlaces.</p></div>
+            <div class="gal-preview">
+                <div class="sw-dropdown">
+                    <button type="button" class="sw-btn sw-btn-primary" aria-haspopup="menu" aria-expanded="false" aria-controls="gal-dropdown-menu" onclick="galToggleDropdown(this)">Acciones <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="sw-dropdown-menu" id="gal-dropdown-menu" role="menu">
+                        <a href="#" class="sw-dropdown-item" role="menuitem"><i class="fa-solid fa-pen"></i> Editar</a>
+                        <a href="#" class="sw-dropdown-item" role="menuitem"><i class="fa-solid fa-copy"></i> Duplicar</a>
+                        <div class="sw-dropdown-divider" role="separator"></div>
+                        <button type="button" class="sw-dropdown-item" role="menuitem"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                    </div>
+                </div>
+            </div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;div class="sw-dropdown"&gt;
+    &lt;button class="sw-btn sw-btn-primary" aria-haspopup="menu"
+            aria-expanded="false" aria-controls="actions-menu"
+            onclick="swToggleDropdown(this)"&gt;Acciones&lt;/button&gt;
+    &lt;div class="sw-dropdown-menu" id="actions-menu" role="menu"&gt;
+        &lt;a href="..." class="sw-dropdown-item" role="menuitem"&gt;Editar&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></details>
+        </section>
+
+        <section id="spinner" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-spinner"></i> Spinner</h2><p><code>.sw-spinner</code> indica una operación en curso. Variantes <code>-sm</code>, base y <code>-lg</code>.</p></div>
+            <div class="gal-preview"><span class="sw-spinner sw-spinner-sm" role="status" aria-label="Cargando"></span><span class="sw-spinner" role="status" aria-label="Cargando"></span><span class="sw-spinner sw-spinner-lg" role="status" aria-label="Cargando"></span><button class="sw-btn sw-btn-primary"><span class="sw-spinner sw-spinner-sm sw-spinner-light" aria-hidden="true"></span> Guardando</button></div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;span class="sw-spinner" role="status" aria-label="Cargando"&gt;&lt;/span&gt;
+&lt;button class="sw-btn sw-btn-primary" disabled&gt;
+    &lt;span class="sw-spinner sw-spinner-sm sw-spinner-light" aria-hidden="true"&gt;&lt;/span&gt;
+    Guardando
+&lt;/button&gt;</code></pre></div></details>
+        </section>
+
+        <section id="tooltip" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-comment"></i> Tooltip</h2><p><code>.sw-tooltip</code> muestra ayuda contextual al pasar el cursor o enfocar el elemento.</p></div>
+            <div class="gal-preview"><span class="sw-tooltip" data-tooltip="Información adicional" tabindex="0" title="Información adicional"><button type="button" class="sw-btn sw-btn-ghost" aria-label="Más información"><i class="fa-solid fa-circle-info"></i></button></span><span class="sw-tooltip sw-tooltip-bottom" data-tooltip="Se muestra debajo" tabindex="0"><span class="sw-badge sw-badge-info">Tooltip inferior</span></span></div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;button class="sw-tooltip" data-tooltip="Información adicional"
+        title="Información adicional" aria-label="Más información"&gt;
+    &lt;i class="fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre></div></details>
+        </section>
+
+        <section id="switch" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-toggle-on"></i> Switch</h2><p><code>.sw-switch</code> es un control de formulario accesible basado en checkbox nativo.</p></div>
+            <div class="gal-preview gal-preview-block"><label class="sw-switch"><input type="checkbox" class="sw-switch-input" checked><span class="sw-switch-track" aria-hidden="true"><span class="sw-switch-thumb"></span></span><span class="sw-switch-label">Notificaciones activas</span></label><label class="sw-switch"><input type="checkbox" class="sw-switch-input"><span class="sw-switch-track" aria-hidden="true"><span class="sw-switch-thumb"></span></span><span class="sw-switch-label">Modo compacto</span></label></div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;label class="sw-switch"&gt;
+    &lt;input type="checkbox" class="sw-switch-input" checked&gt;
+    &lt;span class="sw-switch-track" aria-hidden="true"&gt;
+        &lt;span class="sw-switch-thumb"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class="sw-switch-label"&gt;Notificaciones activas&lt;/span&gt;
+&lt;/label&gt;</code></pre></div></details>
+        </section>
+
+        <section id="skeleton" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-align-left"></i> Skeleton</h2><p><code>.sw-skeleton</code> mantiene la estructura visible mientras llega el contenido.</p></div>
+            <div class="gal-preview"><div class="sw-card" style="width:min(100%,420px)"><div class="sw-d-flex sw-align-items-center" style="gap:12px"><span class="sw-skeleton sw-skeleton-avatar"></span><div class="sw-d-flex sw-flex-column" style="gap:8px;flex:1"><span class="sw-skeleton sw-skeleton-title"></span><span class="sw-skeleton sw-skeleton-text" style="width:45%"></span></div></div><span class="sw-skeleton sw-skeleton-media" style="margin-top:16px"></span></div></div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;span class="sw-skeleton sw-skeleton-avatar"&gt;&lt;/span&gt;
+&lt;span class="sw-skeleton sw-skeleton-title"&gt;&lt;/span&gt;
+&lt;span class="sw-skeleton sw-skeleton-text"&gt;&lt;/span&gt;
+&lt;span class="sw-skeleton sw-skeleton-media"&gt;&lt;/span&gt;</code></pre></div></details>
+        </section>
+
+        <section id="stepper" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-list-ol"></i> Stepper</h2><p><code>.sw-stepper</code> representa el avance de un proceso. Usa <code>.is-complete</code> y <code>.is-active</code>.</p></div>
+            <div class="gal-preview gal-preview-block"><div class="sw-stepper"><div class="sw-step is-complete"><span class="sw-step-marker"><i class="fa-solid fa-check"></i></span><span class="sw-step-content"><span class="sw-step-title">Datos</span><span class="sw-step-description">Completado</span></span></div><div class="sw-step is-active"><span class="sw-step-marker">2</span><span class="sw-step-content"><span class="sw-step-title">Confirmación</span><span class="sw-step-description">Paso actual</span></span></div><div class="sw-step"><span class="sw-step-marker">3</span><span class="sw-step-content"><span class="sw-step-title">Finalizar</span><span class="sw-step-description">Pendiente</span></span></div></div></div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;div class="sw-stepper"&gt;
+    &lt;div class="sw-step is-complete"&gt;
+        &lt;span class="sw-step-marker"&gt;1&lt;/span&gt;
+        &lt;span class="sw-step-content"&gt;&lt;span class="sw-step-title"&gt;Datos&lt;/span&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-step is-active"&gt;
+        &lt;span class="sw-step-marker"&gt;2&lt;/span&gt;
+        &lt;span class="sw-step-content"&gt;&lt;span class="sw-step-title"&gt;Confirmación&lt;/span&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></details>
+        </section>
+
+        <section id="print" class="gal-section">
+            <div class="gal-section-head"><h2><i class="fa-solid fa-print"></i> Impresión</h2><p>Los estilos de impresión ocultan chrome de aplicación y dejan el contenido listo para papel o PDF.</p></div>
+            <div class="gal-preview gal-preview-block"><div class="sw-card"><strong>Contenido imprimible</strong><p class="sw-print-hide">Este texto puede ocultarse al imprimir con <code>.sw-print-hide</code>.</p><p class="sw-print-only">Este texto solo aparece al imprimir con <code>.sw-print-only</code>.</p></div></div>
+            <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;div class="sw-print-hide"&gt;No aparece en papel&lt;/div&gt;
+&lt;div class="sw-print-only"&gt;Solo aparece al imprimir&lt;/div&gt;
+&lt;section class="sw-print-break-before"&gt;Nueva página&lt;/section&gt;</code></pre></div></details>
+        </section>
+
+        <nav class="gal-page-nav" aria-label="Navegación de documentación"></nav>
+    </main>
+</div>
+
+<footer class="sw-footer"><span>Soffi UI v0.11.0 — soffiweb/soffi-ui</span><span class="sw-footer-links"><a href="index.html">Inicio</a></span></footer>
+<script src="assets/gallery.js"></script>
+</body>
+</html>

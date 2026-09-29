@@ -63,6 +63,29 @@ function galCloseSidebar() {
     document.body.classList.remove('sw-sidebar-open');
 }
 
+function galToggleDropdown(trigger) {
+    const menu = document.getElementById(trigger.getAttribute('aria-controls'));
+    if (!menu) return;
+
+    const open = !menu.classList.contains('open');
+    galCloseDropdowns();
+    if (open) {
+        menu.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+    }
+}
+
+function galCloseDropdowns(restoreFocus) {
+    document.querySelectorAll('.sw-dropdown-menu.open').forEach(function (menu) {
+        menu.classList.remove('open');
+        const trigger = document.querySelector('[aria-controls="' + menu.id + '"]');
+        if (trigger) {
+            trigger.setAttribute('aria-expanded', 'false');
+            if (restoreFocus) trigger.focus();
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     galRouteDocumentationLinks();
     galInitPageNavigation();
@@ -96,6 +119,7 @@ const galPageSequence = [
     { file: 'navegacion/collapse.html', label: 'Collapse', hash: 'collapse' },
     { file: 'navegacion/breadcrumb.html', label: 'Breadcrumb', hash: 'breadcrumb' },
     { file: 'navegacion/sidebar.html', label: 'Sidebar y topbar', hash: 'sidebar-topbar' },
+    { file: 'utilidades.html', label: 'Utilidades', hash: 'dropdown' },
     { file: 'overlays.html', label: 'Modal', hash: 'modal' },
     { file: 'dashboard.html', label: 'Dashboard', hash: 'dashboard' },
     { file: 'auth.html', label: 'Auth', hash: 'auth' },
@@ -414,6 +438,7 @@ document.addEventListener('keydown', function (e) {
             e.preventDefault();
             galCloseModal(modal.id);
         }
+        galCloseDropdowns(true);
         galCloseSidebar();
     } else if (e.key === 'Tab') {
         galTrapModalFocus(e);
@@ -477,6 +502,7 @@ function galToggleRowMenu(trigger) {
 }
 
 document.addEventListener('click', function (e) {
+    if (!e.target.closest('.sw-dropdown')) galCloseDropdowns();
     if (!e.target.closest('.sw-row-menu')) {
         document.querySelectorAll('.sw-row-menu-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
     }
