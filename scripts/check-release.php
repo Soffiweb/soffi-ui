@@ -12,11 +12,12 @@ foreach (array_slice($argv, 1) as $argument) {
     }
 
     if (str_starts_with($argument, '--tag=')) {
-        $expectedTag = substr($argument, strlen('--tag='));
+        $expectedTag = substr($argument, strlen('--tag=')) ?: null;
     }
 }
 
-$expectedTag ??= getenv('GITHUB_REF_NAME') ?: null;
+// El tag solo se valida cuando se pasa --tag= explicito (job release).
+// Sin esto, GITHUB_REF_NAME de un push a rama hacia fallar a los tests.
 $version = trim((string) file_get_contents($root . '/VERSION'));
 $semver = '/^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)'
     . '(?:-((?:0|[1-9]\\d*|\\d*[A-Za-z-][0-9A-Za-z-]*)'
