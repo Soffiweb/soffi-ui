@@ -1,16 +1,15 @@
 # Graph Report - soffi-ui  (2026-09-29)
 
 ## Corpus Check
-- 26 files · ~46,684 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 317 nodes · 343 edges · 24 communities (16 shown, 2 thin omitted)
+- 319 nodes · 348 edges · 24 communities (16 shown, 2 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `51eaf695`
+- Built from commit: `1e95b4e7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,7 +26,7 @@
 - Soffiweb UI — Base Layout
 - Soffi UI
 - Utilidades nuevas en 0.11.0
-- 0.3.0 — 2026-09-24
+- Soffiweb UI — Auth / Entry Screens
 - AI agent instructions
 - CLAUDE.md
 - THIRD_PARTY_NOTICES.md
@@ -40,9 +39,9 @@
 3. `API` - 11 edges
 4. `PackageContractTest` - 9 edges
 5. `Soffi UI` - 8 edges
-6. `Soffi UI — sistema de diseño Soffiweb` - 8 edges
-7. `Compatibilidad — la regla que no se negocia` - 8 edges
-8. `Utilidades nuevas en 0.11.0` - 8 edges
+6. `Utilidades nuevas en 0.11.0` - 8 edges
+7. `Soffi UI — sistema de diseño Soffiweb` - 8 edges
+8. `Compatibilidad — la regla que no se negocia` - 8 edges
 9. `Soffiweb UI - Shared JS` - 7 edges
 10. `Soffiweb UI - Patrones Blade` - 7 edges
 
@@ -60,7 +59,7 @@ Nodes (27): autoload, autoload-dev, psr-4, psr-4, config, sort-packages, descrip
 
 ### Community 1 - "gallery.js"
 Cohesion: 0.06
-Nodes (25): GAL_MODAL_FOCUSABLE_SELECTOR, GAL_SIDEBAR_GROUPS, galCloseAllRowMenus(), galCloseDropdowns(), galCreatePageLink(), galFocusModal(), galGetGalleryUrl(), galGetOpenModal() (+17 more)
+Nodes (27): GAL_MODAL_FOCUSABLE_SELECTOR, GAL_SIDEBAR_GROUPS, galCloseAllRowMenus(), galCloseDropdowns(), galCreatePageLink(), galFocusModal(), galGetGalleryUrl(), galGetOpenModal() (+19 more)
 
 ### Community 2 - "soffi-ui.js"
 Cohesion: 0.07
@@ -75,8 +74,8 @@ Cohesion: 0.10
 Nodes (20): API, Collapse / acordeón, Dependencias, Dropdown genérico, En React, Funciones de alerta (nuevas en 0.3.0, venían de SoffiFac), Inputs, Menu de acciones secundarias por fila (+12 more)
 
 ### Community 6 - "SKILL.md"
-Cohesion: 0.07
-Nodes (26): Componentes, Ejemplo — login, Layout base, Prohibido en estas pantallas, Soffiweb UI — Auth / Entry Screens, Action card — `.sw-action-card` (nuevo), Banner de impersonación — `.sw-impersonation-banner` (venía de SoffiFac), Collapse / acordeón — HTML (+18 more)
+Cohesion: 0.09
+Nodes (21): Action card — `.sw-action-card` (nuevo), Banner de impersonación — `.sw-impersonation-banner` (venía de SoffiFac), Collapse / acordeón — HTML, Componentes nuevos en 0.3.0 (unificación de las 4 apps), Componentes pendientes, Familias canónicas, Modal con botón cerrar — HTML, Regla anti doble-espaciado (venía de SoffiFac) (+13 more)
 
 ### Community 7 - "Soffi UI — Laravel + Blade"
 Cohesion: 0.13
@@ -87,8 +86,8 @@ Cohesion: 0.22
 Nodes (9): Compatibilidad — la regla que no se negocia, Cómo calcular el valor estático, El check, El número que explica todo, El piso, Features permitidas y prohibidas, Regla 1 — `color-mix()` siempre con fallback estático, Regla 2 — dentro de `:root` va `@supports`, no doble declaración (+1 more)
 
 ### Community 9 - "Changelog"
-Cohesion: 0.05
-Nodes (40): 0.10.0 — 2026-09-29, 0.11.0 — 2026-09-29, 0.11.1 — 2026-09-29, 0.11.2 — 2026-09-29, 0.11.3 — 2026-09-29, 0.1.0 — 2026-09-25, 0.1.1 — 2026-09-25, 0.2.0 — 2026-09-26 (+32 more)
+Cohesion: 0.04
+Nodes (46): 0.10.0 — 2026-09-29, 0.11.0 — 2026-09-29, 0.11.1 — 2026-09-29, 0.11.2 — 2026-09-29, 0.11.3 — 2026-09-29, 0.1.0 — 2026-09-25, 0.1.1 — 2026-09-25, 0.2.0 — 2026-09-26 (+38 more)
 
 ### Community 10 - "Soffiweb UI — Base Layout"
 Cohesion: 0.22
@@ -102,9 +101,9 @@ Nodes (10): Desarrollo, Estado de migración, Estructura, Instalación en una ap
 Cohesion: 0.25
 Nodes (8): Dropdown — `.sw-dropdown*`, Impresión — `.sw-print-*`, Skeleton — `.sw-skeleton*`, Spinner — `.sw-spinner*`, Stepper — `.sw-stepper*`, Switch — `.sw-switch*`, Tooltip — `.sw-tooltip`, Utilidades nuevas en 0.11.0
 
-### Community 17 - "0.3.0 — 2026-09-24"
+### Community 17 - "Soffiweb UI — Auth / Entry Screens"
 Cohesion: 0.33
-Nodes (6): 0.3.0 — 2026-09-24, Agregado, Cambios incompatibles, Compatibilidad, Estructura, Unificación
+Nodes (5): Componentes, Ejemplo — login, Layout base, Prohibido en estas pantallas, Soffiweb UI — Auth / Entry Screens
 
 ### Community 18 - "AI agent instructions"
 Cohesion: 0.50
@@ -119,7 +118,7 @@ Cohesion: 0.29
 Nodes (6): CI, Commits, Contrato de releases, Fuente de verdad, Puerta local, Tag estable
 
 ## Knowledge Gaps
-- **144 isolated node(s):** `name`, `description`, `type`, `license`, `keywords` (+139 more)
+- **144 isolated node(s):** `sort-packages`, `description`, `keywords`, `providers`, `license` (+139 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 196 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -127,15 +126,15 @@ Nodes (6): CI, Commits, Contrato de releases, Fuente de verdad, Puerta local, Ta
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Soffiweb UI - Shared JS` connect `API` to `SKILL.md`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `Soffi UI — Laravel + Blade` connect `Soffi UI — Laravel + Blade` to `SKILL.md`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
-- **What connects `name`, `description`, `type` to the rest of the system?**
+- **What connects `sort-packages`, `description`, `keywords` to the rest of the system?**
   _144 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `composer.json` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `gallery.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.0613107822410148 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06086956521739131 - nodes in this community are weakly interconnected._
 - **Should `soffi-ui.js` be split into smaller, more focused modules?**
   _Cohesion score 0.06755260243632337 - nodes in this community are weakly interconnected._
 - **Should `API` be split into smaller, more focused modules?**

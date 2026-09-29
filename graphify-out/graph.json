@@ -39,7 +39,7 @@
       "file_type": "code",
       "norm_label": "galactivatetab()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L526"
+      "source_location": "L568"
     },
     {
       "id": "docs_gallery_assets_gallery_galcloseallrowmenus",
@@ -51,7 +51,7 @@
       "file_type": "code",
       "norm_label": "galcloseallrowmenus()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L608"
+      "source_location": "L650"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosedropdowns",
@@ -75,7 +75,7 @@
       "file_type": "code",
       "norm_label": "galclosemodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L494"
+      "source_location": "L495"
     },
     {
       "id": "docs_gallery_assets_gallery_galclosesidebar",
@@ -99,7 +99,19 @@
       "file_type": "code",
       "norm_label": "galcopy()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L681"
+      "source_location": "L723"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galcreateemployee",
+      "label": "galCreateEmployee()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galcreateemployee()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L528"
     },
     {
       "id": "docs_gallery_assets_gallery_galcreatepagelink",
@@ -111,7 +123,7 @@
       "file_type": "code",
       "norm_label": "galcreatepagelink()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L214"
+      "source_location": "L215"
     },
     {
       "id": "docs_gallery_assets_gallery_galfilterss",
@@ -123,7 +135,7 @@
       "file_type": "code",
       "norm_label": "galfilterss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L558"
+      "source_location": "L600"
     },
     {
       "id": "docs_gallery_assets_gallery_galfocusmodal",
@@ -135,7 +147,7 @@
       "file_type": "code",
       "norm_label": "galfocusmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L443"
+      "source_location": "L444"
     },
     {
       "id": "docs_gallery_assets_gallery_galgetgalleryurl",
@@ -147,7 +159,7 @@
       "file_type": "code",
       "norm_label": "galgetgalleryurl()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L265"
+      "source_location": "L266"
     },
     {
       "id": "docs_gallery_assets_gallery_galgetopenmodal",
@@ -159,7 +171,7 @@
       "file_type": "code",
       "norm_label": "galgetopenmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L424"
+      "source_location": "L425"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitpagenavigation",
@@ -171,7 +183,7 @@
       "file_type": "code",
       "norm_label": "galinitpagenavigation()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L192"
+      "source_location": "L193"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitsidebarspy",
@@ -183,7 +195,7 @@
       "file_type": "code",
       "norm_label": "galinitsidebarspy()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L295"
+      "source_location": "L296"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitsidebarspy_setactive",
@@ -195,7 +207,7 @@
       "file_type": "code",
       "norm_label": "setactive()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L310"
+      "source_location": "L311"
     },
     {
       "id": "docs_gallery_assets_gallery_galinitsidebarspy_updateactive",
@@ -207,7 +219,19 @@
       "file_type": "code",
       "norm_label": "updateactive()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L319"
+      "source_location": "L320"
+    },
+    {
+      "id": "docs_gallery_assets_gallery_galloademployees",
+      "label": "galLoadEmployees()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "gallery.js",
+      "file_type": "code",
+      "norm_label": "galloademployees()",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L508"
     },
     {
       "id": "docs_gallery_assets_gallery_galmodalallowsbackdrop",
@@ -219,7 +243,7 @@
       "file_type": "code",
       "norm_label": "galmodalallowsbackdrop()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L429"
+      "source_location": "L430"
     },
     {
       "id": "docs_gallery_assets_gallery_galmodalallowsescape",
@@ -231,7 +255,7 @@
       "file_type": "code",
       "norm_label": "galmodalallowsescape()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L434"
+      "source_location": "L435"
     },
     {
       "id": "docs_gallery_assets_gallery_galmodalfocusable",
@@ -243,7 +267,7 @@
       "file_type": "code",
       "norm_label": "galmodalfocusable()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L438"
+      "source_location": "L439"
     },
     {
       "id": "docs_gallery_assets_gallery_galopenmodal",
@@ -255,7 +279,7 @@
       "file_type": "code",
       "norm_label": "galopenmodal()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L479"
+      "source_location": "L480"
     },
     {
       "id": "docs_gallery_assets_gallery_galpositionrowmenu",
@@ -267,7 +291,7 @@
       "file_type": "code",
       "norm_label": "galpositionrowmenu()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L574"
+      "source_location": "L616"
     },
     {
       "id": "docs_gallery_assets_gallery_galrendersidebar",
@@ -291,7 +315,7 @@
       "file_type": "code",
       "norm_label": "galrepositionrowmenus()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L636"
+      "source_location": "L678"
     },
     {
       "id": "docs_gallery_assets_gallery_galrestorerowmenu",
@@ -303,7 +327,7 @@
       "file_type": "code",
       "norm_label": "galrestorerowmenu()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L598"
+      "source_location": "L640"
     },
     {
       "id": "docs_gallery_assets_gallery_galroutedocumentationlinks",
@@ -315,7 +339,7 @@
       "file_type": "code",
       "norm_label": "galroutedocumentationlinks()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L234"
+      "source_location": "L235"
     },
     {
       "id": "docs_gallery_assets_gallery_galselectss",
@@ -327,7 +351,7 @@
       "file_type": "code",
       "norm_label": "galselectss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L549"
+      "source_location": "L591"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast",
@@ -339,7 +363,7 @@
       "file_type": "code",
       "norm_label": "galshowtoast()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L659"
+      "source_location": "L701"
     },
     {
       "id": "docs_gallery_assets_gallery_galshowtoast_dismiss",
@@ -351,7 +375,7 @@
       "file_type": "code",
       "norm_label": "dismiss()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L668"
+      "source_location": "L710"
     },
     {
       "id": "docs_gallery_assets_gallery_galsyncsidebaractive",
@@ -363,7 +387,7 @@
       "file_type": "code",
       "norm_label": "galsyncsidebaractive()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L273"
+      "source_location": "L274"
     },
     {
       "id": "docs_gallery_assets_gallery_galsynctableselection",
@@ -375,7 +399,7 @@
       "file_type": "code",
       "norm_label": "galsynctableselection()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L369"
+      "source_location": "L370"
     },
     {
       "id": "docs_gallery_assets_gallery_galsynctablestickycolumns",
@@ -387,7 +411,7 @@
       "file_type": "code",
       "norm_label": "galsynctablestickycolumns()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L339"
+      "source_location": "L340"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggledropdown",
@@ -411,7 +435,7 @@
       "file_type": "code",
       "norm_label": "galtogglefav()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L566"
+      "source_location": "L608"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglerowmenu",
@@ -423,7 +447,7 @@
       "file_type": "code",
       "norm_label": "galtogglerowmenu()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L617"
+      "source_location": "L659"
     },
     {
       "id": "docs_gallery_assets_gallery_galtogglesidebar",
@@ -447,7 +471,7 @@
       "file_type": "code",
       "norm_label": "galtoggless()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L543"
+      "source_location": "L585"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletablerow",
@@ -459,7 +483,7 @@
       "file_type": "code",
       "norm_label": "galtoggletablerow()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L351"
+      "source_location": "L352"
     },
     {
       "id": "docs_gallery_assets_gallery_galtoggletableselection",
@@ -471,7 +495,7 @@
       "file_type": "code",
       "norm_label": "galtoggletableselection()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L380"
+      "source_location": "L381"
     },
     {
       "id": "docs_gallery_assets_gallery_galtrapmodalfocus",
@@ -483,7 +507,7 @@
       "file_type": "code",
       "norm_label": "galtrapmodalfocus()",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L450"
+      "source_location": "L451"
     },
     {
       "id": "docs_gallery_assets_gallery_swtogglecollapse",
@@ -1497,7 +1521,7 @@
       "file_type": "code",
       "norm_label": "gal_modal_focusable_selector",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L415"
+      "source_location": "L416"
     },
     {
       "id": "docs_gallery_assets_gallery_gal_sidebar_groups",
@@ -1519,7 +1543,7 @@
       "file_type": "code",
       "norm_label": "galpagesequence",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L164"
+      "source_location": "L165"
     },
     {
       "id": "skills_soffi_ui_layout",
@@ -1902,76 +1926,76 @@
       "source_location": "L2498"
     },
     {
-      "id": "changelog_0_3_0_2026_09_24",
-      "label": "0.3.0 \u2014 2026-09-24",
+      "id": "skills_soffi_ui_auth",
+      "label": "auth.md",
       "_origin": "ast",
       "community": 17,
-      "community_name": "0.3.0 \u2014 2026-09-24",
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.3.0 \u2014 2026-09-24",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L231"
+      "node_kind": "page",
+      "norm_label": "auth.md",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L1"
     },
     {
-      "id": "changelog_agregado_269",
-      "label": "Agregado",
+      "id": "skills_soffi_ui_auth_componentes",
+      "label": "Componentes",
       "_origin": "ast",
       "community": 17,
-      "community_name": "0.3.0 \u2014 2026-09-24",
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "agregado",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L269"
+      "norm_label": "componentes",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L37"
     },
     {
-      "id": "changelog_cambios_incompatibles",
-      "label": "Cambios incompatibles",
+      "id": "skills_soffi_ui_auth_ejemplo_login",
+      "label": "Ejemplo \u2014 login",
       "_origin": "ast",
       "community": 17,
-      "community_name": "0.3.0 \u2014 2026-09-24",
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "cambios incompatibles",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L285"
+      "norm_label": "ejemplo \u2014 login",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L49"
     },
     {
-      "id": "changelog_compatibilidad",
-      "label": "Compatibilidad",
+      "id": "skills_soffi_ui_auth_layout_base",
+      "label": "Layout base",
       "_origin": "ast",
       "community": 17,
-      "community_name": "0.3.0 \u2014 2026-09-24",
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "compatibilidad",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L251"
+      "norm_label": "layout base",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L5"
     },
     {
-      "id": "changelog_estructura",
-      "label": "Estructura",
+      "id": "skills_soffi_ui_auth_prohibido_en_estas_pantallas",
+      "label": "Prohibido en estas pantallas",
       "_origin": "ast",
       "community": 17,
-      "community_name": "0.3.0 \u2014 2026-09-24",
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "estructura",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L292"
+      "norm_label": "prohibido en estas pantallas",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L101"
     },
     {
-      "id": "changelog_unificaci\u00f3n",
-      "label": "Unificaci\u00f3n",
+      "id": "skills_soffi_ui_auth_soffiweb_ui_auth_entry_screens",
+      "label": "Soffiweb UI \u2014 Auth / Entry Screens",
       "_origin": "ast",
       "community": 17,
-      "community_name": "0.3.0 \u2014 2026-09-24",
+      "community_name": "Soffiweb UI \u2014 Auth / Entry Screens",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "unificacion",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L236"
+      "norm_label": "soffiweb ui \u2014 auth / entry screens",
+      "source_file": "skills/soffi-ui/auth.md",
+      "source_location": "L1"
     },
     {
       "id": "agents",
@@ -2604,78 +2628,6 @@
       "node_kind": "page",
       "norm_label": "skill.md",
       "source_file": "skills/soffi-ui/SKILL.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_soffi_ui_auth",
-      "label": "auth.md",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "auth.md",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_soffi_ui_auth_componentes",
-      "label": "Componentes",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "componentes",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L37"
-    },
-    {
-      "id": "skills_soffi_ui_auth_ejemplo_login",
-      "label": "Ejemplo \u2014 login",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ejemplo \u2014 login",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L49"
-    },
-    {
-      "id": "skills_soffi_ui_auth_layout_base",
-      "label": "Layout base",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "layout base",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L5"
-    },
-    {
-      "id": "skills_soffi_ui_auth_prohibido_en_estas_pantallas",
-      "label": "Prohibido en estas pantallas",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "prohibido en estas pantallas",
-      "source_file": "skills/soffi-ui/auth.md",
-      "source_location": "L101"
-    },
-    {
-      "id": "skills_soffi_ui_auth_soffiweb_ui_auth_entry_screens",
-      "label": "Soffiweb UI \u2014 Auth / Entry Screens",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "SKILL.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "soffiweb ui \u2014 auth / entry screens",
-      "source_file": "skills/soffi-ui/auth.md",
       "source_location": "L1"
     },
     {
@@ -3387,6 +3339,18 @@
       "source_location": "L156"
     },
     {
+      "id": "changelog_0_3_0_2026_09_24",
+      "label": "0.3.0 \u2014 2026-09-24",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.3.0 \u2014 2026-09-24",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L231"
+    },
+    {
       "id": "changelog_0_3_0_2026_09_26",
       "label": "0.3.0 \u2014 2026-09-26",
       "_origin": "ast",
@@ -3579,6 +3543,18 @@
       "source_location": "L219"
     },
     {
+      "id": "changelog_agregado_269",
+      "label": "Agregado",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agregado",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L269"
+    },
+    {
       "id": "changelog_agregado_36",
       "label": "Agregado",
       "_origin": "ast",
@@ -3675,6 +3651,18 @@
       "source_location": "L190"
     },
     {
+      "id": "changelog_cambios_incompatibles",
+      "label": "Cambios incompatibles",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cambios incompatibles",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L285"
+    },
+    {
       "id": "changelog_changelog",
       "label": "Changelog",
       "_origin": "ast",
@@ -3685,6 +3673,18 @@
       "norm_label": "changelog",
       "source_file": "CHANGELOG.md",
       "source_location": "L1"
+    },
+    {
+      "id": "changelog_compatibilidad",
+      "label": "Compatibilidad",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "compatibilidad",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L251"
     },
     {
       "id": "changelog_corregido",
@@ -3769,6 +3769,30 @@
       "norm_label": "corregido",
       "source_file": "CHANGELOG.md",
       "source_location": "L80"
+    },
+    {
+      "id": "changelog_estructura",
+      "label": "Estructura",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "estructura",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L292"
+    },
+    {
+      "id": "changelog_unificaci\u00f3n",
+      "label": "Unificaci\u00f3n",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "unificacion",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L236"
     }
   ],
   "links": [
@@ -3781,7 +3805,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L613",
+      "source_location": "L655",
       "weight": 1.0
     },
     {
@@ -3793,7 +3817,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L223",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -3805,7 +3829,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L446",
+      "source_location": "L447",
       "weight": 1.0
     },
     {
@@ -3817,7 +3841,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L196",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -3829,7 +3853,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L210",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -3841,7 +3865,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L331",
+      "source_location": "L332",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galloademployees",
+      "target": "docs_gallery_assets_gallery_galclosedropdowns",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L514",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galloademployees",
+      "target": "docs_gallery_assets_gallery_galsynctablestickycolumns",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L523",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery_galloademployees",
+      "target": "docs_gallery_assets_gallery_galshowtoast",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L524",
       "weight": 1.0
     },
     {
@@ -3853,7 +3913,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L490",
+      "source_location": "L491",
       "weight": 1.0
     },
     {
@@ -3877,7 +3937,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L638",
+      "source_location": "L680",
       "weight": 1.0
     },
     {
@@ -3901,7 +3961,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L622",
+      "source_location": "L664",
       "weight": 1.0
     },
     {
@@ -3913,7 +3973,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L631",
+      "source_location": "L673",
       "weight": 1.0
     },
     {
@@ -3925,7 +3985,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L387",
+      "source_location": "L388",
       "weight": 1.0
     },
     {
@@ -3937,7 +3997,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L451",
+      "source_location": "L452",
       "weight": 1.0
     },
     {
@@ -3949,7 +4009,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L455",
+      "source_location": "L456",
       "weight": 1.0
     },
     {
@@ -5115,7 +5175,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L164",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -5126,7 +5186,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L192",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -5148,7 +5208,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L214",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -5159,7 +5219,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L234",
+      "source_location": "L235",
       "weight": 1.0
     },
     {
@@ -5170,7 +5230,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L265",
+      "source_location": "L266",
       "weight": 1.0
     },
     {
@@ -5181,7 +5241,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L273",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -5192,7 +5252,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L295",
+      "source_location": "L296",
       "weight": 1.0
     },
     {
@@ -5203,7 +5263,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L351",
+      "source_location": "L352",
       "weight": 1.0
     },
     {
@@ -5214,7 +5274,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L369",
+      "source_location": "L370",
       "weight": 1.0
     },
     {
@@ -5225,7 +5285,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L380",
+      "source_location": "L381",
       "weight": 1.0
     },
     {
@@ -5236,7 +5296,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L415",
+      "source_location": "L416",
       "weight": 1.0
     },
     {
@@ -5247,7 +5307,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L424",
+      "source_location": "L425",
       "weight": 1.0
     },
     {
@@ -5258,7 +5318,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L429",
+      "source_location": "L430",
       "weight": 1.0
     },
     {
@@ -5269,7 +5329,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L434",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
@@ -5280,7 +5340,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L438",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -5291,7 +5351,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L443",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -5302,7 +5362,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L450",
+      "source_location": "L451",
       "weight": 1.0
     },
     {
@@ -5313,7 +5373,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L479",
+      "source_location": "L480",
       "weight": 1.0
     },
     {
@@ -5324,7 +5384,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L494",
+      "source_location": "L495",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galloademployees",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L508",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galcreateemployee",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L528",
       "weight": 1.0
     },
     {
@@ -5335,62 +5417,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L526",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtoggless",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L543",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galselectss",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L549",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galfilterss",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L558",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtogglefav",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L566",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galpositionrowmenu",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L574",
+      "source_location": "L568",
       "weight": 1.0
     },
     {
@@ -5406,13 +5433,24 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galrestorerowmenu",
+      "target": "docs_gallery_assets_gallery_galtoggless",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L598",
+      "source_location": "L585",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galselectss",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L591",
       "weight": 1.0
     },
     {
@@ -5428,7 +5466,18 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galcloseallrowmenus",
+      "target": "docs_gallery_assets_gallery_galfilterss",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L600",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtogglefav",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5439,13 +5488,13 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galtogglerowmenu",
+      "target": "docs_gallery_assets_gallery_galpositionrowmenu",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L617",
+      "source_location": "L616",
       "weight": 1.0
     },
     {
@@ -5461,7 +5510,29 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
-      "target": "docs_gallery_assets_gallery_galshowtoast",
+      "target": "docs_gallery_assets_gallery_galrestorerowmenu",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L640",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galcloseallrowmenus",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L650",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galtogglerowmenu",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5483,13 +5554,24 @@
     },
     {
       "source": "docs_gallery_assets_gallery",
+      "target": "docs_gallery_assets_gallery_galshowtoast",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/gallery/assets/gallery.js",
+      "source_location": "L701",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_gallery_assets_gallery",
       "target": "docs_gallery_assets_gallery_galcopy",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L681",
+      "source_location": "L723",
       "weight": 1.0
     },
     {
@@ -5500,7 +5582,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L310",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -7514,7 +7596,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L413",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -7526,7 +7608,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L642",
+      "source_location": "L684",
       "weight": 1.0
     },
     {
@@ -7538,7 +7620,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L334",
+      "source_location": "L335",
       "weight": 1.0
     },
     {
@@ -7550,7 +7632,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "docs/gallery/assets/gallery.js",
-      "source_location": "L677",
+      "source_location": "L719",
       "weight": 1.0
     },
     {
@@ -7591,5 +7673,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "51eaf695eab5a4e0e088fc168ba5d24881333a29"
+  "built_at_commit": "1e95b4e792a54cf5718af02377ec7c3ae01f6d25"
 }
