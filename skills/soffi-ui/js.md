@@ -74,14 +74,16 @@ Así queda por encima de columnas sticky y no se recorta por el `overflow` de
 
 | Función | Uso |
 | --- | --- |
-| `swInitTableStickyColumns()` | Conecta el scroll horizontal de cada listado y calcula el indicador de desplazamiento. Se llama automáticamente al cargar. |
-| `swSyncTableStickyColumns()` | Actualiza `.is-table-sticky-displaced`; usar después de mostrar contenido cargado dinámicamente. |
+| `swInitTableStickyColumns()` | Conecta el scroll horizontal de cada listado y calcula el indicador de desplazamiento desde 992px. Se llama automáticamente al cargar. |
+| `swSyncTableStickyColumns()` | Actualiza `.is-table-sticky-displaced` desde 992px; usar después de mostrar contenido cargado dinámicamente. |
 | `swToggleTableRow(trigger)` | Abre una fila detalle indicada por `data-target` y cierra las demás de la misma tabla. |
 | `swToggleTableSelection(master)` | Marca o desmarca todos los `.sw-checkbox-input` del `tbody`. |
 | `swSyncTableSelection(table)` | Sincroniza `checked` e `indeterminate` del checkbox maestro. |
 
 La columna fija requiere `.sw-table-sticky-col` en su `th` y sus `td`. El
 contenedor usa `.sw-list-table-wrap`; no aplicar `position: sticky` local.
+La fijación horizontal funciona desde 992px para evitar que tape columnas en
+tablet y móvil; la cabecera conserva su fijación vertical.
 
 Helpers automáticos: `swSyncSelectColor()` para selects vacíos,
 `swSyncAuthInputGroup()` para errores de auth, `swSyncDateInputColor()` para

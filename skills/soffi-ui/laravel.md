@@ -149,9 +149,10 @@ contexto, usar tabs compactas integradas al panel; no apilar bloques.
 ## Listados interactivos actuales
 
 - Encapsular tablas en `sw-table-wrap sw-list-table-wrap`.
-- Para columnas de acciones que deben permanecer visibles, usar
-  `.sw-table-sticky-col` en `th` y `td`; el JS agrega el indicador
-  `.is-table-sticky-displaced` automáticamente.
+- Para columnas de acciones que deben permanecer visibles en escritorio, usar
+  `.sw-table-sticky-col` en `th` y `td`; permanece fija horizontalmente desde
+  992px y vuelve al flujo normal en tablet y móvil. El JS agrega el indicador
+  `.is-table-sticky-displaced` automáticamente solo en escritorio.
 - Cuando una fila supera cuatro acciones, usar `.sw-row-menu` y
   `swToggleRowMenu(this)`. El menú se porta a `<body>` al abrirse; no agregar
   z-index ni posicionamiento local.

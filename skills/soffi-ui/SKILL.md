@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: soffiweb
   package: soffiweb/soffi-ui
-  version: "0.11.3"
+  version: "1.0.1"
 ---
 
 # Soffi UI — sistema de diseño Soffiweb
@@ -151,7 +151,7 @@ Usar estas familias antes de crear clases nuevas:
 - **Página**: `sw-crud-page`, `sw-crud-container`, `sw-crud-head`, `sw-crud-title`, `sw-crud-actions`.
 - **Layout base**: `sw-app`, `sw-body`, `sw-main`, `sw-footer`, `sw-footer-links` (topbar y sidebar tienen su propia familia, ver `layout.md`).
 - **Filtros/listas**: `sw-list-card`, `sw-list-toolbar`, `sw-list-search`, `sw-list-filter-row`, `sw-list-filter-control`, `sw-list-filter-actions`, `sw-list-meta`, `sw-list-count`.
-- **Tablas**: `sw-table-wrap`, `sw-list-table-wrap` (altura acotada + header sticky), `sw-table-sticky-col` (agregar al `th` y `td` de la columna elegida para fijarla, solo en tablas que se desbordan), `sw-table`, `sw-table-striped`, `sw-table-min-md/lg/xl`, `sw-table-totals` (fila de sumas anclada), `sw-table-actions`, `sw-bico`, `sw-row-menu*`, `sw-money`.
+- **Tablas**: `sw-table-wrap`, `sw-list-table-wrap` (altura acotada + header sticky), `sw-table-sticky-col` (columna fija horizontal desde 992px; agregar al `th` y `td` de la columna elegida), `sw-table`, `sw-table-striped`, `sw-table-min-md/lg/xl`, `sw-table-totals` (fila de sumas anclada), `sw-table-actions`, `sw-bico`, `sw-row-menu*`, `sw-money`.
 - **Estados y formularios**: `sw-alert` (+ `sw-alert-toast` para avisos efímeros), `sw-empty-state`, `sw-field`, `sw-label`, `sw-input`, `sw-select`, `sw-textarea`, `sw-error`, `sw-required`, `sw-hint`, `sw-hint-error`, `sw-form-actions`.
 - **Navegación**: `sw-breadcrumb*`, `sw-pagination`, `sw-pg-btn`, `sw-pg-ellipsis`, `sw-pagination-summary`.
 - **Tabs/paneles**: `sw-panel-tabs`, `sw-panel-card`, `sw-panel-tab-pane`, `sw-tabs`, `sw-tab`.

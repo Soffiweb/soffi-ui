@@ -166,14 +166,18 @@ function swRepositionRowMenus() {
   });
 }
 
+const SW_TABLE_STICKY_QUERY = '(min-width: 992px)';
+
 function swSyncTableStickyColumns() {
+  const stickyEnabled = window.matchMedia(SW_TABLE_STICKY_QUERY).matches;
+
   document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
     if (!wrap.querySelector('thead tr > .sw-table-sticky-col')) return;
 
     const maxScroll = wrap.scrollWidth - wrap.clientWidth;
     wrap.classList.toggle(
       'is-table-sticky-displaced',
-      maxScroll > 0 && wrap.scrollLeft < maxScroll - 1,
+      stickyEnabled && maxScroll > 0 && wrap.scrollLeft < maxScroll - 1,
     );
   });
 }

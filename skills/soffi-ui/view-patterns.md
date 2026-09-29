@@ -277,7 +277,9 @@ columna fija o varias acciones por fila.
 
 Al mostrar el contenido, llamar `swSyncTableStickyColumns()`. No copiar
 `galLoadEmployees()` ni otras funciones `gal*` de la galería: son demostración,
-no API de aplicación.
+no API de aplicación. `.sw-table-sticky-col` queda fija horizontalmente desde
+992px; debajo de ese ancho la columna vuelve al flujo normal y permite
+desplazamiento horizontal.
 
 ## Formularios Parciales En Modal
 
