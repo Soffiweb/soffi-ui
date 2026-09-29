@@ -299,6 +299,17 @@ details.gal-code summary:hover { color: var(--p); }
     line-height: var(--sw-leading-base);
 }
 
+.gal-hero.sw-card {
+    padding: 1.75rem 2rem;
+    border: var(--brd);
+    border-radius: var(--rl);
+    margin-bottom: 2rem;
+}
+
+.gal-hero.sw-card p {
+    color: var(--bc);
+}
+
 .gal-hero-meta {
     display: flex;
     gap: 8px;
