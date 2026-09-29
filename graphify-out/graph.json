@@ -579,7 +579,7 @@
       "file_type": "code",
       "norm_label": "firstheading()",
       "source_file": "scripts/build-docs.php",
-      "source_location": "L81"
+      "source_location": "L80"
     },
     {
       "id": "scripts_build_docs_rewritemarkdownlinks",
@@ -591,7 +591,7 @@
       "file_type": "code",
       "norm_label": "rewritemarkdownlinks()",
       "source_file": "scripts/build-docs.php",
-      "source_location": "L96"
+      "source_location": "L95"
     },
     {
       "id": "scripts_build_docs_stripfrontmatter",
@@ -603,7 +603,7 @@
       "file_type": "code",
       "norm_label": "stripfrontmatter()",
       "source_file": "scripts/build-docs.php",
-      "source_location": "L86"
+      "source_location": "L85"
     },
     {
       "id": "scripts_build_docs_writefile",
@@ -615,7 +615,7 @@
       "file_type": "code",
       "norm_label": "writefile()",
       "source_file": "scripts/build-docs.php",
-      "source_location": "L108"
+      "source_location": "L107"
     },
     {
       "id": "scripts_build_docs_yaml",
@@ -627,7 +627,7 @@
       "file_type": "code",
       "norm_label": "yaml()",
       "source_file": "scripts/build-docs.php",
-      "source_location": "L103"
+      "source_location": "L102"
     },
     {
       "id": "js_soffi_ui_swactivatetab",
@@ -7051,7 +7051,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/build-docs.php",
-      "source_location": "L103",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -7062,7 +7062,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/build-docs.php",
-      "source_location": "L108",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -7095,7 +7095,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/build-docs.php",
-      "source_location": "L81",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -7106,7 +7106,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/build-docs.php",
-      "source_location": "L86",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -7117,7 +7117,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/build-docs.php",
-      "source_location": "L96",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -8834,5 +8834,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "35c23d3f743cf27bc7b2c974f5836afbfe22cdfb"
+  "built_at_commit": "c03e155ab77113c77367381c6080f75e1589eb1b"
 }

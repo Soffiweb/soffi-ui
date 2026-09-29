@@ -77,7 +77,6 @@ function buildGallery(string $root, string $destination): void
         writeFile($path, $content);
     }
 }
-
 function firstHeading(string $content): ?string
 {
     return preg_match('/^#\s+(.+)$/m', $content, $matches) === 1 ? trim($matches[1]) : null;
