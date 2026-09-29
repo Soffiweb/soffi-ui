@@ -902,27 +902,6 @@ details.gal-code summary:hover { color: var(--p); }
     display: flex;
 }
 
-.gal-datos-tablas-page #rol-summary,
-.gal-datos-tablas-page #pagination,
-.gal-datos-rol-summary-page #tables,
-.gal-datos-rol-summary-page #pagination,
-.gal-datos-pagination-page #tables,
-.gal-datos-pagination-page #rol-summary,
-.gal-navegacion-tabs-page #collapse,
-.gal-navegacion-tabs-page #breadcrumb,
-.gal-navegacion-tabs-page #sidebar-topbar,
-.gal-navegacion-collapse-page #tabs,
-.gal-navegacion-collapse-page #breadcrumb,
-.gal-navegacion-collapse-page #sidebar-topbar,
-.gal-navegacion-breadcrumb-page #tabs,
-.gal-navegacion-breadcrumb-page #collapse,
-.gal-navegacion-breadcrumb-page #sidebar-topbar,
-.gal-navegacion-sidebar-page #tabs,
-.gal-navegacion-sidebar-page #collapse,
-.gal-navegacion-sidebar-page #breadcrumb {
-    display: none;
-}
-
 @media (max-width: 767.98px) {
     .sw-topbar-brand {
         flex: 1 1 auto;

@@ -146,6 +146,144 @@
             </details>
 
             <div class="gal-block">
+                <div class="gal-block-title"><h3>Selección con checkbox</h3><span>Checkbox general a la izquierda con selección de todas las filas</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap sw-list-table-wrap">
+                        <table class="sw-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" class="sw-checkbox-input sw-table-select-all" aria-label="Seleccionar todos los empleados" aria-checked="false"></th>
+                                    <th>Empleado</th>
+                                    <th>Departamento</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Ana Torres"></td>
+                                    <td><span class="sw-table-title">Ana Torres</span><span class="sw-table-subtitle">ana@empresa.com</span></td>
+                                    <td>Contabilidad</td>
+                                    <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Juan Pérez"></td>
+                                    <td><span class="sw-table-title">Juan Pérez</span><span class="sw-table-subtitle">juan@empresa.com</span></td>
+                                    <td>Recursos Humanos</td>
+                                    <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" class="sw-checkbox-input" aria-label="Seleccionar Marta Ruiz"></td>
+                                    <td><span class="sw-table-title">Marta Ruiz</span><span class="sw-table-subtitle">marta@empresa.com</span></td>
+                                    <td>Transporte</td>
+                                    <td><span class="sw-badge sw-badge-error">Inactivo</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;table class="sw-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;&lt;input type="checkbox" class="sw-checkbox-input sw-table-select-all"
+                aria-label="Seleccionar todos" aria-checked="false"&gt;&lt;/th&gt;
+            &lt;th&gt;Empleado&lt;/th&gt;
+            &lt;th&gt;Departamento&lt;/th&gt;
+            &lt;th&gt;Estado&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;input type="checkbox" class="sw-checkbox-input"&gt;&lt;/td&gt;
+            &lt;td&gt;Ana Torres&lt;/td&gt;
+            &lt;td&gt;Contabilidad&lt;/td&gt;
+            &lt;td&gt;&lt;span class="sw-badge sw-badge-success"&gt;Activo&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Fila expandible</h3><span>Una fila con collapse para mostrar información adicional</span></div>
+                <div class="gal-preview gal-preview-tight">
+                    <div class="sw-table-wrap">
+                        <table class="sw-table">
+                            <thead><tr><th>Empleado</th><th>Departamento</th><th>Estado</th><th class="text-center">Acciones</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="sw-table-expand-wrap">
+                                            <button type="button" class="sw-table-expand" aria-expanded="false" aria-controls="gal-table-detail-ana" data-target="#gal-table-detail-ana" title="Mostrar detalle"><i class="fa-solid fa-chevron-right"></i></button>
+                                            <div class="sw-text-stack"><span class="sw-table-title">Ana Torres</span><span class="sw-table-subtitle">EMP-0231</span></div>
+                                        </div>
+                                    </td>
+                                    <td>Contabilidad</td>
+                                    <td><span class="sw-badge sw-badge-success">Activo</span></td>
+                                    <td class="text-center"><button class="sw-bico sw-bico-edit" title="Editar Ana Torres" aria-label="Editar Ana Torres"><i class="fa-solid fa-pen"></i></button></td>
+                                </tr>
+                                <tr id="gal-table-detail-ana" class="sw-table-detail-row" hidden>
+                                    <td colspan="4">
+                                        <div class="sw-table-detail">
+                                            <div class="sw-table-detail-item"><span class="sw-table-detail-label">Contrato</span><span class="sw-table-detail-value">Indefinido · jornada completa</span></div>
+                                            <div class="sw-table-detail-item"><span class="sw-table-detail-label">Última actualización</span><span class="sw-table-detail-value">28/09/2026 · María López</span></div>
+                                            <div class="sw-table-detail-item"><span class="sw-table-detail-label">Observación</span><span class="sw-table-detail-value">Documentación completa</span></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="sw-table-expand-wrap">
+                                            <button type="button" class="sw-table-expand" aria-expanded="false" aria-controls="gal-table-detail-juan" data-target="#gal-table-detail-juan" title="Mostrar detalle"><i class="fa-solid fa-chevron-right"></i></button>
+                                            <div class="sw-text-stack"><span class="sw-table-title">Juan Pérez</span><span class="sw-table-subtitle">EMP-0198</span></div>
+                                        </div>
+                                    </td>
+                                    <td>Recursos Humanos</td>
+                                    <td><span class="sw-badge sw-badge-warning">Pendiente</span></td>
+                                    <td class="text-center"><button class="sw-bico sw-bico-edit" title="Editar Juan Pérez" aria-label="Editar Juan Pérez"><i class="fa-solid fa-pen"></i></button></td>
+                                </tr>
+                                <tr id="gal-table-detail-juan" class="sw-table-detail-row" hidden>
+                                    <td colspan="4">
+                                        <div class="sw-table-detail">
+                                            <div class="sw-table-detail-item"><span class="sw-table-detail-label">Contrato</span><span class="sw-table-detail-value">Plazo fijo · jornada completa</span></div>
+                                            <div class="sw-table-detail-item"><span class="sw-table-detail-label">Última actualización</span><span class="sw-table-detail-value">25/09/2026 · María López</span></div>
+                                            <div class="sw-table-detail-item"><span class="sw-table-detail-label">Observación</span><span class="sw-table-detail-value">Pendiente de documentación</span></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;tr&gt;
+    &lt;td&gt;
+        &lt;div class="sw-table-expand-wrap"&gt;
+            &lt;button type="button" class="sw-table-expand" aria-expanded="false"
+                    aria-controls="employee-detail" data-target="#employee-detail"&gt;
+                &lt;i class="fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;span class="sw-table-title"&gt;Ana Torres&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr id="employee-detail" class="sw-table-detail-row" hidden&gt;
+    &lt;td colspan="4"&gt;
+        &lt;div class="sw-table-detail"&gt;Información adicional...&lt;/div&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="gal-block">
                 <div class="gal-block-title"><h3>Rayada</h3><span>.sw-table-striped — zebra en filas pares</span></div>
                 <div class="gal-preview gal-preview-tight">
                     <div class="sw-table-wrap">
@@ -767,83 +905,8 @@
         </section>
 
         <!-- ══════════════════ ROL SUMMARY ══════════════════ -->
-        <section id="rol-summary" class="gal-section">
-            <div class="gal-section-head">
-                <h2><i class="fa-solid fa-id-card"></i> Resumen de rol</h2>
-                <p><code>.sw-rol-summary</code> — banda compacta con el rol/periodo vigente sobre listados de nómina (aporte de gesnom al estándar).</p>
-            </div>
-            <div class="gal-preview gal-preview-tight">
-                <div class="sw-rol-summary">
-                    <div class="sw-rol-summary-main">
-                        <span class="sw-rol-summary-tag"><i class="fa-solid fa-calendar"></i> Período vigente</span>
-                        <h3 class="sw-rol-summary-title">Rol quincenal — 01 al 15 de septiembre 2026</h3>
-                    </div>
-                    <div class="sw-rol-summary-stats">
-                        <div class="sw-rol-summary-stat">
-                            <span class="sw-rol-summary-label">Empleados</span>
-                            <span class="sw-rol-summary-value">42</span>
-                        </div>
-                        <div class="sw-rol-summary-stat">
-                            <span class="sw-rol-summary-label">Total bruto</span>
-                            <span class="sw-rol-summary-value">$18,240.00</span>
-                        </div>
-                        <div class="sw-rol-summary-stat">
-                            <span class="sw-rol-summary-label">Estado</span>
-                            <span class="sw-rol-summary-value">Abierto</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <details class="gal-code">
-                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
-                <div class="gal-code-body">
-                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                    <pre><code>&lt;div class="sw-rol-summary"&gt;
-    &lt;div class="sw-rol-summary-main"&gt;
-        &lt;span class="sw-rol-summary-tag"&gt;Período vigente&lt;/span&gt;
-        &lt;h3 class="sw-rol-summary-title"&gt;Rol quincenal — 01 al 15 sept.&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;div class="sw-rol-summary-stats"&gt;
-        &lt;div class="sw-rol-summary-stat"&gt;
-            &lt;span class="sw-rol-summary-label"&gt;Empleados&lt;/span&gt;
-            &lt;span class="sw-rol-summary-value"&gt;42&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
-            </details>
-        </section>
 
         <!-- ══════════════════ PAGINATION ══════════════════ -->
-        <section id="pagination" class="gal-section">
-            <div class="gal-section-head">
-                <h2><i class="fa-solid fa-ellipsis"></i> Paginación</h2>
-                <p><code>.sw-pagination</code> + <code>.sw-pg-btn</code>.</p>
-            </div>
-            <div class="gal-preview">
-                <nav class="sw-pagination" aria-label="Paginación">
-                    <a class="sw-pg-btn" aria-disabled="true"><i class="fa-solid fa-angle-left"></i></a>
-                    <a class="sw-pg-btn active">1</a>
-                    <a class="sw-pg-btn">2</a>
-                    <a class="sw-pg-btn">3</a>
-                    <span class="sw-pg-ellipsis">…</span>
-                    <a class="sw-pg-btn">12</a>
-                    <a class="sw-pg-btn"><i class="fa-solid fa-angle-right"></i></a>
-                </nav>
-            </div>
-            <details class="gal-code">
-                <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
-                <div class="gal-code-body">
-                    <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
-                    <pre><code>&lt;nav class="sw-pagination"&gt;
-    &lt;a class="sw-pg-btn active"&gt;1&lt;/a&gt;
-    &lt;a class="sw-pg-btn"&gt;2&lt;/a&gt;
-    &lt;span class="sw-pg-ellipsis"&gt;…&lt;/span&gt;
-    &lt;a class="sw-pg-btn"&gt;12&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
-                </div>
-            </details>
-        </section>
 
         <nav class="gal-page-nav" aria-label="Navegación de documentación">
             <a class="sw-btn sw-btn-ghost" href="../formularios.html#forms"><i class="fa-solid fa-arrow-left"></i> Anterior: Formularios</a>
