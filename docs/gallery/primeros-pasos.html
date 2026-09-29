@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es" id="root" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primeros pasos — Soffi UI</title>
+<meta name="description" content="Guía de instalación y primeros pasos con Soffi UI en Laravel y Blade.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../dist/soffi-ui.css">
+<link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body class="sw-app">
+
+<header class="sw-topbar">
+    <div class="sw-topbar-brand">
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost sw-sidebar-toggle" onclick="galToggleSidebar()" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="sw-topbar-logo-fallback"><i class="fa-solid fa-rocket"></i></span>
+        <div class="sw-topbar-tenant">
+            <span class="sw-topbar-company">Soffi UI</span>
+            <span class="sw-topbar-period">Primeros pasos · v1.0.0</span>
+        </div>
+    </div>
+    <div class="sw-topbar-actions">
+        <span class="sw-badge sw-badge-success"><i class="fa-solid fa-circle" style="font-size:6px"></i> Guía de inicio</span>
+        <button type="button" class="sw-btn sw-btn-icon sw-btn-ghost" onclick="swToggleTheme()" aria-label="Cambiar tema">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+</header>
+
+<div class="sw-body">
+    <button type="button" class="sw-sidebar-backdrop" onclick="galCloseSidebar()" aria-label="Cerrar menú" tabindex="-1"></button>
+
+    <nav class="sw-sidebar" aria-label="Secciones">
+        <div class="sw-sb-brand">
+            <div class="sw-sb-brand-name">Documentación Soffi UI</div>
+            <div class="sw-sb-brand-sub">Guía de inicio</div>
+        </div>
+
+        <div class="sw-sb-group">Fundamentos</div>
+        <a href="primeros-pasos.html" class="sw-sb-link active" aria-current="page"><i class="fa-solid fa-rocket"></i> Primeros pasos</a>
+        <a href="index.html#tokens" class="sw-sb-link"><i class="fa-solid fa-palette"></i> Tokens</a>
+
+        <div class="sw-sb-group">Acciones</div>
+        <a href="acciones.html#botones" class="sw-sb-link"><i class="fa-solid fa-hand-pointer"></i> Botones</a>
+        <a href="acciones.html#badges" class="sw-sb-link"><i class="fa-solid fa-tag"></i> Badges</a>
+
+        <div class="sw-sb-group">Feedback</div>
+        <a href="feedback.html#alerts" class="sw-sb-link"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+        <a href="feedback.html#toast" class="sw-sb-link"><i class="fa-solid fa-bell"></i> Toast</a>
+        <a href="feedback.html#impersonation" class="sw-sb-link"><i class="fa-solid fa-user-secret"></i> Banner impersonación</a>
+        <a href="feedback.html#empty-state" class="sw-sb-link"><i class="fa-solid fa-inbox"></i> Estado vacío</a>
+
+        <div class="sw-sb-group">Contenido</div>
+        <a href="contenido.html#cards" class="sw-sb-link"><i class="fa-regular fa-rectangle-list"></i> Cards</a>
+        <a href="contenido.html#action-card" class="sw-sb-link"><i class="fa-solid fa-grip"></i> Action card</a>
+        <a href="contenido.html#product-card" class="sw-sb-link"><i class="fa-solid fa-cart-shopping"></i> Product card</a>
+        <a href="contenido.html#profile-card" class="sw-sb-link"><i class="fa-solid fa-id-badge"></i> Profile card</a>
+
+        <div class="sw-sb-group">Formularios</div>
+        <a href="formularios.html#forms" class="sw-sb-link"><i class="fa-solid fa-pen-to-square"></i> Inputs &amp; select</a>
+
+        <div class="sw-sb-group">Datos</div>
+        <a href="datos.html#tables" class="sw-sb-link"><i class="fa-solid fa-table"></i> Tabla</a>
+        <a href="empleados.html" class="sw-sb-link"><i class="fa-solid fa-users"></i> Vista real: Empleados</a>
+        <a href="datos.html#rol-summary" class="sw-sb-link"><i class="fa-solid fa-id-card"></i> Resumen de rol</a>
+        <a href="datos.html#pagination" class="sw-sb-link"><i class="fa-solid fa-ellipsis"></i> Paginación</a>
+
+        <div class="sw-sb-group">Overlays</div>
+        <a href="overlays.html#modal" class="sw-sb-link"><i class="fa-regular fa-window-restore"></i> Modal</a>
+
+        <div class="sw-sb-group">Navegación</div>
+        <a href="navegacion.html#tabs" class="sw-sb-link"><i class="fa-solid fa-folder"></i> Tabs</a>
+        <a href="navegacion.html#collapse" class="sw-sb-link"><i class="fa-solid fa-caret-down"></i> Collapse / acordeón</a>
+        <a href="navegacion.html#breadcrumb" class="sw-sb-link"><i class="fa-solid fa-angles-right"></i> Breadcrumb</a>
+        <a href="navegacion.html#sidebar-topbar" class="sw-sb-link"><i class="fa-solid fa-table-columns"></i> Sidebar &amp; topbar</a>
+
+        <div class="sw-sb-group">Dashboard</div>
+        <a href="dashboard.html#dashboard" class="sw-sb-link"><i class="fa-solid fa-chart-pie"></i> Métricas, quicklinks, dona</a>
+
+        <div class="sw-sb-group">Acceso</div>
+        <a href="auth.html#auth" class="sw-sb-link"><i class="fa-solid fa-right-to-bracket"></i> Auth</a>
+    </nav>
+
+    <main class="sw-main">
+        <div class="gal-hero">
+            <h1>Primeros pasos con Soffi UI</h1>
+            <p>Instala el paquete, publica sus assets y crea tu primera vista Laravel + Blade usando el sistema visual Soffiweb.</p>
+            <div class="gal-hero-meta">
+                <span class="sw-badge sw-badge-primary"><i class="fa-brands fa-laravel"></i> Laravel + Blade</span>
+                <span class="sw-badge sw-badge-info"><i class="fa-solid fa-code"></i> CSS/JS plano</span>
+                <span class="sw-badge sw-badge-accent"><i class="fa-solid fa-tag"></i> v1.0.0</span>
+            </div>
+        </div>
+
+        <section id="instalacion" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-download"></i> 1. Instala el paquete</h2>
+                <p>Soffi UI requiere PHP 8.1 o superior y funciona con Laravel 10, 11, 12 y 13. La aplicación consumidora no necesita Node, Bootstrap, jQuery ni Tailwind.</p>
+            </div>
+
+            <div class="sw-alert sw-alert-info">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>El piso de navegador es Chrome/Edge 109, Firefox 115 ESR y Safari 15.6.</span>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Composer</h3></div>
+                <details class="gal-code" open>
+                    <summary><i class="fa-solid fa-terminal"></i> Instalar Soffi UI</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>composer config repositories.soffi-ui vcs https://github.com/Soffiweb/soffi-ui
+composer require soffiweb/soffi-ui:^1.0
+
+php artisan vendor:publish --tag=soffi-ui --force</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="assets" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-link"></i> 2. Carga los assets</h2>
+                <p>El tag <code>soffi-ui</code> publica CSS y JS en <code>public/vendor/soffi-ui</code>. Inclúyelos en tu layout base.</p>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Layout Blade</h3></div>
+                <details class="gal-code" open>
+                    <summary><i class="fa-solid fa-file-code"></i> Enlaces mínimos</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;link rel="stylesheet" href="&#123;&#123; asset('vendor/soffi-ui/soffi-ui.css') &#125;&#125;"&gt;
+&lt;script src="&#123;&#123; asset('vendor/soffi-ui/soffi-ui.js') &#125;&#125;"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="layout" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-table-columns"></i> 3. Usa el layout de panel</h2>
+                <p>El layout incluye shell, topbar, sidebar, main, footer y soporte de tema claro/oscuro.</p>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Vista base</h3></div>
+                <details class="gal-code" open>
+                    <summary><i class="fa-solid fa-layer-group"></i> layouts/dashboard.blade.php</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>@extends('soffi-ui::layouts.panel')
+
+@section('title', 'Dashboard')
+
+@section('sidebar')
+    &lt;x-sw-sidebar :items="$menu" :brand="config('app.name')" /&gt;
+@endsection
+
+@section('content')
+    &lt;div class="sw-crud-container"&gt;
+        &lt;h1 class="sw-page-title"&gt;Dashboard&lt;/h1&gt;
+    &lt;/div&gt;
+@endsection</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="componente" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-puzzle-piece"></i> 4. Crea tu primer componente</h2>
+                <p>Usa las clases <code>sw-*</code> existentes. Los colores, radios, espaciados y tipografía vienen de tokens.</p>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Vista previa</h3></div>
+                <div class="gal-preview gal-preview-block">
+                    <button type="button" class="sw-btn sw-btn-primary"><i class="fa-solid fa-check"></i> Guardar cambios</button>
+                    <button type="button" class="sw-btn sw-btn-ghost"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                </div>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-code"></i> Markup</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;button type="button" class="sw-btn sw-btn-primary"&gt;
+    &lt;i class="fa-solid fa-check"&gt;&lt;/i&gt; Guardar cambios
+&lt;/button&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="tema" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-circle-half-stroke"></i> 5. Cambia el tema</h2>
+                <p>El botón superior alterna entre claro y oscuro. En una aplicación real puedes usar <code>swToggleTheme()</code> desde tu control de usuario.</p>
+            </div>
+
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Personalización</h3></div>
+                <p>Declara tus overrides después de <code>soffi-ui.css</code>. No edites los archivos publicados del paquete.</p>
+                <details class="gal-code" open>
+                    <summary><i class="fa-solid fa-sliders"></i> Variables de la aplicación</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>:root {
+    --sw-primary: #28449a;
+    --sw-radius-lg: 0.75rem;
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="siguiente" class="gal-section">
+            <div class="gal-section-head">
+                <h2><i class="fa-solid fa-arrow-right"></i> Siguiente paso</h2>
+                <p>Explora tokens y componentes antes de crear variantes propias.</p>
+            </div>
+            <div class="gal-category-grid">
+                <a class="gal-category-card" href="index.html#tokens"><i class="fa-solid fa-palette"></i><strong>Tokens</strong><span>Colores, tipografía, espaciado y capas</span></a>
+                <a class="gal-category-card" href="contenido.html#cards"><i class="fa-regular fa-rectangle-list"></i><strong>Componentes</strong><span>Cards, estados, formularios y datos</span></a>
+                <a class="gal-category-card" href="navegacion.html#sidebar-topbar"><i class="fa-solid fa-table-columns"></i><strong>Layout</strong><span>Sidebar, topbar, tabs y navegación</span></a>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer class="sw-footer">
+    <span>Soffi UI v1.0.0 — soffiweb/soffi-ui</span>
+    <span class="sw-footer-links"><a href="index.html">Galería de componentes</a></span>
+</footer>
+
+<script src="assets/gallery.js"></script>
+</body>
+</html>
