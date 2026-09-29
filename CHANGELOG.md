@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.1 — 2026-09-29
+
+### Corregido
+
+- Cada utilidad tiene ahora su propia página completa.
+- El sidebar ya no marca siempre Impresión al navegar entre utilidades.
+- La navegación anterior/siguiente incluye las siete páginas de utilidades.
+
 ## 0.11.0 — 2026-09-29
 
 ### Agregado
