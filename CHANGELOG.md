@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 — 2026-09-29
+
+### Corregido
+
+- Columnas sticky de tablas solo permanecen fijas desde 992px; en tablet y móvil vuelven al flujo normal.
+
 ## 0.11.3 — 2026-09-29
 
 ### Corregido

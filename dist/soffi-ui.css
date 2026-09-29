@@ -1,4 +1,4 @@
-/*! Soffi UI 0.11.3 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 1.0.1 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -5587,32 +5587,42 @@ body.sw-modal-open {
     z-index: 2;
 }
 
-/* Columna marcada fija a la derecha mientras se scrollea horizontal.
+/* Columna marcada fija a la derecha en escritorio.
    Agregar .sw-table-sticky-col al th y td de la columna elegida. */
 .sw-list-table-wrap tr > .sw-table-sticky-col {
-    position: sticky;
-    right: 0;
-    z-index: 1;
+    position: static;
+    right: auto;
+    z-index: auto;
     border-left: 0;
-}
-
-.sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col {
-    border-left: 0;
-}
-
-.sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 2px;
-    background: var(--sw-table-sticky-border);
-    pointer-events: none;
 }
 
 .sw-list-table-wrap thead tr > .sw-table-sticky-col {
-    z-index: 3;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+@media (min-width: 992px) {
+    .sw-list-table-wrap tr > .sw-table-sticky-col {
+        position: sticky;
+        right: 0;
+        z-index: 1;
+    }
+
+    .sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 2px;
+        background: var(--sw-table-sticky-border);
+        pointer-events: none;
+    }
+
+    .sw-list-table-wrap thead tr > .sw-table-sticky-col {
+        z-index: 3;
+    }
 }
 
 .sw-table-min-md {
