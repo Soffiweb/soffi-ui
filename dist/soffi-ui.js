@@ -271,10 +271,79 @@ function swFilterSS(id, q) {
   }
 }
 
+const SW_MODAL_FOCUSABLE_SELECTOR = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled]):not([type="hidden"])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',');
+
+function swGetOpenModal() {
+  const open = document.querySelectorAll('.sw-modal-backdrop.is-open');
+  return open.length ? open[open.length - 1] : null;
+}
+
+function swModalAllowsBackdrop(backdrop) {
+  return backdrop.dataset.modalBackdrop !== 'static'
+    && backdrop.dataset.modalBackdrop !== 'false';
+}
+
+function swModalAllowsEscape(backdrop) {
+  return backdrop.dataset.modalEscape !== 'false';
+}
+
+function swModalFocusable(dialog) {
+  return [...dialog.querySelectorAll(SW_MODAL_FOCUSABLE_SELECTOR)]
+    .filter(el => el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+}
+
+function swFocusModal(dialog) {
+  if (!dialog) return;
+  const preferred = dialog.querySelector(
+    '[autofocus], input:not([type="hidden"]), select, textarea',
+  );
+  const focusable = swModalFocusable(dialog);
+  (preferred || focusable[0] || dialog).focus();
+}
+
+function swTrapModalFocus(event) {
+  const backdrop = swGetOpenModal();
+  const dialog = backdrop?.querySelector('.sw-modal');
+  if (!dialog) return;
+
+  const focusable = swModalFocusable(dialog);
+  if (!focusable.length) {
+    event.preventDefault();
+    dialog.focus();
+    return;
+  }
+
+  if (!dialog.contains(document.activeElement)) {
+    event.preventDefault();
+    focusable[0].focus();
+    return;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
 // Modal nativo — abrir/cerrar
 function swOpenModal(id) {
   const el = document.getElementById(id);
   if (!el) return;
+  if (!el.classList.contains('is-open')) {
+    el._swModalReturnFocus = document.activeElement;
+  }
   // .sw-main.sw-fade-in anima opacity y crea su propio stacking context:
   // un modal position:fixed anidado ahi queda atrapado debajo del topbar
   // sin importar su z-index. Se reubica como hijo directo de <body>.
@@ -282,25 +351,52 @@ function swOpenModal(id) {
     document.body.appendChild(el);
   }
   el.classList.add('is-open');
+  el.setAttribute('aria-hidden', 'false');
   document.body.classList.add('sw-modal-open');
+  const dialog = el.querySelector('.sw-modal');
+  if (dialog && !dialog.hasAttribute('tabindex')) dialog.setAttribute('tabindex', '-1');
   // Los valores de edicion se asignan por JS (input.value = ...) justo antes de este
   // llamado y eso no dispara 'input', asi que el color mm/dd/yyyy quedaria desactualizado.
   el.querySelectorAll(SW_DATE_INPUT_SELECTOR).forEach(swSyncDateInputColor);
+  requestAnimationFrame(() => {
+    if (el.classList.contains('is-open')) swFocusModal(dialog);
+  });
 }
 
 function swCloseModal(id) {
   const el = document.getElementById(id);
   if (!el) return;
+  const returnFocus = el._swModalReturnFocus;
   el.classList.remove('is-open');
+  el.setAttribute('aria-hidden', 'true');
   if (!document.querySelector('.sw-modal-backdrop.is-open')) {
     document.body.classList.remove('sw-modal-open');
+  }
+  el._swModalReturnFocus = null;
+  if (returnFocus && returnFocus.isConnected && typeof returnFocus.focus === 'function') {
+    returnFocus.focus();
   }
 }
 
 function swCloseAllModals() {
-  document.querySelectorAll('.sw-modal-backdrop.is-open').forEach(el => el.classList.remove('is-open'));
+  const open = [...document.querySelectorAll('.sw-modal-backdrop.is-open')];
+  const returnFocus = open.length ? open[open.length - 1]._swModalReturnFocus : null;
+  open.forEach(el => {
+    el.classList.remove('is-open');
+    el.setAttribute('aria-hidden', 'true');
+    el._swModalReturnFocus = null;
+  });
   document.body.classList.remove('sw-modal-open');
+  if (returnFocus && returnFocus.isConnected && typeof returnFocus.focus === 'function') {
+    returnFocus.focus();
+  }
 }
+
+document.addEventListener('click', event => {
+  const backdrop = event.target.closest && event.target.closest('.sw-modal-backdrop');
+  if (!backdrop || event.target !== backdrop || !backdrop.classList.contains('is-open')) return;
+  if (swModalAllowsBackdrop(backdrop)) swCloseModal(backdrop.id);
+});
 
 // Tabs propias (reemplazan data-toggle="tab" de Bootstrap, que ya no cargamos)
 function swActivateTab(event, link) {
@@ -498,7 +594,13 @@ document.addEventListener('keydown', e => {
     swCloseSidebar();
     swCloseUserMenu(true);
     swCloseAllRowMenus();
-    swCloseAllModals();
+    const modal = swGetOpenModal();
+    if (modal && swModalAllowsEscape(modal)) {
+      e.preventDefault();
+      swCloseModal(modal.id);
+    }
+  } else if (e.key === 'Tab') {
+    swTrapModalFocus(e);
   }
 });
 

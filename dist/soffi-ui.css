@@ -3382,6 +3382,10 @@ body.sw-modal-open {
     border: var(--brd);
 }
 
+.sw-modal-sm {
+    max-width: 360px;
+}
+
 .sw-modal-lg {
     max-width: 760px;
 }

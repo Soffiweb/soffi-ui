@@ -2155,6 +2155,9 @@ No inventar clases sueltas por vista.
     border: var(--brd);
 }
 
+.sw-modal-sm { max-width: 360px; }
+.sw-modal-lg { max-width: 760px; }
+
 .sw-modal-title {
     font-size: 19px;
     font-weight: 700;
@@ -2288,7 +2291,7 @@ Abrir y cerrar **siempre** con `swOpenModal(id)` / `swCloseModal(id)` de
 </button>
 
 <div class="sw-modal-backdrop" id="exampleModal">
-    <div class="sw-modal" role="dialog" aria-modal="true" aria-labelledby="exampleModalTitle">
+    <div class="sw-modal" role="dialog" aria-modal="true" aria-labelledby="exampleModalTitle" tabindex="-1">
         <div class="sw-modal-title" id="exampleModalTitle">
             <span>Título del modal</span>
             <button type="button" class="sw-modal-close" onclick="swCloseModal('exampleModal')" aria-label="Cerrar">
@@ -2324,7 +2327,12 @@ Dentro de un formulario parcial reutilizado, cerrar sin hardcodear el id:
 - `swOpenModal()` mueve el modal a `<body>`: dentro de `.sw-main` (que anima
   opacidad) un `position: fixed` queda atrapado bajo el topbar.
 - El clic en el backdrop y la tecla `Escape` cierran el modal.
-- Ancho: `.sw-modal` por defecto, `.sw-modal-lg` para formularios.
+- Ancho: `.sw-modal-sm` para confirmaciones, `.sw-modal` por defecto y
+  `.sw-modal-lg` para formularios o contenido amplio.
+- El foco pasa al primer campo al abrir, queda atrapado dentro del modal y
+  vuelve al botón que lo abrió al cerrar.
+- El backdrop y `Escape` cierran por defecto. Para un modal obligatorio usar
+  `data-modal-backdrop="static"` y/o `data-modal-escape="false"`.
 - La X (`.sw-modal-close`) usa `var(--bc)` que cambia automático light/dark
 - Hover a color primary (`var(--p)`)
 - Icono con Font Awesome `fa-xmark`

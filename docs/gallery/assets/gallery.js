@@ -311,28 +311,112 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.addEventListener('resize', galSyncTableStickyColumns);
 
+const GAL_MODAL_FOCUSABLE_SELECTOR = [
+    'a[href]',
+    'button:not([disabled])',
+    'input:not([disabled]):not([type="hidden"])',
+    'select:not([disabled])',
+    'textarea:not([disabled])',
+    '[tabindex]:not([tabindex="-1"])',
+].join(',');
+
+function galGetOpenModal() {
+    const open = document.querySelectorAll('.sw-modal-backdrop.is-open');
+    return open.length ? open[open.length - 1] : null;
+}
+
+function galModalAllowsBackdrop(backdrop) {
+    return backdrop.dataset.modalBackdrop !== 'static'
+        && backdrop.dataset.modalBackdrop !== 'false';
+}
+
+function galModalAllowsEscape(backdrop) {
+    return backdrop.dataset.modalEscape !== 'false';
+}
+
+function galModalFocusable(dialog) {
+    return Array.from(dialog.querySelectorAll(GAL_MODAL_FOCUSABLE_SELECTOR))
+        .filter(function (el) { return el.offsetWidth || el.offsetHeight || el.getClientRects().length; });
+}
+
+function galFocusModal(dialog) {
+    if (!dialog) return;
+    const preferred = dialog.querySelector('[autofocus], input:not([type="hidden"]), select, textarea');
+    const focusable = galModalFocusable(dialog);
+    (preferred || focusable[0] || dialog).focus();
+}
+
+function galTrapModalFocus(event) {
+    const backdrop = galGetOpenModal();
+    const dialog = backdrop && backdrop.querySelector('.sw-modal');
+    if (!dialog) return;
+
+    const focusable = galModalFocusable(dialog);
+    if (!focusable.length) {
+        event.preventDefault();
+        dialog.focus();
+        return;
+    }
+
+    if (!dialog.contains(document.activeElement)) {
+        event.preventDefault();
+        focusable[0].focus();
+        return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+    }
+}
+
 function galOpenModal(id) {
     const el = document.getElementById(id);
     if (!el) return;
+    if (!el.classList.contains('is-open')) el._galModalReturnFocus = document.activeElement;
     if (el.parentNode !== document.body) document.body.appendChild(el);
     el.classList.add('is-open');
+    el.setAttribute('aria-hidden', 'false');
     document.body.classList.add('sw-modal-open');
+    const dialog = el.querySelector('.sw-modal');
+    if (dialog && !dialog.hasAttribute('tabindex')) dialog.setAttribute('tabindex', '-1');
+    requestAnimationFrame(function () {
+        if (el.classList.contains('is-open')) galFocusModal(dialog);
+    });
 }
 
 function galCloseModal(id) {
     const el = document.getElementById(id);
     if (!el) return;
+    const returnFocus = el._galModalReturnFocus;
     el.classList.remove('is-open');
-    document.body.classList.remove('sw-modal-open');
+    el.setAttribute('aria-hidden', 'true');
+    if (!document.querySelector('.sw-modal-backdrop.is-open')) document.body.classList.remove('sw-modal-open');
+    el._galModalReturnFocus = null;
+    if (returnFocus && returnFocus.isConnected && typeof returnFocus.focus === 'function') returnFocus.focus();
 }
+
+document.addEventListener('click', function (event) {
+    const backdrop = event.target.closest && event.target.closest('.sw-modal-backdrop');
+    if (!backdrop || event.target !== backdrop || !backdrop.classList.contains('is-open')) return;
+    if (galModalAllowsBackdrop(backdrop)) galCloseModal(backdrop.id);
+});
 
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-        document.querySelectorAll('.sw-modal-backdrop.is-open').forEach(function (el) {
-            el.classList.remove('is-open');
-        });
-        document.body.classList.remove('sw-modal-open');
+        const modal = galGetOpenModal();
+        if (modal && galModalAllowsEscape(modal)) {
+            e.preventDefault();
+            galCloseModal(modal.id);
+        }
         galCloseSidebar();
+    } else if (e.key === 'Tab') {
+        galTrapModalFocus(e);
     }
 });
 

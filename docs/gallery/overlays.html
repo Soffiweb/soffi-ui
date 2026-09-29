@@ -90,10 +90,12 @@
         <section id="modal" class="gal-section">
             <div class="gal-section-head">
                 <h2><i class="fa-regular fa-window-restore"></i> Modal</h2>
-                <p><code>.sw-modal-backdrop</code> + <code>.sw-modal</code>. Contrato: <code>swOpenModal(id)</code> reubica el modal como hijo directo de <code>&lt;body&gt;</code> (necesario porque <code>.sw-main</code> crea su propio stacking context). Nunca <code>data-toggle="modal"</code>: no hay Bootstrap.</p>
+                <p><code>.sw-modal-sm</code>, <code>.sw-modal</code> y <code>.sw-modal-lg</code> cubren confirmaciones, formularios y contenido amplio. <code>swOpenModal(id)</code> gestiona foco, Escape y backdrop sin Bootstrap.</p>
             </div>
             <div class="gal-preview">
-                <button class="sw-btn sw-btn-primary" onclick="galOpenModal('gal-demo-modal')"><i class="fa-regular fa-window-restore"></i> Abrir modal</button>
+                <button class="sw-btn sw-btn-primary" onclick="galOpenModal('gal-demo-modal')"><i class="fa-regular fa-window-restore"></i> Estándar</button>
+                <button class="sw-btn sw-btn-ghost" onclick="galOpenModal('gal-demo-modal-sm')"><i class="fa-solid fa-check"></i> Pequeño</button>
+                <button class="sw-btn sw-btn-ghost" onclick="galOpenModal('gal-demo-modal-lg')"><i class="fa-solid fa-expand"></i> Grande</button>
             </div>
             <details class="gal-code">
                 <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
@@ -101,9 +103,11 @@
                     <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
                     <pre><code>&lt;button onclick="swOpenModal('miModal')"&gt;Abrir&lt;/button&gt;
 
-&lt;div class="sw-modal-backdrop" id="miModal"&gt;
-    &lt;div class="sw-modal" role="dialog" aria-modal="true"&gt;
-        &lt;div class="sw-modal-title"&gt;
+&lt;div class="sw-modal-backdrop" id="miModal" data-modal-backdrop="static"
+     data-modal-escape="false" aria-hidden="true"&gt;
+    &lt;div class="sw-modal sw-modal-sm" role="dialog" aria-modal="true"
+         aria-labelledby="miModalTitle" tabindex="-1"&gt;
+        &lt;div class="sw-modal-title" id="miModalTitle"&gt;
             Título
             &lt;button class="sw-modal-close" onclick="swCloseModal('miModal')"&gt;&amp;times;&lt;/button&gt;
         &lt;/div&gt;
@@ -117,8 +121,27 @@
                 </div>
             </details>
 
-            <div class="sw-modal-backdrop" id="gal-demo-modal" onclick="if(event.target===this) galCloseModal('gal-demo-modal')">
-                <div class="sw-modal" role="dialog" aria-modal="true" aria-labelledby="gal-demo-modal-title">
+            <div class="gal-block">
+                <div class="gal-block-title"><h3>Cierre configurable</h3><span>Controla Escape y el clic en el backdrop</span></div>
+                <p>Por defecto, <code>Escape</code> y el clic fuera del modal lo cierran. Para formularios o confirmaciones obligatorias, usa <code>data-modal-backdrop="static"</code> y/o <code>data-modal-escape="false"</code>.</p>
+                <details class="gal-code">
+                    <summary><i class="fa-solid fa-chevron-right"></i> Código</summary>
+                    <div class="gal-code-body">
+                        <button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <pre><code>&lt;div class="sw-modal-backdrop" id="confirmarModal"
+     data-modal-backdrop="static"
+     data-modal-escape="false"&gt;
+    &lt;div class="sw-modal sw-modal-sm" role="dialog"
+         aria-modal="true" tabindex="-1"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="sw-modal-backdrop" id="gal-demo-modal" aria-hidden="true">
+                <div class="sw-modal" role="dialog" aria-modal="true" aria-labelledby="gal-demo-modal-title" tabindex="-1">
                     <div class="sw-modal-title" id="gal-demo-modal-title">
                         Nuevo departamento
                         <button type="button" class="sw-modal-close" onclick="galCloseModal('gal-demo-modal')" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
@@ -132,6 +155,42 @@
                     <div class="sw-modal-actions">
                         <button type="button" class="sw-btn sw-btn-ghost" onclick="galCloseModal('gal-demo-modal')">Cancelar</button>
                         <button type="button" class="sw-btn sw-btn-primary" onclick="galCloseModal('gal-demo-modal')">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sw-modal-backdrop" id="gal-demo-modal-sm" data-modal-backdrop="static" data-modal-escape="false" aria-hidden="true">
+                <div class="sw-modal sw-modal-sm" role="dialog" aria-modal="true" aria-labelledby="gal-demo-modal-sm-title" tabindex="-1">
+                    <div class="sw-modal-title" id="gal-demo-modal-sm-title">
+                        ¿Eliminar departamento?
+                        <button type="button" class="sw-modal-close" onclick="galCloseModal('gal-demo-modal-sm')" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="sw-modal-body">
+                        Esta acción no se puede deshacer. Confirma para continuar.
+                    </div>
+                    <div class="sw-modal-actions">
+                        <button type="button" class="sw-btn sw-btn-ghost" onclick="galCloseModal('gal-demo-modal-sm')">Cancelar</button>
+                        <button type="button" class="sw-btn sw-btn-error" onclick="galCloseModal('gal-demo-modal-sm')">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sw-modal-backdrop" id="gal-demo-modal-lg" aria-hidden="true">
+                <div class="sw-modal sw-modal-lg" role="dialog" aria-modal="true" aria-labelledby="gal-demo-modal-lg-title" tabindex="-1">
+                    <div class="sw-modal-title" id="gal-demo-modal-lg-title">
+                        Editar empleado
+                        <button type="button" class="sw-modal-close" onclick="galCloseModal('gal-demo-modal-lg')" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="sw-modal-body">
+                        <div class="sw-row">
+                            <div class="sw-col-6"><div class="sw-field"><label class="sw-label" for="gal-modal-name">Nombre</label><input id="gal-modal-name" type="text" class="sw-input" value="Ana Torres"></div></div>
+                            <div class="sw-col-6"><div class="sw-field"><label class="sw-label" for="gal-modal-email">Correo</label><input id="gal-modal-email" type="email" class="sw-input" value="ana@empresa.com"></div></div>
+                        </div>
+                        <div class="sw-field"><label class="sw-label" for="gal-modal-notes">Notas</label><textarea id="gal-modal-notes" class="sw-textarea" rows="3">Documentación completa.</textarea></div>
+                    </div>
+                    <div class="sw-modal-actions">
+                        <button type="button" class="sw-btn sw-btn-ghost" onclick="galCloseModal('gal-demo-modal-lg')">Cancelar</button>
+                        <button type="button" class="sw-btn sw-btn-primary" onclick="galCloseModal('gal-demo-modal-lg')">Guardar cambios</button>
                     </div>
                 </div>
             </div>
