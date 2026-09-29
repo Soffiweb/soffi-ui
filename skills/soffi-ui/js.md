@@ -66,6 +66,29 @@ Usar cuando una fila de tabla necesita más de ~4 acciones: mantener las
 principales como `sw-bico` sueltos y mover el resto a este menú, en vez de
 apilar iconos hasta que la columna quede confusa.
 
+### Dropdown genérico
+
+| Función | Uso |
+| --- | --- |
+| `swToggleDropdown(trigger)` | Abre o cierra el menú indicado por `aria-controls`. |
+| `swCloseDropdowns(restoreFocus)` | Cierra menús genéricos y, opcionalmente, devuelve el foco al trigger. |
+
+```html
+<div class="sw-dropdown">
+    <button type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="acciones" onclick="swToggleDropdown(this)">
+        Acciones
+    </button>
+    <div id="acciones" class="sw-dropdown-menu" role="menu">
+        <a class="sw-dropdown-item" href="/perfil" role="menuitem">Perfil</a>
+        <button class="sw-dropdown-item" type="button" role="menuitem">Exportar</button>
+    </div>
+</div>
+```
+
+El menú se cierra con clic externo o `Escape`. Usar `.sw-dropdown-menu-start`
+para alinearlo al borde izquierdo.
+
 ### Modales
 
 | Función | Uso |

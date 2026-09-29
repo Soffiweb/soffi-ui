@@ -6,8 +6,8 @@ Fuente única de estilos de las apps Soffiweb: **gesnom**, **SoffiFac**,
 CSS y JS plano. Sin Bootstrap, sin Popper, sin jQuery, sin Tailwind, sin Vue.
 **Sin Node**: el build es PHP.
 
-- **461 clases** `sw-*` — la unión de las 4 apps, sin perder ninguna
-- **26 funciones** JS vanilla (modales, tabs, collapse, validación, tema, sidebar…)
+- **565 clases** `sw-*` — componentes base, utilidades y layout Soffiweb
+- **41 funciones** JS vanilla (modales, tabs, collapse, validación, tema, sidebar…)
 - Tema claro y oscuro
 - Piso de navegador: **Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6**
 
@@ -71,8 +71,8 @@ porque `.sw-main` crea un stacking context). Desde React usar solo el CSS
 src/
 ├── tokens/        color.css · spacing.css · typography.css
 ├── base/          reset.css · utilities.css
-└── components/    28 archivos, uno por componente o familia
-js/soffi-ui.js     26 funciones vanilla
+└── components/    35 archivos, uno por componente o familia
+js/soffi-ui.js     41 funciones vanilla
 blade/             layout panel + componentes sw-* (opcional)
 skills/soffi-ui/   skill de IA — este repo es su origen
 dist/              salida del build. NO EDITAR
@@ -117,6 +117,5 @@ php scripts/check-compat.php                       # solo el check
 - Los `font-size` heredados de Sofficon siguen en px literal. Los tokens están
   definidos y el CSS nuevo los usa; falta el pase de retrofit con QA visual.
 - `sweetalert2` en Sofficon no está tematizado → dos lenguajes de notificación.
-- Faltan dropdown genérico, spinner, tooltip, switch, accordion visual y print
-  styles.
-- Sin tests visuales. 461 clases, dos temas, ningún snapshot.
+- Faltan accordion visual y override de sweetalert2.
+- Sin tests visuales. 565 clases, dos temas, ningún snapshot.

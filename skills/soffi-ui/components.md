@@ -2495,21 +2495,104 @@ aporta el margen, el `.sw-field` no debe sumar el suyo encima.
 
 ---
 
-# Componentes que NO existen todavía
+# Utilidades nuevas en 0.11.0
 
-No inventarlos en una app: agregarlos primero al paquete.
+Componentes sin dependencias externas. Todos soportan tema claro y oscuro.
 
-| Componente | Prioridad | Hoy se resuelve con |
+## Dropdown — `.sw-dropdown*`
+
+```html
+<div class="sw-dropdown">
+    <button type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="menu-acciones" onclick="swToggleDropdown(this)">
+        Acciones
+    </button>
+    <div id="menu-acciones" class="sw-dropdown-menu" role="menu">
+        <a class="sw-dropdown-item" href="/perfil" role="menuitem">Perfil</a>
+        <button class="sw-dropdown-item" type="button" role="menuitem">Exportar</button>
+    </div>
+</div>
+```
+
+`.sw-dropdown-menu-start` alinea el menú a la izquierda. El JS cierra menús
+abiertos con clic externo o `Escape`.
+
+## Spinner — `.sw-spinner*`
+
+Indicador de carga. Variantes: `.sw-spinner-sm`, `.sw-spinner-lg` y
+`.sw-spinner-light` para fondos oscuros.
+
+```html
+<span class="sw-spinner" role="status" aria-label="Cargando"></span>
+```
+
+## Tooltip — `.sw-tooltip`
+
+Tooltip CSS para texto corto. El elemento debe ser enfocable si contiene
+información necesaria para teclado.
+
+```html
+<button type="button" class="sw-tooltip" data-tooltip="Guardar cambios"
+        aria-label="Guardar cambios">💾</button>
+<span class="sw-tooltip sw-tooltip-bottom" data-tooltip="Ayuda" tabindex="0">?</span>
+```
+
+## Switch — `.sw-switch*`
+
+Control booleano basado en checkbox nativo. Mantener `label` asociado para
+preservar teclado y accesibilidad.
+
+```html
+<label class="sw-switch">
+    <input class="sw-switch-input" type="checkbox" name="activo">
+    <span class="sw-switch-track" aria-hidden="true"><span class="sw-switch-thumb"></span></span>
+    <span class="sw-switch-label">Cuenta activa</span>
+</label>
+```
+
+## Skeleton — `.sw-skeleton*`
+
+Placeholder para contenido que todavía carga. Variantes: `.sw-skeleton-text`,
+`.sw-skeleton-title`, `.sw-skeleton-avatar` y `.sw-skeleton-media`.
+
+```html
+<div class="sw-skeleton sw-skeleton-title" aria-hidden="true"></div>
+<div class="sw-skeleton sw-skeleton-text" aria-hidden="true"></div>
+```
+
+## Stepper — `.sw-stepper*`
+
+Flujo de pasos. Marcar paso actual con `.is-active`, pasos terminados con
+`.is-complete` y usar `.sw-stepper-vertical` para orientación vertical.
+
+```html
+<ol class="sw-stepper" aria-label="Progreso">
+    <li class="sw-step is-complete"><span class="sw-step-marker">1</span><span class="sw-step-content"><strong class="sw-step-title">Datos</strong></span></li>
+    <li class="sw-step is-active"><span class="sw-step-marker">2</span><span class="sw-step-content"><strong class="sw-step-title">Confirmación</strong></span></li>
+</ol>
+```
+
+## Impresión — `.sw-print-*`
+
+En impresión se ocultan topbar, sidebar, footer y `.sw-print-hide`. Mostrar
+contenido exclusivo con `.sw-print-only`; separar páginas con
+`.sw-print-break-before`, `.sw-print-break-after` o `.sw-print-avoid-break`.
+
+```html
+<button class="sw-print-hide" type="button" onclick="window.print()">Imprimir</button>
+<p class="sw-print-only">Documento generado para impresión</p>
+```
+
+El paquete incluye los estilos `@media print`; no requiere JavaScript.
+
+---
+
+# Componentes pendientes
+
+| Componente | Prioridad | Estado |
 |---|---|---|
-| Dropdown / menú genérico | alta | `.sw-user-menu` o `.sw-row-menu` ad-hoc |
-| Spinner / loading | alta | nada |
-| Override de sweetalert2 | alta | sin tematizar |
-| Tooltip / popover | media | nada |
-| Switch de formulario | media | `.sw-toggle` (es del sidebar/tema, no un control) |
-| Accordion visual | media | solo el JS (`swToggleCollapse`) y `.collapse`/`.show` |
-| Print styles | media | nada |
-| Skeleton | baja | nada |
-| Stepper / wizard | baja | nada |
+| Override de sweetalert2 | alta | pendiente |
+| Accordion visual | media | pendiente; existe `swToggleCollapse` |
 
 Ninguno requiere features por encima de Chrome 109 — ver [compat.md](compat.md).
 

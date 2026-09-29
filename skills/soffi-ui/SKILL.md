@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: soffiweb
   package: soffiweb/soffi-ui
-  version: "0.10.0"
+  version: "0.11.0"
 ---
 
 # Soffi UI — sistema de diseño Soffiweb
@@ -25,8 +25,8 @@ Antes de crear o refactorizar vistas, leer las fuentes del paquete:
 | `src/tokens/z-index.css` | capas (topbar, sidebar, modal, toast) |
 | `src/base/reset.css` | reset + resets de markup heredado |
 | `src/base/utilities.css` | utilidades (`sw-mt-*`, `sw-d-flex`, `sw-text-*`…) |
-| `src/components/*.css` | 28 archivos, un componente o familia por archivo |
-| `js/soffi-ui.js` | 26 funciones, vanilla |
+| `src/components/*.css` | 35 archivos, un componente o familia por archivo |
+| `js/soffi-ui.js` | 41 funciones, vanilla |
 
 `dist/` y `public/vendor/soffi-ui/` son **salida de build**: el próximo
 `php scripts/build.php` los sobrescribe. Todo cambio va a `src/`.
@@ -99,7 +99,7 @@ fallback acumuladas entre SoffiFac y gesnom `dev`).
 | [tokens.md](tokens.md) | paleta, tipografía, espaciado, radios, breakpoints |
 | [layout.md](layout.md) | shell, topbar (tenant/periodo), menú de usuario, sidebar, footer |
 | [components.md](components.md) | catálogo completo de componentes `sw-*` |
-| [js.md](js.md) | las 26 funciones, y qué hacer en React |
+| [js.md](js.md) | las 41 funciones, y qué hacer en React |
 | [auth.md](auth.md) | pantallas de login / selección de empresa / recuperar clave |
 | [laravel.md](laravel.md) | **integración Laravel + Blade — leer para cualquier vista** |
 | [view-patterns.md](view-patterns.md) | patrones de vistas CRUD, listados, formularios |
@@ -121,10 +121,10 @@ Usar estas familias antes de crear clases nuevas:
 - **Resumen/datos**: `sw-section-block`, `sw-section-title`, `sw-data-grid`, `sw-data-item`, `sw-data-label`, `sw-data-value`, `sw-total-panel`, `sw-rol-summary*`.
 - **Dashboard**: `sw-metric*`, `sw-quicklink*`, `sw-chart-card`, `sw-donut*`, `sw-activity*`.
 - **Sesión**: `sw-impersonation-banner*`.
+- **Utilidades**: `sw-dropdown*`, `sw-spinner*`, `sw-tooltip`, `sw-switch*`, `sw-skeleton*`, `sw-stepper*`, `sw-print-*`.
 
-Catálogo completo en [components.md](components.md). Lo que todavía no existe
-(dropdown genérico, spinner, tooltip, switch, accordion, print styles) está
-listado al final de ese archivo: **agregarlo al paquete, no a la app**.
+Catálogo completo en [components.md](components.md). Pendientes reales:
+accordion visual y override de sweetalert2. Agregarlos al paquete, no a la app.
 
 ## Capa Blade del paquete
 
