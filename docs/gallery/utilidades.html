@@ -82,7 +82,7 @@
         </div>
 
         <section id="dropdown" class="gal-section">
-            <div class="gal-section-head"><h2><i class="fa-solid fa-caret-down"></i> Dropdown</h2><p><code>.sw-dropdown</code> + <code>swToggleDropdown(trigger)</code>. Un menú genérico para acciones o enlaces.</p></div>
+            <div class="gal-section-head"><h2><i class="fa-solid fa-caret-down"></i> Dropdown</h2><p><code>.sw-dropdown</code> + <code>swToggleDropdown(trigger)</code>. Un menú genérico para acciones o enlaces. El divider dibuja una línea y separa grupos.</p></div>
             <div class="gal-preview">
                 <div class="sw-dropdown">
                     <button type="button" class="sw-btn sw-btn-primary" aria-haspopup="menu" aria-expanded="false" aria-controls="gal-dropdown-menu" onclick="galToggleDropdown(this)">Acciones <i class="fa-solid fa-chevron-down"></i></button>
@@ -137,7 +137,7 @@
 
         <section id="skeleton" class="gal-section">
             <div class="gal-section-head"><h2><i class="fa-solid fa-align-left"></i> Skeleton</h2><p><code>.sw-skeleton</code> mantiene la estructura visible mientras llega el contenido.</p></div>
-            <div class="gal-preview"><div class="sw-card" style="width:min(100%,420px)"><div class="sw-d-flex sw-align-items-center" style="gap:12px"><span class="sw-skeleton sw-skeleton-avatar"></span><div class="sw-d-flex sw-flex-column" style="gap:8px;flex:1"><span class="sw-skeleton sw-skeleton-title"></span><span class="sw-skeleton sw-skeleton-text" style="width:45%"></span></div></div><span class="sw-skeleton sw-skeleton-media" style="margin-top:16px"></span></div></div>
+            <div class="gal-preview"><div class="sw-card sw-skeleton-card" aria-busy="true" aria-label="Cargando"><div class="sw-skeleton-layout"><div class="sw-skeleton-row"><span class="sw-skeleton sw-skeleton-avatar" aria-hidden="true"></span><div class="sw-skeleton-content"><span class="sw-skeleton sw-skeleton-title" aria-hidden="true"></span><span class="sw-skeleton sw-skeleton-text" aria-hidden="true"></span></div></div><span class="sw-skeleton sw-skeleton-media" aria-hidden="true"></span></div></div></div>
             <details class="gal-code"><summary><i class="fa-solid fa-chevron-right"></i> Código</summary><div class="gal-code-body"><button class="gal-copy-btn" onclick="galCopy(this)"><i class="fa-regular fa-copy"></i> Copiar</button><pre><code>&lt;span class="sw-skeleton sw-skeleton-avatar"&gt;&lt;/span&gt;
 &lt;span class="sw-skeleton sw-skeleton-title"&gt;&lt;/span&gt;
 &lt;span class="sw-skeleton sw-skeleton-text"&gt;&lt;/span&gt;

@@ -2515,7 +2515,8 @@ Componentes sin dependencias externas. Todos soportan tema claro y oscuro.
 ```
 
 `.sw-dropdown-menu-start` alinea el menú a la izquierda. El JS cierra menús
-abiertos con clic externo o `Escape`.
+abiertos con clic externo o `Escape`. `.sw-dropdown-divider` dibuja una línea
+de separación entre grupos y agrega espacio vertical intencional.
 
 ## Spinner — `.sw-spinner*`
 
@@ -2555,9 +2556,24 @@ preservar teclado y accesibilidad.
 Placeholder para contenido que todavía carga. Variantes: `.sw-skeleton-text`,
 `.sw-skeleton-title`, `.sw-skeleton-avatar` y `.sw-skeleton-media`.
 
+Para una composición estable, usar `.sw-skeleton-card`,
+`.sw-skeleton-layout`, `.sw-skeleton-row` y `.sw-skeleton-content`. El ancho
+de la tarjeta se configura con `--sw-skeleton-card-width`; cada placeholder
+acepta `--sw-skeleton-width` y `--sw-skeleton-height`.
+
 ```html
-<div class="sw-skeleton sw-skeleton-title" aria-hidden="true"></div>
-<div class="sw-skeleton sw-skeleton-text" aria-hidden="true"></div>
+<div class="sw-card sw-skeleton-card" aria-busy="true" aria-label="Cargando">
+    <div class="sw-skeleton-layout">
+        <div class="sw-skeleton-row">
+            <span class="sw-skeleton sw-skeleton-avatar" aria-hidden="true"></span>
+            <div class="sw-skeleton-content">
+                <span class="sw-skeleton sw-skeleton-title" aria-hidden="true"></span>
+                <span class="sw-skeleton sw-skeleton-text" aria-hidden="true"></span>
+            </div>
+        </div>
+        <span class="sw-skeleton sw-skeleton-media" aria-hidden="true"></span>
+    </div>
+</div>
 ```
 
 ## Stepper — `.sw-stepper*`

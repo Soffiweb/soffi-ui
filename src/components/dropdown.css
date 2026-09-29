@@ -53,7 +53,7 @@
 }
 
 .sw-dropdown-divider {
-    height: 1px;
+    height: 0;
     margin: 0.3rem 0;
-    background: var(--sw-border);
+    border-top: var(--brd);
 }
