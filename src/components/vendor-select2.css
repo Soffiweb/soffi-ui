@@ -22,7 +22,6 @@
     align-items: center;
     min-height: 43px;
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     background: var(--b1);
     color: var(--bc);
@@ -56,7 +55,6 @@
 .select2-container--default.select2-container--open .select2-selection--single {
     border-color: var(--p);
     box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
 }
 
 .select2-dropdown {
@@ -72,7 +70,6 @@
     font-family: "Inter", sans-serif;
     font-size: 15px;
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     color: var(--bc);
     outline: none;
@@ -82,4 +79,16 @@
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background: var(--p);
     color: var(--btn-text);
+}
+
+@supports (background: color-mix(in srgb, red 1%, blue)) {
+    .select2-container--default .select2-selection--single,
+    .select2-search--dropdown .select2-search__field {
+        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+    }
+
+    .select2-container--default.select2-container--focus .select2-selection--single,
+    .select2-container--default.select2-container--open .select2-selection--single {
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
+    }
 }

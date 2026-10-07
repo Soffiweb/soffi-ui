@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 — 2026-10-07
+
+### Corregido
+
+- Inputs y selects conservan sus bordes en navegadores sin soporte para `color-mix()`.
+
 ## 1.0.2 — 2026-10-07
 
 ### Corregido
