@@ -2349,6 +2349,26 @@ body {
 }
 
 @media (max-width: 575.98px) {
+    .sw-metrics-grid,
+    .sw-metrics-grid-sm,
+    .sw-metrics-grid-lg {
+        --sw-grid-min: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--sw-spacing-sm);
+    }
+
+    .sw-metric {
+        padding: 0.85rem;
+    }
+
+    .sw-metric-value {
+        font-size: var(--sw-text-2xl);
+    }
+
+    .sw-metric-trend {
+        flex-wrap: wrap;
+    }
+
     .sw-chart-card,
     .sw-chart-card-sm {
         min-height: 300px;
@@ -3455,30 +3475,13 @@ body {
         padding-top: 22px;
     }
 
-    .sw-crud-actions,
-    .sw-list-search-row,
-    .sw-list-filter-row,
-    .sw-list-filter-actions {
+    .sw-crud-actions {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
     }
 
-    .sw-list-search .sw-list-filter-actions {
-        transform: none;
-    }
-
-    .sw-list-search-row .sw-input-icon-wrap,
-    .sw-list-filter-main,
-    .sw-list-filter-control {
-        flex-basis: auto;
-        max-width: none;
-        min-width: 0;
-    }
-
-    .sw-crud-actions .sw-btn,
-    .sw-list-search-row .sw-btn,
-    .sw-list-filter-actions .sw-btn {
+    .sw-crud-actions .sw-btn {
         justify-content: center;
         width: 100%;
     }
@@ -5578,6 +5581,34 @@ body.sw-modal-open {
     box-shadow: none;
     overflow: auto;
     max-height: 70vh;
+}
+
+@media (max-width: 575.98px) {
+    .sw-list-search-row,
+    .sw-list-filter-row,
+    .sw-list-filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .sw-list-search .sw-list-filter-actions {
+        transform: none;
+    }
+
+    .sw-list-search-row .sw-input-icon-wrap,
+    .sw-list-filter-main,
+    .sw-list-filter-control {
+        flex-basis: auto;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .sw-list-search-row .sw-btn,
+    .sw-list-filter-actions .sw-btn {
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 /* Cabecera fija mientras se scrollea vertical dentro del wrap acotado */

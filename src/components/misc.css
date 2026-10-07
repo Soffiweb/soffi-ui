@@ -135,30 +135,13 @@
         padding-top: 22px;
     }
 
-    .sw-crud-actions,
-    .sw-list-search-row,
-    .sw-list-filter-row,
-    .sw-list-filter-actions {
+    .sw-crud-actions {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
     }
 
-    .sw-list-search .sw-list-filter-actions {
-        transform: none;
-    }
-
-    .sw-list-search-row .sw-input-icon-wrap,
-    .sw-list-filter-main,
-    .sw-list-filter-control {
-        flex-basis: auto;
-        max-width: none;
-        min-width: 0;
-    }
-
-    .sw-crud-actions .sw-btn,
-    .sw-list-search-row .sw-btn,
-    .sw-list-filter-actions .sw-btn {
+    .sw-crud-actions .sw-btn {
         justify-content: center;
         width: 100%;
     }
