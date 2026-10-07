@@ -512,6 +512,26 @@
 }
 
 @media (max-width: 575.98px) {
+    .sw-metrics-grid,
+    .sw-metrics-grid-sm,
+    .sw-metrics-grid-lg {
+        --sw-grid-min: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--sw-spacing-sm);
+    }
+
+    .sw-metric {
+        padding: 0.85rem;
+    }
+
+    .sw-metric-value {
+        font-size: var(--sw-text-2xl);
+    }
+
+    .sw-metric-trend {
+        flex-wrap: wrap;
+    }
+
     .sw-chart-card,
     .sw-chart-card-sm {
         min-height: 300px;
