@@ -1,4 +1,4 @@
-/*! Soffi UI 1.0.1 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 1.0.3 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -2581,7 +2581,6 @@ body {
     color: var(--bc);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     outline: none;
     transition:
@@ -2594,7 +2593,6 @@ body {
 .sw-select:focus {
     border-color: var(--p);
     box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
 }
 
 .sw-input:disabled,
@@ -2605,7 +2603,6 @@ body {
 .sw-textarea[readonly] {
     background: var(--b2);
     border-color: rgba(107, 114, 128, 0.28);
-    border-color: color-mix(in srgb, var(--bc2) 28%, transparent);
     color: var(--bc2);
     cursor: not-allowed;
     opacity: 0.78;
@@ -2618,7 +2615,6 @@ body {
 .sw-file-input.sw-error {
     border-color: var(--er);
     box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--er) 10%, transparent);
 }
 
 .sw-select {
@@ -2724,7 +2720,6 @@ body {
     padding: 0 2px;
     border-radius: var(--sw-radius-sm);
     background: rgba(40, 68, 154, 0.16);
-    background: color-mix(in srgb, var(--p) 16%, transparent);
     color: var(--bc);
     outline: none;
 }
@@ -2739,7 +2734,6 @@ body {
     padding: 0 var(--sw-spacing-sm);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     cursor: pointer;
     transition:
@@ -2750,7 +2744,6 @@ body {
 .sw-file-input:focus-within {
     border-color: var(--p);
     box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
 }
 
 .sw-file-input-btn {
@@ -2774,7 +2767,6 @@ body {
 
 .sw-file-input:hover .sw-file-input-btn {
     background: #d1d9ed;
-    background: color-mix(in srgb, var(--p) 14%, var(--b2));
 }
 
 .sw-file-input-name {
@@ -2823,7 +2815,6 @@ body {
     color: var(--bc);
     background-color: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     outline: none;
     resize: vertical;
@@ -2832,7 +2823,6 @@ body {
 .sw-textarea:focus {
     border-color: var(--p);
     box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
 }
 
 .sw-hint {
@@ -2928,7 +2918,6 @@ body {
     color: var(--bc);
     background: var(--b1);
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     cursor: pointer;
     display: flex;
@@ -2943,7 +2932,6 @@ body {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
 }
 
 .sw-ss-dropdown {
@@ -2992,12 +2980,10 @@ body {
 
 .sw-ss-opt:hover {
     background: rgba(40, 68, 154, 0.06);
-    background: color-mix(in srgb, var(--p) 6%, transparent);
 }
 
 .sw-ss-opt.selected {
     background: rgba(40, 68, 154, 0.1);
-    background: color-mix(in srgb, var(--p) 10%, transparent);
     color: var(--p);
     font-weight: 600;
 }
@@ -3013,7 +2999,6 @@ body {
     width: 46px;
     height: 26px;
     background: rgba(67, 97, 238, 0.32);
-    background: color-mix(in srgb, var(--s) 32%, transparent);
     border-radius: var(--sw-radius-pill);
     position: relative;
     cursor: pointer;
@@ -3053,7 +3038,6 @@ body {
     width: 19px;
     height: 19px;
     border: 2px solid rgba(67, 97, 238, 0.55);
-    border: 2px solid color-mix(in srgb, var(--s) 55%, transparent);
     border-radius: var(--sw-radius-sm);
     background: var(--b1);
     cursor: pointer;
@@ -3070,7 +3054,6 @@ body {
     width: 19px;
     height: 19px;
     border: 2px solid rgba(67, 97, 238, 0.55);
-    border: 2px solid color-mix(in srgb, var(--s) 55%, transparent);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3098,6 +3081,71 @@ body {
 .sw-mb-3 > .sw-field,
 .sw-mb-4 > .sw-field {
     margin-bottom: 0;
+}
+
+@supports (background: color-mix(in srgb, red 1%, blue)) {
+    .sw-input,
+    .sw-select,
+    .sw-file-input,
+    .sw-textarea,
+    .sw-ss-trigger {
+        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+    }
+
+    .sw-input:focus,
+    .sw-select:focus,
+    .sw-file-input:focus-within,
+    .sw-textarea:focus,
+    .sw-ss-trigger.open {
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
+    }
+
+    .sw-input:disabled,
+    .sw-select:disabled,
+    .sw-textarea:disabled,
+    .sw-input[readonly],
+    .sw-select[readonly],
+    .sw-textarea[readonly] {
+        border-color: color-mix(in srgb, var(--bc2) 28%, transparent);
+    }
+
+    .sw-input.sw-error,
+    .sw-select.sw-error,
+    .sw-textarea.sw-error,
+    .sw-file-input.sw-error {
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--er) 10%, transparent);
+    }
+
+    .sw-input::-webkit-datetime-edit-day-field:focus,
+    .sw-input::-webkit-datetime-edit-month-field:focus,
+    .sw-input::-webkit-datetime-edit-year-field:focus,
+    .sw-input::-webkit-datetime-edit-hour-field:focus,
+    .sw-input::-webkit-datetime-edit-minute-field:focus,
+    .sw-input::-webkit-datetime-edit-second-field:focus,
+    .sw-input::-webkit-datetime-edit-ampm-field:focus {
+        background: color-mix(in srgb, var(--p) 16%, transparent);
+    }
+
+    .sw-file-input:hover .sw-file-input-btn {
+        background: color-mix(in srgb, var(--p) 14%, var(--b2));
+    }
+
+    .sw-ss-opt:hover {
+        background: color-mix(in srgb, var(--p) 6%, transparent);
+    }
+
+    .sw-ss-opt.selected {
+        background: color-mix(in srgb, var(--p) 10%, transparent);
+    }
+
+    .sw-toggle {
+        background: color-mix(in srgb, var(--s) 32%, transparent);
+    }
+
+    .sw-checkbox-input,
+    .sw-radio {
+        border-color: color-mix(in srgb, var(--s) 55%, transparent);
+    }
 }
 
 /* ===== src/components/grid.css ===== */
@@ -6196,7 +6244,6 @@ body.sw-modal-open {
     align-items: center;
     min-height: 43px;
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     background: var(--b1);
     color: var(--bc);
@@ -6230,7 +6277,6 @@ body.sw-modal-open {
 .select2-container--default.select2-container--open .select2-selection--single {
     border-color: var(--p);
     box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
 }
 
 .select2-dropdown {
@@ -6246,7 +6292,6 @@ body.sw-modal-open {
     font-family: "Inter", sans-serif;
     font-size: 15px;
     border: 1.5px solid rgba(67, 97, 238, 0.42);
-    border: 1.5px solid color-mix(in srgb, var(--s) 42%, transparent);
     border-radius: var(--r);
     color: var(--bc);
     outline: none;
@@ -6256,6 +6301,18 @@ body.sw-modal-open {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background: var(--p);
     color: var(--btn-text);
+}
+
+@supports (background: color-mix(in srgb, red 1%, blue)) {
+    .select2-container--default .select2-selection--single,
+    .select2-search--dropdown .select2-search__field {
+        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+    }
+
+    .select2-container--default.select2-container--focus .select2-selection--single,
+    .select2-container--default.select2-container--open .select2-selection--single {
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--p) 12%, transparent);
+    }
 }
 
 /* ===== src/components/vendor-sweetalert2.css ===== */
