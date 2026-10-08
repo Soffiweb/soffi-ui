@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4 — 2026-10-08
+
+### Corregido
+
+- Submenús del sidebar móvil ya no se recortan; todos los ítems se muestran y el sidebar hace scroll.
+
 ## 1.0.3 — 2026-10-07
 
 ### Corregido

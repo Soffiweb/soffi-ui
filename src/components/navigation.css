@@ -445,6 +445,7 @@
 }
 
 .sw-sb-sub {
+    flex-shrink: 0;
     overflow: hidden;
     max-height: 0;
     margin: 0;
@@ -456,7 +457,7 @@
 }
 
 .sw-sb-sub.open {
-    max-height: 480px;
+    max-height: 720px;
     margin: 0 0 0.55rem;
     padding: var(--sw-spacing-sm) var(--sw-spacing-sm) var(--sw-spacing-sm) 0.7rem;
     border-left-color: var(--s);
