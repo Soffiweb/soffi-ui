@@ -138,6 +138,19 @@
     gap: calc(var(--sw-spacing-sm) + 0.2rem);
 }
 
+/* Debe vivir aqui, despues de la regla base: si queda en otro archivo
+   anterior, la base (mismo peso) gana y el titulo se pega a la derecha. */
+@media (max-width: 991.98px) {
+    .sw-crud-head {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .sw-crud-actions {
+        justify-content: flex-start;
+    }
+}
+
 .sw-crud-actions .sw-btn,
 .sw-list-search-row .sw-btn,
 .sw-list-filter-actions .sw-btn {

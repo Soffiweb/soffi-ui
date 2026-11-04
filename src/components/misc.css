@@ -112,15 +112,6 @@
 }
 
 @media (max-width: 991.98px) {
-    .sw-crud-head {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .sw-crud-actions {
-        justify-content: flex-start;
-    }
-
     .sw-list-count {
         align-self: flex-start;
     }
