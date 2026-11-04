@@ -37,7 +37,7 @@ select2.)
 | Función | Uso |
 | --- | --- |
 | `swToggleSidebar(trigger)` | Abre/cierra el sidebar en móvil. |
-| `swCloseSidebar()` | Cierra el sidebar. Se llama solo al navegar (<768px) y al pulsar el backdrop. |
+| `swCloseSidebar()` | Cierra el sidebar. Se llama solo al navegar (<1024px) y al pulsar el backdrop. |
 | `swToggleSub(trigger)` | Abre/cierra un submenú `.sw-sb-sub`. El trigger debe ser `<button aria-expanded aria-controls>`. |
 | `swToggleUserMenu(trigger)` | Abre el dropdown indicado por `aria-controls`. |
 | `swCloseUserMenu(restoreFocus)` | Cierra el dropdown. Se llama solo por clic externo y `Escape`. |

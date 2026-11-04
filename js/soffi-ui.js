@@ -27,6 +27,14 @@ function swToggleSub(el) {
   }
 }
 
+// Debajo de este ancho el sidebar es overlay. Mantener en sync con el
+// @media (max-width: 1023.98px) de navigation.css.
+const SW_SIDEBAR_QUERY = '(max-width: 1023.98px)';
+
+function swIsSidebarOverlay() {
+  return window.matchMedia(SW_SIDEBAR_QUERY).matches;
+}
+
 function swToggleSidebar(el) {
   const open = document.body.classList.toggle('sw-sidebar-open');
   el.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -601,7 +609,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.sw-sidebar a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
+      if (swIsSidebarOverlay()) {
         swCloseSidebar();
       }
     });
@@ -635,7 +643,7 @@ document.addEventListener('keydown', e => {
 window.addEventListener('resize', () => {
   swRepositionRowMenus();
   swSyncTableStickyColumns();
-  if (window.innerWidth >= 768) {
+  if (!swIsSidebarOverlay()) {
     swCloseSidebar();
   }
 });
