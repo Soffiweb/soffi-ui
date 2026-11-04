@@ -506,55 +506,16 @@
     background: color-mix(in srgb, var(--er) 18%, transparent);
 }
 
-@media (max-width: 767.98px) {
+/* Sidebar como overlay por debajo de 1024px. Separado del bloque de 768px:
+   la cabecera todavia cabe completa en tablet, solo el sidebar necesita
+   salir del flujo. Mantener en sync con SW_SIDEBAR_QUERY en soffi-ui.js. */
+@media (max-width: 1023.98px) {
     body.sw-sidebar-open {
         overflow: hidden;
     }
 
-    .sw-topbar {
-        padding: 0 12px;
-        gap: 10px;
-    }
-
-    .sw-topbar-brand {
-        gap: 10px;
-        overflow: hidden;
-    }
-
-    .sw-topbar-company {
-        font-size: var(--sw-text-base);
-        max-width: 120px;
-    }
-
-    .sw-topbar-period {
-        font-size: var(--sw-text-xs);
-        max-width: 120px;
-    }
-
-    .sw-topbar-title-row {
-        gap: var(--sw-spacing-sm);
-    }
-
-    .sw-topbar-meta {
-        gap: 6px;
-    }
-
-    .sw-topbar-environment {
-        display: none;
-    }
-
     .sw-btn.sw-sidebar-toggle {
         display: inline-flex;
-    }
-
-    .sw-topbar-actions > .sw-btn,
-    .sw-user-name,
-    .sw-user-arrow {
-        display: none;
-    }
-
-    .sw-user-trigger {
-        padding-right: 6px;
     }
 
     .sw-sidebar {
@@ -591,6 +552,50 @@
     body.sw-sidebar-open .sw-sidebar-backdrop {
         opacity: 1;
         pointer-events: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sw-topbar {
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .sw-topbar-brand {
+        gap: 10px;
+        overflow: hidden;
+    }
+
+    .sw-topbar-company {
+        font-size: var(--sw-text-base);
+        max-width: 120px;
+    }
+
+    .sw-topbar-period {
+        font-size: var(--sw-text-xs);
+        max-width: 120px;
+    }
+
+    .sw-topbar-title-row {
+        gap: var(--sw-spacing-sm);
+    }
+
+    .sw-topbar-meta {
+        gap: 6px;
+    }
+
+    .sw-topbar-environment {
+        display: none;
+    }
+
+    .sw-topbar-actions > .sw-btn,
+    .sw-user-name,
+    .sw-user-arrow {
+        display: none;
+    }
+
+    .sw-user-trigger {
+        padding-right: 6px;
     }
 
     .sw-main {
