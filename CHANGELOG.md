@@ -1,5 +1,15 @@
 # Changelog
 
+## Próxima versión
+
+### Cambiado
+
+- El sidebar pasa a overlay (hamburguesa + backdrop) por debajo de 1024px, antes 768px. En tablets verticales (~820px) libera ~245px de contenido. La cabecera sigue compactándose a 768px.
+
+### Corregido
+
+- La cabecera de página (`.sw-crud-head`) ya no alinea el título a la derecha por debajo de 992px.
+
 ## 1.0.4 — 2026-10-08
 
 ### Corregido
