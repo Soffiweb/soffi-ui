@@ -150,9 +150,9 @@ contexto, usar tabs compactas integradas al panel; no apilar bloques.
 
 - Encapsular tablas en `sw-table-wrap sw-list-table-wrap`.
 - Para columnas de acciones que deben permanecer visibles en escritorio, usar
-  `.sw-table-sticky-col` en `th` y `td`; permanece fija horizontalmente desde
-  992px y vuelve al flujo normal en tablet y móvil. El JS agrega el indicador
-  `.is-table-sticky-displaced` automáticamente solo en escritorio.
+  `.sw-table-sticky-col` en `th` y `td`; permanece fija horizontalmente en
+  todos los anchos y toma solo el ancho de su contenido. El JS agrega el
+  indicador `.is-table-sticky-displaced` automáticamente.
 - Cuando una fila supera cuatro acciones, usar `.sw-row-menu` y
   `swToggleRowMenu(this)`. El menú se porta a `<body>` al abrirse; no agregar
   z-index ni posicionamiento local.

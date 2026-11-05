@@ -5711,6 +5711,10 @@ body.sw-modal-open {
     position: sticky;
     right: 0;
     z-index: 1;
+    /* Ancho justo para su contenido: si la tabla reparte ancho sobrante, la
+       columna fija no debe crecer y tapar las demas en pantallas angostas. */
+    width: 1%;
+    white-space: nowrap;
 }
 
 .sw-list-table-wrap thead tr > .sw-table-sticky-col {

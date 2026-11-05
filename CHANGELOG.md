@@ -8,7 +8,7 @@
 
 ### Cambiado
 
-- `.sw-table-sticky-col` se fija en todos los anchos, antes solo desde 992px. Mantiene alcanzables las acciones en tablet y móvil.
+- `.sw-table-sticky-col` se fija en todos los anchos, antes solo desde 992px. Mantiene alcanzables las acciones en tablet y móvil. Toma solo el ancho de su contenido, para no tapar las demás columnas cuando la tabla tiene pocas y le sobra ancho.
 - El sidebar pasa a overlay (hamburguesa + backdrop) por debajo de 1024px, antes 768px. En tablets verticales (~820px) libera ~245px de contenido. La cabecera sigue compactándose a 768px.
 
 ### Corregido
