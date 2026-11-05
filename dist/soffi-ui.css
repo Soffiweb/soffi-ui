@@ -1481,6 +1481,9 @@ body {
    El texto sigue en el DOM, oculto solo visualmente, para lectores de
    pantalla; agregar title para el resto. */
 .sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible {
+    /* relative: el label oculto es absolute y, sin un padre posicionado,
+       escapa del overflow del wrap y ensancha toda la pagina. */
+    position: relative;
     min-width: 0;
     padding-inline: 0.5rem;
 }
