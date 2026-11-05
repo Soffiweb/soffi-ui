@@ -1358,18 +1358,34 @@ No inventar clases sueltas por vista.
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--th-color);
-    padding: 0.62rem 1rem;
+    padding: 0.62rem 0.8125rem;
     border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
     text-align: left;
 }
 
 .sw-table tbody td {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8125rem;
     border-bottom: var(--brd);
     color: var(--bc);
     vertical-align: middle;
     background: var(--b1);
     line-height: 1.35;
+}
+
+/* Hasta 1280px la tabla normal se ajusta sola: misma densidad que
+   .sw-table-compact. Por encima conserva letra y relleno normales.
+   .sw-table-compact queda densa en todos los anchos (reportes con muchas
+   columnas). */
+@media (max-width: 1280.98px) {
+    .sw-table thead th {
+        padding: 0.55rem 0.65rem;
+        font-size: 11px;
+    }
+
+    .sw-table tbody td {
+        padding: 0.45rem 0.65rem;
+        font-size: 13px;
+    }
 }
 
 .sw-table tbody tr:last-child td {

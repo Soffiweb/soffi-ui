@@ -8,6 +8,7 @@
 
 ### Cambiado
 
+- La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.
 - `.sw-table-sticky-col` se fija en todos los anchos, antes solo desde 992px. Mantiene alcanzables las acciones en tablet y móvil. Toma solo el ancho de su contenido, para no tapar las demás columnas cuando la tabla tiene pocas y le sobra ancho.
 - El sidebar pasa a overlay (hamburguesa + backdrop) por debajo de 1024px, antes 768px. En tablets verticales (~820px) libera ~245px de contenido. La cabecera sigue compactándose a 768px.
 

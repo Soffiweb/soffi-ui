@@ -141,12 +141,6 @@
         padding: 14px;
     }
 
-    .sw-table thead th,
-    .sw-table tbody td {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
-
     .sw-data-grid {
         grid-template-columns: minmax(0, 1fr);
     }

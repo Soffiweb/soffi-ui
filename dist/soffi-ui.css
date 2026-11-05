@@ -3558,12 +3558,6 @@ body {
         padding: 14px;
     }
 
-    .sw-table thead th,
-    .sw-table tbody td {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
-
     .sw-data-grid {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -5425,19 +5419,35 @@ body.sw-modal-open {
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--th-color);
-    padding: 0.62rem var(--sw-spacing-md);
+    padding: 0.62rem 0.8125rem;
     border-bottom: 2px solid rgba(40, 68, 154, 0.2);
     border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
     text-align: left;
 }
 
 .sw-table tbody td {
-    padding: var(--sw-spacing-sm) var(--sw-spacing-md);
+    padding: var(--sw-spacing-sm) 0.8125rem;
     border-bottom: var(--brd);
     color: var(--bc);
     vertical-align: middle;
     background: var(--b1);
     line-height: 1.35;
+}
+
+/* Hasta 1280px la tabla normal se ajusta sola: misma densidad que
+   .sw-table-compact. Por encima conserva letra y relleno normales.
+   .sw-table-compact queda densa en todos los anchos (reportes con muchas
+   columnas). */
+@media (max-width: 1280.98px) {
+    .sw-table thead th {
+        padding: 0.55rem 0.65rem;
+        font-size: var(--sw-text-2xs);
+    }
+
+    .sw-table tbody td {
+        padding: 0.45rem 0.65rem;
+        font-size: var(--sw-text-sm);
+    }
 }
 
 .sw-table tbody tr:last-child td {
@@ -6080,7 +6090,7 @@ body.sw-modal-open {
 .sw-table-totals tfoot td {
     background: var(--th-bg);
     color: var(--th-color);
-    padding: 0.62rem var(--sw-spacing-md);
+    padding: 0.62rem 0.8125rem;
     font-size: var(--sw-text-sm);
     font-weight: 700;
     text-align: right;
@@ -6089,6 +6099,16 @@ body.sw-modal-open {
 
     border-top: 2px solid rgba(40, 68, 154, 0.2);
     border-top: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
+}
+
+/* Mismo relleno lateral que las celdas de la tabla hasta 1280px, para que
+   las cifras del pie sigan alineadas con su columna. */
+@media (max-width: 1280.98px) {
+    .sw-table-totals tfoot th,
+    .sw-table-totals tfoot td {
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+    }
 }
 
 /* Etiqueta de la fila ("Totales del rol"), alineada al texto y no a la cifra. */
