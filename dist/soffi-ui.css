@@ -1476,8 +1476,9 @@ body {
 /* Insignia que queda solo con icono cuando falta espacio.
    Marcar con .sw-badge-collapsible y envolver el texto en .sw-badge-label.
    Dentro de un .sw-list-table-wrap, swSyncCollapsibleBadges() (soffi-ui.js)
-   agrega .is-badges-collapsed cuando el ancho visible de la tabla baja de
-   1000px; no depende del ancho de la ventana. Sin JS el texto se mantiene.
+   agrega .is-badges-collapsed solo cuando la tabla con las insignias
+   completas no cabe en el ancho visible; no depende del ancho de la ventana.
+   Sin JS el texto se mantiene.
    El texto sigue en el DOM, oculto solo visualmente, para lectores de
    pantalla; agregar title para el resto. */
 .sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible {

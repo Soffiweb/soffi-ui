@@ -4,7 +4,7 @@
 
 ### Agregado
 
-- `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando el ancho visible del listado baja de 1000px. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
+- `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando la tabla, con las insignias completas, no cabe en el ancho visible del listado. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
 
 ### Cambiado
 

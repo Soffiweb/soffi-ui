@@ -186,14 +186,15 @@ function swSyncTableStickyColumns() {
   });
 }
 
-// Ancho visible del listado bajo el cual .sw-badge-collapsible queda solo con
-// icono. Mantener en sync con la nota de badges.css.
-const SW_BADGE_COLLAPSE_WIDTH = 1000;
-
+// .sw-badge-collapsible queda solo con icono cuando la tabla, con las
+// insignias completas, no cabe en el ancho visible del listado. Se mide sin
+// la clase para que el colapso no se deshaga a si mismo al angostar la tabla;
+// quitar y volver a poner la clase en el mismo tick no llega a pintarse.
 function swSyncCollapsibleBadges() {
   document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
     if (!wrap.querySelector('.sw-badge-collapsible')) return;
-    wrap.classList.toggle('is-badges-collapsed', wrap.clientWidth < SW_BADGE_COLLAPSE_WIDTH);
+    wrap.classList.remove('is-badges-collapsed');
+    wrap.classList.toggle('is-badges-collapsed', wrap.scrollWidth > wrap.clientWidth + 1);
   });
 }
 

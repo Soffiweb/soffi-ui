@@ -2697,7 +2697,7 @@ JS que dependa de la clase, es solo opacidad.
 ## Insignia que se reduce a icono
 
 En listados con muchas columnas, una insignia puede quedar solo con el icono
-cuando el ancho visible de la tabla baja de 1000px:
+cuando la tabla, con las insignias completas, no cabe en el ancho visible:
 
 ```html
 <span class="sw-badge sw-badge-collapsible sw-badge-success" title="Activa">
