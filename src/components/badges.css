@@ -90,3 +90,28 @@
 [data-theme="dark"] .sw-badge-info {
     color: var(--in);
 }
+
+/* Insignia que queda solo con icono cuando falta espacio.
+   Marcar con .sw-badge-collapsible y envolver el texto en .sw-badge-label.
+   Dentro de un .sw-list-table-wrap, swSyncCollapsibleBadges() (soffi-ui.js)
+   agrega .is-badges-collapsed cuando el ancho visible de la tabla baja de
+   1000px; no depende del ancho de la ventana. Sin JS el texto se mantiene.
+   El texto sigue en el DOM, oculto solo visualmente, para lectores de
+   pantalla; agregar title para el resto. */
+.sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible {
+    min-width: 0;
+    padding-inline: 0.5rem;
+}
+
+.sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible i {
+    font-size: 9px;
+}
+
+.sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible .sw-badge-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}

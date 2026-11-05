@@ -2,6 +2,10 @@
 
 ## Próxima versión
 
+### Agregado
+
+- `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando el ancho visible del listado baja de 1000px. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
+
 ### Cambiado
 
 - `.sw-table-sticky-col` se fija en todos los anchos, antes solo desde 992px. Mantiene alcanzables las acciones en tablet y móvil.

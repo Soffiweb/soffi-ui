@@ -2702,3 +2702,22 @@ Variantes de color del icono (mismo criterio que `.sw-metric-icon-*`):
 Deshabilitada (ej. "Próximamente"): agregar `.sw-action-card-disabled` a
 `.sw-action-card` y usar un `<span>` en vez de `<a>` para la acción — no hay
 JS que dependa de la clase, es solo opacidad.
+
+## Insignia que se reduce a icono
+
+En listados con muchas columnas, una insignia puede quedar solo con el icono
+cuando el ancho visible de la tabla baja de 1000px:
+
+```html
+<span class="sw-badge sw-badge-collapsible sw-badge-success" title="Activa">
+    <i class="fa-solid fa-circle"></i>
+    <span class="sw-badge-label">Activa</span>
+</span>
+```
+
+Requisitos: la tabla debe ir dentro de `.sw-list-table-wrap`, el texto dentro
+de `.sw-badge-label` y conviene un `title` (el texto sigue disponible para
+lectores de pantalla). Reacciona al ancho del listado, no al de la ventana, vía
+`swSyncCollapsibleBadges()` (se conecta solo al cargar; llamarla tras inyectar
+contenido dinámico). Sin JS la insignia conserva el texto.
+

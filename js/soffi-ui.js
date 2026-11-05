@@ -186,6 +186,24 @@ function swSyncTableStickyColumns() {
   });
 }
 
+// Ancho visible del listado bajo el cual .sw-badge-collapsible queda solo con
+// icono. Mantener en sync con la nota de badges.css.
+const SW_BADGE_COLLAPSE_WIDTH = 1000;
+
+function swSyncCollapsibleBadges() {
+  document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
+    if (!wrap.querySelector('.sw-badge-collapsible')) return;
+    wrap.classList.toggle('is-badges-collapsed', wrap.clientWidth < SW_BADGE_COLLAPSE_WIDTH);
+  });
+}
+
+function swInitCollapsibleBadges() {
+  swSyncCollapsibleBadges();
+  if (!('ResizeObserver' in window)) return;
+  const observer = new ResizeObserver(swSyncCollapsibleBadges);
+  document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => observer.observe(wrap));
+}
+
 function swInitTableStickyColumns() {
   document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
     if (wrap.querySelector('thead tr > .sw-table-sticky-col')) {
@@ -602,6 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   swInitAlerts();
   swInitTableStickyColumns();
+  swInitCollapsibleBadges();
 
   document.querySelectorAll('.sw-sidebar a').forEach(link => {
     link.addEventListener('click', () => {
@@ -639,6 +658,7 @@ document.addEventListener('keydown', e => {
 window.addEventListener('resize', () => {
   swRepositionRowMenus();
   swSyncTableStickyColumns();
+  swSyncCollapsibleBadges();
   if (!swIsSidebarOverlay()) {
     swCloseSidebar();
   }
