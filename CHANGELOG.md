@@ -14,6 +14,7 @@
 
 ### Corregido
 
+- `sw-text-center` y `sw-text-right` (y el alias `text-right`) no alineaban los `th` de `.sw-table`: la regla base del encabezado, más específica, los dejaba siempre a la izquierda. Ahora el encabezado puede alinearse igual que su columna.
 - La cabecera de página (`.sw-crud-head`) ya no alinea el título a la derecha por debajo de 992px.
 
 ## 1.0.4 — 2026-10-08

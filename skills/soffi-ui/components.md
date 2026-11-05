@@ -1571,9 +1571,21 @@ No inventar clases sueltas por vista.
     min-width: 1080px;
 }
 
+/* Las utilidades de alineacion pierden contra `.sw-table thead th`
+   (text-align: left, mas especifica): aqui se refuerzan para th y td, para
+   que el encabezado pueda alinearse igual que su columna. */
+.sw-table th.sw-text-center,
+.sw-table td.sw-text-center,
 .sw-table th.text-center,
 .sw-table td.text-center {
     text-align: center;
+}
+
+.sw-table th.sw-text-right,
+.sw-table td.sw-text-right,
+.sw-table th.text-right,
+.sw-table td.text-right {
+    text-align: right;
 }
 
 .sw-table-main-cell,
