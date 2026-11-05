@@ -339,7 +339,7 @@ de copiar esto.
 
 | ❌ Nunca                                        | ✅ Siempre                                  |
 | ----------------------------------------------- | ------------------------------------------- |
-| `row`, `col-lg-*`, `col-md-*`                   | `sw-row`, `sw-col-4/6/8/12`                 |
+| `row`, `col-lg-*`, `col-md-*`                   | `sw-row`, `sw-col-4/6/8/12` (`sw-col-xs-6` para 2 por fila en celular) |
 | `mb-*`, `mt-*`, `py-*`, `px-*`, `p-0`           | `sw-mb-*`, `sw-mt-*`, `sw-py-*`, `sw-p-0`   |
 | `d-flex`, `flex-column`, `justify-content-*`    | `sw-d-flex`, `sw-flex-column`, `sw-justify-content-*` |
 | `h-100`, `w-100`, `text-muted`, `font-weight-bold` | `sw-h-100`, `sw-text-muted`, `sw-font-bold` |

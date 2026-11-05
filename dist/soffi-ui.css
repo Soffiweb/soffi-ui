@@ -3193,8 +3193,8 @@ body {
 
 .sw-row > [class^="sw-col-"],
 .sw-row > [class*=" sw-col-"] {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 var(--sw-col-xs-width, 100%);
+    max-width: var(--sw-col-xs-width, 100%);
     padding: 0 0.5rem;
     min-width: 0;
 }
@@ -3222,6 +3222,33 @@ body {
 .sw-col-11 { --sw-col-width: 91.6667%; }
 
 .sw-col-12 { --sw-col-width: 100%; }
+
+/* Columnas para pantallas chicas (desde 0px). Sin ellas, .sw-col-N vale 100%
+   hasta 768px. Combinar con la clase de escritorio: sw-col-xs-6 sw-col-4 da
+   2 por fila en celular y 3 desde 768px. */
+.sw-col-xs-1 { --sw-col-xs-width: 8.3333%; }
+
+.sw-col-xs-2 { --sw-col-xs-width: 16.6667%; }
+
+.sw-col-xs-3 { --sw-col-xs-width: 25%; }
+
+.sw-col-xs-4 { --sw-col-xs-width: 33.3333%; }
+
+.sw-col-xs-5 { --sw-col-xs-width: 41.6667%; }
+
+.sw-col-xs-6 { --sw-col-xs-width: 50%; }
+
+.sw-col-xs-7 { --sw-col-xs-width: 58.3333%; }
+
+.sw-col-xs-8 { --sw-col-xs-width: 66.6667%; }
+
+.sw-col-xs-9 { --sw-col-xs-width: 75%; }
+
+.sw-col-xs-10 { --sw-col-xs-width: 83.3333%; }
+
+.sw-col-xs-11 { --sw-col-xs-width: 91.6667%; }
+
+.sw-col-xs-12 { --sw-col-xs-width: 100%; }
 
 .sw-col-md-1 { --sw-col-md-width: 8.3333%; }
 

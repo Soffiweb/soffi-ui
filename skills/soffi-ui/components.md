@@ -55,7 +55,9 @@ iconos, toast, foco y `prefers-reduced-motion`.
 **Grid** — `.sw-row` + `.sw-col-4` / `.sw-col-6` / `.sw-col-8` / `.sw-col-12`.
 Los `sw-col-*` son 100% en móvil y toman su fracción desde 768px. El gutter sale
 del padding de la columna, así que un `sw-col-*` **siempre** va dentro de un
-`.sw-row`.
+`.sw-row`. Para campos cortos (números, códigos, porcentajes) que en celular
+no necesitan todo el ancho, agregar `.sw-col-xs-1` … `.sw-col-xs-12`, que rigen
+desde 0px: `sw-col-xs-6 sw-col-4` da 2 por fila en celular y 3 desde 768px.
 
 **Display / flex** — `.sw-d-flex`, `.sw-d-block`, `.sw-d-none`, `.sw-flex-wrap`,
 `.sw-flex-column`, `.sw-flex-row`, `.sw-align-items-start|end|center|stretch`,

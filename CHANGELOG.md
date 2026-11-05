@@ -4,6 +4,7 @@
 
 ### Agregado
 
+- `.sw-col-xs-1` … `.sw-col-xs-12`: columnas desde 0px. Sin ellas `.sw-col-N` vale 100% hasta 768px; ahora `sw-col-xs-6 sw-col-4` da 2 campos por fila en celular y 3 desde 768px. Útil para campos cortos (secuenciales, códigos, cantidades).
 - `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando la tabla, con las insignias completas, no cabe en el ancho visible del listado. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
 
 ### Cambiado
