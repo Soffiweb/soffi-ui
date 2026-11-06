@@ -7,6 +7,9 @@
 - `.sw-col-xs-1` … `.sw-col-xs-12`: columnas desde 0px. Sin ellas `.sw-col-N` vale 100% hasta 768px; ahora `sw-col-xs-6 sw-col-4` da 2 campos por fila en celular y 3 desde 768px. Útil para campos cortos (secuenciales, códigos, cantidades).
 - `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando la tabla, con las insignias completas, no cabe en el ancho visible del listado. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
 
+- `data-sw-overflow="N"` en `.sw-crud-actions`: por debajo de 992px (celular y tablet vertical), los botones que pasen de N se mueven al menú "Más acciones". Si la cabecera ya tiene un `.sw-dropdown`, lo usa; si no, lo crea. En pantallas grandes los botones vuelven a su lugar. Sin el atributo no cambia nada.
+- `.sw-crud-actions-row`: en celular (<576px) los botones de la cabecera van de a dos por fila en vez de apilarse.
+
 ### Cambiado
 
 - La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.

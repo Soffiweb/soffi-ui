@@ -167,6 +167,24 @@
     }
 }
 
+/* Variante opcional: en celular los botones van de a dos por fila en vez de
+   apilarse. Un solo boton ocupa la fila completa; con un .sw-dropdown, el
+   boton principal queda a la izquierda y el menu a la derecha. */
+@media (max-width: 575.98px) {
+    .sw-crud-actions.sw-crud-actions-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .sw-crud-actions.sw-crud-actions-row > .sw-btn,
+    .sw-crud-actions.sw-crud-actions-row > .sw-dropdown {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 0;
+    }
+}
+
 .sw-crud-actions .sw-btn,
 .sw-list-search-row .sw-btn,
 .sw-list-filter-actions .sw-btn {

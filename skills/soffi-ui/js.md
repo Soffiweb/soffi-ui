@@ -32,6 +32,22 @@ select2.)
 </button>
 ```
 
+### Acciones de cabecera con desborde
+
+| Atributo | Uso |
+| --- | --- |
+| `data-sw-overflow="N"` en `.sw-crud-actions` | Por debajo de 992px, deja visibles N botones (el menú "Más acciones" cuenta como uno) y mueve el resto a ese menú. En pantallas grandes los devuelve a su lugar. |
+
+Cuenta los hijos directos `.sw-btn` y `.sw-dropdown`. Si ya hay un `.sw-dropdown`, le agrega los botones sobrantes; si no, crea uno. Los botones `.sw-btn-primary` nunca se mueven, sin importar su posición. Los botones se mueven (no se clonan), así que conservan sus `onclick`. Ejemplo: Agregar + PDF + Excel con `data-sw-overflow="2"` queda en celular como Agregar + Más acciones (PDF, Excel). Con el atributo ausente no cambia nada.
+
+```html
+<div class="sw-crud-actions sw-crud-actions-row" data-sw-overflow="2">
+    <button type="button" class="sw-btn sw-btn-primary">Agregar</button>
+    <button type="button" class="sw-btn sw-btn-ghost">Reporte PDF</button>
+    <button type="button" class="sw-btn sw-btn-ghost">Reporte Excel</button>
+</div>
+```
+
 ### Sidebar y menú de usuario
 
 | Función | Uso |
