@@ -26,6 +26,51 @@ existente de `swToggleCollapse()` respeta `data-parent` y cierra los hermanos.
 </div>
 ```
 
+## Campo de búsqueda con selector — `.sw-search-field`
+
+Un solo campo con el selector de "buscar por" pegado a la izquierda del buscador.
+
+```html
+<div class="sw-search-field">
+    <select name="campo" class="sw-select sw-search-field-select" aria-label="Buscar por">
+        <option value="nombre">Nombre</option>
+        <option value="documento">Documento</option>
+    </select>
+    <div class="sw-input-icon-wrap sw-search-field-input">
+        <i class="fa-solid fa-search sw-input-icon" aria-hidden="true"></i>
+        <input type="text" name="buscarTexto" class="sw-input sw-input-has-icon"
+               placeholder="Escribe lo que buscas">
+    </div>
+</div>
+```
+
+## Filtros plegables de listado
+
+Por debajo de 576px los filtros se esconden detrás de un botón "Filtros"; desde
+576px quedan en la fila de siempre. Usa el collapse de la librería, sin JS nuevo.
+
+```html
+<div class="sw-list-filter-row">
+    <div class="sw-list-filter-main">...buscador...</div>
+
+    <button type="button" class="sw-btn sw-btn-light sw-list-filters-toggle"
+            data-toggle="collapse" data-target="#filtros"
+            aria-controls="filtros" aria-expanded="false">
+        <span>Filtros <span class="sw-list-filters-count">2</span></span>
+        <i class="fa-solid fa-chevron-down sw-list-filters-chevron" aria-hidden="true"></i>
+    </button>
+
+    <div id="filtros" class="sw-list-filters-panel collapse">
+        <div class="sw-list-filter-control sw-list-filter-control-sm">...</div>
+    </div>
+
+    <div class="sw-list-filter-actions">...botón Buscar...</div>
+</div>
+```
+
+Con filtros activos, abrir el panel desde el servidor (`collapse show` y
+`aria-expanded="true"`) para que se vea qué está aplicado.
+
 ## SweetAlert2
 
 El override `vendor-sweetalert2.css` ya está incluido en `soffi-ui.css`. Cargar
@@ -37,7 +82,7 @@ iconos, toast, foco y `prefers-reduced-motion`.
 
 - Página: `.sw-crud-page`, `.sw-crud-container`, `.sw-crud-head`, `.sw-crud-title`, `.sw-crud-actions`.
 - Layout base: `.sw-app`, `.sw-body`, `.sw-main`, `.sw-footer`, `.sw-footer-links` (topbar y sidebar tienen su propia familia, ver abajo).
-- Filtros y listados: `.sw-list-card`, `.sw-list-toolbar`, `.sw-list-search`, `.sw-list-filter-row`, `.sw-list-filter-main`, `.sw-list-filter-control`, `.sw-list-filter-actions`, `.sw-list-meta`, `.sw-list-count`, `.sw-list-context`.
+- Filtros y listados: `.sw-list-card`, `.sw-list-toolbar`, `.sw-list-search`, `.sw-list-filter-row`, `.sw-list-filter-main`, `.sw-list-filter-control` (`.sw-list-filter-control-sm` para selectores cortos), `.sw-list-filter-actions`, `.sw-list-meta`, `.sw-list-count`, `.sw-list-context`.
 - Tablas: `.sw-table-wrap`, `.sw-list-table-wrap`, `.sw-table`, `.sw-table-min-md`, `.sw-table-min-lg`, `.sw-table-min-xl`, `.sw-table-actions`, `.sw-bico` (+ `:disabled` para acciones no disponibles), `.sw-row-menu`/`.sw-row-menu-dropdown`/`.sw-row-menu-item` (menu "..." de acciones secundarias por fila), `.sw-money`.
 - Formularios: `.sw-field`, `.sw-label`, `.sw-input`, `.sw-select`, `.sw-textarea`, `.sw-error`, `.sw-required`, `.sw-hint`, `.sw-hint-error`, `.sw-form-actions`.
 - Tabs: `.sw-panel-tabs`, `.sw-panel-card`, `.sw-panel-tab-pane`.

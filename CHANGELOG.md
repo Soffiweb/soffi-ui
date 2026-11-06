@@ -13,6 +13,12 @@
 - `.sw-sb-close`: flecha para cerrar el sidebar, arriba a la derecha de la marca. Ya viene incluida en `<x-sw-sidebar>`; quien arme el sidebar a mano debe agregar el botón dentro de `.sw-sb-brand` con `onclick="swCollapseSidebar()"`. En escritorio contrae el sidebar (`body.sw-sidebar-collapsed`) para ver el contenido a todo el ancho; la hamburguesa lo vuelve a abrir y la elección se recuerda en `localStorage`. Por debajo de 1024px cierra el overlay como antes.
 - `swCollapseSidebar()`; `swToggleSidebar()` ahora también contrae/expande en escritorio. La hamburguesa (`.sw-sidebar-toggle`) se muestra en todos los anchos.
 
+- `.sw-list-filter-control-sm`: variante angosta de `.sw-list-filter-control` (190px) para selectores cortos dentro de la fila de filtros de un listado, como "Buscar por".
+
+- `.sw-list-filters-toggle` + `.sw-list-filters-panel` (+ `.sw-list-filters-count`): filtros plegables de un listado. Por debajo de 576px los controles del panel se esconden detrás del botón "Filtros" (usa `data-toggle="collapse"`); desde 576px el panel se disuelve y los controles siguen en la fila de filtros. El botón puede mostrar cuántos filtros hay activos.
+
+- `.sw-search-field`: campo de búsqueda con un selector pegado a la izquierda ("Nombre ▾ | Buscar..."), con un solo borde y un solo foco. Pensado para listados con "buscar por" (`.sw-search-field-select` + `.sw-search-field-input`).
+
 ### Cambiado
 
 - La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.

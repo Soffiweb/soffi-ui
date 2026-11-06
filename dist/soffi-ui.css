@@ -2934,6 +2934,66 @@ body {
     padding-left: 2.5rem;
 }
 
+/* Campo de busqueda con selector pegado a la izquierda ("Nombre | buscar...").
+   Un solo borde y un solo foco para el conjunto. */
+.sw-search-field {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-radius: var(--r);
+}
+
+.sw-search-field:focus-within {
+    box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
+}
+
+.sw-search-field .sw-search-field-select {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 48%;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--b2);
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+/* Celular: selector mas compacto para dejar sitio al texto. Si una opcion no
+   cabe se corta con puntos suspensivos. */
+@media (max-width: 575.98px) {
+    .sw-search-field .sw-search-field-select {
+        max-width: 42%;
+        padding-left: 0.65rem;
+        padding-right: 1.7rem;
+        font-size: var(--sw-text-sm);
+        background-position: right 0.5rem center;
+        background-size: 12px;
+    }
+}
+
+.sw-search-field .sw-search-field-input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sw-search-field .sw-search-field-input .sw-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.sw-search-field .sw-search-field-select:focus,
+.sw-search-field .sw-search-field-input .sw-input:focus {
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+}
+
+.sw-search-field:focus-within .sw-search-field-select,
+.sw-search-field:focus-within .sw-search-field-input .sw-input {
+    border-color: var(--p);
+}
+
 .sw-ss-wrap {
     position: relative;
     width: 100%;
@@ -5705,8 +5765,9 @@ body.sw-modal-open {
 .sw-list-search-row,
 .sw-list-filter-row {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
+    gap: 14px 30px;
     width: 100%;
 }
 
@@ -5716,9 +5777,21 @@ body.sw-modal-open {
     min-width: 0;
 }
 
+/* Con varios filtros el buscador toma el ancho que sobra, pero pasa a la
+   línea de abajo antes de quedar diminuto (tablet). */
+.sw-list-filter-row > .sw-list-filter-main {
+    flex: 1 1 240px;
+}
+
 .sw-list-filter-control {
     flex: 0 1 340px;
     min-width: 220px;
+}
+
+/* Selector corto dentro de la fila de filtros ("Buscar por", estado...). */
+.sw-list-filter-control.sw-list-filter-control-sm {
+    flex: 0 1 190px;
+    min-width: 150px;
 }
 
 .sw-list-filter-actions {
@@ -5778,8 +5851,10 @@ body.sw-modal-open {
     }
 
     .sw-list-search-row .sw-input-icon-wrap,
+    .sw-list-filter-row > .sw-list-filter-main,
     .sw-list-filter-main,
-    .sw-list-filter-control {
+    .sw-list-filter-control,
+    .sw-list-filter-control.sw-list-filter-control-sm {
         flex-basis: auto;
         max-width: none;
         min-width: 0;
@@ -5790,6 +5865,61 @@ body.sw-modal-open {
         justify-content: center;
         width: 100%;
     }
+}
+
+/* Filtros plegables en celular. En escritorio y tablet el panel se disuelve
+   (display: contents) y sus controles quedan en la fila de filtros; por debajo
+   de 576px se esconde detras del boton .sw-list-filters-toggle, que usa el
+   collapse de la libreria (data-toggle="collapse"). */
+.sw-list-filters-toggle {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .sw-list-filters-panel,
+    .sw-list-filters-panel.collapse:not(.show) {
+        display: contents;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sw-list-filters-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--sw-spacing-sm);
+        width: 100%;
+    }
+
+    .sw-list-filters-toggle[aria-expanded="true"] .sw-list-filters-chevron {
+        transform: rotate(180deg);
+    }
+
+    .sw-list-filters-panel.show {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+.sw-list-filters-chevron {
+    transition: transform 0.15s;
+}
+
+.sw-list-filters-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.4em;
+    height: 1.4em;
+    margin-left: 0.4em;
+    padding: 0 0.4em;
+    border-radius: 999px;
+    background: var(--p);
+    color: #fff;
+    font-size: var(--sw-text-xs);
+    font-weight: 700;
+    line-height: 1;
 }
 
 /* Cabecera fija mientras se scrollea vertical dentro del wrap acotado */
