@@ -247,7 +247,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 14px 30px;
+    gap: 14px 20px;
     width: 100%;
 }
 
@@ -260,12 +260,12 @@
 /* Con varios filtros el buscador toma el ancho que sobra, pero pasa a la
    línea de abajo antes de quedar diminuto (tablet). */
 .sw-list-filter-row > .sw-list-filter-main {
-    flex: 1 1 240px;
+    flex: 1 1 220px;
 }
 
 .sw-list-filter-control {
-    flex: 0 1 340px;
-    min-width: 220px;
+    flex: 0 1 185px;
+    min-width: 165px;
 }
 
 /* Selector corto dentro de la fila de filtros ("Buscar por", estado...). */
