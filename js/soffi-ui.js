@@ -35,19 +35,51 @@ function swIsSidebarOverlay() {
   return window.matchMedia(SW_SIDEBAR_QUERY).matches;
 }
 
-function swToggleSidebar(el) {
-  const open = document.body.classList.toggle('sw-sidebar-open');
-  el.setAttribute('aria-expanded', open ? 'true' : 'false');
-  el.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+const SW_SIDEBAR_COLLAPSED_KEY = 'swSidebarCollapsed';
+
+function swSyncSidebarToggle(open) {
+  const trigger = document.querySelector('.sw-sidebar-toggle');
+  if (!trigger) return;
+  trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  trigger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+}
+
+// En escritorio el sidebar se contrae (y la elección se recuerda); por debajo
+// de 1024px se abre/cierra como overlay.
+function swToggleSidebar() {
+  if (swIsSidebarOverlay()) {
+    swSyncSidebarToggle(document.body.classList.toggle('sw-sidebar-open'));
+    return;
+  }
+
+  const collapsed = document.body.classList.toggle('sw-sidebar-collapsed');
+  try { localStorage.setItem(SW_SIDEBAR_COLLAPSED_KEY, collapsed ? '1' : '0'); } catch (e) {}
+  swSyncSidebarToggle(!collapsed);
+}
+
+// Flecha del sidebar: contrae en escritorio, cierra el overlay en celular y
+// tablet.
+function swCollapseSidebar() {
+  if (swIsSidebarOverlay()) {
+    swCloseSidebar();
+    return;
+  }
+
+  if (!document.body.classList.contains('sw-sidebar-collapsed')) {
+    swToggleSidebar();
+  }
+}
+
+function swRestoreSidebar() {
+  let collapsed = false;
+  try { collapsed = localStorage.getItem(SW_SIDEBAR_COLLAPSED_KEY) === '1'; } catch (e) {}
+  document.body.classList.toggle('sw-sidebar-collapsed', collapsed);
+  if (!swIsSidebarOverlay()) swSyncSidebarToggle(!collapsed);
 }
 
 function swCloseSidebar() {
   document.body.classList.remove('sw-sidebar-open');
-  const trigger = document.querySelector('.sw-sidebar-toggle');
-  if (trigger) {
-    trigger.setAttribute('aria-expanded', 'false');
-    trigger.setAttribute('aria-label', 'Abrir menú');
-  }
+  swSyncSidebarToggle(!swIsSidebarOverlay() && !document.body.classList.contains('sw-sidebar-collapsed'));
 }
 
 function swToggleUserMenu(el) {
@@ -619,6 +651,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.sw-select').forEach(swSyncSelectColor);
   document.querySelectorAll('.sw-auth-input-group').forEach(swSyncAuthInputGroup);
 
+  swRestoreSidebar();
   swInitAlerts();
   swInitTableStickyColumns();
   swInitCollapsibleBadges();
@@ -660,8 +693,11 @@ window.addEventListener('resize', () => {
   swRepositionRowMenus();
   swSyncTableStickyColumns();
   swSyncCollapsibleBadges();
-  if (!swIsSidebarOverlay()) {
-    swCloseSidebar();
+  if (swIsSidebarOverlay()) {
+    swSyncSidebarToggle(document.body.classList.contains('sw-sidebar-open'));
+  } else {
+    document.body.classList.remove('sw-sidebar-open');
+    swSyncSidebarToggle(!document.body.classList.contains('sw-sidebar-collapsed'));
   }
 });
 

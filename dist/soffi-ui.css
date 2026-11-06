@@ -3998,7 +3998,6 @@ body.sw-modal-open {
     background: var(--b2);
 }
 
-.sw-btn.sw-sidebar-toggle,
 .sw-sidebar-backdrop {
     display: none;
 }
@@ -4018,6 +4017,50 @@ body.sw-modal-open {
     padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     margin-bottom: var(--sw-spacing-sm);
+}
+
+/* Flecha para cerrar el sidebar, arriba a la derecha de la marca. En
+   escritorio lo contrae (body.sw-sidebar-collapsed); por debajo de 1024px
+   cierra el overlay. */
+.sw-sb-brand {
+    position: relative;
+}
+
+.sw-sb-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--r);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--sw-text-md);
+    cursor: pointer;
+}
+
+.sw-sb-close:hover,
+.sw-sb-close:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    outline: none;
+}
+
+.sw-sb-brand-name {
+    padding-right: 40px;
+}
+
+/* Escritorio: el sidebar se puede contraer para ver el contenido a todo el
+   ancho. Por debajo de 1024px manda el overlay (body.sw-sidebar-open). */
+@media (min-width: 1024px) {
+    body.sw-sidebar-collapsed .sw-sidebar {
+        display: none;
+    }
 }
 
 .sw-sb-brand-name {
@@ -4199,10 +4242,6 @@ body.sw-modal-open {
 @media (max-width: 1023.98px) {
     body.sw-sidebar-open {
         overflow: hidden;
-    }
-
-    .sw-btn.sw-sidebar-toggle {
-        display: inline-flex;
     }
 
     .sw-sidebar {

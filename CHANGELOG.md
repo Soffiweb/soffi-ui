@@ -10,6 +10,9 @@
 - `data-sw-overflow="N"` en `.sw-crud-actions`: por debajo de 992px (celular y tablet vertical), los botones que pasen de N se mueven al menú "Más acciones". Si la cabecera ya tiene un `.sw-dropdown`, lo usa; si no, lo crea. En pantallas grandes los botones vuelven a su lugar. Sin el atributo no cambia nada.
 - `.sw-crud-actions-row`: en celular (<576px) los botones de la cabecera van de a dos por fila en vez de apilarse.
 
+- `.sw-sb-close`: flecha para cerrar el sidebar, arriba a la derecha de la marca. Ya viene incluida en `<x-sw-sidebar>`; quien arme el sidebar a mano debe agregar el botón dentro de `.sw-sb-brand` con `onclick="swCollapseSidebar()"`. En escritorio contrae el sidebar (`body.sw-sidebar-collapsed`) para ver el contenido a todo el ancho; la hamburguesa lo vuelve a abrir y la elección se recuerda en `localStorage`. Por debajo de 1024px cierra el overlay como antes.
+- `swCollapseSidebar()`; `swToggleSidebar()` ahora también contrae/expande en escritorio. La hamburguesa (`.sw-sidebar-toggle`) se muestra en todos los anchos.
+
 ### Cambiado
 
 - La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.

@@ -52,7 +52,8 @@ Cuenta los hijos directos `.sw-btn` y `.sw-dropdown`. Si ya hay un `.sw-dropdown
 
 | Función | Uso |
 | --- | --- |
-| `swToggleSidebar(trigger)` | Abre/cierra el sidebar en móvil. |
+| `swToggleSidebar(trigger)` | Abre/cierra el sidebar como overlay (<1024px). En escritorio lo contrae/expande (`body.sw-sidebar-collapsed`) y recuerda la elección en `localStorage`. |
+| `swCollapseSidebar()` | Para la flecha `.sw-sb-close` del sidebar: contrae en escritorio, cierra el overlay en celular y tablet. |
 | `swCloseSidebar()` | Cierra el sidebar. Se llama solo al navegar (<1024px) y al pulsar el backdrop. |
 | `swToggleSub(trigger)` | Abre/cierra un submenú `.sw-sb-sub`. El trigger debe ser `<button aria-expanded aria-controls>`. |
 | `swToggleUserMenu(trigger)` | Abre el dropdown indicado por `aria-controls`. |
