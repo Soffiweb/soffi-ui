@@ -5870,7 +5870,7 @@ body.sw-modal-open {
 /* Filtros plegables en celular. En escritorio y tablet el panel se disuelve
    (display: contents) y sus controles quedan en la fila de filtros; por debajo
    de 576px se esconde detras del boton .sw-list-filters-toggle, que usa el
-   collapse de la libreria (data-toggle="collapse"). */
+   collapse de la libreria (data-sw-collapse). */
 .sw-list-filters-toggle {
     display: none;
 }

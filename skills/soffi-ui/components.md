@@ -47,14 +47,14 @@ Un solo campo con el selector de "buscar por" pegado a la izquierda del buscador
 ## Filtros plegables de listado
 
 Por debajo de 576px los filtros se esconden detrás de un botón "Filtros"; desde
-576px quedan en la fila de siempre. Usa el collapse de la librería, sin JS nuevo.
+576px quedan en la fila de siempre. Usa el collapse de la librería con `data-sw-collapse` (igual que `data-toggle="collapse"`, pero sin chocar con el JS de Bootstrap en las apps que todavía lo cargan).
 
 ```html
 <div class="sw-list-filter-row">
     <div class="sw-list-filter-main">...buscador...</div>
 
     <button type="button" class="sw-btn sw-btn-light sw-list-filters-toggle"
-            data-toggle="collapse" data-target="#filtros"
+            data-sw-collapse data-target="#filtros"
             aria-controls="filtros" aria-expanded="false">
         <span>Filtros <span class="sw-list-filters-count">2</span></span>
         <i class="fa-solid fa-chevron-down sw-list-filters-chevron" aria-hidden="true"></i>

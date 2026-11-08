@@ -4,6 +4,7 @@
 
 ### Agregado
 
+- `data-sw-collapse`: igual que `data-toggle="collapse"` para el collapse de la librería, pero sin chocar con el data-api de Bootstrap en las apps que aún cargan su JS (con `data-toggle` los dos alternaban el panel a la vez y no cerraba).
 - `.sw-col-xs-1` … `.sw-col-xs-12`: columnas desde 0px. Sin ellas `.sw-col-N` vale 100% hasta 768px; ahora `sw-col-xs-6 sw-col-4` da 2 campos por fila en celular y 3 desde 768px. Útil para campos cortos (secuenciales, códigos, cantidades).
 - `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando la tabla, con las insignias completas, no cabe en el ancho visible del listado. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
 
@@ -15,7 +16,7 @@
 
 - `.sw-list-filter-control-sm`: variante angosta de `.sw-list-filter-control` (190px) para selectores cortos dentro de la fila de filtros de un listado, como "Buscar por".
 
-- `.sw-list-filters-toggle` + `.sw-list-filters-panel` (+ `.sw-list-filters-count`): filtros plegables de un listado. Por debajo de 576px los controles del panel se esconden detrás del botón "Filtros" (usa `data-toggle="collapse"`); desde 576px el panel se disuelve y los controles siguen en la fila de filtros. El botón puede mostrar cuántos filtros hay activos.
+- `.sw-list-filters-toggle` + `.sw-list-filters-panel` (+ `.sw-list-filters-count`): filtros plegables de un listado. Por debajo de 576px los controles del panel se esconden detrás del botón "Filtros" (usa `data-sw-collapse`); desde 576px el panel se disuelve y los controles siguen en la fila de filtros. El botón puede mostrar cuántos filtros hay activos.
 
 - `.sw-search-field`: campo de búsqueda con un selector pegado a la izquierda ("Nombre ▾ | Buscar..."), con un solo borde y un solo foco. Pensado para listados con "buscar por" (`.sw-search-field-select` + `.sw-search-field-input`).
 

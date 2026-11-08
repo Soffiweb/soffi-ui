@@ -534,8 +534,12 @@ function swToggleCollapse(trigger) {
   trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
 }
 
+// [data-sw-collapse] hace lo mismo que [data-toggle="collapse"] pero sin chocar
+// con el data-api de Bootstrap en las apps que aun cargan su JS: con ambos
+// atributos iguales, Bootstrap y esta libreria alternaban el panel a la vez y
+// no cerraba.
 document.addEventListener('click', e => {
-  const trigger = e.target.closest && e.target.closest('[data-toggle="collapse"]');
+  const trigger = e.target.closest && e.target.closest('[data-toggle="collapse"], [data-sw-collapse]');
   if (trigger) {
     e.preventDefault();
     swToggleCollapse(trigger);
