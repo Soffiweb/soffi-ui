@@ -5705,6 +5705,13 @@ body.sw-modal-open {
     }
 }
 
+/* PRUEBA: borde mas marcado en el boton de limpiar, para que no se vea mas
+   chico que Buscar (que es un bloque solido). */
+.sw-list-filter-actions .sw-btn-ghost {
+    border-color: rgba(67, 97, 238, 0.55);
+    border-color: color-mix(in srgb, var(--p) 55%, transparent);
+}
+
 .sw-crud-actions .sw-btn,
 .sw-list-search-row .sw-btn,
 .sw-list-filter-actions .sw-btn {
@@ -5796,7 +5803,9 @@ body.sw-modal-open {
 
 .sw-list-filter-actions {
     display: flex;
-    align-items: center;
+    /* stretch: un boton solo con icono (limpiar) toma la altura del boton con
+       texto (Buscar) en vez de quedar mas bajo. */
+    align-items: stretch;
     gap: var(--sw-spacing-sm);
     flex: 0 0 auto;
 }
@@ -5839,9 +5848,16 @@ body.sw-modal-open {
 
 @media (max-width: 575.98px) {
     .sw-list-search-row,
-    .sw-list-filter-row,
-    .sw-list-filter-actions {
+    .sw-list-filter-row {
         flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    /* Buscar + limpiar (+ PDF) comparten fila en vez de apilarse. */
+    .sw-list-filter-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: stretch;
         gap: 8px;
     }
@@ -5865,6 +5881,14 @@ body.sw-modal-open {
         justify-content: center;
         width: 100%;
     }
+
+    .sw-list-filter-actions .sw-btn {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+    }
+
+
 }
 
 /* Filtros plegables en celular. En escritorio y tablet el panel se disuelve
@@ -5898,6 +5922,7 @@ body.sw-modal-open {
     .sw-list-filters-panel.show {
         display: flex;
         flex-direction: column;
+        flex-shrink: 0;
         gap: 8px;
     }
 }

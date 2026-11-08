@@ -24,6 +24,8 @@
 
 ### Cambiado
 
+- Fila de filtros: el botón de limpiar ahora dice "Limpiar" junto al icono, en todos los anchos.
+- En celular, los botones de la fila de filtros (Buscar, Limpiar y los extra como PDF) quedan en una sola fila en vez de apilarse, a partes iguales.
 - `.sw-list-filter-row` ahora pasa los controles a una segunda línea cuando no caben (antes los apretaba) y `.sw-list-filter-control` baja de 340px a 185px de base, con 20px de separación. Así las filas con búsqueda + fechas + estado caben en una sola línea con el menú lateral abierto y el buscador no queda diminuto en tablet.
 - La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.
 - `.sw-table-sticky-col` se fija en todos los anchos, antes solo desde 992px. Mantiene alcanzables las acciones en tablet y móvil. Toma solo el ancho de su contenido, para no tapar las demás columnas cuando la tabla tiene pocas y le sobra ancho.
@@ -31,6 +33,7 @@
 
 ### Corregido
 
+- En la fila de filtros, el botón de limpiar (solo icono) ya no queda más bajo que el botón Buscar: `.sw-list-filter-actions` iguala la altura de sus botones.
 - `sw-text-center` y `sw-text-right` (y el alias `text-right`) no alineaban los `th` de `.sw-table`: la regla base del encabezado, más específica, los dejaba siempre a la izquierda. Ahora el encabezado puede alinearse igual que su columna.
 - La cabecera de página (`.sw-crud-head`) ya no alinea el título a la derecha por debajo de 992px.
 
