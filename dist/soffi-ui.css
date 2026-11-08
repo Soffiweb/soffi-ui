@@ -3786,6 +3786,10 @@ body.sw-modal-open {
 
 .sw-topbar-actions {
     gap: 12px;
+    /* Las acciones no se encogen: lo que cede es la marca (nombre con
+       puntos suspensivos). Si se encogieran, el menu de usuario se salia del
+       ancho y la pagina hacia scroll horizontal. */
+    flex-shrink: 0;
 }
 
 .sw-topbar-logo {

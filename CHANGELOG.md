@@ -35,6 +35,7 @@
 ### Corregido
 
 - En la fila de filtros, el botón de limpiar (solo icono) ya no queda más bajo que el botón Buscar: `.sw-list-filter-actions` iguala la altura de sus botones.
+- La cabecera (`.sw-topbar`) ya no provoca scroll horizontal de la página: las acciones (tema y menú de usuario) no se encogen y cede la marca.
 - `sw-text-center` y `sw-text-right` (y el alias `text-right`) no alineaban los `th` de `.sw-table`: la regla base del encabezado, más específica, los dejaba siempre a la izquierda. Ahora el encabezado puede alinearse igual que su columna.
 - La cabecera de página (`.sw-crud-head`) ya no alinea el título a la derecha por debajo de 992px.
 
