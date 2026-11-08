@@ -25,6 +25,7 @@
 ### Cambiado
 
 - Fila de filtros: el botón de limpiar ahora dice "Limpiar" junto al icono, en todos los anchos.
+- `.sw-search-field`: por debajo de 992px (celular y tablet vertical) el campo de texto pierde la lupa interior para dejar más sitio al escribir; desde 992px la conserva.
 - En celular, los botones de la fila de filtros (Buscar, Limpiar y los extra como PDF) quedan en una sola fila en vez de apilarse, a partes iguales.
 - `.sw-list-filter-row` ahora pasa los controles a una segunda línea cuando no caben (antes los apretaba) y `.sw-list-filter-control` baja de 340px a 185px de base, con 20px de separación. Así las filas con búsqueda + fechas + estado caben en una sola línea con el menú lateral abierto y el buscador no queda diminuto en tablet.
 - La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.
