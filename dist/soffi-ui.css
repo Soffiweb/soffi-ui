@@ -6234,6 +6234,27 @@ body.sw-modal-open {
     color: var(--bc2);
 }
 
+/* Acciones de fila que pasan al menu "..." en celular (< 576px).
+   Regla: con 1 o 2 acciones van todas sueltas; con 3 o mas queda suelta solo
+   la principal y el resto se mueve al menu. Cada accion que se mueve se escribe
+   dos veces: el boton con .sw-bico-hide-xs (se oculta en celular) y un
+   .sw-row-menu-item.sw-row-menu-xs-only dentro del menu (solo se ve en celular).
+   Nunca crear un menu con una sola opcion. */
+.sw-row-menu-item.sw-row-menu-xs-only {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .sw-table-actions .sw-bico-hide-xs,
+    .sw-table-actions form.sw-bico-hide-xs {
+        display: none;
+    }
+
+    .sw-row-menu-item.sw-row-menu-xs-only {
+        display: flex;
+    }
+}
+
 .sw-table .sw-badge {
     justify-content: center;
     min-width: 82px;
