@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 — 2026-11-09
+
+### Corregido
+
+- `.sw-list-meta`: el conteo y el contexto del listado ya no se salen de la card cuando no caben en una línea (celular, o un contexto largo como "Análisis del 01/01/2026 al 09/11/2026"). La fila ahora hace `flex-wrap` y `.sw-list-context` baja a la siguiente línea y puede partirse; `.sw-list-count` sigue en una sola línea.
+
 ## 1.1.0 — 2026-11-08
 
 ### Agregado
