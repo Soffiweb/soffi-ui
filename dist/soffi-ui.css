@@ -5722,8 +5722,8 @@ body.sw-modal-open {
     }
 }
 
-/* PRUEBA: borde mas marcado en el boton de limpiar, para que no se vea mas
-   chico que Buscar (que es un bloque solido). */
+/* Borde mas marcado en el boton de limpiar, para que no se vea mas chico
+   que Buscar (que es un bloque solido). */
 .sw-list-filter-actions .sw-btn-ghost {
     border-color: rgba(67, 97, 238, 0.55);
     border-color: color-mix(in srgb, var(--p) 55%, transparent);
