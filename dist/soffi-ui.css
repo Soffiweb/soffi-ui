@@ -1,4 +1,4 @@
-/*! Soffi UI 1.2.0 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 1.2.1 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -4097,7 +4097,7 @@ body.sw-modal-open {
 }
 
 /* Flecha para cerrar el sidebar, arriba a la derecha de la marca. En
-   escritorio lo contrae (body.sw-sidebar-collapsed); por debajo de 1024px
+   escritorio lo contrae (body.sw-sidebar-collapsed); por debajo de 1200px
    cierra el overlay. */
 .sw-sb-brand {
     position: relative;
@@ -4133,8 +4133,8 @@ body.sw-modal-open {
 }
 
 /* Escritorio: el sidebar se puede contraer para ver el contenido a todo el
-   ancho. Por debajo de 1024px manda el overlay (body.sw-sidebar-open). */
-@media (min-width: 1024px) {
+   ancho. Por debajo de 1200px manda el overlay (body.sw-sidebar-open). */
+@media (min-width: 1200px) {
     body.sw-sidebar-collapsed .sw-sidebar {
         display: none;
     }
@@ -4313,10 +4313,10 @@ body.sw-modal-open {
     background: color-mix(in srgb, var(--er) 18%, transparent);
 }
 
-/* Sidebar como overlay por debajo de 1024px. Separado del bloque de 768px:
+/* Sidebar como overlay por debajo de 1200px. Separado del bloque de 768px:
    la cabecera todavia cabe completa en tablet, solo el sidebar necesita
    salir del flujo. Mantener en sync con SW_SIDEBAR_QUERY en soffi-ui.js. */
-@media (max-width: 1023.98px) {
+@media (max-width: 1199.98px) {
     body.sw-sidebar-open {
         overflow: hidden;
     }

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1 — 2026-11-09
+
+### Cambiado
+
+- El sidebar pasa a overlay (hamburguesa + backdrop) por debajo de 1200px, antes 1024px. Desde 1200px es fijo y la flecha lo contrae. Afecta `navigation.css` y `SW_SIDEBAR_QUERY` en `soffi-ui.js`; ambos deben mantenerse en 1199.98px / 1200px. Los demás `@media` de 1024px/1200px (tablas, dashboard, grid) no cambian.
+
 ## 1.2.0 — 2026-11-09
 
 ### Cambiado
