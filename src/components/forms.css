@@ -375,8 +375,6 @@
     cursor: pointer;
 }
 
-/* Celular: selector mas compacto para dejar sitio al texto. Si una opcion no
-   cabe se corta con puntos suspensivos. */
 /* Celular y tablet vertical: sin lupa dentro del campo, mas sitio para
    escribir. Mismo corte que el menu lateral en overlay de la cabecera de
    pagina (992px). */
@@ -390,6 +388,8 @@
     }
 }
 
+/* Celular: selector mas compacto para dejar sitio al texto. Si una opcion no
+   cabe se corta con puntos suspensivos. */
 @media (max-width: 575.98px) {
     .sw-search-field .sw-search-field-select {
         max-width: 42%;
