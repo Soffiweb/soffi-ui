@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.1.0 — 2026-11-08
+
+### Agregado
+
+- `data-sw-collapse`: igual que `data-toggle="collapse"` para el collapse de la librería, pero sin chocar con el data-api de Bootstrap en las apps que aún cargan su JS (con `data-toggle` los dos alternaban el panel a la vez y no cerraba).
+- `.sw-col-xs-1` … `.sw-col-xs-12`: columnas desde 0px. Sin ellas `.sw-col-N` vale 100% hasta 768px; ahora `sw-col-xs-6 sw-col-4` da 2 campos por fila en celular y 3 desde 768px. Útil para campos cortos (secuenciales, códigos, cantidades).
+- `.sw-badge-collapsible` + `.sw-badge-label`: la insignia queda solo con icono cuando la tabla, con las insignias completas, no cabe en el ancho visible del listado. Se activa con `swSyncCollapsibleBadges()` (automático al cargar).
+
+- `data-sw-overflow="N"` en `.sw-crud-actions`: por debajo de 992px (celular y tablet vertical), los botones que pasen de N se mueven al menú "Más acciones". Si la cabecera ya tiene un `.sw-dropdown`, lo usa; si no, lo crea. En pantallas grandes los botones vuelven a su lugar. Sin el atributo no cambia nada.
+- `.sw-crud-actions-row`: en celular (<576px) los botones de la cabecera van de a dos por fila en vez de apilarse.
+
+- `.sw-sb-close`: flecha para cerrar el sidebar, arriba a la derecha de la marca. Ya viene incluida en `<x-sw-sidebar>`; quien arme el sidebar a mano debe agregar el botón dentro de `.sw-sb-brand` con `onclick="swCollapseSidebar()"`. En escritorio contrae el sidebar (`body.sw-sidebar-collapsed`) para ver el contenido a todo el ancho; la hamburguesa lo vuelve a abrir y la elección se recuerda en `localStorage`. Por debajo de 1024px cierra el overlay como antes.
+- `swCollapseSidebar()`; `swToggleSidebar()` ahora también contrae/expande en escritorio. La hamburguesa (`.sw-sidebar-toggle`) se muestra en todos los anchos.
+
+- `.sw-list-filter-control-sm`: variante angosta de `.sw-list-filter-control` (190px) para selectores cortos dentro de la fila de filtros de un listado, como "Buscar por".
+
+- `.sw-list-filters-toggle` + `.sw-list-filters-panel` (+ `.sw-list-filters-count`): filtros plegables de un listado. Por debajo de 576px los controles del panel se esconden detrás del botón "Filtros" (usa `data-sw-collapse`); desde 576px el panel se disuelve y los controles siguen en la fila de filtros. El botón puede mostrar cuántos filtros hay activos.
+
+- `.sw-bico-hide-compact` + `.sw-row-menu-compact-only`: por debajo de 1200px (celular, tablet y portátil chico) mueven acciones de fila al menú "...", para que los iconos sueltos no le quiten ancho a las demás columnas. El botón lleva `.sw-bico-hide-compact` (se oculta) y se repite como `.sw-row-menu-item.sw-row-menu-compact-only` dentro del menú (solo se ve por debajo de 1200px). Regla: con 1 o 2 acciones van todas sueltas; con 3 o más queda suelta solo la principal. Nunca un menú con una sola opción. Si la fila no tenía menú, el `.sw-row-menu` entero lleva `.sw-row-menu-compact-only` y solo aparece por debajo de 1200px.
+
+- `.sw-search-field`: campo de búsqueda con un selector pegado a la izquierda ("Nombre ▾ | Buscar..."), con un solo borde y un solo foco. Pensado para listados con "buscar por" (`.sw-search-field-select` + `.sw-search-field-input`).
+
+### Cambiado
+
+- Fila de filtros: el botón de limpiar ahora dice "Limpiar" junto al icono, en todos los anchos.
+- `.sw-search-field`: por debajo de 992px (celular y tablet vertical) el campo de texto pierde la lupa interior para dejar más sitio al escribir; desde 992px la conserva.
+- En celular, los botones de la fila de filtros (Buscar, Limpiar y los extra como PDF) quedan en una sola fila en vez de apilarse, a partes iguales.
+- `.sw-list-filter-row` ahora pasa los controles a una segunda línea cuando no caben (antes los apretaba) y `.sw-list-filter-control` baja de 340px a 185px de base, con 20px de separación. Así las filas con búsqueda + fechas + estado caben en una sola línea con el menú lateral abierto y el buscador no queda diminuto en tablet.
+- La tabla normal (`.sw-table`) se ajusta sola hasta 1280px: letra de 11/13px y relleno lateral de ~10px, la misma densidad que `.sw-table-compact`. Por encima de 1280px conserva la letra normal y el relleno lateral baja de 16 a 13px. `.sw-table-compact` sigue densa en todos los anchos, para reportes con muchas columnas.
+- `.sw-table-sticky-col` se fija en todos los anchos, antes solo desde 992px. Mantiene alcanzables las acciones en tablet y móvil. Toma solo el ancho de su contenido, para no tapar las demás columnas cuando la tabla tiene pocas y le sobra ancho.
+- El sidebar pasa a overlay (hamburguesa + backdrop) por debajo de 1024px, antes 768px. En tablets verticales (~820px) libera ~245px de contenido. La cabecera sigue compactándose a 768px.
+
+### Corregido
+
+- En la fila de filtros, el botón de limpiar (solo icono) ya no queda más bajo que el botón Buscar: `.sw-list-filter-actions` iguala la altura de sus botones.
+- La cabecera (`.sw-topbar`) ya no provoca scroll horizontal de la página: las acciones (tema y menú de usuario) no se encogen y cede la marca.
+- `sw-text-center` y `sw-text-right` (y el alias `text-right`) no alineaban los `th` de `.sw-table`: la regla base del encabezado, más específica, los dejaba siempre a la izquierda. Ahora el encabezado puede alinearse igual que su columna.
+- La cabecera de página (`.sw-crud-head`) ya no alinea el título a la derecha por debajo de 992px.
+
 ## 1.0.4 — 2026-10-08
 
 ### Corregido

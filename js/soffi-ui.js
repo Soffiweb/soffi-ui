@@ -27,19 +27,59 @@ function swToggleSub(el) {
   }
 }
 
-function swToggleSidebar(el) {
-  const open = document.body.classList.toggle('sw-sidebar-open');
-  el.setAttribute('aria-expanded', open ? 'true' : 'false');
-  el.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+// Debajo de este ancho el sidebar es overlay. Mantener en sync con el
+// @media (max-width: 1023.98px) de navigation.css.
+const SW_SIDEBAR_QUERY = '(max-width: 1023.98px)';
+
+function swIsSidebarOverlay() {
+  return window.matchMedia(SW_SIDEBAR_QUERY).matches;
+}
+
+const SW_SIDEBAR_COLLAPSED_KEY = 'swSidebarCollapsed';
+
+function swSyncSidebarToggle(open) {
+  const trigger = document.querySelector('.sw-sidebar-toggle');
+  if (!trigger) return;
+  trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  trigger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+}
+
+// En escritorio el sidebar se contrae (y la elección se recuerda); por debajo
+// de 1024px se abre/cierra como overlay.
+function swToggleSidebar() {
+  if (swIsSidebarOverlay()) {
+    swSyncSidebarToggle(document.body.classList.toggle('sw-sidebar-open'));
+    return;
+  }
+
+  const collapsed = document.body.classList.toggle('sw-sidebar-collapsed');
+  try { localStorage.setItem(SW_SIDEBAR_COLLAPSED_KEY, collapsed ? '1' : '0'); } catch (e) {}
+  swSyncSidebarToggle(!collapsed);
+}
+
+// Flecha del sidebar: contrae en escritorio, cierra el overlay en celular y
+// tablet.
+function swCollapseSidebar() {
+  if (swIsSidebarOverlay()) {
+    swCloseSidebar();
+    return;
+  }
+
+  if (!document.body.classList.contains('sw-sidebar-collapsed')) {
+    swToggleSidebar();
+  }
+}
+
+function swRestoreSidebar() {
+  let collapsed = false;
+  try { collapsed = localStorage.getItem(SW_SIDEBAR_COLLAPSED_KEY) === '1'; } catch (e) {}
+  document.body.classList.toggle('sw-sidebar-collapsed', collapsed);
+  if (!swIsSidebarOverlay()) swSyncSidebarToggle(!collapsed);
 }
 
 function swCloseSidebar() {
   document.body.classList.remove('sw-sidebar-open');
-  const trigger = document.querySelector('.sw-sidebar-toggle');
-  if (trigger) {
-    trigger.setAttribute('aria-expanded', 'false');
-    trigger.setAttribute('aria-label', 'Abrir menú');
-  }
+  swSyncSidebarToggle(!swIsSidebarOverlay() && !document.body.classList.contains('sw-sidebar-collapsed'));
 }
 
 function swToggleUserMenu(el) {
@@ -166,20 +206,35 @@ function swRepositionRowMenus() {
   });
 }
 
-const SW_TABLE_STICKY_QUERY = '(min-width: 992px)';
-
 function swSyncTableStickyColumns() {
-  const stickyEnabled = window.matchMedia(SW_TABLE_STICKY_QUERY).matches;
-
   document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
     if (!wrap.querySelector('thead tr > .sw-table-sticky-col')) return;
 
     const maxScroll = wrap.scrollWidth - wrap.clientWidth;
     wrap.classList.toggle(
       'is-table-sticky-displaced',
-      stickyEnabled && maxScroll > 0 && wrap.scrollLeft < maxScroll - 1,
+      maxScroll > 0 && wrap.scrollLeft < maxScroll - 1,
     );
   });
+}
+
+// .sw-badge-collapsible queda solo con icono cuando la tabla, con las
+// insignias completas, no cabe en el ancho visible del listado. Se mide sin
+// la clase para que el colapso no se deshaga a si mismo al angostar la tabla;
+// quitar y volver a poner la clase en el mismo tick no llega a pintarse.
+function swSyncCollapsibleBadges() {
+  document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => {
+    if (!wrap.querySelector('.sw-badge-collapsible')) return;
+    wrap.classList.remove('is-badges-collapsed');
+    wrap.classList.toggle('is-badges-collapsed', wrap.scrollWidth > wrap.clientWidth + 1);
+  });
+}
+
+function swInitCollapsibleBadges() {
+  swSyncCollapsibleBadges();
+  if (!('ResizeObserver' in window)) return;
+  const observer = new ResizeObserver(swSyncCollapsibleBadges);
+  document.querySelectorAll('.sw-list-table-wrap').forEach(wrap => observer.observe(wrap));
 }
 
 function swInitTableStickyColumns() {
@@ -479,8 +534,12 @@ function swToggleCollapse(trigger) {
   trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
 }
 
+// [data-sw-collapse] hace lo mismo que [data-toggle="collapse"] pero sin chocar
+// con el data-api de Bootstrap en las apps que aun cargan su JS: con ambos
+// atributos iguales, Bootstrap y esta libreria alternaban el panel a la vez y
+// no cerraba.
 document.addEventListener('click', e => {
-  const trigger = e.target.closest && e.target.closest('[data-toggle="collapse"]');
+  const trigger = e.target.closest && e.target.closest('[data-toggle="collapse"], [data-sw-collapse]');
   if (trigger) {
     e.preventDefault();
     swToggleCollapse(trigger);
@@ -596,12 +655,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.sw-select').forEach(swSyncSelectColor);
   document.querySelectorAll('.sw-auth-input-group').forEach(swSyncAuthInputGroup);
 
+  swRestoreSidebar();
   swInitAlerts();
   swInitTableStickyColumns();
+  swInitCollapsibleBadges();
 
   document.querySelectorAll('.sw-sidebar a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
+      if (swIsSidebarOverlay()) {
         swCloseSidebar();
       }
     });
@@ -635,8 +696,12 @@ document.addEventListener('keydown', e => {
 window.addEventListener('resize', () => {
   swRepositionRowMenus();
   swSyncTableStickyColumns();
-  if (window.innerWidth >= 768) {
-    swCloseSidebar();
+  swSyncCollapsibleBadges();
+  if (swIsSidebarOverlay()) {
+    swSyncSidebarToggle(document.body.classList.contains('sw-sidebar-open'));
+  } else {
+    document.body.classList.remove('sw-sidebar-open');
+    swSyncSidebarToggle(!document.body.classList.contains('sw-sidebar-collapsed'));
   }
 });
 
@@ -700,4 +765,112 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
+// Acciones de cabecera con desborde: en celular y tablet vertical, los botones
+// que pasan del limite de `data-sw-overflow="N"` se mueven al menu "Mas
+// acciones" (se mueven, no se clonan: conservan sus onclick). En pantallas
+// grandes vuelven a su lugar. Sin el atributo no cambia nada.
+const SW_OVERFLOW_QUERY = '(max-width: 991.98px)';
+let swOverflowSeq = 0;
+
+function swOverflowCollapse(box) {
+  if (box._swOverflowState) return;
+
+  const limit = parseInt(box.dataset.swOverflow, 10);
+  if (!limit || limit < 2) return;
+
+  const buttons = Array.from(box.children).filter(el => el.classList.contains('sw-btn'));
+  let wrap = Array.from(box.children).find(el => el.classList.contains('sw-dropdown'));
+
+  if (buttons.length + (wrap ? 1 : 0) <= limit) return;
+
+  // El boton principal nunca se mueve: el resto se reparte por orden en los
+  // espacios que sobran y lo demas va al menu.
+  const others = buttons.filter(el => !el.classList.contains('sw-btn-primary'));
+  const kept = Math.max(0, limit - 1 - (buttons.length - others.length));
+  const moved = others.slice(kept);
+  if (!moved.length) return;
+
+  const created = !wrap;
+  let divider = null;
+  let menu;
+
+  if (created) {
+    const id = `swOverflowMenu${++swOverflowSeq}`;
+    // Mismo aspecto (variante y tamaño) que los botones que se esconden.
+    const triggerClass = moved[0].className.split(/\s+/).filter(c => c.startsWith('sw-btn')).join(' ');
+    wrap = document.createElement('div');
+    wrap.className = 'sw-dropdown';
+    wrap.innerHTML =
+      `<button type="button" class="${triggerClass}" aria-haspopup="menu" aria-expanded="false" aria-controls="${id}" onclick="swToggleDropdown(this)">` +
+      'Más acciones <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>' +
+      `<div class="sw-dropdown-menu" id="${id}" role="menu"></div>`;
+    box.appendChild(wrap);
+    menu = wrap.querySelector('.sw-dropdown-menu');
+  } else {
+    menu = wrap.querySelector('.sw-dropdown-menu');
+    if (!menu) return;
+    if (menu.children.length) {
+      divider = document.createElement('div');
+      divider.className = 'sw-dropdown-divider';
+      divider.setAttribute('role', 'separator');
+    }
+  }
+
+  const entries = moved.map(el => {
+    const placeholder = document.createComment('sw-overflow');
+    el.replaceWith(placeholder);
+    const entry = { el, placeholder, className: el.className, role: el.getAttribute('role') };
+    el.className = 'sw-dropdown-item';
+    el.setAttribute('role', 'menuitem');
+    el.addEventListener('click', swOverflowItemClick);
+    return entry;
+  });
+
+  const first = menu.firstChild;
+  entries.forEach(entry => menu.insertBefore(entry.el, first));
+  if (divider) menu.insertBefore(divider, first);
+
+  box._swOverflowState = { entries, wrap, created, divider };
+}
+
+function swOverflowItemClick() {
+  swCloseDropdowns();
+}
+
+function swOverflowRestore(box) {
+  const state = box._swOverflowState;
+  if (!state) return;
+
+  swCloseDropdowns();
+
+  state.entries.forEach(({ el, placeholder, className, role }) => {
+    el.removeEventListener('click', swOverflowItemClick);
+    el.className = className;
+    if (role === null) el.removeAttribute('role'); else el.setAttribute('role', role);
+    placeholder.replaceWith(el);
+  });
+
+  if (state.divider) state.divider.remove();
+  if (state.created) state.wrap.remove();
+
+  box._swOverflowState = null;
+}
+
+function swSyncOverflow(small) {
+  document.querySelectorAll('[data-sw-overflow]').forEach(box => {
+    if (small) swOverflowCollapse(box); else swOverflowRestore(box);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const query = window.matchMedia(SW_OVERFLOW_QUERY);
+  swSyncOverflow(query.matches);
+
+  if (query.addEventListener) {
+    query.addEventListener('change', event => swSyncOverflow(event.matches));
+  } else {
+    query.addListener(event => swSyncOverflow(event.matches));
+  }
 });

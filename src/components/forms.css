@@ -350,6 +350,79 @@
     padding-left: 2.5rem;
 }
 
+/* Campo de busqueda con selector pegado a la izquierda ("Nombre | buscar...").
+   Un solo borde y un solo foco para el conjunto. */
+.sw-search-field {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-radius: var(--r);
+}
+
+.sw-search-field:focus-within {
+    box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
+}
+
+.sw-search-field .sw-search-field-select {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 48%;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--b2);
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+/* Celular y tablet vertical: sin lupa dentro del campo, mas sitio para
+   escribir. Mismo corte que el menu lateral en overlay de la cabecera de
+   pagina (992px). */
+@media (max-width: 991.98px) {
+    .sw-search-field .sw-search-field-input .sw-input-icon {
+        display: none;
+    }
+
+    .sw-search-field .sw-search-field-input .sw-input-has-icon {
+        padding-left: var(--sw-spacing-md);
+    }
+}
+
+/* Celular: selector mas compacto para dejar sitio al texto. Si una opcion no
+   cabe se corta con puntos suspensivos. */
+@media (max-width: 575.98px) {
+    .sw-search-field .sw-search-field-select {
+        max-width: 42%;
+        padding-left: 0.65rem;
+        padding-right: 1.7rem;
+        font-size: var(--sw-text-sm);
+        background-position: right 0.5rem center;
+        background-size: 12px;
+    }
+}
+
+.sw-search-field .sw-search-field-input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sw-search-field .sw-search-field-input .sw-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.sw-search-field .sw-search-field-select:focus,
+.sw-search-field .sw-search-field-input .sw-input:focus {
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+}
+
+.sw-search-field:focus-within .sw-search-field-select,
+.sw-search-field:focus-within .sw-search-field-input .sw-input {
+    border-color: var(--p);
+}
+
 .sw-ss-wrap {
     position: relative;
     width: 100%;

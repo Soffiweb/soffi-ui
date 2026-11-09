@@ -32,12 +32,29 @@ select2.)
 </button>
 ```
 
+### Acciones de cabecera con desborde
+
+| Atributo | Uso |
+| --- | --- |
+| `data-sw-overflow="N"` en `.sw-crud-actions` | Por debajo de 992px, deja visibles N botones (el menú "Más acciones" cuenta como uno) y mueve el resto a ese menú. En pantallas grandes los devuelve a su lugar. |
+
+Cuenta los hijos directos `.sw-btn` y `.sw-dropdown`. Si ya hay un `.sw-dropdown`, le agrega los botones sobrantes; si no, crea uno. Los botones `.sw-btn-primary` nunca se mueven, sin importar su posición. Los botones se mueven (no se clonan), así que conservan sus `onclick`. Ejemplo: Agregar + PDF + Excel con `data-sw-overflow="2"` queda en celular como Agregar + Más acciones (PDF, Excel). Con el atributo ausente no cambia nada.
+
+```html
+<div class="sw-crud-actions sw-crud-actions-row" data-sw-overflow="2">
+    <button type="button" class="sw-btn sw-btn-primary">Agregar</button>
+    <button type="button" class="sw-btn sw-btn-ghost">Reporte PDF</button>
+    <button type="button" class="sw-btn sw-btn-ghost">Reporte Excel</button>
+</div>
+```
+
 ### Sidebar y menú de usuario
 
 | Función | Uso |
 | --- | --- |
-| `swToggleSidebar(trigger)` | Abre/cierra el sidebar en móvil. |
-| `swCloseSidebar()` | Cierra el sidebar. Se llama solo al navegar (<768px) y al pulsar el backdrop. |
+| `swToggleSidebar(trigger)` | Abre/cierra el sidebar como overlay (<1024px). En escritorio lo contrae/expande (`body.sw-sidebar-collapsed`) y recuerda la elección en `localStorage`. |
+| `swCollapseSidebar()` | Para la flecha `.sw-sb-close` del sidebar: contrae en escritorio, cierra el overlay en celular y tablet. |
+| `swCloseSidebar()` | Cierra el sidebar. Se llama solo al navegar (<1024px) y al pulsar el backdrop. |
 | `swToggleSub(trigger)` | Abre/cierra un submenú `.sw-sb-sub`. El trigger debe ser `<button aria-expanded aria-controls>`. |
 | `swToggleUserMenu(trigger)` | Abre el dropdown indicado por `aria-controls`. |
 | `swCloseUserMenu(restoreFocus)` | Cierra el dropdown. Se llama solo por clic externo y `Escape`. |
@@ -74,16 +91,16 @@ Así queda por encima de columnas sticky y no se recorta por el `overflow` de
 
 | Función | Uso |
 | --- | --- |
-| `swInitTableStickyColumns()` | Conecta el scroll horizontal de cada listado y calcula el indicador de desplazamiento desde 992px. Se llama automáticamente al cargar. |
-| `swSyncTableStickyColumns()` | Actualiza `.is-table-sticky-displaced` desde 992px; usar después de mostrar contenido cargado dinámicamente. |
+| `swInitTableStickyColumns()` | Conecta el scroll horizontal de cada listado y calcula el indicador de desplazamiento. Se llama automáticamente al cargar. |
+| `swSyncTableStickyColumns()` | Actualiza `.is-table-sticky-displaced`; usar después de mostrar contenido cargado dinámicamente. |
 | `swToggleTableRow(trigger)` | Abre una fila detalle indicada por `data-target` y cierra las demás de la misma tabla. |
 | `swToggleTableSelection(master)` | Marca o desmarca todos los `.sw-checkbox-input` del `tbody`. |
 | `swSyncTableSelection(table)` | Sincroniza `checked` e `indeterminate` del checkbox maestro. |
 
 La columna fija requiere `.sw-table-sticky-col` en su `th` y sus `td`. El
 contenedor usa `.sw-list-table-wrap`; no aplicar `position: sticky` local.
-La fijación horizontal funciona desde 992px para evitar que tape columnas en
-tablet y móvil; la cabecera conserva su fijación vertical.
+La fijación horizontal funciona en todos los anchos, también en móvil, para
+que las acciones sigan alcanzables; la cabecera conserva su fijación vertical.
 
 Helpers automáticos: `swSyncSelectColor()` para selects vacíos,
 `swSyncAuthInputGroup()` para errores de auth, `swSyncDateInputColor()` para

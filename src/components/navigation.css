@@ -26,6 +26,10 @@
 
 .sw-topbar-actions {
     gap: 12px;
+    /* Las acciones no se encogen: lo que cede es la marca (nombre con
+       puntos suspensivos). Si se encogieran, el menu de usuario se salia del
+       ancho y la pagina hacia scroll horizontal. */
+    flex-shrink: 0;
 }
 
 .sw-topbar-logo {
@@ -311,7 +315,6 @@
     background: var(--b2);
 }
 
-.sw-btn.sw-sidebar-toggle,
 .sw-sidebar-backdrop {
     display: none;
 }
@@ -331,6 +334,50 @@
     padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     margin-bottom: var(--sw-spacing-sm);
+}
+
+/* Flecha para cerrar el sidebar, arriba a la derecha de la marca. En
+   escritorio lo contrae (body.sw-sidebar-collapsed); por debajo de 1024px
+   cierra el overlay. */
+.sw-sb-brand {
+    position: relative;
+}
+
+.sw-sb-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--r);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--sw-text-md);
+    cursor: pointer;
+}
+
+.sw-sb-close:hover,
+.sw-sb-close:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    outline: none;
+}
+
+.sw-sb-brand-name {
+    padding-right: 40px;
+}
+
+/* Escritorio: el sidebar se puede contraer para ver el contenido a todo el
+   ancho. Por debajo de 1024px manda el overlay (body.sw-sidebar-open). */
+@media (min-width: 1024px) {
+    body.sw-sidebar-collapsed .sw-sidebar {
+        display: none;
+    }
 }
 
 .sw-sb-brand-name {
@@ -506,55 +553,12 @@
     background: color-mix(in srgb, var(--er) 18%, transparent);
 }
 
-@media (max-width: 767.98px) {
+/* Sidebar como overlay por debajo de 1024px. Separado del bloque de 768px:
+   la cabecera todavia cabe completa en tablet, solo el sidebar necesita
+   salir del flujo. Mantener en sync con SW_SIDEBAR_QUERY en soffi-ui.js. */
+@media (max-width: 1023.98px) {
     body.sw-sidebar-open {
         overflow: hidden;
-    }
-
-    .sw-topbar {
-        padding: 0 12px;
-        gap: 10px;
-    }
-
-    .sw-topbar-brand {
-        gap: 10px;
-        overflow: hidden;
-    }
-
-    .sw-topbar-company {
-        font-size: var(--sw-text-base);
-        max-width: 120px;
-    }
-
-    .sw-topbar-period {
-        font-size: var(--sw-text-xs);
-        max-width: 120px;
-    }
-
-    .sw-topbar-title-row {
-        gap: var(--sw-spacing-sm);
-    }
-
-    .sw-topbar-meta {
-        gap: 6px;
-    }
-
-    .sw-topbar-environment {
-        display: none;
-    }
-
-    .sw-btn.sw-sidebar-toggle {
-        display: inline-flex;
-    }
-
-    .sw-topbar-actions > .sw-btn,
-    .sw-user-name,
-    .sw-user-arrow {
-        display: none;
-    }
-
-    .sw-user-trigger {
-        padding-right: 6px;
     }
 
     .sw-sidebar {
@@ -591,6 +595,50 @@
     body.sw-sidebar-open .sw-sidebar-backdrop {
         opacity: 1;
         pointer-events: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sw-topbar {
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .sw-topbar-brand {
+        gap: 10px;
+        overflow: hidden;
+    }
+
+    .sw-topbar-company {
+        font-size: var(--sw-text-base);
+        max-width: 120px;
+    }
+
+    .sw-topbar-period {
+        font-size: var(--sw-text-xs);
+        max-width: 120px;
+    }
+
+    .sw-topbar-title-row {
+        gap: var(--sw-spacing-sm);
+    }
+
+    .sw-topbar-meta {
+        gap: 6px;
+    }
+
+    .sw-topbar-environment {
+        display: none;
+    }
+
+    .sw-topbar-actions > .sw-btn,
+    .sw-user-name,
+    .sw-user-arrow {
+        display: none;
+    }
+
+    .sw-user-trigger {
+        padding-right: 6px;
     }
 
     .sw-main {

@@ -204,7 +204,7 @@ Estructura:
 - Card de filtro `sw-card sw-list-card` con selector principal y acciones.
 - Card de resumen solo si el proceso lo necesita funcionalmente.
 - Tabla de detalle en `sw-table-wrap sw-list-table-wrap` con `sw-table sw-table-min-xl`.
-- Acciones de fila con `sw-table-actions` y botones icono `sw-bico`.
+- Acciones de fila con `sw-table-actions` y botones icono `sw-bico`. Con 3 o más acciones, por debajo de 1200px queda suelta solo la principal y el resto va al menú `sw-row-menu`: botón con `sw-bico-hide-compact` + copia en el menú con `sw-row-menu-item sw-row-menu-compact-only`. Si la fila no tenía menú, se crea con `sw-row-menu sw-row-menu-compact-only` (solo aparece por debajo de 1200px). Con 1 o 2 acciones no se usa menú.
 - Modal `sw-modal-backdrop` + `sw-modal sw-modal-lg` e include de form parcial.
 
 Resumen funcional:
@@ -277,9 +277,7 @@ columna fija o varias acciones por fila.
 
 Al mostrar el contenido, llamar `swSyncTableStickyColumns()`. No copiar
 `galLoadEmployees()` ni otras funciones `gal*` de la galería: son demostración,
-no API de aplicación. `.sw-table-sticky-col` queda fija horizontalmente desde
-992px; debajo de ese ancho la columna vuelve al flujo normal y permite
-desplazamiento horizontal.
+no API de aplicación. `.sw-table-sticky-col` queda fija horizontalmente en todos los anchos.
 
 ## Formularios Parciales En Modal
 

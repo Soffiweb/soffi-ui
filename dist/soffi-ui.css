@@ -1,4 +1,4 @@
-/*! Soffi UI 1.0.4 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 1.1.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -1473,6 +1473,35 @@ body {
     color: var(--in);
 }
 
+/* Insignia que queda solo con icono cuando falta espacio.
+   Marcar con .sw-badge-collapsible y envolver el texto en .sw-badge-label.
+   Dentro de un .sw-list-table-wrap, swSyncCollapsibleBadges() (soffi-ui.js)
+   agrega .is-badges-collapsed solo cuando la tabla con las insignias
+   completas no cabe en el ancho visible; no depende del ancho de la ventana.
+   Sin JS el texto se mantiene.
+   El texto sigue en el DOM, oculto solo visualmente, para lectores de
+   pantalla; agregar title para el resto. */
+.sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible {
+    /* relative: el label oculto es absolute y, sin un padre posicionado,
+       escapa del overflow del wrap y ensancha toda la pagina. */
+    position: relative;
+    min-width: 0;
+    padding-inline: 0.5rem;
+}
+
+.sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible i {
+    font-size: 9px;
+}
+
+.sw-list-table-wrap.is-badges-collapsed .sw-badge-collapsible .sw-badge-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 /* ===== src/components/breadcrumb.css ===== */
 /* Breadcrumb
    Extraído de Sofficon soffi-ui/src/core/components.css (verificado: color-mix con fallback estático) */
@@ -2905,6 +2934,79 @@ body {
     padding-left: 2.5rem;
 }
 
+/* Campo de busqueda con selector pegado a la izquierda ("Nombre | buscar...").
+   Un solo borde y un solo foco para el conjunto. */
+.sw-search-field {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-radius: var(--r);
+}
+
+.sw-search-field:focus-within {
+    box-shadow: 0 0 0 3px rgba(40, 68, 154, 0.12);
+}
+
+.sw-search-field .sw-search-field-select {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 48%;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--b2);
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+/* Celular y tablet vertical: sin lupa dentro del campo, mas sitio para
+   escribir. Mismo corte que el menu lateral en overlay de la cabecera de
+   pagina (992px). */
+@media (max-width: 991.98px) {
+    .sw-search-field .sw-search-field-input .sw-input-icon {
+        display: none;
+    }
+
+    .sw-search-field .sw-search-field-input .sw-input-has-icon {
+        padding-left: var(--sw-spacing-md);
+    }
+}
+
+/* Celular: selector mas compacto para dejar sitio al texto. Si una opcion no
+   cabe se corta con puntos suspensivos. */
+@media (max-width: 575.98px) {
+    .sw-search-field .sw-search-field-select {
+        max-width: 42%;
+        padding-left: 0.65rem;
+        padding-right: 1.7rem;
+        font-size: var(--sw-text-sm);
+        background-position: right 0.5rem center;
+        background-size: 12px;
+    }
+}
+
+.sw-search-field .sw-search-field-input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sw-search-field .sw-search-field-input .sw-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.sw-search-field .sw-search-field-select:focus,
+.sw-search-field .sw-search-field-input .sw-input:focus {
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+}
+
+.sw-search-field:focus-within .sw-search-field-select,
+.sw-search-field:focus-within .sw-search-field-input .sw-input {
+    border-color: var(--p);
+}
+
 .sw-ss-wrap {
     position: relative;
     width: 100%;
@@ -3164,8 +3266,8 @@ body {
 
 .sw-row > [class^="sw-col-"],
 .sw-row > [class*=" sw-col-"] {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 var(--sw-col-xs-width, 100%);
+    max-width: var(--sw-col-xs-width, 100%);
     padding: 0 0.5rem;
     min-width: 0;
 }
@@ -3193,6 +3295,33 @@ body {
 .sw-col-11 { --sw-col-width: 91.6667%; }
 
 .sw-col-12 { --sw-col-width: 100%; }
+
+/* Columnas para pantallas chicas (desde 0px). Sin ellas, .sw-col-N vale 100%
+   hasta 768px. Combinar con la clase de escritorio: sw-col-xs-6 sw-col-4 da
+   2 por fila en celular y 3 desde 768px. */
+.sw-col-xs-1 { --sw-col-xs-width: 8.3333%; }
+
+.sw-col-xs-2 { --sw-col-xs-width: 16.6667%; }
+
+.sw-col-xs-3 { --sw-col-xs-width: 25%; }
+
+.sw-col-xs-4 { --sw-col-xs-width: 33.3333%; }
+
+.sw-col-xs-5 { --sw-col-xs-width: 41.6667%; }
+
+.sw-col-xs-6 { --sw-col-xs-width: 50%; }
+
+.sw-col-xs-7 { --sw-col-xs-width: 58.3333%; }
+
+.sw-col-xs-8 { --sw-col-xs-width: 66.6667%; }
+
+.sw-col-xs-9 { --sw-col-xs-width: 75%; }
+
+.sw-col-xs-10 { --sw-col-xs-width: 83.3333%; }
+
+.sw-col-xs-11 { --sw-col-xs-width: 91.6667%; }
+
+.sw-col-xs-12 { --sw-col-xs-width: 100%; }
 
 .sw-col-md-1 { --sw-col-md-width: 8.3333%; }
 
@@ -3500,15 +3629,6 @@ body {
 }
 
 @media (max-width: 991.98px) {
-    .sw-crud-head {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .sw-crud-actions {
-        justify-content: flex-start;
-    }
-
     .sw-list-count {
         align-self: flex-start;
     }
@@ -3536,12 +3656,6 @@ body {
 
     .sw-card.sw-list-card {
         padding: 14px;
-    }
-
-    .sw-table thead th,
-    .sw-table tbody td {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
     }
 
     .sw-data-grid {
@@ -3672,6 +3786,10 @@ body.sw-modal-open {
 
 .sw-topbar-actions {
     gap: 12px;
+    /* Las acciones no se encogen: lo que cede es la marca (nombre con
+       puntos suspensivos). Si se encogieran, el menu de usuario se salia del
+       ancho y la pagina hacia scroll horizontal. */
+    flex-shrink: 0;
 }
 
 .sw-topbar-logo {
@@ -3957,7 +4075,6 @@ body.sw-modal-open {
     background: var(--b2);
 }
 
-.sw-btn.sw-sidebar-toggle,
 .sw-sidebar-backdrop {
     display: none;
 }
@@ -3977,6 +4094,50 @@ body.sw-modal-open {
     padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     margin-bottom: var(--sw-spacing-sm);
+}
+
+/* Flecha para cerrar el sidebar, arriba a la derecha de la marca. En
+   escritorio lo contrae (body.sw-sidebar-collapsed); por debajo de 1024px
+   cierra el overlay. */
+.sw-sb-brand {
+    position: relative;
+}
+
+.sw-sb-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--r);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--sw-text-md);
+    cursor: pointer;
+}
+
+.sw-sb-close:hover,
+.sw-sb-close:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    outline: none;
+}
+
+.sw-sb-brand-name {
+    padding-right: 40px;
+}
+
+/* Escritorio: el sidebar se puede contraer para ver el contenido a todo el
+   ancho. Por debajo de 1024px manda el overlay (body.sw-sidebar-open). */
+@media (min-width: 1024px) {
+    body.sw-sidebar-collapsed .sw-sidebar {
+        display: none;
+    }
 }
 
 .sw-sb-brand-name {
@@ -4152,55 +4313,12 @@ body.sw-modal-open {
     background: color-mix(in srgb, var(--er) 18%, transparent);
 }
 
-@media (max-width: 767.98px) {
+/* Sidebar como overlay por debajo de 1024px. Separado del bloque de 768px:
+   la cabecera todavia cabe completa en tablet, solo el sidebar necesita
+   salir del flujo. Mantener en sync con SW_SIDEBAR_QUERY en soffi-ui.js. */
+@media (max-width: 1023.98px) {
     body.sw-sidebar-open {
         overflow: hidden;
-    }
-
-    .sw-topbar {
-        padding: 0 12px;
-        gap: 10px;
-    }
-
-    .sw-topbar-brand {
-        gap: 10px;
-        overflow: hidden;
-    }
-
-    .sw-topbar-company {
-        font-size: var(--sw-text-base);
-        max-width: 120px;
-    }
-
-    .sw-topbar-period {
-        font-size: var(--sw-text-xs);
-        max-width: 120px;
-    }
-
-    .sw-topbar-title-row {
-        gap: var(--sw-spacing-sm);
-    }
-
-    .sw-topbar-meta {
-        gap: 6px;
-    }
-
-    .sw-topbar-environment {
-        display: none;
-    }
-
-    .sw-btn.sw-sidebar-toggle {
-        display: inline-flex;
-    }
-
-    .sw-topbar-actions > .sw-btn,
-    .sw-user-name,
-    .sw-user-arrow {
-        display: none;
-    }
-
-    .sw-user-trigger {
-        padding-right: 6px;
     }
 
     .sw-sidebar {
@@ -4237,6 +4355,50 @@ body.sw-modal-open {
     body.sw-sidebar-open .sw-sidebar-backdrop {
         opacity: 1;
         pointer-events: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sw-topbar {
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .sw-topbar-brand {
+        gap: 10px;
+        overflow: hidden;
+    }
+
+    .sw-topbar-company {
+        font-size: var(--sw-text-base);
+        max-width: 120px;
+    }
+
+    .sw-topbar-period {
+        font-size: var(--sw-text-xs);
+        max-width: 120px;
+    }
+
+    .sw-topbar-title-row {
+        gap: var(--sw-spacing-sm);
+    }
+
+    .sw-topbar-meta {
+        gap: 6px;
+    }
+
+    .sw-topbar-environment {
+        display: none;
+    }
+
+    .sw-topbar-actions > .sw-btn,
+    .sw-user-name,
+    .sw-user-arrow {
+        display: none;
+    }
+
+    .sw-user-trigger {
+        padding-right: 6px;
     }
 
     .sw-main {
@@ -5400,19 +5562,35 @@ body.sw-modal-open {
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--th-color);
-    padding: 0.62rem var(--sw-spacing-md);
+    padding: 0.62rem 0.8125rem;
     border-bottom: 2px solid rgba(40, 68, 154, 0.2);
     border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
     text-align: left;
 }
 
 .sw-table tbody td {
-    padding: var(--sw-spacing-sm) var(--sw-spacing-md);
+    padding: var(--sw-spacing-sm) 0.8125rem;
     border-bottom: var(--brd);
     color: var(--bc);
     vertical-align: middle;
     background: var(--b1);
     line-height: 1.35;
+}
+
+/* Hasta 1280px la tabla normal se ajusta sola: misma densidad que
+   .sw-table-compact. Por encima conserva letra y relleno normales.
+   .sw-table-compact queda densa en todos los anchos (reportes con muchas
+   columnas). */
+@media (max-width: 1280.98px) {
+    .sw-table thead th {
+        padding: 0.55rem 0.65rem;
+        font-size: var(--sw-text-2xs);
+    }
+
+    .sw-table tbody td {
+        padding: 0.45rem 0.65rem;
+        font-size: var(--sw-text-sm);
+    }
 }
 
 .sw-table tbody tr:last-child td {
@@ -5513,6 +5691,44 @@ body.sw-modal-open {
     gap: calc(var(--sw-spacing-sm) + 0.2rem);
 }
 
+/* Debe vivir aqui, despues de la regla base: si queda en otro archivo
+   anterior, la base (mismo peso) gana y el titulo se pega a la derecha. */
+@media (max-width: 991.98px) {
+    .sw-crud-head {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .sw-crud-actions {
+        justify-content: flex-start;
+    }
+}
+
+/* Variante opcional: en celular los botones van de a dos por fila en vez de
+   apilarse. Un solo boton ocupa la fila completa; con un .sw-dropdown, el
+   boton principal queda a la izquierda y el menu a la derecha. */
+@media (max-width: 575.98px) {
+    .sw-crud-actions.sw-crud-actions-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .sw-crud-actions.sw-crud-actions-row > .sw-btn,
+    .sw-crud-actions.sw-crud-actions-row > .sw-dropdown {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 0;
+    }
+}
+
+/* Borde mas marcado en el boton de limpiar, para que no se vea mas chico
+   que Buscar (que es un bloque solido). */
+.sw-list-filter-actions .sw-btn-ghost {
+    border-color: rgba(67, 97, 238, 0.55);
+    border-color: color-mix(in srgb, var(--p) 55%, transparent);
+}
+
 .sw-crud-actions .sw-btn,
 .sw-list-search-row .sw-btn,
 .sw-list-filter-actions .sw-btn {
@@ -5573,8 +5789,9 @@ body.sw-modal-open {
 .sw-list-search-row,
 .sw-list-filter-row {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
+    gap: 14px 20px;
     width: 100%;
 }
 
@@ -5584,14 +5801,28 @@ body.sw-modal-open {
     min-width: 0;
 }
 
+/* Con varios filtros el buscador toma el ancho que sobra, pero pasa a la
+   línea de abajo antes de quedar diminuto (tablet). */
+.sw-list-filter-row > .sw-list-filter-main {
+    flex: 1 1 220px;
+}
+
 .sw-list-filter-control {
-    flex: 0 1 340px;
-    min-width: 220px;
+    flex: 0 1 185px;
+    min-width: 165px;
+}
+
+/* Selector corto dentro de la fila de filtros ("Buscar por", estado...). */
+.sw-list-filter-control.sw-list-filter-control-sm {
+    flex: 0 1 190px;
+    min-width: 150px;
 }
 
 .sw-list-filter-actions {
     display: flex;
-    align-items: center;
+    /* stretch: un boton solo con icono (limpiar) toma la altura del boton con
+       texto (Buscar) en vez de quedar mas bajo. */
+    align-items: stretch;
     gap: var(--sw-spacing-sm);
     flex: 0 0 auto;
 }
@@ -5634,9 +5865,16 @@ body.sw-modal-open {
 
 @media (max-width: 575.98px) {
     .sw-list-search-row,
-    .sw-list-filter-row,
-    .sw-list-filter-actions {
+    .sw-list-filter-row {
         flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    /* Buscar + limpiar (+ PDF) comparten fila en vez de apilarse. */
+    .sw-list-filter-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: stretch;
         gap: 8px;
     }
@@ -5646,8 +5884,10 @@ body.sw-modal-open {
     }
 
     .sw-list-search-row .sw-input-icon-wrap,
+    .sw-list-filter-row > .sw-list-filter-main,
     .sw-list-filter-main,
-    .sw-list-filter-control {
+    .sw-list-filter-control,
+    .sw-list-filter-control.sw-list-filter-control-sm {
         flex-basis: auto;
         max-width: none;
         min-width: 0;
@@ -5658,6 +5898,70 @@ body.sw-modal-open {
         justify-content: center;
         width: 100%;
     }
+
+    .sw-list-filter-actions .sw-btn {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+    }
+
+
+}
+
+/* Filtros plegables en celular. En escritorio y tablet el panel se disuelve
+   (display: contents) y sus controles quedan en la fila de filtros; por debajo
+   de 576px se esconde detras del boton .sw-list-filters-toggle, que usa el
+   collapse de la libreria (data-sw-collapse). */
+.sw-list-filters-toggle {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .sw-list-filters-panel,
+    .sw-list-filters-panel.collapse:not(.show) {
+        display: contents;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sw-list-filters-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--sw-spacing-sm);
+        width: 100%;
+    }
+
+    .sw-list-filters-toggle[aria-expanded="true"] .sw-list-filters-chevron {
+        transform: rotate(180deg);
+    }
+
+    .sw-list-filters-panel.show {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        gap: 8px;
+    }
+}
+
+.sw-list-filters-chevron {
+    transition: transform 0.15s;
+}
+
+.sw-list-filters-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.4em;
+    height: 1.4em;
+    margin-left: 0.4em;
+    padding: 0 0.4em;
+    border-radius: 999px;
+    background: var(--p);
+    color: #fff;
+    font-size: var(--sw-text-xs);
+    font-weight: 700;
+    line-height: 1;
 }
 
 /* Cabecera fija mientras se scrollea vertical dentro del wrap acotado */
@@ -5667,42 +5971,33 @@ body.sw-modal-open {
     z-index: 2;
 }
 
-/* Columna marcada fija a la derecha en escritorio.
+/* Columna marcada fija a la derecha en todos los anchos: en movil es lo que
+   mantiene alcanzables las acciones mientras se hace scroll horizontal.
    Agregar .sw-table-sticky-col al th y td de la columna elegida. */
 .sw-list-table-wrap tr > .sw-table-sticky-col {
-    position: static;
-    right: auto;
-    z-index: auto;
-    border-left: 0;
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    /* Ancho justo para su contenido: si la tabla reparte ancho sobrante, la
+       columna fija no debe crecer y tapar las demas en pantallas angostas. */
+    width: 1%;
+    white-space: nowrap;
 }
 
 .sw-list-table-wrap thead tr > .sw-table-sticky-col {
-    position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
-@media (min-width: 992px) {
-    .sw-list-table-wrap tr > .sw-table-sticky-col {
-        position: sticky;
-        right: 0;
-        z-index: 1;
-    }
-
-    .sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 2px;
-        background: var(--sw-table-sticky-border);
-        pointer-events: none;
-    }
-
-    .sw-list-table-wrap thead tr > .sw-table-sticky-col {
-        z-index: 3;
-    }
+.sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: var(--sw-table-sticky-border);
+    pointer-events: none;
 }
 
 .sw-table-min-md {
@@ -5727,9 +6022,21 @@ body.sw-modal-open {
     font-size: var(--sw-text-sm);
 }
 
+/* Las utilidades de alineacion pierden contra `.sw-table thead th`
+   (text-align: left, mas especifica): aqui se refuerzan para th y td, para
+   que el encabezado pueda alinearse igual que su columna. */
+.sw-table th.sw-text-center,
+.sw-table td.sw-text-center,
 .sw-table th.text-center,
 .sw-table td.text-center {
     text-align: center;
+}
+
+.sw-table th.sw-text-right,
+.sw-table td.sw-text-right,
+.sw-table th.text-right,
+.sw-table td.text-right {
+    text-align: right;
 }
 
 .sw-table-main-cell,
@@ -5969,6 +6276,36 @@ body.sw-modal-open {
     color: var(--bc2);
 }
 
+/* Acciones de fila que pasan al menu "..." en pantallas compactas (< 1200px:
+   celular, tablet y portatil chico, donde varios iconos sueltos le quitan
+   ancho a las demas columnas).
+   Regla: con 1 o 2 acciones van todas sueltas; con 3 o mas queda suelta solo
+   la principal y el resto se mueve al menu. Cada accion que se mueve se escribe
+   dos veces: el boton con .sw-bico-hide-compact (se oculta) y un
+   .sw-row-menu-item.sw-row-menu-compact-only dentro del menu (solo se ve por
+   debajo de 1200px). Si la fila no tenia menu, el menu entero lleva
+   .sw-row-menu-compact-only y solo aparece por debajo de 1200px. Nunca crear
+   un menu con una sola opcion. */
+.sw-row-menu-item.sw-row-menu-compact-only,
+.sw-row-menu.sw-row-menu-compact-only {
+    display: none;
+}
+
+@media (max-width: 1199.98px) {
+    .sw-table-actions .sw-bico-hide-compact,
+    .sw-table-actions form.sw-bico-hide-compact {
+        display: none;
+    }
+
+    .sw-row-menu-item.sw-row-menu-compact-only {
+        display: flex;
+    }
+
+    .sw-row-menu.sw-row-menu-compact-only {
+        display: inline-flex;
+    }
+}
+
 .sw-table .sw-badge {
     justify-content: center;
     min-width: 82px;
@@ -6051,7 +6388,7 @@ body.sw-modal-open {
 .sw-table-totals tfoot td {
     background: var(--th-bg);
     color: var(--th-color);
-    padding: 0.62rem var(--sw-spacing-md);
+    padding: 0.62rem 0.8125rem;
     font-size: var(--sw-text-sm);
     font-weight: 700;
     text-align: right;
@@ -6060,6 +6397,16 @@ body.sw-modal-open {
 
     border-top: 2px solid rgba(40, 68, 154, 0.2);
     border-top: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
+}
+
+/* Mismo relleno lateral que las celdas de la tabla hasta 1280px, para que
+   las cifras del pie sigan alineadas con su columna. */
+@media (max-width: 1280.98px) {
+    .sw-table-totals tfoot th,
+    .sw-table-totals tfoot td {
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+    }
 }
 
 /* Etiqueta de la fila ("Totales del rol"), alineada al texto y no a la cifra. */

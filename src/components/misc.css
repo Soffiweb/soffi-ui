@@ -112,15 +112,6 @@
 }
 
 @media (max-width: 991.98px) {
-    .sw-crud-head {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .sw-crud-actions {
-        justify-content: flex-start;
-    }
-
     .sw-list-count {
         align-self: flex-start;
     }
@@ -148,12 +139,6 @@
 
     .sw-card.sw-list-card {
         padding: 14px;
-    }
-
-    .sw-table thead th,
-    .sw-table tbody td {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
     }
 
     .sw-data-grid {

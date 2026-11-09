@@ -29,6 +29,7 @@
 
 <nav class="sw-sidebar" id="{{ $id }}" aria-label="Navegación principal">
     <div class="sw-sb-brand">
+        <button type="button" class="sw-sb-close" onclick="swCollapseSidebar()" aria-label="Cerrar menú"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
         <div class="sw-sb-brand-name">{{ $brand }}</div>
         @if ($brandSub)
             <div class="sw-sb-brand-sub">{{ $brandSub }}</div>

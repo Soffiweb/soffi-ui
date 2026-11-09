@@ -26,6 +26,51 @@ existente de `swToggleCollapse()` respeta `data-parent` y cierra los hermanos.
 </div>
 ```
 
+## Campo de búsqueda con selector — `.sw-search-field`
+
+Un solo campo con el selector de "buscar por" pegado a la izquierda del buscador.
+
+```html
+<div class="sw-search-field">
+    <select name="campo" class="sw-select sw-search-field-select" aria-label="Buscar por">
+        <option value="nombre">Nombre</option>
+        <option value="documento">Documento</option>
+    </select>
+    <div class="sw-input-icon-wrap sw-search-field-input">
+        <i class="fa-solid fa-search sw-input-icon" aria-hidden="true"></i>
+        <input type="text" name="buscarTexto" class="sw-input sw-input-has-icon"
+               placeholder="Escribe lo que buscas">
+    </div>
+</div>
+```
+
+## Filtros plegables de listado
+
+Por debajo de 576px los filtros se esconden detrás de un botón "Filtros"; desde
+576px quedan en la fila de siempre. Usa el collapse de la librería con `data-sw-collapse` (igual que `data-toggle="collapse"`, pero sin chocar con el JS de Bootstrap en las apps que todavía lo cargan).
+
+```html
+<div class="sw-list-filter-row">
+    <div class="sw-list-filter-main">...buscador...</div>
+
+    <button type="button" class="sw-btn sw-btn-light sw-list-filters-toggle"
+            data-sw-collapse data-target="#filtros"
+            aria-controls="filtros" aria-expanded="false">
+        <span>Filtros <span class="sw-list-filters-count">2</span></span>
+        <i class="fa-solid fa-chevron-down sw-list-filters-chevron" aria-hidden="true"></i>
+    </button>
+
+    <div id="filtros" class="sw-list-filters-panel collapse">
+        <div class="sw-list-filter-control sw-list-filter-control-sm">...</div>
+    </div>
+
+    <div class="sw-list-filter-actions">...botón Buscar...</div>
+</div>
+```
+
+Con filtros activos, abrir el panel desde el servidor (`collapse show` y
+`aria-expanded="true"`) para que se vea qué está aplicado.
+
 ## SweetAlert2
 
 El override `vendor-sweetalert2.css` ya está incluido en `soffi-ui.css`. Cargar
@@ -37,8 +82,8 @@ iconos, toast, foco y `prefers-reduced-motion`.
 
 - Página: `.sw-crud-page`, `.sw-crud-container`, `.sw-crud-head`, `.sw-crud-title`, `.sw-crud-actions`.
 - Layout base: `.sw-app`, `.sw-body`, `.sw-main`, `.sw-footer`, `.sw-footer-links` (topbar y sidebar tienen su propia familia, ver abajo).
-- Filtros y listados: `.sw-list-card`, `.sw-list-toolbar`, `.sw-list-search`, `.sw-list-filter-row`, `.sw-list-filter-main`, `.sw-list-filter-control`, `.sw-list-filter-actions`, `.sw-list-meta`, `.sw-list-count`, `.sw-list-context`.
-- Tablas: `.sw-table-wrap`, `.sw-list-table-wrap`, `.sw-table`, `.sw-table-min-md`, `.sw-table-min-lg`, `.sw-table-min-xl`, `.sw-table-actions`, `.sw-bico` (+ `:disabled` para acciones no disponibles), `.sw-row-menu`/`.sw-row-menu-dropdown`/`.sw-row-menu-item` (menu "..." de acciones secundarias por fila), `.sw-money`.
+- Filtros y listados: `.sw-list-card`, `.sw-list-toolbar`, `.sw-list-search`, `.sw-list-filter-row`, `.sw-list-filter-main`, `.sw-list-filter-control` (`.sw-list-filter-control-sm` para selectores cortos), `.sw-list-filter-actions`, `.sw-list-meta`, `.sw-list-count`, `.sw-list-context`.
+- Tablas: `.sw-table-wrap`, `.sw-list-table-wrap`, `.sw-table`, `.sw-table-min-md`, `.sw-table-min-lg`, `.sw-table-min-xl`, `.sw-table-actions`, `.sw-bico` (+ `:disabled` para acciones no disponibles), `.sw-row-menu`/`.sw-row-menu-dropdown`/`.sw-row-menu-item` (menu "..." de acciones secundarias por fila), `.sw-bico-hide-compact`/`.sw-row-menu-compact-only` (mueven una acción de fila al menú "..." por debajo de 1200px; usar con 3+ acciones; en `.sw-row-menu` crea un menú que solo existe por debajo de 1200px), `.sw-money`.
 - Formularios: `.sw-field`, `.sw-label`, `.sw-input`, `.sw-select`, `.sw-textarea`, `.sw-error`, `.sw-required`, `.sw-hint`, `.sw-hint-error`, `.sw-form-actions`.
 - Tabs: `.sw-panel-tabs`, `.sw-panel-card`, `.sw-panel-tab-pane`.
 - Resúmenes funcionales: `.sw-section-block`, `.sw-section-title`, `.sw-data-grid`, `.sw-data-item`, `.sw-data-label`, `.sw-data-value`, `.sw-total-panel`, `.sw-total-label`, `.sw-total-value`, `.sw-total-copy`.
@@ -55,7 +100,9 @@ iconos, toast, foco y `prefers-reduced-motion`.
 **Grid** — `.sw-row` + `.sw-col-4` / `.sw-col-6` / `.sw-col-8` / `.sw-col-12`.
 Los `sw-col-*` son 100% en móvil y toman su fracción desde 768px. El gutter sale
 del padding de la columna, así que un `sw-col-*` **siempre** va dentro de un
-`.sw-row`.
+`.sw-row`. Para campos cortos (números, códigos, porcentajes) que en celular
+no necesitan todo el ancho, agregar `.sw-col-xs-1` … `.sw-col-xs-12`, que rigen
+desde 0px: `sw-col-xs-6 sw-col-4` da 2 por fila en celular y 3 desde 768px.
 
 **Display / flex** — `.sw-d-flex`, `.sw-d-block`, `.sw-d-none`, `.sw-flex-wrap`,
 `.sw-flex-column`, `.sw-flex-row`, `.sw-align-items-start|end|center|stretch`,
@@ -1358,18 +1405,34 @@ No inventar clases sueltas por vista.
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--th-color);
-    padding: 0.62rem 1rem;
+    padding: 0.62rem 0.8125rem;
     border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
     text-align: left;
 }
 
 .sw-table tbody td {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8125rem;
     border-bottom: var(--brd);
     color: var(--bc);
     vertical-align: middle;
     background: var(--b1);
     line-height: 1.35;
+}
+
+/* Hasta 1280px la tabla normal se ajusta sola: misma densidad que
+   .sw-table-compact. Por encima conserva letra y relleno normales.
+   .sw-table-compact queda densa en todos los anchos (reportes con muchas
+   columnas). */
+@media (max-width: 1280.98px) {
+    .sw-table thead th {
+        padding: 0.55rem 0.65rem;
+        font-size: 11px;
+    }
+
+    .sw-table tbody td {
+        padding: 0.45rem 0.65rem;
+        font-size: 13px;
+    }
 }
 
 .sw-table tbody tr:last-child td {
@@ -1514,42 +1577,33 @@ No inventar clases sueltas por vista.
     z-index: 2;
 }
 
-/* Columna marcada fija a la derecha en escritorio.
+/* Columna marcada fija a la derecha en todos los anchos: en movil es lo que
+   mantiene alcanzables las acciones mientras se hace scroll horizontal.
    Agregar .sw-table-sticky-col al th y td de la columna elegida. */
 .sw-list-table-wrap tr > .sw-table-sticky-col {
-    position: static;
-    right: auto;
-    z-index: auto;
-    border-left: 0;
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    /* Ancho justo para su contenido: si la tabla reparte ancho sobrante, la
+       columna fija no debe crecer y tapar las demas en pantallas angostas. */
+    width: 1%;
+    white-space: nowrap;
 }
 
 .sw-list-table-wrap thead tr > .sw-table-sticky-col {
-    position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
-@media (min-width: 992px) {
-    .sw-list-table-wrap tr > .sw-table-sticky-col {
-        position: sticky;
-        right: 0;
-        z-index: 1;
-    }
-
-    .sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 2px;
-        background: var(--sw-table-sticky-border);
-        pointer-events: none;
-    }
-
-    .sw-list-table-wrap thead tr > .sw-table-sticky-col {
-        z-index: 3;
-    }
+.sw-list-table-wrap.is-table-sticky-displaced tr > .sw-table-sticky-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: var(--sw-table-sticky-border);
+    pointer-events: none;
 }
 
 .sw-table-min-md {
@@ -1564,9 +1618,21 @@ No inventar clases sueltas por vista.
     min-width: 1080px;
 }
 
+/* Las utilidades de alineacion pierden contra `.sw-table thead th`
+   (text-align: left, mas especifica): aqui se refuerzan para th y td, para
+   que el encabezado pueda alinearse igual que su columna. */
+.sw-table th.sw-text-center,
+.sw-table td.sw-text-center,
 .sw-table th.text-center,
 .sw-table td.text-center {
     text-align: center;
+}
+
+.sw-table th.sw-text-right,
+.sw-table td.sw-text-right,
+.sw-table th.text-right,
+.sw-table td.text-right {
+    text-align: right;
 }
 
 .sw-table-main-cell,
@@ -2702,3 +2768,22 @@ Variantes de color del icono (mismo criterio que `.sw-metric-icon-*`):
 Deshabilitada (ej. "Próximamente"): agregar `.sw-action-card-disabled` a
 `.sw-action-card` y usar un `<span>` en vez de `<a>` para la acción — no hay
 JS que dependa de la clase, es solo opacidad.
+
+## Insignia que se reduce a icono
+
+En listados con muchas columnas, una insignia puede quedar solo con el icono
+cuando la tabla, con las insignias completas, no cabe en el ancho visible:
+
+```html
+<span class="sw-badge sw-badge-collapsible sw-badge-success" title="Activa">
+    <i class="fa-solid fa-circle"></i>
+    <span class="sw-badge-label">Activa</span>
+</span>
+```
+
+Requisitos: la tabla debe ir dentro de `.sw-list-table-wrap`, el texto dentro
+de `.sw-badge-label` y conviene un `title` (el texto sigue disponible para
+lectores de pantalla). Reacciona al ancho del listado, no al de la ventana, vía
+`swSyncCollapsibleBadges()` (se conecta solo al cargar; llamarla tras inyectar
+contenido dinámico). Sin JS la insignia conserva el texto.
+
