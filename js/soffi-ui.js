@@ -28,8 +28,8 @@ function swToggleSub(el) {
 }
 
 // Debajo de este ancho el sidebar es overlay. Mantener en sync con el
-// @media (max-width: 1023.98px) de navigation.css.
-const SW_SIDEBAR_QUERY = '(max-width: 1023.98px)';
+// @media (max-width: 1199.98px) de navigation.css.
+const SW_SIDEBAR_QUERY = '(max-width: 1199.98px)';
 
 function swIsSidebarOverlay() {
   return window.matchMedia(SW_SIDEBAR_QUERY).matches;
@@ -45,7 +45,7 @@ function swSyncSidebarToggle(open) {
 }
 
 // En escritorio el sidebar se contrae (y la elección se recuerda); por debajo
-// de 1024px se abre/cierra como overlay.
+// de 1200px se abre/cierra como overlay.
 function swToggleSidebar() {
   if (swIsSidebarOverlay()) {
     swSyncSidebarToggle(document.body.classList.toggle('sw-sidebar-open'));
