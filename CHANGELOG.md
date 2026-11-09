@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.2.0 — 2026-11-09
+
+### Cambiado
+
+- `.sw-table-totals`: el pie de totales ahora sigue la densidad de la tabla. Por encima de 1280px usa el relleno y la letra de `.sw-table`; hasta 1280px, o siempre con `.sw-table-compact`, usa los de la tabla compacta, para que las cifras queden alineadas con su columna.
+- `.sw-table-totals`: ya no fuerza `text-align: right`. Cada `th`/`td` del pie sigue a su columna con `.sw-text-right` o `.sw-text-center`, igual que el cuerpo; sin clase queda a la izquierda. **Revisar** los pies que dependían de la alineación forzada y ponerles su clase.
+
+### Agregado
+
+- Dentro de `.sw-list-table-wrap`, el pie de `.sw-table-totals` queda anclado abajo mientras se scrollea, como ya hacía la cabecera. Una celda del pie con `.sw-table-sticky-col` queda fija a la derecha en todos los anchos.
+
 ## 1.1.1 — 2026-11-09
 
 ### Corregido
