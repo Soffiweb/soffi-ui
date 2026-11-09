@@ -5838,11 +5838,15 @@ body.sw-modal-open {
     }
 }
 
+/* Conteo a la izquierda y contexto a la derecha. Cuando no caben en una
+   línea (celular, o un contexto largo como "Análisis del ... al ..."), el
+   contexto baja a la siguiente y puede partirse: antes se salía de la card. */
 .sw-list-meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 4px 12px;
     min-height: 22px;
 }
 
@@ -5852,7 +5856,15 @@ body.sw-modal-open {
     color: color-mix(in srgb, var(--bc2) 88%, var(--p));
     font-size: var(--sw-text-base);
     font-weight: 500;
+}
+
+.sw-list-count {
     white-space: nowrap;
+}
+
+.sw-list-context {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .sw-list-table-wrap {
