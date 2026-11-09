@@ -1,4 +1,4 @@
-/*! Soffi UI 1.1.1 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 1.2.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -6388,11 +6388,21 @@ body.sw-modal-open {
     color: var(--btn-text);
 }
 
-/* --- Totales anclados al pie — de gesnom (rama `dev`), único aporte de
-   gesnom junto con .sw-rol-summary. Opt-in: la tabla normal no lleva la
-   clase y su tfoot (si lo tiene) queda sin tratamiento. Dentro de un wrap
-   scrolleable los totales además quedan anclados al pie (ver
-   .sw-list-table-wrap más arriba).
+/* --- Totales al pie de la tabla. Opt-in: la tabla normal no lleva la clase y
+   su tfoot (si lo tiene) queda sin tratamiento.
+
+   Misma densidad que el cuerpo: relleno y letra de .sw-table normal por
+   encima de 1280px, y los de .sw-table-compact por debajo (o siempre, si la
+   tabla lleva .sw-table-compact), para que las cifras del pie queden
+   alineadas con su columna.
+
+   La alineacion NO se fuerza: cada th/td del pie sigue a su columna con
+   .sw-text-right / .sw-text-center (igual que el cuerpo). Sin clase, a la
+   izquierda.
+
+   Dentro de .sw-list-table-wrap el pie queda anclado abajo mientras se
+   scrollea, y una celda con .sw-table-sticky-col queda fija a la derecha
+   igual que en cabecera y cuerpo.
 
    Fix de compatibilidad aplicado al portar: color-mix() sin fallback en la
    fuente (gesnom `dev`). */
@@ -6400,10 +6410,11 @@ body.sw-modal-open {
 .sw-table-totals tfoot td {
     background: var(--th-bg);
     color: var(--th-color);
-    padding: 0.62rem 0.8125rem;
-    font-size: var(--sw-text-sm);
+    padding: var(--sw-spacing-sm) 0.8125rem;
+    font-size: var(--sw-text-base);
     font-weight: 700;
-    text-align: right;
+    line-height: 1.35;
+    text-align: left;
     vertical-align: middle;
     white-space: nowrap;
 
@@ -6411,14 +6422,18 @@ body.sw-modal-open {
     border-top: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
 }
 
-/* Mismo relleno lateral que las celdas de la tabla hasta 1280px, para que
-   las cifras del pie sigan alineadas con su columna. */
 @media (max-width: 1280.98px) {
     .sw-table-totals tfoot th,
     .sw-table-totals tfoot td {
-        padding-left: 0.65rem;
-        padding-right: 0.65rem;
+        padding: 0.45rem 0.65rem;
+        font-size: var(--sw-text-sm);
     }
+}
+
+.sw-table-compact.sw-table-totals tfoot th,
+.sw-table-compact.sw-table-totals tfoot td {
+    padding: 0.45rem 0.65rem;
+    font-size: var(--sw-text-sm);
 }
 
 /* Etiqueta de la fila ("Totales del rol"), alineada al texto y no a la cifra. */
@@ -6426,6 +6441,23 @@ body.sw-modal-open {
     font-size: var(--sw-text-xs);
     letter-spacing: 0.07em;
     text-transform: uppercase;
+}
+
+/* Pie anclado abajo dentro del wrap acotado. */
+.sw-list-table-wrap .sw-table-totals tfoot th,
+.sw-list-table-wrap .sw-table-totals tfoot td {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+/* Celda fija a la derecha en el pie: por encima del resto del pie y del
+   cuerpo, anclada abajo y a la derecha. */
+.sw-list-table-wrap .sw-table-totals tfoot tr > .sw-table-sticky-col {
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 1%;
 }
 
 /* ===== src/components/tabs.css ===== */
