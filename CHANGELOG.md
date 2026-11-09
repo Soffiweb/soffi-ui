@@ -18,7 +18,7 @@
 
 - `.sw-list-filters-toggle` + `.sw-list-filters-panel` (+ `.sw-list-filters-count`): filtros plegables de un listado. Por debajo de 576px los controles del panel se esconden detrás del botón "Filtros" (usa `data-sw-collapse`); desde 576px el panel se disuelve y los controles siguen en la fila de filtros. El botón puede mostrar cuántos filtros hay activos.
 
-- `.sw-bico-hide-xs` + `.sw-row-menu-xs-only`: en celular (<576px) mueven acciones de fila al menú "...". El botón lleva `.sw-bico-hide-xs` (se oculta) y se repite como `.sw-row-menu-item.sw-row-menu-xs-only` dentro del menú (solo se ve en celular). Regla: con 1 o 2 acciones van todas sueltas; con 3 o más queda suelta solo la principal. Nunca un menú con una sola opción.
+- `.sw-bico-hide-compact` + `.sw-row-menu-compact-only`: por debajo de 1200px (celular, tablet y portátil chico) mueven acciones de fila al menú "...", para que los iconos sueltos no le quiten ancho a las demás columnas. El botón lleva `.sw-bico-hide-compact` (se oculta) y se repite como `.sw-row-menu-item.sw-row-menu-compact-only` dentro del menú (solo se ve por debajo de 1200px). Regla: con 1 o 2 acciones van todas sueltas; con 3 o más queda suelta solo la principal. Nunca un menú con una sola opción. Si la fila no tenía menú, el `.sw-row-menu` entero lleva `.sw-row-menu-compact-only` y solo aparece por debajo de 1200px.
 
 - `.sw-search-field`: campo de búsqueda con un selector pegado a la izquierda ("Nombre ▾ | Buscar..."), con un solo borde y un solo foco. Pensado para listados con "buscar por" (`.sw-search-field-select` + `.sw-search-field-input`).
 
