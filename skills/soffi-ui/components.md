@@ -26,6 +26,64 @@ existente de `swToggleCollapse()` respeta `data-parent` y cierra los hermanos.
 </div>
 ```
 
+### Título y resumen en la cabecera
+
+Dentro del trigger, `.sw-accordion-title` ocupa el espacio y `.sw-accordion-meta`
+queda a la derecha: sirve para mostrar un dato clave (por ejemplo
+"1 producto · Total $4.14") aunque el panel esté cerrado. Para que el panel
+arranque cerrado basta omitir `.show` y poner `aria-expanded="false"`.
+
+```blade
+<button type="button" class="sw-accordion-trigger"
+        data-sw-collapse data-target="#detalle"
+        aria-controls="detalle" aria-expanded="false">
+    <span class="sw-accordion-title">Detalle de productos</span>
+    <span class="sw-accordion-meta">1 producto · Total $4.14</span>
+    <span class="sw-accordion-trigger-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+</button>
+```
+
+Usar `data-sw-collapse` en vez de `data-toggle="collapse"` en las apps que aún
+cargan el JS de Bootstrap: con `data-toggle` los dos alternan el panel y
+Bootstrap deja un `height` en línea que recorta el relleno inferior.
+
+## Pantallas de captura compactas — `.sw-crud-page-compact`
+
+Para formularios largos (facturas, notas de crédito y débito, compras) que deben
+entrar en una sola pantalla. Se pone en el contenedor de la página y se combina
+con las variantes compactas ya existentes:
+
+```blade
+<main class="main sw-crud-page sw-crud-page-compact">
+    <div class="sw-crud-container">
+        <section class="sw-card sw-list-card sw-card-compact sw-form-compact">
+            <div class="sw-row sw-row-compact">...</div>
+        </section>
+    </div>
+</main>
+```
+
+`.sw-crud-page-compact` reduce el título a 22 px y el aire arriba y en la
+cabecera. `.sw-card-compact` compacta el card, `.sw-row-compact` las columnas y
+`.sw-form-compact` las etiquetas, inputs y selects (38 px de alto).
+
+## Contador de caracteres — `.sw-field-counter`
+
+Debajo de un campo con `maxlength`, `data-sw-counter` apunta al `id` del campo.
+`soffi-ui.js` muestra "largo / máximo" al escribir, pasa a ámbar al 90 % y a
+rojo al llenarse. Si el valor se asigna por JS, llamar `swRefreshCounters()`;
+`swOpenModal()` ya lo hace al abrir un modal.
+
+```blade
+<input type="text" id="nombre" class="sw-input" maxlength="50">
+<small class="sw-field-counter" data-sw-counter="nombre"></small>
+```
+
+## Total alineado a la derecha — `.sw-total-panel-end`
+
+Añadido a `.sw-total-panel`, lo pega a la derecha con el texto alineado a la
+derecha (cierres de factura, retenciones).
+
 ## Campo de búsqueda con selector — `.sw-search-field`
 
 Un solo campo con el selector de "buscar por" pegado a la izquierda del buscador.
@@ -772,16 +830,29 @@ No inventar clases sueltas por vista.
 }
 
 .sw-btn-ghost {
-    background: transparent;
+    background: var(--b1);
     color: var(--bc);
-    border: var(--brd);
+    font-weight: 600;
+    border: 1.5px solid rgba(21, 27, 30, 0.3);
+    border: 1.5px solid color-mix(in srgb, var(--bc) 30%, transparent);
+    box-shadow: 0 1px 2px rgba(21, 27, 30, 0.12);
 }
 
 .sw-btn-ghost:hover {
-    background: var(--b2);
+    background: #e9f2fb;
+    background: color-mix(in srgb, var(--sky) 30%, var(--b1));
+    color: var(--p);
+    border-color: var(--p);
     opacity: 1;
+}
+
+[data-theme="dark"] .sw-btn-ghost {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.18);
     box-shadow: none;
 }
+
+/* .sw-btn y .sw-bico bajan 1 px al activarse: transform: translateY(1px). */
 
 .sw-btn-outline {
     background: transparent;
@@ -868,6 +939,13 @@ No inventar clases sueltas por vista.
 }
 
 .sw-bico-delete {
+    background: var(--b1);
+    border-color: rgba(225, 29, 72, 0.65);
+    border-color: color-mix(in srgb, var(--er) 65%, transparent);
+    color: var(--er);
+}
+
+.sw-bico-delete:hover {
     background: var(--er);
     border-color: var(--er);
     color: var(--erc);
@@ -910,9 +988,15 @@ No inventar clases sueltas por vista.
 }
 
 [data-theme="dark"] .sw-bico-delete {
+    background: transparent;
+    border-color: rgba(255, 98, 125, 0.5);
+    color: #ff7b92;
+}
+
+[data-theme="dark"] .sw-bico-delete:hover {
     background: var(--er);
     border-color: var(--er);
-    color: var(--erc);
+    color: #ffffff;
 }
 
 [data-theme="dark"] .sw-bico-success {

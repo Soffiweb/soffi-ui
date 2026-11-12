@@ -12,7 +12,7 @@
     margin-bottom: var(--sw-spacing-sm);
     font-size: var(--sw-text-base);
     font-weight: 500;
-    color: var(--bc2);
+    color: var(--bc3);
 }
 
 .sw-input,
@@ -24,8 +24,8 @@
     font-size: var(--sw-text-md);
     line-height: 1.2;
     color: var(--bc);
-    background-color: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background-color: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     outline: none;
     transition:
@@ -177,8 +177,8 @@
     width: 100%;
     height: 43px;
     padding: 0 var(--sw-spacing-sm);
-    background-color: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background-color: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     cursor: pointer;
     transition:
@@ -258,8 +258,8 @@
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
-    background-color: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background-color: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     outline: none;
     resize: vertical;
@@ -434,8 +434,8 @@
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
-    background: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     cursor: pointer;
     display: flex;
@@ -607,7 +607,7 @@
     .sw-file-input,
     .sw-textarea,
     .sw-ss-trigger {
-        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+        border-color: var(--ibd);
     }
 
     .sw-input:focus,
@@ -664,4 +664,24 @@
     .sw-radio {
         border-color: color-mix(in srgb, var(--s) 55%, transparent);
     }
+}
+
+/* Contador de caracteres: <small class="sw-field-counter" data-sw-counter="id-del-campo">.
+   Lo actualiza soffi-ui.js; pasa a ambar al 90% del maxlength y a rojo al llenarse. */
+.sw-field-counter {
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+    font-size: var(--sw-text-sm);
+    font-variant-numeric: tabular-nums;
+    color: var(--bc3);
+}
+
+.sw-field-counter.is-near {
+    color: var(--wa);
+}
+
+.sw-field-counter.is-full {
+    color: var(--er);
+    font-weight: 600;
 }

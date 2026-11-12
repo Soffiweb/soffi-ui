@@ -180,11 +180,16 @@ de copiar esto.
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ config('app.name') }} — @yield('title')</title>
 
-  {{-- Restaura el tema antes de pintar, para evitar flash --}}
+  {{-- Restaura el tema y el sidebar contraído antes de pintar, para evitar flash --}}
   <script>
     (function () {
-      var t = localStorage.getItem('theme');
-      if (t) document.documentElement.dataset.theme = t;
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+        if (localStorage.getItem('swSidebarCollapsed') === '1') {
+          document.documentElement.classList.add('sw-sidebar-collapsed');
+        }
+      } catch (e) {}
     })();
   </script>
 

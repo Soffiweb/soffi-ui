@@ -53,6 +53,7 @@ function swToggleSidebar() {
   }
 
   const collapsed = document.body.classList.toggle('sw-sidebar-collapsed');
+  document.documentElement.classList.toggle('sw-sidebar-collapsed', collapsed);
   try { localStorage.setItem(SW_SIDEBAR_COLLAPSED_KEY, collapsed ? '1' : '0'); } catch (e) {}
   swSyncSidebarToggle(!collapsed);
 }
@@ -74,6 +75,7 @@ function swRestoreSidebar() {
   let collapsed = false;
   try { collapsed = localStorage.getItem(SW_SIDEBAR_COLLAPSED_KEY) === '1'; } catch (e) {}
   document.body.classList.toggle('sw-sidebar-collapsed', collapsed);
+  document.documentElement.classList.toggle('sw-sidebar-collapsed', collapsed);
   if (!swIsSidebarOverlay()) swSyncSidebarToggle(!collapsed);
 }
 
@@ -436,6 +438,7 @@ function swOpenModal(id) {
   }
   el.classList.add('is-open');
   el.setAttribute('aria-hidden', 'false');
+  swRefreshCounters(el);
   document.body.classList.add('sw-modal-open');
   const dialog = el.querySelector('.sw-modal');
   if (dialog && !dialog.hasAttribute('tabindex')) dialog.setAttribute('tabindex', '-1');
@@ -874,3 +877,34 @@ document.addEventListener('DOMContentLoaded', () => {
     query.addListener(event => swSyncOverflow(event.matches));
   }
 });
+
+// Contador de caracteres — <small class="sw-field-counter" data-sw-counter="id-del-campo">.
+// Muestra "largo / maxlength" y marca is-near (90%) e is-full (100%). Se actualiza
+// solo al escribir; si el valor se asigna por JS, llamar swRefreshCounters()
+// (swOpenModal ya lo hace al abrir un modal).
+function swUpdateCounter(counter) {
+  const field = document.getElementById(counter.dataset.swCounter);
+  if (!field) return;
+
+  const max = parseInt(field.getAttribute('maxlength'), 10) || 0;
+  const length = field.value.length;
+
+  counter.textContent = max ? length + ' / ' + max : String(length);
+  counter.classList.toggle('is-full', max > 0 && length >= max);
+  counter.classList.toggle('is-near', max > 0 && length < max && length >= max * 0.9);
+}
+
+function swRefreshCounters(root) {
+  (root || document).querySelectorAll('[data-sw-counter]').forEach(swUpdateCounter);
+}
+
+document.addEventListener('input', event => {
+  const field = event.target;
+  if (!field || !field.id) return;
+
+  document.querySelectorAll('[data-sw-counter]').forEach(counter => {
+    if (counter.dataset.swCounter === field.id) swUpdateCounter(counter);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => swRefreshCounters());

@@ -111,6 +111,13 @@ Fuente única: estos tokens viven en `src/tokens/*.css` del paquete. En aplicaci
 | `--th-color`    | `#28449a`         | `#7da4e0`         | Table header text                   |
 | `--sw-table-sticky-border` | `#c4cee3` | `#8194b8` | Sticky table column separator |
 | `--btn-text`    | `#fdfdff`         | `#1a1f2e`         | Button text color                   |
+| `--sw-sky` (`--sky`) | `#b9d9f0` | `#3b5a8a` | Celeste del degradado del logo |
+| `--sw-page-bg` (`--pg`) | celeste 24 % + superficie | `#1f2430` | Fondo de página (`.sw-main`); un paso más profundo que la superficie para despegar los cards |
+| `--sw-text-soft` (`--bc3`) | `#4a515b` | `#aab3c5` | Texto secundario (etiquetas, subtítulos, conteos); más oscuro que `--bc2` |
+| `--sw-table-bg` (`--tbg`) | `#fdfdff` | `#262c3b` | Fondo de tabla |
+| `--sw-input-bg` (`--ibg`) | `#fdfdff` | `#20263a` | Fondo de `.sw-input`, `.sw-select`, `.sw-textarea` |
+| `--sw-input-border` (`--ibd`) | secundario 92 % | `#9dbde8` 60 % | Borde de los controles |
+| `--sw-divider` (`--dv`) | primario 32 % | blanco 16 % | Línea bajo el título del modal, sobre sus botones y entre `.sw-section-block-separated` |
 | `--r`           | `.65rem`          | —                 | Border radius (más redondeado)      |
 | `--rl`          | `1.1rem`          | —                 | Border radius large                 |
 | `--brd`         | 1px secondary 28% | 1px white 9%      | Border global                       |

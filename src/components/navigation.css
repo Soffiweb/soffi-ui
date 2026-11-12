@@ -330,6 +330,11 @@
     transition: background 0.25s;
 }
 
+/* Oscuro: el sidebar es casi del tono del contenido; un borde los separa. */
+[data-theme="dark"] .sw-sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .sw-sb-brand {
     padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -373,8 +378,11 @@
 }
 
 /* Escritorio: el sidebar se puede contraer para ver el contenido a todo el
-   ancho. Por debajo de 1200px manda el overlay (body.sw-sidebar-open). */
+   ancho. Por debajo de 1200px manda el overlay (body.sw-sidebar-open).
+   La clase también vive en <html>: un script en el <head> la pone antes del
+   primer paint (ver layout.md) para que no haya parpadeo al recargar. */
 @media (min-width: 1200px) {
+    html.sw-sidebar-collapsed .sw-sidebar,
     body.sw-sidebar-collapsed .sw-sidebar {
         display: none;
     }

@@ -336,9 +336,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ---
 
+## Contador de caracteres
+
+| Función | Qué hace |
+|---|---|
+| `swRefreshCounters()` | Recalcula todos los `[data-sw-counter="id"]` del documento. Llamarla tras asignar el valor de un campo por JS; `swOpenModal()` ya la llama al abrir. |
+| `swUpdateCounter(counter)` | Actualiza un contador: "largo / máximo", ámbar al 90 %, rojo al llenarse. La usa el evento `input` delegado. |
+
+Markup en `components.md` (`.sw-field-counter`).
+
+---
+
 ## Funciones de alerta (nuevas en 0.3.0, venían de SoffiFac)
 
-`soffi-ui.js` del paquete tiene **41 funciones** y varios selectores/constants
+`soffi-ui.js` del paquete tiene **53 funciones** y varios selectores/constants
 internos. La API incluye tema, layout, dropdowns, menús de fila, tablas,
 modales accesibles, tabs, collapse, inputs, selects y alertas.
 

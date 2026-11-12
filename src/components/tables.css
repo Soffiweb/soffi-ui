@@ -4,11 +4,16 @@
 .sw-table-wrap {
     width: 100%;
     max-width: 100%;
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.34);
+    border: 1.5px solid color-mix(in srgb, var(--p) 34%, transparent);
     border-radius: var(--rl);
     overflow: hidden;
-    background: var(--b1);
+    background: var(--tbg);
     box-shadow: var(--sh-sm);
+}
+
+[data-theme="dark"] .sw-table-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .sw-table {
@@ -26,18 +31,28 @@
     letter-spacing: 0.07em;
     color: var(--th-color);
     padding: 0.62rem 0.8125rem;
-    border-bottom: 2px solid rgba(40, 68, 154, 0.2);
-    border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
+    border-bottom: 2px solid rgba(40, 68, 154, 0.45);
+    border-bottom: 2px solid color-mix(in srgb, var(--p) 45%, transparent);
     text-align: left;
+}
+
+[data-theme="dark"] .sw-table thead th {
+    border-bottom: 2px solid rgba(125, 164, 224, 0.35);
+    border-bottom: 2px solid color-mix(in srgb, var(--p) 35%, transparent);
 }
 
 .sw-table tbody td {
     padding: var(--sw-spacing-sm) 0.8125rem;
-    border-bottom: var(--brd);
+    border-bottom: 1px solid rgba(40, 68, 154, 0.18);
+    border-bottom: 1px solid color-mix(in srgb, var(--p) 18%, transparent);
     color: var(--bc);
     vertical-align: middle;
-    background: var(--b1);
+    background: var(--tbg);
     line-height: 1.35;
+}
+
+[data-theme="dark"] .sw-table tbody td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* Hasta 1280px la tabla normal se ajusta sola: misma densidad que
@@ -114,7 +129,13 @@
 }
 
 .sw-table tbody tr:hover td {
-    background: var(--b2);
+    background: #eef5fc;
+    background: color-mix(in srgb, var(--sky) 22%, var(--tbg));
+}
+
+[data-theme="dark"] .sw-table tbody tr:hover td {
+    background: #2f3443;
+    background: color-mix(in srgb, #ffffff 4%, var(--tbg));
 }
 
 .sw-empty-icon {
@@ -134,6 +155,25 @@
 .sw-crud-container {
     padding-top: 30px;
     padding-bottom: 22px;
+}
+
+/* Pantallas de captura (facturas, notas, compras): título más pequeño y menos
+   aire arriba para que el formulario, el detalle y el total entren en una sola
+   pantalla. Se combina con .sw-card-compact, .sw-row-compact y .sw-form-compact. */
+.sw-crud-page-compact .sw-crud-container {
+    padding-top: 14px;
+}
+
+.sw-crud-page-compact .sw-page-header {
+    margin-bottom: 12px;
+}
+
+.sw-crud-page-compact .sw-page-title {
+    font-size: 22px;
+}
+
+.sw-crud-page-compact .sw-crud-actions {
+    align-items: center;
 }
 
 .sw-crud-head {
@@ -242,7 +282,7 @@
 }
 
 .sw-list-search-label {
-    color: var(--bc2);
+    color: var(--bc3);
     font-size: var(--sw-text-base);
     font-weight: 500;
     line-height: 1.2;
@@ -315,8 +355,7 @@
 
 .sw-list-count,
 .sw-list-context {
-    color: #636c83;
-    color: color-mix(in srgb, var(--bc2) 88%, var(--p));
+    color: var(--bc3);
     font-size: var(--sw-text-base);
     font-weight: 500;
 }

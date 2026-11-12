@@ -21,8 +21,7 @@
 }
 
 .sw-section-block-separated + .sw-section-block-separated {
-    border-top: 1px solid rgba(67, 97, 238, 0.24);
-    border-top: 1px solid color-mix(in srgb, var(--s) 24%, transparent);
+    border-top: 1px solid var(--dv);
     margin-top: 1.25rem;
     padding-top: 1.25rem;
 }
@@ -50,7 +49,7 @@
 }
 
 .sw-data-label {
-    color: var(--bc2);
+    color: var(--bc3);
     font-size: 13px;
     font-weight: 600;
     line-height: 1.35;
@@ -81,6 +80,12 @@
     border-radius: var(--r);
     background: #f4f6fb;
     background: color-mix(in srgb, var(--p) 4%, var(--b1));
+}
+
+/* Panel de total alineado a la derecha (importes de cierre). */
+.sw-total-panel-end {
+    margin-left: auto;
+    text-align: right;
 }
 
 .sw-total-label {

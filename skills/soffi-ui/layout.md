@@ -11,13 +11,18 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ config('app.name') }} — @yield('title')</title>
 
-  {{-- Anti-flicker: aplicar tema guardado ANTES del primer paint.
-       soffi-ui.js se carga al final del body; sin esto se ve un
-       flash claro→oscuro en cada carga de página. --}}
+  {{-- Anti-flicker: aplicar tema y sidebar contraído guardados ANTES del
+       primer paint. soffi-ui.js se carga al final del body; sin esto se ve
+       un flash claro→oscuro y el sidebar abierto un instante en cada carga. --}}
   <script>
     (function () {
-      var t = localStorage.getItem('theme');
-      if (t) document.documentElement.dataset.theme = t;
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+        if (localStorage.getItem('swSidebarCollapsed') === '1') {
+          document.documentElement.classList.add('sw-sidebar-collapsed');
+        }
+      } catch (e) {}
     })();
   </script>
 

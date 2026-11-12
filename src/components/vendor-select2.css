@@ -21,9 +21,9 @@
     display: flex;
     align-items: center;
     min-height: 43px;
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
-    background: var(--b1);
+    background: var(--ibg);
     color: var(--bc);
     outline: none;
 }
@@ -69,7 +69,7 @@
     padding: 0.5rem 0.85rem;
     font-family: "Inter", sans-serif;
     font-size: 15px;
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     color: var(--bc);
     outline: none;
@@ -84,7 +84,7 @@
 @supports (background: color-mix(in srgb, red 1%, blue)) {
     .select2-container--default .select2-selection--single,
     .select2-search--dropdown .select2-search__field {
-        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+        border-color: var(--ibd);
     }
 
     .select2-container--default.select2-container--focus .select2-selection--single,

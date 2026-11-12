@@ -27,15 +27,18 @@
 
     <title>@yield('title', config('app.name'))</title>
 
-    {{-- Tema guardado: se aplica antes de pintar para no tener flash de tema
-         claro en usuarios con oscuro. soffi-ui.js lo vuelve a leer en
-         DOMContentLoaded, esto solo evita el parpadeo. --}}
+    {{-- Tema y sidebar contraído guardados: se aplican antes de pintar para no
+         tener flash de tema claro ni del sidebar abierto. soffi-ui.js los vuelve
+         a leer en DOMContentLoaded, esto solo evita el parpadeo. --}}
     <script>
         (function () {
             try {
                 var t = localStorage.getItem('theme');
                 if (t) { document.getElementById('root').dataset.theme = t; }
-            } catch (e) { /* localStorage bloqueado: se queda en claro */ }
+                if (localStorage.getItem('swSidebarCollapsed') === '1') {
+                    document.documentElement.classList.add('sw-sidebar-collapsed');
+                }
+            } catch (e) { /* localStorage bloqueado: se queda en claro y con sidebar */ }
         })();
     </script>
 

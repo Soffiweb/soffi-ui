@@ -21,7 +21,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding: 24px 28px;
-    background: var(--b2);
+    background: var(--pg);
 }
 
 .sw-page-header {
@@ -37,7 +37,7 @@
 }
 
 .sw-page-subtitle {
-    color: var(--bc2);
+    color: var(--bc3);
     font-size: 15px;
     line-height: 1.5;
 }
