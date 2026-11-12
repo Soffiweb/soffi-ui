@@ -2871,3 +2871,277 @@ lectores de pantalla). Reacciona al ancho del listado, no al de la ventana, vía
 `swSyncCollapsibleBadges()` (se conecta solo al cargar; llamarla tras inyectar
 contenido dinámico). Sin JS la insignia conserva el texto.
 
+
+# Referencia complementaria
+
+Clases que existen en el CSS y que las secciones anteriores solo mencionan
+con atajos (`start|end|center`). Aquí van con su nombre exacto.
+
+## Utilidades: nombres exactos
+
+| Grupo | Clases |
+| --- | --- |
+| Alineación de ítems | `.sw-align-items-center`, `.sw-align-items-end`, `.sw-align-items-stretch` |
+| Alineación responsive | `.sw-align-items-md-start` (≥768px), `.sw-align-items-lg-start` (≥992px) |
+| Alineación propia | `.sw-align-self-center`, `.sw-align-self-end` |
+| Justificación | `.sw-justify-content-center`, `.sw-justify-content-end`, `.sw-justify-content-around` |
+| Display / flex | `.sw-d-grid`, `.sw-flex-grow-1` |
+| Separación | `.sw-gap-2` (`.5rem`), `.sw-gap-3` (`1rem`) |
+| Margen superior | `.sw-mt-1`, `.sw-mt-2`, `.sw-mt-3`, `.sw-mt-4`, `.sw-mt-5`, `.sw-mt-auto` (empuja al final de un flex en columna) |
+| Margen inferior | `.sw-mb-2`, `.sw-mb-5` |
+| Margen derecho | `.sw-mr-2`, `.sw-mr-3` |
+| Margen vertical | `.sw-my-3` (`1rem`), `.sw-my-4` (`1.5rem`) |
+| Relleno | `.sw-p-3`, `.sw-pt-4`, `.sw-pb-3`, `.sw-pb-4`, `.sw-py-3`, `.sw-py-5` |
+| Color de texto | `.sw-text-primary`, `.sw-text-info`, `.sw-text-warning`, `.sw-text-error`, `.sw-text-inverse` (texto sobre fondo primario) |
+| Texto | `.sw-text-uppercase`, `.sw-small` (`--sw-text-sm`) |
+| Fondo y borde | `.sw-bg-success`, `.sw-border-primary` (35 % del primario), `.sw-border-success` (40 % del éxito) |
+
+## Botones, badges y cards: tamaños
+
+| Clase | Qué hace |
+| --- | --- |
+| `.sw-btn-xs` | Botón extra chico (`--sw-text-xs`, radio `sm`). Para acciones dentro de una celda. |
+| `.sw-btn-xl` | Botón extra grande (`--sw-text-xl`, relleno `0.9rem 2rem`). |
+| `.sw-btn-icon` | Botón cuadrado 38 × 38 px, solo icono. Poner siempre `aria-label`. |
+| `.sw-badge-sm` | Badge chico (`--sw-text-2xs`). |
+| `.sw-badge-lg` | Badge grande (`--sw-text-base`). |
+| `.sw-card-lg` | Card con más aire (`1.6rem 1.8rem`). Par grande de `.sw-card-compact`. |
+
+## Formularios: estados
+
+| Clase | Qué hace |
+| --- | --- |
+| `.sw-select-empty` | Pone el `<select>` en color atenuado mientras no tiene valor. La agrega y quita sola `soffi-ui.js` según `select.value`. |
+| `.sw-date-empty` | Igual, para `input[type=date\|time\|datetime-local]` vacíos. |
+| `.sw-file-input-btn` | Botón "Seleccionar archivo" dentro de `.sw-file-input`. |
+| `.sw-file-input-native` | `<input type="file">` real, oculto visualmente (1 × 1 px) pero accesible; el wrapper dibuja el control. |
+
+## Tablas: detalle expandible y de captura
+
+```html
+<tr class="sw-table-detail-row">
+    <td colspan="5">
+        <div class="sw-table-detail">
+            <div class="sw-table-detail-item">
+                <span class="sw-table-detail-label">Cliente</span>
+                <span class="sw-table-detail-value">ACME S.A.</span>
+            </div>
+        </div>
+    </td>
+</tr>
+```
+
+- `.sw-table-detail`: grid de 3 columnas con los datos de la fila expandida.
+- `.sw-table-detail-item`: un dato (etiqueta arriba, valor abajo).
+- `.sw-table-detail-label`: etiqueta en mayúsculas, atenuada.
+- `.sw-table-detail-value`: valor en color de texto base.
+- `.sw-detail-table`: tabla de **captura** de líneas (factura, compra): celdas con más aire, inputs de 38 px, sin flechas en `input[type=number]`, pie `tfoot` resaltado.
+- `.sw-table-thumb-lg`: miniatura de 64 px (la base `.sw-table-thumb` es de 40 px).
+- `.sw-row-error` / `.sw-row-warning`: fondo rojo o ámbar suave en el `<tr>` completo (8 % y 10 % mezclado con la superficie).
+
+## Paginación y layout auxiliar
+
+- `.sw-pagination-nav`: `<nav>` dentro de `.sw-list-pagination`. Resumen a la izquierda y botones a la derecha; en celular (<576px) se apila.
+- `.sw-sticky-aside`: columna lateral fija (`top: 92px`). Por debajo de 992px vuelve a `static`.
+- `.sw-content-stack`: grid vertical con separación `--sw-spacing-lg`. Sustituye a varios `.sw-mb-4`.
+- `.sw-row-gap`: añade `row-gap` entre filas de un `.sw-row`.
+- `body.sw-modal-open`: la pone `swOpenModal()` y la quita `swCloseModal()`; bloquea el scroll del fondo. No agregarla a mano.
+
+## Action card: tamaños de grid y de acción
+
+- `.sw-action-card-grid-sm` (mínimo 180px por card) y `.sw-action-card-grid-lg` (280px) cambian cuántas cards caben por fila. Se pueden ajustar con `--sw-grid-min`.
+- `.sw-action-card-action-sm`: botón de acción chico y centrado (`align-self: center`).
+- `.sw-action-card-action-xs`: botón muy chico, pegado a la derecha (`align-self: flex-end`).
+- Sin modificador el botón ocupa todo el ancho. Los modificadores van junto a `.sw-action-card-action`.
+- Colores del icono: `.sw-action-card-icon-secondary`, `.sw-action-card-icon-accent`, `.sw-action-card-icon-success`, `.sw-action-card-icon-warning` y `.sw-action-card-icon-info` (además de `-primary`).
+
+## Dashboard: layout
+
+```html
+<div class="sw-dashboard-grid">
+    <div class="sw-dashboard-main">
+        <div class="sw-metrics-grid">...</div>
+        <div class="sw-card sw-chart-card">...</div>
+    </div>
+    <aside class="sw-dashboard-aside">
+        <div class="sw-quicklink-grid">...</div>
+        <div class="sw-card">...actividad reciente...</div>
+    </aside>
+</div>
+```
+
+- `.sw-dashboard-grid`: dos columnas, principal (2fr) y lateral (mínimo 300px). Por debajo de 1200px pasa a una columna.
+- `.sw-dashboard-main` y `.sw-dashboard-aside`: apilan sus hijos con separación `--sw-spacing-lg`. Dentro de `-aside`, `.sw-quicklink-grid` va en una sola columna.
+- `.sw-metrics-grid-sm` (mínimo 150px) y `.sw-metrics-grid-lg` (230px); la base es 190px. Por debajo de 576px las métricas van en 2 columnas.
+- `.sw-quicklink-grid-sm` (180px) y `.sw-quicklink-grid-lg` (260px); la base es 220px.
+
+## Métricas: icono y tendencia
+
+- Colores de `.sw-metric-icon`: `.sw-metric-icon-primary`, `.sw-metric-icon-accent`, `.sw-metric-icon-info` y `.sw-metric-icon-secondary`.
+- `.sw-metric-trend`: variación bajo el valor (por ejemplo "+12 %"), en línea con icono. Se combina con `.sw-metric-trend-up` (verde, sube) o `.sw-metric-trend-down` (rojo, baja).
+- `.sw-metric-trend-note`: texto de comparación ("vs mes anterior"), atenuado y de peso normal, dentro de `.sw-metric-trend`.
+
+```html
+<div class="sw-metric-trend sw-metric-trend-up">
+    <i class="fa-solid fa-arrow-up"></i> 12 %
+    <span class="sw-metric-trend-note">vs mes anterior</span>
+</div>
+```
+
+## Tarjetas de gráfico: tamaños
+
+`.sw-chart-card` mide 360px de alto mínimo y su `.sw-chart-wrap` 270px. Con
+`.sw-chart-card-lg` el área del gráfico sube a 300px; con `.sw-chart-card-sm`
+la card baja a 320px y el gráfico a 230px.
+
+## Dona con leyenda
+
+```html
+<div class="sw-donut-wrap">
+    <div class="sw-donut-canvas">
+        <canvas id="donut"></canvas>
+        <div class="sw-donut-total">
+            <span class="sw-donut-total-value">1.240</span>
+            <span class="sw-donut-total-label">Total</span>
+        </div>
+    </div>
+    <div class="sw-donut-legend">
+        <div class="sw-donut-legend-item">
+            <span class="sw-donut-legend-dot" style="background: var(--p)"></span>
+            <span class="sw-donut-legend-label">Ventas</span>
+            <span class="sw-donut-legend-value">62 %</span>
+        </div>
+    </div>
+</div>
+```
+
+- `.sw-donut-wrap`: dona a la izquierda y leyenda a la derecha.
+- `.sw-donut-canvas`: contenedor de 130 × 130 px para el `<canvas>`.
+- `.sw-donut-total`: capa centrada sobre la dona, sin captura de clics. `-value` es la cifra y `-label` la etiqueta en `--sw-text-3xs`, mayúsculas.
+- `.sw-donut-legend`: columna de ítems. `-item` es la fila; `-dot` el punto de color (el color va inline); `-label` el nombre con elipsis; `-value` el valor en negrita.
+
+## Actividad reciente
+
+```html
+<div class="sw-activity-list">
+    <div class="sw-activity-item">
+        <span class="sw-activity-icon sw-activity-icon-venta"><i class="fa-solid fa-arrow-up"></i></span>
+        <div class="sw-activity-body">
+            <span class="sw-activity-title">Factura 001-0123</span>
+            <span class="sw-activity-subtitle">Hace 5 minutos</span>
+        </div>
+        <span class="sw-activity-amount sw-activity-amount-venta">$120,00</span>
+    </div>
+</div>
+```
+
+- `.sw-activity-list`: lista vertical; `.sw-activity-item` es una fila con borde inferior (la última no lo lleva).
+- `.sw-activity-icon`: círculo de 36px. Colores: `.sw-activity-icon-venta` (primario) y `.sw-activity-icon-compra` (acento).
+- `.sw-activity-body`: ocupa el espacio restante. Contiene `.sw-activity-title` (una línea, negrita) y `.sw-activity-subtitle` (atenuado).
+- `.sw-activity-amount`: monto a la derecha, números tabulares. `.sw-activity-amount-venta` va en verde y `.sw-activity-amount-compra` en acento.
+
+## Stepper: descripción
+
+`.sw-step-description`: texto de apoyo bajo el título de un paso del stepper
+(`--sw-text-sm`, atenuado).
+
+## Product card — `.sw-product-card`
+
+Tarjeta de catálogo: imagen, etiqueta, valoración, precio y botón de compra.
+Usar en catálogos de producto o de servicio, no en listados CRUD (para eso
+están las tablas).
+
+```html
+<div class="sw-product-card-grid">
+    <article class="sw-product-card">
+        <div class="sw-product-card-media">
+            <img src="..." alt="Nombre del producto">
+            <span class="sw-product-card-tag sw-product-card-tag-accent">
+                <i class="fa-solid fa-bolt"></i> Oferta
+            </span>
+            <button type="button" class="sw-product-card-fav" aria-label="Guardar" aria-pressed="false">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
+        <div class="sw-product-card-body">
+            <h3 class="sw-product-card-title">Nombre del producto</h3>
+            <p class="sw-product-card-desc">Descripción corta.</p>
+            <ul class="sw-product-card-meta">
+                <li><i class="fa-solid fa-clock"></i> 23 horas</li>
+            </ul>
+            <div class="sw-product-card-foot">
+                <span class="sw-rating" aria-label="4.7 de 5">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <span class="sw-rating-value">4.7</span>
+                </span>
+                <span class="sw-product-card-price">$39<small>.00</small></span>
+            </div>
+            <button type="button" class="sw-btn sw-btn-primary sw-product-card-cta">Comprar ahora</button>
+        </div>
+    </article>
+</div>
+```
+
+| Clase | Qué hace |
+| --- | --- |
+| `.sw-product-card-grid` | Grid automático (mínimo 250px por card). `.sw-product-card-grid-sm` baja a 200px y `.sw-product-card-grid-lg` sube a 300px; también acepta `--sw-grid-min` y `--sw-grid-cols`. |
+| `.sw-product-card` | Card en columna con borde y esquinas `--rl`. |
+| `.sw-product-card-media` | Zona de imagen, proporción 16:10, la imagen se recorta con `object-fit: cover`. |
+| `.sw-product-card-tag` | Etiqueta flotante arriba a la izquierda sobre la imagen. Colores: `.sw-product-card-tag-accent`, `.sw-product-card-tag-success`, `.sw-product-card-tag-warning`. |
+| `.sw-product-card-fav` | Botón de favorito arriba a la derecha. Se marca con `aria-pressed="true"` (color acento, corazón sólido). **No hay JS**: la app alterna el atributo. |
+| `.sw-product-card-body` | Cuerpo que ocupa el resto de la altura, para alinear todos los pies en una fila. |
+| `.sw-product-card-title` | Título, máximo 2 líneas. |
+| `.sw-product-card-desc` | Descripción, máximo 2 líneas. |
+| `.sw-product-card-meta` | Lista de datos con icono (duración, categoría). |
+| `.sw-product-card-foot` | Fila con valoración a la izquierda y precio a la derecha, empujada al fondo. |
+| `.sw-product-card-price` | Precio grande en color primario; `<small>` para los decimales. |
+| `.sw-product-card-cta` | Botón a todo el ancho, junto con `.sw-btn`. |
+
+## Rating — `.sw-rating`
+
+Estrellas en línea (color de advertencia, 11px) con un `.sw-rating-value`
+opcional al final (número atenuado y en negrita). Poner siempre `aria-label`
+con la nota ("4.7 de 5") en el contenedor, porque las estrellas son iconos.
+
+## Profile card — `.sw-profile-card`
+
+Tarjeta de persona o usuario: avatar con anillo, estado, descripción y dos
+acciones divididas al pie.
+
+```html
+<div class="sw-profile-card-grid">
+    <article class="sw-profile-card">
+        <div class="sw-profile-card-head">
+            <div class="sw-profile-card-avatar-wrap">
+                <span class="sw-user-avatar sw-avatar-lg sw-profile-card-avatar">
+                    <img src="..." class="sw-user-avatar-img" alt="">
+                </span>
+                <span class="sw-profile-card-status" title="Activo"></span>
+            </div>
+            <div class="sw-row-menu">...menú "…" (ver Menú de acciones por fila)...</div>
+        </div>
+        <h3 class="sw-profile-card-name">Ana Torres</h3>
+        <p class="sw-profile-card-role"><i class="fa-solid fa-location-dot"></i> Panamá, PA</p>
+        <p class="sw-profile-card-desc">Contadora senior, 6 años en nómina.</p>
+        <div class="sw-profile-card-actions">
+            <a href="mailto:..." class="sw-profile-card-action"><i class="fa-regular fa-envelope"></i> Enviar correo</a>
+            <a href="..." class="sw-profile-card-action"><i class="fa-solid fa-pen"></i> Editar perfil</a>
+        </div>
+    </article>
+</div>
+```
+
+| Clase | Qué hace |
+| --- | --- |
+| `.sw-profile-card-grid` | Grid automático (mínimo 260px). `.sw-profile-card-grid-sm` baja a 210px y `.sw-profile-card-grid-lg` sube a 310px. |
+| `.sw-profile-card-head` | Fila superior: avatar a la izquierda, menú de acciones a la derecha. |
+| `.sw-profile-card-avatar-wrap` | Anillo en degradado primario → acento alrededor del avatar. |
+| `.sw-profile-card-avatar` | Avatar con borde interior del color de fondo. Va junto a `.sw-user-avatar`. |
+| `.sw-profile-card-status` | Punto de estado en la esquina del avatar: verde (activo). `.sw-profile-card-status-away` ámbar (ausente), `.sw-profile-card-status-offline` gris (sin conexión). |
+| `.sw-profile-card-name` | Nombre en negrita. |
+| `.sw-profile-card-role` | Línea de rol o ubicación con icono primario a la izquierda. |
+| `.sw-profile-card-desc` | Descripción, máximo 3 líneas. |
+| `.sw-profile-card-actions` | Barra de dos columnas pegada a los bordes del card, separada por una línea. |
+| `.sw-profile-card-action` | Cada enlace de la barra: centrado, color primario, con fondo de superficie al pasar el cursor. |

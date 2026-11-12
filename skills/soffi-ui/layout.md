@@ -293,3 +293,45 @@ Resolverlos en controller, `View::composer` o middleware. **Nunca consultar DB e
     </a>
 </div>
 ```
+
+## Topbar: contexto y entorno
+
+Elementos opcionales que se agregan junto a `.sw-topbar-company` y `.sw-topbar-period` dentro de `.sw-topbar-tenant`. Hay que pasarlos por el backend como el resto de datos del header.
+
+- `.sw-topbar-title-row` — fila flex (`gap: 18px`) que agrupa el título (`.sw-topbar-company`) con lo que va a su lado. Es el contenedor que usa el layout `panel.blade.php`.
+- `.sw-topbar-meta` — grupo flex para datos de contexto (periodo, sucursal, caja).
+- `.sw-topbar-context-item` — un dato de contexto: icono (`<i>`, en color primario) + texto con elipsis. Va dentro de `.sw-topbar-meta`.
+- `.sw-topbar-environment` — contenedor que no se encoge, para la marca de entorno.
+- `.sw-topbar-environment-pill` — píldora ámbar para avisar que no es producción ("Pruebas", "Demo"). Solo se muestra fuera de producción.
+
+```html
+<div class="sw-topbar-title-row">
+    <span class="sw-topbar-company">{{ $headerCompanyName }}</span>
+    <div class="sw-topbar-meta">
+        <span class="sw-topbar-context-item"><i class="fa-regular fa-calendar"></i><span>{{ $headerPeriodLabel }}</span></span>
+    </div>
+    @unless (app()->isProduction())
+        <div class="sw-topbar-environment">
+            <span class="sw-topbar-environment-pill"><i class="fa-solid fa-flask"></i> Pruebas</span>
+        </div>
+    @endunless
+</div>
+```
+
+## Footer: contacto y redes
+
+Dentro de `.sw-footer-links` (ver "Contenido del footer"):
+
+- `.sw-footer-contact` — enlace de teléfono o correo en color primario, con icono de 11px a la izquierda y subrayado al pasar el cursor.
+- `.sw-footer-social` — enlace a una red social, mismo tamaño y estilo que el anterior.
+- `.sw-footer-copy` — ya existe en el footer base; sus `<span>` van en color atenuado.
+
+## Breadcrumb
+
+Lo genera `<x-sw-breadcrumb>` (ver `laravel.md`); estas son las clases que produce:
+
+- `.sw-breadcrumb-nav` — `<nav>` a todo el ancho.
+- `.sw-breadcrumb-item` — cada nivel. Entre niveles se dibuja `›` por CSS; `.active` marca el actual (negrita, sin enlace).
+- `.sw-breadcrumb-context` — último ítem opcional, atenuado y sin salto de línea, para texto de contexto como "Periodo: 2026". Sale de la prop `context` del componente.
+
+Los enlaces del breadcrumb van en color primario y se subrayan al pasar el cursor o enfocarlos.
