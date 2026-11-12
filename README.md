@@ -7,7 +7,7 @@ CSS y JS plano. Sin Bootstrap, sin Popper, sin jQuery, sin Tailwind, sin Vue.
 **Sin Node**: el build es PHP.
 
 - **565 clases** `sw-*` — componentes base, utilidades y layout Soffiweb
-- **41 funciones** JS vanilla (modales, tabs, collapse, validación, tema, sidebar…)
+- **53 funciones** JS vanilla (modales, tabs, collapse, validación, tema, sidebar…)
 - Tema claro y oscuro
 - Piso de navegador: **Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6**
 
@@ -83,7 +83,7 @@ src/
 ├── tokens/        color.css · spacing.css · typography.css
 ├── base/          reset.css · utilities.css
 └── components/    37 archivos, uno por componente o familia
-js/soffi-ui.js     41 funciones vanilla
+js/soffi-ui.js     53 funciones vanilla
 blade/             layout panel + componentes sw-* (opcional)
 skills/soffi-ui/   skill de IA — este repo es su origen
 dist/              salida del build. NO EDITAR
@@ -97,7 +97,8 @@ scripts/
 ```bash
 php scripts/build.php                              # construir dist/
 php scripts/build.php --publish-laravel=../SoffCaja  # y publicar a una app
-php scripts/check-compat.php                       # solo el check
+php scripts/check-compat.php                       # solo el check de compat
+php scripts/check-skills.php                       # skill vs código
 ```
 
 ### Reglas
@@ -113,6 +114,11 @@ php scripts/check-compat.php                       # solo el check
 5. **Los alias cortos** (`--p`, `--bc`, `--su`…) no se renombran: ~550 `var(--)`
    dependen de ellos, y son lo único que gesnom legacy entiende.
 6. **Las skills se editan acá**, no en cada app. Fue la causa raíz del drift.
+   Todo cambio en `src/`, `js/` o `blade/` actualiza `skills/soffi-ui/` en el
+   mismo commit: tokens, clases y funciones nuevas, y cualquier cambio de
+   aspecto o de uso. `php scripts/check-skills.php` falla en CI si un token,
+   clase o función no aparece en la skill; `scripts/skills-baseline.txt` es la
+   deuda anterior al check y solo debe achicarse.
 
 ## Estado de migración
 

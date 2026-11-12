@@ -30,6 +30,11 @@ jobs:
       - name: check-compat
         run: php scripts/check-compat.php
 
+      # La skill viaja con el paquete: si src/ o js/ cambian y skills/ no,
+      # las IAs de las apps generan con el sistema viejo.
+      - name: check-skills
+        run: php scripts/check-skills.php
+
   build:
     name: Build reproducible (PHP ${{ matrix.php-version }})
     runs-on: ubuntu-latest
@@ -48,6 +53,7 @@ jobs:
         run: |
           php -l scripts/build.php
           php -l scripts/check-compat.php
+          php -l scripts/check-skills.php
           php -l scripts/check-release.php
           php -l src-php/SoffiUiServiceProvider.php
 
