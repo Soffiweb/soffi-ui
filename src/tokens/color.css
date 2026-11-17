@@ -30,6 +30,19 @@
     --sw-info-contrast: #fdfdff;
 
     --sw-sidebar-bg: #1e2330;
+
+    /* Refinamiento 1.3: celeste del degradado del logo y capas de profundidad.
+       --sw-page-bg: fondo de la pagina (un paso mas profundo que --sw-surface).
+       --sw-text-soft: texto secundario (etiquetas, subtitulos, conteos).
+       --sw-table-bg: fondo de tabla; --sw-input-bg/--sw-input-border: controles. */
+    --sw-sky: #b9d9f0;
+    --sw-page-bg: #e1ebf8;
+    --sw-text-soft: #4a515b;
+    --sw-table-bg: #fdfdff;
+    --sw-input-bg: #fdfdff;
+    --sw-input-border: rgba(67, 97, 238, 0.92);
+    --sw-divider: rgba(40, 68, 154, 0.32);
+
     --sw-table-header-bg: #e8eef8;
     --sw-table-header-text: #28449a;
     --sw-table-sticky-border: #c4cee3;
@@ -78,12 +91,22 @@
     --btn-text: var(--sw-button-text);
     --auth-bg: var(--sw-auth-bg);
     --auth-card: var(--sw-auth-card-bg);
+    --sky: var(--sw-sky);
+    --pg: var(--sw-page-bg);
+    --bc3: var(--sw-text-soft);
+    --tbg: var(--sw-table-bg);
+    --ibg: var(--sw-input-bg);
+    --ibd: var(--sw-input-border);
+    --dv: var(--sw-divider);
 }
 
 @supports (background: color-mix(in srgb, red 1%, blue)) {
     :root {
         --sw-border: 1px solid color-mix(in srgb, var(--sw-secondary) 28%, transparent);
         --sw-border-strong: 1px solid color-mix(in srgb, var(--sw-secondary) 50%, transparent);
+        --sw-page-bg: color-mix(in srgb, var(--sw-sky) 24%, var(--sw-surface));
+        --sw-text-soft: color-mix(in srgb, var(--sw-text-muted) 62%, var(--sw-text));
+        --sw-divider: color-mix(in srgb, var(--sw-primary) 32%, transparent);
     }
 }
 
@@ -102,6 +125,13 @@
     --sw-info: #00bafe;
     --sw-border: 1px solid rgba(255, 255, 255, 0.09);
     --sw-sidebar-bg: #111520;
+    --sw-sky: #3b5a8a;
+    --sw-page-bg: #1f2430;
+    --sw-text-soft: #aab3c5;
+    --sw-table-bg: #262c3b;
+    --sw-input-bg: #20263a;
+    --sw-input-border: rgba(157, 189, 232, 0.6);
+    --sw-divider: rgba(255, 255, 255, 0.16);
     --sw-table-header-bg: #1a2340;
     --sw-table-header-text: #7da4e0;
     --sw-table-sticky-border: #8194b8;

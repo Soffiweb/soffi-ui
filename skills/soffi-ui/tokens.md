@@ -111,6 +111,13 @@ Fuente única: estos tokens viven en `src/tokens/*.css` del paquete. En aplicaci
 | `--th-color`    | `#28449a`         | `#7da4e0`         | Table header text                   |
 | `--sw-table-sticky-border` | `#c4cee3` | `#8194b8` | Sticky table column separator |
 | `--btn-text`    | `#fdfdff`         | `#1a1f2e`         | Button text color                   |
+| `--sw-sky` (`--sky`) | `#b9d9f0` | `#3b5a8a` | Celeste del degradado del logo |
+| `--sw-page-bg` (`--pg`) | celeste 24 % + superficie | `#1f2430` | Fondo de página (`.sw-main`); un paso más profundo que la superficie para despegar los cards |
+| `--sw-text-soft` (`--bc3`) | `#4a515b` | `#aab3c5` | Texto secundario (etiquetas, subtítulos, conteos); más oscuro que `--bc2` |
+| `--sw-table-bg` (`--tbg`) | `#fdfdff` | `#262c3b` | Fondo de tabla |
+| `--sw-input-bg` (`--ibg`) | `#fdfdff` | `#20263a` | Fondo de `.sw-input`, `.sw-select`, `.sw-textarea` |
+| `--sw-input-border` (`--ibd`) | secundario 92 % | `#9dbde8` 60 % | Borde de los controles |
+| `--sw-divider` (`--dv`) | primario 32 % | blanco 16 % | Línea bajo el título del modal, sobre sus botones y entre `.sw-section-block-separated` |
 | `--r`           | `.65rem`          | —                 | Border radius (más redondeado)      |
 | `--rl`          | `1.1rem`          | —                 | Border radius large                 |
 | `--brd`         | 1px secondary 28% | 1px white 9%      | Border global                       |
@@ -153,6 +160,7 @@ valores distintos. La escala sale de los px que ya se usaban, no es inventada.
 ```css
 --sw-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
+--sw-text-3xs:  10px;   /* etiqueta bajo la dona del dashboard */
 --sw-text-2xs:  11px;   /* badges, notas al pie      */
 --sw-text-xs:   12px;   /* labels, hints             */
 --sw-text-sm:   13px;   /* tablas, texto secundario  */
@@ -183,6 +191,116 @@ Regla: **`font-size` solo vía token.** Nada de px literales en CSS nuevo.
 
 `--sw-radius-pill` pasa de `25px` a **`9999px`**. Era el único radio en px de
 una escala en rem, y con textos más grandes dejaba de verse como píldora.
+
+## Nombres largos `--sw-*` y alias
+
+Cada alias corto de la tabla de arriba apunta a un nombre largo. El CSS de
+componentes usa el alias; el nombre largo es el que se redefine para cambiar
+el tema de una app. **No renombrar ninguno.**
+
+| Nombre largo | Alias | Qué es |
+| --- | --- | --- |
+| `--sw-primary` / `--sw-primary-contrast` | `--p` / `--pc` | Color primario y su texto |
+| `--sw-secondary-contrast` | `--sc` | Texto sobre secundario |
+| `--sw-accent` / `--sw-accent-contrast` | `--a` / `--ac` | Acento (rosa) y su texto |
+| `--sw-neutral` / `--sw-neutral-contrast` | `--n` / `--nc` | Neutro y su texto |
+| `--sw-bg` | `--b1` | Fondo base (campos, cards) |
+| `--sw-surface` | `--b2` | Superficie secundaria |
+| `--sw-text-muted` | `--bc2` | Texto atenuado |
+| `--sw-success-contrast` | `--suc` | Texto sobre éxito |
+| `--sw-warning` / `--sw-warning-contrast` | `--wa` / `--wac` | Advertencia y su texto |
+| `--sw-error` / `--sw-error-contrast` | `--er` / `--erc` | Error y su texto |
+| `--sw-info` / `--sw-info-contrast` | `--in` / `--inc` | Información y su texto |
+| `--sw-border-strong` | `--brd-s` | Borde de 1px más marcado (50 % del secundario) |
+| `--sw-sidebar-bg` | `--sb` | Fondo del sidebar |
+| `--sw-table-header-bg` / `--sw-table-header-text` | `--th-bg` / `--th-color` | Cabecera de tabla |
+| `--sw-button-text` | `--btn-text` | Texto de botón sólido |
+
+### Radios, espaciado y sombras
+
+| Token | Valor | Alias |
+| --- | --- | --- |
+| `--sw-radius-md` | `0.65rem` | `--r` |
+| `--sw-radius-lg` | `1.1rem` | `--rl` |
+| `--sw-spacing-xs` | `0.25rem` | — |
+| `--sw-spacing-lg` | `1.5rem` | — |
+| `--sw-spacing-xl` | `2rem` | — |
+| `--sw-shadow-sm` | `0 1px 3px rgba(0,0,0,.06)` | `--sh-sm` |
+| `--sw-shadow-md` | `0 4px 12px rgba(0,0,0,.1)` | `--sh-md` |
+| `--sw-shadow-lg` | `0 10px 30px rgba(0,0,0,.14)` | `--sh-lg` |
+
+También existen `--sw-radius-sm` (`0.25rem`), `--sw-radius-pill` (`9999px`),
+`--sw-spacing-sm` (`0.5rem`) y `--sw-spacing-md` (`1rem`).
+
+### Escala de z-index
+
+Usar siempre estos tokens; nunca un número suelto.
+
+| Token | Valor | Capa |
+| --- | --- | --- |
+| `--sw-z-sticky` | 40 | Navbar superior sticky |
+| `--sw-z-sidebar-backdrop` | 50 | Fondo oscuro tras el sidebar overlay |
+| `--sw-z-sidebar` | 60 | Panel del sidebar overlay |
+| `--sw-z-dropdown` | 100 | Select, menú de usuario, menú de fila |
+| `--sw-z-modal-backdrop` | 1060 | Backdrop de modal |
+| `--sw-z-toast` | 1080 | Toast (siempre encima de un modal) |
+
+### Tamaños pisables por componente
+
+Cada uno tiene un valor por defecto y se cambia con `style="--token: valor"`
+o desde el CSS de la app, sin tocar la clase.
+
+| Token | Defecto | Afecta a |
+| --- | --- | --- |
+| `--sw-action-card-icon-size` | `56px` | Icono de `.sw-action-card` |
+| `--sw-metric-icon-size` | `40px` | Icono de las tarjetas de métrica |
+| `--sw-quicklink-icon-size` | `42px` | Icono de los accesos rápidos |
+| `--sw-activity-icon-size` | `36px` | Icono de `.sw-activity-icon` |
+| `--sw-table-thumb-size` | `40px` | Miniatura de imagen en tabla (`.sw-table-thumb`) |
+| `--sw-user-avatar-size` | `32px` | Avatar del menú de usuario |
+| `--sw-auth-mark-size` | `48px` | Marca (logo) de las pantallas de auth |
+
+### Grids automáticos: `--sw-grid-min` y `--sw-grid-cols`
+
+Los grids de cards (`.sw-action-card-grid`, `.sw-metrics-grid`,
+`.sw-quicklink-grid`, `.sw-profile-card-grid`) usan
+`repeat(var(--sw-grid-cols, auto-fit), minmax(var(--sw-grid-min), 1fr))`.
+
+- `--sw-grid-min`: ancho mínimo de cada card antes de que baje de fila.
+- `--sw-grid-cols`: número fijo de columnas, ignora el ancho disponible.
+
+```html
+<div class="sw-action-card-grid" style="--sw-grid-cols: 3">...</div>
+```
+
+### Anchos de columna del grid
+
+`.sw-col-N` y sus variantes por breakpoint no fijan un ancho directo: definen
+una variable que `.sw-row > [class*="sw-col-"]` lee. Cae en cascada hacia
+abajo, así que basta declarar el breakpoint menor.
+
+| Prefijo | Variable | Aplica desde |
+| --- | --- | --- |
+| `sw-col-xs-N` | `--sw-col-xs-width` | siempre (por defecto 100 %) |
+| `sw-col-N` | `--sw-col-width` | 768px |
+| `sw-col-md-N` | `--sw-col-md-width` | 768px |
+| `sw-col-lg-N` | `--sw-col-lg-width` | 992px |
+| `sw-col-xl-N` | `--sw-col-xl-width` | 1200px |
+
+N va de 1 a 12. Existen todas las combinaciones:
+
+```text
+sw-col-xs-1  sw-col-xs-2  sw-col-xs-3  sw-col-xs-4  sw-col-xs-5  sw-col-xs-6
+sw-col-xs-7  sw-col-xs-8  sw-col-xs-9  sw-col-xs-10 sw-col-xs-11 sw-col-xs-12
+sw-col-1  sw-col-2  sw-col-3  sw-col-4  sw-col-5  sw-col-6
+sw-col-7  sw-col-8  sw-col-9  sw-col-10 sw-col-11 sw-col-12
+sw-col-md-1 … sw-col-md-12   sw-col-lg-1 … sw-col-lg-12   sw-col-xl-1 … sw-col-xl-12
+```
+
+Lista completa de los breakpoints con prefijo:
+`sw-col-md-1 sw-col-md-2 sw-col-md-3 sw-col-md-4 sw-col-md-5 sw-col-md-6 sw-col-md-7 sw-col-md-8 sw-col-md-9 sw-col-md-10 sw-col-md-11 sw-col-md-12`,
+`sw-col-lg-1 sw-col-lg-2 sw-col-lg-3 sw-col-lg-4 sw-col-lg-5 sw-col-lg-6 sw-col-lg-7 sw-col-lg-8 sw-col-lg-9 sw-col-lg-10 sw-col-lg-11 sw-col-lg-12`,
+`sw-col-xl-1 sw-col-xl-2 sw-col-xl-3 sw-col-xl-4 sw-col-xl-5 sw-col-xl-6 sw-col-xl-7 sw-col-xl-8 sw-col-xl-9 sw-col-xl-10 sw-col-xl-11 sw-col-xl-12`.
 
 ## Breakpoints
 

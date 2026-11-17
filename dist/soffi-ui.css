@@ -1,4 +1,4 @@
-/*! Soffi UI 1.2.1 — fuente unica de estilos Soffiweb.
+/*! Soffi UI 1.3.0 — fuente unica de estilos Soffiweb.
  * Generado por scripts/build.php. NO EDITAR: el proximo build lo sobrescribe.
  * Piso de navegador: Chrome/Edge 109 · Firefox 115 ESR · Safari 15.6
  */
@@ -36,6 +36,19 @@
     --sw-info-contrast: #fdfdff;
 
     --sw-sidebar-bg: #1e2330;
+
+    /* Refinamiento 1.3: celeste del degradado del logo y capas de profundidad.
+       --sw-page-bg: fondo de la pagina (un paso mas profundo que --sw-surface).
+       --sw-text-soft: texto secundario (etiquetas, subtitulos, conteos).
+       --sw-table-bg: fondo de tabla; --sw-input-bg/--sw-input-border: controles. */
+    --sw-sky: #b9d9f0;
+    --sw-page-bg: #e1ebf8;
+    --sw-text-soft: #4a515b;
+    --sw-table-bg: #fdfdff;
+    --sw-input-bg: #fdfdff;
+    --sw-input-border: rgba(67, 97, 238, 0.92);
+    --sw-divider: rgba(40, 68, 154, 0.32);
+
     --sw-table-header-bg: #e8eef8;
     --sw-table-header-text: #28449a;
     --sw-table-sticky-border: #c4cee3;
@@ -84,12 +97,22 @@
     --btn-text: var(--sw-button-text);
     --auth-bg: var(--sw-auth-bg);
     --auth-card: var(--sw-auth-card-bg);
+    --sky: var(--sw-sky);
+    --pg: var(--sw-page-bg);
+    --bc3: var(--sw-text-soft);
+    --tbg: var(--sw-table-bg);
+    --ibg: var(--sw-input-bg);
+    --ibd: var(--sw-input-border);
+    --dv: var(--sw-divider);
 }
 
 @supports (background: color-mix(in srgb, red 1%, blue)) {
     :root {
         --sw-border: 1px solid color-mix(in srgb, var(--sw-secondary) 28%, transparent);
         --sw-border-strong: 1px solid color-mix(in srgb, var(--sw-secondary) 50%, transparent);
+        --sw-page-bg: color-mix(in srgb, var(--sw-sky) 24%, var(--sw-surface));
+        --sw-text-soft: color-mix(in srgb, var(--sw-text-muted) 62%, var(--sw-text));
+        --sw-divider: color-mix(in srgb, var(--sw-primary) 32%, transparent);
     }
 }
 
@@ -108,6 +131,13 @@
     --sw-info: #00bafe;
     --sw-border: 1px solid rgba(255, 255, 255, 0.09);
     --sw-sidebar-bg: #111520;
+    --sw-sky: #3b5a8a;
+    --sw-page-bg: #1f2430;
+    --sw-text-soft: #aab3c5;
+    --sw-table-bg: #262c3b;
+    --sw-input-bg: #20263a;
+    --sw-input-border: rgba(157, 189, 232, 0.6);
+    --sw-divider: rgba(255, 255, 255, 0.16);
     --sw-table-header-bg: #1a2340;
     --sw-table-header-text: #7da4e0;
     --sw-table-sticky-border: #8194b8;
@@ -453,9 +483,16 @@ body {
 .sw-accordion {
     width: 100%;
     overflow: hidden;
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.32);
+    border: 1.5px solid color-mix(in srgb, var(--p) 32%, transparent);
     border-radius: var(--rl);
     background: var(--b1);
+    box-shadow: 0 1px 3px rgba(40, 68, 154, 0.12), 0 8px 22px rgba(40, 68, 154, 0.11);
+}
+
+[data-theme="dark"] .sw-accordion {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .sw-accordion-item + .sw-accordion-item {
@@ -481,8 +518,14 @@ body {
 
 .sw-accordion-trigger:hover,
 .sw-accordion-trigger[aria-expanded="true"] {
-    background: var(--b2);
+    background: #eef5fc;
+    background: color-mix(in srgb, var(--sky) 22%, var(--b1));
     color: var(--p);
+}
+
+[data-theme="dark"] .sw-accordion-trigger:hover,
+[data-theme="dark"] .sw-accordion-trigger[aria-expanded="true"] {
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .sw-accordion-trigger:focus-visible {
@@ -508,6 +551,26 @@ body {
 
 .sw-accordion-panel-inner {
     padding-top: var(--sw-spacing-sm);
+}
+
+/* Cabecera con título y resumen: el título ocupa el espacio y el resumen
+   queda a la derecha, visible aunque el panel esté cerrado. */
+.sw-accordion-title {
+    flex: 1;
+    min-width: 0;
+    color: var(--p);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sw-accordion-meta {
+    color: var(--bc3);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sw-accordion-panel .sw-total-panel {
+    height: auto;
 }
 
 .sw-accordion-panel.collapse:not(.show) {
@@ -1575,10 +1638,15 @@ body {
     cursor: pointer;
     transition:
         opacity 0.15s,
-        box-shadow 0.15s;
+        box-shadow 0.15s,
+        transform 0.08s;
     color: var(--btn-text);
     line-height: 1.4;
     text-decoration: none;
+}
+
+.sw-btn:active:not(:disabled) {
+    transform: translateY(1px);
 }
 
 .sw-btn:hover {
@@ -1614,15 +1682,36 @@ body {
 }
 
 .sw-btn-ghost {
-    background: transparent;
+    background: var(--b1);
     color: var(--bc);
-    border: var(--brd);
+    font-weight: 600;
+    border: 1.5px solid rgba(21, 27, 30, 0.3);
+    border: 1.5px solid color-mix(in srgb, var(--bc) 30%, transparent);
+    box-shadow: 0 1px 2px rgba(21, 27, 30, 0.12);
 }
 
 .sw-btn-ghost:hover {
-    background: var(--b2);
+    background: #e9f2fb;
+    background: color-mix(in srgb, var(--sky) 30%, var(--b1));
+    color: var(--p);
+    border-color: var(--p);
     opacity: 1;
+}
+
+.sw-btn-ghost:active {
     box-shadow: none;
+}
+
+[data-theme="dark"] .sw-btn-ghost {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+}
+
+[data-theme="dark"] .sw-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--bc);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .sw-btn-outline {
@@ -1695,9 +1784,14 @@ body {
         background 0.15s,
         border-color 0.15s,
         color 0.15s,
-        opacity 0.15s;
+        opacity 0.15s,
+        transform 0.08s;
     color: var(--bc);
     text-decoration: none;
+}
+
+.sw-bico:active:not(:disabled) {
+    transform: translateY(1px);
 }
 
 .sw-bico:hover {
@@ -1724,8 +1818,8 @@ body {
 
 .sw-bico-edit {
     background: var(--b1);
-    border-color: rgba(40, 68, 154, 0.3);
-    border-color: color-mix(in srgb, var(--p) 30%, transparent);
+    border-color: rgba(40, 68, 154, 0.55);
+    border-color: color-mix(in srgb, var(--p) 55%, transparent);
     color: var(--bc);
 }
 
@@ -1736,6 +1830,13 @@ body {
 }
 
 .sw-bico-delete {
+    background: var(--b1);
+    border-color: rgba(225, 29, 72, 0.65);
+    border-color: color-mix(in srgb, var(--er) 65%, transparent);
+    color: var(--er);
+}
+
+.sw-bico-delete:hover {
     background: var(--er);
     border-color: var(--er);
     color: var(--erc);
@@ -1779,9 +1880,8 @@ body {
 
 [data-theme="dark"] .sw-bico,
 [data-theme="dark"] .sw-bico-edit {
-    background: var(--b1);
-    border-color: rgba(157, 189, 232, 0.32);
-    border-color: color-mix(in srgb, var(--s) 32%, transparent);
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.18);
     color: var(--bc);
 }
 
@@ -1792,9 +1892,15 @@ body {
 }
 
 [data-theme="dark"] .sw-bico-delete {
+    background: transparent;
+    border-color: rgba(255, 98, 125, 0.5);
+    color: #ff7b92;
+}
+
+[data-theme="dark"] .sw-bico-delete:hover {
     background: var(--er);
     border-color: var(--er);
-    color: var(--erc);
+    color: #ffffff;
 }
 
 [data-theme="dark"] .sw-bico-success {
@@ -1823,14 +1929,25 @@ body {
 .sw-card {
     min-width: 0;
     background: var(--b1);
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.32);
+    border: 1.5px solid color-mix(in srgb, var(--p) 32%, transparent);
     border-radius: var(--rl);
     padding: 1.2rem 1.4rem;
+    box-shadow: 0 1px 3px rgba(40, 68, 154, 0.12), 0 8px 22px rgba(40, 68, 154, 0.11);
     transition: box-shadow 0.18s;
 }
 
 .sw-card:hover {
-    box-shadow: var(--sh-md);
+    box-shadow: 0 1px 3px rgba(40, 68, 154, 0.14), 0 10px 26px rgba(40, 68, 154, 0.15);
+}
+
+[data-theme="dark"] .sw-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .sw-card:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.36);
 }
 
 .sw-card-title {
@@ -2596,7 +2713,7 @@ body {
     margin-bottom: var(--sw-spacing-sm);
     font-size: var(--sw-text-base);
     font-weight: 500;
-    color: var(--bc2);
+    color: var(--bc3);
 }
 
 .sw-input,
@@ -2608,8 +2725,8 @@ body {
     font-size: var(--sw-text-md);
     line-height: 1.2;
     color: var(--bc);
-    background-color: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background-color: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     outline: none;
     transition:
@@ -2761,8 +2878,8 @@ body {
     width: 100%;
     height: 43px;
     padding: 0 var(--sw-spacing-sm);
-    background-color: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background-color: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     cursor: pointer;
     transition:
@@ -2842,8 +2959,8 @@ body {
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
-    background-color: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background-color: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     outline: none;
     resize: vertical;
@@ -3018,8 +3135,8 @@ body {
     font-family: "Inter", sans-serif;
     font-size: var(--sw-text-md);
     color: var(--bc);
-    background: var(--b1);
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    background: var(--ibg);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     cursor: pointer;
     display: flex;
@@ -3191,7 +3308,7 @@ body {
     .sw-file-input,
     .sw-textarea,
     .sw-ss-trigger {
-        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+        border-color: var(--ibd);
     }
 
     .sw-input:focus,
@@ -3248,6 +3365,26 @@ body {
     .sw-radio {
         border-color: color-mix(in srgb, var(--s) 55%, transparent);
     }
+}
+
+/* Contador de caracteres: <small class="sw-field-counter" data-sw-counter="id-del-campo">.
+   Lo actualiza soffi-ui.js; pasa a ambar al 90% del maxlength y a rojo al llenarse. */
+.sw-field-counter {
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+    font-size: var(--sw-text-sm);
+    font-variant-numeric: tabular-nums;
+    color: var(--bc3);
+}
+
+.sw-field-counter.is-near {
+    color: var(--wa);
+}
+
+.sw-field-counter.is-full {
+    color: var(--er);
+    font-weight: 600;
 }
 
 /* ===== src/components/grid.css ===== */
@@ -3493,7 +3630,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     padding: 24px 28px;
-    background: var(--b2);
+    background: var(--pg);
 }
 
 .sw-page-header {
@@ -3509,7 +3646,7 @@ body {
 }
 
 .sw-page-subtitle {
-    color: var(--bc2);
+    color: var(--bc3);
     font-size: 15px;
     line-height: 1.5;
 }
@@ -3538,8 +3675,7 @@ body {
 }
 
 .sw-section-block-separated + .sw-section-block-separated {
-    border-top: 1px solid rgba(67, 97, 238, 0.24);
-    border-top: 1px solid color-mix(in srgb, var(--s) 24%, transparent);
+    border-top: 1px solid var(--dv);
     margin-top: 1.25rem;
     padding-top: 1.25rem;
 }
@@ -3567,7 +3703,7 @@ body {
 }
 
 .sw-data-label {
-    color: var(--bc2);
+    color: var(--bc3);
     font-size: 13px;
     font-weight: 600;
     line-height: 1.35;
@@ -3598,6 +3734,12 @@ body {
     border-radius: var(--r);
     background: #f4f6fb;
     background: color-mix(in srgb, var(--p) 4%, var(--b1));
+}
+
+/* Panel de total alineado a la derecha (importes de cierre). */
+.sw-total-panel-end {
+    margin-left: auto;
+    text-align: right;
 }
 
 .sw-total-label {
@@ -3701,7 +3843,14 @@ body.sw-modal-open {
     max-width: 460px;
     max-height: calc(100vh - 48px);
     overflow-y: auto;
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.32);
+    border: 1.5px solid color-mix(in srgb, var(--p) 32%, transparent);
+    box-shadow: 0 2px 6px rgba(40, 68, 154, 0.18), 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sw-modal {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
 }
 
 .sw-modal-sm {
@@ -3717,6 +3866,8 @@ body.sw-modal-open {
     font-weight: 700;
     color: var(--p);
     margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--dv);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3755,6 +3906,12 @@ body.sw-modal-open {
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+}
+
+/* Pie de acciones dentro de un modal: separado del formulario por una línea. */
+.sw-modal .sw-form-actions {
+    padding-top: 14px;
+    border-top: 1px solid var(--dv);
 }
 
 /* ===== src/components/navigation.css ===== */
@@ -4090,6 +4247,11 @@ body.sw-modal-open {
     transition: background 0.25s;
 }
 
+/* Oscuro: el sidebar es casi del tono del contenido; un borde los separa. */
+[data-theme="dark"] .sw-sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .sw-sb-brand {
     padding: var(--sw-spacing-xs) 0.75rem 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -4133,8 +4295,11 @@ body.sw-modal-open {
 }
 
 /* Escritorio: el sidebar se puede contraer para ver el contenido a todo el
-   ancho. Por debajo de 1200px manda el overlay (body.sw-sidebar-open). */
+   ancho. Por debajo de 1200px manda el overlay (body.sw-sidebar-open).
+   La clase también vive en <html>: un script en el <head> la pone antes del
+   primer paint (ver layout.md) para que no haya parpadeo al recargar. */
 @media (min-width: 1200px) {
+    html.sw-sidebar-collapsed .sw-sidebar,
     body.sw-sidebar-collapsed .sw-sidebar {
         display: none;
     }
@@ -5541,11 +5706,16 @@ body.sw-modal-open {
 .sw-table-wrap {
     width: 100%;
     max-width: 100%;
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.34);
+    border: 1.5px solid color-mix(in srgb, var(--p) 34%, transparent);
     border-radius: var(--rl);
     overflow: hidden;
-    background: var(--b1);
+    background: var(--tbg);
     box-shadow: var(--sh-sm);
+}
+
+[data-theme="dark"] .sw-table-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .sw-table {
@@ -5563,18 +5733,28 @@ body.sw-modal-open {
     letter-spacing: 0.07em;
     color: var(--th-color);
     padding: 0.62rem 0.8125rem;
-    border-bottom: 2px solid rgba(40, 68, 154, 0.2);
-    border-bottom: 2px solid color-mix(in srgb, var(--p) 20%, transparent);
+    border-bottom: 2px solid rgba(40, 68, 154, 0.45);
+    border-bottom: 2px solid color-mix(in srgb, var(--p) 45%, transparent);
     text-align: left;
+}
+
+[data-theme="dark"] .sw-table thead th {
+    border-bottom: 2px solid rgba(125, 164, 224, 0.35);
+    border-bottom: 2px solid color-mix(in srgb, var(--p) 35%, transparent);
 }
 
 .sw-table tbody td {
     padding: var(--sw-spacing-sm) 0.8125rem;
-    border-bottom: var(--brd);
+    border-bottom: 1px solid rgba(40, 68, 154, 0.18);
+    border-bottom: 1px solid color-mix(in srgb, var(--p) 18%, transparent);
     color: var(--bc);
     vertical-align: middle;
-    background: var(--b1);
+    background: var(--tbg);
     line-height: 1.35;
+}
+
+[data-theme="dark"] .sw-table tbody td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* Hasta 1280px la tabla normal se ajusta sola: misma densidad que
@@ -5651,7 +5831,13 @@ body.sw-modal-open {
 }
 
 .sw-table tbody tr:hover td {
-    background: var(--b2);
+    background: #eef5fc;
+    background: color-mix(in srgb, var(--sky) 22%, var(--tbg));
+}
+
+[data-theme="dark"] .sw-table tbody tr:hover td {
+    background: #2f3443;
+    background: color-mix(in srgb, #ffffff 4%, var(--tbg));
 }
 
 .sw-empty-icon {
@@ -5671,6 +5857,25 @@ body.sw-modal-open {
 .sw-crud-container {
     padding-top: 30px;
     padding-bottom: 22px;
+}
+
+/* Pantallas de captura (facturas, notas, compras): título más pequeño y menos
+   aire arriba para que el formulario, el detalle y el total entren en una sola
+   pantalla. Se combina con .sw-card-compact, .sw-row-compact y .sw-form-compact. */
+.sw-crud-page-compact .sw-crud-container {
+    padding-top: 14px;
+}
+
+.sw-crud-page-compact .sw-page-header {
+    margin-bottom: 12px;
+}
+
+.sw-crud-page-compact .sw-page-title {
+    font-size: 22px;
+}
+
+.sw-crud-page-compact .sw-crud-actions {
+    align-items: center;
 }
 
 .sw-crud-head {
@@ -5779,7 +5984,7 @@ body.sw-modal-open {
 }
 
 .sw-list-search-label {
-    color: var(--bc2);
+    color: var(--bc3);
     font-size: var(--sw-text-base);
     font-weight: 500;
     line-height: 1.2;
@@ -5852,8 +6057,7 @@ body.sw-modal-open {
 
 .sw-list-count,
 .sw-list-context {
-    color: #636c83;
-    color: color-mix(in srgb, var(--bc2) 88%, var(--p));
+    color: var(--bc3);
     font-size: var(--sw-text-base);
     font-weight: 500;
 }
@@ -6635,9 +6839,9 @@ body.sw-modal-open {
     display: flex;
     align-items: center;
     min-height: 43px;
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
-    background: var(--b1);
+    background: var(--ibg);
     color: var(--bc);
     outline: none;
 }
@@ -6683,7 +6887,7 @@ body.sw-modal-open {
     padding: 0.5rem 0.85rem;
     font-family: "Inter", sans-serif;
     font-size: 15px;
-    border: 1.5px solid rgba(67, 97, 238, 0.42);
+    border: 1.5px solid var(--ibd);
     border-radius: var(--r);
     color: var(--bc);
     outline: none;
@@ -6698,7 +6902,7 @@ body.sw-modal-open {
 @supports (background: color-mix(in srgb, red 1%, blue)) {
     .select2-container--default .select2-selection--single,
     .select2-search--dropdown .select2-search__field {
-        border-color: color-mix(in srgb, var(--s) 42%, transparent);
+        border-color: var(--ibd);
     }
 
     .select2-container--default.select2-container--focus .select2-selection--single,

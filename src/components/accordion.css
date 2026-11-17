@@ -2,9 +2,16 @@
 .sw-accordion {
     width: 100%;
     overflow: hidden;
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.32);
+    border: 1.5px solid color-mix(in srgb, var(--p) 32%, transparent);
     border-radius: var(--rl);
     background: var(--b1);
+    box-shadow: 0 1px 3px rgba(40, 68, 154, 0.12), 0 8px 22px rgba(40, 68, 154, 0.11);
+}
+
+[data-theme="dark"] .sw-accordion {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .sw-accordion-item + .sw-accordion-item {
@@ -30,8 +37,14 @@
 
 .sw-accordion-trigger:hover,
 .sw-accordion-trigger[aria-expanded="true"] {
-    background: var(--b2);
+    background: #eef5fc;
+    background: color-mix(in srgb, var(--sky) 22%, var(--b1));
     color: var(--p);
+}
+
+[data-theme="dark"] .sw-accordion-trigger:hover,
+[data-theme="dark"] .sw-accordion-trigger[aria-expanded="true"] {
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .sw-accordion-trigger:focus-visible {
@@ -57,6 +70,26 @@
 
 .sw-accordion-panel-inner {
     padding-top: var(--sw-spacing-sm);
+}
+
+/* Cabecera con título y resumen: el título ocupa el espacio y el resumen
+   queda a la derecha, visible aunque el panel esté cerrado. */
+.sw-accordion-title {
+    flex: 1;
+    min-width: 0;
+    color: var(--p);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sw-accordion-meta {
+    color: var(--bc3);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sw-accordion-panel .sw-total-panel {
+    height: auto;
 }
 
 .sw-accordion-panel.collapse:not(.show) {

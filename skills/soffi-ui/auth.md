@@ -98,6 +98,100 @@ Formulario: mismos componentes que cualquier form (`layout.md`/`components.md`) 
 
 Referencia real: `resources/views/auth/login.blade.php` y `resources/views/auth/soffcore-company-selection.blade.php` en SoffCaja (esta última muestra el patrón con `.sw-select` y `.sw-alert.sw-alert-error` para errores generales del formulario).
 
+## Variantes de página y de card
+
+Fondo de página (en `<body>` o en el wrapper de `.sw-auth-shell`):
+
+- `.sw-auth-page` — fondo de superficie (`--b2`), alto mínimo de pantalla.
+- `.sw-auth-page-soft` — igual que el anterior, explícito.
+- `.sw-auth-page-brand` — fondo plano del color primario. Solo con card claro encima.
+
+Card (se combinan con `.sw-card sw-auth-card`):
+
+- `.sw-auth-card-product` — fondo base, borde primario tenue, más relleno y sombra grande. Para login de un sistema con identidad propia.
+- `.sw-auth-card-plain` — fondo base, sin contraste con la página.
+- `.sw-auth-card-framed` — sin relleno y con `overflow: hidden`; para que un header de color llegue a los bordes redondeados.
+- `.sw-auth-card-wide` — card de dos columnas (hasta 980px): `.sw-auth-visual` a la izquierda y `.sw-auth-form-panel` a la derecha. Por debajo de 768px pasa a una columna.
+- `.sw-auth-logo-lg` — logo de 68px de alto (el base `.sw-auth-logo` es de 56px).
+
+## Card con cabecera de color
+
+Para cuando el card necesita una cabecera sólida (no degradado) con el nombre del sistema:
+
+```html
+<div class="sw-card sw-auth-card sw-auth-card-framed">
+    <div class="sw-auth-card-header">
+        <span class="sw-auth-card-eyebrow">Soffiweb</span>
+        <h1 class="sw-auth-card-header-title">{{ config('app.name') }}</h1>
+        <p class="sw-auth-card-header-subtitle">Ingresa para continuar.</p>
+    </div>
+    <div class="sw-auth-card-body">
+        ...formulario...
+    </div>
+</div>
+```
+
+- `.sw-auth-card-header` — banda primaria con texto `--btn-text`, centrada.
+- `.sw-auth-card-eyebrow` — línea pequeña en mayúsculas sobre el título.
+- `.sw-auth-card-header-title` / `.sw-auth-card-header-subtitle` — título y bajada.
+- `.sw-auth-card-body` — cuerpo con relleno de `1.75rem`.
+
+## Pantalla dividida (visual + formulario)
+
+```html
+<div class="sw-auth-shell">
+    <div class="sw-card sw-auth-card sw-auth-card-wide">
+        <aside class="sw-auth-visual">
+            <div class="sw-auth-system">
+                <span class="sw-auth-mark"><i class="fa-solid fa-cube"></i></span>
+                <div class="sw-auth-system-text">
+                    <span class="sw-auth-system-name">{{ config('app.name') }}</span>
+                    <span class="sw-auth-system-subtitle">Gestión empresarial</span>
+                </div>
+            </div>
+            <div class="sw-auth-copy-block">
+                <h2 class="sw-auth-heading">Todo tu negocio en un lugar</h2>
+                <p class="sw-auth-copy">Texto de apoyo.</p>
+                <ul class="sw-auth-feature-list">
+                    <li><i class="fa-solid fa-check"></i> Facturación</li>
+                    <li><i class="fa-solid fa-check"></i> Inventario</li>
+                </ul>
+            </div>
+            <div class="sw-auth-illustration"><img src="..." alt=""></div>
+        </aside>
+        <section class="sw-auth-form-panel">
+            <div class="sw-auth-form-head">
+                <h1 class="sw-auth-form-title">Iniciar sesión</h1>
+                <p class="sw-auth-form-copy">Usa tus credenciales.</p>
+            </div>
+            ...formulario...
+        </section>
+    </div>
+</div>
+```
+
+- `.sw-auth-visual` — panel izquierdo (superficie, borde derecho, contenido repartido en vertical).
+- `.sw-auth-system` — fila marca + nombre. `.sw-auth-mark` es el cuadro del icono (48px, tamaño con `--sw-auth-mark-size`); `.sw-auth-system-text` agrupa `.sw-auth-system-name` (negrita, una línea con elipsis) y `.sw-auth-system-subtitle`.
+- `.sw-auth-copy-block` — bloque de mensaje (máx. 520px) con `.sw-auth-heading` (28px) y `.sw-auth-copy`.
+- `.sw-auth-feature-list` — lista de ventajas con icono en cuadro tintado.
+- `.sw-auth-illustration` — imagen centrada de hasta 360px.
+- `.sw-auth-form-panel` — panel derecho con el formulario. `.sw-auth-form-head` lleva `.sw-auth-form-title` y `.sw-auth-form-copy`.
+- En celular (<768px) `.sw-auth-copy` y `.sw-auth-illustration` se ocultan para dejar el formulario cerca de la parte superior.
+
+## Campos con icono y avisos
+
+- `.sw-auth-input-group` — fila `display: flex` con un `.sw-auth-input-addon` (cuadro de 44px con el icono, mismo borde que el input) seguido de `.sw-input` o `.sw-select`. El addon toma el color primario con foco y el de error con `.sw-error` en el grupo.
+- `.sw-auth-actions` — grid con separación para apilar botones (por ejemplo "Entrar" y "Volver").
+- `.sw-auth-note` — aviso informativo con barra primaria a la izquierda. Para textos como "Si olvidaste tu clave, contacta al administrador".
+- `.sw-auth-footnote` — texto pequeño centrado al pie del card.
+
+```html
+<div class="sw-auth-input-group">
+    <span class="sw-auth-input-addon"><i class="fa-solid fa-envelope"></i></span>
+    <input type="email" class="sw-input" name="email">
+</div>
+```
+
 ## Prohibido en estas pantallas
 
 | ❌ Nunca | ✅ Siempre |

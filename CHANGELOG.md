@@ -1,5 +1,36 @@
 # Changelog
 
+## Sin publicar
+
+## 1.3.0 — 2026-11-17
+
+### Corregido
+
+- **Sidebar contraído sin parpadeo:** al recargar con el sidebar contraído se veía abierto un instante, porque `swRestoreSidebar()` corre al cargar `soffi-ui.js`, al final del body. Ahora la clase `sw-sidebar-collapsed` también vive en `<html>` y un script en el `<head>` la pone antes del primer paint, igual que el tema. **Agregar ese script al layout de cada app** (ver `layout.md`); el layout de `blade/layouts/panel.blade.php` ya lo trae. Sin el script todo sigue funcionando como antes.
+
+### Cambiado
+
+Refinamiento de contraste y profundidad en claro y oscuro. Es un cambio visual en todas las apps; no hay clases ni tokens eliminados.
+
+- **Fondo de página:** `.sw-main` usa el token nuevo `--sw-page-bg` (celeste del logo mezclado con la superficie en claro; `#1f2430` en oscuro) en vez de `--sw-surface`, para que los cards se despeguen.
+- **Cards, tablas, acordeón y modal:** borde y sombra más definidos (`.sw-card`, `.sw-table-wrap`, `.sw-accordion`, `.sw-modal`). Cabecera de tabla con línea inferior más firme, separadores de fila más visibles y hover de fila con el celeste del logo. En oscuro, tabla `#262c3b` con borde claro tenue.
+- **Controles:** `.sw-input`, `.sw-select` y `.sw-textarea` usan `--sw-input-bg` y `--sw-input-border` (borde azul secundario al 92 % en claro; fondo `#20263a` y borde al 60 % en oscuro).
+- **Texto secundario:** `.sw-label`, `.sw-page-subtitle`, `.sw-list-search-label`, `.sw-list-count`, `.sw-list-context` y `.sw-data-label` usan `--sw-text-soft`, más oscuro que `--sw-text-muted`.
+- **`.sw-btn-ghost`:** fondo blanco, borde neutro de 1,5 px y seminegrita; el hover pasa a celeste con borde y texto primarios. En oscuro queda transparente con borde tenue. **Revisar** ghosts que dependían de ser transparentes en claro.
+- **`.sw-bico-delete`:** pasa de relleno rojo a contorno rojo, que se rellena al pasar el cursor (claro y oscuro). `.sw-bico-edit` con borde más marcado.
+- **Presionar:** `.sw-btn` y `.sw-bico` bajan 1 px al activarse.
+- **`.sw-modal`:** borde y sombra más definidos; `.sw-modal-title` y `.sw-form-actions` dentro del modal con una línea separadora.
+- **Separadores:** el token nuevo `--sw-divider` (alias `--dv`) unifica la línea bajo el título del modal, sobre sus botones y entre `.sw-section-block-separated`, un poco más marcada que antes (32 % del primario en claro, 16 % de blanco en oscuro).
+- **Sidebar en oscuro:** borde derecho para separarlo del contenido.
+
+### Agregado
+
+- `.sw-crud-page-compact`: modificador de página para pantallas de captura (título de 22 px, menos aire arriba y en la cabecera). Se usa junto con `.sw-card-compact`, `.sw-row-compact` y `.sw-form-compact`.
+- Tokens `--sw-sky`, `--sw-page-bg`, `--sw-text-soft`, `--sw-table-bg`, `--sw-input-bg`, `--sw-input-border` y `--sw-divider` (alias `--sky`, `--pg`, `--bc3`, `--tbg`, `--ibg`, `--ibd`, `--dv`), con variante oscura.
+- `.sw-accordion-title` y `.sw-accordion-meta`: título y resumen en la cabecera del accordion.
+- `.sw-total-panel-end`: panel de total alineado a la derecha.
+- Contador de caracteres: `.sw-field-counter` con `data-sw-counter="id"` y `swRefreshCounters()` en `soffi-ui.js`.
+
 ## 1.2.1 — 2026-11-09
 
 ### Cambiado

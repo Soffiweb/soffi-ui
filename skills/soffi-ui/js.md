@@ -336,9 +336,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ---
 
+## Contador de caracteres
+
+| Función | Qué hace |
+|---|---|
+| `swRefreshCounters()` | Recalcula todos los `[data-sw-counter="id"]` del documento. Llamarla tras asignar el valor de un campo por JS; `swOpenModal()` ya la llama al abrir. |
+| `swUpdateCounter(counter)` | Actualiza un contador: "largo / máximo", ámbar al 90 %, rojo al llenarse. La usa el evento `input` delegado. |
+
+Markup en `components.md` (`.sw-field-counter`).
+
+---
+
 ## Funciones de alerta (nuevas en 0.3.0, venían de SoffiFac)
 
-`soffi-ui.js` del paquete tiene **41 funciones** y varios selectores/constants
+`soffi-ui.js` del paquete tiene **53 funciones** y varios selectores/constants
 internos. La API incluye tema, layout, dropdowns, menús de fila, tablas,
 modales accesibles, tabs, collapse, inputs, selects y alertas.
 
@@ -374,6 +385,31 @@ el.textContent = 'Guardado';
 document.body.appendChild(el);
 swInitAlerts();   // le engancha el cierre y la apila
 ```
+
+## Funciones internas
+
+Las llaman otras funciones de `soffi-ui.js`; una app no debería necesitarlas.
+Se listan para que la IA no las reimplemente ni las llame por error.
+
+| Función | Para qué sirve |
+| --- | --- |
+| `swIsSidebarOverlay()` | `true` si el viewport es ≤1199.98px, donde el sidebar es overlay y no se contrae. Misma consulta que `navigation.css`. |
+| `swSyncSidebarToggle(open)` | Sincroniza `aria-expanded` y `aria-label` ("Abrir menú"/"Cerrar menú") de `.sw-sidebar-toggle`. |
+| `swRestoreSidebar()` | Al cargar, aplica `sw-sidebar-collapsed` a `<body>` y `<html>` según `localStorage` (`swSidebarCollapsed`). El script del `<head>` hace lo mismo antes del primer paint para evitar el parpadeo. |
+| `swPositionRowMenu(menu, trigger)` | Posiciona con `position: fixed` el panel `.sw-row-menu-dropdown` junto a su botón, sin salirse del viewport. |
+| `swRepositionRowMenus()` | Reposiciona los paneles abiertos (`.open.is-portal`) al hacer scroll o resize. |
+| `swRestoreRowMenu(menu)` | Devuelve el panel a su `.sw-row-menu` original y quita `is-portal`. Contraparte de la reubicación en `<body>`. |
+| `swOverflowCollapse(box)` | Mueve los botones sobrantes de un `[data-sw-overflow]` a un `.sw-dropdown` ("Más acciones"). |
+| `swOverflowRestore(box)` | Deshace lo anterior: devuelve cada botón a su lugar y quita el dropdown si lo creó. |
+| `swOverflowItemClick()` | Cierra los dropdowns al elegir un botón movido al menú. |
+| `swSyncOverflow(small)` | Aplica `swOverflowCollapse` o `swOverflowRestore` a todos los `[data-sw-overflow]` según el breakpoint (<992px). |
+| `swInitCollapsibleBadges()` | Llama `swSyncCollapsibleBadges()` y la repite cuando cambia el tamaño de cada `.sw-list-table-wrap` (`ResizeObserver`). |
+| `swGetOpenModal()` | Devuelve el `.sw-modal-backdrop.is-open` más reciente (el de arriba) o `null`. |
+| `swModalAllowsBackdrop(backdrop)` | `false` si el modal tiene `data-modal-backdrop="static"` o `"false"`: el clic fuera no lo cierra. |
+| `swModalAllowsEscape(backdrop)` | `false` si el modal tiene `data-modal-escape="false"`: `Escape` no lo cierra. |
+| `swModalFocusable(dialog)` | Lista los elementos enfocables visibles dentro de un `.sw-modal`. |
+| `swFocusModal(dialog)` | Da foco al abrir: primero `[autofocus]`, luego el primer input/select/textarea, luego el primer enfocable, luego el diálogo. |
+| `swTrapModalFocus(event)` | Mantiene el `Tab` dentro del modal abierto (foco circular). |
 
 ## En React
 

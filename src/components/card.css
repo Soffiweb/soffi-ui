@@ -4,14 +4,25 @@
 .sw-card {
     min-width: 0;
     background: var(--b1);
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.32);
+    border: 1.5px solid color-mix(in srgb, var(--p) 32%, transparent);
     border-radius: var(--rl);
     padding: 1.2rem 1.4rem;
+    box-shadow: 0 1px 3px rgba(40, 68, 154, 0.12), 0 8px 22px rgba(40, 68, 154, 0.11);
     transition: box-shadow 0.18s;
 }
 
 .sw-card:hover {
-    box-shadow: var(--sh-md);
+    box-shadow: 0 1px 3px rgba(40, 68, 154, 0.14), 0 10px 26px rgba(40, 68, 154, 0.15);
+}
+
+[data-theme="dark"] .sw-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .sw-card:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.36);
 }
 
 .sw-card-title {

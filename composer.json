@@ -28,6 +28,7 @@
     "scripts": {
         "build": "php scripts/build.php",
         "check-compat": "php scripts/check-compat.php",
+        "check-skills": "php scripts/check-skills.php",
         "test": "phpunit --configuration phpunit.xml.dist"
     },
     "require-dev": {

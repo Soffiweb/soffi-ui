@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: soffiweb
   package: soffiweb/soffi-ui
-  version: "1.2.1"
+  version: "1.3.0"
 ---
 
 # Soffi UI — sistema de diseño Soffiweb
@@ -26,7 +26,7 @@ Antes de crear o refactorizar vistas, leer las fuentes del paquete:
 | `src/base/reset.css` | reset + resets de markup heredado |
 | `src/base/utilities.css` | utilidades (`sw-mt-*`, `sw-d-flex`, `sw-text-*`…) |
 | `src/components/*.css` | 37 archivos, un componente o familia por archivo |
-| `js/soffi-ui.js` | 41 funciones, vanilla |
+| `js/soffi-ui.js` | 53 funciones, vanilla |
 
 `dist/` y `public/vendor/soffi-ui/` son **salida de build**: el próximo
 `php scripts/build.php` los sobrescribe. Todo cambio va a `src/`.
@@ -126,7 +126,7 @@ fallback acumuladas entre SoffiFac y gesnom `dev`).
 | [tokens.md](tokens.md) | paleta, tipografía, espaciado, radios, breakpoints |
 | [layout.md](layout.md) | shell, topbar (tenant/periodo), menú de usuario, sidebar, footer |
 | [components.md](components.md) | catálogo completo de componentes `sw-*` |
-| [js.md](js.md) | las 41 funciones, y qué hacer en React |
+| [js.md](js.md) | las 53 funciones, y qué hacer en React |
 | [auth.md](auth.md) | pantallas de login / selección de empresa / recuperar clave |
 | [laravel.md](laravel.md) | **integración Laravel + Blade — leer para cualquier vista** |
 | [view-patterns.md](view-patterns.md) | patrones de vistas CRUD, listados, formularios |

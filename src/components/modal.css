@@ -30,7 +30,14 @@ body.sw-modal-open {
     max-width: 460px;
     max-height: calc(100vh - 48px);
     overflow-y: auto;
-    border: var(--brd);
+    border: 1.5px solid rgba(40, 68, 154, 0.32);
+    border: 1.5px solid color-mix(in srgb, var(--p) 32%, transparent);
+    box-shadow: 0 2px 6px rgba(40, 68, 154, 0.18), 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sw-modal {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
 }
 
 .sw-modal-sm {
@@ -46,6 +53,8 @@ body.sw-modal-open {
     font-weight: 700;
     color: var(--p);
     margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--dv);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,4 +93,10 @@ body.sw-modal-open {
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+}
+
+/* Pie de acciones dentro de un modal: separado del formulario por una línea. */
+.sw-modal .sw-form-actions {
+    padding-top: 14px;
+    border-top: 1px solid var(--dv);
 }
