@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: soffiweb
   package: soffiweb/soffi-ui
-  version: "1.2.1"
+  version: "1.3.0"
 ---
 
 # Soffi UI — sistema de diseño Soffiweb

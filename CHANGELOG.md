@@ -2,6 +2,8 @@
 
 ## Sin publicar
 
+## 1.3.0 — 2026-11-17
+
 ### Corregido
 
 - **Sidebar contraído sin parpadeo:** al recargar con el sidebar contraído se veía abierto un instante, porque `swRestoreSidebar()` corre al cargar `soffi-ui.js`, al final del body. Ahora la clase `sw-sidebar-collapsed` también vive en `<html>` y un script en el `<head>` la pone antes del primer paint, igual que el tema. **Agregar ese script al layout de cada app** (ver `layout.md`); el layout de `blade/layouts/panel.blade.php` ya lo trae. Sin el script todo sigue funcionando como antes.
